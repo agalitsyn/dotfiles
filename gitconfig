@@ -1,0 +1,24 @@
+[user]
+    name = Anton Galitsyn
+    email = anton.galitsyn@gmail.com
+[color]
+    diff = auto
+    status = auto
+    interactive = auto
+    branch = auto
+[alias]
+    co = checkout
+    st = status
+    br = branch
+    ci = commit
+    dh = diff HEAD
+    dc = diff --cached
+    nmerge = merge --no-ff
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[log]
+    date = local
+[core]
+    filemode = false
+    excludesfile = ~/.gitignore
