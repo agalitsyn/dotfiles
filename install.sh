@@ -10,4 +10,6 @@ for FILE in *; do
     [ ! -f ~/.$FILE ] && ln -vsf $DIR/$FILE ~/.$FILE
 done
 
+source ~/.bashrc
+
 [ ! -d ~/bin ] && mkdir ~/bin
