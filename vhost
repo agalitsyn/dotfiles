@@ -7,7 +7,7 @@
 		exit;
 	}
 
-	$default_doc_root = "/home/i20/prj";
+	$default_doc_root = "/home/agalitsyn/prj";
 	$server_alias = "";
 	$add_to_hosts = null;
 	$document_root = "";
