@@ -62,7 +62,7 @@ set ruler
 set showcmd
 set nu
 set incsearch
-set nohlsearch
+set hlsearch
 
 set mousemodel=popup
 set hidden
