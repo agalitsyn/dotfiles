@@ -41,3 +41,9 @@ PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 alias pswd-gen='php ~/.pswd-gen'
 alias vhost='php ~/.vhost'
+
+alias sleep='dbus-send --system --print-reply \
+	    --dest="org.freedesktop.UPower" \
+	        /org/freedesktop/UPower \
+		    org.freedesktop.UPower.Suspend'
+alias gc="google-chrome --new-window"
