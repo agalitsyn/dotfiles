@@ -1,5 +1,9 @@
 #!/usr/bin/env php
 <?php
+/**
+ * @file
+ * Small script for interactive apache vhost.
+ */
 	$virtual_hosts_dir = "/etc/apache2/sites-available/";
 	if (!is_dir($virtual_hosts_dir) || !is_writable($virtual_hosts_dir))
 	{

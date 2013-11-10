@@ -11,5 +11,4 @@ for FILE in *; do
 done
 
 source ~/.bashrc
-
 [ ! -d ~/bin ] && mkdir ~/bin
