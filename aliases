@@ -7,7 +7,7 @@ alias pswd-gen='php ~/.pswd-gen'
 alias vhost='php ~/.vhost'
 
 alias sleep='dbus-send --system --print-reply \
-	    	--dest="org.freedesktop.UPower" \
-	        /org/freedesktop/UPower \
-		    org.freedesktop.UPower.Suspend'
+			--dest="org.freedesktop.UPower" \
+			/org/freedesktop/UPower \
+			org.freedesktop.UPower.Suspend'
 alias gc="google-chrome --new-window"

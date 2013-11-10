@@ -2,14 +2,14 @@
 scm_ps1() {
 local s=
 if [[ -d ".svn" ]] ; then
-	s=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
+    s=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
 else
-	if [[ $(declare -f __git_ps1) ]]; then # Only show if completion is there
+    if [[ $(declare -f __git_ps1) ]]; then # Only show if completion is there
         GIT_PS1_SHOWDIRTYSTATE=true
         GIT_PS1_SHOWSTASHSTATE=true
         GIT_PS1_SHOWUNTRACKEDFILES=true
         s=$(__git_ps1 "(git:%s)")
-	fi
+    fi
 fi
 echo -n "$s"
 }
@@ -19,7 +19,7 @@ OS=`uname -s`
 
 case "$OS" in
     "Linux" )
-		# Get color support for 'ls'
+        # Get color support for 'ls'
         export LS_OPTIONS='--color=auto' 
         eval "`dircolors`"
         alias ls='ls $LS_OPTIONS'
@@ -41,8 +41,8 @@ case "$OS" in
         export LSCOLORS=GxFxCxDxBxegedabagaced
         export CLICOLOR=true
         alias ls='ls'
-		alias ll='ls -lh'
-		alias l='ls -lA'
+        alias ll='ls -lh'
+        alias l='ls -lA'
 
         # Get color support for 'less'
         export LESS="--RAW-CONTROL-CHARS"
