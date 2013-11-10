@@ -5,10 +5,10 @@ if [[ -d ".svn" ]] ; then
 	s=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
 else
 	if [[ $(declare -f __git_ps1) ]]; then # Only show if completion is there
-		GIT_PS1_SHOWDIRTYSTATE=true
-		GIT_PS1_SHOWSTASHSTATE=true
-		GIT_PS1_SHOWUNTRACKEDFILES=true
-		s=$(__git_ps1 "(git:%s)")
+        GIT_PS1_SHOWDIRTYSTATE=true
+        GIT_PS1_SHOWSTASHSTATE=true
+        GIT_PS1_SHOWUNTRACKEDFILES=true
+        s=$(__git_ps1 "(git:%s)")
 	fi
 fi
 echo -n "$s"
@@ -23,8 +23,8 @@ case "$OS" in
         export LS_OPTIONS='--color=auto' 
         eval "`dircolors`"
         alias ls='ls $LS_OPTIONS'
-		alias ll='ls $LS_OPTIONS -lh'
-		alias l='ls $LS_OPTIONS -lA'
+        alias ll='ls $LS_OPTIONS -lh'
+        alias l='ls $LS_OPTIONS -lA'
 
         # Get color support for 'less'
         export LESS="--RAW-CONTROL-CHARS"
@@ -54,15 +54,15 @@ case "$OS" in
         PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]\[\033[00m\]$ "
 
         # iTerm Tab and Title Customization and prompt customization
-		# http://sage.ucsc.edu/xtal/iterm_tab_customization.html
+        # http://sage.ucsc.edu/xtal/iterm_tab_customization.html
 
-		# Put the string " [bash]   hostname::/full/directory/path"
-		# in the title bar using the command sequence
-		# \[\e]2;[bash]   \h::\]$PWD\[\a\]
+        # Put the string " [bash]   hostname::/full/directory/path"
+        # in the title bar using the command sequence
+        # \[\e]2;[bash]   \h::\]$PWD\[\a\]
 
-		# Put the penultimate and current directory
-		# in the iterm tab
-		# \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
+        # Put the penultimate and current directory
+        # in the iterm tab
+        # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
         ;;
     * ) 
         echo "Unknown OS [$OS]"
