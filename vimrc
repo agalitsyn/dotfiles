@@ -4,25 +4,30 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" Set syntax highlighting options.
+set t_Co=256
+set background=dark
 syntax on
-set nobackup		  " do not keep a backup file, use versions instead
+colorscheme agalitsyn
+
+set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
-set ruler		      " show the cursor position all the time
+set ruler			" show the cursor position all the time
 set showcmd		    " display incomplete commands
-set hlsearch      " Highlight searches
-set incsearch		  " do incremental searching
-set ignorecase    " Ignore case of searches.
+set hlsearch		" Highlight searches
+set incsearch		" do incremental searching
+set ignorecase		" Ignore case of searches.
 set autoindent		" Copy indent from last line when starting new line.
 set number		    " set line numbers
-set cursorline    " Highlight current line
-set esckeys       " Allow cursor keys in insert mode.
-set showmode      " Show the current mode.
-set ruler         " Show the cursor position
-set nowrap        " Do not wrap lines.
-set magic         " Enable extended regexes.
-set smartcase     " Ignore 'ignorecase' if search patter contains uppercase characters
-set title         " Show the filename in the window titlebar.
-set undofile      " Persistent Undo.
+set cursorline    	" Highlight current line
+set esckeys       	" Allow cursor keys in insert mode.
+set showmode      	" Show the current mode.
+set ruler         	" Show the cursor position
+set nowrap        	" Do not wrap lines.
+set magic         	" Enable extended regexes.
+set smartcase     	" Ignore 'ignorecase' if search patter contains uppercase characters
+set title         	" Show the filename in the window titlebar.
+set undofile      	" Persistent Undo.
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
