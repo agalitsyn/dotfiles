@@ -10,5 +10,5 @@ for FILE in *; do
     [ ! -f ~/.$FILE ] && ln -vsf $DIR/$FILE ~/.$FILE
 done
 
-source ~/.bashrc
+cd ~
 [ ! -d ~/bin ] && mkdir ~/bin
