@@ -12,13 +12,14 @@ colorscheme agalitsyn
 
 set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
-set ruler			" show the cursor position all the time
-set showcmd		    " display incomplete commands
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
 set hlsearch		" Highlight searches
 set incsearch		" do incremental searching
 set ignorecase		" Ignore case of searches.
 set autoindent		" Copy indent from last line when starting new line.
-set number		    " set line numbers
+set smartintend		" Know about functions end while intending
+set number		" set line numbers
 set cursorline    	" Highlight current line
 set esckeys       	" Allow cursor keys in insert mode.
 set showmode      	" Show the current mode.
