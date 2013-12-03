@@ -18,7 +18,7 @@ set hlsearch		" Highlight searches
 set incsearch		" do incremental searching
 set ignorecase		" Ignore case of searches.
 set autoindent		" Copy indent from last line when starting new line.
-set smartintend		" Know about functions end while intending
+set smartindent		" Know about functions end while intending
 set number		" set line numbers
 set cursorline    	" Highlight current line
 set esckeys       	" Allow cursor keys in insert mode.
