@@ -1,5 +1,4 @@
 #!/bin/bash
-
 which git > /dev/null || ( echo 'Please, install git first.' && exit )
 
 # Link new files and backup old
@@ -19,7 +18,7 @@ cd ~
 # https://github.com/rupa/z
 if [ ! -e "$HOME/bin/z" ]; then
     git clone https://github.com/rupa/z.git ~/bin/z
-	chmod +x ~/bin/z/z.sh
+    chmod +x ~/bin/z/z.sh
 	# z binary is already referenced from .bash_profile
 fi
 
