@@ -5,7 +5,7 @@ which git > /dev/null || ( echo 'Please, install git first.' && exit )
 DIR=$PWD/`dirname $0`
 cd `dirname $0`
 
-excluded=(install.sh README.md fonts.conf osx)
+excluded=(install.sh README.md fonts.conf osx ubuntu_packages)
 for FILE in *; do
 	if [[ ! ${excluded[*]} =~ "$FILE" ]]; then
 		[ -f ~/.$FILE -a ! -h ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.orig
