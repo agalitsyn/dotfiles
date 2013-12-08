@@ -1,7 +1,7 @@
 " Environment {
 
     " Basics {
-    	set nocompatible " Use Vim settings, rather than Vi settings (much better!)
+        set nocompatible " Use Vim settings, rather than Vi settings (much better!)
     " }
 
     " Setup Bundle Support {
@@ -21,18 +21,18 @@
 
 " General {
 
-	set t_Co=256 				" Xterm 256 colors
-	set background=dark 		" Assume a dark background
-	filetype plugin indent on 	" Automatically detect file types.
-	syntax on 					" Syntax highlighting
-	set mouse=a 				" Automatically enable mouse usage
-	set mousehide				" Hide the mouse cursor while typing
-	set encoding=utf-8 nobomb	" BOM often causes trouble
-	set hidden                  " Allow buffer switching without saving
-    set virtualedit=onemore     " Allow for cursor beyond last character
-    set history=1000            " Store a ton of history (default is 20)
-    " set spell                  " Spell checking on
-    " set autowrite              " Automatically write a file when leaving a modified buffer
+	set t_Co=256                   " Xterm 256 colors
+	set background=dark            " Assume a dark background
+	filetype plugin indent on      " Automatically detect file types.
+	syntax on                      " Syntax highlighting
+	set mouse=a                    " Automatically enable mouse usage
+	set mousehide                  " Hide the mouse cursor while typing
+	set encoding=utf-8 nobomb      " BOM often causes trouble
+	set hidden                     " Allow buffer switching without saving
+    set virtualedit=onemore        " Allow for cursor beyond last character
+    set history=1000               " Store a ton of history (default is 20)
+    " set spell                    " Spell checking on
+    " set autowrite                " Automatically write a file when leaving a modified buffer
 
     " Setting up the directories {
         set nobackup            " Do not keep a backup file, use versions instead.
@@ -40,6 +40,18 @@
             set undofile            " So is persistent undo ...
             set undolevels=1000     " Maximum number of changes that can be undone
             set undoreload=10000    " Maximum number lines to save for undo on a buffer reload
+        endif
+
+        if !isdirectory($HOME . '/.vim/backups')
+            call mkdir($HOME . '/.vim/backups', 'p')
+        endif
+
+        if !isdirectory($HOME . '/.vim/swaps')
+            call mkdir($HOME . '/.vim/swaps', 'p')
+        endif
+
+        if !isdirectory($HOME . '/.vim/undo')
+            call mkdir($HOME . '/.vim/undo', 'p')
         endif
 
         set backupdir=~/.vim/backups
@@ -80,7 +92,7 @@
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
 
-    " set backspace=indent,eol,star   " Allow backspacing over everything in insert mode
+    set bs=indent,eol,start         " Allow backspacing over everything in insert mode
     set linespace=0                 " No extra spaces between rows
     set nu                          " Line numbers on
     set showmatch                   " Show matching brackets/parenthesis
