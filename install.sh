@@ -19,7 +19,7 @@ cd ~
 if [ ! -e "$HOME/bin/z" ]; then
     git clone https://github.com/rupa/z.git ~/bin/z
     chmod +x ~/bin/z/z.sh
-	# z binary is already referenced from .bash_profile
+    # z binary is already referenced from .bash_profile
 fi
 
 # Vim

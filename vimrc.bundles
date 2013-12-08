@@ -1,12 +1,12 @@
 " Bundles {
 
     " Deps {
-		" let Vundle manage Vundle
-		Bundle 'gmarik/vundle'
+    	" let Vundle manage Vundle
+    	Bundle 'gmarik/vundle'
     " }
 
     " Original repos on GitHub {
-		" A dark vim color scheme for 256-color terminals
-		Bundle 'Lokaltog/vim-distinguished'
+    	" A dark vim color scheme for 256-color terminals
+    	Bundle 'Lokaltog/vim-distinguished'
     " }
 " }
