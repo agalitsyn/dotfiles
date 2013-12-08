@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/abaturin/ppcpl/trunk/WebGui/base/services/vh3'
-let g:netrw_dirhist_2='/home/abaturin/ppcpl/build/automation/build_boxes_lists'
-let g:netrw_dirhist_3='/home/abaturin/ppcpl/build-automation/build_boxes_lists'
-let g:netrw_dirhist_4='/etc/apache2/sites-enabled'
-let g:netrw_dirhist_5='/home/abaturin/1'
-let g:netrw_dirhist_6='/home/abaturin/confixx/sources/trunk/confixx'
-let g:netrw_dirhist_7='/home/abaturin/hsphere/1'
