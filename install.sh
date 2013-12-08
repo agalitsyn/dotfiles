@@ -5,11 +5,12 @@ which git > /dev/null || ( echo 'Please, install git first.' && exit )
 DIR=$PWD/`dirname $0`
 cd `dirname $0`
 
+excluded=(install.sh README.md fonts.conf osx)
 for FILE in *; do
-    [ "install.sh" = "$FILE" ] || [ "README.md" = "$FILE" ] || [ "fonts.conf" = "$FILE" ] && continue
-
-    [ -f ~/.$FILE -a ! -h ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.orig
-    [ ! -f ~/.$FILE ] && ln -vsf $DIR/$FILE ~/.$FILE
+	if [[ ! ${excluded[*]} =~ "$FILE" ]]; then
+		[ -f ~/.$FILE -a ! -h ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.orig
+    	[ ! -f ~/.$FILE ] && ln -vsf $DIR/$FILE ~/.$FILE
+	fi
 done
 
 cd ~
@@ -27,3 +28,7 @@ if [ ! -e "$HOME/.vim/bundle/vundle" ]; then
     git clone https://github.com/gmarik/vundle.git "$HOME/.vim/bundle/vundle"
     vim +BundleInstall +qall
 fi
+
+# for the c alias (syntax highlighted cat)
+# Python is required
+sudo easy_install Pygments
