@@ -11,12 +11,25 @@ unset file
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null
+done
+
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 export LC_CTYPE="en_US.UTF-8"
 
+# If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && . /etc/bash_completion
+
+# Load bash_extra 
 [ -f .bash_extra ] && . .bash_extra
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
