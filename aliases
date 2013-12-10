@@ -29,9 +29,11 @@ alias -- -="cd -"
 
 # Programs
 alias vi='vim'
+alias v='vim'
+alias g='git'
 alias less='less -Ri'
 alias rsync='rsync --exclude .svn'
-# ALways use chrome as mp3 and video player, pdf viewer, etc
+# Always use chrome as mp3 and video player, pdf viewer, etc
 alias gc="google-chrome --new-window"
 # `cat` with beautiful colors. requires Pygments installed.
 #  sudo easy_install Pygments
