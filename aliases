@@ -47,6 +47,7 @@ alias vhost='php ~/.vhost'
 alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'
 alias bashrc='$EDITOR ~/.bashrc && source ~/.bashrc'
+alias cal='ncal'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
