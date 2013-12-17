@@ -92,6 +92,12 @@
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
 
+    " Jump to the last position when reopening a file
+    if has("autocmd")
+         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+             \| exe "normal! g'\"" | endif
+    endif
+
     set bs=indent,eol,start         " Allow backspacing over everything in insert mode
     set linespace=0                 " No extra spaces between rows
     set nu                          " Line numbers on
@@ -149,11 +155,9 @@
     map <C-H> <C-W>h
     map <C-L> <C-W>l
 
-    " Sudo write (,W)
-    noremap <leader>W :w !sudo tee %<CR>
-
-    " Remap :W to :w
-    command W w
+    " Save with sudo
+    command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+    command Wq :execute ':silent w !sudo tee % > /dev/null' | :quit!
 
     " Insert newline
     map <leader><Enter> o<ESC>
