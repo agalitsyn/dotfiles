@@ -144,3 +144,4 @@ HOST;
 
 	file_put_contents("/etc/apache2/sites-available/$server_alias", $host_template);
 	echo "Apache config for this hostname created successfully! Don't forget to run sudo a2ensite $server_alias\n";
+	
