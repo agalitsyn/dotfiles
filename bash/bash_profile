@@ -26,8 +26,17 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 export LC_CTYPE="en_US.UTF-8"
 
-# If possible, add tab completion for many more commands
-[ -f /etc/bash_completion ] && . /etc/bash_completion
+# Autocompletion
+complete -d cd pushd rmdir;
+complete -u finger mail;
+complete -v set unset;
+[ -d ~/.bash/completion ] && for file in ~/.bash/completion/*; do
+    [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+# Git autocompletion
+[ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh;
 
 # Load bash_extra 
 [ -f .bash_extra ] && . .bash_extra
@@ -38,3 +47,7 @@ export LC_CTYPE="en_US.UTF-8"
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
+
+# Do not autocomplete when accidentally pressing Tab on an empty line. (It takes
+# forever and yields "Display all 15 gazillion possibilites?")
+shopt -s no_empty_cmd_completion;

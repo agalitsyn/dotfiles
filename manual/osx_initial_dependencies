@@ -13,3 +13,6 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 # https://github.com/isaacs/nave
 # needs npm, obviously.
 npm install -g nave
+
+# Shameless osx don't have git autocompletion
+curl -o ~/.git-prompt.sh https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh

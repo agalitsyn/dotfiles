@@ -49,6 +49,25 @@ function dataurl() {
     echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
+# Use PHP's built-in support to encode and decode base64.
+function base64() {
+    if [ $# -eq 0 ]; then
+         echo 'Usage: base64 [encode|decode] <string>';
+         return;
+    fi;
+    local action='decode';
+    if [ "$1" = 'decode' ]; then
+        action='decode';
+        shift;
+    elif [ "$1" = 'encode' ]; then
+        action='encode';
+        shift;
+    fi;
+    echo "$@" | php -r "echo base64_$action(file_get_contents('php://stdin'));";
+    echo;
+}
+
+
 # cd into whatever is the forefront Finder window.
 cdf() {  # short for cdfinder
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
@@ -135,4 +154,237 @@ function o() {
 # small enough for one screen.
 function tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
+}
+
+# Get the introductory paragraph from a Wikipedia article using the inimitable
+# David Leadbeater's Wikipedia-over-DNS service.
+#
+# See https://dgl.cx/wikipedia-dns
+function wp() {
+    query="$*";
+    domain="${query// /_}.wp.dg.cx";
+    answer="$(dig +short -t txt "$domain" | perl -p -e 's/\\([0-9]*)/chr($1)/eg')";
+    answer="${answer:1}";
+
+    while [ -n "$answer" ]; do
+        chunk_length=255;
+        [ "${#answer}" -lt 256 ] && chunk_length=$((${#answer} - 1));
+        text="${text}${answer:0:$chunk_length}";
+        answer="${answer:$(($chunk_length + 3))}";
+    done;
+
+    echo "$text";
+}
+
+# Show a unified diff, colourised if possible and paged if necessary.
+function udiff() {
+    if command -v colordiff > /dev/null; then
+        colordiff -wU4 "$@" | $PAGER;
+        return ${PIPESTATUS[0]};
+    elif command -v git > /dev/null && ! [[ " $* " =~ \ /dev/fd ]]; then
+        git diff --no-index "$@";
+        return $?;
+    fi;
+
+    diff -wU4 -x .svn "$@" | $PAGER;
+    return ${PIPESTATUS[0]};
+}
+
+# Sort the "du" output and use human-readable units.
+function duh() {
+    du -sk "$@" | sort -n | while read size fname; do
+        for unit in KiB MiB GiB TiB PiB EiB ZiB YiB; do
+            if [ "$size" -lt 1024 ]; then
+                echo -e "${size} ${unit}\t${fname}";
+                break;
+            fi;
+            size=$((size/1024));
+        done;
+    done;
+}
+
+# Edit the files found with the previous "ack" command using Vim (or the
+# default editor).
+function vack() {
+    local cmd='';
+    if [ $# -eq 0 ]; then
+        cmd="$(fc -nl -1)";
+        cmd="${cmd:2}";
+    else
+        cmd='ack';
+        for x; do
+            cmd="$cmd $(printf '%q' "$x")";
+        done;
+        echo "$cmd";
+    fi;
+    if [ "${cmd:0:4}" != 'ack ' ]; then
+        $cmd;
+        return $?;
+    fi;
+    declare -a files;
+    while read -r file; do
+        echo "$file";
+        files+=("$file");
+    done < <(bash -c "${cmd/ack/ack -l}");
+    vim -p "${files[@]}";
+}
+
+# Convert the parameters or STDIN to lowercase.
+function lc() {
+    if [ $# -eq 0 ]; then
+        tr '[:upper:]' '[:lower:]';
+    else
+        tr '[:upper:]' '[:lower:]' <<< "$@";
+    fi;
+}
+
+# Convert the parameters or STDIN to uppercase.
+function uc() {
+    if [ $# -eq 0 ]; then
+        tr '[:lower:]' '[:upper:]';
+    else
+        tr '[:lower:]' '[:upper:]' <<< "$@";
+    fi;
+}
+
+# Try to make sense of the date. It supports everything GNU date knows how to
+# parse, as well as UNIX timestamps. It formats the given date using the
+# default GNU date format, which you can override using "--format='%x %y %z'.
+#
+# Examples of input and output:
+#
+#   $ whenis 1234567890            # UNIX timestamps
+#   Sat Feb 14 00:31:30 CET 2009
+#
+#   $ whenis +1 year -3 months     # relative dates
+#   Fri Jul 20 21:51:27 CEST 2012
+#
+#   $ whenis 2011-10-09 08:07:06   # MySQL DATETIME strings
+#   Sun Oct  9 08:07:06 CEST 2011
+#
+#   $ whenis 1979-10-14T12:00:00.001-04:00 # HTML5 global date and time
+#   Sun Oct 14 17:00:00 CET 1979
+#
+#   $ TZ=America/Vancouver whenis # Current time in Vancouver
+#   Thu Oct 20 13:04:20 PDT 2011
+#
+# For more info, check out http://kak.be/gnudateformats.
+function whenis() {
+    local error='Unable to parse that using http://kak.be/gnudateformats';
+
+    # Default GNU date format as seen in date.c from GNU coreutils.
+    local format='%a %b %e %H:%M:%S %Z %Y';
+    if [[ "$1" =~ ^--format= ]]; then
+        format="${1#--format=}";
+        shift;
+    fi;
+
+    # Concatenate all arguments as one string specifying the date.
+    local date="$*";
+    if [[ "$date"  =~ ^[[:space:]]*$ ]]; then
+        date='now';
+    elif [[ "$date"  =~ ^[0-9]{13}$ ]]; then
+        # Cut the microseconds part.
+        date="${date:0:10}";
+    fi;
+
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
+        # Use PHP on OS X, where "date" is not GNU's.
+        php -r '
+            error_reporting(-1);
+            $format = $_SERVER["argv"][1];
+            $date = $_SERVER["argv"][2];
+            if (!is_numeric($date)) {
+                $date = strtotime($date);
+                if ($date === false) {
+                    fputs(STDERR, $_SERVER["argv"][3] . PHP_EOL);
+                    exit(1);
+                }
+            }
+            echo strftime($format, $date), PHP_EOL;
+        ' -- "$format" "$date" "$error";
+    else
+        # Use GNU date in all other situations.
+        [[ "$date" =~ ^[0-9]+$ ]] && date="@$date";
+        date -d "$date" +"$format";
+    fi;
+}
+
+# Do a mysqldump via ssh and store it in a local timestamped file. This
+# function assumes proper setup in your local ~/.ssh/config and the remote
+# ~/.my.cnf.
+function ssh-mysqldump() {
+    local timestamp="$(date +'%Y%m%d-%H%M%S')";
+    if [ -z "$1" -o "$1" = '--help' ]; then
+        local filename="$timestamp-ssh_host-database_name.sql";
+        echo "Usage: ${FUNCNAME[0]} ssh_host [database_name]";
+        echo "This will create a file called $filename in this directory.";
+
+        # Do not return an error when the user explicitly requested help.
+        [ "$1" = '--help' ];
+        return $?;
+    fi >&2;
+
+    # Determine the host and the database, with the database name defaulting
+    # to the host name (or SSH config alias).
+    local host="$1";
+    local database="$host";
+    shift;
+    if (($#)) && [ "${1:0:1}" != '-' ]; then
+        database="$1";
+        shift;
+    fi;
+
+    # I prefer one INSERT statement per record, so by default, disable the
+    # extended INSERT syntax. Unless there is an explicit option in the
+    # arguments.
+    local has_extended_insert_option=false;
+
+    # By default, do not lock the tables while dumping. This is slightly less
+    # accurate, but locking tables used in production can wreak havoc. Prefer
+    # uptime to correctness.
+    local has_lock_all_tables_option=false;
+    local has_lock_tables_option=false;
+
+    local arg opts=() args=();
+    for arg; do
+        # Escape the meta-characters in the arguments so they are safe for
+        # the remote shell.
+        if [ "${arg:0:1}" = '-' ]; then
+            opts+=("$(printf '%q' "$arg")");
+        else
+            args+=("$(printf '%q' "$arg")");
+        fi;
+
+        # See if our default options are overridden.
+        if [[ "$arg" =~ ^--(skip-)?extended-insert$ ]]; then
+            has_extended_insert_option=true;
+        elif [[ "$arg" =~ ^--(skip-)?lock-all-tables$ ]]; then
+            has_lock_all_tables_option=true;
+        elif [[ "$arg" =~ ^--(skip-)?lock-tables$ ]]; then
+            has_lock_tables_option=true;
+        fi;
+    done;
+    $has_extended_insert_option || opts+=('--skip-extended-insert');
+    $has_lock_all_tables_option || opts+=('--skip-lock-all-tables');
+    $has_lock_tables_option || opts+=('--skip-lock-tables');
+    local filename="$timestamp-${host//\//-}-${database//\//-}.sql";
+
+    # Finally, run the remote mysqldump and store the result locally.
+    # If you want compression, set it in your ~/.ssh/config. I quote the man
+    # page: "[ Compression ] will only slow down things on fast networks."
+    if [ -t 1 ]; then
+        ssh -- "$host" mysqldump "${opts[@]}" "$database" "${args[@]}" > "$filename";
+    else
+        echo "Stdout is not a terminal, so I won't save to $filename." >&2;
+        ssh -- "$host" mysqldump "${opts[@]}" "${args[@]}" "$database";
+    fi;
+    local result=$?;
+
+    if [ -s "$filename" ]; then
+        ls -dalF "$filename";
+    else
+        rm -f "$filename";
+    fi;
+    return $result;
 }

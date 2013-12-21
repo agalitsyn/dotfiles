@@ -27,6 +27,17 @@ alias .....="cd ../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
+# Confirm before overwriting
+# -----------------------------------------------------------------------------
+# I know it is bad practice to override the default commands, but this is for
+# safety. If you really want the original "instakill" versions, you can
+# use "command rm", "\rm", or "/bin/rm" inside your own commands, aliases, or
+# shell functions. Note that separate scripts are not affected by the aliases
+# defined here.
+alias cp='cp -i';
+alias mv='mv -i';
+alias rm='rm -i';
+
 # Programs
 alias vi='vim'
 alias v='vim'
@@ -42,6 +53,12 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 # Tools
 alias pswd-gen='php ~/.pswd-gen'
 alias vhost='php ~/.vhost'
+
+# Enable simple aliases to be sudo'ed. ("sudone"?)
+# http://www.gnu.org/software/bash/manual/bashref.html#Aliases says: "If the
+# last character of the alias value is a space or tab character, then the next
+# command word following the alias is also checked for alias expansion."
+alias sudo='sudo ';
 
 # Handy stuff
 alias please=sudo
@@ -86,3 +103,13 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
+# Clipboard access. I created these aliases to have the same command on
+# Cygwin, Linux and OS X.
+if command -v pbpaste >/dev/null; then
+    alias getclip='pbpaste';
+    alias putclip='pbcopy';
+elif command -v xclip >/dev/null; then
+    alias getclip='xclip --out';
+    alias putclip='xclip --in';
+fi;
