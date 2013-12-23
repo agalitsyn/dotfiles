@@ -39,6 +39,10 @@ if [ ! -e "$HOME/.vim/bundle/vundle" ]; then
     vim +BundleInstall +qall
 fi
 
+# https://github.com/jamiew/git-friendly
+# the `push` command which copies the github compare URL to clipboard
+sudo bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
+
 # for the c alias (syntax highlighted cat)
 # Python is required
 sudo easy_install Pygments
