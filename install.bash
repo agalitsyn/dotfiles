@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 which git > /dev/null || ( echo 'Git not found.' && exit )
 which easy_install > /dev/null || ( echo 'easy_install not found (install python-setuptools).' && exit )
 

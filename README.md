@@ -38,4 +38,5 @@ Check out [OSXDefaults repo](https://github.com/kevinSuttle/OSXDefaults).
 [@cowboy](https://github.com/cowboy/dotfiles)
 [@paulirish](https://github.com/paulirish/dotfiles)
 [@r00k](https://github.com/r00k/dotfiles)
+[@janmoesen](https://github.com/janmoesen/tilde)
 [@spf13](https://github.com/spf13/spf13-vim)
