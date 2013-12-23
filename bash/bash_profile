@@ -30,12 +30,18 @@ export LC_CTYPE="en_US.UTF-8"
 complete -d cd pushd rmdir;
 complete -u finger mail;
 complete -v set unset;
+
+# Enable bash autocompletion
+[ -f /etc/bash_completion ] && . /etc/bash_completion
+
+# Enable custom autocompletion
 [ -d ~/.bash/completion ] && for file in ~/.bash/completion/*; do
     [ -f "$file" ] && source "$file";
 done;
 unset file;
 
 # Git stuff
+# @todo: move to ~/.bash/completion/git
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash;
 [ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh;
 
