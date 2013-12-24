@@ -27,6 +27,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
+# Handy make directory
+alias mkdir='mkdir -pv'
+
 # Confirm before overwriting
 # -----------------------------------------------------------------------------
 # I know it is bad practice to override the default commands, but this is for

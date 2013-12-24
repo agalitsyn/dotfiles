@@ -29,7 +29,7 @@ export GREP_OPTIONS="--color=auto"
 export LESS="--RAW-CONTROL-CHARS"
 
 # Pygmentize less output
-# export LESSOPEN='|~/.lessfilter %s'
+export LESSOPEN='|~/.lessfilter %s'
 
 # Use colors for less, man, etc.
 # Probably I should use [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
