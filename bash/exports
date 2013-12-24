@@ -32,7 +32,7 @@ export LESS="--RAW-CONTROL-CHARS"
 # export LESSOPEN='|~/.lessfilter %s'
 
 # Use colors for less, man, etc.
-# Probably I should u se [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
+# Probably I should use [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
 export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
 export LESS_TERMCAP_me=$(tput sgr0)
