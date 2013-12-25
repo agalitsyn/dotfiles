@@ -34,3 +34,6 @@ brew install htop
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# Fix htop permissions
+find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
