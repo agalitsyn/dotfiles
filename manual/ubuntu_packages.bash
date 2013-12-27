@@ -38,7 +38,8 @@ apt-get install -y virtualbox virtualbox-guest-additions
 apt-get install -y ttf-mscorefonts ttf-droid
 
 # Remote desktop
-apt-get install -y xrdp
+apt-get install -y xrdp vnc4server
+echo "gnome-session --session=ubuntu-2d" > ~/.xsession
 
 # Windows shared
 apt-get install -y samba cifs cifs-utils
@@ -48,3 +49,4 @@ apt-get install -y libnotify-bin
 
 # Additional downloads
 echo "Don't forget to install skype oracle-java phpsh chrome shutter remmina-remote-desktop"
+echo "Restart computer for taking all changes"
