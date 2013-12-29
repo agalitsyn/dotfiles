@@ -31,6 +31,7 @@ brew install rename
 brew install tree
 brew install mc
 brew install htop
+brew install ngrep
 
 # Remove outdated versions from the cellar
 brew cleanup

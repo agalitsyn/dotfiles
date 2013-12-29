@@ -57,7 +57,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 alias pswd-gen='php ~/.pswd-gen'
 alias vhost='php ~/.vhost'
 
-# Enable simple aliases to be sudo'ed. ("sudone"?)
+# Enable simple aliases to be sudo'ed.
 # http://www.gnu.org/software/bash/manual/bashref.html#Aliases says: "If the
 # last character of the alias value is a space or tab character, then the next
 # command word following the alias is also checked for alias expansion."
@@ -69,17 +69,26 @@ alias hosts='sudo $EDITOR /etc/hosts'
 alias bashrc='$EDITOR ~/.bashrc && source ~/.bashrc'
 alias cal='ncal'
 
+# Stupid way to check network interface
+if /sbin/ifconfig eth0 > /dev/null 2>&1; then
+    # Ubuntu
+    ninterface='eth0'
+else
+    # Osx
+    ninterface='en1'
+fi
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr ${ninterface}"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias sniff="sudo ngrep -d '${ninterface}' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i ${ninterface} -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked
 type -t hd > /dev/null || alias hd="hexdump -C"
@@ -97,9 +106,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias fs="stat -f \"%z bytes\""
 
 #File path 
-if readlink -f > /dev/null 2>&1; then # GNU `readlink`
-	alias fp="readlink -f $0"
-fi
+alias fp="readlink -f $0"
 
 # ROT13-encode/decode text.
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
@@ -109,10 +116,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Clipboard access. I created these aliases to have the same command on
 # Cygwin, Linux and OS X.
-if command -v pbpaste >/dev/null; then
+if command -v pbpaste > /dev/null; then
     alias getclip='pbpaste';
     alias putclip='pbcopy';
-elif command -v xclip >/dev/null; then
+elif command -v xclip > /dev/null; then
     alias getclip='xclip --out';
     alias putclip='xclip --in';
 fi;
