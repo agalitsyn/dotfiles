@@ -10,8 +10,8 @@ apt-get upgrade -y
 # Essential
 apt-get install -y subversion git vim ctags mc htop smartmontools rar unrar ssh tree ack curl wget python-setuptools nfs-common
 
-# Specific for ubuntu
-apt-get install -y dconf-editor compizconfig-settings-manager
+# Ubuntu tweakers
+apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager
 
 # Terminal
 apt-get install -y terminator
