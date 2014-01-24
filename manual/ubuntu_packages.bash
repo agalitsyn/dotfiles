@@ -10,6 +10,12 @@ apt-get upgrade -y
 # Essential
 apt-get install -y subversion git vim ctags mc htop smartmontools rar unrar ssh tree ack curl wget python-setuptools nfs-common
 
+# Gnome 2
+apt-get install -y gnome-session-fallback
+
+# Gnome 2 fix for skype
+apt-get install -y sni-qt:i386
+
 # Ubuntu tweakers
 apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager
 
