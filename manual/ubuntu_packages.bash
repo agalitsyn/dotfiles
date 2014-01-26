@@ -45,7 +45,8 @@ apt-get install -y ttf-mscorefonts ttf-droid
 
 # Remote desktop
 apt-get install -y xrdp vnc4server
-echo "gnome-session --session=ubuntu-2d" > ~/.xsession
+#echo "gnome-session --session=ubuntu-2d" > ~/.xsession
+echo "gnome-session --session=gnome-fallback" > ~/.xsession
 
 # Windows shared
 apt-get install -y samba cifs cifs-utils
