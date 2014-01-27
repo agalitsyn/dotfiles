@@ -21,7 +21,6 @@ link 'bash'
 link 'vim'
 link 'git'
 link 'rc'
-link 'tools'
 
 cd $HOME
 [ ! -d $HOME/bin ] && mkdir $HOME/bin
