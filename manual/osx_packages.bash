@@ -32,6 +32,7 @@ brew install tree
 brew install mc
 brew install htop
 brew install ngrep
+brew install ranger libcaca highlight atool poppler mediainfo transmission lynx
 
 # Remove outdated versions from the cellar
 brew cleanup
