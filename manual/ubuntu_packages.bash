@@ -22,6 +22,9 @@ apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-m
 # Terminal
 apt-get install -y terminator
 
+# Ranger
+apt-get ranger caca-utils highlight atool w3m poppler-utils mediainfo
+
 # Java
 apt-get install -y openjdk-7-jre
 
@@ -44,7 +47,7 @@ apt-get install -y virtualbox virtualbox-guest-additions
 apt-get install -y ttf-mscorefonts ttf-droid
 
 # Remote desktop
-apt-get install -y xrdp vnc4server
+apt-get install -y xrdp vnc4server vino
 #echo "gnome-session --session=ubuntu-2d" > ~/.xsession
 echo "gnome-session --session=gnome-fallback" > ~/.xsession
 
