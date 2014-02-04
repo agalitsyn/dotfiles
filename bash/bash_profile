@@ -58,3 +58,5 @@ complete -W "NSGlobalDomain" defaults
 # Do not autocomplete when accidentally pressing Tab on an empty line. (It takes
 # forever and yields "Display all 15 gazillion possibilites?")
 shopt -s no_empty_cmd_completion;
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

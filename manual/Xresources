@@ -1,0 +1,25 @@
+! xterm ---------------------------------------------------------------------- 
+
+! Env
+xterm*termName: xterm-256color
+! UTF-8
+XTerm*locale: true
+! Fix the 'Alt' key
+XTerm*metaSendsEscape: true
+! Save more lines
+Xterm*saveLines: 4096
+! White text on black
+xterm*background: black
+xterm*foreground: white
+! Remove black border
+xterm*borderWidth: 0
+! Font
+xterm*faceName: Terminus:style=Regular:size=10
+! Scroll
+xterm*scrollKey: true
+xterm*scrollTtyOutput: false
+xterm*scrollBar: true
+xterm*rightScrollBar: true
+xterm*jumpScroll: true
+xterm*multiScroll: true
+
