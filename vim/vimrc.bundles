@@ -6,8 +6,8 @@
     " }
 
     " Original repos on GitHub {
-    	" A dark vim color scheme for 256-color terminals
-    	Bundle 'Lokaltog/vim-distinguished'
+    	"Bundle 'Lokaltog/vim-distinguished'
+        Bundle 'nanotech/jellybeans.vim'
 
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
