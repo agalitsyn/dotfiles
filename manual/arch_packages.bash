@@ -19,7 +19,7 @@ pacman -S --noconfirm xorg-server xorg-server-utils xorg-xinit mesa xorg-twm xor
 # lspci | grep VGA
 # pacman -Ss xf86-video | less
 
-pacman -S --noconfirm awesome archlinux-wallpapper
+pacman -S --noconfirm awesome archlinux-wallpapper lxappearance
 pacman -S --noconfirm ttf-droid ttf-dejavu terminus-font ttf-ubuntu-font-family
 pacman -S --noconfirm subversion htop tree wget tmux python-setuptools archey3 imagemagick smartmontools unrar fakeroot binutils make gcc ncurses
 pacman -S --noconfirm gvfs udisks2
