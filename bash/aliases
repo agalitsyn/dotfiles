@@ -42,6 +42,7 @@ alias mv='mv -i';
 alias rm='rm -i';
 
 # Programs
+alias vim="stty stop '' -ixoff ; vim" # keep all my configs when run as root
 alias vi='vim'
 alias v='vim'
 alias g='git'

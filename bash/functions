@@ -394,3 +394,11 @@ function pswdgen() {
     < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${6:-16}; echo;
 }
 
+# Allows saving with ctrl-s in vim
+function vim() {
+    local STTYOPTS="$(stty --save)"
+    stty stop '' -ixoff
+    command vim "$@"
+    stty "$STTYOPTS"
+}
+
