@@ -44,7 +44,6 @@ end
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/agalitsyn/.config/awesome/themes/zenburn-fork/theme.lua")
 
--- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
@@ -54,9 +53,10 @@ chrome = "google-chrome"
 claws = "claws-mail"
 skype = "skype"
 phpstorm = "phpstorm"
+appearance = "lxappearance"
 
--- Default modkey.
 modkey = "Mod4"
+altkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -68,11 +68,11 @@ layouts =
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    -- awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    --awful.layout.suit.max.fullscreen,
+    --awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -80,13 +80,14 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "main»", "dev»", "term»", "mail»", 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ "main»", "dev»", "term»", "mail»", "misc»", "6»", "7»", "8»", "9»" }, s, layouts[1])
 end
 -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
+   { "appearance", appearance },
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart }
@@ -303,7 +304,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-    awful.key({ "Mod1",           }, "Tab",
+    awful.key({ altkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
@@ -326,7 +327,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Screen lock
-    awful.key({ "Mod1", "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ altkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
     
     -- Keyboard layout
     --awful.key({ "Mod1",           }, "Shift_L", function () kbdcfg.switch() end),
@@ -429,6 +430,9 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { class = "shutter" },
+      properties = { floating = true } },
+
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
