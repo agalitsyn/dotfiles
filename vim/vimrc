@@ -135,7 +135,8 @@
 
     set bs=indent,eol,start         " Allow backspacing over everything in insert mode
     set linespace=0                 " No extra spaces between rows
-    set relativenumber              " Line numbers on
+    set relativenumber              " Mix relative and absolute numbers
+    set number
     set showmatch                   " Show matching brackets/parenthesis
     set incsearch                   " Find as you type search
     set hlsearch                    " Highlight search terms

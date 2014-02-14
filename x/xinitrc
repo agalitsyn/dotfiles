@@ -3,7 +3,7 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
 
 xrandr --output VGA-0 --mode 1920x1080 --right-of DVI-0 &
-setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll,caps:none us,ru &
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:none us,ru &
 
 xscreensaver -no-splash &
 numlockx &
