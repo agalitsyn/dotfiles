@@ -391,7 +391,7 @@ function ssh-mysqldump() {
 
 # Generate random password
 function pswdgen() {
-    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${6:-16}; echo;
+    < /dev/urandom tr -dc A-Za-z0-9 | head -c${6:-16}; echo;
 }
 
 # Allows saving with ctrl-s in vim
