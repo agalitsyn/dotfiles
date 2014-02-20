@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Probably vim, git ane sudo is already installed.
+# Probably vim, git and sudo is already installed.
 
 # Ask for the administrator password upfront.
 sudo -v
@@ -33,4 +33,3 @@ pacman -S --noconfirm claws-mail
 pacman -S --noconfirm pcmanfm
 pacman -S --noconfirm vlc
 pacman -S --noconfirm libreoffice
-
