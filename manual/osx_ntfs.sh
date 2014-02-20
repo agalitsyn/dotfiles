@@ -5,7 +5,7 @@ checkExisting(){
 echo "Checking if already existing device on file..."
 
 while read fileLine; do
-    
+
     if [ "$line" = "$fileLine" ]; then
     	echo "[WARNING] Device already initialized on this system. Nothing to do here"
     	open $FILENAME
@@ -18,7 +18,7 @@ done < /etc/fstab
 addLine(){
 	uuid=$(diskutil info $FILENAME | grep UUID | cut -d ':' -f2 | tr -d ' ')
 	volumeName=$(diskutil info $FILENAME | grep "Volume Name" | cut -d ':' -f2 | tr -d ' ')
-	
+
 	if [ "$uuid" = "" ]; then
 		line="LABEL=$volumeName none ntfs rw,auto,nobrowse";
 	else
@@ -54,7 +54,7 @@ fi
 echo "___________________________________"
 echo "RubeniumTB. 2013 --rubenium(at)hotmail.com--"
 echo ""
-echo "Initialize a NTFS Hard Disk on this system to read and write" 
+echo "Initialize a NTFS Hard Disk on this system to read and write"
 echo "Next time you won't need to initialize it again. Just plug and open"
 echo ""
 echo "* Configured disks will not be auto-opened!!"
@@ -64,7 +64,7 @@ echo ""
 echo "* Although it should not happen anything wrong, use at your own risk"
 echo ""
 echo "* IMPORTANT!!. Be sure that the NTFS device has been safely removed or it won't"
-echo "be mounted in write mode. In this case you can connect it again to any windows PC," 
+echo "be mounted in write mode. In this case you can connect it again to any windows PC,"
 echo "remove safely, and then connect to your MAC"
 echo ""
 echo "Now you are ready...."
@@ -74,7 +74,7 @@ echo ""
 
 select FILENAME in "/Volumes"/*
 do
-     
+
      case $FILENAME in
         "$QUIT")
           echo "Exiting."

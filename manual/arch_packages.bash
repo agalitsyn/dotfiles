@@ -3,7 +3,7 @@
 # Probably vim, git ane sudo is already installed.
 
 # Ask for the administrator password upfront.
-sudo -v 
+sudo -v
 
 pacman-key --init
 pacman-key --populate archlinux
@@ -15,7 +15,7 @@ updatedb
 alsamixter --unmute
 
 pacman -S --noconfirm xorg-server xorg-server-utils xorg-xinit mesa xorg-twm xorg-xclock xterm xclip xscreensaver-arch-logo numlockx xdm-archlinux
-# Need to install video driver 
+# Need to install video driver
 # lspci | grep VGA
 # pacman -Ss xf86-video | less
 
