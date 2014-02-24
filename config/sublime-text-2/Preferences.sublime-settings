@@ -1,0 +1,21 @@
+{
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
+
+	"ignored_packages":
+	[
+		"Vintage",
+		"JSHint"
+	],
+
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+
+	"save_on_focus_lost": true,
+
+	"indent_to_bracket": true,
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"use_tab_stops": true
+}
