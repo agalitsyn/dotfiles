@@ -47,13 +47,6 @@ beautiful.init("/home/agalitsyn/.config/awesome/themes/zenburn-fork/theme.lua")
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-pcmanfm = "pcmanfm"
-firefox = "firefox"
-chrome = "google-chrome"
-claws = "claws-mail"
-skype = "skype"
-phpstorm = "phpstorm"
-appearance = "lxappearance"
 
 modkey = "Mod4"
 altkey = "Mod1"
@@ -66,11 +59,11 @@ layouts =
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    --awful.layout.suit.fair,
+    --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+    --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier
 }
@@ -80,7 +73,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "main»", "dev»", "term»", "mail»", "misc»", "6»", "7»", "8»", "9»" }, s, layouts[1])
+    tags[s] = awful.tag({ "main»", "dev»", "term»", "mail»", "misc»" }, s, layouts[1])
 end
 -- }}}
 
@@ -96,13 +89,13 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "PCmanFM", pcmanfm },
+                                    { "PCmanFM","pcmanfm" },
                                     { "Terminal", terminal },
-                                    { "Firefox", firefox },
-                                    { "Chrome", chrome },
-                                    { "Claws", claws },
-                                    { "Skype", skype },
-                                    { "PhpStorm", phpstorm }
+                                    { "Firefox", "firefox" },
+                                    { "Chrome", "google-chrome" },
+                                    { "Claws", "claws-mail" },
+                                    { "Skype", "skype" },
+                                    { "PhpStorm", "phpstorm" }
                                   }
                         })
 
