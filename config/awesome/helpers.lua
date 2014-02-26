@@ -9,7 +9,7 @@ function run_once(prg,arg_string,pname,screen)
 		pname = prg
 	end
 
-	if not arg_string then 
+	if not arg_string then
 		awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. ")",screen)
 	else
 		awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)
