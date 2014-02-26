@@ -1,0 +1,6 @@
+# Ignore sublime project
+*.sublime-project
+*.sublime-workspace
+
+# Ignore rc.lua, because it should be a symlink or copy
+rc.lua
