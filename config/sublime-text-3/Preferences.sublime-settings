@@ -15,33 +15,6 @@
 	[
 		"Vintage"
 	],
-	"installed_packages":
-	[
-		"Package Control",
-		"AdvancedNewFile",
-		"ApacheConf.tmLanguage",
-		"BracketHighlighter",
-		"DocBlockr",
-		"Dotfiles Syntax Highlighting",
-		"EditorConfig",
-		"Emmet",
-		"LiveReload",
-		"Function Name Display",
-		"Git",
-		"Goto Documentation",
-		"PHP Companion",
-		"PHPUnit",
-		"PyV8",
-		"SideBarEnhancements",
-		"SublimeLinter-annotations",
-		"SublimeLinter-csslint",
-		"SublimeLinter-html-tidy",
-		"SublimeLinter-jshint",
-		"SublimeLinter-json",
-		"Theme - Soda",
-		"Tomorrow Color Schemes",
-		"Xdebug Client"
-	],
 
 	"indent_guide_options":
 	[
