@@ -7,7 +7,7 @@ XTerm*locale: true
 ! Fix the 'Alt' key
 XTerm*metaSendsEscape: true
 ! Save more lines
-Xterm*saveLines: 4096
+Xterm*saveLines: 8192
 ! White text on black
 xterm*background: black
 xterm*foreground: white
