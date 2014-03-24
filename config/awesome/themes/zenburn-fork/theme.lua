@@ -12,7 +12,7 @@ theme.wallpaper_cmd = { "awsetbg " .. theme_path .. "/wallpaper.jpg" }
 -- }}}
 
 -- {{{ Styles
-theme.font      = "terminus 10"
+theme.font      = "terminus 12"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
