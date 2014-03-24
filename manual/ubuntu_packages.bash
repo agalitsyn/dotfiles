@@ -16,6 +16,9 @@ apt-get install -y gnome-session-fallback
 # Gnome 2 fix for skype
 apt-get install -y sni-qt:i386
 
+# Add ability to use gtk+ theme in skypev
+apt-get install -y ia32-libs
+
 # Ubuntu tweakers
 apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager
 

@@ -52,3 +52,6 @@ export SUDO_PROMPT='[sudo] password for %u on %h: ';
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
+
+# Fix for skype theme
+export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
