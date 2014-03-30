@@ -40,6 +40,11 @@ complete -v set unset;
 done;
 unset file;
 
+# Completions from homebrew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
 # Git stuff
 # @todo: move to ~/.bash/completion/git
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash;
