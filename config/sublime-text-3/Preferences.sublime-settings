@@ -1,36 +1,59 @@
 {
-	"theme": "Soda Dark 3.sublime-theme",
-	"soda_folder_icons": true,
+    // Colors
+    "theme": "Soda Dark 3.sublime-theme",
+    "soda_folder_icons": true,
+    "color_scheme": "Packages/User/Tomorrow-Night (SL).tmTheme",
 
-	"color_scheme": "Packages/User/Tomorrow-Night (SL).tmTheme",
+    // Font
+    "font_face": "Ubuntu Mono",
+    "font_options": ["subpixel_antialias", "no_bold"],
+    "font_size": 15,
 
-	"font_size": 12,
-	"font_face": "Droid Sans Mono",
-	"font_options":
-	[
-		"subpixel_antialias"
-	],
+    // Cursor style - slightly wider than default
+    "caret_style": "smooth",
+    "wide_caret": true,
 
-	"ignored_packages":
-	[
-		"Vintage"
-	],
+    "ignored_packages": ["Vintage"],
 
-	"indent_guide_options":
-	[
-		"draw_active"
-	],
+    // Editor view look-and-feel
+    "draw_white_space": "all",
+    "highlight_line": true,
+    "show_full_path": true,
+    "indent_guide_options": ["draw_active"],
 
-	"indent_to_bracket": true,
+    // Editor behavior
+    "scroll_past_end": false,
+    "highlight_modified_tabs": true,
+    "find_selected_text": true,
 
-	"rulers":
-	[
-		120
-	],
+    // Word wrapping - follow PEP 8 recommendations
+    "word_wrap": true,
+    "wrap_width": 80,
+    "rulers": [ 80, 120],
 
-	"save_on_focus_lost": true,
-	"translate_tabs_to_spaces": true,
-	"trim_automatic_white_space": true,
-	"trim_trailing_white_space_on_save": true,
-	"use_tab_stops": true
+    "indent_to_bracket": true,
+    "save_on_focus_lost": true,
+
+    // Whitespace - no tabs, trimming, end files with \n
+    "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": true,
+    "trim_trailing_white_space_on_save": true,
+    "use_tab_stops": true,
+    "tab_size": 4,
+    "ensure_newline_at_eof_on_save": true,
+
+    // Sidebar - exclude distracting files and folders
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "*.pid",
+        "*.pyc"
+    ],
+    "folder_exclude_patterns":
+    [
+        ".git",
+        "__pycache__",
+        "env",
+        "env3"
+    ]
 }

@@ -1,12 +1,12 @@
 " Bundles {
 
     " Deps {
-    	" let Vundle manage Vundle
-    	Bundle 'gmarik/vundle'
+        " let Vundle manage Vundle
+        Bundle 'gmarik/vundle'
     " }
 
     " Original repos on GitHub {
-    	"Bundle 'Lokaltog/vim-distinguished'
+        "Bundle 'Lokaltog/vim-distinguished'
         Bundle 'nanotech/jellybeans.vim'
 
         Bundle 'scrooloose/nerdcommenter'

@@ -7,43 +7,43 @@ echo "Checking if already existing device on file..."
 while read fileLine; do
 
     if [ "$line" = "$fileLine" ]; then
-    	echo "[WARNING] Device already initialized on this system. Nothing to do here"
-    	open $FILENAME
-    	exit 0;
+        echo "[WARNING] Device already initialized on this system. Nothing to do here"
+        open $FILENAME
+        exit 0;
     fi
 done < /etc/fstab
 
 }
 
 addLine(){
-	uuid=$(diskutil info $FILENAME | grep UUID | cut -d ':' -f2 | tr -d ' ')
-	volumeName=$(diskutil info $FILENAME | grep "Volume Name" | cut -d ':' -f2 | tr -d ' ')
+    uuid=$(diskutil info $FILENAME | grep UUID | cut -d ':' -f2 | tr -d ' ')
+    volumeName=$(diskutil info $FILENAME | grep "Volume Name" | cut -d ':' -f2 | tr -d ' ')
 
-	if [ "$uuid" = "" ]; then
-		line="LABEL=$volumeName none ntfs rw,auto,nobrowse";
-	else
-		line="UUID=$uuid none ntfs rw,auto,nobrowse";
-	fi
+    if [ "$uuid" = "" ]; then
+        line="LABEL=$volumeName none ntfs rw,auto,nobrowse";
+    else
+        line="UUID=$uuid none ntfs rw,auto,nobrowse";
+    fi
 
-	checkExisting;
-	echo "# New NTFS HD: $volumeName on $(date) " >> /etc/fstab
-	echo $line >> /etc/fstab
-	device=$(diskutil info $FILENAME | grep "Device Node" | cut -d ':' -f2 | tr -d ' ')
-	diskutil unmount $FILENAME
-	diskutil mount $device
-	open $FILENAME;
-	exit 0;
+    checkExisting;
+    echo "# New NTFS HD: $volumeName on $(date) " >> /etc/fstab
+    echo $line >> /etc/fstab
+    device=$(diskutil info $FILENAME | grep "Device Node" | cut -d ':' -f2 | tr -d ' ')
+    diskutil unmount $FILENAME
+    diskutil mount $device
+    open $FILENAME;
+    exit 0;
 }
 checkDisk(){
-	filetype=$(diskutil info $FILENAME | grep "Type (Bundle):" | cut -d ':' -f2 | tr -d ' ')
-	#echo $filetype
-	if [ "$filetype" = "ntfs" ]; then
-		addLine;
-	fi
+    filetype=$(diskutil info $FILENAME | grep "Type (Bundle):" | cut -d ':' -f2 | tr -d ' ')
+    #echo $filetype
+    if [ "$filetype" = "ntfs" ]; then
+        addLine;
+    fi
 
-	if [ "$filetype" = "" ]; then
-		echo "Error. Please, select a NTFS device"
-	fi
+    if [ "$filetype" = "" ]; then
+        echo "Error. Please, select a NTFS device"
+    fi
 }
 
 #Check sudo

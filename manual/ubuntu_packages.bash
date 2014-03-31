@@ -8,7 +8,10 @@ apt-get update
 apt-get upgrade -y
 
 # Essential
-apt-get install -y subversion git vim ctags mc htop smartmontools rar unrar ssh tree ack curl wget python-setuptools nfs-common
+apt-get install -y subversion git vim ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common
+
+# Python
+apt-get install -y python python-setuptools python3 python3-setuptools
 
 # Gnome 2
 apt-get install -y gnome-session-fallback

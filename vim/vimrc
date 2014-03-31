@@ -21,14 +21,14 @@
 
 " General {
 
-	set t_Co=256                   " Xterm 256 colors
-	set background=dark            " Assume a dark background
-	filetype plugin indent on      " Automatically detect file types.
-	syntax on                      " Syntax highlighting
-	set mouse=a                    " Automatically enable mouse usage
-	set mousehide                  " Hide the mouse cursor while typing
-	set encoding=utf-8 nobomb      " BOM often causes trouble
-	set hidden                     " Allow buffer switching without saving
+    set t_Co=256                   " Xterm 256 colors
+    set background=dark            " Assume a dark background
+    filetype plugin indent on      " Automatically detect file types.
+    syntax on                      " Syntax highlighting
+    set mouse=a                    " Automatically enable mouse usage
+    set mousehide                  " Hide the mouse cursor while typing
+    set encoding=utf-8 nobomb      " BOM often causes trouble
+    set hidden                     " Allow buffer switching without saving
     set virtualedit=onemore        " Allow for cursor beyond last character
     set history=1000               " Store a ton of history (default is 20)
     " set spell                    " Spell checking on
@@ -154,12 +154,12 @@
 " Formatting {
 
     set nowrap          " Do not wrap lines.
-    set autoindent		" Copy indent from last line when starting new line.
-    set smartindent		" Know about functions end while intending.
-    set expandtab		" Expand tabs to spaces
-    set shiftwidth=4	" Control how many columns text is indented with the reindent operations.
-    set softtabstop=4	" Control how many columns vim uses when you hit Tab in insert mode.
-    set tabstop=4		" Tell vim how many columns a tab counts for.
+    set autoindent      " Copy indent from last line when starting new line.
+    set smartindent     " Know about functions end while intending.
+    set expandtab       " Expand tabs to spaces
+    set shiftwidth=4    " Control how many columns text is indented with the reindent operations.
+    set softtabstop=4   " Control how many columns vim uses when you hit Tab in insert mode.
+    set tabstop=4       " Tell vim how many columns a tab counts for.
 " }
 
 " Key (re)Mappings {
