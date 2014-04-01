@@ -40,8 +40,8 @@ complete -v set unset;
 done;
 unset file;
 
-# Completions from homebrew
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+# Enable completions from homebrew
+if [ `type -t brew` > /dev/null ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 

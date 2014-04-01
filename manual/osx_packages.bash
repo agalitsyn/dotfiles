@@ -33,6 +33,7 @@ brew install mc
 brew install htop
 brew install ngrep
 brew install ranger libcaca highlight atool poppler mediainfo transmission lynx
+ranger --copy-config=all
 
 # Remove outdated versions from the cellar
 brew cleanup

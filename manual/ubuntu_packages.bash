@@ -29,7 +29,8 @@ apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-m
 apt-get install -y terminator
 
 # Ranger
-apt-get ranger caca-utils highlight atool w3m poppler-utils mediainfo
+apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo
+ranger --copy-config=all
 
 # Java
 apt-get install -y openjdk-7-jre
