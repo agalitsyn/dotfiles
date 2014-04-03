@@ -21,4 +21,5 @@
     date = local
 [core]
     filemode = false
+    excludesfile = ~/.gitignore
     
