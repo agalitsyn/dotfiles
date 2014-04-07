@@ -14,7 +14,7 @@ xterm*foreground: white
 ! Remove black border
 xterm*borderWidth: 0
 ! Font
-xterm*faceName: Terminus:style=Regular:size=12
+xterm*faceName: Ubuntu Mono:style=Regular:size=13
 ! Scroll
 xterm*scrollKey: true
 xterm*scrollTtyOutput: false
@@ -22,6 +22,8 @@ xterm*scrollBar: false
 xterm*rightScrollBar: false
 xterm*jumpScroll: true
 xterm*multiScroll: true
+! Copy to PRIMARY and CLIPBOARD
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 ! urxvt ----------------------------------------------------------------------
 ! General

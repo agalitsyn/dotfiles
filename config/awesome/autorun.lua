@@ -7,8 +7,9 @@ run_once("setxkbmap", "-option grp:switch,grp:alt_space_toggle,grp_led:caps,caps
 -- starts screensaver daemon
 run_once("xscreensaver", "-no-splash")
 
--- turn numlock off because of http://sourceforge.net/p/pcmanfm/bugs/482/
-run_once("numlockx off")
+-- turn numlock on
+run_once("numlockx")
+-- pcmanfm have bug with numlock, see http://sourceforge.net/p/pcmanfm/bugs/482/
 
 -- hide mouse cursor when it not used
 -- run_once("unclutter")
