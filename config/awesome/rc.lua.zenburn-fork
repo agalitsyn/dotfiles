@@ -303,7 +303,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-    awful.key({ altkey,           }, "Tab",
+    awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
@@ -326,7 +326,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Screen lock
-    awful.key({ altkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey,           }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- Keyboard layout
     --awful.key({ "Mod1",           }, "Shift_L", function () kbdcfg.switch() end),
