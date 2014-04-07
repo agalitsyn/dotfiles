@@ -326,7 +326,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Screen lock
-    awful.key({ modkey,           }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey, altkey }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- Keyboard layout
     --awful.key({ "Mod1",           }, "Shift_L", function () kbdcfg.switch() end),
