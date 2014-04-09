@@ -2,7 +2,7 @@
 run_once("xrandr", "--output VGA-0 --mode 1920x1080 --right-of DVI-0")
 
 -- keyboard
-run_once("setxkbmap", "-option grp:switch,grp:alt_space_toggle,grp_led:caps,caps:none us,ru")
+run_once("setxkbmap", "-option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:none us,ru")
 
 -- starts screensaver daemon
 run_once("xscreensaver", "-no-splash")
