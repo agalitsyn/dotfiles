@@ -3,11 +3,11 @@
 ! Env
 xterm*termName: xterm-256color
 ! UTF-8
-XTerm*locale: true
+xterm*locale: true
 ! Fix the 'Alt' key
-XTerm*metaSendsEscape: true
+xterm*metaSendsEscape: true
 ! Save more lines
-Xterm*saveLines: 8192
+xterm*saveLines: 8192
 ! White text on black
 xterm*background: black
 xterm*foreground: white
@@ -23,8 +23,8 @@ xterm*rightScrollBar: false
 xterm*jumpScroll: true
 xterm*multiScroll: true
 ! Copy to PRIMARY and CLIPBOARD
-XTerm*vt100.selectToClipboard: true
-XTerm*vt100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+xterm.selectToClipboard: true
+xterm.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 ! urxvt ----------------------------------------------------------------------
 ! General

@@ -49,8 +49,8 @@ end
 -- Themes define colours, icons, and wallpapers
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/zenburn-fork/theme.lua")
 
-terminal = "x-terminal-emulator"
-editor = os.getenv("EDITOR") or "editor"
+terminal = "xterm" or "x-terminal-emulator"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 modkey = "Mod4"
