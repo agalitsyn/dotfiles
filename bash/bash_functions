@@ -1,15 +1,18 @@
 # Create a new directory and enter it
-function md() {
+md()
+{
     mkdir -pv "$@" && cd "$@"
 }
 
 # find shorthand
-function f() {
+f()
+{
     find . -name "$1"
 }
 
 # Simple calculator
-function calc() {
+calc()
+{
     local result=""
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
     #                       └─ default (when `--mathlib` is used) is 20
@@ -23,11 +26,13 @@ function calc() {
     else
         printf "$result"
     fi
+
     printf "\n"
 }
 
 # Determine size of a file or total size of a directory
-function fs() {
+fs()
+{
     if du -b /dev/null > /dev/null 2>&1; then
         local arg=-sbh
     else
@@ -41,7 +46,8 @@ function fs() {
 }
 
 # Create a data URL from a file
-function dataurl() {
+dataurl()
+{
     local mimeType=$(file -b --mime-type "$1")
     if [[ $mimeType == text/* ]]; then
         mimeType="${mimeType};charset=utf-8"
@@ -50,7 +56,8 @@ function dataurl() {
 }
 
 # Use PHP's built-in support to encode and decode base64.
-function base64() {
+base64()
+{
     if [ $# -eq 0 ]; then
          echo 'Usage: base64 [encode|decode] <string>';
          return;
@@ -67,14 +74,9 @@ function base64() {
     echo;
 }
 
-
-# cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
-    cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-
 # Start an HTTP server from a directory, optionally specifying the port
-function server() {
+server()
+{
     local port="${1:-8000}"
     open "http://localhost:${port}/"
     # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
@@ -84,7 +86,8 @@ function server() {
 
 # Start a PHP server from a directory, optionally specifying the port
 # (Requires PHP 5.4.0+.)
-function phpserver() {
+phpserver()
+{
     local port="${1:-4000}"
     local ip=$(ipconfig getifaddr en1)
     sleep 1 && open "http://${ip}:${port}/" &
@@ -93,7 +96,8 @@ function phpserver() {
 
 # Extract archives - use: extract <file>
 # Based on http://dotfiles.org/~pseup/.bashrc
-function extract() {
+extract()
+{
     if [ -f "$1" ] ; then
         local filename=$(basename "$1")
         local foldername="${filename%%.*}"
@@ -130,7 +134,8 @@ function extract() {
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
-function s() {
+s()
+{
     if [ $# -eq 0 ]; then
         subl .
     else
@@ -140,7 +145,8 @@ function s() {
 
 # `o` with no arguments opens current directory, otherwise opens the given
 # location
-function o() {
+o()
+{
     if [ $# -eq 0 ]; then
         open .
     else
@@ -152,7 +158,8 @@ function o() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function tre() {
+tre()
+{
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
@@ -160,7 +167,8 @@ function tre() {
 # David Leadbeater's Wikipedia-over-DNS service.
 #
 # See https://dgl.cx/wikipedia-dns
-function wp() {
+wp()
+{
     query="$*";
     domain="${query// /_}.wp.dg.cx";
     answer="$(dig +short -t txt "$domain" | perl -p -e 's/\\([0-9]*)/chr($1)/eg')";
@@ -177,7 +185,8 @@ function wp() {
 }
 
 # Show a unified diff, colourised if possible and paged if necessary.
-function udiff() {
+udiff()
+{
     if command -v colordiff > /dev/null; then
         colordiff -wU4 "$@" | $PAGER;
         return ${PIPESTATUS[0]};
@@ -191,7 +200,8 @@ function udiff() {
 }
 
 # Sort the "du" output and use human-readable units.
-function duh() {
+duh()
+{
     du -sk "$@" | sort -n | while read size fname; do
         for unit in KiB MiB GiB TiB PiB EiB ZiB YiB; do
             if [ "$size" -lt 1024 ]; then
@@ -205,7 +215,8 @@ function duh() {
 
 # Edit the files found with the previous "ack" command using Vim (or the
 # default editor).
-function vack() {
+vack()
+{
     local cmd='';
     if [ $# -eq 0 ]; then
         cmd="$(fc -nl -1)";
@@ -230,7 +241,8 @@ function vack() {
 }
 
 # Convert the parameters or STDIN to lowercase.
-function lc() {
+lc()
+{
     if [ $# -eq 0 ]; then
         tr '[:upper:]' '[:lower:]';
     else
@@ -239,7 +251,8 @@ function lc() {
 }
 
 # Convert the parameters or STDIN to uppercase.
-function uc() {
+uc()
+{
     if [ $# -eq 0 ]; then
         tr '[:lower:]' '[:upper:]';
     else
@@ -269,7 +282,8 @@ function uc() {
 #   Thu Oct 20 13:04:20 PDT 2011
 #
 # For more info, check out http://kak.be/gnudateformats.
-function whenis() {
+whenis()
+{
     local error='Unable to parse that using http://kak.be/gnudateformats';
 
     # Default GNU date format as seen in date.c from GNU coreutils.
@@ -313,7 +327,8 @@ function whenis() {
 # Do a mysqldump via ssh and store it in a local timestamped file. This
 # function assumes proper setup in your local ~/.ssh/config and the remote
 # ~/.my.cnf.
-function ssh-mysqldump() {
+ssh-mysqldump()
+{
     local timestamp="$(date +'%Y%m%d-%H%M%S')";
     if [ -z "$1" -o "$1" = '--help' ]; then
         local filename="$timestamp-ssh_host-database_name.sql";
@@ -390,15 +405,22 @@ function ssh-mysqldump() {
 }
 
 # Generate random password
-function pswdgen() {
+pswdgen()
+{
     < /dev/urandom tr -dc A-Za-z0-9 | head -c${6:-16}; echo;
 }
 
 # Allows saving with ctrl-s in vim
-function vim() {
+vim()
+{
     local STTYOPTS="$(stty --save)"
     stty stop '' -ixoff
     command vim "$@"
     stty "$STTYOPTS"
 }
 
+# review new path/
+review()
+{
+    ~/ccollab-cmdline/ccollab addchanges --diffbranch "svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p'" "$@"
+}

@@ -1,30 +1,33 @@
 # Show current SVN revision or Git branch
-scm_ps1() {
-local s=
-if [[ -d ".svn" ]] ; then
-    s=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
-else
-    if [[ $(declare -f __git_ps1) ]]; then
-        # Native way
-        GIT_PS1_SHOWDIRTYSTATE=true
-        GIT_PS1_SHOWSTASHSTATE=true
-        GIT_PS1_SHOWUNTRACKEDFILES=true
-        s=$(__git_ps1 "(git:%s)")
+scm_ps1()
+{
+    local s=
+
+    if [[ -d ".svn" ]] ; then
+        s=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
     else
-        # Spike way
-        # check if we're in a git repo
-        git rev-parse --is-inside-work-tree &>/dev/null || return
+        if [[ $(declare -f __git_ps1) ]]; then
+            # Native way
+            GIT_PS1_SHOWDIRTYSTATE=true
+            GIT_PS1_SHOWSTASHSTATE=true
+            GIT_PS1_SHOWUNTRACKEDFILES=true
+            s=$(__git_ps1 "(git:%s)")
+        else
+            # Spike way
+            # check if we're in a git repo
+            git rev-parse --is-inside-work-tree &>/dev/null || return
 
-        # quickest check for what branch we're on
-        branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
+            # quickest check for what branch we're on
+            branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 
-        # check if it's dirty (via github.com/sindresorhus/pure)
-        dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
+            # check if it's dirty (via github.com/sindresorhus/pure)
+            dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
 
-        echo $WHITE" on "$PURPLE$branch$dirty
+            echo $WHITE" on "$PURPLE$branch$dirty
+        fi
     fi
-fi
-echo -n "$s"
+
+    echo -n "$s"
 }
 
 # Mac OSX 10.9 added some additional security checks for strcpy

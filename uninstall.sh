@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+set -e
 
 echo 'Attention, it will destory all symlinks in' $HOME
 echo 'Are you sure? (y/n)'

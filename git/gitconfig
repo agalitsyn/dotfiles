@@ -22,4 +22,3 @@
 [core]
     filemode = false
     excludesfile = ~/.gitignore
-    

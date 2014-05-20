@@ -4,7 +4,7 @@
 sudo -v
 
 # Add repos
-sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list' 
+sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
 
@@ -19,7 +19,7 @@ apt-get install -y subversion git vim mc htop smartmontools rar unrar ssh tree a
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
 
 # Ubuntu tweakers
-apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager unity-tweak-tool gnome-tweak-tool 
+apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager unity-tweak-tool gnome-tweak-tool
 
 # Python
 apt-get install -y python python-setuptools python3 python3-setuptools

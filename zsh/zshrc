@@ -3,13 +3,11 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="kafeitu"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -39,13 +37,12 @@ ZSH_THEME="kafeitu"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx node npm brew)
+# Example format: plugins=(git osx node npm brew)
+plugins=(git svn)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/Users/anton/.rbenv/shims:/Users/anton/.rbenv/bin:/Users/anton/ImageMagick-6.8.6/bin:/Users/anton/bin/Sencha/Cmd/3.1.2.342:/usr/local/pear/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/anton/bin:/sbin:/usr/sbin
 
 # Never know when you're gonna need to popd!
 setopt AUTO_PUSHD

@@ -25,6 +25,9 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 # Get color support for 'grep'
 export GREP_OPTIONS="--color=auto"
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 # Get color support for 'less'
 export LESS="--RAW-CONTROL-CHARS"
 

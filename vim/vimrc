@@ -188,7 +188,6 @@
       map - <C-W>-
     endif
 
-
     " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
     map <C-j> <C-W>j
     map <C-k> <C-W>k
@@ -316,4 +315,3 @@
 
     "========================================================
 " }
-
