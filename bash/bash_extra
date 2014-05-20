@@ -1,0 +1,5 @@
+alias ccollab='sh ~/ccollab-cmdline/ccollab'
+function review() { 
+    ~/ccollab-cmdline/ccollab addchanges --diffbranch "svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p'" "$@"
+}
+
