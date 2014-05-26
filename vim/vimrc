@@ -64,13 +64,13 @@
 
 " Vim UI {
 
-    " if filereadable(expand("~/.vim/bundle/vim-distinguished/colors/distinguished.vim"))
-    "     colorscheme distinguished   " Load a colorscheme
-    " endif
-
-    if filereadable(expand("~/.vim/bundle/jellybeans.vim/colors/jellybeans.vim"))
-        colorscheme jellybeans " Load a colorscheme
+    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+        colorscheme solarized  " Load a colorscheme
     endif
+
+    "if filereadable(expand("~/.vim/bundle/jellybeans.vim/colors/jellybeans.vim"))
+    "    colorscheme jellybeans " Load a colorscheme
+    "endif
 
     set showmode                    " Display the current mode
     set cursorline                  " Highlight current line

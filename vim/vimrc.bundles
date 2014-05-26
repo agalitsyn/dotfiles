@@ -8,6 +8,7 @@
     " Original repos on GitHub {
         "Bundle 'Lokaltog/vim-distinguished'
         Bundle 'nanotech/jellybeans.vim'
+        Bundle 'altercation/vim-colors-solarized'
 
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
