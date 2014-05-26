@@ -147,10 +147,18 @@ s()
 # location
 o()
 {
+
+    local fm=
+    if command -v nautilus > /dev/null; then
+        fm='nautilus'
+    elif command -v open > /dev/null; then
+        fm='open'
+    fi;
+
     if [ $# -eq 0 ]; then
-        open .
+        $fm .
     else
-        open "$@"
+        $fm "$@"
     fi
 }
 
