@@ -47,8 +47,10 @@ apt-get install -y xrdp vino
 # AMP
 apt-get install -y apache2 php5 php5-common libapache2-mod-php5 libapache2-mod-auth-mysql php5-mysql php5-cli php5-cgi php-pear php5-dev php5-curl php-apc php5-memcache php5-xdebug php5-sqlite php5-pgsql
 
-
 # MYSQL
 apt-get install -y mysql-server mysql-client phpmyadmin
+
+# Diff tool
+apt-get install -y meld
 
 echo "Restart computer for taking all changes"
