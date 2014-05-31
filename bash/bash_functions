@@ -427,8 +427,33 @@ vim()
     stty "$STTYOPTS"
 }
 
-# review new path/
+# Usage "review [new|id] path/to/files"
 review()
 {
     ~/ccollab-cmdline/ccollab addchanges --diffbranch "svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p'" "$@"
+}
+
+# Simple notes
+note ()
+{
+    local destination="$HOME"
+    # if Dropbox installed, save into it for sync
+    [ ! -d "$HOME/Dropbox" ] || destination="$HOME/Dropbox"
+    local notes="$destination/.notes"
+
+    # if file doesn't exist, create it
+    if [[ ! -f $notes ]]; then
+        touch $notes
+    fi
+
+    if ! (($#)); then
+        # no arguments, print file
+        cat $notes
+    elif [[ "$1" == "-c" ]]; then
+        # clear file
+        > $notes
+    else
+        # add all arguments to file
+        printf "%s\n" "`date "+%A, %B %d, %Y [%T]"`" "====" "$*" "" >> $notes
+    fi
 }
