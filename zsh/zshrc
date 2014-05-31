@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -38,11 +38,14 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git osx node npm brew)
-plugins=(git svn)
+plugins=(cp copyfile copydir colorize colored-man common-aliases z extract gnu-utils sudo git svn sublime symfony2 composer)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
-# Customize to your needs...
+# Save a ton of history
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
 
 # Never know when you're gonna need to popd!
 setopt AUTO_PUSHD
@@ -54,8 +57,3 @@ bindkey "^N" insert-last-word
 chpwd() {
     ls -lrthG
 }
-
-# Save a ton of history
-HISTSIZE=20000
-HISTFILE=~/.zsh_history
-SAVEHIST=20000

@@ -113,19 +113,21 @@ extract()
         fi
         mkdir -p "$foldername" && cd "$foldername"
         case $1 in
-            *.tar.bz2) tar xjf "$fullpath" ;;
-            *.tar.gz) tar xzf "$fullpath" ;;
-            *.tar.xz) tar Jxvf "$fullpath" ;;
-            *.tar.Z) tar xzf "$fullpath" ;;
-            *.tar) tar xf "$fullpath" ;;
-            *.taz) tar xzf "$fullpath" ;;
-            *.tb2) tar xjf "$fullpath" ;;
-            *.tbz) tar xjf "$fullpath" ;;
-            *.tbz2) tar xjf "$fullpath" ;;
-            *.tgz) tar xzf "$fullpath" ;;
-            *.txz) tar Jxvf "$fullpath" ;;
-            *.zip) unzip "$fullpath" ;;
-            *) echo "'$1' cannot be extracted via extract()" && cd .. && ! $didfolderexist && rm -r "$foldername" ;;
+            (*.tar.bz2) tar xjf "$fullpath" ;;
+            (*.tar.gz) tar xzf "$fullpath" ;;
+            (*.tar.xz) tar Jxvf "$fullpath" ;;
+            (*.tar.Z) tar xzf "$fullpath" ;;
+            (*.tar) tar xf "$fullpath" ;;
+            (*.taz) tar xzf "$fullpath" ;;
+            (*.tb2) tar xjf "$fullpath" ;;
+            (*.tbz) tar xjf "$fullpath" ;;
+            (*.tbz2) tar xjf "$fullpath" ;;
+            (*.tgz) tar xzf "$fullpath" ;;
+            (*.txz) tar Jxvf "$fullpath" ;;
+            (*.zip|*.war|*.jar) unzip "$fullpath" ;;
+            (*.rar) unrar x -ad "$fullpath" ;;
+            (*.7z) 7za x "$fullpath" ;;
+            (*) echo "'$1' cannot be extracted via extract()" && cd .. && ! $didfolderexist && rm -r "$foldername" ;;
         esac
     else
         echo "'$1' is not a valid file"
