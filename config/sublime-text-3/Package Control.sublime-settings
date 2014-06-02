@@ -1,38 +1,77 @@
 {
     "installed_packages":
     [
-        "AdvancedNewFile",
-        "ApacheConf.tmLanguage",
-        "BracketHighlighter",
-        "DocBlockr",
-        "Dotfiles Syntax Highlighting",
-        "EditorConfig",
-        "Emmet",
-        "Function Name Display",
-        "Git",
-        "Goto Documentation",
-        "LiveReload",
-        "PHP Companion",
-        "PHPUnit",
-        "SFTP",
-        "SideBarEnhancements",
-        "SublimeCodeIntel",
-        "SublimeLinter",
-        "SublimeLinter-annotations",
-        "SublimeLinter-csslint",
-        "SublimeLinter-html-tidy",
-        "SublimeLinter-jshint",
-        "SublimeLinter-json",
-        "SublimeLinter-phpcs",
-        "SublimeLinter-phpmd",
-        "SublimeLinter-pylint",
-        "SublimeREPL",
-        "SVN",
+        // Appearance
         "Theme - Soda",
         "Solarized Color Scheme",
         "Theme - Soda SolarizedDark",
         "Tomorrow Color Schemes",
-        "VCS Gutter",
+
+        // VCS integration
+        "Git",
+        "SVN",
+        "GitGutter",
+
+        // Diff tool
+        "Sublimerge Pro",
+
+        // Files and foldes
+        "AdvancedNewFile",
+        "SideBarEnhancements",
+
+        // Remote files
+        "SFTP",
+        "rsub",
+
+        // Editor
+        "BracketHighlighter",
+        "DocBlockr",
+        "Function Name Display",
+        "TrailingSpaces",
+        "LineEndings",
+
+        // Autocomplete
+        "SublimeCodeIntel",
+
+        // Linting
+        "SublimeLinter",
+
+        // PHP
+        "Additional PHP Snippets",
+        "Phpcs"
+        "PHP Companion",
+        "PHPUnit",
+        "Goto Documentation",
         "Xdebug Client"
+
+        "SublimeLinter-phpcs",
+        "SublimeLinter-phpmd",
+
+        // Frameworks
+        "Symfony2 Snippets",
+
+        // Python
+        "Anaconda",
+        "SublimeREPL",
+
+        "SublimeLinter-pylint",
+
+        // JS
+        "SublimeLinter-jshint",
+        "SublimeLinter-json",
+
+        // HTML, CSS
+        "Emmet",
+        "LiveReload",
+
+        "SublimeLinter-csslint",
+        "SublimeLinter-html-tidy",
+
+        // Additional syntax
+        "ApacheConf.tmLanguage",
+        "Dotfiles Syntax Highlighting",
+        "EditorConfig",
+
+        "SublimeLinter-annotations",
     ]
 }
