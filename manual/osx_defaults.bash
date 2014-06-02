@@ -340,7 +340,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Align the horizontal docks to the top corners (start|middle|end)
-defaults write com.apple.dock pinning -string start
+# defaults write com.apple.dock pinning -string start
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
