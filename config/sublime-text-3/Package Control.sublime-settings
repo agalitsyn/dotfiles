@@ -38,11 +38,11 @@
 
         // PHP
         "Additional PHP Snippets",
-        "Phpcs"
+        "Phpcs",
         "PHP Companion",
         "PHPUnit",
         "Goto Documentation",
-        "Xdebug Client"
+        "Xdebug Client",
 
         "SublimeLinter-phpcs",
         "SublimeLinter-phpmd",
