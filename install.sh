@@ -12,24 +12,24 @@ link()
 {
     local file
     for path in $1/*; do
-        file=$(basename $path)
-        [ -f $HOME/.$file -a ! -h $HOME/.$file ] && mv $HOME/.$file $HOME/.$file.orig
-        [ ! -f $HOME/.$file ] && ln -vsf $dir/$path $HOME/.$file
+        file="$(basename $path)"
+        [ -f "$HOME/.$file" -a ! -h "$HOME/.$file" ] && mv "$HOME/.$file" "$HOME/.$file.orig"
+        [ ! -f "$HOME/.$file" ] && ln -vsf "$dotfiles/$path" "$HOME/.$file"
     done
 }
 
 # Main logic
 which git > /dev/null || die 'Git not found.'
 
-dir=$PWD/`dirname $0`
-cd `dirname $0`
+dotfiles="$PWD/`dirname $0`"
+cd "`dirname $0`"
 
 link 'bash'
 link 'vim'
 link 'git'
 link 'zsh'
 
-[ ! -d $HOME/bin ] && mkdir $HOME/bin
+[ ! -d "$HOME/bin" ] && mkdir -v "$HOME/bin"
 
 # https://github.com/rupa/z
 if [ ! -e "$HOME/bin/z" ]; then
@@ -43,3 +43,9 @@ if [ ! -e "$HOME/.vim/bundle/vundle" ]; then
     git clone https://github.com/gmarik/vundle.git "$HOME/.vim/bundle/vundle"
     vim +BundleInstall +qall
 fi
+
+# sublime
+sublime_config="$HOME/.config/sublime-text-3"
+mkdir -pv $sublime_config/{Installed\ Packages,Packages/User}
+curl "http://sublime.wbond.net/Package%20Control.sublime-package" > "$sublime_config/Installed\ Packages/Package\ Control.sublime-package"
+cp "$dotfiles/config/sublime-text-3/*" "$sublime_config/"

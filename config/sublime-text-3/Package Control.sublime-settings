@@ -47,8 +47,11 @@
         "SublimeLinter-phpcs",
         "SublimeLinter-phpmd",
 
-        // Frameworks
+        // Symfony2
         "Symfony2 Snippets",
+        "Composer",
+        "YAML",
+        "Twig",
 
         // Python
         "Anaconda",
