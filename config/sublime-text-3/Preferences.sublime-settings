@@ -30,7 +30,7 @@
     "find_selected_text": true,
 
     // Word wrapping - follow PEP 8 recommendations
-    "word_wrap": true,
+    "word_wrap": false, // Should be true
     "wrap_width": 80,
     "rulers": [ 80, 120],
 
