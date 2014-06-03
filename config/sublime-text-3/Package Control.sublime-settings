@@ -40,6 +40,7 @@
         "Additional PHP Snippets",
         "Phpcs",
         "PHP Companion",
+        "PHP Modern",
         "PHPUnit",
         "Goto Documentation",
         "Xdebug Client",
@@ -76,6 +77,10 @@
         "EditorConfig",
 
         "SublimeLinter-annotations",
+
+        // RST
+        "RestructuredText Improved",
+        "Restructured Text (RST) Snippets",
 
         // Tools
         "PlainTasks"
