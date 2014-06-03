@@ -22,8 +22,6 @@
     "highlight_line": true,
     "show_full_path": true,
     "indent_guide_options": ["draw_active"],
-    "enable_telemetry": false,
-    "preview_on_click": false,
     "show_panel_on_build": false,
 
     // Editor behavior
@@ -64,5 +62,8 @@
         ".hg",
         "CVS",
         "__pycache__"
-    ]
+    ],
+
+    // Common
+    "enable_telemetry": false,
 }
