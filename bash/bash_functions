@@ -414,6 +414,12 @@ ssh-mysqldump()
     return $result;
 }
 
+# Delete host from known_hosts if node was reinstalled
+ssh-refresh()
+{
+    ssh-keygen -f "$HOME/.ssh/known_hosts" -R $1
+}
+
 # Generate random password
 pswdgen()
 {
