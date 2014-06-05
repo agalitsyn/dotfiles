@@ -22,3 +22,5 @@
 [core]
     filemode = false
     excludesfile = ~/.gitignore
+[push]
+    default = simple
