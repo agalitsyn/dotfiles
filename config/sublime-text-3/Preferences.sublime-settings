@@ -1,10 +1,11 @@
 {
     // Colors
-    "theme": "Soda Dark 3.sublime-theme",
+    //"theme": "Soda Dark 3.sublime-theme",
     //"theme": "Soda SolarizedDark.sublime-theme",
+    "theme": "Sodarized Dark 3.sublime-theme",
     "soda_folder_icons": true,
-    "color_scheme": "Packages/User/Tomorrow-Night (SL).tmTheme",
-    //"color_scheme": "Packages/User/Solarized (dark) (SL).tmTheme",
+    //"color_scheme": "Packages/User/Tomorrow-Night (SL).tmTheme",
+    "color_scheme": "Packages/User/Solarized (dark) (SL).tmTheme",
 
     // Font
     "font_face": "Ubuntu Mono",

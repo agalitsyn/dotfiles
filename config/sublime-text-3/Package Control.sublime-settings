@@ -6,6 +6,7 @@
         "Solarized Color Scheme",
         "Theme - Soda SolarizedDark",
         "Tomorrow Color Schemes",
+        "Theme - Sodarized",
 
         // VCS integration
         "Git",
@@ -36,11 +37,13 @@
         "SublimeLinter",
 
         // PHP
+        "PhpDoc",
         "Additional PHP Snippets",
         "Phpcs",
         "PHP Companion",
         "PHP Modern",
         "PHPUnit",
+        "PHPUnit Snippets",
         "Goto Documentation",
         "Xdebug Client",
 
