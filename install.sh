@@ -10,11 +10,13 @@ die()
 
 link()
 {
+    local folder="$1"
     local file
-    for path in $1/*; do
-         file="$(basename $path)"
-        [ -f "$HOME/.$file" -a ! -h "$HOME/.$file" ] && mv "$HOME/.$file" "$HOME/.$file.orig"
-        [ ! -f "$HOME/.$file" ] && ln -vsf "$dotfiles/$path" "$HOME/.$file"
+
+    for path in $(find $folder -name '.*'); do
+        file="$(basename $path)"
+        [ -f "$HOME/$file" -a ! -h "$HOME/$file" ] && mv "$HOME/$file" "$HOME/$file.orig"
+        [ ! -f "$HOME/$file" ] && ln -vsf "$dotfiles/$path" "$HOME/$file"
     done
 }
 
@@ -29,6 +31,7 @@ cd "`dirname $0`"
 link 'bash'
 link 'vim'
 link 'git'
+link 'rc'
 link 'zsh'
 
 [ ! -d "$HOME/bin" ] && mkdir -v "$HOME/bin"
@@ -48,6 +51,7 @@ fi
 
 # Sublime text 3
 sublime_config="$HOME/.config/sublime-text-3"
+[ "$OSTYPE" = 'linux-gnu' ] || sublime_config="$HOME/Library/Application Support/Sublime\ Text\ 3/"
 mkdir -pv $sublime_config/Packages/User
 curl "http://sublime.wbond.net/Package%20Control.sublime-package" > "$sublime_config/Packages/User/Package\ Control.sublime-package"
 cp $dotfiles/config/sublime-text-3/* $sublime_config/

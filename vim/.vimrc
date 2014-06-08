@@ -200,10 +200,10 @@
     endif
 
     " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
-    map <C-j> <C-W>j
-    map <C-k> <C-W>k
-    map <C-H> <C-W>h
-    map <C-L> <C-W>l
+    nnoremap <C-J> <C-W><C-J>
+    nnoremap <C-K> <C-W><C-K>
+    nnoremap <C-L> <C-W><C-L>
+    nnoremap <C-H> <C-W><C-H>
 
     " Save with sudo
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!

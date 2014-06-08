@@ -14,7 +14,7 @@ echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH.
 brew install findutils
 
 # Install Bash 4
-brew install bash
+brew install bash bash-completion
 
 # Install wget with IRI support
 brew install wget --enable-iri
@@ -34,6 +34,9 @@ brew install htop
 brew install ngrep
 brew install ranger libcaca highlight atool poppler mediainfo transmission lynx
 ranger --copy-config=all
+brew install cowsay
+brew install python3
+brew install ctags
 
 # Remove outdated versions from the cellar
 brew cleanup
