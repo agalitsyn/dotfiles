@@ -1,0 +1,22 @@
+" Plugins {
+
+    " Deps {
+        " let Vundle manage Vundle
+        Plugin 'gmarik/vundle.vim'
+    " }
+
+    " Original repos on GitHub {
+        Plugin 'nanotech/jellybeans.vim'
+        Plugin 'altercation/vim-colors-solarized'
+
+        Plugin 'scrooloose/nerdcommenter'
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'mbbill/undotree'
+        Plugin 'majutsushi/tagbar'
+
+        Plugin 'bling/vim-airline'
+        Plugin 'tpope/vim-fugitive'
+        Plugin 'airblade/vim-gitgutter'
+        Plugin 'bling/vim-bufferline'
+    " }
+" }

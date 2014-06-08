@@ -72,7 +72,7 @@
     "    colorscheme jellybeans " Load a colorscheme
     "endif
 
-    set showmode                    " Display the current mode
+    "set showmode                    " Display the current mode (no needed with vim-airline)
     set cursorline                  " Highlight current line
 
     highlight clear SignColumn      " SignColumn should match background
@@ -92,7 +92,7 @@
         " Broken down into easily includeable segments
         set statusline=%<%f\                     " Filename
         set statusline+=%w%h%m%r                 " Options
-        "set statusline+=%{fugitive#statusline()} " Git Hotness
+        set statusline+=%{fugitive#statusline()} " Git Hotness
         set statusline+=\ [%{&ff}/%Y]            " Filetype
         set statusline+=\ [%{getcwd()}]          " Current dir
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
@@ -113,15 +113,15 @@
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
             \| exe "normal! g'\"" | endif
 
-        " in insert mode, auto turn on absolute numbered lines
+        " In insert mode, auto turn on absolute numbered lines
         autocmd InsertEnter * :set number
         autocmd InsertLeave * :set relativenumber
 
-        " in insert mode, auto turn on absolute numbered lines
+        " In insert mode, auto turn on absolute numbered lines
         autocmd InsertEnter * :set number
         autocmd InsertLeave * :set relativenumber
 
-        " change status line color based on mode
+        " Change status line color based on mode
         hi statusline term=reverse ctermfg=0 ctermbg=2
         au InsertEnter * hi statusline term=reverse ctermbg=4 gui=undercurl guisp=Magenta
         au InsertLeave * hi statusline term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
@@ -131,6 +131,13 @@
 
         " Treat .rss files as XML
         autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+        " Trim trailing white space on save
+        autocmd BufWritePre * :%s/\s\+$//e
+
+        " Show trailing whitepace and spaces before a tab:
+        highlight ExtraWhitespace ctermbg=red guibg=red
+        autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
     endif
 
     set bs=indent,eol,start         " Allow backspacing over everything in insert mode
@@ -149,17 +156,21 @@
     set esckeys                     " Allow cursor keys in insert mode.
     set diffopt=filler              " Add vertical spaces to keep right and left aligned.
     set diffopt+=iwhite             " Ignore whitespace changes (focus on code changes).
+    set pastetoggle=<Leader>p       " Toggle pase nopaste by ,p
 " }
 
 " Formatting {
 
-    set nowrap          " Do not wrap lines.
-    set autoindent      " Copy indent from last line when starting new line.
-    set smartindent     " Know about functions end while intending.
-    set expandtab       " Expand tabs to spaces
-    set shiftwidth=4    " Control how many columns text is indented with the reindent operations.
-    set softtabstop=4   " Control how many columns vim uses when you hit Tab in insert mode.
-    set tabstop=4       " Tell vim how many columns a tab counts for.
+    set nowrap        " Do not wrap lines.
+    set autoindent    " Copy indent from last line when starting new line.
+    set smartindent   " Know about functions end while intending.
+    set textwidth=79  " lines longer than 79 columns will be broken
+    set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+    set tabstop=4     " an hard TAB displays as 4 columns
+    set softtabstop=4 " Control how many columns vim uses when you hit Tab in insert mode.
+    set expandtab     " insert spaces when hitting TABs
+    set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+    set shiftround    " round indent to multiple of 'shiftwidth'
 " }
 
 " Key (re)Mappings {
@@ -201,17 +212,17 @@
     " Insert newline
     map <leader><Enter> o<ESC>
 
-    " ,s to toggle syntax on/off
-    nnoremap <Leader>s :call SyntaxToggle()<CR>
-
-    " ,n to toggle rnu
-    nnoremap <Leader>n :call NumberToggle()<CR>
-
     " ,cd to move to file's working directory
     nnoremap <Leader>cd :lcd %:h<CR>
 
+    " toggle undotree with f5
+    nnoremap <F5> :UndotreeToggle<cr>
+
     " toggle nerdtree with f7
     map <F7> :NERDTreeToggle<CR>
+
+    " toggle tagbar with f8
+    nmap <F8> :TagbarToggle<CR>
 
     " delete whitespace at eols with F9
     nnoremap <silent> <F9> :call <SID>StripTrailingWhitespaces()<CR>
@@ -243,8 +254,10 @@
                             \|        confirm write
                             \|    endif
                             \|endif
+
     " Ctrl-s to save in normal mode
     nnoremap <silent> <C-S> :<C-u>Update<CR>
+
     " Ctrl-s to save while in insert mode
     inoremap <c-s> <c-o>:Update<CR>
 
@@ -284,24 +297,6 @@
     " so that you can undo CTRL-U after inserting a line break.
     inoremap <C-U> <C-G>u<C-U>
 
-    " function to toggle rnu and nu
-    function! NumberToggle()
-        if(&relativenumber == 1)
-            set number
-        else
-            set relativenumber
-        endif
-    endfunc
-
-    " function to toggle syntax on and off
-    function! SyntaxToggle()
-        if(&syntax == 1)
-            syntax off
-        else
-            syntax on
-        endif
-    endfunc
-
     " hide search hl with ctrl+l
     nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
@@ -311,7 +306,7 @@
     if !exists(":DiffOrig")
         command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
             \ | wincmd p | diffthis
-        endif
+    endif
 
     "========================================================
 " }

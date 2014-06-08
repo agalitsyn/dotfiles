@@ -12,7 +12,7 @@ link()
 {
     local file
     for path in $1/*; do
-        file="$(basename $path)"
+         file="$(basename $path)"
         [ -f "$HOME/.$file" -a ! -h "$HOME/.$file" ] && mv "$HOME/.$file" "$HOME/.$file.orig"
         [ ! -f "$HOME/.$file" ] && ln -vsf "$dotfiles/$path" "$HOME/.$file"
     done
