@@ -13,7 +13,7 @@ apt-get update
 apt-get upgrade -y
 
 # Essential
-apt-get install -y subversion git vim mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common ctags
+apt-get install -y subversion git vim ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common xclip
 
 # Look
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
@@ -22,7 +22,7 @@ apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-hall
 apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager unity-tweak-tool gnome-tweak-tool
 
 # Python
-apt-get install -y python python-setuptools python3 python3-setuptools
+apt-get install -y python python-setuptools python3 python3-setuptools python-pip
 
 # Skype + ability to use gtk+ theme
 apt-get install -y skype gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
