@@ -32,7 +32,7 @@
     set virtualedit=onemore        " Allow for cursor beyond last character
     set history=1000               " Store a ton of history (default is 20)
     " set spell                    " Spell checking on
-    set autowrite                " Automatically write a file when leaving a modified buffer
+    set autowrite                  " Automatically write a file when leaving a modified buffer
 
     " Setting up the directories {
         set nobackup            " Do not keep a backup file, use versions instead.
