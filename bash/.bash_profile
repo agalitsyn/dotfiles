@@ -15,8 +15,7 @@ unset file
 . ~/bin/z/z.sh
 
 # Case-insensitive globbing (used in pathname expansion)
-# Can be dangerous for scripts
-# shopt -s nocaseglob
+shopt -s nocaseglob
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
