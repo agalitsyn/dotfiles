@@ -16,7 +16,10 @@
     "caret_style": "smooth",
     "wide_caret": true,
 
-    "ignored_packages": ["Vintage"],
+    "ignored_packages": [
+        "Vintage",
+        "RestructuredText"
+    ],
 
     // Editor view look-and-feel
     "draw_white_space": "all",
