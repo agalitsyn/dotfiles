@@ -24,6 +24,7 @@
     "show_full_path": true,
     "indent_guide_options": ["draw_active"],
     "show_panel_on_build": false,
+    "preview_on_click": false,
 
     // Editor behavior
     "scroll_past_end": false,
