@@ -1,3 +1,11 @@
+" Hooks
+" =====
+
+" Use before config if available
+if filereadable(expand("~/.vimrc.before"))
+    source ~/.vimrc.before
+endif
+
 " Environment
 " ===========
 set nocompatible                " Use Vim settings, rather than Vi settings (much better!)
