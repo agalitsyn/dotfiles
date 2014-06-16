@@ -13,7 +13,7 @@ apt-get update
 apt-get upgrade -y
 
 # Essential
-apt-get install -y subversion git vim ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common xclip
+apt-get install -y subversion git vim gvim ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common xclip
 
 # Look
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
@@ -47,10 +47,10 @@ apt-get install -y xrdp vino
 # AMP
 apt-get install -y apache2 php5 php5-common libapache2-mod-php5 libapache2-mod-auth-mysql php5-mysql php5-cli php5-cgi php-pear php5-dev php5-curl php-apc php5-memcache php5-xdebug php5-sqlite php5-pgsql
 
-# MYSQL
+# MySQL
 apt-get install -y mysql-server mysql-client phpmyadmin
 
 # Diff tool
 apt-get install -y meld
 
-echo "Restart computer for taking all changes"
+echo "Done."
