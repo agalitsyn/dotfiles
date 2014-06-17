@@ -11,7 +11,7 @@
         // VCS integration
         "Git",
         "SVN",
-        "GitGutter",
+        "VCS Gutter",
 
         // Diff tool
         "Sublimerge Pro",
