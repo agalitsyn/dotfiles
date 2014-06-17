@@ -58,8 +58,6 @@
         "Anaconda",
         "SublimeREPL",
 
-        "SublimeLinter-pylint",
-
         // JS
         "SublimeLinter-jshint",
         "SublimeLinter-json",
