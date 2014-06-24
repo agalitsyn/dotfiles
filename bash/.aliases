@@ -104,7 +104,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-#File path
+# File path
 alias fp="readlink -f $0"
 
 # ROT13-encode/decode text.
@@ -117,10 +117,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -r
 # Cygwin, Linux and OS X.
 if command -v pbpaste > /dev/null; then
     alias getclip='pbpaste';
-    alias putclip='pbcopy';
+    alias setclip='pbcopy';
 elif command -v xclip > /dev/null; then
     alias getclip='xclip --out';
-    alias putclip='xclip --in';
+    alias setclip='xclip --in';
 fi;
 
 # Collaborator
