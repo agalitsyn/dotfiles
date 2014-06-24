@@ -13,7 +13,7 @@ apt-get update
 apt-get upgrade -y
 
 # Essential
-apt-get install -y subversion git vim gvim ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common xclip
+apt-get install -y subversion git vim vim-gtk ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common xclip
 
 # Look
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
