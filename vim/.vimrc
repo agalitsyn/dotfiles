@@ -13,7 +13,7 @@ set nocompatible                " Use Vim settings, rather than Vi settings (muc
 " Setup Bundle Support, next three lines ensure that the ~/.vim/bundle/ works
 filetype on                     " workaround for macosx
 filetype off                    " required
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/vundle.vim
 call vundle#rc()
 
 " Use bundles config
@@ -407,14 +407,6 @@ endif
 " ------
 
 nmap <F8> :TagbarToggle<CR>
-
-" Smooth Scrollin
-" ---------------
-
-noremap <silent> <C-U> :call smooth_scroll#up(&scroll, 20, 2)<CR>
-noremap <silent> <C-D> :call smooth_scroll#down(&scroll, 20, 2)<CR>
-noremap <silent> <C-B> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <C-F> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " Hooks
 " =====

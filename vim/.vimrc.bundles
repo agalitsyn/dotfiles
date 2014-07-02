@@ -31,12 +31,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-bufferline'
-Plugin 'terryma/vim-smooth-scroll'
 
-Plugin 'tomtom/checksyntax_vim'
-Plugin 'ervandew/supertab'
-
-Plugin 'msanders/snipmate.vim'
 Plugin 'tmhedberg/matchit'
 
 Plugin 'klen/python-mode'
