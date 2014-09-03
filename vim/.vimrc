@@ -157,6 +157,8 @@ set linespace=0                 " No extra spaces between rows
 set number
 set relativenumber              " Mix relative and absolute numbers (vim 7.4+)
 
+set nofoldenable                " Don't fold by default
+
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
 set hlsearch                    " Highlight search terms

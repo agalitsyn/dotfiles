@@ -67,6 +67,7 @@ fi
 # Solarized colorscheme
 if [ ! -e "$tools_path/solarized" ]; then
     git clone https://github.com/altercation/solarized.git "$tools_path/solarized"
+    git clone https://github.com/peel/mc.git "$tools_path/mc-solarized"
 fi
 
 if [ "$OSTYPE" = 'linux-gnu' ]; then

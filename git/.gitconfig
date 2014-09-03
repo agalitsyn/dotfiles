@@ -22,5 +22,6 @@
 [core]
     filemode = false
     excludesfile = ~/.gitignore
+	autocrlf = input
 [push]
     default = simple
