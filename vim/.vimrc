@@ -13,7 +13,7 @@ set nocompatible                " Use Vim settings, rather than Vi settings (muc
 " Setup Bundle Support, next three lines ensure that the ~/.vim/bundle/ works
 filetype on                     " workaround for macosx
 filetype off                    " required
-set rtp+=~/.vim/bundle/vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Use bundles config
