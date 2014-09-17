@@ -1,0 +1,151 @@
+[auto-props]
+# source files
+.htaccess = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+BSDmakefile* = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+GNUmakefile* = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+Doxyfile = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+Makefile* = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+README = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+build.config = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+build.script = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+distinfo = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+patch-* = svn:mime-type=text/x-patch; svn:eol-style=native; svn:keywords=Id
+pkg-descr = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+preinstall = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+preuninstall = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+postinstall = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+postuninstall = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+reconfigure = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+tarball.script = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+uninstall = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.[0-9] = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.asax = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.asc = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.asp = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.aspx = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.awk = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.bat = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.c = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.cc = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.cfg = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.cfm = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.cgi = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.cmd = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.conf = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.config = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.cpp = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.cs = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.csproj = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.css = svn:mime-type=text/css; svn:eol-style=native; svn:keywords=Id
+*.csr = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.csv = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.def = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.diff = svn:mime-type=text/x-patch; svn:eol-style=native; svn:keywords=Id
+*.dtd = svn:mime-type=text/xml-dtd; svn:eol-style=native; svn:keywords=Id
+*.edl = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.ent = svn:mime-type=text/xml-dtd; svn:eol-style=native; svn:keywords=Id
+*.grep = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.gradle = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.groovy = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.h = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.hpp = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.htm = svn:mime-type=text/html; svn:eol-style=native; svn:keywords=Id
+*.html = svn:mime-type=text/html; svn:eol-style=native; svn:keywords=Id
+*.idl = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.inc = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.ini = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.ism = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.java = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.js = svn:mime-type=text/javascript; svn:eol-style=native; svn:keywords=Id
+*.json = svn:mime-type=text/plain; svn:eol-style=native
+*.lem = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.lex = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.lst = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.list = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.log = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.md = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.markdown = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.mdl = svn:mime-type=text/mdl; svn:eol-style=native; svn:keywords=Id
+*.mk = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.pdl = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.pem = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.pidl = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.pl = svn:mime-type=text/x-perl; svn:eol-style=native; svn:keywords=Id
+*.pm = svn:mime-type=text/x-perl; svn:eol-style=native; svn:keywords=Id
+*.php = svn:mime-type=text/x-php; svn:eol-style=native; svn:keywords=Id
+*.proj = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.properties = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.ps1 = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.psm1 = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.py = svn:mime-type=text/x-python; svn:eol-style=native; svn:keywords=Id
+*.patch = svn:mime-type=text/x-patch; svn:eol-style=native; svn:keywords=Id
+*.rc = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.reg = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.resx = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.rgs = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.rtf = svn:mime-type=text/rtf; svn:eol-style=native; svn:keywords=Id
+*.sed = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.settings = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.shtml = svn:mime-type=text/html; svn:eol-style=native; svn:keywords=Id
+*.spec = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.sln = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.src = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.sql = svn:mime-type=text/sql; svn:eol-style=native; svn:keywords=Id
+*.sh = svn:mime-type=text/x-sh; svn:eol-style=native; svn:keywords=Id
+*.swf = svn:mime-type=application/x-shockwave-flash; svn:eol-style=native; svn:keywords=Id
+*.tmpl = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.tlh = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.tli = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.txt = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.udl2 = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.vcproj = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.vsprops = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.vbs = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+*.wml = svn:mime-type=text/vnd.wap.wml; svn:eol-style=native; svn:keywords=Id
+*.wsdl = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.wsf = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.wxs = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.xaml = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.xamlx = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.xml = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.xsd = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.xsl = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.xslt = svn:mime-type=text/xml; svn:eol-style=native; svn:keywords=Id
+*.yxx = svn:mime-type=text/plain; svn:eol-style=native; svn:keywords=Id
+
+# image formats
+*.bmp = svn:mime-type=image/bmp
+*.wbmp = svn:mime-type=image/vnd.wap.wbmp
+*.gif = svn:mime-type=image/gif
+*.ico = svn:mime-type=image/x-icon
+*.jpg = svn:mime-type=image/jpeg
+*.png = svn:mime-type=image/png
+*.svg = svn:mime-type=image/svg+xml; svn:eol-style=native
+*.tif = svn:mime-type=image/tiff
+*.tiff = svn:mime-type=image/tiff
+
+# misc binary formats
+*.a = svn:mime-type=application/octet-stream
+*.ai = svn:mime-type=application/postscript
+*.dll = svn:mime-type=application/octet-stream
+*.doc = svn:mime-type=application/msword
+*.docx = svn:mime-type=application/msword
+*.dot = svn:mime-type=application/msword
+*.dotx = svn:mime-type=application/msword
+*.gz = svn:mime-type=application/gzip
+*.jar = svn:mime-type=application/octet-stream
+*.mpp = svn:mime-type=application/octet-stream
+*.pdf = svn:mime-type=application/pdf
+*.ppt = svn:mime-type=application/vnd.ms-powerpoint
+*.pptx = svn:mime-type=application/vnd.ms-powerpoint
+*.psd = svn:mime-type=application/octet-stream
+*.sn = svn:mime-type=application/octet-stream
+*.snk = svn:mime-type=application/octet-stream
+*.tgz = svn:mime-type=application/gzip
+*.wrf = svn:mime-type=application/octet-stream
+*.wsi = svn:mime-type=application/octet-stream
+*.vsd = svn:mime-type=application/octet-stream
+*.xls = svn:mime-type=application/vnd.ms-excel
+*.xlsx = svn:mime-type=application/vnd.ms-excel
+*.zip = svn:mime-type=application/zip
+
