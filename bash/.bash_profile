@@ -65,7 +65,7 @@ fi
 done;
 unset file;
 
-# Enable completions from homebrew
+# Enable completions from homebrew for OS X
 if [ `type -t brew` > /dev/null ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi

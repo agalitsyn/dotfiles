@@ -8,17 +8,13 @@
 // Default value for password length.
 $length = 10;
 
-if ($argc > 1)
-{
-    for ($i = 1; $i < $argc; $i++)
-    {
+if ($argc > 1) {
+    for ($i = 1; $i < $argc; $i++) {
         $option = explode('=', $argv[$i]);
-        switch ($option[0])
-        {
+        switch ($option[0]) {
             case '-l':
             case '--length':
-                if (isset($option[1]))
-                {
+                if (isset($option[1])) {
                     $length = $option[1];
                 } else {
                     echo 'Wrong option: ' . $argv[$i] . PHP_EOL;
@@ -27,8 +23,7 @@ if ($argc > 1)
             break;
 
             default:
-                if (substr($argv[$i], 0, 1) == '-')
-                {
+                if (substr($argv[$i], 0, 1) == '-') {
                     echo 'Unknown option: ' . $argv[$i] . PHP_EOL;
                     exit(1);
                 }
@@ -37,8 +32,7 @@ if ($argc > 1)
     }
 }
 
-if (!is_numeric($length))
-{
+if (!is_numeric($length)) {
     echo 'Password length should be a number!' . PHP_EOL;
     exit(1);
 }
@@ -56,8 +50,7 @@ $len = strlen($allowableCharacters) - 1;
 $pass = '';
 
 // Loop the number of times specified by $length.
-for ($i = 0; $i < $length; $i++)
-{
+for ($i = 0; $i < $length; $i++) {
     // Each iteration, pick a random character from the
     // allowable string and append it to the password:
     $pass .= $allowableCharacters[mt_rand(0, $len)];

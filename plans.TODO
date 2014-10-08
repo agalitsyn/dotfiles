@@ -1,5 +1,5 @@
 TODO:
- ☐ Refactor install.sh, split properly to functions, make it works.
+ ✔ Refactor install.sh, split properly to functions, make it works. @done (14-10-08 17:04)
  ☐ Clean up repostirory, delete obsolete code.
 
 Apps:

@@ -11,8 +11,10 @@ export HISTSIZE=4096;
 # previous commands without needlessly cluttering the current shell's history.
 export HISTFILESIZE=16384;
 
-# When executing the same command twice or more in a row, only store it once.
-export HISTCONTROL=ignoredups;
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+# HISTCONTROL=ignoreboth breaks MC in console mode
+export HISTCONTROL=ignoreboth
 
 # Keep track of the time the commands were executed.
 # The xterm colour escapes require special care when piping; e.g. "| less -R".
@@ -22,17 +24,14 @@ export HISTTIMEFORMAT="${FG_BLUE}${FONT_BOLD}%Y/%m/%d %H:%M:%S${FONT_RESET}  ";
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
-# Get color support for 'grep'
-export GREP_OPTIONS="--color=auto --exclude=*.pyc --exclude-dir=.git --exclude-dir=.svn"
+# Ignore some file types for grep
+export GREP_OPTIONS="--exclude=*.pyc --exclude-dir=.git --exclude-dir=.svn"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Get color support for 'less'
 export LESS="--RAW-CONTROL-CHARS"
-
-# Pygmentize less output
-export LESSOPEN='|~/.lessfilter %s'
 
 # Use colors for less, man, etc.
 # Probably I should use [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
@@ -60,7 +59,9 @@ export PATH="$HOME/bin:$PATH"
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
 
 # Enable python defaults
-export PYTHONSTARTUP="$HOME/.pythonrc"
+pythonrc_path="$HOME/.pythonrc"
+[ -e $pythonrc_path ] && export PYTHONSTARTUP=$pythonrc_path
 
-# MC solarized
-export MC_SKIN=$HOME/Projects/Tools/mc-solarized/solarized.ini
+# MC solarized theme
+mc_skin_path="$HOME/Projects/Tools/mc-solarized/solarized.ini"
+[ -e "$mc_skin_path" ] && export MC_SKIN=$mc_skin_path
