@@ -109,7 +109,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias fs="stat -f \"%z bytes\""
 
 # File path
-alias fp="readlink -f $0"
+alias fp="readlink -f $1"
 
 # ROT13-encode/decode text.
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'

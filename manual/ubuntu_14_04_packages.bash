@@ -7,19 +7,21 @@ sudo -v
 sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
+add-apt-repository -y ppa:tualatrix/ppa
+
 
 # Keep newest
 apt-get update
 apt-get upgrade -y
 
 # Essential
-apt-get install -y subversion git vim vim-gtk ctags mc htop smartmontools rar unrar ssh tree ack curl wget nfs-common xclip
+apt-get install -y subversion git vim vim-gtk ctags mc htop smartmontools rar unrar ssh tree curl wget nfs-common ack-grep
 
 # Look
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
 
 # Ubuntu tweakers
-apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager unity-tweak-tool gnome-tweak-tool
+apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager unity-tweak-tool gnome-tweak-tool ubuntu-tweak
 
 # Python
 apt-get install -y python python-setuptools python3 python3-setuptools python-pip
@@ -52,5 +54,14 @@ apt-get install -y mysql-server mysql-client phpmyadmin
 
 # Diff tool
 apt-get install -y meld
+
+# Keyboard tools
+apt-get install -y numlockx parcellite xclip
+
+# Fix broken windows on some apps
+gsettings set com.canonical.desktop.interface scrollbar-mode normal
+
+# Make numlock enabled
+sudo sed -i 's|^exit 0.*$|# Numlock enable\n[ -x /usr/bin/numlockx ] \&\& numlockx on\n\nexit 0|' /etc/rc.local
 
 echo "Done."
