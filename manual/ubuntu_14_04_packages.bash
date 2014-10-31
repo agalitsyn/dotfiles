@@ -9,7 +9,6 @@ add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
 add-apt-repository -y ppa:tualatrix/ppa
 
-
 # Keep newest
 apt-get update
 apt-get upgrade -y
@@ -65,3 +64,4 @@ gsettings set com.canonical.desktop.interface scrollbar-mode normal
 sudo sed -i 's|^exit 0.*$|# Numlock enable\n[ -x /usr/bin/numlockx ] \&\& numlockx on\n\nexit 0|' /etc/rc.local
 
 echo "Done."
+echo "Suggestions: skype, google-chrome, xmind, yed, plantuml"
