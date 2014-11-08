@@ -423,16 +423,9 @@ ssh-refresh()
 # Generate random password
 pswdgen()
 {
-    < /dev/urandom tr -dc A-Za-z0-9 | head -c${6:-16}; echo;
-}
-
-# Allows saving with ctrl-s in vim
-vim()
-{
-    local STTYOPTS="$(stty --save)"
-    stty stop '' -ixoff
-    command vim "$@"
-    stty "$STTYOPTS"
+    local length="$1"
+    [ -z "$length" ] && length="12" || length="$length"
+    LC_ALL=C tr -dc 'A-Za-z0-9_!@#$%^&*()\-+=' < /dev/urandom | head -c "$length" | xargs
 }
 
 # Usage "review [new|id] path/to/files"

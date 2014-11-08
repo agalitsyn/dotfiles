@@ -1,0 +1,2 @@
+# Overrides for https://github.com/spf13/spf13-vim
+set nofoldenable    " Don't fold by default
