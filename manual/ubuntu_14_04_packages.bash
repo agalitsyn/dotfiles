@@ -20,7 +20,9 @@ apt-get install -y subversion git vim vim-gtk ctags mc htop smartmontools rar un
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
 
 # Ubuntu tweakers
-apt-get install -y preload bum gconf-editor dconf-editor compizconfig-settings-manager unity-tweak-tool gnome-tweak-tool ubuntu-tweak
+apt-get install -y preload bum unity-tweak-tool compizconfig-settings-manager
+
+# Optional tweak packages: conf-editor dconf-editor gnome-tweak-tool ubuntu-tweak
 
 # Python
 apt-get install -y python python-setuptools python3 python3-setuptools python-pip
