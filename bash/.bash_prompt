@@ -4,14 +4,14 @@ scm_ps1()
     local s=
 
     if [[ -d ".svn" ]] ; then
-        s=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
+        s=\(svn: $(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
     else
         if [[ $(declare -f __git_ps1) ]]; then
             # Native way
             GIT_PS1_SHOWDIRTYSTATE=true
             GIT_PS1_SHOWSTASHSTATE=true
             GIT_PS1_SHOWUNTRACKEDFILES=true
-            s=$(__git_ps1 "(git:%s)")
+            s=$(__git_ps1 "(git: %s)")
         else
             # Spike way
             # check if we're in a git repo

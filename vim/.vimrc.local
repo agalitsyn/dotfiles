@@ -1,2 +1,4 @@
-# Overrides for https://github.com/spf13/spf13-vim
-set nofoldenable    " Don't fold by default
+set nofoldenable
+
+command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command WWq :execute ':silent w !sudo tee % > /dev/null' | :quit!"

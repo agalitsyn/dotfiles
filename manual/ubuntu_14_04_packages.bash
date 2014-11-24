@@ -8,6 +8,7 @@ sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sour
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
 add-apt-repository -y ppa:tualatrix/ppa
+add-apt-repository -y ppa:shutter/ppa
 
 # Keep newest
 apt-get update
@@ -58,6 +59,9 @@ apt-get install -y meld
 
 # Keyboard tools
 apt-get install -y numlockx parcellite xclip
+
+# Screenshot
+apt-get install -y shutter
 
 # Fix broken windows on some apps
 gsettings set com.canonical.desktop.interface scrollbar-mode normal
