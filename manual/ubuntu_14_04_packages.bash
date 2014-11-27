@@ -28,6 +28,9 @@ apt-get install -y preload bum unity-tweak-tool compizconfig-settings-manager
 # Python
 apt-get install -y python python-setuptools python3 python3-setuptools python-pip
 
+# Nodejs
+apt-get install -y nodejs npm
+
 # Skype + ability to use gtk+ theme
 apt-get install -y skype gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
 
