@@ -1,26 +1,26 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-
-    # Detect which `ls` flavor is in use
-    if ls --color > /dev/null 2>&1; then # GNU `ls`
-        ls_color_flag="--color=auto"
-    else # OS X `ls`
-        ls_color_flag="-G"
-    fi
-
-    alias ls='ls ${ls_color_flag}'
-    alias ll='ls -lh ${ls_color_flag}'
-    alias l='ls -lA ${ls_color_flag}'
-    alias lsd='ls -l | grep "^d"'
-
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    ls_color_flag="--color=auto"
+else # OS X `ls`
+    ls_color_flag="-G"
+fi
+
+alias ls='ls ${ls_color_flag}'
+alias ll='ls -lh ${ls_color_flag}'
+alias l='ls -lA ${ls_color_flag}'
+alias lsd='ls -l | grep "^d"'
+
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
