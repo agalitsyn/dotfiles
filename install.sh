@@ -112,6 +112,13 @@ configure_vim()
     fi
 }
 
+install_vim_spf13()
+{
+    announce_step "Install spf13 VIM"
+
+    sh <(curl https://j.mp/spf13-vim3 -L)
+}
+
 configure_sublime_text()
 {
     announce_step "Configure Sublime Text 3"
@@ -138,6 +145,10 @@ while [ "$#" -gt 0 ]; do
     case "$1" in
         --vim)
             opt_configure_vim="true"
+            shift
+            ;;
+        --vim-spf13)
+            opt_install_vim_spf13="true"
             shift
             ;;
         --sublime)
@@ -174,6 +185,7 @@ install_z
 
 [ -z "$opt_configure_sublime" ] || configure_sublime_text
 [ -z "$opt_configure_vim" ] || configure_vim
+[ -z "$opt_install_vim_spf13" ] || install_vim_spf13
 [ -z "$opt_install_solarized" ] || install_solarized_colors
 
 end

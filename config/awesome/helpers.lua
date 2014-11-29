@@ -1,3 +1,5 @@
+-- Usage: require("helpers")
+
 -- {{{ Helper functions
 
 function run_once(prg,arg_string,pname,screen)

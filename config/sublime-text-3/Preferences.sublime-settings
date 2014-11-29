@@ -1,16 +1,8 @@
 {
-    // Colors
-    //"theme": "Soda Dark 3.sublime-theme",
-    //"theme": "Soda SolarizedDark.sublime-theme",
-    "theme": "Sodarized Dark 3.sublime-theme",
-    "soda_folder_icons": true,
-    //"color_scheme": "Packages/User/Tomorrow-Night (SL).tmTheme",
-    "color_scheme": "Packages/User/Solarized (Dark) (SL).tmTheme",
-
     // Font
-    "font_face": "Ubuntu Mono",
+    "font_face": "Menlo", // or Ubuntu Mono
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 14,
+    "font_size": 13,
 
     // Cursor style - slightly wider than default
     "caret_style": "smooth",
