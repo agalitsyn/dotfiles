@@ -1,83 +1,79 @@
 {
     "installed_packages":
     [
-        // Appearance
-        "Theme - Soda",
-        "Tomorrow Color Schemes",
-        "Theme - Sodarized",
-
         // VCS integration
         "Git",
-        "SVN",
-        "VCS Gutter",
+        "GitGutter",
 
         // Diff tool
         "Sublimerge Pro",
 
         // Files and foldes
-        "AdvancedNewFile",
+        // "AdvancedNewFile",
         "SideBarEnhancements",
-        "Synced​Side​Bar",
+        // "Synced​Side​Bar",
 
         // Remote files
         "SFTP",
-        "rsub",
+        // "rsub",
 
         // Editor
         "BracketHighlighter",
-        "DocBlockr",
-        "Function Name Display",
-        "LineEndings",
+        "EditorConfig",
+        "AutoFileName",
+
+        // "Function Name Display",
+        // "LineEndings",
 
         // Autocomplete
-        "SublimeCodeIntel",
+        // "SublimeCodeIntel",
 
         // Linting
-        "SublimeLinter",
+        // "SublimeLinter",
 
         // PHP
-        "PhpDoc",
-        "Additional PHP Snippets",
-        "Phpcs",
-        "PHP Companion",
-        "PHP Modern",
-        "PHPUnit",
-        "PHPUnit Snippets",
-        "Goto Documentation",
-        "Xdebug Client",
+        // "PhpDoc",
+        // "Additional PHP Snippets",
+        // "Phpcs",
+        // "PHP Companion",
+        // "PHP Modern",
+        // "PHPUnit",
+        // "PHPUnit Snippets",
+        // "Goto Documentation",
+        // "Xdebug Client",
 
-        "SublimeLinter-phpcs",
-        "SublimeLinter-phpmd",
+        // "SublimeLinter-phpcs",
+        // "SublimeLinter-phpmd",
 
         // Symfony2
-        "Symfony2 Snippets",
-        "Twig",
+        // "Symfony2 Snippets",
+        // "Twig",
 
         // Python
-        "Anaconda",
-        "SublimeREPL",
+        // "Anaconda",
+        // "SublimeREPL",
 
         // JS
-        "SublimeLinter-jshint",
-        "SublimeLinter-json",
+        "DocBlockr",
+        // "SublimeLinter-jshint",
+        // "SublimeLinter-json",
 
         // HTML, CSS
-        "Emmet",
-        "LiveReload",
+        // "Emmet",
+        // "LiveReload",
 
-        "SublimeLinter-csslint",
-        "SublimeLinter-html-tidy",
+        // "SublimeLinter-csslint",
+        // "SublimeLinter-html-tidy",
 
         // Additional syntax
-        "ApacheConf.tmLanguage",
+        // "ApacheConf.tmLanguage",
         "Dotfiles Syntax Highlighting",
-        "EditorConfig",
 
-        "SublimeLinter-annotations",
+        // "SublimeLinter-annotations",
 
         // RST
         "RestructuredText Improved",
-        "Restructured Text (RST) Snippets",
+        // "Restructured Text (RST) Snippets",
 
         // Tools
         "PlainTasks"
