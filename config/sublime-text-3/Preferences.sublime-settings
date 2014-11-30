@@ -41,6 +41,7 @@
     "tab_size": 4,
     "ensure_newline_at_eof_on_save": true,
     "shift_tab_unindent": true,
+    "show_encoding": true,
 
     // Sidebar - exclude distracting files and folders
     "file_exclude_patterns":
