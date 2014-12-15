@@ -10,6 +10,12 @@ f()
     find . -name "$1"
 }
 
+# Goto temp dir
+cd-temp()
+{
+    [ -z "$TMPDIR" ] && cd /tmp || cd "$TMPDIR"
+}
+
 # Simple calculator
 calc()
 {
