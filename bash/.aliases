@@ -3,24 +3,19 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    ls_color_flag="--color=auto"
-else # OS X `ls`
-    ls_color_flag="-G"
-fi
-
-alias ls='ls ${ls_color_flag}'
-alias ll='ls -lh ${ls_color_flag}'
-alias l='ls -lA ${ls_color_flag}'
+color_flag="--color=auto"
+alias ls='ls $color_flag'
+alias ll='ls -lh $color_flag'
+alias l='ls -lA $color_flag'
 alias lsd='ls -l | grep "^d"'
 
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
+alias dir='dir $color_flag'
+alias vdir='vdir $color_flag'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+grep_options="--exclude=*.pyc --exclude-dir=.git --exclude-dir=.svn"
+alias grep='grep $color_flag $grep_options'
+alias fgrep='fgrep $color_flag $grep_options'
+alias egrep='egrep $color_flag $grep_options'
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."

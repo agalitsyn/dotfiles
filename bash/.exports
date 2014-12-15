@@ -24,9 +24,6 @@ export HISTTIMEFORMAT="${FG_BLUE}${FONT_BOLD}%Y/%m/%d %H:%M:%S${FONT_RESET}  ";
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
-# Ignore some file types for grep
-export GREP_OPTIONS="--exclude=*.pyc --exclude-dir=.git --exclude-dir=.svn"
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 

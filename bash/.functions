@@ -439,6 +439,7 @@ ssh-copy-key()
 pswdgen()
 {
     local length="$1"
+
     [ -z "$length" ] && length="12" || length="$length"
     LC_ALL=C tr -dc 'A-Za-z0-9_!@#$%^&*()\-+=' < /dev/urandom | head -c "$length" | xargs
 }

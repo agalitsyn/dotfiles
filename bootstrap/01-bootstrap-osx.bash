@@ -3,6 +3,9 @@
 # homebrew
 ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 
+# Export brew stuff
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_extra
+
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -11,13 +14,22 @@ brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
-echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
+echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
 
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
+# Install other GNU utils
+brew install findutils --with-default-names
+brew install gnu-indent --with-default-names
+brew install gnu-sed --with-default-names
+echo 'export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"' >> ~/.bash_extra
+echo 'export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
+brew install gnutls --with-default-names
+brew install gnu-tar --with-default-names
+brew install gawk
 
-# Install GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --default-names
+brew tap homebrew/dupes
+brew install grep --with-default-names
+brew install screen
 
 # Install Bash 4
 brew install bash bash-completion
@@ -25,28 +37,24 @@ brew install bash bash-completion
 # Install wget with IRI support
 brew install wget --enable-iri
 
-# Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/screen
-
-brew tap josegonzalez/homebrew-php
-
 # Install everything else
-brew install vim --override-system-vi
-brew install ack
 brew install git
+brew install vim --override-system-vi
+brew install ctags
+brew install ack
 brew install rename
 brew install tree
 brew install mc
-brew install python3
-brew install ctags
 brew install htop
 brew install pwgen
+
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
 
+# Go web
+brew install python3
 brew install node # This installs `npm` too using the recommended installation method
+brew tap josegonzalez/homebrew-php
 
 # Remove outdated versions from the cellar
 brew cleanup
@@ -106,4 +114,4 @@ echo 'Virtualbox and extensions:'
 open https://www.virtualbox.org/wiki/Downloads
 echo 'Vagrant:'
 open https://www.vagrantup.com/downloads
-
+echo 'Execute: echo export PATH="/Applications/Vagrant/bin:$PATH" >> ~/.bash_extra'
