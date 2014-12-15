@@ -420,6 +420,15 @@ ssh-refresh()
     ssh-keygen -f "$HOME/.ssh/known_hosts" -R $1
 }
 
+# Copy specified ssh key to another machine
+ssh-copy-key()
+{
+    local location="$1"
+    local key="$2"
+
+    cat "$key" | ssh "$location" "cat - >> ~/.ssh/authorized_keys"
+}
+
 # Generate random password
 pswdgen()
 {
