@@ -45,16 +45,24 @@ brew install ack
 brew install rename
 brew install tree
 brew install mc
-brew install htop
+brew install htop-osx
 brew install pwgen
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
 
-# Go web
+# dev
 brew install python3
 brew install node # This installs `npm` too using the recommended installation method
+brew install go
+echo 'export PATH="$(brew --prefix go)/libexec/bin:$PATH"' >> ~/.bash_extra
+brew install lua
 brew tap josegonzalez/homebrew-php
+brew install php56
+
+# devops
+brew install ansible
+brew install boot2docker
 
 # Remove outdated versions from the cellar
 brew cleanup
