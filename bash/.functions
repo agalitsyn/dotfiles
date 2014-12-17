@@ -434,6 +434,16 @@ ssh-copy-key()
     local user="$3"
 
     cat "$key" | ssh "$host" -l "$user" "cat - >> ~/.ssh/authorized_keys"
+    echo "ssh command copied to clipboard"
+    echo "ssh $host -l $user" | pbcopy
+}
+
+ssh-set-config()
+{
+    local key="$1"
+    local host="$2"
+    local user="$3"
+
     cat >> ~/.ssh/config <<EOF
 Host "$host"
 User "$user"
