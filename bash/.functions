@@ -429,10 +429,17 @@ ssh-refresh()
 # Copy specified ssh key to another machine
 ssh-copy-key()
 {
-    local location="$1"
-    local key="$2"
+    local key="$1"
+    local host="$2"
+    local user="$3"
 
-    cat "$key" | ssh "$location" "cat - >> ~/.ssh/authorized_keys"
+    cat "$key" | ssh "$host" -l "$user" "cat - >> ~/.ssh/authorized_keys"
+    cat >> ~/.ssh/config <<EOF
+Host "$host"
+User "$user"
+IdentityFile "$key"
+
+EOF
 }
 
 # Generate random password
