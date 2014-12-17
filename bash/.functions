@@ -460,7 +460,7 @@ review()
 }
 
 # Simple notes
-note ()
+note()
 {
     local destination="$HOME"
     # if Dropbox installed, save into it for sync
@@ -482,4 +482,12 @@ note ()
         # add all arguments to file
         printf "%s\n" "`date "+%A, %B %d, %Y [%T]"`" "====" "$*" "" >> $notes
     fi
+}
+
+upgrade-python-in-virtualenv()
+{
+    local target="$1"
+
+    find "$target/" -type l -delete
+    virtualenv "$target"
 }
