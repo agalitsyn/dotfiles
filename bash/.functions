@@ -440,6 +440,8 @@ User "$user"
 IdentityFile "$key"
 
 EOF
+    echo "ssh command copied to clipboard"
+    echo "ssh $host" | pbcopy
 }
 
 # Generate random password
