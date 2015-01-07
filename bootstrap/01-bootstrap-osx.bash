@@ -61,8 +61,11 @@ brew tap josegonzalez/homebrew-php
 brew install php56
 
 # devops
+brew install netcat
 brew install ansible
 brew install boot2docker
+
+#brew install tor
 
 # Remove outdated versions from the cellar
 brew cleanup
@@ -90,6 +93,8 @@ echo 'Firefox:'
 open http://www.mozilla.org/en-US/firefox/new/
 echo 'Chrome:'
 open https://www.google.com/intl/en/chrome/browser/
+echo 'Tor browser'
+open https://www.torproject.org/download/download-easy.html.en
 
 echo '==> Editors'
 echo 'Sublime text:'
@@ -123,3 +128,16 @@ open https://www.virtualbox.org/wiki/Downloads
 echo 'Vagrant:'
 open https://www.vagrantup.com/downloads
 echo 'Execute: echo export PATH="/Applications/Vagrant/bin:$PATH" >> ~/.bash_extra'
+
+echo '==> Readers'
+echo 'MacDjView'
+open http://sourceforge.net/projects/windjview/files/MacDjView/
+
+echo '==> Productivivty'
+echo 'Evernote'
+open https://evernote.com/download/get.php?file=EvernoteMac
+echo 'Xmind'
+open http://www.xmind.net/download/mac/
+echo 'yEd'
+open https://www.yworks.com/en/products_yed_download.html
+
