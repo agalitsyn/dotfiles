@@ -99,6 +99,8 @@ open https://www.torproject.org/download/download-easy.html.en
 echo '==> Editors'
 echo 'Sublime text:'
 open http://www.sublimetext.com/3
+echo 'Atom'
+open https://atom.io/
 echo 'Pycharm'
 open https://www.jetbrains.com/pycharm/download
 
@@ -140,4 +142,3 @@ echo 'Xmind'
 open http://www.xmind.net/download/mac/
 echo 'yEd'
 open https://www.yworks.com/en/products_yed_download.html
-
