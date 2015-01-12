@@ -445,9 +445,9 @@ ssh-set-config()
     local user="$3"
 
     cat >> ~/.ssh/config <<EOF
-Host "$host"
-User "$user"
-IdentityFile "$key"
+Host $host
+User $user
+IdentityFile $key
 
 EOF
     echo "ssh command copied to clipboard"
