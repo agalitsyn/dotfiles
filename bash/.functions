@@ -454,6 +454,12 @@ EOF
     echo "ssh $host" | pbcopy
 }
 
+ssh-is-available()
+{
+    local hostname="$1"
+    netcat -v -w 1 $hostname 22
+}
+
 # Generate random password
 pswdgen()
 {
@@ -461,6 +467,7 @@ pswdgen()
 
     [ -z "$length" ] && length="12" || length="$length"
     LC_ALL=C tr -dc 'A-Za-z0-9_!@#$%^&*()\-+=' < /dev/urandom | head -c "$length" | xargs
+    LC_ALL=C tr -dc 'A-Za-z0-9' < /dev/urandom | head -c "$length" | xargs
 }
 
 # Usage "review [new|id] path/to/files"
