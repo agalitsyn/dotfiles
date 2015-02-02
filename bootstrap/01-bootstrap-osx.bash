@@ -87,6 +87,8 @@ open https://pqrs.org/osx/karabiner/seil.html.en
 echo '==> Monitoring tools'
 echo 'Menu meters'
 open http://www.ragingmenace.com/software/menumeters/#download
+echo 'smcFanControl'
+open https://github.com/hholtmann/smcFanControl
 
 echo '==> Browsers'
 echo 'Firefox:'
