@@ -65,7 +65,8 @@ brew install netcat
 brew install ansible
 brew install boot2docker
 
-#brew install tor
+# cask
+brew install caskroom/cask/brew-cask
 
 # Remove outdated versions from the cellar
 brew cleanup
@@ -77,8 +78,11 @@ echo 'Iterm 2:'
 open https://iterm2.com/downloads.html
 
 echo '==> Keyboard'
-echo 'Spectacle:'
-open http://spectacleapp.com/
+#echo 'Spectacle:'
+#open http://spectacleapp.com/
+
+brew cask install amethyst
+
 echo 'Flycut:'
 open https://itunes.apple.com/ru/app/flycut-clipboard-manager/id442160987?mt=12
 echo 'Seil (Keyboard hacks)'
