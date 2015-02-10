@@ -128,10 +128,6 @@ if has("autocmd")
     autocmd InsertEnter * :set number
     autocmd InsertLeave * :set relativenumber
 
-    " In insert mode, auto turn on absolute numbered lines
-    autocmd InsertEnter * :set number
-    autocmd InsertLeave * :set relativenumber
-
     " Change status line color based on mode
     hi statusline term=reverse ctermfg=0 ctermbg=2
     au InsertEnter * hi statusline term=reverse ctermbg=4 gui=undercurl guisp=Magenta

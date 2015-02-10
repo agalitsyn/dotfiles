@@ -501,10 +501,11 @@ note()
     fi
 }
 
-upgrade-python-in-virtualenv()
+python-upgrade-in-virtualenv()
 {
     local target="$1"
-
+    [ -n "$target" ] || echo "Please, set virtual dir. Usage: python-upgrade-in-virtualenv venv-dir" >&2 && return
+    
     find "$target/" -type l -delete
     virtualenv "$target"
 }
