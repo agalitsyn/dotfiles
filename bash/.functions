@@ -421,7 +421,7 @@ ssh-mysqldump()
 }
 
 # Delete host from known_hosts if node was reinstalled
-ssh-refresh()
+ssh-remove-from-known-hosts()
 {
     ssh-keygen -f "$HOME/.ssh/known_hosts" -R $1
 }
@@ -429,20 +429,22 @@ ssh-refresh()
 # Copy specified ssh key to another machine
 ssh-copy-key()
 {
-    local key="$1"
-    local host="$2"
-    local user="$3"
+    local usage="Usage: ssh-copy-key {key} {host} {user}"
+    local key="${1:?$usage}"
+    local host="${2:?$usage}"
+    local user="${3:?$usage}"
 
     cat "$key" | ssh "$host" -l "$user" "cat - >> ~/.ssh/authorized_keys"
-    echo "ssh command copied to clipboard"
-    echo "ssh $host -l $user" | pbcopy
+    echo "Use: ssh $host -l $user -i $key"
 }
 
+# Add record to ssh config
 ssh-set-config()
 {
-    local key="$1"
-    local host="$2"
-    local user="$3"
+    local usage="Usage: ssh-set-config {key} {host} {user}"
+    local key="${1:?$usage}"
+    local host="${2:?$usage}"
+    local user="${3:?$usage}"
 
     cat >> ~/.ssh/config <<EOF
 Host $host
@@ -450,24 +452,56 @@ User $user
 IdentityFile $key
 
 EOF
-    echo "ssh command copied to clipboard"
-    echo "ssh $host" | pbcopy
+    echo "Use: ssh $host"
 }
 
-ssh-is-available()
+wait-for-ssh()
 {
-    local hostname="$1"
-    netcat -v -w 1 $hostname 22
+    local usage="Usage: wait-for-ssh {host} [user] [key] [timeout]"
+    local host="${1:?$usage}"
+    local user="$2"
+    local key="$3"
+    local timeout="${4:-10}"
+
+    local command="ssh -o StrictHostKeyChecking=no $host"
+    [ -n "$user" ] && command="$command -l $user"
+    [ -n "$key" ] && command="$command -i $key"
+
+    if ! timeout $timeout sh -c "while ! $command echo \"Success\"; do echo \"Retry ...\"; sleep 1; done"; then
+        echo "Server didn't become ssh-able!" >&2
+    fi
+}
+
+wait-for-http()
+{
+    local usage="Usage: wait-for-http {url} [timeout]"
+    local url="${1:?$usage}"
+    local timeout="${2:-3}"
+
+    timeout $timeout sh -c "while ! curl -k --noproxy '*' -s $url > /dev/null; do echo \"Retry ...\"; sleep 1; done"
+    local retvalue=$?
+
+    echo -n "HTTP for url \"$url\" is "
+    if [ $retvalue -eq 0 ]; then
+        echo "available."
+    else
+        echo "not available."
+    fi
 }
 
 # Generate random password
 pswdgen()
 {
-    local length="$1"
+    local length="${1:-12}"
 
-    [ -z "$length" ] && length="12" || length="$length"
+    echo "Strong:"
     LC_ALL=C tr -dc 'A-Za-z0-9_!@#$%^&*()\-+=' < /dev/urandom | head -c "$length" | xargs
+    echo "Middle:"
     LC_ALL=C tr -dc 'A-Za-z0-9' < /dev/urandom | head -c "$length" | xargs
+    echo "Simple:"
+    LC_ALL=C tr -dc 'a-z0-9' < /dev/urandom | head -c "$length" | xargs
+    echo "Simple 2:"
+    LC_ALL=C tr -dc 'a-zA-Z' < /dev/urandom | head -c "$length" | xargs
 }
 
 # Usage "review [new|id] path/to/files"
@@ -503,10 +537,10 @@ note()
 
 python-upgrade-in-virtualenv()
 {
-    local target="$1"
-    [ -n "$target" ] || echo "Please, set virtual dir. Usage: python-upgrade-in-virtualenv venv-dir" >&2 && return
-    
-    find "$target/" -type l -delete
+    local usage="Usage: python-upgrade-in-virtualenv {venv-dir}"
+    local target="${1:?$usage}"
+
+    find "./$target/" -type l -delete
     virtualenv "$target"
 }
 
