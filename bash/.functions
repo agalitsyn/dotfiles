@@ -434,7 +434,7 @@ ssh-copy-key()
     local host="${2:?$usage}"
     local user="${3:?$usage}"
 
-    cat "$key" | ssh "$host" -l "$user" "cat - >> ~/.ssh/authorized_keys"
+    cat "$key" | ssh "$host" -l "$user" "mkdir -pv ~/.ssh; cat - >> ~/.ssh/authorized_keys"
     echo "Use: ssh $host -l $user -i $key"
 }
 
