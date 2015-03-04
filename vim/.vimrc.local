@@ -1,11 +1,16 @@
 set nofoldenable
+
+set number
+set relativenumber
+
+set nospell
+
+colorscheme ir_black
 set colorcolumn=80,120
+highlight ColorColumn ctermbg=8
 
 autocmd! bufwritepost .vimrc.local source %
 
 command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command WWq :execute ':silent w !sudo tee % > /dev/null' | :quit!"
-
-set number
-set relativenumber
 
