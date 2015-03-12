@@ -9,6 +9,8 @@ colorscheme ir_black
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=8
 
+set guifont=Menlo\ Regular:h13
+
 autocmd! bufwritepost .vimrc.local source %
 
 command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
