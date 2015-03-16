@@ -12,6 +12,9 @@
         "Vintage",
         "RestructuredText"
     ],
+    //"vintage_start_in_command_mode": true,
+    //"inverse_caret_state": true,
+    //"highlight_line": false,
 
     // Editor view look-and-feel
     "draw_white_space": "all",
