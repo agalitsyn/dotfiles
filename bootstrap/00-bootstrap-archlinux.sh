@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+set -x
 
 # Probably vim, git and sudo is already installed.
 

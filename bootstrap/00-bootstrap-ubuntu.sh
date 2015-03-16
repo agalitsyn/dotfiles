@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+set -x
 
 ###
 # Ubuntu 14.04

@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+set -x
 
 # homebrew
 ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)

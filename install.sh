@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ts=4 sts=4 sw=4 noet:
 
-set -e
+set -x
 
 die()
 {
@@ -19,7 +19,7 @@ announce_step()
 usage()
 {
     cat >&2 <<EOT
-Usage: $0 [--vim --sublime --solarized]
+Usage: $0 [--vim --vim-spf13 --sublime --solarized]
 
 Each flag activates additional configuration.
 EOT
@@ -116,7 +116,7 @@ install_vim_spf13()
 {
     announce_step "Install spf13 VIM"
 
-    sh <(curl https://j.mp/spf13-vim3 -L)
+    curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 }
 
 configure_sublime_text()
