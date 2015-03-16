@@ -116,7 +116,7 @@ install_vim_spf13()
 {
     announce_step "Install spf13 VIM"
 
-    curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+    curl https://j.mp/spf13-vim3 -L > /tmp/spf13-vim.sh && sh /tmp/spf13-vim.sh
 }
 
 configure_sublime_text()
