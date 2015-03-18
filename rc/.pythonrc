@@ -1,3 +1,4 @@
-# tab autocomplete
-import rlcompleter, readline
-readline.parse_and_bind('tab:complete')
+import rlcompleter
+import readline
+readline.parse_and_bind("tab: complete")
+
