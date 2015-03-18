@@ -58,6 +58,12 @@ apt-get install -y graphviz
 # Editors
 apt-get install -y sublime-text
 
+# IM
+apt-get install -y skype
+
+# Cloud 
+apt-get install -y dropbox
+
 # Remove packages
 apt-get purge -y avahi-daemon
 
