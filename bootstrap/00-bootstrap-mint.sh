@@ -61,11 +61,11 @@ apt-get install -y sublime-text
 # IM
 apt-get install -y skype
 
-# Cloud 
+# Cloud
 apt-get install -y dropbox
 
 # Remove packages
 apt-get purge -y avahi-daemon
 
 echo "Done."
-echo "Suggestions: skype, google-chrome, xmind, yed, sublime text, pycharm."
+echo "Suggestions: google-chrome, xmind, yed, pycharm."
