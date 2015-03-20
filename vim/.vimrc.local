@@ -5,7 +5,7 @@ set relativenumber
 
 set nospell
 
-colorscheme ir_black
+colorscheme molokai
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=8
 
