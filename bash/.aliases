@@ -5,8 +5,11 @@ fi
 
 color_flag="--color=auto"
 alias ls='ls $color_flag'
-alias ll='ls -lh $color_flag'
-alias l='ls -lA $color_flag'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Alias l='ls -lA $color_flag'
 alias lsd='ls -l | grep "^d"'
 
 alias dir='dir $color_flag'
