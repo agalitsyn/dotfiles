@@ -8,6 +8,9 @@ run_once("setxkbmap", "-option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps
 -- this will make Caps Lock to act as Esc
 run_once("xmodmap", "-e 'keycode 66 = Escape NoSymbol Escape'")
 
+-- rxvt daemon
+run_once("urxvtd")
+
 -- turn numlock on
 -- pcmanfm have bug with numlock, see http://sourceforge.net/p/pcmanfm/bugs/482/
 run_once("numlockx")
@@ -26,3 +29,4 @@ run_once(os.getenv("HOME") .. "/.dropbox-dist/dropboxd")
 
 -- java fix
 run_once("wmname", "LG3D")
+

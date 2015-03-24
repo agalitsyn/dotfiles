@@ -16,5 +16,5 @@ apt-get install -y parcellite
 
 apt-get install -y xfonts-terminus
 
-apt-get install -y rxvt-unicode-256color
+apt-get install -y rxvt-unicode-256color xterm
 
