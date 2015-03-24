@@ -4,9 +4,6 @@ set -x
 
 # Probably vim, git and sudo is already installed.
 
-# Ask for the administrator password upfront.
-sudo -v
-
 pacman-key --init
 pacman-key --populate archlinux
 pacman -Suy

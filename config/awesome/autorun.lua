@@ -1,4 +1,5 @@
 -- Screen
+-- xrandr --output HDMI1 --mode 1920x1200 --above eDP1
 run_once("xrandr", "--output VGA-0 --mode 1920x1080 --right-of DVI-0")
 
 -- Keyboard

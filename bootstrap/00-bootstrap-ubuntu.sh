@@ -6,9 +6,6 @@ set -x
 # Ubuntu 14.04
 ###
 
-# Ask for the administrator password upfront
-sudo -v
-
 # Add repos
 sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
 add-apt-repository -y ppa:numix/ppa
