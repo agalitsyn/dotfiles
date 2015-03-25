@@ -12,7 +12,7 @@ apt-get install -y lxappearance
 
 apt-get install -y unclutter numlockx xscreensaver xclip
 
-apt-get install -y parcellite
+apt-get install -y parcellite xsel
 
 apt-get install -y xfonts-terminus
 

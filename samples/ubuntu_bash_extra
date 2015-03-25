@@ -18,3 +18,9 @@ alias sublime='sublime-text';
 
 # Misc
 alias temp="weather -i UNNT"
+
+function touchpad-disable() {
+    local state="${1:-1}"
+    /usr/bin/synclient touchpadoff="$state"
+    #gsettings set org.cinnamon.settings-daemon.peripherals.touchpad touchpad-enabled $state
+}
