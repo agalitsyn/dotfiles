@@ -2,7 +2,7 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-! Probably it's better to delegate this to lxappearance
+! Probably its better to delegate this to lxappearance
 
 Xft.dpi:                    96
 Xft.antialias:              true
