@@ -1,11 +1,12 @@
 -- Screen
-run_once("xrandr", "--output eDP1 --primary --output HDMI1 --mode 1920x1200 --above eDP1")
+run_once("xrandr", "--output eDP1 --primary")
+run_once("xrandr", "--output HDMI1 --mode 1920x1200 --above eDP1")
 
 -- Keyboard
 run_once("setxkbmap", "-option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:none us,ru")
 
 -- this will make Caps Lock to act as Esc
-run_once("xmodmap", "-e 'keycode 66 = Escape NoSymbol Escape'")
+-- run_once("xmodmap", "-e 'keycode 66 = Escape NoSymbol Escape'")
 
 -- rxvt daemon
 run_once("urxvtd")

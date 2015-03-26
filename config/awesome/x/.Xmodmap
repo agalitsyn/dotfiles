@@ -1,0 +1,4 @@
+! 66 is the keycode of Caps_Lock
+clear    Lock
+keycode  66 = Escape 
+
