@@ -29,3 +29,6 @@ run_once(os.getenv("HOME") .. "/.dropbox-dist/dropboxd")
 
 -- java fix
 run_once("wmname", "LG3D")
+
+-- screenshots
+run_once("shutter", "--min_at_startup")

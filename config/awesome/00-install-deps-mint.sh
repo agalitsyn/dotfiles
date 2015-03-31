@@ -10,9 +10,9 @@ apt-get install -y awesome
 
 apt-get install -y lxappearance
 
-apt-get install -y unclutter numlockx xscreensaver xclip
+apt-get install -y unclutter numlockx xscreensaver
 
-apt-get install -y parcellite xsel
+apt-get install -y parcellite xsel xclip
 
 apt-get install -y xfonts-terminus
 
