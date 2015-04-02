@@ -49,6 +49,7 @@ brew install tree
 brew install mc
 brew install htop-osx
 brew install pwgen
+brew install ssh-copy-id
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
