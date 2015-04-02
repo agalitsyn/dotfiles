@@ -25,12 +25,6 @@ apt-get install -y subversion git gitk vim vim-gtk ctags mc htop smartmontools r
 # Look
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-gtk-theme
 
-# Python
-apt-get install -y python python-dev python-setuptools python3 python3-setuptools python-pip
-
-# Nodejs
-apt-get install -y nodejs nodejs-legacy npm
-
 # VM
 apt-get install -y virtualbox virtualbox-guest-additions-iso
 

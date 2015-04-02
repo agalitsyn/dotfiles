@@ -27,12 +27,6 @@ apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-hall
 apt-get install -y preload bum unity-tweak-tool compizconfig-settings-manager
 # Optional tweak packages: conf-editor dconf-editor gnome-tweak-tool ubuntu-tweak
 
-# Python
-apt-get install -y python python-setuptools python3 python3-setuptools python-pip
-
-# Nodejs
-apt-get install -y nodejs npm
-
 # Skype + ability to use gtk+ theme
 apt-get install -y skype gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
 
