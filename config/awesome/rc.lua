@@ -495,7 +495,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
-    awful.key({ altkey, "Control" }, "l",      function () awful.util.spawn("xscreensaver-command -lock") end),
+
+    -- Should be set up for screenlock
+    -- awful.key({ altkey, "Control" }, "l",      function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ altkey, "Control" }, "l",      function () awful.util.spawn("cinnamon-screensaver-command --activate") end),
 
     -- Dropdown terminal
     awful.key({ modkey,	          }, "z",      function () drop(terminal) end),
