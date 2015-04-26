@@ -28,6 +28,7 @@ echo 'export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"' >> ~/.b
 brew install gnutls --with-default-names
 brew install gnu-tar --with-default-names
 brew install gawk
+brew install gettext
 
 brew tap homebrew/dupes
 brew install grep --with-default-names
