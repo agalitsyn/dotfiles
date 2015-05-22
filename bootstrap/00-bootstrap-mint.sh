@@ -26,9 +26,11 @@ apt-get install -y subversion git gitk vim vim-gtk ctags mc htop smartmontools r
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-gtk-theme
 
 # VM
-apt-get install -y virtualbox virtualbox-guest-additions-iso
+apt-get install -y virtualbox virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso
 
+apt-get install -y lxc
 curl -sSL https://get.docker.com/ubuntu/ | sh
+apt-get install -y apparmor
 apt-get install -y vagrant ansible
 
 # Fonts
