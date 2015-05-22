@@ -76,19 +76,16 @@ local layouts = {
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    lain.layout.uselessfair.horizontal,
-    lain.layout.uselesstile,
-    lain.layout.uselessfair,
-    lain.layout.termfair,
-    lain.layout.centerfair,
-    lain.layout.uselesspiral.dwindle
-    -- Default:
-    -- awful.layout.suit.floating,
-    -- awful.layout.suit.tile,
-    -- awful.layout.suit.tile.left,
-    -- awful.layout.suit.tile.bottom,
-    -- awful.layout.suit.tile.top,
+
+    -- lain not used
+    -- lain.layout.uselessfair.horizontal,
+    -- lain.layout.uselesstile,
+    -- lain.layout.uselessfair,
+    -- lain.layout.termfair,
+    -- lain.layout.centerfair,
+    -- lain.layout.uselesspiral.dwindle
+    -- Default not used:
+
     -- awful.layout.suit.fair,
     -- awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
@@ -101,8 +98,8 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-    names = { "main", "editor", "ide", "mail", "im", "6", "7", "8", "9" },
-    layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
+    names = { "main", "term", "editor", "ide", "mail", "im", "mm", "8", "9" },
+    layout = { layouts[1], layouts[2], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
 }
 for s = 1, screen.count() do
    tags[s] = awful.tag(tags.names, s, tags.layout)
