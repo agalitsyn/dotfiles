@@ -28,9 +28,8 @@ apt-get install -y subversion git vim vim-gtk ctags mc htop smartmontools rar un
 apt-get install -y numix-icon-theme numix-icon-theme-circle numix-wallpaper-halloween numix-gtk-theme
 
 # Ubuntu tweakers
-apt-get install -y unity-tweak-tool compizconfig-settings-manager
+apt-get install -y unity-tweak-tool compizconfig-settings-manager conf-editor dconf-editor gnome-tweak-tool
 # Optional optimizers: preload bum
-# Optional tweak packages: conf-editor dconf-editor gnome-tweak-tool ubuntu-tweak
 
 # Claws-mail
 apt-get install -y claws-mail claws-mail-extra-plugins
