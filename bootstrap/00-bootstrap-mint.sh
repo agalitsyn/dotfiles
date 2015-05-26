@@ -7,7 +7,6 @@ set -x
 ###
 
 # Add repos
-#sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:shutter/ppa
 apt-add-repository -y ppa:ansible/ansible
