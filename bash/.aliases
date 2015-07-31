@@ -130,3 +130,7 @@ fi;
 
 # Collaborator
 alias ccollab='sh ~/ccollab-cmdline/ccollab'
+
+# Fast share of screenshot
+alias scrupload='import png:- | curl -T- -s chunk.io'
+
