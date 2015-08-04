@@ -33,7 +33,7 @@ apt-get install -y apparmor
 apt-get install -y vagrant ansible
 
 # Fonts
-apt-get install -y fonts-droid ttf-mscorefonts-installer
+apt-get install -y fonts-droid ttf-mscorefonts-installer xfonts-terminus console-terminus
 
 # Keyboard tools
 apt-get install -y parcellite xclip

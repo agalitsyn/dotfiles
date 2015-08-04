@@ -71,6 +71,8 @@ brew install boot2docker
 
 # cask
 brew install caskroom/cask/brew-cask
+brew tap caskroom/fonts
+brew cask install font-terminus
 
 # Remove outdated versions from the cellar
 brew cleanup
