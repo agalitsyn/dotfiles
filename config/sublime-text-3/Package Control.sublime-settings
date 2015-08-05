@@ -75,6 +75,9 @@
         "RestructuredText Improved",
         "Restructured Text (RST) Snippets",
 
+        // Markdown
+        "MarkdownEditing",
+
         // Tools
         "PlainTasks"
     ]
