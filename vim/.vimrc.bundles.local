@@ -1,0 +1,4 @@
+" Overrides for https://github.com/spf13/spf13-vim
+Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Bundle 'chase/vim-ansible-yaml'
+

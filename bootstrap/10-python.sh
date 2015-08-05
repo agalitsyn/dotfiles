@@ -2,9 +2,18 @@
 
 set -x
 
-apt-get install -y python python-dev python-pip python-setuptools python-virtualenv ipython
-apt-get install -y python-tox python-flake8
-apt-get install -y python-sphinx python-pygments python-sphinxcontrib.seqdiag python-sphinxcontrib.blockdiag
+apt-get install -y python \
+                   python-dev
 
-# update pip
-curl -sSL https://bootstrap.pypa.io/get-pip.py | python
+curl https://bootstrap.pypa.io/get-pip.py -o /opt/get-pip.py \
+    && python /opt/get-pip.py
+
+pip install ipython\
+            flake8 \
+            virtualenv \
+            tox \
+            pygments \
+            Sphinx \
+            sphinxcontrib-seqdiag \
+            sphinxcontrib-blockdiag
+
