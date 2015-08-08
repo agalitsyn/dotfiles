@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+set -ex
 
 ###
 # Linux Mint based in Ubuntu 14.04
@@ -21,12 +21,8 @@ apt-get install -y make \
                    software-properties-common
 
 # Essential
-apt-get install -y subversion \
-                   git \
+apt-get install -y git \
                    gitk \
-                   vim \
-                   vim-gtk \
-                   ctags \
                    mc \
                    htop \
                    smartmontools \
@@ -63,6 +59,12 @@ apt-get install -y fonts-droid \
                    xfonts-terminus \
                    console-terminus
 
+# Browser
+apt-get install -y firefox
+
+# claws-mail
+apt-get install -y claws-mail claws-mail-extra-plugins
+
 # Keyboard tools
 apt-get install -y parcellite xclip
 
@@ -76,14 +78,18 @@ apt-get install -y terminator
 apt-get install -y graphviz
 
 # Editors
-apt-get install -y sublime-text
+apt-get install -y vim vim-gtk ctags sublime-text
 
-# Cloud
+# Diff tool
+apt-get install -y meld
+
+# Storage
 apt-get install -y dropbox
 
-# Remove packages
+# Previent .local handling
 apt-get purge -y avahi-daemon
+
+apt-get clean
 
 echo "Done."
 echo "Suggestions: xmind, yed, pycharm."
-

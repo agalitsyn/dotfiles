@@ -86,5 +86,7 @@ apt-get purge -y avahi-daemon
 # Enable always show for menus
 gsettings set com.canonical.Unity always-show-menus true
 
+apt-get clean
+
 echo "Done."
 echo "Suggestions: atom, sublime-text, skype, google-chrome, xmind, yed"

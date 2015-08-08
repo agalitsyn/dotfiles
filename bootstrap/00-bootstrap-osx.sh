@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+set -ex
 
 # homebrew
 ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
@@ -14,143 +14,120 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
+# Make it GNU/Linux :)
+brew tap homebrew/dupes
+brew install bash \
+             bash-completion \
+             coreutils \
+             findutils --with-default-names \
+             gnu-indent --with-default-names \
+             gnu-sed --with-default-names \
+             gnutls --with-default-names \
+             gnu-tar --with-default-names \
+             gawk \
+             gettext \
+             grep --with-default-names \
+             git \
+             screen \
+             tmux \
+             curl \
+             wget --enable-iri \
+             ack \
+             rename \
+             tree \
+             mc \
+             htop-osx \
+             pwgen \
+             ssh-copy-id \
+             netcat
+# Fixes
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
 echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
-
-# Install other GNU utils
-brew install findutils --with-default-names
-brew install gnu-indent --with-default-names
-brew install gnu-sed --with-default-names
 echo 'export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"' >> ~/.bash_extra
 echo 'export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
-brew install gnutls --with-default-names
-brew install gnu-tar --with-default-names
-brew install gawk
-brew install gettext
-
-brew tap homebrew/dupes
-brew install grep --with-default-names
-brew install screen
-
-# Install Bash 4
-brew install bash bash-completion
-
-# Install wget with IRI support
-brew install wget --enable-iri
-
-# Install everything else
-brew install git
-brew install vim --override-system-vi
-brew install ctags
-brew install ack
-brew install rename
-brew install tree
-brew install mc
-brew install htop-osx
-brew install pwgen
-brew install ssh-copy-id
-
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
 
-# dev
-brew install python3
-brew install node # This installs `npm` too using the recommended installation method
-brew install go
-echo 'export PATH="$(brew --prefix go)/libexec/bin:$PATH"' >> ~/.bash_extra
-brew install lua
-brew tap josegonzalez/homebrew-php
-brew install php56
-
-# devops
-brew install netcat
-brew install ansible
-brew install boot2docker
-
-# cask
+# We need cask to start install OSX applications
 brew install caskroom/cask/brew-cask
+
+# Editors
+brew install ctags \
+             vim --override-system-vi
+brew cask install sublime-text
+
+# Languages
+brew install python3 \
+             node \
+             go
+# Fixes
+echo 'export PATH="$(brew --prefix go)/libexec/bin:$PATH"' >> ~/.bash_extra
+
+# VM
+brew cask install virtualbox \
+                  virtualbox-extension-pack \
+                  vagrant
+# echo 'export PATH="/Applications/Vagrant/bin:$PATH"' >> ~/.bash_extra
+brew install ansible \
+             boot2docker
+
+# Fonts
 brew tap caskroom/fonts
 brew cask install font-terminus
+
+# Browsers
+brew cask install firefox \
+                  google-chrome
+
+# Terminal
+brew cask install iterm2
+
+# Window enhancements
+brew cask install spectacle
+
+# Keyboard
+brew cask install karabiner
+
+# Clipboard
+brew cask install flycut
+
+# Monitoring tools
+brew cask install menumeters \
+                  smcfancontrol
+
+# IDE
+brew cask install pycharm
+
+# Storage
+brew cask install dropbox
+
+# Torrents
+brew cask install transmission
+
+# P2P
+brew cask install eiskaltdcpp
+
+# Media
+brew cask install vlc
+
+# Productivivty
+brew cask install evernote
+
+# Mindmap
+brew cask install xmind
+
+# Graps
+brew cask install graphviz \
+                  yed
 
 # Remove outdated versions from the cellar
 brew cleanup
 
-echo 'Manually install apps:'
-
-echo '==> Terminal'
-echo 'Iterm 2:'
-open https://iterm2.com/downloads.html
-
-echo '==> Keyboard'
-#echo 'Spectacle:'
-#open http://spectacleapp.com/
-
-brew cask install amethyst
-
-echo 'Flycut:'
-open https://itunes.apple.com/ru/app/flycut-clipboard-manager/id442160987?mt=12
-echo 'Seil (Keyboard hacks)'
-open https://pqrs.org/osx/karabiner/seil.html.en
-
-echo '==> Monitoring tools'
-echo 'Menu meters'
-open http://www.ragingmenace.com/software/menumeters/#download
-echo 'smcFanControl'
-open https://github.com/hholtmann/smcFanControl
-
-echo '==> Browsers'
-echo 'Firefox:'
-open http://www.mozilla.org/en-US/firefox/new/
-echo 'Chrome:'
-open https://www.google.com/intl/en/chrome/browser/
-echo 'Tor browser'
-open https://www.torproject.org/download/download-easy.html.en
-
-echo '==> Editors'
-echo 'Sublime text:'
-open http://www.sublimetext.com/3
-echo 'Atom'
-open https://atom.io/
-echo 'Pycharm'
-open https://www.jetbrains.com/pycharm/download
-
-echo '==> Cloud data storages'
-echo 'Dropbox:'
-open https://www.dropbox.com
-
-echo '==> Messaging'
-echo 'Skype:'
-open http://www.skype.com/en/download-skype/skype-for-computer/
-echo 'Hipchat:'
-open https://www.hipchat.com/downloads
-
-echo '==> Torrents'
-echo 'Transmission:'
-open http://www.transmissionbt.com
-
-echo '==> Media'
-echo 'VLC:'
-open http://www.videolan.org/vlc/index.html
-echo 'Popcorn time'
-open https://popcorntime.io/
-
-echo '==> Virtualization'
-echo 'Virtualbox and extensions:'
-open https://www.virtualbox.org/wiki/Downloads
-echo 'Vagrant:'
-open https://www.vagrantup.com/downloads
-echo 'Execute: echo export PATH="/Applications/Vagrant/bin:$PATH" >> ~/.bash_extra'
-
-echo '==> Readers'
-echo 'MacDjView'
-open http://sourceforge.net/projects/windjview/files/MacDjView/
-
-echo '==> Productivivty'
-echo 'Evernote'
-open https://evernote.com/download/get.php?file=EvernoteMac
-echo 'Xmind'
-open http://www.xmind.net/download/mac/
-echo 'yEd'
-open https://www.yworks.com/en/products_yed_download.html
+cat <<EOT
+Suggestions for manual install:
+Skype               brew cask install skype
+Wunderlist          https://www.wunderlist.com/download/
+Pocket              https://getpocket.com/apps/desktop/
+MacDjView           http://sourceforge.net/projects/windjview/files/MacDjView/
+Popcorn time        https://popcorntime.io/
+EOT

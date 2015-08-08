@@ -16,4 +16,3 @@ pip install ipython\
             Sphinx \
             sphinxcontrib-seqdiag \
             sphinxcontrib-blockdiag
-
