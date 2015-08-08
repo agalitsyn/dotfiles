@@ -18,6 +18,7 @@ brew upgrade
 brew tap homebrew/dupes
 brew install bash \
              bash-completion \
+             zsh \
              coreutils \
              findutils --with-default-names \
              gnu-indent --with-default-names \
