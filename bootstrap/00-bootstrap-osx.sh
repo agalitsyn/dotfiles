@@ -86,7 +86,8 @@ brew cask install iterm2
 brew cask install spectacle
 
 # Keyboard
-brew cask install karabiner
+brew cask install seil \
+                  karabiner
 
 # Clipboard
 brew cask install flycut
