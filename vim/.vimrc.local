@@ -7,7 +7,7 @@ set relativenumber
 set nospell
 
 colorscheme molokai
-set colorcolumn=80,120
+set colorcolumn=79
 highlight ColorColumn ctermbg=8
 
 set guifont=Menlo\ Regular:h13
