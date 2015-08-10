@@ -1,4 +1,8 @@
 " Overrides for https://github.com/spf13/spf13-vim
-Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
+" Official but heavy repo, use another instead.
+" Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'chase/vim-ansible-yaml'
+Bundle 'editorconfig/editorconfig-vim'
 
