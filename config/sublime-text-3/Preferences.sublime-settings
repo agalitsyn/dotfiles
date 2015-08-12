@@ -5,8 +5,8 @@
     "font_size": 13,
 
     // Cursor style - slightly wider than default
-    "caret_style": "smooth",
     "wide_caret": true,
+    "caret_style": "phase",
 
     "ignored_packages": [
         "Vintage",
