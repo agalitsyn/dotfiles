@@ -5,4 +5,4 @@
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'editorconfig/editorconfig-vim'
-
+Bundle 'mhinz/vim-startify'

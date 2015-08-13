@@ -1,17 +1,29 @@
 " Overrides for https://github.com/spf13/spf13-vim
+
+" Disable folding by deffault
 set nofoldenable
 
+" Hybrid line
 set number
 set relativenumber
 
+" Disable spell because of red backgroud bug
 set nospell
 
-colorscheme molokai
+" Sublimeish colors
+color molokai
+
+" Python column
 set colorcolumn=79
 highlight ColorColumn ctermbg=8
 
-autocmd! bufwritepost .vimrc.local source %
+" Re-source on save
+autocmd! bufwritepost .vimrc source %
 
-command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
-command WWq :execute ':silent w !sudo tee % > /dev/null' | :quit!"
+" Automatically write a file when leaving a modified buffer
+set autowriteall
 
+" Startify plugin (no more uganda message)
+let g:startify_change_to_vcs_root = 1
+let g:startify_bookmarks = ['~/.vimrc', '~/.vimrc.local', '~/.vimrc.bundles.local']
+let g:startify_custom_header = [ 'VIM ' . v:version ]
