@@ -25,7 +25,7 @@ apt-get install -y git \
                    gitk \
                    mc \
                    htop \
-                   smartmontools \
+                   smartmontools Filebrowser
                    rar \
                    unrar \
                    ssh \
@@ -58,6 +58,17 @@ apt-get install -y fonts-droid \
                    ttf-mscorefonts-installer \
                    xfonts-terminus \
                    console-terminus
+
+# Filebrowser
+apt-get install -y ranger \
+                   caca-utils \
+                   highlight \
+                   atool \
+                   w3m \
+                   w3m-img \
+                   poppler-utils \
+                   mediainfo
+ranger --copy-config=all
 
 # Browser
 apt-get install -y firefox
