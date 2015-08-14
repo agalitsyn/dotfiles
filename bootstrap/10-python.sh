@@ -8,7 +8,7 @@ apt-get install -y python \
 curl https://bootstrap.pypa.io/get-pip.py -o /opt/get-pip.py \
     && python /opt/get-pip.py
 
-pip install ipython\
+pip install ipython \
             flake8 \
             virtualenv \
             tox \
