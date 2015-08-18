@@ -97,6 +97,9 @@ apt-get install -y meld
 # Storage
 apt-get install -y dropbox
 
+# Sound
+apt-get install -y pavucontrol
+
 # Previent .local handling
 apt-get purge -y avahi-daemon
 
