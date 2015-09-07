@@ -20,8 +20,8 @@ highlight ColorColumn ctermbg=8
 " Re-source on save
 autocmd! bufwritepost .vimrc source %
 
-" Automatically write a file when leaving a modified buffer
-set autowriteall
+" Autosave
+au FocusLost * :wa
 
 " Startify plugin (no more uganda message)
 let g:startify_change_to_vcs_root = 1

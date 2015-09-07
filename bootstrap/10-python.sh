@@ -3,7 +3,9 @@
 set -x
 
 apt-get install -y python \
-                   python-dev
+                   python-dev \
+                   python3 \
+                   python3-dev
 
 curl https://bootstrap.pypa.io/get-pip.py -o /opt/get-pip.py \
     && python /opt/get-pip.py
