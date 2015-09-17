@@ -48,8 +48,7 @@ apt-get install -y oracle-java7-installer
 apt-get install -y virtualbox virtualbox-guest-additions-iso virtualbox-dkms
 
 apt-get install -y lxc lxc-templates
-curl -sSL https://get.docker.com/ubuntu/ | sh
-apt-get install -y apparmor
+curl -sSL https://get.docker.com/ | sh
 apt-get install -y vagrant ansible
 
 # Fonts

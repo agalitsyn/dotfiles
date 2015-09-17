@@ -50,7 +50,7 @@ apt-get install -y virtualbox \
                    virtualbox-guest-additions-iso
 
 apt-get install -y vagrant ansible
-apt-get install -y apparmor lxc
+apt-get install -y lxc
 curl -sSL https://get.docker.com/ | sh
 
 # Fonts
