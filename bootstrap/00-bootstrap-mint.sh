@@ -51,7 +51,7 @@ apt-get install -y virtualbox \
 
 apt-get install -y vagrant ansible
 apt-get install -y apparmor lxc
-curl -sSL https://get.docker.com/ubuntu/ | sh
+curl -sSL https://get.docker.com/ | sh
 
 # Fonts
 apt-get install -y fonts-droid \
