@@ -1,5 +1,8 @@
 " Overrides for https://github.com/spf13/spf13-vim
 
+let g:spf13_no_views = 1
+let g:spf13_clear_search_highlight = 1
+
 " Disable folding by deffault
 set nofoldenable
 
@@ -16,6 +19,7 @@ color molokai
 " Python column
 set colorcolumn=79
 highlight ColorColumn ctermbg=8
+highlight CursorLine cterm=NONE ctermbg=darkgray
 
 " Re-source on save
 autocmd! bufwritepost .vimrc source %
@@ -23,10 +27,14 @@ autocmd! bufwritepost .vimrc source %
 " Autosave
 au FocusLost * :wa
 
-" Startify plugin (no more uganda message)
-let g:startify_change_to_vcs_root = 1
-let g:startify_bookmarks = ['~/.vimrc', '~/.vimrc.local', '~/.vimrc.bundles.local']
-let g:startify_custom_header = [ 'VIM ' . v:version ]
+" Disable mouse
+autocmd BufEnter * set mouse=
+
+if isdirectory(expand("~/.vim/bundle/vim-startify/"))
+    let g:startify_change_to_vcs_root = 1
+    let g:startify_bookmarks = ['~/.vimrc', '~/.vimrc.local', '~/.vimrc.bundles.local']
+    let g:startify_custom_header = [ 'VIM ' . v:version ]
+endif
 
 if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
     nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -60,5 +68,30 @@ if isdirectory(expand("~/.vim/bundle/python-mode"))
     let g:pymode_indent = 1
     let g:pymode_options_colorcolumn = 1
     let g:pymode_options_max_line_length = 79
+endif
+
+if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'molokai'
+endif
+
+if isdirectory(expand("~/.vim/bundle/nerdtree"))
+    map <C-e> <plug>NERDTreeTabsToggle<CR>
+    map <leader>e :NERDTreeFind<CR>
+    nmap <leader>nt :NERDTreeFind<CR>
+
+    let NERDTreeShowBookmarks=1
+    let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+    let NERDTreeChDirMode=0
+    let NERDTreeQuitOnOpen=1
+    let NERDTreeMouseMode=2
+    let NERDTreeShowHidden=1
+    let NERDTreeKeepTreeInNewTab=1
+
+    let g:nerdtree_tabs_open_on_gui_startup=0
+
+    let g:NERDTreeWinSize=30
+    let g:NERDTreeDirArrows=0
 endif
 
