@@ -71,7 +71,7 @@ if isdirectory(expand("~/.vim/bundle/python-mode"))
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-airline/"))
-    let g:airline#extensions#tabline#enabled = 1
+    "let g:airline#extensions#tabline#enabled = 1
     let g:airline_powerline_fonts = 1
     let g:airline_theme = 'molokai'
 endif
