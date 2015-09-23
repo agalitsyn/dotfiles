@@ -510,31 +510,6 @@ review()
     ~/ccollab-cmdline/ccollab addchanges --diffbranch "svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p'" "$@"
 }
 
-# Simple notes
-note()
-{
-    local destination="$HOME"
-    # if Dropbox installed, save into it for sync
-    [ ! -d "$HOME/Dropbox" ] || destination="$HOME/Dropbox"
-    local notes="$destination/.notes"
-
-    # if file doesn't exist, create it
-    if [[ ! -f $notes ]]; then
-        touch $notes
-    fi
-
-    if ! (($#)); then
-        # no arguments, print file
-        cat $notes
-    elif [[ "$1" == "-c" ]]; then
-        # clear file
-        > $notes
-    else
-        # add all arguments to file
-        printf "%s\n" "`date "+%A, %B %d, %Y [%T]"`" "====" "$*" "" >> $notes
-    fi
-}
-
 python-upgrade-in-virtualenv()
 {
     local usage="Usage: python-upgrade-in-virtualenv {venv-dir}"
@@ -549,7 +524,33 @@ git-delete-merged-branches()
     git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 }
 
-nse() {
+# Docker
+nse()
+{
   docker exec -it $1 bash
 }
 
+docker-images-cleanup()
+{
+    docker rmi $(docker images | awk '/^<none>/ {print $3}')
+}
+
+docker-containers-cleanup()
+{
+    docker rm $(docker ps --all -q -f status=exited)
+}
+
+# Notes
+note()
+{
+    terminal_velocity "$@"
+}
+
+webclipper()
+{
+    local usage="Usage: clip-note <url> <file-path>"
+    local url="${1:?$usage}"
+    local file="${2:?$usage}"
+
+    pandoc -s -r html $url -o $file.md
+}
