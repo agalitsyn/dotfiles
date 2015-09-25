@@ -8,7 +8,7 @@ Bundle 'chase/vim-ansible-yaml'
 
 Bundle 'editorconfig/editorconfig-vim'
 
-Bundle 'mhinz/vim-startify'
+"Bundle 'mhinz/vim-startify'
 
 Bundle 'elzr/vim-json'
 
