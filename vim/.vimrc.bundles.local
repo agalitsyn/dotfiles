@@ -3,6 +3,27 @@
 " Official but heavy repo, use another instead.
 " Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Bundle 'ekalinin/Dockerfile.vim'
+
 Bundle 'chase/vim-ansible-yaml'
+
 Bundle 'editorconfig/editorconfig-vim'
+
 Bundle 'mhinz/vim-startify'
+
+Bundle 'elzr/vim-json'
+
+if count(g:spf13_bundle_groups, 'general')
+    UnBundle 'altercation/vim-colors-solarized'
+endif
+
+if count(g:spf13_bundle_groups, 'programming')
+    UnBundle 'mattn/webapi-vim'
+    UnBundle 'mattn/gist-vim'
+endif
+
+if count(g:spf13_bundle_groups, 'misc')
+    UnBundle 'rust-lang/rust.vim'
+    UnBundle 'tpope/vim-cucumber'
+    UnBundle 'quentindecock/vim-cucumber-align-pipes'
+    UnBundle 'saltstack/salt-vim'
+endif

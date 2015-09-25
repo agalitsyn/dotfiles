@@ -72,7 +72,6 @@ if isdirectory(expand("~/.vim/bundle/python-mode"))
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-airline/"))
-    "let g:airline#extensions#tabline#enabled = 1
     let g:airline_powerline_fonts = 1
     let g:airline_theme = 'molokai'
 endif
@@ -90,7 +89,8 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
     let NERDTreeShowHidden=1
     let NERDTreeKeepTreeInNewTab=1
 
-    let g:nerdtree_tabs_open_on_gui_startup=0
+    let g:nerdtree_tabs_open_on_gui_startup=1
+    let g:nerdtree_tabs_open_on_console_startup=1
 
     let g:NERDTreeWinSize=30
     "let g:NERDTreeDirArrows=0
