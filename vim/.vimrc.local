@@ -31,6 +31,10 @@ au FocusLost * :wa
 " Disable mouse
 autocmd BufEnter * set mouse=
 
+" Nicer buffer switching
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
+
 if isdirectory(expand("~/.vim/bundle/vim-startify/"))
     let g:startify_change_to_vcs_root = 1
     let g:startify_bookmarks = ['~/.vimrc', '~/.vimrc.local', '~/.vimrc.bundles.local']
