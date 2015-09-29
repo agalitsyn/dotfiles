@@ -10,9 +10,11 @@
     co = checkout
     st = status
     br = branch
+    brs = for-each-ref --sort=committerdate --format='%(refname:short) * %(authorname) * %(committerdate:relative)' refs/remotes/ | column -t -s '*'
     ci = commit
     dh = diff HEAD
     dc = diff --cached
+    dm = log --no-merges master..
     nmerge = merge --no-ff
     unstage = reset HEAD --
     rsh = reset --hard
