@@ -12,11 +12,11 @@ general {
 }
 
 #order += "ipv6"
-#order += "disk /home"
+order += "disk /home"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
-#order += "wireless wlan0"
-#order += "ethernet eth0"
+order += "wireless wlan0"
+order += "ethernet eth0"
 order += "battery 0"
 #order += "load"
 order += "tztime local"
@@ -53,9 +53,9 @@ tztime local {
 }
 
 load {
-        format = "%1min"
+        format = "C: %1min"
 }
 
 disk "/home" {
-        format = "%avail"
+        format = "S: %avail"
 }
