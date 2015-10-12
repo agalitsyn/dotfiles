@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -ex
 
@@ -41,8 +41,11 @@ brew install bash \
              pwgen \
              ssh-copy-id \
              netcat \
+             mtr \
              pandoc \
              asciidoc \
+             grc \
+             ffmpeg --with-libvpx \
              youtube-dl
 # Fixes
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
@@ -51,6 +54,10 @@ echo 'export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"' >> ~/.bash_ex
 echo 'export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
+# FIX mtr perms
+mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
+sudo chmod 4755 $mtrlocation/sbin/mtr
+sudo chown root $mtrlocation/sbin/mtr
 
 # We need cask to start install OSX applications
 brew install caskroom/cask/brew-cask
