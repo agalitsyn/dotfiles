@@ -474,19 +474,22 @@ wait-for-ssh()
 
 wait-for-http()
 {
-    local usage="Usage: wait-for-http {url} [timeout]"
-    local url="${1:?$usage}"
-    local timeout="${2:-3}"
+    local usage="wait_for_endpoint <endpoint> [poll_interval] [retries]"
+    local endpoint=${1:?$usage}
+    local poll_interval=${2:-1}
+    local attempts=${3:-10}
 
-    timeout $timeout sh -c "while ! curl -k --noproxy '*' -s $url > /dev/null; do echo \"Retry ...\"; sleep 1; done"
-    local retvalue=$?
+    attempt=1
+    until $(curl --output /dev/null --silent --head --fail $endpoint); do
+        echo "Endpoint \"$endpoint\" is not available. Attempt $attempt of $attempts."
 
-    echo -n "HTTP for url \"$url\" is "
-    if [ $retvalue -eq 0 ]; then
-        echo "available."
-    else
-        echo "not available."
-    fi
+        if [[ $attempt -eq $attempts ]]; then
+            die "all attempts were failed"
+        fi
+
+        sleep $poll_interval
+        ((attempt++))
+    done
 }
 
 # Generate random password

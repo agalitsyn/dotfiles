@@ -19,7 +19,7 @@ color molokai
 " Python column
 set colorcolumn=79
 highlight ColorColumn ctermbg=darkgrey
-highlight CursorLine cterm=NONE ctermbg=darkgrey
+"highlight CursorLine cterm=NONE ctermbg=lightgrey
 highlight Visual cterm=NONE ctermbg=darkgrey
 
 " Disable mouse
