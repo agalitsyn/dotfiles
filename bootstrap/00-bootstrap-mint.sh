@@ -9,7 +9,8 @@ set -ex
 # Add repos
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:shutter/ppa
-apt-add-repository -y ppa:ansible/ansible
+add-apt-repository -y ppa:ansible/ansible
+add-apt-repository -y ppa:webupd8team/java
 
 # Keep newest
 apt-get update
@@ -99,6 +100,10 @@ apt-get install -y dropbox
 
 # Sound
 apt-get install -y pavucontrol
+
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+apt-get install -y oracle-java8-installer \
+                   oracle-java8-set-default
 
 # Previent .local handling
 apt-get purge -y avahi-daemon
