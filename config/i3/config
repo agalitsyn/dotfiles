@@ -17,7 +17,7 @@ set $alt Mod1
 
 # Screenlocker
 # For ex. i3lock
-set $screenlocker "cinnamon-screensaver-command --activate"
+set $screenlocker "xautolock -locknow"
 bindsym $alt+Control+l exec $screenlocker
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -177,13 +177,29 @@ bar {
 
 focus_follows_mouse no
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# ACPI Keys
+bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec xbacklight +10
+# --no-startup-id
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-#bindsym XF86KdbBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# Autostart
+exec --no-startup-id "xrandr --output eDP1 --mode 1600x900 --rotate normal --primary &"
+exec --no-startup-id "xrandr --output HDMI1 --mode 1920x1200 --above eDP1 &"
+exec --no-startup-id "feh --bg-scale ~/.config/i3/bg.img &"
 
+exec --no-startup-id "setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &"
+#exec --no-startup-id "xmodmap -e 'keycode 66 = Escape NoSymbol Escape' &"
+exec --no-startup-id "numlockx &"
+exec --no-startup-id "unclutter &"
+
+exec --no-startup-id "xautolock -time 5 -locker 'i3lock --nofork --dpms --color 000000' &"
+exec --no-startup-id "pulseaudio --start &"
+#exec --no-startup-id smbnetfs ~/samba &
+#exec --no-startup-id urxvtd -q -o -f &
+
+exec --no-startup-id "parcellite &"
+exec --no-startup-id "pasystray &"
+exec --no-startup-id "dropbox start"

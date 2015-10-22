@@ -11,7 +11,8 @@ BASH_COMPLETION_DIR="/etc/bash_completion.d"
 
 clients=( nova neutron glance cinder keystone designate heat trove ceilometer openstack )
 for client in "${clients[@]}"; do
-    #pip install --upgrade python-${client}client
+    pip install --upgrade python-${client}client
+
     if [[ $($client bash-completion) ]]; then
         cat <<"EOF" > $BASH_COMPLETION_DIR/$client
 _%%CLIENT%%()
