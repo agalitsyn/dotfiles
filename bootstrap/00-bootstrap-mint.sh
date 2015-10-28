@@ -76,6 +76,8 @@ apt-get install -y firefox
 
 # claws-mail
 apt-get install -y claws-mail claws-mail-extra-plugins
+# Spellchecker
+apt-get install -y hunspell-en-us hunspell-ru
 
 # Keyboard tools
 apt-get install -y parcellite xclip
