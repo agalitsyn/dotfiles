@@ -176,6 +176,8 @@ bar {
 }
 
 focus_follows_mouse no
+workspace_layout tabbed
+hide_edge_borders both
 
 # ACPI Keys
 bindsym XF86MonBrightnessDown exec xbacklight -10
