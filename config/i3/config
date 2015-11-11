@@ -130,10 +130,6 @@ workspace 1 output eDP1
 workspace 3 output eDP1
 workspace 4 output eDP1
 
-assign [class="^Firefox$"] 1
-assign [class="^Claws-mail$"] 4
-exec claws-mail
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -149,16 +145,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $left resize shrink width 10 px or 10 ppt
-        bindsym $down resize grow height 10 px or 10 ppt
-        bindsym $up resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
+        bindsym $right resize shrink width 10 px or 10 ppt
+        bindsym $up resize grow height 10 px or 10 ppt
+        bindsym $down resize shrink height 10 px or 10 ppt
+        bindsym $left resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -178,6 +174,11 @@ bar {
 focus_follows_mouse no
 workspace_layout tabbed
 hide_edge_borders both
+
+assign [class="^Firefox$"] 1
+assign [class="^Claws-mail$"] 4
+
+# Autostart
 
 # ACPI Keys
 bindsym XF86MonBrightnessDown exec xbacklight -10
@@ -204,4 +205,6 @@ exec --no-startup-id "pulseaudio --start &"
 
 exec --no-startup-id "parcellite &"
 exec --no-startup-id "pasystray &"
-exec --no-startup-id "dropbox start"
+exec --no-startup-id "dropbox start &"
+
+exec claws-mail
