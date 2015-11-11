@@ -46,7 +46,9 @@ brew install bash \
              asciidoc \
              grc \
              ffmpeg --with-libvpx \
-             youtube-dl
+             youtube-dl \
+             imagemagick \
+             ghostscript
 # Fixes
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
 echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
