@@ -28,6 +28,7 @@ brew install bash \
              gawk \
              gettext \
              grep --with-default-names \
+             pstree \
              git \
              screen \
              tmux \
@@ -48,7 +49,8 @@ brew install bash \
              ffmpeg --with-libvpx \
              youtube-dl \
              imagemagick \
-             ghostscript
+             ghostscript \
+             parallel
 # Fixes
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
 echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
