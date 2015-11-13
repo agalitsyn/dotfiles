@@ -17,4 +17,5 @@ pip install ipython \
             pygments \
             Sphinx \
             sphinxcontrib-seqdiag \
-            sphinxcontrib-blockdiag
+            sphinxcontrib-blockdiag \
+            ansible

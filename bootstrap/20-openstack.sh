@@ -9,12 +9,12 @@ apt-get install -y --no-install-recommends libffi-dev \
 
 BASH_COMPLETION_DIR="/etc/bash_completion.d"
 
-clients=( nova neutron glance cinder keystone designate heat trove ceilometer openstack )
+# Old clients
+clients=( nova neutron glance cinder keystone designate heat trove ceilometer )
 for client in "${clients[@]}"; do
     pip install --upgrade python-${client}client
 
-    if [[ $($client bash-completion) ]]; then
-        cat <<"EOF" > $BASH_COMPLETION_DIR/$client
+    cat <<"EOF" > $BASH_COMPLETION_DIR/$client
 _%%CLIENT%%()
 {
     local cur prev opts
@@ -26,8 +26,8 @@ _%%CLIENT%%()
 }
 complete -F _%%CLIENT%% %%CLIENT%%
 EOF
-        sed -i "s/%%CLIENT%%/$client/g" $BASH_COMPLETION_DIR/$client
-    elif [[ $($client complete) ]]; then
-       $client complete  > $BASH_COMPLETION_DIR/$client
-    fi
+    sed -i "s/%%CLIENT%%/$client/g" $BASH_COMPLETION_DIR/$client
 done
+
+# New client
+openstack complete  > $BASH_COMPLETION_DIR/openstack

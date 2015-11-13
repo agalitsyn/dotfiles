@@ -189,11 +189,11 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Autostart
-exec --no-startup-id "xrandr --output eDP1 --mode 1600x900 --rotate normal --primary &"
-exec --no-startup-id "xrandr --output HDMI1 --mode 1920x1200 --above eDP1 &"
-exec --no-startup-id "feh --bg-scale ~/.config/i3/owl.jpg &"
+exec --no-startup-id "xrandr --output eDP1 --mode 1600x900 --rotate normal --primary"
+exec --no-startup-id "xrandr --output HDMI1 --mode 1920x1200 --above eDP1"
+exec --no-startup-id "feh --bg-scale ~/.config/i3/owl.jpg"
 
-exec --no-startup-id "setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &"
+exec --no-startup-id "setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru"
 #exec --no-startup-id "xmodmap -e 'keycode 66 = Escape NoSymbol Escape' &"
 exec --no-startup-id "numlockx &"
 exec --no-startup-id "unclutter &"
