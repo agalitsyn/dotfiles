@@ -128,6 +128,13 @@ echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | su
 apt-get install -y oracle-java8-installer \
                    oracle-java8-set-default
 
+# Drivers
+apt-get install -y firmware-iwlwifi \
+                   firmware-linux-free \
+                   firmware-linux-nonfree \
+                   firmware-realtek \
+                   intel-microcode
+
 apt-get clean
 
 echo "Done."
