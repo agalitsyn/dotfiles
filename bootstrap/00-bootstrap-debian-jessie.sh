@@ -66,7 +66,9 @@ apt-get install -y vim \
                    traceroute \
                    mtr \
                    lshw \
-                   pm-utils
+                   pm-utils \
+                   grc \
+                   wpasupplicant
 
 # X & DE
 apt-get install -y xorg \
