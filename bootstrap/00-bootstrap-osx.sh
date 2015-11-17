@@ -30,6 +30,7 @@ brew install bash \
              grep --with-default-names \
              pstree \
              git \
+             tug \
              screen \
              tmux \
              curl \
@@ -50,7 +51,8 @@ brew install bash \
              youtube-dl \
              imagemagick \
              ghostscript \
-             parallel
+             parallel \
+             csshx
 # Fixes
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
 echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
