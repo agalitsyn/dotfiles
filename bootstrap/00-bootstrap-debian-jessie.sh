@@ -49,6 +49,7 @@ apt-get install -y vim \
                    ctags \
                    git \
                    gitk \
+                   tig \
                    mc \
                    htop \
                    iotop \

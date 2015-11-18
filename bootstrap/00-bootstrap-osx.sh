@@ -30,7 +30,7 @@ brew install bash \
              grep --with-default-names \
              pstree \
              git \
-             tug \
+             tig \
              screen \
              tmux \
              curl \
