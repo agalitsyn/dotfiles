@@ -34,6 +34,9 @@ deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 EOL
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
 
+# Support for multiarch packages. Uncomment, if needed
+#dpkg --add-architecture i386
+
 # Keep newest
 apt-get update
 apt-get upgrade -y
@@ -140,6 +143,10 @@ apt-get install -y firmware-iwlwifi \
 apt-get install -y cups \
                    printer-driver-foo2zjs \
                    hplip
+
+# Images
+apt-get install -y imagemagick
+
 
 apt-get clean
 
