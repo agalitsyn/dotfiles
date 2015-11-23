@@ -3,4 +3,4 @@
 set -x
 
 # Nodejs
-apt-get install -y nodejs nodejs-legacy npm
+apt-get install -y nodejs npm

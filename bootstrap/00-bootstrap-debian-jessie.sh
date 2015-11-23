@@ -136,6 +136,11 @@ apt-get install -y firmware-iwlwifi \
                    firmware-realtek \
                    intel-microcode
 
+# Printer
+apt-get install -y cups \
+                   printer-driver-foo2zjs \
+                   hplip
+
 apt-get clean
 
 echo "Done."
