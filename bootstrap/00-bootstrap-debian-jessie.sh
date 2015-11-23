@@ -145,7 +145,8 @@ apt-get install -y cups \
                    hplip
 
 # Images
-apt-get install -y imagemagick
+apt-get install -y imagemagick \
+                   scrot
 
 
 apt-get clean
