@@ -134,11 +134,10 @@ apt-get install -y oracle-java8-installer \
                    oracle-java8-set-default
 
 # Drivers
-apt-get install -y firmware-iwlwifi \
-                   firmware-linux-free \
-                   firmware-linux-nonfree \
-                   firmware-realtek \
-                   intel-microcode
+apt-get install -y firmware-iwlwifi\testing \
+                   firmware-linux\testing \
+                   firmware-realtek\testing \
+                   intel-microcode\testing
 
 # Printer
 apt-get install -y cups \
