@@ -180,6 +180,7 @@ prepare_folders
 link_config "bash"
 link_config "git"
 link_config "rc"
+link_config "zsh"
 
 install_z
 
