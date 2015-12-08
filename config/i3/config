@@ -189,23 +189,4 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Autostart
-exec --no-startup-id "xrandr --output eDP1 --mode 1600x900 --rotate normal --primary"
-exec --no-startup-id "xrandr --output HDMI1 --mode 1920x1200 --above eDP1"
-exec --no-startup-id "feh --bg-scale ~/.config/i3/owl.jpg"
-
-# See man xkeyboard-config
-exec --no-startup-id "setxkbmap -option grp:switch,grp:alt_space_toggle,grp_led:caps,caps:escape us,ru"
-#exec --no-startup-id "xmodmap -e 'keycode 66 = Escape NoSymbol Escape' &"
-exec --no-startup-id "numlockx &"
-exec --no-startup-id "unclutter &"
-
-exec --no-startup-id "xautolock -time 5 -locker 'i3lock --nofork --dpms --color 000000' &"
-exec --no-startup-id "pulseaudio --start &"
-#exec --no-startup-id smbnetfs ~/samba &
-#exec --no-startup-id urxvtd -q -o -f &
-
-exec --no-startup-id "parcellite &"
-exec --no-startup-id "pasystray &"
-exec --no-startup-id "dropbox start &"
-
-exec claws-mail
+exec bash ~/.config/i3/autostart.sh
