@@ -73,6 +73,7 @@ apt-get install -y vim \
                    pm-utils \
                    grc \
                    wpasupplicant \
+                   pptp-linux \
                    apache2-utils \
                    zsh
 
