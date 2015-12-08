@@ -3,7 +3,7 @@ ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="blinks"
+ZSH_THEME="robbyrussell"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -38,7 +38,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git osx node npm brew)
-plugins=(cp copyfile copydir colorize colored-man common-aliases z extract gnu-utils sudo git svn sublime symfony2 composer)
+plugins=(cp copyfile copydir colorize colored-man common-aliases z extract gnu-utils sudo git)
 
 source "$ZSH/oh-my-zsh.sh"
 
