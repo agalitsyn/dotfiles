@@ -15,6 +15,9 @@ pulseaudio --start &
 #smbnetfs ~/samba &
 #urxvtd -q -o -f &
 
+ssh-agent &
+
 parcellite &
 pasystray &
+
 dropbox start &
