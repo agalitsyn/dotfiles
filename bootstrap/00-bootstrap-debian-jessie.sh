@@ -73,7 +73,8 @@ apt-get install -y vim \
                    pm-utils \
                    grc \
                    wpasupplicant \
-                   apache2-utils
+                   apache2-utils \
+                   zsh
 
 # X & DE
 apt-get install -y xorg \
