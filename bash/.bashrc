@@ -1,2 +1,3 @@
 [ -n "$PS1" ] && source ~/.bash_profile
-[[ -s "/home/agalitsyn/.gvm/scripts/gvm" ]] && source "/home/agalitsyn/.gvm/scripts/gvm"
+
+# vim: ts=4 sts=4 sw=4 et ai si syn=sh:

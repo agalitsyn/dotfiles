@@ -72,3 +72,5 @@ unset color_prompt force_color_prompt
 # Put the penultimate and current directory
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
+
+# vim: ts=4 sts=4 sw=4 et ai si syn=sh:
