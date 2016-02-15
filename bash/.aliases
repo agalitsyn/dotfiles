@@ -48,10 +48,12 @@ alias vim="stty stop '' -ixoff ; vim" # keep all my configs when run as root
 alias vi='vim'
 alias v='vim -R'
 alias view='vim -R'
-alias g='git'
 alias less='less -Ri'
 alias rsync='rsync --exclude .svn'
-alias ack="ack-grep"
+
+alias g='git'
+[ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
+complete -o default -o nospace -F _git g
 
 # Always use chrome as mp3 and video player, pdf viewer, etc
 alias gc="google-chrome --new-window"

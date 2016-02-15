@@ -23,6 +23,8 @@
     last = log -1 HEAD
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
     smb = submodule update --init --recursive
+    f = fetch --all --prune
+    sha = rev-parse HEAD
 [log]
     date = local
 [core]
@@ -31,3 +33,5 @@
 	autocrlf = input
 [push]
     default = simple
+[gitopen "gitlab"]
+	domain = gitlab.2gis.ru
