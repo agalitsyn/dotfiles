@@ -14,6 +14,8 @@ Bundle 'elzr/vim-json'
 
 Bundle 'solarnz/thrift.vim'
 
+Bundle 'ewilazarus/preto'
+
 if count(g:spf13_bundle_groups, 'general')
     UnBundle 'altercation/vim-colors-solarized'
 endif
