@@ -14,7 +14,7 @@ set relativenumber
 set nospell
 
 " Sublimeish colors
-color preto
+color ir_black
 
 " Python column
 set colorcolumn=79
@@ -85,7 +85,7 @@ if isdirectory(expand("~/.vim/bundle/python-mode"))
     let g:pymode_options_max_line_length = 79
 endif
 
-if isdirectory(expand("~/.vim/bundle/vim-airline-themes"))
+if isdirectory(expand("~/.vim/bundle//vim-airline-themes"))
     let g:airline_powerline_fonts = 1
     let g:airline_theme = 'murmur'
 endif
