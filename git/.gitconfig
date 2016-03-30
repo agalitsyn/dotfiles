@@ -33,5 +33,3 @@
 	autocrlf = input
 [push]
     default = simple
-[gitopen "gitlab"]
-	domain = gitlab.2gis.ru

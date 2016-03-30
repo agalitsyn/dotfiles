@@ -1,4 +1,0 @@
-[
-    { "keys": ["ctrl+space"], "command": "auto_complete" },
-    { "keys": ["alt+shift+1"], "command": "reveal_in_side_bar"}
-]

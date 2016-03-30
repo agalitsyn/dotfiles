@@ -1,13 +1,14 @@
-; top-most EditorConfig file
 root = true
 
-; Defaults
 [*]
-end_of_line = LF
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
 indent_style = space
 indent_size = 4
-tab_width = 4
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-max_line_length = 80
+
+[{Makefile,*.sh}]
+indent_style = tab
+
+[{*.json,*.yml,*.yaml}]
+indent_size = 2

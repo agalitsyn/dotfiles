@@ -4,21 +4,14 @@ case $- in
       *) return;;
 esac
 
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.bash_extra can be used for settings you don’t want to commit
-for file in ~/.{bash_extra,bash_prompt,exports,aliases,functions}; do
-    [ -r "$file" ] && source "$file"
-done
-unset file
-
-# init z - https://github.com/rupa/z
-. ~/bin/z/z.sh
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
+
+# Store multiline cmds as single
+shopt -s cmdhist
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -59,18 +52,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Enable custom autocompletion
-[ -d ~/.bash/completion ] && for file in ~/.bash/completion/*; do
-    [ -f "$file" ] && source "$file";
-done;
-unset file;
-
-# Enable completions from homebrew for OS X
-if [ `type -t brew` > /dev/null ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+# default project folder name.
+export PROJECTS=$HOME/Projects
+if [[ ! -d $PROJECTS ]]; then
+    mkdir $PROJECTS
 fi
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+# load all the aliases or functions when you starts bash.
+# to see all aliases, type alias.
+# to see all functions, type declare -f.
+#
+# to add a new alias/functions,
+# 1. create a new filename in ~/.bash.d/name_of_the_category.sh
+# 2. add your own aliases or functions and save the file
+# 3. reload bash by typing source .bashrc
+if [ -d ~/.bash.d ]; then
+  for f in ~/.bash.d/*.sh; do
+    if [ -r $f ]; then
+      source $f
+    fi
+  done
+  unset f
+fi
 
 # vim: ts=4 sts=4 sw=4 et ai si syn=sh:

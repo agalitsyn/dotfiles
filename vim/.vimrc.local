@@ -14,7 +14,7 @@ set relativenumber
 set nospell
 
 " Sublimeish colors
-color ir_black
+color molokai
 
 " Python column
 set colorcolumn=79
@@ -85,9 +85,9 @@ if isdirectory(expand("~/.vim/bundle/python-mode"))
     let g:pymode_options_max_line_length = 79
 endif
 
-if isdirectory(expand("~/.vim/bundle//vim-airline-themes"))
+if isdirectory(expand("~/.vim/bundle/vim-airline/"))
     let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'murmur'
+    let g:airline_theme = 'molokai'
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
@@ -107,16 +107,16 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
     let g:nerdtree_tabs_open_on_console_startup=0
 
     let g:NERDTreeWinSize=30
-    let g:NERDTreeDirArrows=0
+    "let g:NERDTreeDirArrows=0
 endif
 
 if isdirectory(expand("~/.vim/bundle/ack.vim"))
     let g:ackprg = 'ag --vimgrep'
 endif
 
+
 if isdirectory(expand("~/.vim/bundle/vim-startify/"))
     let g:startify_change_to_vcs_root = 1
     let g:startify_bookmarks = ['~/.vimrc', '~/.vimrc.local', '~/.vimrc.bundles.local']
     let g:startify_custom_header = [ 'VIM ' . v:version  ]
 endif
-
