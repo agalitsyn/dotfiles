@@ -110,9 +110,9 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
     "let g:NERDTreeDirArrows=0
 endif
 
-if isdirectory(expand("~/.vim/bundle/ack.vim"))
-    let g:ackprg = 'ag --vimgrep'
-endif
+"if isdirectory(expand("~/.vim/bundle/ack.vim"))
+    "let g:ackprg = 'ag --vimgrep'
+"endif
 
 
 if isdirectory(expand("~/.vim/bundle/vim-startify/"))
