@@ -1,0 +1,25 @@
+---
+
+- name: install bash packages
+  action: "{{ ansible_pkg_mgr }} name={{ item }} state=latest"
+  sudo: "{% if ansible_pkg_mgr == 'homebrew' %}no{% else %}yes{% endif%}"
+  with_items: bash_packages
+  tags:
+    - bash
+    - bash-install
+
+- name: Copy files
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/{{ item }}"
+  with_items:
+    - .bashrc
+    - .bash_profile
+    - .inputrc
+  tags:
+    - bash
+    - bash-configure
+
+- name: Copy bash hooks
+  copy: "src=.bash.d dest={{ ansible_env.HOME }}"
+  tags:
+    - bash
+    - bash-configure

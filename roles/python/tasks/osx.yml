@@ -1,0 +1,5 @@
+---
+
+- name: Install with Homebrew
+  homebrew: "name={{ item }} state=latest"
+  with_items: python_homebrew_packages

@@ -1,0 +1,67 @@
+---
+
+- include: osx.yml
+  when: ansible_os_family == "Darwin"
+  tags:
+    - vim
+    - vim-install
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags:
+    - vim
+    - vim-install
+
+- name: clone spf13-vim repository
+  git: "repo=https://github.com/spf13/spf13-vim.git dest={{ ansible_env.HOME }}/.spf13-vim"
+  tags:
+    - vim
+    - vim-install
+
+- name: Makes sure directory exists
+  file: path="{{ ansible_env.HOME }}/.spf13-vim/.vim/bundle" state=directory
+  tags:
+    - vim
+    - vim-install
+
+- name: install spf13-vim
+  file: "src={{ ansible_env.HOME }}/.spf13-vim/{{ item }} dest={{ ansible_env.HOME }}/{{ item }} state=link"
+  with_items:
+    - .vimrc
+    - .vimrc.bundles
+    - .vimrc.before
+    - .vim
+  tags:
+    - vim
+    - vim-install
+
+- name: Copy files
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/{{ item }}"
+  with_items:
+    - .vimrc.before.fork
+    - .vimrc.bundles.local
+    - .vimrc.local
+  tags:
+    - vim
+    - vim-configure
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - vim.sh
+  tags:
+    - vim
+    - vim-configure
+
+- name: Install Vundle
+  git: "repo=https://github.com/gmarik/vundle.git dest={{ ansible_env.HOME }}/.vim/bundle/vundle"
+  tags:
+    - vim
+    - vim-install
+    - vim-install-plugins
+
+- name: Install plugins
+  command: vim +PlugInstall +qall
+  tags:
+    - vim
+    - vim-install-plugins

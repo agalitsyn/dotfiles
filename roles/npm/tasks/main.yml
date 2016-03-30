@@ -1,0 +1,16 @@
+---
+
+- include: osx.yml
+  when: ansible_os_family == "Darwin"
+  tags:
+    - npm
+    - npm-install
+
+# TODO: debian installation
+
+- name: Install common npm utilities
+  npm: name={{ item }} state=present global=yes
+  with_items: npm_global_packages
+  tags:
+    - npm
+    - npm-packages

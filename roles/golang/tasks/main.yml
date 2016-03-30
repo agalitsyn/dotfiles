@@ -1,0 +1,21 @@
+---
+
+- include: osx.yml
+  when: ansible_os_family == "Darwin"
+  tags:
+    - golang
+    - golang-install
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags:
+    - golang
+    - golang-install
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - golang.sh
+  tags:
+    - golang
+    - golang-configure

@@ -1,0 +1,15 @@
+---
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags:
+    - chrome
+    - chrome-install
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - chrome.sh
+  tags:
+    - chrome
+    - chrome-configure

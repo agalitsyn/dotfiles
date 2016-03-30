@@ -1,0 +1,53 @@
+---
+
+- include: osx.yml
+  when: ansible_os_family == "Darwin"
+  tags:
+    - python
+    - python-install
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags:
+    - python
+    - python-install
+
+- name: Copy files
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/{{ item }}"
+  with_items:
+    - .pythonrc
+  tags:
+    - python
+    - python-configure
+
+- name: create .idlerc folder
+  file: "path={{ ansible_env.HOME }}/.idlerc"
+  tags:
+    - python
+    - python-configure
+
+- name: Copy config files
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.idlerc/{{ item }}"
+  with_items:
+    - config-highlight.cfg
+  tags:
+    - python
+    - python-configure
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - python.sh
+  tags:
+    - python
+    - python-configure
+
+- name: Install required pip packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ python_pip_packages }}"
+  tags:
+    - python
+    - python-pip-packages

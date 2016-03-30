@@ -1,0 +1,50 @@
+---
+
+- name: Set system defaults
+  script: set-defaults.sh
+  sudo: yes
+  changed_when: false
+  tags:
+    - osx
+    - osx-defaults
+
+- name: Install mac-specific homebrew packages
+  homebrew: "name={{ item.name }} state=latest install_options={{ item.options }}"
+  with_items: osx_homebrew_packages
+  tags:
+    - osx
+    - osx-homebrew-packages
+
+- name: Tap into homebrew-cask
+  homebrew_tap: tap=caskroom/cask state=present
+  tags:
+    - osx
+    - osx-homebrew-cask
+
+- name: Make sure homebrew-cask is installed
+  homebrew: name=brew-cask state=present
+  tags:
+    - osx
+    - osx-homebrew-cask
+
+- name: Tap into homebrew-fonts
+  homebrew_tap: tap=caskroom/fonts state=present
+  tags:
+    - osx
+    - osx-homebrew-cask
+
+- name: Install Mac apps with homebrew cask
+  homebrew_cask: "name={{ item }} state=present"
+  with_items: osx_cask_packages
+  tags:
+    - osx
+    - osx-homebrew-cask
+    - osx-homebrew-cask-packages
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - osx.sh
+  tags:
+    - osx
+    - osx-bash-hooks

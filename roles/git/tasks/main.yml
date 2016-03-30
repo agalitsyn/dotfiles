@@ -1,0 +1,26 @@
+---
+
+- name: install git packages
+  action: "{{ ansible_pkg_mgr }} name={{ item }} state=latest"
+  sudo: "{% if ansible_pkg_mgr == 'homebrew' %}no{% else %}yes{% endif%}"
+  with_items: git_packages
+  tags:
+    - git
+    - git-install
+
+- name: Copy files
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/{{ item }}"
+  with_items:
+    - .gitconfig
+    - .gitignore
+  tags:
+    - git
+    - git-configure
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - git.sh
+  tags:
+    - git
+    - git-configure

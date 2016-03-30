@@ -1,0 +1,25 @@
+---
+
+- hosts: localhost
+  roles:
+    - package_manager
+    - bash
+    - git
+    - z
+    - fonts
+    - tmux
+    - vim
+    - ack
+    - python
+    - golang
+    - ssh
+    #- pdf
+    - sphinx
+    - chrome
+    - ag
+    - npm
+    #- multimedia
+    #- virtualbox
+    #- vagrant
+    #- docker
+    - i3

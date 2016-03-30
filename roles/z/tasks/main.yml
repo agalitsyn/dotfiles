@@ -1,0 +1,35 @@
+---
+
+- name: clone z repository
+  git: repo=https://github.com/rupa/z.git dest=/tmp/z
+  tags:
+    - z
+    - z-install
+
+- name: add z.sh to my customized bash
+  copy: src=/tmp/z/z.sh dest=~/.bash.d/z.sh
+  tags:
+    - z
+    - z-install
+
+- name: install the z.sh man page
+  sudo: yes
+  copy: src=/tmp/z/z.1 dest=/usr/local/man/man1/z.1
+  when: ansible_os_family == "Debian"
+  tags:
+    - z
+    - z-install
+
+- name: install the z.sh man page
+  sudo: yes
+  copy: src=/tmp/z/z.1 dest=/usr/local/share/man/man1/z.1
+  when: ansible_os_family == "Debian"
+  tags:
+    - z
+    - z-install
+
+- name: clean up local repository
+  file: path=/tmp/z state=absent
+  tags:
+    - z
+    - z-install

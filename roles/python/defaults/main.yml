@@ -1,0 +1,19 @@
+---
+
+python_apt_packages:
+  - python
+  - python-dev
+  - python3
+  - python3-dev
+  - python-pip
+
+python_homebrew_packages:
+  - python
+  - python3
+
+python_pip_packages:
+  - ipython
+  - virtualenv
+  - flake8
+  - pygments
+  - tox

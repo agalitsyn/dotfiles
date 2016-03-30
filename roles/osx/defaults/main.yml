@@ -1,0 +1,91 @@
+---
+
+osx_homebrew_packages:
+  - name: coreutils
+    options:
+  - name: findutils
+    options: with-default-names
+  - name: gnu-indent
+    options: with-default-names
+  - name: gnu-sed
+    options: with-default-names
+  - name: gnutls
+    options: with-default-names
+  - name: gnu-tar
+    options: with-default-names
+  - name: gawk
+    options:
+  - name: gettext
+    options:
+  - name: grep
+    options: with-default-names
+  - name: pstree
+    options:
+  - name: curl
+    options:
+  - name: wget
+    options: enable-iri
+  - name: rename
+    options:
+  - name: tree
+    options:
+  - name: mc
+    options:
+  - name: htop-osx
+    options:
+  - name: pwgen
+    options:
+  - name: netcat
+    options:
+  - name: mtr
+    options:
+  - name: pandoc
+    options:
+  - name: asciidoc
+    options:
+  - name: grc
+    options:
+  - name: ffmpeg
+    options: with-libvpx
+  - name: youtube-dl
+    options:
+  - name: imagemagick
+    options:
+  - name: ghostscript
+    options:
+  - name: parallel
+    options:
+
+osx_cask_packages:
+  - virtualbox
+  - virtualbox-extension-pack
+  - vagrant
+  - font-terminus
+  - firefox
+  - google-chrome
+  - iterm2
+  - spectacle
+  - seil
+  - karabiner
+  - flycut
+  - menumeters
+  - smcfancontrol
+  - dropbox
+  - skype
+  - transmission
+  - eiskaltdcpp
+  - vlc
+  - evernote
+  - xmind
+  - graphviz
+  - yed
+  - pycharm-ce
+  - atom
+
+#Suggestions for manual install:
+#Skype               brew cask install skype
+#Pycharm             brew cask install pycharm
+#Wunderlist          https://www.wunderlist.com/download/
+#Pocket              https://getpocket.com/apps/desktop/
+#MacDjView           http://sourceforge.net/projects/windjview/files/MacDjView/
+#Popcorn time        https://popcorntime.io/

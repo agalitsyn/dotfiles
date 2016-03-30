@@ -1,0 +1,19 @@
+---
+
+- name: Install required pip packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ openstack_pip_packages }}"
+  tags:
+    - openstack
+    - openstack-pip-packages
+
+- name: Copy bash hooks
+  copy: "src={{ item }} dest={{ ansible_env.HOME }}/.bash.d/{{ item }}"
+  with_items:
+    - openstack.sh
+  tags:
+    - openstack
+    - openstack-configure

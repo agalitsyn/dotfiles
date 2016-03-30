@@ -1,0 +1,22 @@
+---
+
+- hosts: localhost
+  roles:
+    - package_manager
+    - osx
+    - bash
+    - git
+    - z
+    - tmux
+    - ag
+    - vim
+    - ssh
+    - chrome
+    - python
+    - sphinx
+    - openstack
+    - golang
+    - npm
+  vars:
+    # Fix undefined pkg_mgr for OSX
+    - ansible_pkg_mgr: "{% if ansible_os_family == 'Darwin' %}homebrew{% endif%}"

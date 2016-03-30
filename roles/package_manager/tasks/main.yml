@@ -1,0 +1,11 @@
+---
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags:
+    - package-manager
+
+- include: osx.yml
+  when: ansible_os_family == "Darwin"
+  tags:
+    - package-manager

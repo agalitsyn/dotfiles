@@ -1,0 +1,22 @@
+---
+
+- name: install plantuml (fedora)
+  sudo: yes
+  action: "{{ ansible_pkg_mgr }} name={{ item }} state=present"
+  with_items:
+      - plantuml
+      - java-1.8.0-openjdk
+  when: ansible_distribution == "Fedora" and ansible_distribution_version|int >= 23
+
+- name: install sphinx and plugins
+  pip: name={{ item }}
+  with_items:
+      - sphinx
+      - sphinx_rtd_theme
+      - sphinx-autobuild
+      - sphinxcontrib-plantuml
+      - pygments
+      - sphinxcontrib-seqdiag
+      - sphinxcontrib-blockdiag
+  tags:
+    - sphinx

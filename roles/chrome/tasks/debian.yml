@@ -1,0 +1,41 @@
+---
+# tasks file for chrome
+# see https://www.google.com/linuxrepositories/
+# see http://chaosmail.github.io/programming/2015/03/04/install-deb-packages-in-ansible/
+# see http://www.ubuntuupdates.org/ppa/google_chrome
+
+- name: check for chrome's signing key
+  command: apt-key list | linux-packages-keymaster@google.com
+  register: chrome_signing_key
+  failed_when: chrome_signing_key.rc > 1
+  changed_when: chrome_signing_key.rc == 1
+
+- name: add chrome's signing key
+  apt_key: url=https://dl.google.com/linux/linux_signing_key.pub state=present
+  # we can use use stdout as well
+  # when: has_signing_key.stdout == ""
+  when: chrome_signing_key.rc == 1
+  sudo: yes
+
+- name: add chrome repository
+  lineinfile: > 
+      dest=/etc/apt/sources.list.d/google-chrome.list 
+      line="deb http://dl.google.com/linux/chrome/deb/ stable main"
+  sudo: yes
+
+  # we don't need to reinstall or update to the latest version, this task has
+  # been ran by the common role.
+- name: check for chrome stable installation
+  command: dpkg-query -W google-chrome-stable
+  register: chrome_exists
+  failed_when: chrome_exists.rc > 1
+  changed_when: chrome_exists.rc == 1
+
+- name: install google chrome stable
+  apt: name=google-chrome-stable state=present update_cache=yes
+  when: chrome_exists.rc == 1
+  sudo: yes
+
+- name: install sensible utilities
+  sudo: yes
+  action: "{{ ansible_pkg_mgr }} name=sensible-utils state=present"

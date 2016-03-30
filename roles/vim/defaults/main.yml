@@ -1,0 +1,5 @@
+---
+
+vim_debian_packages:
+  - vim
+  - exuberant-ctags

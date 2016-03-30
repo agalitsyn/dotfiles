@@ -1,0 +1,6 @@
+# Without this line, we have to run this command explicitly
+# See http://www.mechanicalfish.net/start-learning-ansible-with-one-line-and-no-files/
+#
+# To test run
+# $ ansible all -c local -i ansible.hosts -m ping
+localhost ansible_connection=local

@@ -1,0 +1,13 @@
+---
+
+- name: Copy i3 settings
+  copy: "src=i3 dest={{ ansible_env.HOME }}/.config"
+  tags:
+    - i3
+    - i3-configure
+
+- name: Copy i3status settings
+  copy: "src=i3status dest={{ ansible_env.HOME }}/.config"
+  tags:
+    - i3
+    - i3-configure

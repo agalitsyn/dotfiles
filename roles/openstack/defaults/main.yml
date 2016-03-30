@@ -1,0 +1,11 @@
+---
+
+openstack_pip_packages:
+  - python-openstackclient
+  - python-novaclient
+  - python-neutronclient
+  - python-glanceclient
+  - python-cinderclient
+  - python-keystoneclient
+  - python-designateclient
+  - python-heatclient

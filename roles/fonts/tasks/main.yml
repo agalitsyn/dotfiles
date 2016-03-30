@@ -1,0 +1,7 @@
+---
+
+- name: Copy fonts settings
+  copy: "src=fontconfig dest={{ ansible_env.HOME }}/.config"
+  tags:
+    - fonts
+    - fonts-config

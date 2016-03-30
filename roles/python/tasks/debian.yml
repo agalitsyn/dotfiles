@@ -1,0 +1,6 @@
+---
+
+- name: Install with apt
+  apt: "name={{ item }} state=latest"
+  sudo: yes
+  with_items: python_debian_packages

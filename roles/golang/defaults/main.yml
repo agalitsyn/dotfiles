@@ -1,0 +1,7 @@
+---
+
+golang_debian_packages:
+  - golang
+
+golang_homebrew_packages:
+  - go
