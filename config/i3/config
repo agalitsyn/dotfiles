@@ -184,7 +184,6 @@ focus_follows_mouse no
 workspace_layout tabbed
 hide_edge_borders both
 
-assign [class="^Firefox$"] 5
 assign [class="^Claws-mail$"] 4
 assign [class="^Skype$"] 5
 
