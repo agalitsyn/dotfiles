@@ -14,11 +14,12 @@ set $mod Mod4
 # Custom
 
 set $alt Mod1
+set $ctrl Control
 
 # Screenlocker
 # For ex. i3lock
 set $screenlocker "xautolock -locknow"
-bindsym $alt+Control+l exec $screenlocker
+bindsym $alt+$ctrl+l exec $screenlocker
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -126,18 +127,15 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # move workspace to screen
-bindsym $mod+Shift+$alt+Right move workspace to output right
-bindsym $mod+Shift+$alt+Left move workspace to output left
-bindsym $mod+Shift+$alt+Up move workspace to output up
-bindsym $mod+Shift+$alt+Down move workspace to output down
+bindsym $mod+Shift+$ctrl+Right move workspace to output right
+bindsym $mod+Shift+$ctrl+Left move workspace to output left
+bindsym $mod+Shift+$ctrl+Up move workspace to output up
+bindsym $mod+Shift+$ctrl+Down move workspace to output down
 
-bindsym $mod+Shift+$alt+$right move workspace to output right
-bindsym $mod+Shift+$alt+$left move workspace to output left
-bindsym $mod+Shift+$alt+$up move workspace to output up
-bindsym $mod+Shift+$alt+$down move workspace to output down
-
-# Bind
-workspace 1 output eDP1
+bindsym $mod+Shift+$ctrl+$right move workspace to output right
+bindsym $mod+Shift+$ctrl+$left move workspace to output left
+bindsym $mod+Shift+$ctrl+$up move workspace to output up
+bindsym $mod+Shift+$ctrl+$down move workspace to output down
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,8 +182,14 @@ focus_follows_mouse no
 workspace_layout tabbed
 hide_edge_borders both
 
+workspace 6 output eDP1
+# 1 is browser
+# 2 is term
+assign [class="^jetbrains-pycharm-ce$"] 3
 assign [class="^Claws-mail$"] 4
 assign [class="^Skype$"] 5
+assign [class="^slack$"] 5
+# 6 is misc
 
 # Autostart
 
