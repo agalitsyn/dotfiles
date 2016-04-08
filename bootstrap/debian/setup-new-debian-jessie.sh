@@ -193,6 +193,8 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
                    libreoffice
 
+apt-get install -y --no-install-recommends \
+                    zathura zathura-djvu
 # IM
 apt-get install -y --no-install-recommends \
                    pidgin
