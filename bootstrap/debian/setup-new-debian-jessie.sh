@@ -84,6 +84,11 @@ apt-get install -y --no-install-recommends \
                    p7zip-full \
                    p7zip
 
+# Fun
+apt-get install -y --no-install-recommends \
+			cowsay \
+			fortune \
+			figlet
 # X & DE
 apt-get install -y --no-install-recommends \
                    xorg \

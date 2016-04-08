@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-xrandr --output eDP1 --mode 1600x900 --rotate normal --primary
-xrandr --output HDMI1 --mode 1920x1200 --above eDP1
-feh --bg-scale ~/.config/i3/owl.jpg
+xrandr \
+    --output eDP1 --mode 1600x900 --rotate normal --primary \
+    --output HDMI1 --off \
+    --output VGA1 --off \
+    --output DP1 --off
+
+feh --bg-scale ~/.config/i3/bg.jpg
 
 # See man xkeyboard-config
 setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru
