@@ -8,4 +8,5 @@ Plugins using [vim-plug](https://github.com/junegunn/vim-plug)
 
 - [ ] Fix intall of vim-plug and plugins install
 - [ ] OSX and debian alias compability
+- [ ] Debian install https://github.com/neovim/neovim/issues/2211 
 
