@@ -34,6 +34,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
 Plug 'nanotech/jellybeans.vim'
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'ervandew/supertab'
 call plug#end()
 
 
@@ -104,7 +108,7 @@ set esckeys                     " Allow cursor keys in insert mode.
 set diffopt=filler              " Add vertical spaces to keep right and left aligned.
 set diffopt+=iwhite             " Ignore whitespace changes (focus on code changes).
 
-set hlsearch           			    	          " Highlight search terms
+set hlsearch                    " Highlight search terms
 
 set wildmenu                    " for command line completion
 set wildmode=longest,list,full
@@ -183,8 +187,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Nicer buffer switching
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
+"nnoremap <Tab> :bn<CR>
+"nnoremap <S-Tab> :bp<CR>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -316,6 +320,13 @@ if executable('ag')
 elseif executable('ack-grep')
     let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
+
+" Supertab
+let g:SuperTabDefaultCompletionTypeDiscovery = [
+\ "&completefunc:<c-x><c-u>",
+\ "&omnifunc:<c-x><c-o>",
+\ ]
+let g:SuperTabLongestHighlight = 1
 
 " Go
 let g:go_disable_autoinstall = 1
