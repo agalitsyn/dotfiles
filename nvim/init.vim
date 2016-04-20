@@ -12,6 +12,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -38,6 +39,9 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'ervandew/supertab'
+
+Plug 'easymotion/vim-easymotion'
+
 call plug#end()
 
 
@@ -327,6 +331,12 @@ let g:SuperTabDefaultCompletionTypeDiscovery = [
 \ "&omnifunc:<c-x><c-o>",
 \ ]
 let g:SuperTabLongestHighlight = 1
+
+" Easymotion
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " Go
 let g:go_disable_autoinstall = 1
