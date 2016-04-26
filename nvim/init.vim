@@ -70,10 +70,23 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 " Fix for russian
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+
+" Native way
+"set keymap=russian-jcukenwin
+"set iminsert=0
+"set imsearch=0
+"highlight lCursor guifg=NONE guibg=Cyan
+
+" Hack way, but works with setxkb shortcuts
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+nmap Ж :
+nmap Н Y
+nmap з p
+nmap ф a
+nmap щ o
+nmap г u
+nmap З P
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
