@@ -86,8 +86,12 @@ brew cask install virtualbox \
                   virtualbox-extension-pack \
                   vagrant
 # echo 'export PATH="/Applications/Vagrant/bin:$PATH"' >> ~/.bash_extra
-brew install ansible \
-             boot2docker
+
+brew install ansible
+
+brew install docker \
+			 docker-machine \
+			 docker-compose
 
 brew install kubectl
 
