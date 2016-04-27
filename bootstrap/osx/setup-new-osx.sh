@@ -28,15 +28,12 @@ brew install bash \
              gawk \
              gettext \
              grep --with-default-names \
-             pstree \
              git \
-             tig \
              screen \
              tmux \
              curl \
              wget --enable-iri \
              ack \
-             rename \
              tree \
              mc \
              htop-osx \
@@ -58,9 +55,11 @@ echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_
 echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
 echo 'export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"' >> ~/.bash_extra
 echo 'export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
+
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
-# FIX mtr perms
+
+# Fix mtr perms
 mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
 sudo chmod 4755 $mtrlocation/sbin/mtr
 sudo chown root $mtrlocation/sbin/mtr
@@ -70,7 +69,9 @@ brew install caskroom/cask/brew-cask
 
 # Editors
 brew install ctags \
-             vim --override-system-vi
+             vim --override-system-vi \
+			 neovim
+
 brew cask install sublime-text
 
 # Languages
@@ -87,6 +88,8 @@ brew cask install virtualbox \
 # echo 'export PATH="/Applications/Vagrant/bin:$PATH"' >> ~/.bash_extra
 brew install ansible \
              boot2docker
+
+brew install kubectl
 
 # Fonts
 brew tap caskroom/fonts
@@ -114,7 +117,7 @@ brew cask install menumeters \
                   smcfancontrol
 
 # IDE
-brew cask install pycharm
+brew cask install pycharm-ce
 
 # Storage
 brew cask install dropbox
