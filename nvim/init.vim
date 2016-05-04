@@ -163,7 +163,7 @@ endif
 set nowrap          " Do not wrap lines.
 set autoindent      " Copy indent from last line when starting new line.
 set smartindent     " Know about functions end while intending.
-set textwidth=120   " lines longer than 79 columns will be broken
+"set textwidth=120   " lines longer than 79 columns will be broken
 set shiftwidth=4    " operation >> indents 4 columns; << unindents 4 columns
 set tabstop=4       " an hard TAB displays as 4 columns
 set softtabstop=4   " Control how many columns vim uses when you hit Tab in insert mode.
