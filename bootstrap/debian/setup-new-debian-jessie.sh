@@ -112,7 +112,11 @@ apt-get install -y --no-install-recommends \
                    fonts-droid \
                    fonts-liberation \
                    ttf-mscorefonts-installer \
-                   xfonts-terminus
+                   xfonts-terminus \
+				   xfonts-traditional \
+				   ttf-dejavu-extra \
+				   ttf-dejavu \
+				   ttf-dejavu-core
 
 # Sound
 apt-get install -y --no-install-recommends \
