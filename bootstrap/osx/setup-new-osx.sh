@@ -145,6 +145,9 @@ brew cask install xmind
 brew cask install graphviz \
                   yed
 
+# Eyes
+brew cask install flux
+
 # Remove outdated versions from the cellar
 brew cleanup
 
