@@ -15,6 +15,8 @@ numlockx &
 unclutter &
 fbxkb &
 
+redshift -l 54.980645:82.895525 -t 6500:5000 -b 1.0:0.8 &
+
 dunst -config ~/.config/dunst/dunstrc &
 
 xautolock -time 5 -locker 'i3lock --nofork --dpms --color 000000' &

@@ -105,7 +105,8 @@ apt-get install -y --no-install-recommends \
                    xarchiver \
                    fbxkb \
                    dmz-cursor-theme \
-                   xcursor-themes
+                   xcursor-themes \
+				   redshift
 
 # Fonts
 apt-get install -y --no-install-recommends \
@@ -203,7 +204,7 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
                    pidgin
 
-# IM
+# Diff
 apt-get install -y --no-install-recommends \
                    meld
 
