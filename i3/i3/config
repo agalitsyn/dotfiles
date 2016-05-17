@@ -182,14 +182,19 @@ focus_follows_mouse no
 workspace_layout tabbed
 hide_edge_borders both
 
-workspace 6 output eDP1
-# 1 is browser
-# 2 is term
-assign [class="^jetbrains-pycharm-ce$"] 3
+#workspace 6 output eDP1
+
+#rename workspace 1 to "1: www"
+#rename workspace 2 to "2: ide"
+#rename workspace 1 to "3: term"
+#rename workspace 1 to "4: mail"
+#rename workspace 1 to "5: jabber"
+#rename workspace 1 to "6: misc"
+
+assign [class="^jetbrains-pycharm-ce$"] 2
 assign [class="^Claws-mail$"] 4
 assign [class="^Skype$"] 5
 assign [class="^slack$"] 5
-# 6 is misc
 
 # Autostart
 
