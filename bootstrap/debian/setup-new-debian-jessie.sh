@@ -82,7 +82,8 @@ apt-get install -y --no-install-recommends \
                    apache2-utils \
                    zsh \
                    p7zip-full \
-                   p7zip
+                   p7zip \
+				   gettext
 
 # Fun
 apt-get install -y --no-install-recommends \
