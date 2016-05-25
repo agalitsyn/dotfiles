@@ -30,7 +30,7 @@ function rminode() {
 
 # list and find files/folders
 # @see http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
-lf() {
+function lf() {
   local p=$argv[-1]
   [[ -d $p ]] && { argv[-1]=(); } || p='.'
   find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
@@ -80,8 +80,27 @@ alias cp='cp -i';
 alias mv='mv -i';
 alias rm='rm -i';
 
+# Programs
+alias vim="stty stop '' -ixoff ; vim" # keep all my configs when run as root
+alias vi='vim'
+alias v='vim -R'
+alias view='vim -R'
 alias less='less -Ri'
-alias rsync='rsync --exclude .svn'
+
+alias rsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
+
+alias g='git'
+[ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
+complete -o default -o nospace -F _git g
+
+# Always use chrome as mp3 and video player, pdf viewer, etc
+alias gc="google-chrome --new-window"
+
+# Date & time shortcuts
+alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
+
+# Force tmux 256 color
+alias tmux="tmux -2"
 
 # `cat` with beautiful colors. requires Pygments installed.
 #  sudo easy_install Pygments
