@@ -35,3 +35,5 @@
     default = simple
 [gitopen "gitlab"]
 	domain = gitlab.2gis.ru
+[url "git@gitlab.2gis.ru:"]
+	insteadOf = https://gitlab.2gis.ru/

@@ -139,7 +139,7 @@ function _set_git_info {
         STASH='S'
     fi
 
-    GIT_INFO=" ${G}${BRANCH}Â±${REV}${MERGE}${BEHIND}${AHEAD}${STAGED}${UNSTAGED}${C}${STASH}${RESET}"
+    GIT_INFO=" ${G}${BRANCH} ${REV}${MERGE}${BEHIND}${AHEAD}${STAGED}${UNSTAGED}${C}${STASH}${RESET}"
 }
 
 # first find prompt in hgrc, then check it's actually enabled
