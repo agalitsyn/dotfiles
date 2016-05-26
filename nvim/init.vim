@@ -197,6 +197,9 @@ if bufwinnr(1)
 	map - <C-W>-
 endif
 
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
 " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -204,8 +207,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Nicer buffer switching
-"nnoremap <Tab> :bn<CR>
-"nnoremap <S-Tab> :bp<CR>
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -304,7 +307,7 @@ let g:syntastic_check_on_wq = 0
 " Ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 "nnoremap <silent> <D-t> :CtrlP<CR>
 "nnoremap <silent> <D-r> :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
