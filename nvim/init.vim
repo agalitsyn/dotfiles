@@ -304,7 +304,7 @@ let g:syntastic_check_on_wq = 0
 " Ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 "nnoremap <silent> <D-t> :CtrlP<CR>
 "nnoremap <silent> <D-r> :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
@@ -362,13 +362,14 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <leader>co <Plug>(go-coverage)
+au FileType go nmap <Leader>gl <Plug>(go-metalinter)
+au FileType go nmap <Leader>gs <Plug>(go-implements)
+au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <Leader>ge <Plug>(go-rename)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap <Leader>gd <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+au FileType go nmap <leader>gco <Plug>(go-coverage)
 
