@@ -1,3 +1,0 @@
-" Overrides for https://github.com/spf13/spf13-vim
-
-let g:spf13_bundle_groups=[ 'general', 'writing', 'neocomplcache', 'programming', 'python', 'go', 'misc', ]
