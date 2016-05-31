@@ -274,24 +274,6 @@ let g:NERDTreeDirArrows=0
 " Tagbar
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
-" Fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gdf :Git diff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>glg :Git lg<CR>
-nnoremap <silent> <leader>gp :Git pull<CR>
-nnoremap <silent> <leader>gpu :Gpush<CR>
-nnoremap <silent> <leader>gpun :Git push -u<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
-" Mnemonic _i_nteractive
-nnoremap <silent> <leader>gi :Git add -p %<CR>
-nnoremap <silent> <leader>gg :SignifyToggle<CR>
-
 " Signify
 let g:signify_update_on_bufenter = 1
 let g:signify_update_on_focusgained = 1
@@ -354,6 +336,24 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+" Fugitive
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gdf :Git diff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>glg :Git lg<CR>
+nnoremap <silent> <leader>gp :Git pull<CR>
+nnoremap <silent> <leader>gpu :Gpush<CR>
+nnoremap <silent> <leader>gpun :Git push -u<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <leader>gg :SignifyToggle<CR>
+
 " Go
 let g:go_disable_autoinstall = 1
 
@@ -365,14 +365,14 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-au FileType go nmap <Leader>gl <Plug>(go-metalinter)
-au FileType go nmap <Leader>gs <Plug>(go-implements)
-au FileType go nmap <Leader>gi <Plug>(go-info)
-au FileType go nmap <Leader>ge <Plug>(go-rename)
-au FileType go nmap <leader>gr <Plug>(go-run)
-au FileType go nmap <leader>gb <Plug>(go-build)
-au FileType go nmap <leader>gt <Plug>(go-test)
-au FileType go nmap <Leader>gd <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
-au FileType go nmap <leader>gco <Plug>(go-coverage)
+au FileType go nmap <Leader>gol <Plug>(go-metalinter)
+au FileType go nmap <Leader>gos <Plug>(go-implements)
+au FileType go nmap <Leader>goi <Plug>(go-info)
+au FileType go nmap <Leader>goe <Plug>(go-rename)
+au FileType go nmap <leader>gor <Plug>(go-run)
+au FileType go nmap <leader>gob <Plug>(go-build)
+au FileType go nmap <leader>got <Plug>(go-test)
+au FileType go nmap <Leader>god <Plug>(go-doc)
+au FileType go nmap <Leader>godv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>goc <Plug>(go-coverage)
 
