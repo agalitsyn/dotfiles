@@ -52,7 +52,8 @@ filetype plugin indent on      " Automatically detect file types.
 syntax on                      " Syntax highlighting
 set mouse=                     " Disable mouse usage
 set mousehide                  " Hide the mouse cursor while typing
-set encoding=utf-8 nobomb      " BOM often causes trouble
+set encoding=utf8
+set termencoding=utf8
 set hidden                     " Allow buffer switching without saving
 set virtualedit=onemore        " Allow for cursor beyond last character
 set history=1000               " Store a ton of history (default is 20)
@@ -372,7 +373,8 @@ au FileType go nmap <Leader>goe <Plug>(go-rename)
 au FileType go nmap <leader>gor <Plug>(go-run)
 au FileType go nmap <leader>gob <Plug>(go-build)
 au FileType go nmap <leader>got <Plug>(go-test)
-au FileType go nmap <Leader>god <Plug>(go-doc)
-au FileType go nmap <Leader>godv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>god <Plug>(go-def)
+au FileType go nmap <Leader>godo <Plug>(go-doc)
+au FileType go nmap <Leader>godov <Plug>(go-doc-vertical)
 au FileType go nmap <leader>goc <Plug>(go-coverage)
 
