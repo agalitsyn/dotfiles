@@ -277,7 +277,7 @@ let g:NERDTreeWinSize=30
 let g:NERDTreeDirArrows=0
 
 " Tagbar
-map <C-t> :TagbarToggle<CR>
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
 " Signify
 let g:signify_update_on_bufenter = 1
@@ -329,6 +329,7 @@ elseif executable('ack-grep')
 endif
 
 " Supertab
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionTypeDiscovery = [
 \ "&completefunc:<c-x><c-u>",
 \ "&omnifunc:<c-x><c-o>",
@@ -381,4 +382,3 @@ au FileType go nmap <Leader>b <Plug>(go-def)
 au FileType go nmap <Leader>d <Plug>(go-doc)
 au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>cov <Plug>(go-coverage)
-
