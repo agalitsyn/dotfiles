@@ -246,7 +246,8 @@ function! StripTrailingWhitespace()
 	call cursor(l, c)
 endfunction
 
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l> " hide search hl with ctrl+l
+" toggle search highlighting rather than clear the current search results.
+nmap <silent> <leader>/ :set invhlsearch<CR>
 
 set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 
