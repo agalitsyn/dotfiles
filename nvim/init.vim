@@ -25,7 +25,7 @@ Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'fatih/vim-go'
-"Plug 'rhysd/vim-go-impl'
+Plug 'rhysd/vim-go-impl'
 
 Plug 'tpope/vim-markdown'
 
@@ -57,7 +57,7 @@ set termencoding=utf8
 set hidden                     " Allow buffer switching without saving
 set virtualedit=onemore        " Allow for cursor beyond last character
 set history=1000               " Store a ton of history (default is 20)
-" set spell                     " Spell checking on
+set nospell                     " Spell checking on
 set autowrite                  " Automatically write a file when leaving a modified buffer
 
 "disable arrows
@@ -273,7 +273,7 @@ let g:NERDTreeWinSize=30
 let g:NERDTreeDirArrows=0
 
 " Tagbar
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
+map <C-t> :TagbarToggle<CR>
 
 " Signify
 let g:signify_update_on_bufenter = 1
@@ -366,15 +366,15 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-au FileType go nmap <Leader>gol <Plug>(go-metalinter)
-au FileType go nmap <Leader>gos <Plug>(go-implements)
-au FileType go nmap <Leader>goi <Plug>(go-info)
-au FileType go nmap <Leader>goe <Plug>(go-rename)
+au FileType go nmap <Leader>l <Plug>(go-metalinter)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>r <Plug>(go-rename)
 au FileType go nmap <leader>gor <Plug>(go-run)
 au FileType go nmap <leader>gob <Plug>(go-build)
 au FileType go nmap <leader>got <Plug>(go-test)
-au FileType go nmap <Leader>god <Plug>(go-def)
-au FileType go nmap <Leader>godo <Plug>(go-doc)
-au FileType go nmap <Leader>godov <Plug>(go-doc-vertical)
-au FileType go nmap <leader>goc <Plug>(go-coverage)
+au FileType go nmap <Leader>b <Plug>(go-def)
+au FileType go nmap <Leader>d <Plug>(go-doc)
+au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>cov <Plug>(go-coverage)
 
