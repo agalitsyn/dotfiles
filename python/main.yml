@@ -17,3 +17,5 @@ python_pip_packages:
   - flake8
   - pygments
   - tox
+  - mkdocs
+  - awscli
