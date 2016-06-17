@@ -1,0 +1,13 @@
+Host *
+IdentitiesOnly yes
+# Not recommended, but can be handy:
+#UserKnownHostsFile /dev/null
+#StrictHostKeyChecking no
+
+# Per-host configuration:
+#Host my-server-alias
+#HostName example.com
+#Port 22
+#IdentityFile ~/.ssh/example
+#User root
+
