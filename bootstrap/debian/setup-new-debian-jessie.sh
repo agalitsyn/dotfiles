@@ -46,16 +46,17 @@ apt-get upgrade --yes
 apt-get autoremove --purge --yes \
 	avahi-daemon	
 
-# Install
+# Build tools
 apt-get install -y --no-install-recommends \
-	# Build tools
 	build-essential \
 	cmake \
 	software-properties-common \
 	dkms \
 	linux-headers-amd64 \
-	linux-image-amd64 \
-	# Essential
+	linux-image-amd64
+
+# Essential
+apt-get install -y --no-install-recommends \
 	sudo \
 	wpasupplicant \
 	wavemon \
@@ -70,8 +71,10 @@ apt-get install -y --no-install-recommends \
 	manpages-dev \
 	# See https://wiki.debian.org/SSDOptimization
 	smartmontools \
-	net-tools \
-	# Utils
+	net-tools
+
+# Utils
+apt-get install -y --no-install-recommends \
 	tree \
 	curl \
 	wget \
@@ -85,8 +88,10 @@ apt-get install -y --no-install-recommends \
 	pbzip2 \
 	lzop \
 	gettext \
-	pwgen \
-	# Debug
+	pwgen
+
+# Debug
+apt-get install -y --no-install-recommends \
 	linux-tools \
 	htop \
 	iotop \
@@ -96,24 +101,38 @@ apt-get install -y --no-install-recommends \
 	lshw \
 	lsof \
 	mtr \
-	traceroute \
-	# IDE
+	traceroute
+
+# IDE
+apt-get install -y --no-install-recommends \
 	vim \
 	ctags \
 	git \
-	gitk \
-	# Diff
-	meld \
-	# Keyboard tools
-	parcellite \
-	# Term
-	xfce4-terminal \
-	# Charts
-	graphviz \
-	# Filebrowser
+	gitk
+
+# Diff
+apt-get install -y --no-install-recommends \
+	meld
+
+# Keyboard tools
+apt-get install -y --no-install-recommends \
+	parcellite
+
+# Term
+apt-get install -y --no-install-recommends \
+	xfce4-terminal
+
+# Charts
+apt-get install -y --no-install-recommends \
+	graphviz
+
+# Filebrowser
+apt-get install -y --no-install-recommends \
 	pcmanfm \
-	mc \
-	# X & DE
+	mc
+
+# X & DE
+apt-get install -y --no-install-recommends \
 	xorg \
 	slim \
 	i3 \
@@ -130,8 +149,10 @@ apt-get install -y --no-install-recommends \
 	murrine-themes \
 	dmz-cursor-theme \
 	xcursor-themes \
-	redshift \
-	# Fonts
+	redshift
+
+# Fonts
+apt-get install -y --no-install-recommends \
 	fonts-droid \
 	fonts-liberation \
 	ttf-mscorefonts-installer \
@@ -139,42 +160,62 @@ apt-get install -y --no-install-recommends \
 	xfonts-traditional \
 	ttf-dejavu-extra \
 	ttf-dejavu \
-	ttf-dejavu-core \
-	# Sound
+	ttf-dejavu-core
+
+# Sound
+apt-get install -y --no-install-recommends \
 	pulseaudio \
 	pavucontrol \
-	pasystray \
-	# VM
+	pasystray
+
+# VM
+apt-get install -y --no-install-recommends \
 	virtualbox \
 	virtualbox-dkms \
 	virtualbox-qt \
-	virtualbox-guest-additions-iso \
-	# Mail
+	virtualbox-guest-additions-iso
+
+# Mail
+apt-get install -y --no-install-recommends \
 	claws-mail \
 	claws-mail-fancy-plugin \
 	claws-mail-multi-notifier \
 	claws-mail-pgpinline \
-	claws-mail-vcalendar-plugin \
-	# Spellchecker
+	claws-mail-vcalendar-plugin
+
+# Spellchecker
+apt-get install -y --no-install-recommends \
 	hunspell-en-us \
-	hunspell-ru \
-	# Printer
+	hunspell-ru
+
+# Printer
+apt-get install -y --no-install-recommends \
 	cups \
 	printer-driver-foo2zjs \
-	hplip \
-	# Images
+	hplip
+
+# Images
+apt-get install -y --no-install-recommends \
 	imagemagick \
 	scrot \
-	pandoc \
-	# Office
+	pandoc
+
+# Office
+apt-get install -y --no-install-recommends \
 	libreoffice \
 	zathura \
-	zathura-djvu \
-	# IM
-	pidgin \
-	# Media
-	vlc \ 
-	# Fun
+	zathura-djvu
+
+# IM
+apt-get install -y --no-install-recommends \
+	pidgin
+
+# Media
+apt-get install -y --no-install-recommends \
+	vlc
+
+# Fun
+apt-get install -y --no-install-recommends \
 	cowsay \
 	fortune \
 	figlet
