@@ -140,6 +140,8 @@ apt-get install -y --no-install-recommends \
 	xorg \
 	slim \
 	i3 \
+	i3status \
+	i3lock \
 	dunst \
 	lxappearance \
 	feh \

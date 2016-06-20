@@ -26,7 +26,7 @@ Open BIOS using F1:
 
 ## After install
 
-Add user to sudoers
+1 - Add user to sudoers
 ```sh
 # vi /etc/sudoers
 ```
@@ -36,3 +36,7 @@ root        ALL=(ALL:ALL) ALL
 newuser    ALL=(ALL:ALL) ALL
 ```
 
+2 - Probably timezone should be fixed
+```sh
+$ sudo dpkg-reconfigure tzdata
+```
