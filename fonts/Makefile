@@ -1,4 +1,4 @@
-CONFIG_FOLDER := ~/.config/fontconfig/conf.d 
+CONFIG_FOLDER := ~/.config/fontconfig/conf.d
 
 configure:
 	mkdir -pv $(CONFIG_FOLDER)
