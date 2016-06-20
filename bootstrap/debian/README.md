@@ -23,3 +23,16 @@ Open BIOS using F1:
 
 * Insert live USB
 * Open boot menu F12, load from it
+
+## After install
+
+Add user to sudoers
+```sh
+# vi /etc/sudoers
+```
+```
+# User privilege specification
+root        ALL=(ALL:ALL) ALL
+newuser    ALL=(ALL:ALL) ALL
+```
+
