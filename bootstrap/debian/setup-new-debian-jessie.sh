@@ -27,7 +27,8 @@ cat > /etc/apt/sources.list.d/webupd8team-java.list << EOL
 deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 EOL
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 55F96FCF8231B6DD
 
 # Support for multiarch packages.
 dpkg --add-architecture i386
@@ -104,10 +105,17 @@ apt-get install -y --no-install-recommends \
 
 # IDE
 apt-get install -y --no-install-recommends \
-	vim \
+	neovim \
 	ctags \
 	git \
 	gitk
+
+update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+update-alternatives --config vi
+update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+update-alternatives --config vim
+update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+update-alternatives --config editor
 
 # Diff
 apt-get install -y --no-install-recommends \

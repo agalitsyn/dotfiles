@@ -2,6 +2,5 @@ CONFIG_FOLDER := ~
 HOOKS_FOLDER := $(CONFIG_FOLDER)/.bash.d
 
 configure:
-	ln -s tmux.conf $(CONFIG_FOLDER)/.tmux.conf
 	mkdir -pv $(HOOKS_FOLDER)
-	ln -s tmux.sh $(HOOKS_FOLDER)/tmux.sh
+	ln -s bash.d/docker.sh $(HOOKS_FOLDER)/docker.sh

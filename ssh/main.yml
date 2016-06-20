@@ -1,7 +1,0 @@
----
-
-ssh_debian_packages:
-  - ssh
-
-ssh_homebrew_packages:
-  - ssh-copy-id
