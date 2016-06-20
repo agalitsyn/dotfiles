@@ -176,16 +176,3 @@ fi;
 alias screenshot-upload='import png:- | curl -T- -s chunk.io'
 alias screenshot-window="scrot --count --delay 3 --focused ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png"
 alias screenshot-selection="scrot --select ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png"
-
-# Power management
-alias suspend='dbus-send --system --print-reply \
-    --dest="org.freedesktop.UPower" \
-    /org/freedesktop/UPower \
-    org.freedesktop.UPower.Suspend'
-
-alias hibernate='dbus-send --system --print-reply \
-    --dest="org.freedesktop.UPower" \
-    /org/freedesktop/UPower \
-    org.freedesktop.UPower.Hibernate'
-
-# vim: ts=4 sts=4 sw=4 et ai si syn=sh:

@@ -1,4 +1,2 @@
-include vars.mk
-
 install:
-	$(INSTALL_CMD) $(package)
+	$(INSTALL_CMD) $(PACKAGE)

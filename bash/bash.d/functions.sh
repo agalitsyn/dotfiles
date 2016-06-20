@@ -290,5 +290,3 @@ function webclipper() {
 
     pandoc -s -r html $url -o $file.md
 }
-
-# vim: ts=4 sts=4 sw=4 et ai si syn=sh:

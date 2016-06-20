@@ -1,5 +1,8 @@
 include globals.mk
 
+all:
+	echo "all"
+
 update:
 	$(UPDATE_CMD)
 

@@ -51,5 +51,3 @@ export PATH="$HOME/bin:$PATH"
 
 # Fix for skype theme
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
-
-# vim: ts=4 sts=4 sw=4 et ai si syn=sh:
