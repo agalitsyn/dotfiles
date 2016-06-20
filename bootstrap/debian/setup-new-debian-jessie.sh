@@ -135,7 +135,6 @@ apt-get install -y --no-install-recommends \
 	xorg \
 	slim \
 	i3 \
-	rofi \
 	dunst \
 	lxappearance \
 	feh \
@@ -149,6 +148,8 @@ apt-get install -y --no-install-recommends \
 	dmz-cursor-theme \
 	xcursor-themes \
 	redshift
+
+	#rofi
 
 # Fonts
 apt-get install -y --no-install-recommends \
