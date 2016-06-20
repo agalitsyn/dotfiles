@@ -5,4 +5,4 @@ configure:
 	ln -sf $$(readlink -f gitconfig) $(CONFIG_FOLDER)/.gitconfig
 	ln -sf $$(readlink -f gitignore) $(CONFIG_FOLDER)/.gitignore
 	mkdir -pv $(HOOKS_FOLDER)
-	ln -sf $$(readlink -f bash.d/git.sh) $(HOOKS_FOLDER)/git.sh
+	ln -sf $$(readlink -f git.sh) $(HOOKS_FOLDER)/git.sh
