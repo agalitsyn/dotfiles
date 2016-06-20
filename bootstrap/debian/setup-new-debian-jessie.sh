@@ -69,7 +69,6 @@ apt-get install -y --no-install-recommends \
 	debconf \
 	apt-transport-https \
 	manpages-dev \
-	# See https://wiki.debian.org/SSDOptimization
 	smartmontools \
 	net-tools
 
