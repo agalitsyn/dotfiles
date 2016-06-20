@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+# UI
 apm install \
-	# UI
 	seti-ui \
 	monokai-seti \
 	atom-material-ui \
-	atom-material-syntax \
-	# Editor features
+	atom-material-syntax
+
+# Editor features
+apm install \
 	open-recent \
 	highlight-selected \
 	minimap \
@@ -14,7 +16,6 @@ apm install \
 	last-cursor-position \
 	open-recent \
 	open-in-browser \
-	#autocomplete-plus \
 	autocomplete-paths \
 	git-plus \
 	merge-conflicts \
@@ -25,11 +26,12 @@ apm install \
 	atom-beautify \
 	linter \
 	todo-show \
-	#fancy-new-file \
 	change-case \
 	atom-alignment \
-	highlight-line \
-	# FE
+	highlight-line
+
+# FE
+apm install \
 	linter-htmlhint \
 	linter-csslint \
 	linter-jslint \
@@ -46,8 +48,10 @@ apm install \
 	es6-javascript \
 	react-snippets \
 	atom-ternjs \
-	atom-typescript \
-	# BE
+	atom-typescript
+
+# BE
+apm install \
 	language-docker \
 	go-rename \
 	go-plus \

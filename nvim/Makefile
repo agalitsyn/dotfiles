@@ -1,5 +1,5 @@
-include ../Makefile.component
+CONFIG_FOLDER := ~/.config/nvim
 
 configure:
-	mkdir -pv $(config_folder)
-	cp init.vim $(config_folder)
+	mkdir -pv $(CONFIG_FOLDER)
+	ln -sf $$(readlink -f init.vim) $(CONFIG_FOLDER)
