@@ -7,55 +7,62 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
+        output_format = "i3bar"
         colors = true
         interval = 5
 }
 
-#order += "ipv6"
-order += "disk /home"
-#order += "run_watch DHCP"
-#order += "run_watch VPN"
-order += "wireless wlan0"
-order += "ethernet eth0"
+order += "wireless wlp4s0"
+order += "ethernet eth1"
 order += "battery 0"
-#order += "load"
+order += "battery 1"
+order += "tztime sanfran"
+order += "tztime montana"
+order += "tztime munich"
 order += "tztime local"
 
-wireless wlan0 {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+wireless wlp4s0 {
+        format_up = "wifi (%essid) %ip"
+        format_down = "wifi down"
 }
 
-ethernet eth0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+ethernet eth1 {
+        format_up = "eth %ip"
+        format_down = "eth down"
 }
 
 battery 0 {
-    format = "%status %percentage %remaining"
-    last_full_capacity = true
-    integer_battery_capacity = true
-    low_threshold = 11
-    threshold_type = percentage
+        format = "%status0 %percentage %remaining"
+        last_full_capacity = true
+        integer_battery_capacity = true
+        low_threshold = 11
+        threshold_type = percentage
 }
 
-run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
-}
-
-run_watch VPN {
-        pidfile = "/var/run/vpnc/pid"
+battery 1 {
+        format = "%status1 %percentage %remaining"
+        last_full_capacity = true
+        integer_battery_capacity = true
+        low_threshold = 11
+        threshold_type = percentage
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%b %d %H:%M:%S NSK"
 }
 
-load {
-        format = "C: %1min"
+tztime montana {
+        format = "%b %d %H:%M:%S MNT"
+        timezone = "MST7MDT"
 }
 
-disk "/home" {
-        format = "S: %avail"
+tztime sanfran {
+        format = "%b %d %H:%M:%S SF"
+        timezone = "PST8PDT"
 }
+
+tztime munich {
+        format = "%b %d %H:%M:%S GER"
+        timezone = "CET"
+}
+

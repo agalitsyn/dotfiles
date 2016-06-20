@@ -28,6 +28,10 @@ deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 EOL
 
+cat > /etc/apt/sources.list.d/ubuntu-vivid.list << EOL
+deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu vivid main
+EOL
+
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 55F96FCF8231B6DD
 
 # Support for multiarch packages.
