@@ -246,6 +246,10 @@ apt-get install -y --no-install-recommends \
 	firmware-realtek \
 	intel-microcode
 
+apt-get install -y --no-install-recommends \
+	postgresql-client \
+	libssl-dev
+
 # Python
 apt-get install -y --no-install-recommends \
 	python \
@@ -269,34 +273,40 @@ apt-get install --yes --force-yes --no-install-recommends google-chrome-stable
 
 # Non-repo pkgs
 if ! dpkg -s vagrant; then
-    wget -O /tmp/vagrant.deb https://releases.hashicorp.com/vagrant/1.8.4/vagrant_1.8.4_x86_64.deb && \
+	export VAGRANT_VERSION=1.8.4
+    wget -O /tmp/vagrant.deb https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb && \
         dpkg -i /tmp/vagrant.deb && \
         apt-get install -f && \
         rm /tmp/vagrant.deb
 fi
 
 if ! dpkg -s skype; then
-    wget -O /tmp/skype.deb http://download.skype.com/linux/skype-debian_4.3.0.37-1_i386.deb && \
+	export SKYPE_VERSION=4.3.0.37-1
+    wget -O /tmp/skype.deb http://download.skype.com/linux/skype-debian_${SKYPE_VERSION}_i386.deb && \
         dpkg -i /tmp/skype.deb && \
         apt-get install -f && \
         rm /tmp/skype.deb
 fi
 
 if ! dpkg -s slack-desktop; then
-    wget -O /tmp/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-2.0.6-amd64.deb && \
+	export SLACK_VERSION=2.0.6
+    wget -O /tmp/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb && \
         dpkg -i /tmp/slack.deb && \
         apt-get install -f && \
         rm /tmp/slack.deb
 fi
 
 # From source
-export GCRYPTVER=0.5.0
-wget https://www.agwa.name/projects/git-crypt/downloads/git-crypt-${GCRYPTVER}.tar.gz \
-    && tar xf git-crypt-${GCRYPTVER}.tar.gz \
-    && ( cd git-crypt-${GCRYPTVER} \
-    && make \
-    && make install PREFIX=${HOME} ) \
-    && rm -r git-crypt-${GCRYPTVER}* \
+if ! git-crypt --version > /dev/null 2>&1; then
+	export GCRYPTVER=0.5.0
+	wget https://www.agwa.name/projects/git-crypt/downloads/git-crypt-${GCRYPTVER}.tar.gz \
+		&& tar xf git-crypt-${GCRYPTVER}.tar.gz \
+		&& ( cd git-crypt-${GCRYPTVER} \
+		&& make \
+		&& make install PREFIX=${HOME} ) \
+		&& rm -r git-crypt-${GCRYPTVER}*
+fi
+
 
 apt-get clean
 
