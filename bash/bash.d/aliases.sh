@@ -81,10 +81,6 @@ alias mv='mv -i';
 alias rm='rm -i';
 
 # Programs
-alias vim="stty stop '' -ixoff ; vim" # keep all my configs when run as root
-alias vi='vim'
-alias v='vim -R'
-alias view='vim -R'
 alias less='less -Ri'
 
 alias rsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
