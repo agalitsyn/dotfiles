@@ -12,11 +12,11 @@ function install_golang() {
 }
 
 function configure_golang_env() {
-	if [ -d ~/.bash.d/goenv ]; then
+	if [ -d ~/.bash.d/goenv.sh ]; then
 		return
 	fi
 
-	cat > ~/.bash.d/goenv << EOL
+	cat > ~/.bash.d/goenv.sh << EOL
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
 export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
@@ -28,5 +28,5 @@ export GOROOT=/opt/go
 export GOPATH=~/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-install_golang "1.6.2"
+install_golang
 configure_golang_env
