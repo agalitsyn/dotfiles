@@ -27,7 +27,7 @@ deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 EOL
 
-cat > /etc/apt/sources.list.d/google-chrome << EOL
+cat > /etc/apt/sources.list.d/google-chrome.list << EOL
 deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main
 EOL
 
