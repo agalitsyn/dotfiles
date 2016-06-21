@@ -1,6 +1,4 @@
----
-
-npm_global_packages:
+    npm_global_packages:
   - yo
   - generator-webapp
   - generator-react-static

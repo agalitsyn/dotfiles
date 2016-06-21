@@ -233,8 +233,8 @@ apt-get install -y --no-install-recommends \
 	oracle-java8-installer \
 	oracle-java8-set-default
 
-# Drivers, newer is better
-apt-get install -t jessie-backports -y --no-install-recommends \
+# Drivers
+apt-get install -y --no-install-recommends \
 	firmware-linux-free \
 	firmware-linux-nonfree \
 	firmware-iwlwifi \
