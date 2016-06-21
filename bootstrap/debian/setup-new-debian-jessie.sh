@@ -79,7 +79,8 @@ apt-get install -y --no-install-recommends \
 	apt-transport-https \
 	manpages-dev \
 	smartmontools \
-	net-tools
+	net-tools \
+	mesa-utils
 
 # Utils
 apt-get install -y --no-install-recommends \
