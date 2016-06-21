@@ -296,6 +296,14 @@ if ! dpkg -s slack-desktop; then
         rm /tmp/slack.deb
 fi
 
+if ! dpkg -s dropbox; then
+	export DROPBOX_VERSION=2015.10.28
+	wget -O /tmp/slack.deb https://www.dropbox.com/download?dl=packages/debian/dropbox_${DROPBOX_VERSION}_amd64.deb && \
+		dpkg -i /tmp/dropbox.deb && \
+		apt-get install -f && \
+		rm /tmp/dropbox.deb
+fi
+
 # From source
 if ! git-crypt --version > /dev/null 2>&1; then
 	export GCRYPTVER=0.5.0

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-laptop-mode
-
 # See man xkeyboard-config
 setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru
 numlockx &
