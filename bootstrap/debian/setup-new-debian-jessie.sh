@@ -30,6 +30,7 @@ EOL
 cat > /etc/apt/sources.list.d/google-chrome.list << EOL
 deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main
 EOL
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
 cat > /etc/apt/sources.list.d/ubuntu-vivid.list << EOL
 deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu vivid main
