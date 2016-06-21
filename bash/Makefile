@@ -10,4 +10,4 @@ configure:
 	ln -sf $$(readlink -f bash.d/aliases.sh) $(HOOKS_FOLDER)/aliases.sh
 	ln -sf $$(readlink -f bash.d/exports.sh) $(HOOKS_FOLDER)/exports.sh
 	ln -sf $$(readlink -f bash.d/functions.sh) $(HOOKS_FOLDER)/functions.sh
-	source $(CONFIG_FOLDER)/.bashrc
+	$$(source $(CONFIG_FOLDER)/.bashrc)
