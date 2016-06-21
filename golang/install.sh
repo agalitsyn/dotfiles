@@ -5,25 +5,26 @@ function install_golang() {
 		return
 	fi
 
-	local version=${1:-"1.5.4"}
-
-	echo "==> Installing Go $version"
-	cd /tmp && curl --show-error --location "https://storage.googleapis.com/golang/go${version}.linux-amd64.tar.gz" | tar --extract --gzip
+	echo "==> Installing Go $GOVERSION"
+	cd /tmp && curl --show-error --location "https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz" | tar --extract --gzip
 	sudo mv /tmp/go $GOROOT
-
 }
 
 function configure_golang_env() {
-	if grep --quiet GOPATH ~/.bashrc; then
+	if [ -d ~/.bash.d/goenv ]; then
 		return
 	fi
 
 	echo '==> Configure Go environment variables'
-	echo "export GOROOT=$GOROOT" >> ~/.bashrc
-	echo "export GOPATH=$GOPATH" >> ~/.bashrc
-	echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.bashrc
+	echo "export GOROOT=$GOROOT" >> ~/.bash.d/goenv
+	echo "export GOPATH=$GOPATH" >> ~/.bash.d/goenv
+	echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.bash.d/goenv
 }
 
+export GOVERSION=1.6.2
+export GOROOT=/opt/go
+export GOPATH=~/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 install_golang "1.6.2"
 configure_golang_env
