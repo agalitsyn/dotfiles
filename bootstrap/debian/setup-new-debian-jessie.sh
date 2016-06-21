@@ -27,10 +27,13 @@ deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 EOL
 
+cat > /etc/apt/sources.list.d/google-chrome << EOL
+deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main
+EOL
+
 cat > /etc/apt/sources.list.d/ubuntu-vivid.list << EOL
 deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu vivid main
 EOL
-
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 55F96FCF8231B6DD
 
 # Support for multiarch packages.
@@ -139,10 +142,11 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
 	xorg \
 	slim \
-	i3 \
+	i3-wm \
 	i3status \
 	i3lock \
 	dunst \
+	suckless-tools \
 	lxappearance \
 	feh \
 	numlockx \
@@ -164,7 +168,6 @@ apt-get install -y --no-install-recommends \
 	fonts-liberation \
 	ttf-mscorefonts-installer \
 	xfonts-terminus \
-	xfonts-traditional \
 	ttf-dejavu-extra \
 	ttf-dejavu \
 	ttf-dejavu-core
@@ -229,7 +232,7 @@ apt-get install -y --no-install-recommends \
 
 # Oracle Java
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-apt-get install -y --no-install-recommends \
+apt-get install -y --force-yes --no-install-recommends \
 	oracle-java8-installer \
 	oracle-java8-set-default
 
@@ -242,23 +245,24 @@ apt-get install -y --no-install-recommends \
 	firmware-realtek \
 	intel-microcode
 
-# Google chrome
-echo 'deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main' | \
-    tee /etc/apt/sources.list.d/google-chrome.list
+# Python
+apt-get install -y --no-install-recommends \
+	python \
+	python-dev \
+	python3 \
+	python3-dev
+
+# Nodejs
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+apt-get install -y nodejs
 
 # Docker
-apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+if ! docker version > /dev/null 2>&1; then
+	curl --silent --show-error --location "https://get.docker.com/" | sh
+fi
 
-echo 'deb https://apt.dockerproject.org/repo debian-jessie main' | \
-    tee /etc/apt/sources.list.d/docker.list
-
-apt-get update
-
-apt-get install --yes --force-yes --no-install-recommends \
-    google-chrome-stable \
-    docker-engine
-
-usermod -a -G docker ${SUDO_USER:-${USER}}
+# Google chrome
+apt-get install --yes --force-yes --no-install-recommends google-chrome-stable
 
 # Non-repo pkgs
 if ! dpkg -s vagrant; then
@@ -281,6 +285,15 @@ if ! dpkg -s slack-desktop; then
         apt-get install -f && \
         rm /tmp/slack.deb
 fi
+
+# From source
+export GCRYPTVER=0.5.0
+wget https://www.agwa.name/projects/git-crypt/downloads/git-crypt-${GCRYPTVER}.tar.gz \
+    && tar xf git-crypt-${GCRYPTVER}.tar.gz \
+    && ( cd git-crypt-${GCRYPTVER} \
+    && make \
+    && make install PREFIX=${HOME} ) \
+    && rm -r git-crypt-${GCRYPTVER}* \
 
 apt-get clean
 
