@@ -25,7 +25,7 @@ EOL
 
 export GOVERSION=1.6.2
 export GOROOT=/opt/go
-export GOPATH=~/go
+export GOPATH=$PROJECTS/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 install_golang
