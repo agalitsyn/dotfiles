@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe
+
 function install_golang() {
 	if [ -f /opt/go/bin/go ]; then
 		return

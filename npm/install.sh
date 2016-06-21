@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe
+
 sudo npm install --global \
 	yo \
 	generator-webapp \

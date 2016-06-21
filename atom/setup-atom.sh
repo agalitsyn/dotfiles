@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe 
+
 # UI
 apm install \
 	seti-ui \
