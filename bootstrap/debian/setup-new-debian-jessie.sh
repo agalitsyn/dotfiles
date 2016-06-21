@@ -12,7 +12,6 @@ rm -f /var/lib/apt/list/*
 
 # Add repos
 cat > /etc/apt/sources.list << EOL
-deb http://httpredir.debian.org/debian/ stretch main contrib non-free
 deb http://httpredir.debian.org/debian/ jessie main contrib non-free
 deb http://httpredir.debian.org/debian/ jessie-updates main contrib non-free
 deb http://httpredir.debian.org/debian/ jessie-backports main contrib non-free
@@ -234,7 +233,9 @@ apt-get install -y --no-install-recommends \
 	oracle-java8-set-default
 
 # Drivers, newer is better
-apt-get install -t stretch -y --no-install-recommends \
+apt-get install -t jessie-backports -y --no-install-recommends \
+	firmware-linux-free \
+	firmware-linux-nonfree \
 	firmware-iwlwifi \
 	firmware-linux \
 	firmware-realtek \
