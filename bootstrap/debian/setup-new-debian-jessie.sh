@@ -242,13 +242,14 @@ apt-get install -y --no-install-recommends \
 	firmware-linux-free \
 	firmware-linux-nonfree \
 	firmware-iwlwifi \
-	firmware-linux \
 	firmware-realtek \
 	intel-microcode
 
 apt-get install -y --no-install-recommends \
 	postgresql-client \
-	libssl-dev
+	libssl-dev \
+	libjpeg-dev \
+	zlib1g-dev
 
 # Python
 apt-get install -y --no-install-recommends \
