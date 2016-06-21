@@ -12,6 +12,7 @@ rm -f /var/lib/apt/list/*
 
 # Add repos
 cat > /etc/apt/sources.list << EOL
+deb http://httpredir.debian.org/debian/ stretch main contrib non-free
 deb http://httpredir.debian.org/debian/ jessie main contrib non-free
 deb http://httpredir.debian.org/debian/ jessie-updates main contrib non-free
 deb http://httpredir.debian.org/debian/ jessie-backports main contrib non-free
@@ -71,6 +72,7 @@ apt-get install -y --no-install-recommends \
 	ssh \
 	ntp \
 	debconf \
+	debconf-utils \
 	apt-transport-https \
 	manpages-dev \
 	smartmontools \
