@@ -36,7 +36,7 @@ LABEL=ROOT / btrfs    discard,noatime,nodiratime 0       1
 
 1 - Add user to sudoers
 ```sh
-# vi /etc/sudoers
+$ su -c visudo
 ```
 ```
 # User privilege specification
