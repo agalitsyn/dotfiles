@@ -254,8 +254,10 @@ apt-get install -y --no-install-recommends \
 	python3-dev
 
 # Nodejs
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-apt-get install -y nodejs
+if ! npm version > /dev/null 2>&1; then
+	curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+	apt-get install -y nodejs
+fi
 
 # Docker
 if ! docker version > /dev/null 2>&1; then
