@@ -165,7 +165,8 @@ apt-get install -y --no-install-recommends \
 	murrine-themes \
 	dmz-cursor-theme \
 	xcursor-themes \
-	redshift
+	redshift \
+	arandr
 
 # Fonts
 apt-get install -y --no-install-recommends \
