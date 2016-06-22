@@ -1,4 +1,4 @@
 CONFIG_FOLDER := ~
 
 configure:
-	ln -sf $$(readlink -f Xdefaults) $(CONFIG_FOLDER)/.Xdefaults
+	ln -sf $$(readlink -f xresources) $(CONFIG_FOLDER)/.Xresources
