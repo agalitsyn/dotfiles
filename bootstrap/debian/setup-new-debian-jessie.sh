@@ -114,6 +114,7 @@ apt-get install -y --no-install-recommends \
 
 # IDE
 apt-get install -y --no-install-recommends \
+	vim \
 	neovim \
 	ctags \
 	git \
@@ -165,8 +166,6 @@ apt-get install -y --no-install-recommends \
 	dmz-cursor-theme \
 	xcursor-themes \
 	redshift
-
-	#rofi
 
 # Fonts
 apt-get install -y --no-install-recommends \
@@ -304,10 +303,18 @@ fi
 
 if ! dpkg -s dropbox; then
 	export DROPBOX_VERSION=2015.10.28
-	wget -O /tmp/slack.deb https://www.dropbox.com/download?dl=packages/debian/dropbox_${DROPBOX_VERSION}_amd64.deb && \
+	wget -O /tmp/dropbox.deb https://www.dropbox.com/download?dl=packages/debian/dropbox_${DROPBOX_VERSION}_amd64.deb && \
 		dpkg -i /tmp/dropbox.deb && \
 		apt-get install -f && \
 		rm /tmp/dropbox.deb
+fi
+
+if ! dpkg -s xmind; then
+	export XMIND_VERSION=7-update1
+	wget -O /tmp/xmind.deb http://www.xmind.net/xmind/downloads/xmind-${XMIND_VERSION}-linux_amd64.deb&& \
+		dpkg -i /tmp/xmind.deb && \
+		apt-get install -f && \
+		rm /tmp/xmind.deb
 fi
 
 # From source
@@ -329,4 +336,4 @@ update-initramfs -t -u
 echo "Done."
 echo
 echo
-echo "Suggestions: dropbox, xmind, yed, pycharm."
+echo "Suggestions: yed, pycharm."
