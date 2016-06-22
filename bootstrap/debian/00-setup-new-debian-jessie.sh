@@ -189,7 +189,15 @@ apt-get install -y --no-install-recommends \
 	virtualbox \
 	virtualbox-dkms \
 	virtualbox-qt \
-	virtualbox-guest-additions-iso
+	virtualbox-guest-additions-iso \
+
+apt-get install -y --no-install-recommends \
+	qemu-system-x86 \
+	qemu-utils \
+	libvirt-bin \
+	dnsmasq \
+	dnsutils \
+	ebtables
 
 # Mail
 apt-get install -y --no-install-recommends \

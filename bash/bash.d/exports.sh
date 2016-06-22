@@ -51,3 +51,6 @@ export PATH="$HOME/bin:$PATH"
 
 # Fix for skype theme
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
+
+# Fix libvirt
+export LIBVIRT_DEFAULT_URI='qemu:///system'
