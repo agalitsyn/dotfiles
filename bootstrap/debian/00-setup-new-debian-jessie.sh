@@ -258,8 +258,13 @@ apt-get install -y --no-install-recommends \
 	firmware-realtek \
 	intel-microcode
 
+# DB clients
 apt-get install -y --no-install-recommends \
 	postgresql-client \
+	sqlite3
+
+# Dev libs (for pip packages)
+apt-get install -y --no-install-recommends \
 	libssl-dev \
 	libjpeg-dev \
 	zlib1g-dev
