@@ -5,10 +5,13 @@
 ```sh
 $ su -c visudo
 ```
+
+Add youself as superuser without password
+
 ```
 # User privilege specification
 root        ALL=(ALL:ALL) ALL
-newuser    ALL=(ALL:ALL) ALL
+newuser    ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 
 ## Fix timezone

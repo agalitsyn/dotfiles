@@ -46,6 +46,9 @@ export LESS_TERMCAP_ZW=$(tput rsupm)
 # Make the "sudo" prompt more useful, without requiring access to "visudo".
 export SUDO_PROMPT='[sudo] password for %u on %h: ';
 
+# Add sbin to the PATH
+export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 

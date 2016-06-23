@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -xe
+
 apt-get install --verbose-versions --yes --no-install-recommends --target-release, jessie-backports \
 	linux-image-amd64 \
 	linux-headers-amd64 \
