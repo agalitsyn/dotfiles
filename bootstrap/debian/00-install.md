@@ -1,4 +1,4 @@
-## Setup new thinkpad
+# Setup new thinkpad
 
 Open BIOS using F1:
 * Security - secure boot - disable
@@ -12,7 +12,7 @@ Open BIOS using F1:
 * Insert live USB
 * Open boot menu F12, load from it
 
-## Debian live USB
+# Debian live USB
 
 * Download [debian live iso](https://www.debian.org/CD/live/)
 * Dump it on USB flash
@@ -24,27 +24,10 @@ $ sudo dd if=debian-live-8.5.0-amd64-standard.iso of=/dev/disk2
 
 *Note*: `unetbootin` breaks loader, don't use it.
 
-### Partitioning
+## Partitioning
 
 ```
 $ cat /etc/fstab
 
 LABEL=ROOT / btrfs    discard,noatime,nodiratime 0       1
-```
-
-## After install
-
-1 - Add user to sudoers
-```sh
-$ su -c visudo
-```
-```
-# User privilege specification
-root        ALL=(ALL:ALL) ALL
-newuser    ALL=(ALL:ALL) ALL
-```
-
-2 - Probably timezone should be fixed
-```sh
-$ sudo dpkg-reconfigure tzdata
 ```

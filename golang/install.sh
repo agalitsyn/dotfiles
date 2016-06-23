@@ -23,7 +23,7 @@ export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
 EOL
 }
 
-export GOVERSION=1.6.2
+export GOVERSION=1.5.4
 export GOROOT=/opt/go
 export GOPATH=$PROJECTS/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

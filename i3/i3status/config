@@ -12,8 +12,8 @@ general {
         interval = 5
 }
 
-order += "wireless wlp4s0"
-order += "ethernet eth1"
+order += "wireless wlan0"
+order += "ethernet eth0"
 order += "battery 0"
 order += "battery 1"
 order += "tztime sanfran"
@@ -21,12 +21,12 @@ order += "tztime montana"
 order += "tztime munich"
 order += "tztime local"
 
-wireless wlp4s0 {
+wireless wlan0 {
         format_up = "wifi (%essid) %ip"
         format_down = "wifi down"
 }
 
-ethernet eth1 {
+ethernet eth0 {
         format_up = "eth %ip"
         format_down = "eth down"
 }
