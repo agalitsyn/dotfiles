@@ -93,6 +93,7 @@ apt-get install -y --no-install-recommends \
 	tmux \
 	grc \
 	apache2-utils \
+	unzip \
 	p7zip-full \
 	p7zip-rar \
 	pbzip2 \
