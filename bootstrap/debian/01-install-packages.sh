@@ -260,8 +260,9 @@ apt-get install -y --no-install-recommends \
 	firmware-realtek \
 	intel-microcode
 
-# DB clients
+# DB
 apt-get install -y --no-install-recommends \
+	postgresql \
 	postgresql-client \
 	sqlite3
 
