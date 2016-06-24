@@ -80,7 +80,8 @@ apt-get install -y --no-install-recommends \
 	manpages-dev \
 	smartmontools \
 	net-tools \
-	mesa-utils
+	mesa-utils \
+	openvpn
 
 # Utils
 apt-get install -y --no-install-recommends \
