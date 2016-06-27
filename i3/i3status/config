@@ -22,12 +22,12 @@ order += "tztime munich"
 order += "tztime local"
 
 wireless wlan0 {
-        format_up = "wifi (%essid) %ip"
+        format_up = "wifi (%quality at %essid) %ip"
         format_down = "wifi down"
 }
 
 ethernet eth0 {
-        format_up = "eth %ip"
+        format_up = "eth (%speed) %ip"
         format_down = "eth down"
 }
 

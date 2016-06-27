@@ -171,8 +171,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        tray_output primary
         position top
+        # This enforces to output tray only on primary monitor using xrandr --output NAME --primary
+        #tray_output primary
 }
 
 focus_follows_mouse no
