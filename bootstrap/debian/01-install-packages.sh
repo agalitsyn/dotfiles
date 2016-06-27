@@ -99,7 +99,8 @@ apt-get install -y --no-install-recommends \
 	pbzip2 \
 	lzop \
 	gettext \
-	pwgen
+	pwgen \
+	usbmount
 
 # Debug
 apt-get install -y --no-install-recommends \
