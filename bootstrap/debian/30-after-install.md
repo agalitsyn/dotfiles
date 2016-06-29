@@ -52,6 +52,15 @@ $ sudo ifup wlan0
 $ dmesg
 ```
 
+Public wifi config without password would be:
+```
+network={
+    ssid="Rodnik_Guest"
+    proto=RSN
+    key_mgmt=NONE
+}
+```
+
 ## Configure printers
 
 ```
