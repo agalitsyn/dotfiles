@@ -106,6 +106,7 @@ highlight Visual cterm=NONE ctermbg=darkgrey
 
 set ttyfast		                " Prevent slow scrolling
 
+set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 set showmode                    " Display the current mode (no needed with vim-airline)
@@ -129,7 +130,7 @@ set diffopt+=iwhite             " Ignore whitespace changes (focus on code chang
 set hlsearch                    " Highlight search terms
 
 set wildmenu                    " for command line completion
-set wildmode=longest,list,full
+set wildmode=list:longest,full
 
 set laststatus=2
 set ruler

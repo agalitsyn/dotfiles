@@ -241,6 +241,10 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
 	vlc
 
+# Torrent
+apt-get install -y --no-install-recommends \
+	transmission
+
 # Fun
 apt-get install -y --no-install-recommends \
 	cowsay \
