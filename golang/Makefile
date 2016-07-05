@@ -7,7 +7,8 @@ PACKAGES := golang.org/x/tools/cmd/goimports \
 	github.com/warmans/golocc \
 	github.com/divan/depscheck \
 	github.com/odeke-em/drive/cmd/drive \
-	k8s.io/kubernetes/cmd/kubectl
+	k8s.io/kubernetes/cmd/kubectl \
+	github.com/kubernetes/minikube/cmd/minikube
 
 packages:
 	$(foreach pkg,$(PACKAGES),go get -u $(pkg);)
