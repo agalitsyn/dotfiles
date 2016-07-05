@@ -99,8 +99,7 @@ apt-get install -y --no-install-recommends \
 	pbzip2 \
 	lzop \
 	gettext \
-	pwgen \
-	usbmount
+	pwgen
 
 # Debug
 apt-get install -y --no-install-recommends \
@@ -146,6 +145,8 @@ apt-get install -y --no-install-recommends \
 # Filebrowser
 apt-get install -y --no-install-recommends \
 	pcmanfm \
+	gvfs \
+	udisks \
 	mc
 
 # X & DE
