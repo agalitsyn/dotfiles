@@ -286,8 +286,8 @@ let g:NERDTreeDirArrows=0
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
 " Signify
-let g:signify_update_on_bufenter = 1
-let g:signify_update_on_focusgained = 1
+"let g:signify_update_on_bufenter = 1
+"let g:signify_update_on_focusgained = 1
 "let g:signify_cursorhold_insert = 1
 let g:signify_cursorhold_normal = 1
 
@@ -335,7 +335,7 @@ elseif executable('ack-grep')
 endif
 
 " Supertab
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionTypeDiscovery = [
 \ "&completefunc:<c-x><c-u>",
 \ "&omnifunc:<c-x><c-o>",
