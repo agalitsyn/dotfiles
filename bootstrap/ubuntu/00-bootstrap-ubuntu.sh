@@ -166,7 +166,8 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
 	imagemagick \
 	pandoc \
-	shutter
+	shutter \
+	libgoo-canvas-perl
 
 # Media
 apt-get install -y --no-install-recommends \
