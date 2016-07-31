@@ -5,9 +5,6 @@ set -ex
 # homebrew
 ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 
-# Export brew stuff
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_extra
-
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -19,7 +16,7 @@ brew tap homebrew/dupes
 brew install bash \
              bash-completion \
              zsh \
-             coreutils \
+             coreutils --with-default-names \
              findutils --with-default-names \
              gnu-indent --with-default-names \
              gnu-sed --with-default-names \
@@ -50,11 +47,6 @@ brew install bash \
              ghostscript \
              parallel \
              csshx
-# Fixes
-echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.bash_extra
-echo 'export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
-echo 'export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"' >> ~/.bash_extra
-echo 'export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"' >> ~/.bash_extra
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
@@ -78,30 +70,19 @@ brew cask install sublime-text
 brew install python3 \
              node \
              go
-# Fixes
-echo 'export PATH="$(brew --prefix go)/libexec/bin:$PATH"' >> ~/.bash_extra
-
-# VM
+# Virt
 brew cask install virtualbox \
                   virtualbox-extension-pack \
-                  vagrant
-# echo 'export PATH="/Applications/Vagrant/bin:$PATH"' >> ~/.bash_extra
+                  vagrant \
+				  docker
 
+# CM
 brew install ansible
-
-brew install docker \
-			 docker-machine \
-			 docker-compose
-
-brew install kubectl
-
-# Fonts
-brew tap caskroom/fonts
-brew cask install font-terminus
 
 # Browsers
 brew cask install firefox \
-                  google-chrome
+                  google-chrome \
+				  torbrowser
 
 # Terminal
 brew cask install iterm2
@@ -134,9 +115,6 @@ brew cask install eiskaltdcpp
 
 # Media
 brew cask install vlc
-
-# Productivivty
-brew cask install evernote
 
 # Mindmap
 brew cask install xmind
