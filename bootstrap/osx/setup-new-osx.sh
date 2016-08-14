@@ -69,6 +69,7 @@ brew cask install sublime-text
 # Languages
 brew install python3 \
              node \
+			 ruby \
              go
 # Virt
 brew cask install virtualbox \
