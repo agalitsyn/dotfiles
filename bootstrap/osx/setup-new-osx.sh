@@ -71,6 +71,10 @@ brew install python3 \
              node \
 			 ruby \
              go
+
+# Graphs
+brew install graphviz
+
 # Virt
 brew cask install virtualbox \
                   virtualbox-extension-pack \
@@ -121,8 +125,7 @@ brew cask install vlc
 brew cask install xmind
 
 # Graps
-brew cask install graphviz \
-                  yed
+brew cask install yed
 
 # Eyes
 brew cask install flux
