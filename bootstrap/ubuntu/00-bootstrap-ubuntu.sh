@@ -117,9 +117,14 @@ apt-get install -y --no-install-recommends \
 	murrine-themes \
 	numix-gtk-theme \
 	numix-icon-theme-circle \
-	redshift \
 	gtk2-engines-murrine:i386 \
 	gtk2-engines-pixbuf:i386
+
+# Save your eyes
+apt-get install -y --no-Install-recommends \
+	redshift \
+	redshift-gtk \
+	geoclue-2.0
 
 # Ubuntu tweakers
 apt-get install -y --no-install-recommends \
