@@ -1,18 +1,29 @@
-PACKAGES := golang.org/x/tools/cmd/goimports \
+GOVERSION ?= 1.7
+
+CODE_INTELLIGENCE_PACKAGES := \
+	golang.org/x/tools/cmd/goimports \
+	github.com/nsf/gocode \
+	github.com/rogpeppe/godef \
 	github.com/golang/lint/golint \
+	github.com/lukehoban/go-outline \
+	sourcegraph.com/sqs/goreturns \
+	golang.org/x/tools/cmd/gorename \
+	github.com/tpng/gopkgs \
+	github.com/newhook/go-symbols \
+	golang.org/x/tools/cmd/guru
+
+DEV_TOOLS := \
 	github.com/mattn/goreman \
 	github.com/tools/godep \
 	github.com/kardianos/govendor \
 	github.com/alecthomas/gometalinter \
 	github.com/warmans/golocc \
-	github.com/divan/depscheck \
-	github.com/odeke-em/drive/cmd/drive \
-	k8s.io/kubernetes/cmd/kubectl \
-	github.com/kubernetes/minikube/cmd/minikube
+	github.com/divan/depscheck
 
 packages:
-	$(foreach pkg,$(PACKAGES),go get -u $(pkg);)
+	$(foreach pkg,$(CODE_INTELLIGENCE_PACKAGES),go get -u -v $(pkg);)
+	$(foreach pkg,$(DEV_TOOLS),go get -u -v $(pkg);)
 	gometalinter --install --update
 
 install:
-	$$(bash install.sh)
+	$$(GOVERSION=$(GOVERSION) bash install.sh)

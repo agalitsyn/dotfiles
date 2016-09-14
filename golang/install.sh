@@ -2,8 +2,19 @@
 
 set -xe
 
+# Folder which may contains different golang versions
+GOFOLDER="/opt/google/golang"
+
+# Env
+export GOVERSION=${GOVERSION:-"1.7"}
+
+# Exports
+export GOROOT="$GOFOLDER/$GOVERSION"
+export GOPATH="$PROJECTS/go"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+
 function install_golang() {
-	if [ -f /opt/go/bin/go ]; then
+	if [ -f $GOROOT/bin/go ]; then
 		return
 	fi
 
@@ -12,22 +23,16 @@ function install_golang() {
 }
 
 function configure_golang_env() {
-	if [ -d ~/.bash.d/goenv.sh ]; then
-		return
-	fi
-
 	cat > ~/.bash.d/goenv.sh << EOL
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
 export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
-export GO15VENDOREXPERIMENT=1
 EOL
 }
 
-export GOVERSION=1.5.4
-export GOROOT=/opt/go
-export GOPATH=$PROJECTS/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+function main() {
+	install_golang
+	configure_golang_env
+}
 
-install_golang
-configure_golang_env
+main
