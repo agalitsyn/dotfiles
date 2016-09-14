@@ -11,13 +11,10 @@ sudo -H pip install --upgrade \
 	pip \
 	ipython \
 	flake8 \
-	pygments \
 	tox \
-	mkdocs \
-	awscli \
+	pygments \
 	sphinx \
 	sphinx-autobuild \
 	sphinxcontrib-plantuml \
 	sphinxcontrib-seqdiag \
-	sphinxcontrib-blockdiag \
-	neovim
+	sphinxcontrib-blockdiag

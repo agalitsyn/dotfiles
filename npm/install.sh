@@ -7,7 +7,4 @@ sudo npm install --global \
 	generator-webapp \
 	bower \
 	gulp \
-	grunt-cli \
-	node-static \
-	json-server \
-	git-open
+	grunt-cli

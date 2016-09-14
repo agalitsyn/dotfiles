@@ -1,6 +1,7 @@
 CONFIG_FOLDER := ~/.config
 HOOKS_FOLDER := ~/.bash.d
 
+.PHONY: configure
 configure:
 	rm -rfv ~/.i3
 	mkdir -pv $(CONFIG_FOLDER)/i3status

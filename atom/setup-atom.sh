@@ -32,7 +32,7 @@ apm install \
 	atom-alignment \
 	highlight-line
 
-# FE
+# Frontend development
 apm install \
 	linter-htmlhint \
 	linter-csslint \
@@ -52,7 +52,7 @@ apm install \
 	atom-ternjs \
 	atom-typescript
 
-# BE
+# Backend development
 apm install \
 	language-docker \
 	go-rename \

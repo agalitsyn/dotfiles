@@ -20,10 +20,15 @@ DEV_TOOLS := \
 	github.com/warmans/golocc \
 	github.com/divan/depscheck
 
+.PHONY: all
+all: install packages
+
+.PHONY: packages
 packages:
 	$(foreach pkg,$(CODE_INTELLIGENCE_PACKAGES),go get -u -v $(pkg);)
 	$(foreach pkg,$(DEV_TOOLS),go get -u -v $(pkg);)
 	gometalinter --install --update
 
+.PHONY: install
 install:
 	$$(GOVERSION=$(GOVERSION) bash install.sh)

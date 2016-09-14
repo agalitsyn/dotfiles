@@ -1,6 +1,7 @@
 CONFIG_FOLDER := ~
 HOOKS_FOLDER := $(CONFIG_FOLDER)/.bash.d
 
+.PHONY: configure
 configure:
 	ln -sf $$(readlink -f gitconfig) $(CONFIG_FOLDER)/.gitconfig
 	ln -sf $$(readlink -f gitignore) $(CONFIG_FOLDER)/.gitignore

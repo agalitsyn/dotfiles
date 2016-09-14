@@ -1,4 +1,4 @@
 # Dotfiles
 
-Used for my Debian and OSX computers.
+Used on Linux or OSX.
 

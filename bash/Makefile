@@ -1,6 +1,7 @@
 CONFIG_FOLDER := ~
 HOOKS_FOLDER := $(CONFIG_FOLDER)/.bash.d
 
+.PHONY: configure
 configure:
 	ln -sf $$(readlink -f bash_profile) $(CONFIG_FOLDER)/.bash_profile
 	ln -sf $$(readlink -f bashrc) $(CONFIG_FOLDER)/.bashrc

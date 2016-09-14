@@ -335,7 +335,7 @@ elseif executable('ack-grep')
 endif
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionTypeDiscovery = [
 \ "&completefunc:<c-x><c-u>",
 \ "&omnifunc:<c-x><c-o>",
