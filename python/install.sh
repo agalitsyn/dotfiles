@@ -9,7 +9,8 @@ fi
 
 sudo -H pip install --upgrade \
 	pip \
-	ipython \
+	setuptools \
+	ipython[all] \
 	flake8 \
 	tox \
 	pygments \

@@ -1,0 +1,14 @@
+CONFIG_FOLDER := ~
+HOOKS_FOLDER := $(CONFIG_FOLDER)/.bash.d
+
+.PHONY: all
+all: install configure
+
+.PHONY: install
+install:
+	git clone https://github.com/rupa/z.git $$PROJECTS/z
+
+.PHONY: configure
+configure:
+	mkdir -pv $(HOOKS_FOLDER)
+	ln -sf $$(readlink -f z.sh) $(HOOKS_FOLDER)/z.sh
