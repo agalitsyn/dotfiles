@@ -3,16 +3,19 @@
 set -xe
 
 # Newest pip
-if ! pip --version > /dev/null 2>&1; then
-	curl --silent --show-error --location "https://bootstrap.pypa.io/get-pip.py" | sudo python
+if ! pip3 --version > /dev/null 2>&1; then
+	curl --silent --show-error --location "https://bootstrap.pypa.io/get-pip.py" | sudo python3
 fi
 
-sudo -H pip install --upgrade \
+sudo -H pip3 install --upgrade \
 	pip \
 	setuptools \
 	ipython[all] \
 	flake8 \
 	tox \
+	debug \
+	sh \
+	plumbum \
 	pygments \
 	sphinx \
 	sphinx-autobuild \
