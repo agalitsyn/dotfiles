@@ -174,6 +174,11 @@ apt-get install -y --no-install-recommends \
 	shutter \
 	libgoo-canvas-perl
 
+# Media editors
+#apt-get install -y --no-install-recommends \
+	#gimp \
+	#krita
+
 # Media
 apt-get install -y --no-install-recommends \
 	vlc

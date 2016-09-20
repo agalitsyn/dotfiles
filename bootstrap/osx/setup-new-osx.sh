@@ -66,6 +66,13 @@ brew install ctags \
 
 brew cask install sublime-text
 
+# You might want there slow chromium-based editors:
+#brew cask install atom \
+				  #visual-studio-code
+
+# Git GUI
+brew cask install sourcetree
+
 # Languages
 brew install python3 \
              node \
@@ -110,13 +117,14 @@ brew cask install menumeters \
 brew cask install pycharm-ce
 
 # Storage
-brew cask install dropbox
+brew cask install dropbox \
+				  google-drive
 
 # Torrents
 brew cask install transmission
 
 # P2P
-brew cask install eiskaltdcpp
+#brew cask install eiskaltdcpp
 
 # Media
 brew cask install vlc
@@ -124,18 +132,23 @@ brew cask install vlc
 # Mindmap
 brew cask install xmind
 
-# Graps
+# Graphs
 brew cask install yed
 
 # Eyes
 brew cask install flux
+
+# Images
+#brew cask install sketchbook \
+				  #gimp \
+				  #adobe-photoshop-cc \
+				  #adobe-photoshop-lightroom
 
 # Remove outdated versions from the cellar
 brew cleanup
 
 cat <<EOT
 Suggestions for manual install:
-Skype               brew cask install skype
 Wunderlist          https://www.wunderlist.com/download/
 Pocket              https://getpocket.com/apps/desktop/
 MacDjView           http://sourceforge.net/projects/windjview/files/MacDjView/
