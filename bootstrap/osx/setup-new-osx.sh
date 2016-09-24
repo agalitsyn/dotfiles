@@ -135,21 +135,44 @@ brew cask install xmind
 # Graphs
 brew cask install yed
 
-# Eyes
+# Save eyes
 brew cask install flux
 
+# Cleariness
+brew cask install cleanmymac
+
+# Phones
+brew cask install android-file-transfer \
+				  ifunbox
+
+# Old days
+brew cask install dosbox
+
+# djview
+brew cask install djview
+
+# IM
+brew cask install skype \
+				  slack
+
+# Screenshoting
+brew cask install skitch
+
+# Help unlucky windows guys
+brew cask install teamviewer
+
 # Images
-#brew cask install sketchbook \
-				  #gimp \
-				  #adobe-photoshop-cc \
-				  #adobe-photoshop-lightroom
+#brew cask install \
+	#sketchbook \
+	#gimp \
+	#adobe-photoshop-cc \
+	#adobe-photoshop-lightroom
 
 # Remove outdated versions from the cellar
 brew cleanup
 
 cat <<EOT
 Suggestions for manual install:
-Wunderlist          https://www.wunderlist.com/download/
 Pocket              https://getpocket.com/apps/desktop/
 MacDjView           http://sourceforge.net/projects/windjview/files/MacDjView/
 Popcorn time        https://popcorntime.io/
