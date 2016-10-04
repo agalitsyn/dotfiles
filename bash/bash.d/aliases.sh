@@ -172,3 +172,6 @@ fi;
 alias screenshot-upload='import png:- | curl -T- -s chunk.io'
 alias screenshot-window="scrot --count --delay 3 --focused ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png"
 alias screenshot-selection="scrot --select ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png"
+
+# Use GNU time
+alias gtime='/usr/bin/time -v'
