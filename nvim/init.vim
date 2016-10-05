@@ -5,10 +5,10 @@ set nocompatible
 let mapleader=","              " change leader to comma
 
 " ### Plugins ###
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/plugged')
@@ -24,10 +24,14 @@ Plug 'mileszs/ack.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'fatih/vim-go'
-Plug 'rhysd/vim-go-impl'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
 
-Plug 'tpope/vim-markdown'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'tpope/vim-markdown', { 'for': 'md' }
 
 Plug 'rust-lang/rust.vim'
 
@@ -44,9 +48,21 @@ Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
+" ### Do backups! ###
+set undofile
+set undolevels=1000
+set undoreload=10000
+set undodir=$HOME/.cache/vimundo
+set backupdir=$HOME/.cache/vimbackup
+set directory=$HOME/.cache/vimswap
+for dir in [&undodir, &backupdir, &directory]
+    if !isdirectory(dir)
+        call mkdir(dir)
+    endif
+endfor
 
 " ### Editor ###
-set autoread				   " Read changed files
+set autoread                   " Read changed files
 set t_Co=256                   " Xterm 256 colors
 filetype plugin indent on      " Automatically detect file types.
 syntax on                      " Syntax highlighting
@@ -160,6 +176,19 @@ if has('statusline')
     set statusline+=%*
 endif
 
+" Cursor restore
+function! ResCur()
+    if line("'\"") <= line("$")
+        silent! normal! g`"
+        return 1
+    endif
+endfunction
+
+augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+augroup END
+
 " ### Formatting ###
 
 set nowrap          " Do not wrap lines.
@@ -240,6 +269,9 @@ vnoremap . :normal .<CR>
 " Find merge conflict markers
 map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
+" Json formatting
+nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
+let g:vim_json_syntax_conceal = 0
 
 " ### Functions ###
 
@@ -286,10 +318,11 @@ let g:NERDTreeDirArrows=0
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
 " Signify
-"let g:signify_update_on_bufenter = 1
-"let g:signify_update_on_focusgained = 1
-"let g:signify_cursorhold_insert = 1
 let g:signify_cursorhold_normal = 1
+let g:signify_update_on_bufenter = 0
+let g:signify_update_on_focusgained = 0
+let g:signify_cursorhold_insert = 0
+let g:signify_vcs_list = ['git']
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -335,13 +368,13 @@ elseif executable('ack-grep')
     let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
 
-" Supertab
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabDefaultCompletionTypeDiscovery = [
-\ "&completefunc:<c-x><c-u>",
-\ "&omnifunc:<c-x><c-o>",
-\ ]
-let g:SuperTabLongestHighlight = 1
+" Completion
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#package_dot = 1
+set completeopt=menuone,noinsert,noselect
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Easymotion
 nmap <Leader>s <Plug>(easymotion-overwin-f2)
@@ -389,3 +422,7 @@ au FileType go nmap <Leader>b <Plug>(go-def)
 au FileType go nmap <Leader>d <Plug>(go-doc)
 au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>cov <Plug>(go-coverage)
+
+" VIM Markdown preview
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=1
