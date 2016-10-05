@@ -53,8 +53,8 @@ find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root 
 
 # Fix mtr perms
 mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
-sudo chmod 4755 $mtrlocation/sbin/mtr
-sudo chown root $mtrlocation/sbin/mtr
+sudo chmod 4755 "$mtrlocation/sbin/mtr"
+sudo chown root "$mtrlocation/sbin/mtr"
 
 # We need cask to start install OSX applications
 brew install caskroom/cask/brew-cask
@@ -63,6 +63,9 @@ brew install caskroom/cask/brew-cask
 brew install ctags \
              vim --override-system-vi \
 			 neovim
+
+# Do bash right
+brew install shellcheck
 
 brew cask install sublime-text
 

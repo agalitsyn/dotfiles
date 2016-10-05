@@ -86,7 +86,8 @@ apt-get install -y --no-install-recommends \
 	neovim \
 	ctags \
 	git \
-	gitk
+	gitk \
+	shellcheck
 
 update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
