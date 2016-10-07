@@ -21,4 +21,5 @@ sudo -H pip3 install --upgrade \
 	sphinx-autobuild \
 	sphinxcontrib-plantuml \
 	sphinxcontrib-seqdiag \
-	sphinxcontrib-blockdiag
+	sphinxcontrib-blockdiag \
+	pylint

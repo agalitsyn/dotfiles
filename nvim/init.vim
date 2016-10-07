@@ -114,11 +114,8 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 set background=dark             " Assume a dark background
 colorscheme jellybeans          " Load a colorscheme
 
-set cursorline
-highlight CursorLine
-
+set cursorline                  " Highlight line under cursor
 set colorcolumn=79	            " Highlight column at 79 symbols
-highlight ColorColumn
 
 set ttyfast		                " Prevent slow scrolling
 
