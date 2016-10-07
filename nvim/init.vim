@@ -115,11 +115,10 @@ set background=dark             " Assume a dark background
 colorscheme jellybeans          " Load a colorscheme
 
 set cursorline
-"highlight CursorLine cterm=NONE ctermbg=lightgrey
+highlight CursorLine
 
 set colorcolumn=79	            " Highlight column at 79 symbols
-highlight ColorColumn ctermbg=darkgrey
-highlight Visual cterm=NONE ctermbg=darkgrey
+highlight ColorColumn
 
 set ttyfast		                " Prevent slow scrolling
 
