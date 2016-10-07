@@ -18,22 +18,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
 
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
 
 Plug 'mileszs/ack.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
-
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
-
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'tpope/vim-markdown', { 'for': 'md' }
-
-Plug 'rust-lang/rust.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
@@ -45,6 +34,18 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 
 Plug 'easymotion/vim-easymotion'
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+
+Plug 'tpope/vim-markdown', { 'for': 'md' }
+
+Plug 'rust-lang/rust.vim', { 'for': 'rs' }
 
 call plug#end()
 
