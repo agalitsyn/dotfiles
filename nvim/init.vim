@@ -28,6 +28,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
 Plug 'nanotech/jellybeans.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -111,8 +116,9 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 " ### UI ###
 
+set termguicolors
 set background=dark             " Assume a dark background
-colorscheme jellybeans          " Load a colorscheme
+colorscheme base16-default-dark " Load a colorscheme
 
 set cursorline                  " Highlight line under cursor
 set colorcolumn=79	            " Highlight column at 79 symbols
