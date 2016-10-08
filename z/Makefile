@@ -6,7 +6,7 @@ all: install configure
 
 .PHONY: install
 install:
-	git clone https://github.com/rupa/z.git $$PROJECTS/z
+	git clone https://github.com/rupa/z.git $$PROJECTS/src/github.com/rupa/z
 
 .PHONY: configure
 configure:
