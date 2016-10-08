@@ -1,4 +1,3 @@
 # Dotfiles
 
-Used on Linux or OSX.
-
+For Linux or OSX.
