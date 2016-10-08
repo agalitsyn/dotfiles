@@ -32,7 +32,3 @@ if ! xcode-select --print-path &> /dev/null; then
     sudo xcodebuild -license
     echo $? 'Agree with the XCode Command Line Tools licence'
 fi
-
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-brew install git make
