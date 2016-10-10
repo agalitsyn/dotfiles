@@ -118,12 +118,12 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 set termguicolors
 set background=dark             " Assume a dark background
-colorscheme base16-default-dark " Load a colorscheme
+colorscheme gruvbox             " Load a colorscheme
 
 set cursorline                  " Highlight line under cursor
-set colorcolumn=79	            " Highlight column at 79 symbols
+set colorcolumn=79              " Highlight column at 79 symbols
 
-set ttyfast		                " Prevent slow scrolling
+set ttyfast                     " Prevent slow scrolling
 
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
