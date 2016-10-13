@@ -22,4 +22,5 @@ sudo -H pip3 install --upgrade \
 	sphinxcontrib-plantuml \
 	sphinxcontrib-seqdiag \
 	sphinxcontrib-blockdiag \
-	pylint
+	pylint \
+	jedi

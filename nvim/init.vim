@@ -18,7 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
 
-Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
+Plug 'easymotion/vim-easymotion'
 
 Plug 'mileszs/ack.vim'
 
@@ -36,14 +36,18 @@ Plug 'chriskempson/base16-vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'ervandew/supertab'
+Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
 
-Plug 'easymotion/vim-easymotion'
+Plug 'ervandew/supertab'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+Plug 'SirVer/ultisnips'
+
+Plug 'zchee/deoplete-jedi', { 'for': 'py' }
 
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -374,6 +378,7 @@ endif
 " Completion
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#go#package_dot = 1
 set completeopt=menuone,noinsert,noselect
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
