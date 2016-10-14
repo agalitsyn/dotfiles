@@ -12,32 +12,31 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-
+" Editor
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
-
 Plug 'easymotion/vim-easymotion'
-
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'mileszs/ack.vim'
-
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
 
+" Git
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
+" UI
 Plug 'nanotech/jellybeans.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
+Plug 'fatih/molokai'
 Plug 'chriskempson/base16-vim'
 
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
-
+" Completion
 Plug 'ervandew/supertab'
 
 function! DoRemote(arg)
@@ -50,6 +49,8 @@ Plug 'SirVer/ultisnips'
 Plug 'zchee/deoplete-jedi', { 'for': 'py' }
 
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
+"
+" Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
 
 Plug 'tpope/vim-markdown', { 'for': 'md' }
@@ -416,9 +417,14 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
+
 let g:go_fmt_command = "goimports"
+
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 au FileType go nmap <Leader>l <Plug>(go-metalinter)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
