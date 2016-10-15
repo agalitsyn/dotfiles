@@ -4,6 +4,7 @@ set nocompatible
 
 let mapleader=","              " change leader to comma
 
+
 " ### Plugins ###
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -13,14 +14,21 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 " Editor
-Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
+
+Plug 'scrooloose/nerdcommenter'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'Raimondi/delimitMate'
+
 Plug 'easymotion/vim-easymotion'
+Plug 'unblevable/quick-scope'
 Plug 'AndrewRadev/splitjoin.vim'
+
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
 
@@ -33,8 +41,9 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
-Plug 'fatih/molokai'
+Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim'
 
 " Completion
 Plug 'ervandew/supertab'
@@ -56,6 +65,8 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'tpope/vim-markdown', { 'for': 'md' }
 
 Plug 'rust-lang/rust.vim', { 'for': 'rs' }
+
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 
 call plug#end()
 
@@ -84,10 +95,14 @@ set termencoding=utf8
 set hidden                     " Allow buffer switching without saving
 set virtualedit=onemore        " Allow for cursor beyond last character
 set history=1000               " Store a ton of history (default is 20)
-set nospell                     " Spell checking on
+set nospell                    " Spell checking off
 set autowrite                  " Automatically write a file when leaving a modified buffer
 
-"disable arrows
+"http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
+set clipboard^=unnamed
+set clipboard^=unnamedplus
+
+" disable arrows
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
@@ -133,7 +148,9 @@ set ttyfast                     " Prevent slow scrolling
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
-set showmode                    " Display the current mode (no needed with vim-airline)
+"set showmode                    " Display the current mode (no needed with vim-airline)
+set noshowmode                  " We show the mode with airline or lightline
+
 set tabpagemax=15               " Only show 15 tabs
 
 set bs=indent,eol,start         " Allow backspacing over everything in insert mode
@@ -172,9 +189,7 @@ if has('statusline')
 	" Broken down into easily includeable segments
 	set statusline=%<%f\                     " Filename
 	set statusline+=%w%h%m%r                 " Options
-	if !exists('g:override_spf13_bundles')
-		set statusline+=%{fugitive#statusline()} " Git Hotness
-	endif
+    set statusline+=%{fugitive#statusline()} " Git Hotness
 	set statusline+=\ [%{&ff}/%Y]            " Filetype
 	set statusline+=\ [%{getcwd()}]          " Current dir
 	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
@@ -197,6 +212,7 @@ augroup resCur
     autocmd BufWinEnter * call ResCur()
 augroup END
 
+
 " ### Formatting ###
 
 set nowrap          " Do not wrap lines.
@@ -215,7 +231,7 @@ augroup vagrant
   au BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
 
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql,ruby autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql,ruby,vim autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 
 " ### Remaps ###
@@ -281,6 +297,29 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
 let g:vim_json_syntax_conceal = 0
 
+" toggle search highlighting rather than clear the current search results.
+nmap <silent> <leader>/ :set invhlsearch<CR>
+
+" Source (reload configuration)
+nnoremap <silent> <F5> :source $MYVIMRC<CR>
+nnoremap <F6> :setlocal spell! spell?<CR>
+
+" Some useful quickfix shortcuts for quickfix
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
+nnoremap <leader>a :cclose<CR>
+
+" Fast saving
+nnoremap <leader>w :w!<cr>
+nnoremap <silent> <leader>q :q!<CR>
+
+" Center the screen
+nnoremap <space> zz
+
+" Do not show stupid q: window
+map q: :q
+
+
 " ### Functions ###
 
 function! StripTrailingWhitespace()
@@ -295,10 +334,6 @@ function! StripTrailingWhitespace()
 	call cursor(l, c)
 endfunction
 
-" toggle search highlighting rather than clear the current search results.
-nmap <silent> <leader>/ :set invhlsearch<CR>
-
-set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 
 " ### Plugins Settings ###
 
@@ -440,3 +475,135 @@ au FileType go nmap <leader>cov <Plug>(go-coverage)
 " VIM Markdown preview
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=1
+
+" Quick scope
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" delimitMate
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_smart_quotes = 1
+let g:delimitMate_expand_inside_quotes = 0
+let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
+
+imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
+
+" Lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste'],
+      \             [ 'fugitive', 'filename', 'modified', 'ctrlpmark' ],
+      \             [ 'go'] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'go'] ],
+      \ },
+      \ 'component_function': {
+      \   'lineinfo': 'LightLineInfo',
+      \   'percent': 'LightLinePercent',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename',
+      \   'go': 'LightLineGo',
+      \   'fileformat': 'LightLineFileformat',
+      \   'filetype': 'LightLineFiletype',
+      \   'fileencoding': 'LightLineFileencoding',
+      \   'mode': 'LightLineMode',
+      \   'fugitive': 'LightLineFugitive',
+      \   'ctrlpmark': 'CtrlPMark',
+      \ },
+      \ }
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightLineFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LightLineInfo()
+  return winwidth(0) > 60 ? printf("%3d:%-2d", line('.'), col('.')) : ''
+endfunction
+
+function! LightLinePercent()
+  return &ft =~? 'vimfiler' ? '' : (100 * line('.') / line('$')) . '%'
+endfunction
+
+function! LightLineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! LightLineGo()
+  " return ''
+  return exists('*go#jobcontrol#Statusline') ? go#jobcontrol#Statusline() : ''
+endfunction
+
+function! LightLineMode()
+  let fname = expand('%:t')
+  return fname == 'ControlP' ? 'CtrlP' :
+        \ &ft == 'vimfiler' ? 'VimFiler' :
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LightLineFilename()
+  let fname = expand('%:t')
+  if mode() == 't'
+    return ''
+  endif
+
+  return fname == 'ControlP' ? g:lightline.ctrlp_item :
+        \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ ('' != fname ? fname : '[No Name]')
+endfunction
+
+function! LightLineReadonly()
+  return &ft !~? 'help' && &readonly ? 'RO' : ''
+endfunction
+
+function! CtrlPMark()
+  if expand('%:t') =~ 'ControlP'
+    call lightline#link('iR'[g:lightline.ctrlp_regex])
+    return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
+          \ , g:lightline.ctrlp_next], 0)
+  else
+    return ''
+  endif
+endfunction
+
+let g:ctrlp_status_func = {
+      \ 'main': 'CtrlPStatusFunc_1',
+      \ 'prog': 'CtrlPStatusFunc_2',
+      \ }
+
+function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
+  let g:lightline.ctrlp_regex = a:regex
+  let g:lightline.ctrlp_prev = a:prev
+  let g:lightline.ctrlp_item = a:item
+  let g:lightline.ctrlp_next = a:next
+  return lightline#statusline(0)
+endfunction
+
+function! CtrlPStatusFunc_2(str)
+  return lightline#statusline(0)
+endfunction
