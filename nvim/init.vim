@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+
 " Editor
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
