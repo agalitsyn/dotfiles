@@ -170,7 +170,8 @@ apt-get install -y --no-install-recommends \
 	dmz-cursor-theme \
 	xcursor-themes \
 	redshift \
-	arandr
+	arandr \
+	xsel
 
 # Fonts
 apt-get install -y --no-install-recommends \
