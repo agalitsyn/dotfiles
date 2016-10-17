@@ -35,14 +35,12 @@ Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
+"Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 
 " UI
 Plug 'nanotech/jellybeans.vim'
-Plug 'mhartington/oceanic-next'
-Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 
@@ -233,7 +231,9 @@ augroup vagrant
 augroup END
 
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql,ruby,vim autocmd BufWritePre <buffer> call StripTrailingWhitespace()
-
+"
+" Don't fold anything.
+autocmd BufWinEnter * set foldlevel=999999
 
 " ### Remaps ###
 
