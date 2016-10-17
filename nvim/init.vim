@@ -31,7 +31,7 @@ Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/syntastic', { 'tag': '3.7.0' }
+Plug 'scrooloose/syntastic'
 
 " Git
 Plug 'tpope/vim-fugitive'
