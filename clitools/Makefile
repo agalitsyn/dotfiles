@@ -1,5 +1,5 @@
 .PHONY:all
-all: bins pip npm
+all: bins pip npm note
 
 .PHONY: bins
 bins:
@@ -24,3 +24,9 @@ npm:
 		git-recent \
 		diff-so-fancy \
 		trash-cli
+
+.PHONY: note
+note:
+	echo "There are tools, which can be in OS repo (apt ot brew), and it's easier to install them from there, because I don't have dev tools installed for compilation:"
+	echo "\t * https://github.com/koalaman/shellcheck (Haskell)"
+	echo "\t * https://github.com/wg/wrk (C)

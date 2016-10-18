@@ -30,7 +30,7 @@ apt-get upgrade -y --no-install-recommends
 
 # Drop packages
 apt-get autoremove --purge -y \
-	avahi-daemon	
+	avahi-daemon
 
 # Build tools
 apt-get install -y --no-install-recommends \
@@ -88,7 +88,9 @@ apt-get install -y --no-install-recommends \
 	git \
 	gitk \
 	shellcheck \
+	wrk \
 	xsel
+
 update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
@@ -200,7 +202,7 @@ apt-get install -y --force-yes --no-install-recommends \
 	oracle-java8-installer \
 	oracle-java8-set-default
 
-# DB
+# DBs
 apt-get install -y --no-install-recommends \
 	postgresql \
 	postgresql-client \
@@ -208,6 +210,7 @@ apt-get install -y --no-install-recommends \
 
 # Dev libs (for pip packages)
 apt-get install -y --no-install-recommends \
+	libpq-dev \
 	libssl-dev \
 	libjpeg-dev \
 	zlib1g-dev
