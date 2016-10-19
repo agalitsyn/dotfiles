@@ -35,7 +35,6 @@ Plug 'scrooloose/syntastic'
 
 " Git
 Plug 'tpope/vim-fugitive'
-"Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 
 " UI
@@ -65,11 +64,13 @@ Plug 'tpope/vim-markdown', { 'for': 'md' }
 
 Plug 'rust-lang/rust.vim', { 'for': 'rs' }
 
-Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
+
+Plug 'hashivim/vim-hashicorp-tools'
 
 call plug#end()
 
-" ### Do backups! ###
+" Do backups!
 set undofile
 set undolevels=1000
 set undoreload=10000
@@ -152,6 +153,7 @@ set noshowmode                  " We show the mode with airline or lightline
 
 set tabpagemax=15               " Only show 15 tabs
 
+set noerrorbells                " No beeps
 set bs=indent,eol,start         " Allow backspacing over everything in insert mode
 set linespace=0                 " No extra spaces between rows
 set number                      " Show absolute numbers
@@ -224,11 +226,6 @@ set softtabstop=4   " Control how many columns vim uses when you hit Tab in inse
 set expandtab       " insert spaces when hitting TABs
 set softtabstop=4   " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround      " round indent to multiple of 'shiftwidth'
-
-augroup vagrant
-  au!
-  au BufRead,BufNewFile Vagrantfile set filetype=ruby
-augroup END
 
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql,ruby,vim autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 "
