@@ -1,5 +1,5 @@
 .PHONY:all
-all: bins pip npm note
+all: bins go pip npm note
 
 .PHONY: bins
 bins:
@@ -24,6 +24,10 @@ npm:
 		git-recent \
 		diff-so-fancy \
 		trash-cli
+
+.PHONY: go
+go:
+	go get -u github.com/shurcooL/markdownfmt
 
 .PHONY: note
 note:
