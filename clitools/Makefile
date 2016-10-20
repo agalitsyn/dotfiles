@@ -28,6 +28,7 @@ npm:
 .PHONY: go
 go:
 	go get -u github.com/shurcooL/markdownfmt
+	go get -u github.com/shurcooL/git-branches
 
 .PHONY: note
 note:
