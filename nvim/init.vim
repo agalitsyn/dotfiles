@@ -33,6 +33,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 
+Plug 'terryma/vim-multiple-cursors'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
