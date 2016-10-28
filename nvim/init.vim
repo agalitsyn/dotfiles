@@ -337,6 +337,9 @@ nnoremap <space> zz
 " Do not show stupid q: window
 map q: :q
 
+" Copy full path of current buffer
+nnoremap <leader>fp :let @+=expand('%:p')<CR>
+
 
 " ### Functions ###
 
