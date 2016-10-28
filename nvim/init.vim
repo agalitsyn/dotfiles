@@ -238,7 +238,6 @@ command! -nargs=* -complete=help Help vertical belowright help <args>
 autocmd FileType help wincmd L
 
 " some default formatting
-autocmd BufNewFile,BufRead *.bash setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.sh setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
@@ -247,6 +246,7 @@ autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
 autocmd BufNewFile,BufRead *.hcl setlocal expandtab shiftwidth=2 tabstop=2
 
 autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType lua setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 
 " Don't fold anything.
