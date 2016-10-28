@@ -87,18 +87,19 @@ for dir in [&undodir, &backupdir, &directory]
 endfor
 
 " ### Editor ###
-set autoread                   " Read changed files
 set t_Co=256                   " Xterm 256 colors
 filetype plugin indent on      " Automatically detect file types.
 syntax on                      " Syntax highlighting
 set mouse=                     " Disable mouse usage
 set mousehide                  " Hide the mouse cursor while typing
+
 set encoding=utf8
 set termencoding=utf8
 set hidden                     " Allow buffer switching without saving
 set virtualedit=onemore        " Allow for cursor beyond last character
 set history=1000               " Store a ton of history (default is 20)
 set nospell                    " Spell checking off
+set autoread                   " Read changed files
 set autowrite                  " Automatically write a file when leaving a modified buffer
 
 "http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
@@ -237,6 +238,8 @@ command! -nargs=* -complete=help Help vertical belowright help <args>
 autocmd FileType help wincmd L
 
 " some default formatting
+autocmd BufNewFile,BufRead *.bash setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.sh setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4

@@ -1,0 +1,37 @@
+set nocompatible
+
+set noerrorbells " No beeps
+
+syntax off
+set background=dark
+
+set showmode " Display current mode
+
+set path+=** " Provides tab-completion for all file-related tasks
+
+set wildmenu " Display all matching files when we tab complete
+set wildmode=list:longest,full
+
+set encoding=utf8
+
+set title " Show the filename in the window titlebar
+set ttyfast " Send more characters at a given time
+set lazyredraw " Don't redraw when we don't have to
+set history=1000 " Increase history from 20 default to 1000
+set hlsearch " Highlight searches
+set ignorecase " Ignore case of searches
+set incsearch " Highlight dynamically as pattern is typed
+set laststatus=2 " Always show status line
+
+" Default style
+filetype plugin indent on
+set autoindent      " Copy indent from last line when starting new line.
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+
+" Maps
+let mapleader=","
+
+set splitbelow " New window goes below
+set splitright " New windows goes right
