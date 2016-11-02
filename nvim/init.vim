@@ -70,7 +70,6 @@ Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
 
 Plug 'hashivim/vim-hashicorp-tools'
 
-Plug 'moorereason/vim-markdownfmt'
 call plug#end()
 
 " Do backups!
@@ -628,6 +627,3 @@ endfunction
 function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
 endfunction
-
-" Markdown fmt
-let g:markdownfmt_autosave=1
