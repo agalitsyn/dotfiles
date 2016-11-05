@@ -78,7 +78,8 @@ apt-get install -y --no-install-recommends \
 	lshw \
 	lsof \
 	mtr \
-	traceroute
+	traceroute \
+	nmap
 
 # IDE
 apt-get install -y --no-install-recommends \

@@ -123,16 +123,15 @@ else
 fi
 
 # IP addresses
-alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr ${ninterface}"
+alias external-ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias local-ip="ipconfig getifaddr ${ninterface}"
+alias local-ips="nmap -sP 192.168.0.0/24"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
-
 # View HTTP traffic
 alias sniff="sudo ngrep -d '${ninterface}' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i ${ninterface} -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias http-dump="sudo tcpdump -i ${ninterface} -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked
 type -t hd > /dev/null || alias hd="hexdump -C"
