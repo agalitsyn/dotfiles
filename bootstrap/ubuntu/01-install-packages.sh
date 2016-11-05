@@ -79,7 +79,8 @@ apt-get install -y --no-install-recommends \
 	lsof \
 	mtr \
 	traceroute \
-	nmap
+	nmap \
+	arp-scan
 
 # IDE
 apt-get install -y --no-install-recommends \

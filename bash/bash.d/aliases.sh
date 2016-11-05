@@ -114,6 +114,7 @@ alias hosts='sudo $EDITOR /etc/hosts'
 alias bashrc='$EDITOR ~/.bashrc && source ~/.bashrc'
 
 # Stupid hardcode way to check network interface
+# TODO: seems not working for ubuntu 16.04+
 if /sbin/ifconfig eth0 > /dev/null 2>&1; then
     # Ubuntu
     ninterface='eth0'
@@ -124,8 +125,9 @@ fi
 
 # IP addresses
 alias external-ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias local-ip="ipconfig getifaddr ${ninterface}"
-alias local-ips="nmap -sP 192.168.0.0/24"
+alias local-ip="ifconfig getifaddr ${ninterface}"
+#alias local-ips="sudo nmap -sP 192.168.0.0/24"
+alias local-ips="sudo arp-scan --localnet"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
