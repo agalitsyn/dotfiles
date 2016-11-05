@@ -176,3 +176,5 @@ alias screenshot-selection="scrot --select ~/Pictures/screenshots/%Y-%m-%d-%T-sc
 
 # Use GNU time
 alias gtime='/usr/bin/time -v'
+
+alias system-info="inxi -b"

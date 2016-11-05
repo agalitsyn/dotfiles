@@ -75,8 +75,20 @@ apt-get install -y --no-install-recommends \
 	strace \
 	ltrace \
 	tcpdump \
+	lsof
+
+# System info
+apt-get install -y --no-install-recommends \
 	lshw \
-	lsof \
+	inxi
+
+# Video
+apt-get install -y --no-install-recommends \
+	mesa-utils \
+	vainfo
+
+# Networking
+apt-get install -y --no-install-recommends \
 	mtr \
 	traceroute \
 	nmap \
