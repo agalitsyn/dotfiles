@@ -16,6 +16,7 @@ DEV_TOOLS := \
 	github.com/mattn/goreman \
 	github.com/tools/godep \
 	github.com/kardianos/govendor \
+	github.com/Masterminds/glide \
 	github.com/alecthomas/gometalinter \
 	github.com/warmans/golocc \
 	github.com/divan/depscheck
