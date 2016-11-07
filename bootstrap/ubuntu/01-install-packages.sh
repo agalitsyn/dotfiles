@@ -13,6 +13,7 @@ add-apt-repository -y ppa:webupd8team/java
 add-apt-repository -y ppa:shutter/ppa
 apt-add-repository -y ppa:ansible/ansible
 add-apt-repository -y ppa:neovim-ppa/unstable
+add-apt-repository -y ppa:videolan/stable-daily
 
 echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/02norecommends
 echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/03disabletranslations
@@ -81,11 +82,6 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
 	lshw \
 	inxi
-
-# Video
-apt-get install -y --no-install-recommends \
-	mesa-utils \
-	vainfo
 
 # Networking
 apt-get install -y --no-install-recommends \
@@ -196,9 +192,18 @@ apt-get install -y --no-install-recommends \
 	#gimp \
 	#krita
 
-# Media
+# Video
 apt-get install -y --no-install-recommends \
-	vlc
+	mesa-utils \
+	vainfo \
+	vlc \
+	browser-plugin-vlc \
+	libavcodec-extra \
+	ffmpeg \
+	x264 \
+	libvdpau-va-gl1 \
+	vdpauinfo \
+	i965-va-driver
 
 # Torrent
 apt-get install -y --no-install-recommends \
