@@ -484,13 +484,15 @@ au FileType go nmap <Leader>l <Plug>(go-metalinter)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>r <Plug>(go-rename)
-au FileType go nmap <leader>gor <Plug>(go-run)
-au FileType go nmap <leader>gob <Plug>(go-build)
-au FileType go nmap <leader>got <Plug>(go-test)
-au FileType go nmap <Leader>b <Plug>(go-def)
-au FileType go nmap <Leader>d <Plug>(go-doc)
-au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-au FileType go nmap <leader>cov <Plug>(go-coverage)
+
+au FileType go nmap <Leader>d <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
 
 " VIM Markdown preview
 let vim_markdown_preview_github=1
@@ -627,3 +629,42 @@ endfunction
 function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
 endfunction
+
+" ==================== UltiSnips ====================
+" copy from https://github.com/fatih/dotfiles/blob/master/vimrc#L546
+" don't expand snippets by tab, show them in autocomplete menu instead
+function! g:UltiSnips_Complete()
+  call UltiSnips#ExpandSnippet()
+  if g:ulti_expand_res == 0
+    if pumvisible()
+      return "\<C-n>"
+    else
+      call UltiSnips#JumpForwards()
+      if g:ulti_jump_forwards_res == 0
+        return "\<TAB>"
+      endif
+    endif
+  endif
+  return ""
+endfunction
+
+function! g:UltiSnips_Reverse()
+  call UltiSnips#JumpBackwards()
+  if g:ulti_jump_backwards_res == 0
+    return "\<C-P>"
+  endif
+
+  return ""
+endfunction
+
+
+if !exists("g:UltiSnipsJumpForwardTrigger")
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+endif
+
+if !exists("g:UltiSnipsJumpBackwardTrigger")
+  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+endif
+
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
