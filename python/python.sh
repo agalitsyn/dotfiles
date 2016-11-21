@@ -3,7 +3,7 @@ pythonrc_path="$HOME/.pythonrc"
 
 export PYTHONIOENCODING="UTF-8"
 
-function python-upgrade-in-virtualenv() {
+python-upgrade-in-virtualenv() {
     local usage="Usage: python-upgrade-in-virtualenv {venv-dir}"
     local target="${1:?$usage}"
 
@@ -12,7 +12,7 @@ function python-upgrade-in-virtualenv() {
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
-function python-server() {
+python-server() {
     local port="${1:-8000}"
     open "http://localhost:${port}/"
     # Set the default Content-Type to `text/plain` instead of `application/octet-stream`

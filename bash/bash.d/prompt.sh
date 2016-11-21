@@ -1,4 +1,4 @@
-function prompt_command {
+prompt_command() {
     local RETURN_CODE="$?"
 
     # dark, light, bold
@@ -58,11 +58,11 @@ ${RETCODE}\W${VENV}${HG_INFO}${GIT_INFO}]\
 ${PROMPT_COLOR}\\\$${RESET} "
 }
 
-function _upsearch {
+_upsearch() {
     test "$PWD" == '/' && return || test -e '.hg' && echo 'hg' && return || test -e '.git' && echo 'git' && return || cd .. && _upsearch
 }
 
-function _set_hg_info {
+_set_hg_info() {
     if [[ $USE_HG_PROMPT ]] ; then
         local PROMPT_TEMPLATE="${P}{branch|quiet}{${Rd}{closed}}${P}â˜¿{rev}{${B}+{tags|quiet|+}}{${Gd}*{bookmark}}{${R}{update}}{${G}+{rev|merge}}${R}{status|modified}${RESET}"
         HG_INFO=" $(hg prompt $PROMPT_TEMPLATE)"
@@ -101,7 +101,7 @@ function _set_hg_info {
     fi
 }
 
-function _set_git_info {
+_set_git_info() {
     local STATUS=$(LC_ALL=C git status 2>/dev/null)
     local BRANCH=$(grep -Po '(?<=On branch ).*$' <<< "$STATUS")
     local REV=$(LC_ALL=C git rev-parse --short HEAD 2>/dev/null)

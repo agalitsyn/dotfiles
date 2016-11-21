@@ -2,11 +2,11 @@
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # Delete host from known_hosts if node was reinstalled
-function ssh-remove-from-known-hosts() {
+ssh-remove-from-known-hosts() {
     ssh-keygen -f "$HOME/.ssh/known_hosts" -R "$1"
 }
 
-function wait-for-ssh() {
+wait-for-ssh() {
     local usage="Usage: wait-for-ssh {host} [user] [key] [timeout]"
     local host="${1:?$usage}"
     local user="$2"

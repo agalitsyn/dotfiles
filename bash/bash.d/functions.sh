@@ -3,22 +3,22 @@
 ########################
 
 # Create a new directory and enter it
-function md() {
+md() {
     mkdir -pv "$@" && cd "$@"
 }
 
 # find shorthand
-function f() {
+f() {
     find . -name "$1"
 }
 
 # Goto temp dir
-function cdt() {
+cdt() {
     [ -z "$TMPDIR" ] && cd /tmp || cd "$TMPDIR"
 }
 
 # Determine size of a file or total size of a directory
-function filesize() {
+filesize() {
     if du -b /dev/null > /dev/null 2>&1; then
         local arg=-sbh
     else
@@ -32,7 +32,7 @@ function filesize() {
 }
 
 # Create a data URL from a file
-function dataurl() {
+dataurl() {
     local mimeType=$(file -b --mime-type "$1")
     if [[ $mimeType == text/* ]]; then
         mimeType="${mimeType};charset=utf-8"
@@ -42,7 +42,7 @@ function dataurl() {
 
 # Extract archives - use: extract <file>
 # Based on http://dotfiles.org/~pseup/.bashrc
-function extract() {
+extract() {
     if [ -f "$1" ]; then
         local filename=$(basename "$1")
         local foldername="${filename%%.*}"
@@ -81,7 +81,7 @@ function extract() {
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
-function s() {
+s() {
     if [ $# -eq 0 ]; then
         subl .
     else
@@ -91,7 +91,7 @@ function s() {
 
 # `o` with no arguments opens current directory, otherwise opens the given
 # location
-function o() {
+o() {
     local fm=
     if command -v nautilus > /dev/null; then
         fm='nautilus'
@@ -110,7 +110,7 @@ function o() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function tre() {
+tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
@@ -118,7 +118,7 @@ function tre() {
 # David Leadbeater's Wikipedia-over-DNS service.
 #
 # See https://dgl.cx/wikipedia-dns
-function wp() {
+wp() {
     query="$*"
     domain="${query// /_}.wp.dg.cx"
     answer="$(dig +short -t txt "$domain" | perl -p -e 's/\\([0-9]*)/chr($1)/eg')"
@@ -135,7 +135,7 @@ function wp() {
 }
 
 # Show a unified diff, colourised if possible and paged if necessary.
-function udiff() {
+udiff() {
     if command -v colordiff > /dev/null; then
         colordiff -wU4 "$@" | $PAGER
         return ${PIPESTATUS[0]}
@@ -149,7 +149,7 @@ function udiff() {
 }
 
 # Sort the "du" output and use human-readable units.
-function duh() {
+duh() {
     du -sk "$@" | sort -n | while read size fname; do
         for unit in KiB MiB GiB TiB PiB EiB ZiB YiB; do
             if [ "$size" -lt 1024 ]; then
@@ -163,7 +163,7 @@ function duh() {
 
 # Edit the files found with the previous "ack" command using Vim (or the
 # default editor).
-function vack() {
+vack() {
     local cmd=''
     if [ $# -eq 0 ]; then
         cmd="$(fc -nl -1)"
@@ -188,7 +188,7 @@ function vack() {
 }
 
 # Convert the parameters or STDIN to lowercase.
-function lc() {
+lc() {
     if [ $# -eq 0 ]; then
         tr '[:upper:]' '[:lower:]'
     else
@@ -197,7 +197,7 @@ function lc() {
 }
 
 # Convert the parameters or STDIN to uppercase.
-function uc() {
+uc() {
     if [ $# -eq 0 ]; then
         tr '[:lower:]' '[:upper:]'
     else
@@ -205,7 +205,7 @@ function uc() {
     fi
 }
 
-function wait-for-http() {
+wait-for-http() {
     local usage="wait_for_endpoint <endpoint> [poll_interval] [retries]"
     local endpoint=${1:?$usage}
     local poll_interval=${2:-1}
@@ -228,15 +228,15 @@ function wait-for-http() {
 ### Docker ###
 ##############
 
-function docker-enter() {
+docker-enter() {
     docker exec -it $1 bash
 }
 
-function docker-images-cleanup() {
+docker-images-cleanup() {
     docker rmi $(docker images | awk '/^<none>/ {print $3}')
 }
 
-function docker-containers-cleanup() {
+docker-containers-cleanup() {
     docker rm $(docker ps --all -q -f status=exited)
 }
 
@@ -245,7 +245,7 @@ function docker-containers-cleanup() {
 #############
 
 # Simple calculator
-function calc() {
+calc() {
     local result=""
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
     #                       └─ default (when `--mathlib` is used) is 20
@@ -264,7 +264,7 @@ function calc() {
 }
 
 # Generate random password
-function pswdgen() {
+pswdgen() {
     local length="${1:-12}"
 
     echo "Strong:"
@@ -278,12 +278,12 @@ function pswdgen() {
 }
 
 # Notes app
-function note() {
+note() {
     terminal_velocity "$@"
 }
 
 # Clip web site to markdown
-function webclipper() {
+webclipper() {
     local usage="Usage: clip-note <url> <file-path>"
     local url="${1:?$usage}"
     local file="${2:?$usage}"

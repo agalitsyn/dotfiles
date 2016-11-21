@@ -1,5 +1,5 @@
 # mostly via DO site
-# @see https://www.digitalocean.com/community/articles/an-introduction-to-useful-bash-aliases-and-functions
+# @see https://www.digitalocean.com/community/articles/an-introduction-to-useful-bash-aliases-and-s
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -24,13 +24,13 @@ alias lsi='ls -il'
 
 # delete a file by its inode number
 # @see http://www.shell-fu.org/lister.php?id=232
-function rminode() {
+rminode() {
     find . -inum $1 -delete
 }
 
 # list and find files/folders
 # @see http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
-function lf() {
+lf() {
   local p=$argv[-1]
   [[ -d $p ]] && { argv[-1]=(); } || p='.'
   find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
@@ -38,7 +38,7 @@ function lf() {
 
 # search and replace
 # @see http://www.reddit.com/r/programming/comments/2tj6d6/findrep_easy_tool_to_find_and_replace/cnzy34o
-function findreplace { 
+search-replace() {
     if [ ! $# == 2 ]; then 
         echo "Usage: find_replace <search_string> <replace_string>"
         return -1
@@ -74,7 +74,7 @@ alias mkdir='mkdir -pv'
 # I know it is bad practice to override the default commands, but this is for
 # safety. If you really want the original "instakill" versions, you can
 # use "command rm", "\rm", or "/bin/rm" inside your own commands, aliases, or
-# shell functions. Note that separate scripts are not affected by the aliases
+# shell s. Note that separate scripts are not affected by the aliases
 # defined here.
 alias cp='cp -i';
 alias mv='mv -i';
