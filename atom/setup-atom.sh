@@ -30,7 +30,8 @@ apm install \
 	todo-show \
 	change-case \
 	atom-alignment \
-	highlight-line
+	highlight-line \
+	fold-lines
 
 # Frontend development
 apm install \
@@ -42,20 +43,15 @@ apm install \
 	autoclose-html \
 	emmet \
 	language-babel \
-	language-jade \
-	linter-jade \
-	jade-beautify \
 	pigments \
 	react \
 	es6-javascript \
 	react-snippets \
-	atom-ternjs \
 	atom-typescript
 
 # Backend development
 apm install \
 	language-docker \
-	go-rename \
 	go-plus \
 	language-restructuredtext \
 	linter-flake8 \
