@@ -44,7 +44,6 @@ apm install \
 	emmet \
 	language-babel \
 	pigments \
-	react \
 	es6-javascript \
 	react-snippets \
 	atom-typescript
