@@ -99,7 +99,8 @@ apt-get install -y --no-install-recommends \
 	gitk \
 	shellcheck \
 	wrk \
-	xsel
+	xsel \
+	sloccount
 
 update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
