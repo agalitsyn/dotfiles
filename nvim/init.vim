@@ -51,7 +51,7 @@ Plug 'ervandew/supertab'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote'), 'tag': '1.2' }
 
 Plug 'SirVer/ultisnips'
 
