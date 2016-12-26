@@ -66,7 +66,8 @@ apt-get install -y --no-install-recommends \
 	pbzip2 \
 	lzop \
 	gettext \
-	pwgen
+	pwgen \
+	rng-tools
 
 # Debug
 apt-get install -y --no-install-recommends \
