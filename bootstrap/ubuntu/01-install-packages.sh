@@ -64,6 +64,7 @@ apt-get install -y --no-install-recommends \
 	p7zip-full \
 	p7zip-rar \
 	pbzip2 \
+	unrar \
 	lzop \
 	gettext \
 	pwgen \

@@ -3,7 +3,7 @@
 set -xe
 
 # Env
-GOVERSION=${GOVERSION:-"1.7.3"}
+GOVERSION=${GOVERSION:-"1.7.4"}
 
 # Constants
 GOROOT="/opt/google/golang/$GOVERSION"

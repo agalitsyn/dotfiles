@@ -1,4 +1,4 @@
-GOVERSION ?= 1.7.3
+GOVERSION ?= 1.7.4
 
 CODE_INTELLIGENCE_PACKAGES := \
 	golang.org/x/tools/cmd/goimports \
