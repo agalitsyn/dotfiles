@@ -8,8 +8,7 @@
     branch = auto
 [alias]
     f = fetch --all --prune
-    p = pull
-    pu = push
+    pu = pull
     co = checkout
     st = status
     br = branch
