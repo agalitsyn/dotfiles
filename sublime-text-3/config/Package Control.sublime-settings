@@ -17,6 +17,7 @@
         "EditorConfig",
         "AutoFileName",
         "DocBlockr",
+        "A File Icon",
 
         // Linting
         "SublimeLinter",
