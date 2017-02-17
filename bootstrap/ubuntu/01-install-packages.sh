@@ -246,7 +246,7 @@ apt-get install -y --no-install-recommends \
 
 # Nodejs
 if ! npm version > /dev/null 2>&1; then
-	curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+	curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 	apt-get install -y nodejs
 fi
 
