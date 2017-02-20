@@ -3,8 +3,9 @@
 set -xe
 
 sudo npm install --global \
-	yo \
-	generator-webapp \
+	gulp-cli \
 	bower \
-	gulp \
-	grunt-cli
+	generator-webapp \
+	yo \
+	grunt-cli \
+	typings
