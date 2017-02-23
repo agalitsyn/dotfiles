@@ -8,4 +8,5 @@ sudo npm install --global \
 	generator-webapp \
 	yo \
 	grunt-cli \
-	typings
+	typings \
+	typescript

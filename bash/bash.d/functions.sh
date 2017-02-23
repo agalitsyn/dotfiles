@@ -79,13 +79,13 @@ extract() {
     fi
 }
 
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# `vs` with no arguments opens the current directory in vs code, otherwise
 # opens the given location
-s() {
+vs() {
     if [ $# -eq 0 ]; then
-        subl .
+        code .
     else
-        subl "$@"
+        code "$@"
     fi
 }
 
