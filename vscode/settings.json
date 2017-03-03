@@ -1,0 +1,25 @@
+{
+    "editor.fontFamily": "'Source Code Pro'",
+    "editor.fontSize": 12,
+    "editor.renderWhitespace": true,
+    "editor.rulers": [79, 120],
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.external.linuxExec": "x-terminal-emulator",
+    "go.buildOnSave": true,
+    "go.lintOnSave": true,
+    "go.vetOnSave": true,
+    "go.buildTags": "",
+    "go.buildFlags": [],
+    "go.lintTool": "golint",
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    "go.formatOnSave": true,
+    "go.formatTool": "goreturns",
+    "go.gopath": "/home/agalitsyn/Projects",
+    "go.gocodeAutoBuild": false,
+    //https://github.com/Microsoft/vscode/issues/1896
+    "window.zoomLevel": -0.001,
+    "workbench.iconTheme": "vs-minimal"
+}
