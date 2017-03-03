@@ -67,9 +67,16 @@ brew install ctags \
 # Do bash right
 brew install shellcheck
 
+# Add fonts
+brew tap caskroom/fonts
+brew cask install font-inconsolata \
+				  font-source-code-pro \
+				  font-fira-code \
+				  font-hack
+
 brew cask install sublime-text
 
-# You might want there slow chromium-based editors:
+# You might want there editors:
 #brew cask install atom \
 				  #visual-studio-code
 
