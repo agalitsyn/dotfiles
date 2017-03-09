@@ -14,39 +14,39 @@ brew upgrade
 # Make it GNU/Linux :)
 brew tap homebrew/dupes
 brew install bash \
-             bash-completion \
-             zsh \
-             coreutils --with-default-names \
-             findutils --with-default-names \
-             gnu-indent --with-default-names \
-             gnu-sed --with-default-names \
-             gnutls --with-default-names \
-             gnu-tar --with-default-names \
-             gawk \
-             gettext \
-             grep --with-default-names \
-             git \
-             screen \
-             tmux \
-             curl \
-             wget --enable-iri \
-             ack \
-             tree \
-             mc \
-             htop-osx \
-             pwgen \
-             ssh-copy-id \
-             netcat \
-             mtr \
-             pandoc \
-             asciidoc \
-             grc \
-             ffmpeg --with-libvpx \
-             youtube-dl \
-             imagemagick \
-             ghostscript \
-             parallel \
-             csshx
+			 bash-completion \
+			 zsh \
+			 coreutils --with-default-names \
+			 findutils --with-default-names \
+			 gnu-indent --with-default-names \
+			 gnu-sed --with-default-names \
+			 gnutls --with-default-names \
+			 gnu-tar --with-default-names \
+			 gawk \
+			 gettext \
+			 grep --with-default-names \
+			 git \
+			 screen \
+			 tmux \
+			 curl \
+			 wget --enable-iri \
+			 ack \
+			 tree \
+			 mc \
+			 htop-osx \
+			 pwgen \
+			 ssh-copy-id \
+			 netcat \
+			 mtr \
+			 pandoc \
+			 asciidoc \
+			 grc \
+			 ffmpeg --with-libvpx \
+			 youtube-dl \
+			 imagemagick \
+			 ghostscript \
+			 parallel \
+			 csshx
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
@@ -61,7 +61,7 @@ brew install caskroom/cask/brew-cask
 
 # Editors
 brew install ctags \
-             vim --override-system-vi \
+			 vim --override-system-vi \
 			 neovim
 
 # Do bash right
@@ -85,17 +85,18 @@ brew cask install sourcetree
 
 # Languages
 brew install python3 \
-             node \
+			 pyenv \
+			 node \
 			 ruby \
-             go
+			 go
 
 # Graphs
 brew install graphviz
 
 # Virt
 brew cask install virtualbox \
-                  virtualbox-extension-pack \
-                  vagrant \
+				  virtualbox-extension-pack \
+				  vagrant \
 				  docker
 
 # CM
@@ -103,7 +104,7 @@ brew install ansible
 
 # Browsers
 brew cask install firefox \
-                  google-chrome \
+				  google-chrome \
 				  torbrowser
 
 # Terminal
@@ -114,14 +115,14 @@ brew cask install spectacle
 
 # Keyboard
 brew cask install seil \
-                  karabiner
+				  karabiner
 
 # Clipboard
 brew cask install flycut
 
 # Monitoring tools
 brew cask install menumeters \
-                  smcfancontrol
+				  smcfancontrol
 
 # IDE
 brew cask install pycharm-ce
@@ -183,7 +184,7 @@ brew cleanup
 
 cat <<EOT
 Suggestions for manual install:
-Pocket              https://getpocket.com/apps/desktop/
-MacDjView           http://sourceforge.net/projects/windjview/files/MacDjView/
-Popcorn time        https://popcorntime.io/
+Pocket				https://getpocket.com/apps/desktop/
+MacDjView			http://sourceforge.net/projects/windjview/files/MacDjView/
+Popcorn time		https://popcorntime.io/
 EOT
