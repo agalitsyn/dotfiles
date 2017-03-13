@@ -13,6 +13,7 @@ sudo -H pip3 install --upgrade \
 	ipython[all] \
 	jupyter \
 	flake8 \
+	pylint \
 	tox \
 	debug \
 	sh \
