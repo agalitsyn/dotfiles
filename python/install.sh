@@ -11,6 +11,7 @@ sudo -H pip3 install --upgrade \
 	pip \
 	setuptools \
 	ipython[all] \
+	jupyter \
 	flake8 \
 	tox \
 	debug \
