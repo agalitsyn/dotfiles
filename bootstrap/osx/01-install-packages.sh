@@ -84,11 +84,14 @@ brew cask install sublime-text
 brew cask install sourcetree
 
 # Languages
+brew cask install java
 brew install python3 \
 			 pyenv \
 			 node \
 			 ruby \
-			 go
+			 go \
+			 scala \
+			 sbt
 
 # Graphs
 brew install graphviz
