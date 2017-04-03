@@ -43,5 +43,7 @@
 	insteadOf = https://github.com/
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
+[url "git@gitlab.2gis.ru:"]
+	insteadOf = https://gitlab.2gis.ru/
 [http "https://gopkg.in"]
 	followRedirects = true

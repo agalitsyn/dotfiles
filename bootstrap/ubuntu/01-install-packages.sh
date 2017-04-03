@@ -258,48 +258,6 @@ fi
 # Google chrome
 apt-get install -y --force-yes --no-install-recommends google-chrome-stable
 
-# Non-repo pkgs
-if ! dpkg -s vagrant; then
-	export VAGRANT_VERSION=1.8.4
-    wget -O /tmp/vagrant.deb https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb && \
-        dpkg -i /tmp/vagrant.deb && \
-        apt-get install -f -y && \
-        rm /tmp/vagrant.deb
-fi
-
-if ! dpkg -s skype; then
-	export SKYPE_VERSION=4.3.0.37-1
-    wget -O /tmp/skype.deb http://download.skype.com/linux/skype-debian_${SKYPE_VERSION}_i386.deb && \
-        dpkg -i /tmp/skype.deb && \
-        apt-get install -f -y && \
-        rm /tmp/skype.deb
-fi
-
-if ! dpkg -s slack-desktop; then
-	export SLACK_VERSION=2.0.6
-    wget -O /tmp/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb && \
-        dpkg -i /tmp/slack.deb && \
-        apt-get install -f -y && \
-        rm /tmp/slack.deb
-fi
-
-if ! dpkg -s dropbox; then
-	export DROPBOX_VERSION=2015.10.28
-	wget -O /tmp/dropbox.deb https://www.dropbox.com/download?dl=packages/debian/dropbox_${DROPBOX_VERSION}_amd64.deb && \
-		dpkg -i /tmp/dropbox.deb && \
-		apt-get install -f -y && \
-		rm /tmp/dropbox.deb
-fi
-
-if ! dpkg -s xmind; then
-	export XMIND_VERSION=7-update1
-	wget -O /tmp/xmind.deb http://www.xmind.net/xmind/downloads/xmind-7.5-linux_amd64.deb && \
-		dpkg -i /tmp/xmind.deb && \
-		apt-get install -f -y && \
-		rm /tmp/xmind.deb
-fi
-
-
 apt-get clean
 
 # Fix broken windows on some apps
