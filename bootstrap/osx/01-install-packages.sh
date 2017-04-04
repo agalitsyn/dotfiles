@@ -77,8 +77,8 @@ brew cask install font-inconsolata \
 brew cask install sublime-text
 
 # You might want there editors:
-#brew cask install atom \
-				  #visual-studio-code
+brew cask install atom \
+				  visual-studio-code
 
 # Git GUI
 brew cask install sourcetree
@@ -92,6 +92,12 @@ brew install python3 \
 			 go \
 			 scala \
 			 sbt
+
+# Backing services and libs
+brew install postgresql \
+			 libmemcached \
+			 memcached \
+			 redis
 
 # Graphs
 brew install graphviz
