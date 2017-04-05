@@ -6,7 +6,7 @@ let mapleader=","              " change leader to comma
 
 
 " ### Plugins ###
-if empty(glob('~/.vim/autoload/plug.vim'))
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
@@ -168,7 +168,6 @@ set magic                       " Enable extended regexes.
 set title                       " Show the filename in the window titlebar.
 set splitright                  " Puts new vsplit windows to the right of the current
 set splitbelow                  " Puts new split windows to the bottom of the current
-set esckeys                     " Allow cursor keys in insert mode.
 set diffopt=filler              " Add vertical spaces to keep right and left aligned.
 set diffopt+=iwhite             " Ignore whitespace changes (focus on code changes).
 
