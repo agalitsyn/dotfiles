@@ -290,3 +290,8 @@ webclipper() {
 
     pandoc -s -r html $url -o $file.md
 }
+
+settitle() {
+  PROMPT_COMMAND="echo -ne \"\033]0;$@\007\""
+}
+
