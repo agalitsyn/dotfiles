@@ -15,7 +15,6 @@ brew upgrade
 brew tap homebrew/dupes
 brew install bash \
 			 bash-completion \
-			 zsh \
 			 coreutils --with-default-names \
 			 findutils --with-default-names \
 			 gnu-indent --with-default-names \
@@ -59,6 +58,9 @@ sudo chown root "$mtrlocation/sbin/mtr"
 # We need cask to start install OSX applications
 brew install caskroom/cask/brew-cask
 
+# Additional shells
+brew install zsh \
+			 fish
 # Editors
 brew install ctags \
 			 vim --override-system-vi \
