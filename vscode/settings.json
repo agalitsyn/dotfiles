@@ -4,6 +4,7 @@
     "editor.fontSize": 12,
     "editor.renderWhitespace": true,
     "editor.rulers": [79, 120],
+    "editor.minimap.enabled": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
     "go.buildOnSave": true,
@@ -21,6 +22,7 @@
     "go.gopath": "~/Projects",
     "go.gocodeAutoBuild": false,
     //https://github.com/Microsoft/vscode/issues/1896
-    "window.zoomLevel": -0.001,
-    "workbench.iconTheme": "vs-minimal"
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-seti",
+    "workbench.colorTheme": "Monokai"
 }
