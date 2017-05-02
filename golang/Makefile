@@ -1,5 +1,3 @@
-GOVERSION ?= 1.8.1
-
 CODE_INTELLIGENCE_PACKAGES := \
 	golang.org/x/tools/cmd/goimports \
 	github.com/nsf/gocode \
@@ -32,4 +30,4 @@ packages:
 
 .PHONY: install
 install:
-	$$(GOVERSION=$(GOVERSION) bash install.sh)
+	$$(bash install.sh)

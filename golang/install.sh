@@ -3,11 +3,12 @@
 set -xe
 
 # Env
-GOVERSION=${GOVERSION:-"1.5.4"}
+GOVERSION=${GOVERSION:-"1.8.1"}
+GOPATH=${GOPATH:-"~/Projects"}
+GODIR=${GODIR:-"/opt/google/golang"}
 
 # Constants
-GOROOT="/opt/google/golang/$GOVERSION"
-GOPATH="$PROJECTS"
+GOROOT="$GODIR/$GOVERSION"
 GOARCH="amd64"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     GOOS="linux"
