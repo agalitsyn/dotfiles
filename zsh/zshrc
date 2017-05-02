@@ -4,10 +4,6 @@ ZSH="$HOME/.oh-my-zsh"
 # https://github.com/mitsuhiko/dotfiles/tree/master/zsh/custom/themes
 ZSH_THEME="mitsuhiko"
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -42,7 +38,7 @@ plugins=(git-prompt osx z extract gnu-utils)
 source "$ZSH/oh-my-zsh.sh"
 
 # Would you like to use another custom folder than $ZSH/custom?
-#ZSH_CUSTOM=~/.zsh-custom
+# ZSH_CUSTOM=~/.zsh-custom
 
 # Save a ton of history
 HISTSIZE=20000
@@ -62,4 +58,10 @@ bindkey "^N" insert-last-word
 #}
 
 unsetopt share_history
+
+alias g="git"
+
+export GOROOT=/opt/google/golang/1.8.1
+export GOPATH=~/Projects
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
