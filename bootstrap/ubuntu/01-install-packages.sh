@@ -14,6 +14,7 @@ add-apt-repository -y ppa:shutter/ppa
 apt-add-repository -y ppa:ansible/ansible
 add-apt-repository -y ppa:neovim-ppa/unstable
 add-apt-repository -y ppa:videolan/stable-daily
+add-apt-repository ppa:longsleep/golang-backports
 
 echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/02norecommends
 echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/03disabletranslations
@@ -236,6 +237,9 @@ apt-get install -y --no-install-recommends \
 	libssl-dev \
 	libjpeg-dev \
 	zlib1g-dev
+
+# Golang
+apt-get install -y --no-install-recommends golang-go
 
 # Python
 apt-get install -y --no-install-recommends \
