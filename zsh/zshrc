@@ -33,7 +33,7 @@ ZSH_THEME="mitsuhiko"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git osx node npm brew)
-plugins=(git-prompt osx z extract gnu-utils)
+plugins=(git-prompt osx z extract gnu-utils virtualenv)
 
 source "$ZSH/oh-my-zsh.sh"
 
