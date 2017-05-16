@@ -111,7 +111,13 @@ brew cask install virtualbox \
 				  docker
 
 # CM
-brew install ansible
+brew install ansible \
+	saltstack
+
+# Cloud
+brew install terraform \
+	doctl \
+	awscli
 
 # Browsers
 brew cask install firefox \
