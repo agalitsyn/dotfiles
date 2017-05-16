@@ -10,5 +10,4 @@ install:
 
 .PHONY: configure
 configure:
-	mkdir -pv $(HOOKS_FOLDER)
 	ln -sf $$(readlink -f z.sh) $(HOOKS_FOLDER)/z.sh

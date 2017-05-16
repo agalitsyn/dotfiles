@@ -4,7 +4,7 @@ set -xe
 
 # Env
 GOVERSION=${GOVERSION:-"1.8.1"}
-GOPATH=${GOPATH:-"~/Projects"}
+GOPATH=${GOPATH:-"~"}
 GODIR=${GODIR:-"/opt/google/golang"}
 
 # Constants
@@ -29,6 +29,12 @@ function install_golang() {
 
 function configure_golang_env() {
 	cat > ~/.bash.d/goenv.sh << EOL
+export GOROOT=$GOROOT
+export GOPATH=$GOPATH
+export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
+EOL
+
+	cat > ~/.zsh.d/goenv.zsh << EOL
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
 export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
