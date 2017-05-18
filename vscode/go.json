@@ -1,6 +1,6 @@
 {
-	"print debug": {
+	"debug": {
 		"prefix": "fd",
-		"body": "fmt.Printf(\"DEBUG: %+v \\n\", ${1})",
+		"body": "fmt.Printf(\"(${1:var}): %#v\\n\", ${1:var})"
 	}
 }
