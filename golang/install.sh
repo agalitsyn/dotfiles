@@ -4,11 +4,11 @@ set -xe
 
 # Env
 GOVERSION=${GOVERSION:-"1.8.1"}
-GOPATH=${GOPATH:-"~"}
 GODIR=${GODIR:-"/opt/google/golang"}
 
 # Constants
 GOROOT="$GODIR/$GOVERSION"
+GOPATH="~"
 GOARCH="amd64"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     GOOS="linux"

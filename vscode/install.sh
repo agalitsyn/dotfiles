@@ -15,3 +15,6 @@ code --install-extension ms-vscode.sublime-keybindings
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension steve8708.Align
 code --install-extension wayou.vscode-todo-highlight
+code --install-extension ms-vscode.cpptools
+code --install-extension tonsky.theme-alabaster
+code --install-extension PKief.material-icon-theme
