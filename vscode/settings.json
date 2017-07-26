@@ -23,6 +23,7 @@
     "go.gocodeAutoBuild": false,
     //https://github.com/Microsoft/vscode/issues/1896
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "vs-seti",
-    "workbench.colorTheme": "Monokai"
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Alabaster",
+    "material-icon-theme.showUpdateMessage": false
 }

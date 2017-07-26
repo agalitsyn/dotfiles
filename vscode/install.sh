@@ -18,3 +18,5 @@ code --install-extension wayou.vscode-todo-highlight
 code --install-extension ms-vscode.cpptools
 code --install-extension tonsky.theme-alabaster
 code --install-extension PKief.material-icon-theme
+code --install-extension PeterJausovec.vscode-docker
+
