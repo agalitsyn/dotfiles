@@ -1,1 +1,1 @@
-source $PROJECTS/src/github.com/rupa/z/z.sh
+source ~/src/github.com/rupa/z/z.sh

@@ -1,6 +1,3 @@
-# define the base directory for cd command
-#export CDPATH="$PROJECTS/src"
-
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 

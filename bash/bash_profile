@@ -52,12 +52,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# default project folder name.
-export PROJECTS=$HOME/Projects
-if [[ ! -d $PROJECTS ]]; then
-    mkdir $PROJECTS
-fi
-
 # load all the aliases or functions when you starts bash.
 # to see all aliases, type alias.
 # to see all functions, type declare -f.
