@@ -39,8 +39,8 @@
 [push]
     default = simple
 # go get fixes
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+# [url "git@github.com:"]
+#	insteadOf = https://github.com/
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
 [url "git@gitlab.2gis.ru:"]
