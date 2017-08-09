@@ -75,7 +75,9 @@ brew install python3 \
 	ruby \
 	go \
 	scala \
-	sbt
+	sbt \
+	maven \
+	gradle
 
 # Backing services and libs
 brew install postgresql \
