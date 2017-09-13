@@ -12,3 +12,11 @@ IdentitiesOnly yes
 # IdentityFile ~/.ssh/example
 # User root
 
+# Multiple-host configuration
+#Host 10.216.*.*
+#UserKnownHostsFile /dev/null
+#StrictHostKeyChecking no
+#Port 22
+#IdentityFile ~/.ssh/id_rsa
+#User ubuntu
+
