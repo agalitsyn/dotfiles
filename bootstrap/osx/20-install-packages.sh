@@ -54,6 +54,9 @@ brew install ctags \
 # Do bash right
 brew install shellcheck
 
+# Handle rest services
+brew install httpie jq
+
 # Add fonts
 brew tap caskroom/fonts
 brew cask install font-source-code-pro \
@@ -69,7 +72,8 @@ brew cask install sourcetree
 
 # Languages
 brew cask install java
-brew install python3 \
+brew install python \
+	python3 \
 	pyenv \
 	node \
 	ruby \
@@ -99,9 +103,9 @@ brew install ansible \
 	saltstack
 
 # Cloud
-# brew install terraform \
-# 	doctl \
-# 	awscli
+brew install terraform \
+	doctl \
+	awscli
 
 # Browsers
 brew cask install firefox \
@@ -111,44 +115,22 @@ brew cask install firefox \
 # Terminal
 brew cask install iterm2
 
-# Window enhancements
-brew cask install spectacle
-
-# Keyboard
-# brew cask install seil \
-# 	karabiner
-
 # Clipboard
 brew cask install flycut
 
-# Monitoring tools
-# brew cask install menumeters \
-# 	smcfancontrol
-
 # IDE
-brew cask install pycharm-ce
+brew cask install pycharm-ce \
+	intellij-idea-ce
 
 # Storage
-brew cask install dropbox
 # google-drive was deleted for some reason
+brew cask install dropbox
 
 # Torrents
 brew cask install transmission
 
-# P2P
-# brew cask install eiskaltdcpp
-
 # Media
 brew cask install vlc
-
-# Mindmap
-# brew cask install xmind
-
-# Graphs
-# brew cask install yed
-
-# Save eyes
-brew cask install flux
 
 # Cleariness
 brew cask install cleanmymac
@@ -157,11 +139,11 @@ brew cask install cleanmymac
 brew cask install android-file-transfer
 # brew cask install ifunbox
 
-# Old days
-# brew cask install dosbox
-
 # djview
 brew cask install djview
+
+# Help unlucky windows guys
+brew cask install teamviewer
 
 # IM
 brew cask install skype \
@@ -170,8 +152,33 @@ brew cask install skype \
 # Screenshoting
 # brew cask install skitch
 
-# Help unlucky windows guys
-brew cask install teamviewer
+# P2P
+# brew cask install eiskaltdcpp
+
+# Mindmap
+# brew cask install xmind
+
+# Graphs
+# brew cask install yed
+
+# Not needed on sierra
+
+# Save eyes
+# brew cask install flux
+
+# Window enhancements (not needed on sierra)
+# brew cask install spectacle
+
+# Keyboard
+# brew cask install seil \
+# 	karabiner
+
+# Monitoring tools
+# brew cask install menumeters \
+# 	smcfancontrol
+
+# Old days
+# brew cask install dosbox
 
 # Images
 # brew cask install \
