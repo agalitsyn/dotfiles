@@ -25,4 +25,7 @@ sudo -H pip3 install --upgrade \
 	sphinxcontrib-seqdiag \
 	sphinxcontrib-blockdiag \
 	pylint \
-	jedi
+	jedi \
+	mkdocs \
+    pygments \
+    neovim

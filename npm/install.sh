@@ -9,4 +9,10 @@ sudo npm install --global \
 	yo \
 	grunt-cli \
 	typings \
-	typescript
+	typescript \
+	node-static \
+    json-server \
+	git-open \
+	git-recent \
+	diff-so-fancy \
+	trash-cli
