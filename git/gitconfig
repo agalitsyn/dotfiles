@@ -41,10 +41,8 @@
 # go get fixes
 # [url "git@github.com:"]
 #	insteadOf = https://github.com/
-[url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org/
-[url "git@gitlab.2gis.ru:"]
-	insteadOf = https://gitlab.2gis.ru/
+#[url "git@bitbucket.org:"]
+#	insteadOf = https://bitbucket.org/
 [http "https://gopkg.in"]
 	followRedirects = true
 [difftool "sourcetree"]

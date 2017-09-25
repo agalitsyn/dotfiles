@@ -1,20 +1,28 @@
 {
-    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontFamily": "Source Code Pro, FiraCode-Retina, Hack, Go Mono, Menlo, Monaco",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
-    "editor.renderWhitespace": true,
+    "editor.renderWhitespace": "none",
     "editor.rulers": [79, 120],
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
-    "go.buildOnSave": true,
-    "go.lintOnSave": true,
-    "go.vetOnSave": true,
+    "go.buildOnSave": "package",
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
     "go.buildTags": "",
     "go.buildFlags": [],
-    "go.lintTool": "golint",
+    "go.lintTool": "megacheck",
     "go.lintFlags": [],
     "go.vetFlags": [],
+    "go.addTags": {
+        "tags": "json",
+        "options": "json=omitempty",
+        "promptForTags": true,
+        "transform": "snakecase"
+    },
     "go.coverOnSave": false,
     "go.useCodeSnippetsOnFunctionSuggest": false,
     "go.formatOnSave": true,
@@ -24,6 +32,12 @@
     //https://github.com/Microsoft/vscode/issues/1896
     "window.zoomLevel": 0,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Alabaster",
-    "material-icon-theme.showUpdateMessage": false
+    "material-icon-theme.showUpdateMessage": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#242424",
+        "statusBar.noFolderBackground": "#242424",
+        "statusBar.debuggingBackground": "#242424"
+    },
+    "extensions.autoUpdate": false,
+    "update.channel": "none"
 }
