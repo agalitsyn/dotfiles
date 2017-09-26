@@ -1,6 +1,6 @@
 [user]
-    name = Anton Galitsyn
-    email = agalitsyn@users.noreply.github.com
+	name = Anton Galitsyn
+	email = agalitsyn@users.noreply.github.com
 [color]
     diff = auto
     status = auto
@@ -34,7 +34,7 @@
     date = local
 [core]
     filemode = false
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/a.galitsyn/.gitignore
 	autocrlf = input
 [push]
     default = simple
@@ -51,3 +51,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/a.galitsyn/.stCommitMsg

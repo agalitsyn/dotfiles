@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Source Code Pro, FiraCode-Retina, Hack, Go Mono, Menlo, Monaco",
+    "editor.fontFamily": "Menlo, Hack, FiraCode-Retina, Source Code Pro, Go Mono, Monaco",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
@@ -31,13 +31,16 @@
     "go.gocodeAutoBuild": false,
     //https://github.com/Microsoft/vscode/issues/1896
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.showUpdateMessage": false,
+    "workbench.iconTheme": "material-icon-theme",
+	"workbench.startupEditor": "none",
     "workbench.colorCustomizations": {
         "statusBar.background": "#242424",
         "statusBar.noFolderBackground": "#242424",
         "statusBar.debuggingBackground": "#242424"
     },
     "extensions.autoUpdate": false,
-    "update.channel": "none"
+    "update.channel": "none",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
 }
