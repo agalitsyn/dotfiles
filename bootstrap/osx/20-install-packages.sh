@@ -20,6 +20,7 @@ brew install bash \
 	gnutls --with-default-names \
 	gnu-tar --with-default-names \
 	gawk \
+	watch \
 	gettext \
 	grep --with-default-names \
 	git \
