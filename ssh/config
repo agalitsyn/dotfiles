@@ -1,9 +1,8 @@
 Host *
-UseKeychain yes
 IdentitiesOnly yes
-# Not recommended, but can be handy:
-# UserKnownHostsFile /dev/null
-# StrictHostKeyChecking no
+AddKeysToAgent yes
+UseKeychain yes
+IdentityFile ~/.ssh/id_rsa
 
 # Per-host configuration:
 # Host my-server-alias
@@ -13,10 +12,9 @@ IdentitiesOnly yes
 # User root
 
 # Multiple-host configuration
-#Host 10.216.*.*
-#UserKnownHostsFile /dev/null
-#StrictHostKeyChecking no
-#Port 22
-#IdentityFile ~/.ssh/id_rsa
-#User ubuntu
-
+# Host 10.216.*.*
+# UserKnownHostsFile /dev/null
+# StrictHostKeyChecking no
+# Port 22
+# IdentityFile ~/.ssh/id_rsa
+# User ubuntu
