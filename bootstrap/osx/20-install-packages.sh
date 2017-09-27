@@ -79,6 +79,9 @@ brew install python \
 	node \
 	ruby \
 	go \
+	glide \
+	dep \
+	go-delve/delve/delve \
 	scala \
 	sbt \
 	maven \
