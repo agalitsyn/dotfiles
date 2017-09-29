@@ -56,7 +56,8 @@ brew install ctags \
 brew install shellcheck
 
 # Handle rest services
-brew install httpie jq
+brew install httpie \
+	jq
 
 # Add fonts
 brew tap caskroom/fonts
@@ -103,8 +104,8 @@ brew cask install virtualbox \
 	docker
 
 # CM
-brew install ansible \
-	saltstack
+brew install ansible
+# brew install saltstack
 
 # Cloud
 brew install terraform \
@@ -123,12 +124,13 @@ brew cask install iterm2
 brew cask install flycut
 
 # IDE
-brew cask install pycharm-ce \
-	intellij-idea-ce
+brew cask install pycharm-ce
+# brew cask install intellij-idea-ce
 
 # Storage
-# google-drive was deleted for some reason
 brew cask install dropbox
+# brew cask install google-backup-and-sync
+# brew cask install google-photos-backup-and-sync
 
 # Torrents
 brew cask install transmission
@@ -137,7 +139,7 @@ brew cask install transmission
 brew cask install vlc
 
 # Cleariness
-brew cask install cleanmymac
+# brew cask install cleanmymac
 
 # Phones
 brew cask install android-file-transfer
@@ -147,11 +149,11 @@ brew cask install android-file-transfer
 brew cask install djview
 
 # Help unlucky windows guys
-brew cask install teamviewer
+# brew cask install teamviewer
 
 # IM
-brew cask install skype \
-	slack
+brew cask install slack
+# brew cask install skype
 
 # Screenshoting
 # brew cask install skitch
@@ -180,6 +182,7 @@ brew cask install skype \
 # Monitoring tools
 # brew cask install menumeters \
 # 	smcfancontrol
+# brew cask install istat-menus
 
 # Old days
 # brew cask install dosbox
