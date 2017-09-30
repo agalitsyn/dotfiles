@@ -46,7 +46,8 @@ sudo chown root "$mtrlocation/sbin/mtr"
 # brew install caskroom/cask/brew-cask
 
 # Additional shells
-brew install zsh
+brew install zsh \
+	fish
 
 # Editors
 brew install ctags \
