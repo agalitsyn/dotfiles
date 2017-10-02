@@ -66,6 +66,9 @@ brew cask install font-source-code-pro \
 	font-fira-code \
 	font-hack
 
+# Necessary for CLI on images
+brew install imagemagick
+
 # You might want there editors:
 brew cask install visual-studio-code \
 	sublime-text

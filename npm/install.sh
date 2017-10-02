@@ -3,6 +3,7 @@
 set -xe
 
 sudo npm install --global \
+	eslint \
 	gulp-cli \
 	bower \
 	generator-webapp \
