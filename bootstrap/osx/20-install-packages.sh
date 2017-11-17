@@ -42,19 +42,13 @@ mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//')
 sudo chmod 4755 "$mtrlocation/sbin/mtr"
 sudo chown root "$mtrlocation/sbin/mtr"
 
-# We need cask to start install OSX applications
-# brew install caskroom/cask/brew-cask
-
 # Additional shells
-brew install zsh \
-	fish
+brew install zsh
 
 # Editors
 brew install ctags \
-	vim --override-system-vi
-
-# Do bash right
-brew install shellcheck
+	vim --override-system-vi \
+	shellcheck
 
 # Handle rest services
 brew install httpie \
@@ -74,7 +68,7 @@ brew cask install visual-studio-code \
 	sublime-text
 
 # Git GUI
-brew cask install sourcetree
+# brew cask install sourcetree
 
 # Languages
 brew cask install java
@@ -112,9 +106,9 @@ brew install ansible
 # brew install saltstack
 
 # Cloud
-brew install terraform \
-	doctl \
-	awscli
+#brew install terraform \
+#	doctl \
+#	awscli
 
 # Browsers
 brew cask install firefox \
@@ -128,7 +122,7 @@ brew cask install iterm2
 brew cask install flycut
 
 # IDE
-brew cask install pycharm-ce
+# brew cask install pycharm-ce
 # brew cask install intellij-idea-ce
 
 # Storage
