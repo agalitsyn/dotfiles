@@ -1,37 +1,285 @@
+" ### General ###
+
 set nocompatible
 
 set noerrorbells " No beeps
 
-syntax off
-set background=dark
+let mapleader=","              " change leader to comma
 
-set showmode " Display current mode
+" Do backups!
+set undofile
+set undolevels=1000
+set undoreload=10000
+set undodir=$HOME/.cache/vimundo
+set backupdir=$HOME/.cache/vimbackup
+set directory=$HOME/.cache/vimswap
+for dir in [&undodir, &backupdir, &directory]
+    if !isdirectory(dir)
+        call mkdir(dir)
+    endif
+endfor
 
-set path+=** " Provides tab-completion for all file-related tasks
-
-set wildmenu " Display all matching files when we tab complete
-set wildmode=list:longest,full
+" ### Editor ###
+set t_Co=256                   " Xterm 256 colors
+filetype plugin indent on      " Automatically detect file types.
+syntax on                      " Syntax highlighting
+set mouse=                     " Disable mouse usage
+set mousehide                  " Hide the mouse cursor while typing
 
 set encoding=utf8
+set termencoding=utf8
+set hidden                     " Allow buffer switching without saving
+set virtualedit=onemore        " Allow for cursor beyond last character
+set history=1000               " Store a ton of history (default is 20)
+set nospell                    " Spell checking off
+set autoread                   " Read changed files
+set autowrite                  " Automatically write a file when leaving a modified buffer
 
-set title " Show the filename in the window titlebar
-set ttyfast " Send more characters at a given time
-set lazyredraw " Don't redraw when we don't have to
-set history=1000 " Increase history from 20 default to 1000
-set hlsearch " Highlight searches
-set ignorecase " Ignore case of searches
-set incsearch " Highlight dynamically as pattern is typed
-set laststatus=2 " Always show status line
+"http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
+set clipboard^=unnamed
+set clipboard^=unnamedplus
 
-" Default style
-filetype plugin indent on
+" disable arrows
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" Fix for russian
+
+" Native way
+"set keymap=russian-jcukenwin
+"set iminsert=0
+"set imsearch=0
+"highlight lCursor guifg=NONE guibg=Cyan
+
+" Hack way, but works with setxkb shortcuts
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+nmap Ж :
+nmap Н Y
+nmap з p
+nmap ф a
+nmap щ o
+nmap г u
+nmap З P
+
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+
+
+" ### UI ###
+
+set background=dark             " Assume a dark background
+colorscheme default             " Load a colorscheme
+
+set cursorline                  " Highlight line under cursor
+" set colorcolumn=79              " Highlight column at 79 symbols
+
+set ttyfast                     " Prevent slow scrolling
+
+" set list
+" set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+"set showmode                    " Display the current mode (no needed with vim-airline)
+set noshowmode                  " We show the mode with airline or lightline
+
+set tabpagemax=15               " Only show 15 tabs
+
+set noerrorbells                " No beeps
+set bs=indent,eol,start         " Allow backspacing over everything in insert mode
+set linespace=0                 " No extra spaces between rows
+set number                      " Show absolute numbers
+set showmatch                   " Show matching brackets/parenthesis
+set incsearch                   " Find as you type search
+set ignorecase                  " Case insensitive search
+set smartcase                   " Case sensitive when uc present
+set magic                       " Enable extended regexes.
+set title                       " Show the filename in the window titlebar.
+set splitright                  " Puts new vsplit windows to the right of the current
+set splitbelow                  " Puts new split windows to the bottom of the current
+set diffopt=filler              " Add vertical spaces to keep right and left aligned.
+set diffopt+=iwhite             " Ignore whitespace changes (focus on code changes).
+
+set hlsearch                    " Highlight search terms
+
+set wildmenu                    " for command line completion
+set wildmode=list:longest,full
+
+set laststatus=2
+set ruler
+
+if has('cmdline_info')
+	set ruler                   " Show the ruler
+	set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+	set showcmd                 " Show partial commands in status line and
+								" Selected characters/lines in visual mode
+endif
+
+if has('statusline')
+	set laststatus=2
+
+	" Broken down into easily includeable segments
+	set statusline=%<%f\                     " Filename
+	set statusline+=%w%h%m%r                 " Options
+	set statusline+=\ [%{&ff}/%Y]            " Filetype
+	set statusline+=\ [%{getcwd()}]          " Current dir
+	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
+    set statusline+=%#warningmsg#
+    set statusline+=%*
+endif
+
+" Cursor restore
+function! ResCur()
+    if line("'\"") <= line("$")
+        silent! normal! g`"
+        return 1
+    endif
+endfunction
+
+augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+augroup END
+
+
+" ### Formatting ###
+
+set nowrap          " Do not wrap lines.
 set autoindent      " Copy indent from last line when starting new line.
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
+set smartindent     " Know about functions end while intending.
+"set textwidth=120   " lines longer than 79 columns will be broken
+set shiftwidth=4    " operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4       " an hard TAB displays as 4 columns
+set softtabstop=4   " Control how many columns vim uses when you hit Tab in insert mode.
+set expandtab       " insert spaces when hitting TABs
+set softtabstop=4   " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround      " round indent to multiple of 'shiftwidth'
 
-" Maps
-let mapleader=","
+autocmd FileType c,cpp,java,go,php,javascript,python,rust,xml,yml,perl,sql,ruby,vim,makefile autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+"
+" open help vertically
+command! -nargs=* -complete=help Help vertical belowright help <args>
+autocmd FileType help wincmd L
 
-set splitbelow " New window goes below
-set splitright " New windows goes right
+" some default formatting
+autocmd BufNewFile,BufRead *.sh setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
+autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
+autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.hcl setlocal expandtab shiftwidth=2 tabstop=2
+
+autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType lua setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+
+" Don't fold anything.
+autocmd BufWinEnter * set foldlevel=999999
+
+" ### Remaps ###
+
+" Stupid shift key fixes
+if has("user_commands")
+    command! -bang -nargs=* -complete=file E e<bang> <args>
+    command! -bang -nargs=* -complete=file W w<bang> <args>
+    command! -bang -nargs=* -complete=file Wq wq<bang> <args>
+    command! -bang -nargs=* -complete=file WQ wq<bang> <args>
+    command! -bang Wa wa<bang>
+    command! -bang WA wa<bang>
+    command! -bang Q q<bang>
+    command! -bang QA qa<bang>
+    command! -bang Qa qa<bang>
+endif
+
+cmap Tabe tabe
+
+" Faster split resizing (+,-)
+if bufwinnr(1)
+	map + <C-W>+
+	map - <C-W>-
+endif
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
+" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Nicer buffer switching
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
+
+" Shortcuts
+" Change Working Directory to that of the current file
+cmap cwd lcd %:p:h
+cmap cd. lcd %:p:h
+
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+" Allow using the repeat operator with a visual selection (!)
+" http://stackoverflow.com/a/8064607/127816
+vnoremap . :normal .<CR>
+
+" Find merge conflict markers
+map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
+
+" Json formatting
+nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
+let g:vim_json_syntax_conceal = 0
+
+" toggle search highlighting rather than clear the current search results.
+nmap <silent> <leader>/ :set invhlsearch<CR>
+
+" Source (reload configuration)
+nnoremap <silent> <F5> :source $MYVIMRC<CR>
+nnoremap <F6> :setlocal spell! spell?<CR>
+
+" Some useful quickfix shortcuts for quickfix
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
+nnoremap <leader>a :cclose<CR>
+
+" Fast saving
+nnoremap <leader>w :w!<cr>
+nnoremap <silent> <leader>q :q!<CR>
+
+" Center the screen
+nnoremap <space> zz
+
+" Do not show stupid q: window
+map q: :q
+
+" Copy full path of current buffer
+nnoremap <leader>fp :let @+=expand('%:p')<CR>
+
+
+" ### Functions ###
+
+function! StripTrailingWhitespace()
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" do the business:
+	%s/\s\+$//e
+	" clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
+endfunction

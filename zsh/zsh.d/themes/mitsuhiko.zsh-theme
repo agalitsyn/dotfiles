@@ -20,7 +20,7 @@ ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 
 # If iTerm is detected these themes are used for regular windows
 # and ssh respectively
-MITSUHIKO_ITERM_NORMAL_PROFILE='Dark'
+MITSUHIKO_ITERM_NORMAL_PROFILE='Fancy'
 MITSUHIKO_ITERM_SSH_PROFILE='FancySSH'
 
 # This is the basic prompt that is always printed.  It will be

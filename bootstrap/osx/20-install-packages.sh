@@ -32,7 +32,8 @@ brew install bash \
 	mc \
 	htop-osx \
 	netcat \
-	mtr
+	mtr \
+	z
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
@@ -151,7 +152,7 @@ brew cask install djview
 
 # IM
 brew cask install slack
-# brew cask install skype
+brew cask install skype
 
 # Screenshoting
 # brew cask install skitch
@@ -165,24 +166,7 @@ brew cask install slack
 # Graphs
 # brew cask install yed
 
-# Not needed on sierra
-
-# Save eyes
-# brew cask install flux
-
-# Window enhancements (not needed on sierra)
-# brew cask install spectacle
-
-# Keyboard
-# brew cask install seil \
-# 	karabiner
-
-# Monitoring tools
-# brew cask install menumeters \
-# 	smcfancontrol
-# brew cask install istat-menus
-
-# Old days
+# Emulator
 # brew cask install dosbox
 
 # Images
@@ -192,5 +176,23 @@ brew cask install slack
 # 	adobe-photoshop-cc \
 # 	adobe-photoshop-lightroom
 
+# Monitoring tools
+# brew cask install menumeters \
+# 	smcfancontrol
+# brew cask install istat-menus
+
+### Not needed on sierra ###
+
+# Save eyes
+# brew cask install flux
+
+# Window enhancements
+# brew cask install spectacle
+
+# Keyboard
+# brew cask install seil \
+# 	karabiner
+
 # Remove outdated versions from the cellar
 brew cleanup
+
