@@ -5,8 +5,8 @@
     "editor.renderWhitespace": "none",
     "editor.rulers": [79, 120],
     "editor.minimap.enabled": false,
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.shell.linux": "/usr/local/bin/fish",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
     "go.buildOnSave": "package",
@@ -31,14 +31,13 @@
     "go.gocodeAutoBuild": false,
     //https://github.com/Microsoft/vscode/issues/1896
     "window.zoomLevel": 0,
-    "material-icon-theme.showUpdateMessage": false,
-    "workbench.iconTheme": "material-icon-theme",
-	"workbench.startupEditor": "none",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#242424",
-        "statusBar.noFolderBackground": "#242424",
-        "statusBar.debuggingBackground": "#242424"
-    },
+    "workbench.iconTheme": "vs-seti",
+    "workbench.startupEditor": "none",
+    // "workbench.colorCustomizations": {
+    //     "statusBar.background": "#242424",
+    //     "statusBar.noFolderBackground": "#242424",
+    //     "statusBar.debuggingBackground": "#242424"
+    // },
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "telemetry.enableCrashReporter": false,

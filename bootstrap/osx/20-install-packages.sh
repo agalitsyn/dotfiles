@@ -11,13 +11,19 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-# Make it GNU/Linux :)
+# Additional shells
+# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 brew install bash \
 	bash-completion \
-	coreutils --with-default-names \
+	zsh \
+	fish
+
+# Make it GNU/Linux :)
+brew install coreutils \
+	moreutils \
 	findutils --with-default-names \
 	gnu-sed --with-default-names \
-	gnutls --with-default-names \
+	gnutls \ 
 	gnu-tar --with-default-names \
 	gawk \
 	watch \
@@ -33,7 +39,11 @@ brew install bash \
 	htop-osx \
 	netcat \
 	mtr \
-	z
+	z \
+	ncdu \
+	pv \
+	rename
+
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
@@ -43,12 +53,9 @@ mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//')
 sudo chmod 4755 "$mtrlocation/sbin/mtr"
 sudo chown root "$mtrlocation/sbin/mtr"
 
-# Additional shells
-brew install zsh
-
 # Editors
-brew install ctags \
-	vim --override-system-vi \
+brew install vim --with-override-system-vi \
+	ctags \
 	shellcheck
 
 # Handle rest services
@@ -63,13 +70,14 @@ brew cask install font-source-code-pro \
 
 # Necessary for CLI on images
 brew install imagemagick
+brew install ffmpeg --with-libvpx
 
 # You might want there editors:
-brew cask install visual-studio-code \
-	sublime-text
+brew cask install sublime-text
+	visual-studio-code \
 
 # Git GUI
-# brew cask install sourcetree
+brew cask install sourcetree
 
 # Languages
 brew cask install java
@@ -79,13 +87,8 @@ brew install python \
 	node \
 	ruby \
 	go \
-	glide \
 	dep \
-	go-delve/delve/delve \
-	scala \
-	sbt \
-	maven \
-	gradle
+	go-delve/delve/delve
 
 # Backing services and libs
 brew install postgresql \
@@ -107,9 +110,9 @@ brew install ansible
 # brew install saltstack
 
 # Cloud
-#brew install terraform \
-#	doctl \
-#	awscli
+brew install terraform \
+	doctl \
+	awscli
 
 # Browsers
 brew cask install firefox \
@@ -128,7 +131,7 @@ brew cask install flycut
 
 # Storage
 brew cask install dropbox
-# brew cask install google-backup-and-sync
+brew cask install google-backup-and-sync
 # brew cask install google-photos-backup-and-sync
 
 # Torrents
@@ -188,6 +191,7 @@ brew cask install skype
 
 # Window enhancements
 # brew cask install spectacle
+brew cask install sizeup
 
 # Keyboard
 # brew cask install seil \
