@@ -85,10 +85,6 @@ alias less='less -Ri'
 
 alias rsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
 
-alias g='git'
-[ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
-complete -o default -o nospace -F _git g
-
 # Always use chrome as mp3 and video player, pdf viewer, etc
 alias gc="google-chrome --new-window"
 
@@ -175,6 +171,6 @@ alias screenshot-window="scrot --count --delay 3 --focused ~/Pictures/screenshot
 alias screenshot-selection="scrot --select ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png"
 
 # Use GNU time
-alias gtime='/usr/bin/time -v'
+alias gtime='/usr/bin/time'
 
 alias system-info="inxi -b"

@@ -25,3 +25,8 @@ docker-cleanup-containers() {
     docker rm $(docker ps --all -q -f status=exited)
 }
 alias dcc="docker-cleanup-containers"
+
+docker-enter-vm() {
+	screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
+}
+alias dvm="docker-enter-vm"

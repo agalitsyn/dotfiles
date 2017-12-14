@@ -1,7 +1,3 @@
-########################
-### Files and folder ###
-########################
-
 # Create a new directory and enter it
 md() {
     mkdir -pv "$@" && cd "$@"
@@ -224,26 +220,6 @@ wait-for-http() {
     done
 }
 
-##############
-### Docker ###
-##############
-
-docker-enter() {
-    docker exec -it $1 bash
-}
-
-docker-images-cleanup() {
-    docker rmi $(docker images | awk '/^<none>/ {print $3}')
-}
-
-docker-containers-cleanup() {
-    docker rm $(docker ps --all -q -f status=exited)
-}
-
-#############
-### Tools ###
-#############
-
 # Simple calculator
 calc() {
     local result=""
@@ -279,7 +255,7 @@ pswdgen() {
 
 # Notes app
 note() {
-    terminal_velocity "$@"
+    vim ~/notes.md
 }
 
 # Clip web site to markdown
@@ -294,4 +270,3 @@ webclipper() {
 settitle() {
   PROMPT_COMMAND="echo -ne \"\033]0;$@\007\""
 }
-
