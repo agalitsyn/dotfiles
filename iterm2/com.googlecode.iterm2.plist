@@ -224,7 +224,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>74D32F0A-63FC-4F6F-B02F-5EE4A32679AB</string>
+	<string>97A72D92-5DF2-4536-9E37-6FECDDAB2FCD</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -281,7 +281,7 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 332 796 473 0 0 1440 878 </string>
+	<string>256 199 918 512 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 23 1440 854 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2441,7 +2441,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-11T04:07:00Z</date>
+	<date>2017-12-19T07:40:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
