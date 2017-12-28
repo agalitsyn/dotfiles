@@ -81,11 +81,12 @@ brew cask install sourcetree
 
 # Languages
 brew cask install java
-brew install python \
+brew install ruby \
+	python \
 	python3 \
 	pyenv \
 	node \
-	ruby \
+	yarn --without-node \
 	go \
 	dep \
 	go-delve/delve/delve
