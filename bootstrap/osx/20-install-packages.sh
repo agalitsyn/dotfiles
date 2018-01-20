@@ -32,6 +32,7 @@ brew install coreutils \
 	git \
 	tmux \
 	curl \
+	telnet \
 	wget --enable-iri \
 	ag \
 	tree \
