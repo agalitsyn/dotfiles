@@ -109,7 +109,7 @@ set_prompt() {
 		purple="\e[1;35m";
 		red="\e[1;31m";
 		violet="\e[1;35m";
-		white="\e[1;37m";
+		white="\e[38;5;7m";
 		yellow="\e[1;33m";
 	# fi;
 
@@ -133,14 +133,14 @@ set_prompt() {
 
 	# Set the terminal title and prompt.
 	PS1="\[\033]0;\W\007\]"; # working directory base name
-	# PS1+="\[${bold}\]\n"; # newline
+	PS1+="\n"; # newline
 	PS1+="\[${white}\]\t | "; # time
 	PS1+="\[${userStyle}\]\u"; # username
 	PS1+="\[${white}\] at ";
 	PS1+="\[${hostStyle}\]\h"; # host
 	PS1+="\[${white}\] in ";
 	PS1+="\[${green}\]\w"; # working directory full path
-	PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\") "; # Git repository details
+	PS1+="\$(prompt_git \"\[${white}\] on \[${white}\]\" \"\[${blue}\]\") "; # Git repository details
 	PS1+="\[${ret_code}\]"; # err code
 	PS1+="\n";
 	PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
