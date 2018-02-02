@@ -1,2 +1,0 @@
-export GOPATH=~
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

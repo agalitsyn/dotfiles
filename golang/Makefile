@@ -2,4 +2,4 @@ include ../vars.mk
 
 .PHONY: configure
 configure:
-	ln -sf z.sh $(BASH_HOOKS_FOLDER)/z.sh
+	cp -r golang.sh $(BASH_HOOKS_FOLDER)/golang.sh

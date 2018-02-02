@@ -1,7 +1,6 @@
-CONFIG_FOLDER := ~
-HOOKS_FOLDER := $(CONFIG_FOLDER)/.bash.d
+include ../vars.mk
 
 .PHONY: configure
 configure:
-	ln -sf $$(readlink -f tmux.conf) $(CONFIG_FOLDER)/.tmux.conf
-	ln -sf $$(readlink -f tmux.sh) $(HOOKS_FOLDER)/tmux.sh
+	ln -sf tmux.conf ~/.tmux.conf
+	ln -sf tmux.sh $(BASH_HOOKS_FOLDER)/tmux.sh

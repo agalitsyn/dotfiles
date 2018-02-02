@@ -34,13 +34,6 @@ export GOPATH=$GOPATH
 export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
 EOL
 
-	cat > ~/.zsh.d/goenv.zsh << EOL
-export GOROOT=$GOROOT
-export GOPATH=$GOPATH
-export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
-EOL
-}
-
 function main() {
 	install_golang
 	configure_golang_env

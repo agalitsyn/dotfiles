@@ -14,9 +14,7 @@ brew upgrade
 # Additional shells
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 brew install bash \
-	bash-completion \
-	zsh \
-	fish
+	bash-completion
 
 # Make it GNU/Linux :)
 brew install coreutils \
@@ -44,7 +42,6 @@ brew install coreutils \
 	ncdu \
 	pv \
 	rename
-
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
@@ -82,7 +79,8 @@ brew cask install sourcetree
 
 # Languages
 brew cask install java
-brew install ruby \
+# better to update ruby, for some tools
+brew install ruby
 	python \
 	python3 \
 	pyenv \
@@ -92,11 +90,11 @@ brew install ruby \
 	dep \
 	go-delve/delve/delve
 
-# Backing services and libs
-brew install postgresql \
-	libmemcached \
-	memcached \
-	redis
+# Add backing services primarily for python builds
+# brew install postgresql \
+# 	libmemcached \
+# 	memcached \
+# 	redis
 
 # Graphs
 brew install graphviz
@@ -107,9 +105,8 @@ brew cask install virtualbox \
 	vagrant \
 	docker
 
-# CM
+# CMS
 brew install ansible
-# brew install saltstack
 
 # Cloud
 brew install terraform \
@@ -124,12 +121,11 @@ brew cask install firefox \
 # Terminal
 brew cask install iterm2
 
+# Window enhancements
+brew cask install spectacle
+
 # Clipboard
 brew cask install flycut
-
-# IDE
-# brew cask install pycharm-ce
-# brew cask install intellij-idea-ce
 
 # Storage
 brew cask install dropbox
@@ -142,22 +138,26 @@ brew cask install transmission
 # Media
 brew cask install vlc
 
-# Cleariness
-# brew cask install cleanmymac
-
 # Phones
 brew cask install android-file-transfer
-# brew cask install ifunbox
+brew cask install ifunbox
 
 # djview
 brew cask install djview
 
 # Help unlucky windows guys
-# brew cask install teamviewer
+brew cask install teamviewer
 
 # IM
 brew cask install slack
 brew cask install skype
+
+# Cleariness
+# brew cask install cleanmymac
+
+# IDE
+# brew cask install pycharm-ce
+# brew cask install intellij-idea-ce
 
 # Screenshoting
 # brew cask install skitch
@@ -186,14 +186,12 @@ brew cask install skype
 # 	smcfancontrol
 # brew cask install istat-menus
 
+############################
 ### Not needed on sierra ###
+############################
 
 # Save eyes
 # brew cask install flux
-
-# Window enhancements
-# brew cask install spectacle
-brew cask install sizeup
 
 # Keyboard
 # brew cask install seil \
@@ -201,4 +199,3 @@ brew cask install sizeup
 
 # Remove outdated versions from the cellar
 brew cleanup
-

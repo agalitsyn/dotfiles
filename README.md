@@ -1,3 +1,3 @@
 # Dotfiles
 
-For Linux or OSX.
+for OSX

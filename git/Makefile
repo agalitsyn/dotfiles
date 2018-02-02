@@ -1,10 +1,7 @@
-CONFIG_FOLDER := ~
-BASH_HOOKS_FOLDER := $(CONFIG_FOLDER)/.bash.d
-ZSH_HOOKS_FOLDER := $(CONFIG_FOLDER)/.zsh.d
+include ../vars.mk
 
 .PHONY: configure
 configure:
-	ln -sf $$(readlink -f gitconfig) $(CONFIG_FOLDER)/.gitconfig
-	ln -sf $$(readlink -f gitignore) $(CONFIG_FOLDER)/.gitignore
-	ln -sf $$(readlink -f git.sh) $(BASH_HOOKS_FOLDER)/git.sh
-	ln -sf $$(readlink -f git.zsh) $(ZSH_HOOKS_FOLDER)/git.zsh
+	ln -sf gitconfig ~/.gitconfig
+	ln -sf gitignore ~/.gitignore
+	ln -sf git.sh $(BASH_HOOKS_FOLDER)/git.sh

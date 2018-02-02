@@ -1,8 +1,7 @@
-CONFIG_FOLDER := ~/.ssh
-HOOKS_FOLDER := ~/.bash.d
+include ../vars.mk
 
 .PHONY: configure
 configure:
-	mkdir -pv $(CONFIG_FOLDER)
-	cp config $(CONFIG_FOLDER)/config
-	ln -sf $$(readlink -f ssh.sh) $(HOOKS_FOLDER)/ssh.sh
+	mkdir -pv ~/.ssh
+	cp config ~/.ssh/config
+	ln -sf ssh.sh $(BASH_HOOKS_FOLDER)/ssh.sh
