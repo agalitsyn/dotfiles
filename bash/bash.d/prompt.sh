@@ -63,55 +63,23 @@ prompt_git() {
 
 set_prompt() {
 	local return_code="$?"
-
-    local black=""
-    local blue=""
-    local bold=""
-    local cyan=""
-    local green=""
-    local orange=""
-    local purple=""
-    local red=""
-    local reset=""
-    local white=""
-    local yellow=""
-
+	local ret_code=""
     local hostStyle=""
     local userStyle=""
 
-	local ret_code=""
-
-	# if tput setaf 1 &> /dev/null; then
-	# 	tput sgr0; # reset colors
-	# 	bold=$(tput bold);
-	# 	reset=$(tput sgr0);
-	# 	# Solarized colors, taken from http://git.io/solarized-colors.
-	# 	magenta=$(tput setaf 125);
-	# 	black=$(tput setaf 0);
-	# 	blue=$(tput setaf 33);
-	# 	cyan=$(tput setaf 37);
-	# 	green=$(tput setaf 64);
-	# 	orange=$(tput setaf 166);
-	# 	purple=$(tput setaf 125);
-	# 	red=$(tput setaf 124);
-	# 	violet=$(tput setaf 61);
-	# 	white=$(tput setaf 15);
-	# 	yellow=$(tput setaf 136);
-	# else
-		bold='';
-		reset="\e[0m";
-		magenta="\e[38;5;5m"
-		black="\e[1;30m";
-		blue="\e[1;34m";
-		cyan="\e[1;36m";
-		green="\e[38;5;2m";
-		orange="\e[38;5;3m";
-		purple="\e[1;35m";
-		red="\e[1;31m";
-		violet="\e[1;35m";
-		white="\e[38;5;7m";
-		yellow="\e[1;33m";
-	# fi;
+	local bold="";
+	local reset="\e[0m";
+	local magenta="\e[38;5;5m"
+	local black="\e[1;30m";
+	local blue="\e[1;34m";
+	local cyan="\e[1;36m";
+	local green="\e[38;5;2m";
+	local orange="\e[38;5;3m";
+	local purple="\e[1;35m";
+	local red="\e[1;31m";
+	local violet="\e[1;35m";
+	local white="\e[38;5;7m";
+	local yellow="\e[1;33m";
 
 	# Highlight the user name when logged in as root.
 	if [[ "${USER}" == "root" ]]; then
