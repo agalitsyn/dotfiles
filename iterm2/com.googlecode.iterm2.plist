@@ -224,7 +224,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>97A72D92-5DF2-4536-9E37-6FECDDAB2FCD</string>
+	<string>74D32F0A-63FC-4F6F-B02F-5EE4A32679AB</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -280,14 +280,20 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>256 160 918 512 0 0 1440 900 </string>
+	<string>237 239 918 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>0 23 1438 854 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-239 923 1920 1155 -239 900 1920 1178 </string>
+	<key>NeverWarnAboutMeta</key>
+	<true/>
+	<key>NeverWarnAboutMeta_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_97A72D92-5DF2-4536-9E37-6FECDDAB2FCD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_97A72D92-5DF2-4536-9E37-6FECDDAB2FCD_selection</key>
@@ -574,7 +580,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -2441,7 +2447,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-28T12:48:51Z</date>
+	<date>2018-02-02T11:23:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

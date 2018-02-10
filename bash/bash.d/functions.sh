@@ -13,6 +13,11 @@ cdt() {
     [ -z "$TMPDIR" ] && cd /tmp || cd "$TMPDIR"
 }
 
+# cd into whatever is the forefront Finder window.
+cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
 # Determine size of a file or total size of a directory
 filesize() {
     if du -b /dev/null > /dev/null 2>&1; then
