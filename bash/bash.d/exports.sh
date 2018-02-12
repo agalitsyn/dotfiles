@@ -2,16 +2,15 @@
 export MANPAGER="less -X"
 
 # Keep a reasonably long history.
-export HISTSIZE=4096
+export HISTSIZE=50000000
 
 # Keep even more history lines inside the file, so we can still look up
 # previous commands without needlessly cluttering the current shell's history.
-export HISTFILESIZE=16384
+export HISTFILESIZE=$HISTSIZE;
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-# HISTCONTROL=ignoreboth breaks MC in console mode
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoredups
 
 # Keep track of the time the commands were executed.
 # The xterm colour escapes require special care when piping; e.g. "| less -R".
@@ -19,7 +18,7 @@ export HISTCONTROL=ignoreboth
 export HISTTIMEFORMAT="${FG_BLUE}${FONT_BOLD}%Y/%m/%d %H:%M:%S${FONT_RESET}  ";
 
 # Make some commands not show up in history
-#export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
