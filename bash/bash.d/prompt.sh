@@ -102,7 +102,7 @@ set_prompt() {
 	# Set the terminal title and prompt.
 	PS1="\[\033]0;\W\007\]"; # working directory base name
 	PS1+="\n"; # newline
-	PS1+="\[${white}\]\t | "; # time
+	#PS1+="\[${white}\]\t | "; # time
 	PS1+="\[${userStyle}\]\u"; # username
 	PS1+="\[${white}\] at ";
 	PS1+="\[${hostStyle}\]\h"; # host

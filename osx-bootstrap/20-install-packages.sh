@@ -137,6 +137,7 @@ brew cask install transmission
 
 # Media
 brew cask install vlc
+brew install youtube-dl
 
 # Phones
 brew cask install android-file-transfer
