@@ -1,14 +1,18 @@
 {
-    "editor.fontFamily": "Menlo, Hack, FiraCode-Retina, Source Code Pro, Go Mono, Monaco",
+    "editor.fontFamily": "Hack, FiraCode-Retina, Source Code Pro, Go Mono, Monaco",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
-    "editor.rulers": [79, 120],
+    "editor.rulers": [120],
     "editor.minimap.enabled": false,
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.shell.linux": "/bin/bash",
+    "problems.decorations.enabled": false,
+    "terminal.integrated.shell.osx": "bash",
+    "terminal.integrated.shell.linux": "bash",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
+    "files.associations": {
+        "Vagrantfile": "ruby"
+    },
     "go.buildOnSave": "package",
     "go.lintOnSave": "package",
     "go.vetOnSave": "package",
@@ -25,21 +29,22 @@
     },
     "go.coverOnSave": false,
     "go.useCodeSnippetsOnFunctionSuggest": false,
-    "go.formatOnSave": true,
     "go.formatTool": "goreturns",
     "go.gopath": "~",
     "go.gocodeAutoBuild": false,
-    //https://github.com/Microsoft/vscode/issues/1896
-    "window.zoomLevel": 0,
-    "workbench.iconTheme": "vs-seti",
+    "workbench.iconTheme": null,
     "workbench.startupEditor": "none",
-    // "workbench.colorCustomizations": {
-    //     "statusBar.background": "#242424",
-    //     "statusBar.noFolderBackground": "#242424",
-    //     "statusBar.debuggingBackground": "#242424"
-    // },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#242424",
+        "statusBar.noFolderBackground": "#242424",
+        "statusBar.debuggingBackground": "#242424"
+    },
+    "workbench.statusBar.feedback.visible": false,
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true
 }
+
