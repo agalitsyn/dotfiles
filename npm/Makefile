@@ -7,4 +7,4 @@ install:
 
 .PHONY: configure
 configure:
-	ln -sf npmrc ~/.npmrc
+	ln -sf $(CURDIR)/npmrc ~/.npmrc

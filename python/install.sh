@@ -27,8 +27,7 @@ sudo -H pip3 install --upgrade \
 	pylint \
 	jedi \
 	mkdocs \
-    pygments \
-    neovim
+	pygments
 
 # Pip for python2
 if ! pip2 --version > /dev/null 2>&1; then

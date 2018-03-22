@@ -2,4 +2,4 @@ include ../vars.mk
 
 .PHONY: configure
 configure:
-	ln -sf z.sh $(BASH_HOOKS_FOLDER)/z.sh
+	ln -sf $(CURDIR)/z.sh $(BASH_HOOKS_FOLDER)/z.sh

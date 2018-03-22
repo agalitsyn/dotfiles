@@ -1,3 +1,4 @@
 # Dotfiles
 
-for OSX
+Mac OS and Ubuntu.
+
