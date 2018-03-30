@@ -2,6 +2,30 @@
 
 set nocompatible
 
+if has('nvim')
+	let s:plug_path = '~/.local/share/nvim/site/autoload/plug.vim'
+	let s:plug_dir = '~/.local/share/nvim/plugged'
+else
+	let s:plug_path = '~/.vim/autoload/plug.vim'
+	let s:plug_dir = '~/.vim/plugged'
+endif
+
+if empty(glob(s:plug_path))
+  silent execute '!curl -fLo '.s:plug_path.' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin(s:plug_dir)
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
+Plug 'fatih/molokai'
+call plug#end()
+
 set noerrorbells " No beeps
 
 let mapleader=","              " change leader to comma
@@ -73,8 +97,10 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 " ### UI ###
 
-set background=dark             " Assume a dark background
-colorscheme default             " Load a colorscheme
+set background=dark
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
 
 set cursorline                  " Highlight line under cursor
 " set colorcolumn=79              " Highlight column at 79 symbols
@@ -125,11 +151,13 @@ if has('statusline')
 	" Broken down into easily includeable segments
 	set statusline=%<%f\                     " Filename
 	set statusline+=%w%h%m%r                 " Options
+    set statusline+=%{fugitive#statusline()} " Git Hotness
 	set statusline+=\ [%{&ff}/%Y]            " Filetype
 	set statusline+=\ [%{getcwd()}]          " Current dir
 	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
     set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
 endif
 
@@ -283,3 +311,57 @@ function! StripTrailingWhitespace()
 	let @/=_s
 	call cursor(l, c)
 endfunction
+
+" ### Plugins Settings ###
+
+" Nerdtree
+let g:NERDShutUp=1
+map <C-e> <plug>NERDTreeTabsToggle<CR>
+map <leader>e :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
+
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_open_on_console_startup=0
+
+let g:NERDTreeWinSize=30
+let g:NERDTreeDirArrows=0
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+
+" Ack
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
+elseif executable('ack-grep')
+    let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+endif
+
+" Fugitive
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gdf :Git diff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>glg :Git lg<CR>
+nnoremap <silent> <leader>gp :Git pull<CR>
+nnoremap <silent> <leader>gpu :Gpush<CR>
+nnoremap <silent> <leader>gpun :Git push -u<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <leader>gg :SignifyToggle<CR>

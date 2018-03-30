@@ -1,5 +1,8 @@
-CONFIG_FOLDER := ~
+.PHONY: vim
+vim:
+	ln -sf $(CURDIR)/vimrc ~/.vimrc
 
-.PHONY: configure
-configure:
-	ln -sf $(CURDIR)/vimrc $(CONFIG_FOLDER)/.vimrc
+.PHONY: nvim
+nvim:
+	mkdir -pv ~/.config/nvim
+	ln -sf $(CURDIR)/init.vim ~/.config/nvim/

@@ -4,15 +4,20 @@ set nocompatible
 
 let mapleader=","              " change leader to comma
 
+if has('nvim')
+	let s:plug_path = '~/.local/share/nvim/site/autoload/plug.vim'
+	let s:plug_dir = '~/.local/share/nvim/plugged'
+else
+	let s:plug_path = '~/.vim/autoload/plug.vim'
+	let s:plug_dir = '~/.vim/plugged'
+endif
 
-" ### Plugins ###
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob(s:plug_path))
+  silent execute '!curl -fLo '.s:plug_path.' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin(s:plug_dir)
 
 " Editor
 Plug 'scrooloose/nerdtree'
@@ -41,6 +46,7 @@ Plug 'airblade/vim-gitgutter'
 
 " UI
 Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'

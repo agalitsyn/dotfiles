@@ -262,7 +262,7 @@ pswdgen() {
 
 # Notes app
 note() {
-    vim ~/notes.md
+    $EDITOR ~/Dropbox/notes
 }
 
 # Clip web site to markdown
