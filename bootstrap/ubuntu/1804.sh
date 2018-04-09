@@ -9,10 +9,10 @@ apt-get install -y --no-install-recommends software-properties-common
 
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
-add-apt-repository -y ppa:shutter/ppa
-apt-add-repository -y ppa:ansible/ansible
-add-apt-repository -y ppa:videolan/stable-daily
-add-apt-repository ppa:longsleep/golang-backports
+#add-apt-repository -y ppa:shutter/ppa
+#apt-add-repository -y ppa:ansible/ansible
+#add-apt-repository -y ppa:videolan/stable-daily
+#add-apt-repository ppa:longsleep/golang-backports
 
 echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/02norecommends
 echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/03disabletranslations
@@ -20,6 +20,10 @@ echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/03disabletranslations
 cat > /etc/apt/sources.list.d/google-chrome.list << EOL
 deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main
 EOL
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+echo "deb https://download.sublimetext.com/ apt/stable/" > /etc/apt/sources.list.d/sublime-text.list
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
 
 # Support for multiarch packages.
 dpkg --add-architecture i386
@@ -99,9 +103,13 @@ apt-get install -y --no-install-recommends \
 	git \
 	gitk \
 	shellcheck \
-	wrk \
 	xsel \
 	sloccount
+	#wrk
+
+# Editors
+apt-get install -y --no-install-recommends \
+	sublime-text
 
 #update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 #update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
@@ -113,6 +121,9 @@ apt-get install -y --no-install-recommends \
 
 # Keyboard tools
 apt-get install -y --no-install-recommends \
+	libcanberra-gtk-module \
+	libcanberra-gtk3-module \
+	libcanberra-gtk-module:i386 \
 	parcellite
 
 # Term
@@ -142,13 +153,15 @@ apt-get install -y --no-install-recommends \
 # Optional optimizers: preload bum
 
 # Fonts
+# debconf for mscorefonts?
 apt-get install -y --no-install-recommends \
 	fonts-liberation \
 	ttf-mscorefonts-installer \
 	xfonts-terminus \
 	ttf-dejavu-extra \
 	ttf-dejavu \
-	ttf-dejavu-core
+	ttf-dejavu-core \
+	fonts-hack
 
 # VM
 apt-get install -y --no-install-recommends \
@@ -178,8 +191,8 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
 	imagemagick \
 	pandoc \
-	shutter \
-	libgoo-canvas-perl
+	shutter
+	#libgoo-canvas-perl
 
 # Media editors
 #apt-get install -y --no-install-recommends \
@@ -223,7 +236,7 @@ apt-get install -y --no-install-recommends \
 	zlib1g-dev
 
 # Golang
-apt-get install -y --no-install-recommends golang-go
+apt-get install -y --no-install-recommends golang
 
 # Python
 apt-get install -y --no-install-recommends \
@@ -242,11 +255,21 @@ fi
 if ! docker version > /dev/null 2>&1; then
 	curl --silent --show-error --location "https://get.docker.com/" | sh
 fi
+usermod -aG docker $USER
+newgrp docker
 
 # Google chrome
-apt-get install -y --force-yes --no-install-recommends google-chrome-stable
+apt-get install -y --force-yes --no-install-recommends \
+	google-chrome-stable
+
+# Office
+apt-get install -y --force-yes --no-install-recommends \
+	libreoffice
+
+# Sound
+apt-get install -y --force-yes --no-install-recommends \
+	pavucontrol
 
 apt-get clean
 
 echo "Done."
-

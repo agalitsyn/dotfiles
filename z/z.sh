@@ -1,1 +1,1 @@
-source /usr/local/etc/profile.d/z.sh
+source ~/src/github.com/rupa/z/z.sh
