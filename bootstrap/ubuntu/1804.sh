@@ -270,6 +270,10 @@ apt-get install -y --force-yes --no-install-recommends \
 apt-get install -y --force-yes --no-install-recommends \
 	pavucontrol
 
+apt-get install -y --force-yes --no-install-recommends \
+	exfat-utils \
+	exfat-fuse
+
 apt-get clean
 
 echo "Done."
