@@ -1,5 +1,4 @@
 *.swp
-.idea
 
 # Compiled Python files
 *.pyc

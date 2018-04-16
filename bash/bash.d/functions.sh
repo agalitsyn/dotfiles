@@ -248,17 +248,30 @@ calc() {
 
 # Generate random password
 pswdgen() {
-    local length="${1:-12}"
+    local length="${1:-21}"
 
+    echo "Strong password and hash:"
+	PASSWORD=$(base64 < /dev/urandom | head -c "$length")
+	echo "$PASSWORD"
+	echo -n "$PASSWORD" | sha256sum | tr -d '-'
+
+	echo
     echo "Strong:"
     LC_ALL=C tr -dc 'A-Za-z0-9_!@#$%^&*()\-+=' < /dev/urandom | head -c "$length" | xargs
+
+	echo
     echo "Middle:"
     LC_ALL=C tr -dc 'A-Za-z0-9' < /dev/urandom | head -c "$length" | xargs
+
+	echo
     echo "Simple:"
     LC_ALL=C tr -dc 'a-z0-9' < /dev/urandom | head -c "$length" | xargs
+
+	echo
     echo "Simple 2:"
     LC_ALL=C tr -dc 'a-zA-Z' < /dev/urandom | head -c "$length" | xargs
 }
+
 
 # Notes app
 note() {
