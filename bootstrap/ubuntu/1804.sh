@@ -245,19 +245,6 @@ apt-get install -y --no-install-recommends \
 	python3 \
 	python3-dev
 
-# Nodejs
-if ! npm version > /dev/null 2>&1; then
-	curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-	apt-get install -y nodejs
-fi
-
-# Docker
-if ! docker version > /dev/null 2>&1; then
-	curl --silent --show-error --location "https://get.docker.com/" | sh
-fi
-usermod -aG docker $USER
-newgrp docker
-
 # Google chrome
 apt-get install -y --force-yes --no-install-recommends \
 	google-chrome-stable
@@ -270,9 +257,31 @@ apt-get install -y --force-yes --no-install-recommends \
 apt-get install -y --force-yes --no-install-recommends \
 	pavucontrol
 
+# extfat
 apt-get install -y --force-yes --no-install-recommends \
 	exfat-utils \
 	exfat-fuse
+
+# IM
+apt-get install -y --force-yes --no-install-recommends \
+	telegram-desktop
+
+# Partition tools
+apt-get install -y --force-yes --no-install-recommends \
+	gparted
+
+# Nodejs
+if ! npm version > /dev/null 2>&1; then
+	curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+	apt-get install -y nodejs
+fi
+
+# Docker
+if ! docker version > /dev/null 2>&1; then
+	curl --silent --show-error --location "https://get.docker.com/" | sh
+fi
+usermod -aG docker $USER
+newgrp docker
 
 apt-get clean
 
