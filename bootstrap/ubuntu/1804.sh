@@ -140,6 +140,25 @@ apt-get install -y --no-install-recommends \
 
 # X & DE
 apt-get install -y --no-install-recommends \
+	xorg \
+	slim \
+	i3-wm \
+	i3status \
+	i3lock \
+	dunst \
+	suckless-tools \
+	lxappearance \
+	feh \
+	numlockx \
+	unclutter \
+	xautolock \
+	xbacklight \
+	xarchiver \
+	dmz-cursor-theme \
+	xcursor-themes \
+	redshift \
+	arandr \
+	xsel \
 	murrine-themes \
 	numix-gtk-theme \
 	numix-icon-theme-circle \
@@ -255,7 +274,8 @@ apt-get install -y --force-yes --no-install-recommends \
 
 # Sound
 apt-get install -y --force-yes --no-install-recommends \
-	pavucontrol
+	pavucontrol \
+	pasystray
 
 # extfat
 apt-get install -y --force-yes --no-install-recommends \
