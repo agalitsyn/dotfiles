@@ -23,6 +23,7 @@ order += "battery 0"
 order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
+order += "tztime msk"
 
 wireless wlan0 {
 	format_up = "W: (%quality at %essid) %ip"
@@ -58,7 +59,12 @@ path_exists VPN {
 }
 
 tztime local {
-	format = "%Y-%m-%d %H:%M:%S NSK"
+    format = "%Y-%m-%d %H:%M"
+}
+
+tztime msk {
+    format = "%H:%M %Z"
+    timezone = "Europe/Moscow"
 }
 
 load {
