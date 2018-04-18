@@ -71,7 +71,8 @@ apt-get install -y --no-install-recommends \
 	lzop \
 	gettext \
 	pwgen \
-	rng-tools
+	rng-tools \
+	net-tools
 
 # Debug
 apt-get install -y --no-install-recommends \
@@ -104,7 +105,9 @@ apt-get install -y --no-install-recommends \
 	gitk \
 	shellcheck \
 	xsel \
-	sloccount
+	sloccount \
+	jq \
+	httpie
 	#wrk
 
 # Editors
@@ -214,8 +217,8 @@ apt-get install -y --no-install-recommends \
 	#libgoo-canvas-perl
 
 # Media editors
-#apt-get install -y --no-install-recommends \
-	#gimp \
+apt-get install -y --no-install-recommends \
+	gimp
 	#krita
 
 # Video
