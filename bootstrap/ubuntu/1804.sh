@@ -162,6 +162,7 @@ apt-get install -y --no-install-recommends \
 	redshift \
 	arandr \
 	xsel \
+	arc-theme \
 	murrine-themes \
 	numix-gtk-theme \
 	numix-icon-theme-circle \
