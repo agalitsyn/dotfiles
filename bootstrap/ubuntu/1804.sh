@@ -259,7 +259,11 @@ apt-get install -y --no-install-recommends \
 	zlib1g-dev
 
 # Golang
-apt-get install -y --no-install-recommends golang
+apt-get install -y --no-install-recommends \
+	golang-doc \
+	golang-src \
+	golang-go \
+	golang-race-detector-runtime
 
 # Python
 apt-get install -y --no-install-recommends \
