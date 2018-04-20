@@ -161,7 +161,7 @@ apt-get install -y --no-install-recommends \
 	xcursor-themes \
 	redshift \
 	arandr \
-	xsel \
+	xclip \
 	arc-theme \
 	murrine-themes \
 	numix-gtk-theme \
