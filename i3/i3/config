@@ -214,8 +214,10 @@ for_window [class="Tor Browser"] floating enable
 # for_window [class="vlc"] floating enable
 # for_window [class="Wine"] floating enable
 # for_window [class="Wireshark"] floating enable
-# for_window [class="Nautilus"] floating enable
+for_window [class="Nautilus"] floating enable
 for_window [window_role="pop-up"] floating enable
+# intellij commit changes
+for_window [title="Commit Changes"] floating disable
 
 #assign [class="^jetbrains-pycharm-ce$"] 2
 #assign [class="^Claws-mail$"] 4
@@ -237,9 +239,9 @@ exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 exec --no-startup-id parcellite &
 exec --no-startup-id pasystray &
 exec --no-startup-id redshift -m drm -l 43:75 &
-exec --no-startup-id numlockx &
 exec --no-startup-id unclutter &
 exec --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru
+exec --no-startup-id numlockx &
 exec --no-startup-id pulseaudio --start &
 exec --no-startup-id dropbox start &
 
