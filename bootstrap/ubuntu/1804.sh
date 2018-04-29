@@ -131,15 +131,17 @@ apt-get install -y --no-install-recommends \
 
 # Term
 apt-get install -y --no-install-recommends \
-	terminator
+	rxvt-unicode
 
 # Charts
 apt-get install -y --no-install-recommends \
 	graphviz
 
-# Filebrowser
+# Filebrowsers
 apt-get install -y --no-install-recommends \
-	mc
+	mc \
+	ranger atool caca-utils w3m w3m-img highlight python-chardet
+
 
 # X & DE
 apt-get install -y --no-install-recommends \
@@ -162,6 +164,7 @@ apt-get install -y --no-install-recommends \
 	redshift \
 	arandr \
 	xclip \
+	xsel \
 	arc-theme \
 	murrine-themes \
 	numix-gtk-theme \

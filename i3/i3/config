@@ -215,6 +215,7 @@ for_window [class="Tor Browser"] floating enable
 # for_window [class="Wine"] floating enable
 # for_window [class="Wireshark"] floating enable
 for_window [class="Nautilus"] floating enable
+for_window [class="Shutter"] floating enable
 for_window [window_role="pop-up"] floating enable
 # intellij commit changes
 for_window [title="Commit Changes"] floating disable
@@ -248,3 +249,5 @@ exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,gr
 
 # run the merge for good colors
 exec xrdb -merge $HOME/.Xresources
+exec xrdb -merge $HOME/.Xdefaults
+
