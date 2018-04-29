@@ -198,27 +198,27 @@ hide_edge_borders both
 # for_window [class="Firefox"] floating enable
 # for_window [class="google-chrome"] floating enable
 # for_window [class="Google-chrome"] floating enable
-# for_window [class="Gimp"] floating enable
-# for_window [class="Keybase"] floating enable
-# for_window [class="Neoman"] floating enable
-# for_window [class="NES"] floating enabler
-# for_window [class="Pidgin"] floating enable
-# for_window [class="Portal"] floating enable
-# for_window [class="RStudio"] floating enable
-# for_window [class="Skype"] floating enable
-# for_window [class="Slack"] floating enable
-# for_window [class="Steam"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="Keybase"] floating enable
+for_window [class="Neoman"] floating enable
+for_window [class="NES"] floating enabler
+for_window [class="Pidgin"] floating enable
+for_window [class="Portal"] floating enable
+for_window [class="RStudio"] floating enable
+for_window [class="Skype"] floating enable
+for_window [class="Slack"] floating enable
+for_window [class="Steam"] floating enable
 for_window [class="Tor Browser"] floating enable
-# for_window [class="Virt-viewer"] floating enable
-# for_window [class="VirtualBox"] floating enable
-# for_window [class="vlc"] floating enable
-# for_window [class="Wine"] floating enable
-# for_window [class="Wireshark"] floating enable
+for_window [class="Virt-viewer"] floating enable
+for_window [class="VirtualBox"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="Wireshark"] floating enable
 for_window [class="Nautilus"] floating enable
 for_window [class="Shutter"] floating enable
+for_window [class="Lxappearance"] floating enable
 for_window [window_role="pop-up"] floating enable
-# intellij commit changes
-for_window [title="Commit Changes"] floating disable
+for_window [title="Commit Changes"] floating disable # intellij commit changes fullscreen always (easier to see diffs)
 
 #assign [class="^jetbrains-pycharm-ce$"] 2
 #assign [class="^Claws-mail$"] 4
@@ -226,11 +226,11 @@ for_window [title="Commit Changes"] floating disable
 #assign [class="^slack$"] 5
 
 # ACPI Keys
-#bindsym XF86MonBrightnessDown exec xbacklight -10
-#bindsym XF86MonBrightnessUp exec xbacklight +10
-#bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-#bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 
 # Autostart
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wallpapper.jpg &
@@ -250,4 +250,3 @@ exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,gr
 # run the merge for good colors
 exec xrdb -merge $HOME/.Xresources
 exec xrdb -merge $HOME/.Xdefaults
-
