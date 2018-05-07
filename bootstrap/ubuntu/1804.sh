@@ -157,6 +157,9 @@ apt-get install -y --no-install-recommends \
 	numlockx \
 	unclutter \
 	xautolock \
+    xscreensaver \
+    xdotool \
+    xkbset \
 	xbacklight \
 	xarchiver \
 	dmz-cursor-theme \
@@ -305,6 +308,10 @@ apt-get install -y --force-yes --no-install-recommends \
 if ! npm version > /dev/null 2>&1; then
 	curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 	apt-get install -y nodejs
+
+    curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    sudo apt-get update && sudo apt-get install yarn
 fi
 
 # Docker

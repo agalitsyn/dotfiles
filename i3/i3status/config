@@ -59,7 +59,7 @@ path_exists VPN {
 }
 
 tztime local {
-    format = "%H:%M %a, %d %b; %Y-%m-%d"
+    format = "%a, %d %b (%m) %Y; %H:%M"
 }
 
 tztime msk {

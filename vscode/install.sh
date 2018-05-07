@@ -9,4 +9,3 @@ code --install-extension ms-python.python
 code --install-extension wayou.vscode-todo-highlight
 code --install-extension PeterJausovec.vscode-docker
 code --install-extension PKief.material-icon-theme
-
