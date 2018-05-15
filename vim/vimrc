@@ -50,6 +50,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'fatih/molokai'
 
 " Completion
 Plug 'ervandew/supertab'
@@ -143,18 +144,18 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 " ### UI ###
 
-set termguicolors
+"set termguicolors
 
 set background=dark
-" let g:rehash256 = 1
-" let g:hybrid_use_Xresources = 1
+let g:rehash256 = 1
+let g:hybrid_use_Xresources = 1
 
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme solarized
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"colorscheme solarized
 
-" let g:molokai_original = 1
-" colorscheme molokai
+let g:molokai_original = 1
+colorscheme molokai
 
 set nocursorcolumn             " speed up syntax highlighting
 set nocursorline
