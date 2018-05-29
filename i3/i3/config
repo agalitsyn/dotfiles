@@ -18,7 +18,8 @@ set $ctrl Control
 
 # Screenlocker
 # For ex. i3lock
-set $screenlocker "xautolock -locknow"
+#set $screenlocker "xautolock -locknow"
+set $screenlocker "xscreensaver-command -lock"
 bindsym $alt+$ctrl+l exec $screenlocker
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -41,8 +42,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec rofi -show run -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec exec rofi -show run
 
 # change focus
 set $left h
@@ -98,6 +99,16 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# assign workspaces to monitor
+set $monitor_one HDMI-3
+set $monitor_two DP-2
+
+# assign workspaces to monitor
+workspace 1 output $monitor_one
+workspace 2 output $monitor_one
+workspace 3 output $monitor_one
+workspace 4 output $monitor_two
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -240,7 +251,9 @@ bindsym Ctrl+equal exec --no-startup-id exec pactl set-sink-volume @DEFAULT_SINK
 bindsym Ctrl+minus exec --no-startup-id exec pactl -- set-sink-volume @DEFAULT_SINK@ -3%
 
 # Autostart
-exec --no-startup-id xautolock -time 5 -locker 'i3lock --nofork --dpms --color 000000' &
+#exec --no-startup-id xautolock -time 5 -locker 'i3lock --nofork --dpms --color 000000' &
+exec --no-startup-id xscreensaver -no-capture-stderr -no-splash &
+
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 exec --no-startup-id parcellite &
 exec --no-startup-id pasystray &
@@ -249,8 +262,9 @@ exec --no-startup-id unclutter &
 exec --no-startup-id pulseaudio --start &
 exec --no-startup-id dropbox start &
 exec --no-startup-id numlockx &
-exec --no-startup-id localectl --no-convert set-x11-keymap grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &
-exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wallpapper.jpg &
+
+exec_always --no-startup-id feh --bg-fill ${HOME}/Pictures/wallpapper.jpg &
+exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &
 
 # run the merge for good colors
 exec_always -merge $HOME/.Xresources
