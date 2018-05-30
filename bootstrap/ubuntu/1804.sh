@@ -56,6 +56,7 @@ apt-get install -y --no-install-recommends \
 
 # Utils
 apt-get install -y --no-install-recommends \
+    moreutils \
 	tree \
 	curl \
 	wget \
@@ -168,6 +169,8 @@ apt-get install -y --no-install-recommends \
 	arandr \
 	xclip \
 	xsel \
+    xneur \
+    gxneur \
 	arc-theme \
 	murrine-themes \
 	numix-gtk-theme \
