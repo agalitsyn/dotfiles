@@ -73,7 +73,8 @@ apt-get install -y --no-install-recommends \
 	gettext \
 	pwgen \
 	rng-tools \
-	net-tools
+	net-tools \
+    bridge-utils
 
 # Debug
 apt-get install -y --no-install-recommends \

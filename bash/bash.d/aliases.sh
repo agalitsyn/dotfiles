@@ -8,12 +8,11 @@ fi
 
 color_flag="--color"
 
-# file listing
-alias ls='ls $color_flag --group-directories-first -p -CF';
-alias ll='ls -lh $color_flag --group-directories-first';
-alias lsa='ls -ahCF --group-directories-first';
-alias lla='ls -alh --group-directories-first';
+# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+alias ls='ls $color_flag --group-directories-first -p -CAFh';
+alias ll='ls -lAh $color_flag --group-directories-first';
 alias l='ls'
+alias lsd='ls -l | grep "^d"' # only directories
 
 # list file permissions in octal
 # @see http://www.shell-fu.org/lister.php?id=205
@@ -39,7 +38,7 @@ lf() {
 # search and replace
 # @see http://www.reddit.com/r/programming/comments/2tj6d6/findrep_easy_tool_to_find_and_replace/cnzy34o
 search-replace() {
-    if [ ! $# == 2 ]; then 
+    if [ ! $# == 2 ]; then
         echo "Usage: find_replace <search_string> <replace_string>"
         return -1
     fi
