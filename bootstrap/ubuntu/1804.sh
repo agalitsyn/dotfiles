@@ -74,7 +74,8 @@ apt-get install -y --no-install-recommends \
 	pwgen \
 	rng-tools \
 	net-tools \
-    bridge-utils
+    bridge-utils \
+    iptables-persistent
 
 # Debug
 apt-get install -y --no-install-recommends \
@@ -176,7 +177,8 @@ apt-get install -y --no-install-recommends \
 	numix-gtk-theme \
 	numix-icon-theme-circle \
 	gtk2-engines-murrine:i386 \
-	gtk2-engines-pixbuf:i386
+	gtk2-engines-pixbuf:i386 \
+    usbmount
 
 # Ubuntu tweakers
 apt-get install -y --no-install-recommends \
