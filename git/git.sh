@@ -4,6 +4,3 @@ alias g='git'
 [ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
 complete -o default -o nospace -F _git g
 
-git-delete-merged-branches() {
-    git branch --merged | grep -v "\*" | grep -v '\smaster$' | xargs -n 1 git branch -d
-}

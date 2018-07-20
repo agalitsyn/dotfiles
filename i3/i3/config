@@ -101,14 +101,12 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # assign workspaces to monitor
-set $monitor_one HDMI-3
-set $monitor_two DP-2
-
-# assign workspaces to monitor
-workspace 1 output $monitor_one
-workspace 2 output $monitor_one
-workspace 3 output $monitor_one
-workspace 4 output $monitor_two
+#set $monitor_one HDMI-3
+#set $monitor_two DP-2
+#workspace 1 output $monitor_one
+#workspace 2 output $monitor_one
+#workspace 3 output $monitor_one
+#workspace 4 output $monitor_two
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -216,7 +214,7 @@ bar {
     position top
 
     # This enforces to output tray only on primary monitor using xrandr --output NAME --primary
-    tray_output primary
+    #tray_output primary
 
     #colors {
         #background          $bg
@@ -246,7 +244,8 @@ for_window [class="Pidgin"] floating enable
 for_window [class="Portal"] floating enable
 for_window [class="RStudio"] floating enable
 #for_window [class="Skype"] floating enable
-for_window [class="Slack"] floating enable
+#for_window [class="Slack"] floating enable
+#for_window [class="TelegramDesktop"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="Tor Browser"] floating enable
 for_window [class="Virt-viewer"] floating enable
@@ -293,7 +292,6 @@ exec --no-startup-id numlockx &
 exec --no-startup-id nm-applet &
 exec --no-startup-id gxkb &
 
-exec_always --no-startup-id xrandr --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-3 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output HDMI-2 --off &
 exec_always --no-startup-id feh --bg-fill ${HOME}/Pictures/wallpapper.jpg &
 exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &
 
