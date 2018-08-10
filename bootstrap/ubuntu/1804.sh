@@ -180,10 +180,17 @@ apt-get install -y --no-install-recommends \
 	gtk2-engines-pixbuf:i386 \
     usbmount
 
+# Wine
+apt-get install -y --no-install-recommends \
+    wine-stable \
+    wine32 \
+    winetricks
+
 # Ubuntu tweakers
 apt-get install -y --no-install-recommends \
 	dconf-editor \
-	gnome-tweak-tool
+	gnome-tweak-tool \
+    gnome-startup-applications
 # Optional optimizers: preload bum
 
 # Fonts
@@ -323,7 +330,7 @@ fi
 if ! docker version > /dev/null 2>&1; then
 	curl --silent --show-error --location "https://get.docker.com/" | sh
 fi
-usermod -aG docker $USER
+usermod -aG docker "$USER"
 newgrp docker
 
 apt-get clean
