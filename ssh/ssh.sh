@@ -3,7 +3,7 @@
 
 # If iTerm is detected these themes are used for regular windows
 # and ssh respectively
-ITERM_NORMAL_PROFILE='Dark'
+ITERM_NORMAL_PROFILE='Fancy'
 ITERM_SSH_PROFILE='DarkSSH'
 
 # On iTerm we switch terminals for SSH if we have it.  This switches to

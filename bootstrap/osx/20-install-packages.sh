@@ -33,6 +33,7 @@ brew install coreutils \
 	telnet \
 	wget --enable-iri \
 	ag \
+	ripgrep \
 	tree \
 	mc \
 	htop-osx \
