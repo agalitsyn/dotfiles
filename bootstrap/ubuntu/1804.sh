@@ -75,7 +75,8 @@ apt-get install -y --no-install-recommends \
 	rng-tools \
 	net-tools \
     bridge-utils \
-    iptables-persistent
+    iptables-persistent \
+    zsh
 
 # Debug
 apt-get install -y --no-install-recommends \

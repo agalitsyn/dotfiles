@@ -3,4 +3,3 @@
 alias g='git'
 [ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
 complete -o default -o nospace -F _git g
-
