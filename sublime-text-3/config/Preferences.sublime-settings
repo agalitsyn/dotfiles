@@ -1,0 +1,73 @@
+{
+    // theme
+    "theme": "Adaptive.sublime-theme",
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+
+    // Font
+    "font_face": "Source Code Pro",
+    "font_options": ["subpixel_antialias", "no_bold"],
+    "font_size": 10,
+
+    // Cursor style - slightly wider than default
+    "wide_caret": true,
+    "caret_style": "phase",
+
+    "ignored_packages": [
+        "Vintage",
+        "RestructuredText"
+    ],
+    //"vintage_start_in_command_mode": true,
+    //"inverse_caret_state": true,
+    //"highlight_line": false,
+
+    // Editor view look-and-feel
+    "draw_white_space": "all",
+    "highlight_line": true,
+    "show_full_path": true,
+    "indent_guide_options": ["draw_active"],
+    "show_panel_on_build": false,
+    "preview_on_click": false,
+
+    // Editor behavior
+    "scroll_past_end": false,
+    "highlight_modified_tabs": true,
+    "find_selected_text": true,
+
+    // Word wrapping - follow PEP 8 recommendations
+    "word_wrap": false, // Should be true
+    "wrap_width": 80,
+    "rulers": [ 80, 120],
+
+    "indent_to_bracket": false,
+    "save_on_focus_lost": true,
+
+    // Whitespace - no tabs, trimming, end files with \n
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "use_tab_stops": true,
+    "tab_size": 4,
+    "ensure_newline_at_eof_on_save": true,
+    "shift_tab_unindent": true,
+    "show_encoding": true,
+
+    // Sidebar - exclude distracting files and folders
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "*.pid",
+        "*.pyc"
+    ],
+    "folder_exclude_patterns":
+    [
+        "venv",
+        "venv3",
+        ".svn",
+        ".git",
+        ".hg",
+        "CVS",
+        "__pycache__"
+    ],
+
+    // Common
+    "enable_telemetry": false,
+}
