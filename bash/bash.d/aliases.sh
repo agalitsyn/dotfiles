@@ -82,7 +82,7 @@ alias rm='rm -i';
 # Programs
 alias less='less -Ri'
 
-alias rsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
+alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
 
 # Always use chrome as mp3 and video player, pdf viewer, etc
 alias gc="google-chrome --new-window"
