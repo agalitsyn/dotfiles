@@ -10,8 +10,8 @@ color_flag="--color"
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
 alias ls='ls $color_flag --group-directories-first -p -CAFh';
-alias ll='ls -lAh $color_flag --group-directories-first';
-alias l='ls'
+alias l='ls -lAh $color_flag --group-directories-first';
+alias ll='ls -lah $color_flag --group-directories-first'
 alias lsd='ls -l | grep "^d"' # only directories
 
 # list file permissions in octal
