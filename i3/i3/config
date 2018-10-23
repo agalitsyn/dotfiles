@@ -101,12 +101,12 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # assign workspaces to monitor
-#set $monitor_one HDMI-3
-#set $monitor_two DP-2
-#workspace 1 output $monitor_one
-#workspace 2 output $monitor_one
-#workspace 3 output $monitor_one
-#workspace 4 output $monitor_two
+set $monitor_left HDMI-3
+set $monitor_right HDMI-2
+workspace 1 output $monitor_left
+workspace 2 output $monitor_left
+workspace 3 output $monitor_right
+workspace 4 output $monitor_left
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -261,10 +261,13 @@ for_window [class="Arandr"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [title="Commit Changes"] floating disable # intellij commit changes fullscreen always (easier to see diffs)
 
-#assign [class="^jetbrains-pycharm-ce$"] 2
-#assign [class="^Claws-mail$"] 4
-#assign [class="^Skype$"] 5
-#assign [class="^slack$"] 5
+assign [class="^jetbrains-pycharm-ce$"] 3
+assign [class="^jetbrains-goland$"] 3
+assign [class="^skype$"] 4
+assign [class="^slack$"] 4
+assign [class="^Telegram$"] 4
+assign [class="^mattermost$"] 4
+assign [class="^franz$"] 4
 
 # ACPI Keys
 bindsym XF86MonBrightnessDown exec --no-startup-id exec xbacklight -10
@@ -278,6 +281,8 @@ bindsym Ctrl+equal exec --no-startup-id exec pactl set-sink-volume @DEFAULT_SINK
 bindsym Ctrl+minus exec --no-startup-id exec pactl -- set-sink-volume @DEFAULT_SINK@ -3%
 
 # Autostart
+exec --no-startup-id xrandr --output DP-2 --off --output HDMI-3 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output HDMI-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal &
+
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock --nofork --dpms --color 000000' &
 exec --no-startup-id xscreensaver -no-capture-stderr -no-splash &
 
@@ -288,6 +293,7 @@ exec --no-startup-id redshift &
 exec --no-startup-id unclutter &
 exec --no-startup-id pulseaudio --start &
 exec --no-startup-id dropbox start &
+exec --no-startup-id shutter &
 exec --no-startup-id numlockx &
 exec --no-startup-id nm-applet &
 exec --no-startup-id gxkb &

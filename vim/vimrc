@@ -152,15 +152,15 @@ let g:hybrid_use_Xresources = 1
 
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
-let g:solarized_visibility = "high"
-colorscheme solarized
+"let g:solarized_visibility = "high"
+"colorscheme solarized
 
-"let g:molokai_original = 1
-"colorscheme molokai
+let g:molokai_original = 1
+colorscheme molokai
 
 set nocursorcolumn             " speed up syntax highlighting
 set nocursorline
-" set colorcolumn=120            " Highlight column at 79 symbols
+set colorcolumn=120            " Highlight column at 79 symbols
 
 set ttyfast                     " Prevent slow scrolling
 

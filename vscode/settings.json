@@ -1,9 +1,9 @@
 {
     "editor.fontFamily": "Hack, FiraCode-Retina, Source Code Pro, Go Mono, Monaco",
     "editor.fontLigatures": true,
-    "editor.fontSize": 12,
+    "editor.fontSize": 13,
     "editor.renderWhitespace": "none",
-    "editor.rulers": [120],
+    "editor.rulers": [80, 120],
     "editor.minimap.enabled": false,
     "problems.decorations.enabled": false,
     "terminal.integrated.shell.osx": "bash",
@@ -32,18 +32,27 @@
     "go.formatTool": "goreturns",
     "go.gopath": "~",
     "go.gocodeAutoBuild": false,
-    "workbench.iconTheme": null,
     "workbench.startupEditor": "none",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#242424",
-        "statusBar.noFolderBackground": "#242424",
-        "statusBar.debuggingBackground": "#242424"
-    },
-    "workbench.statusBar.feedback.visible": false,
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 0,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#242424",
+    },
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolPath": "off",
+    "search.location": "panel",
+    "terminal.integrated.fontSize": 12,
+    "window.titleBarStyle": "custom"
 }
