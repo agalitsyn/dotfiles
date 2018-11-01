@@ -24,6 +24,8 @@ order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
 order += "tztime msk"
+order += "tztime eur"
+order += "tztime valley"
 
 wireless wlan0 {
 	format_up = "W: (%quality at %essid) %ip"
@@ -65,6 +67,16 @@ tztime local {
 tztime msk {
     format = "%H:%M %Z"
     timezone = "Europe/Moscow"
+}
+
+tztime eur {
+    format = "%H:%M %Z"
+    timezone = "CET"
+}
+
+tztime valley {
+    format = "%H:%M %Z"
+    timezone = "PST8PDT"
 }
 
 load {
