@@ -10,8 +10,9 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
-# Custom
+focus_follows_mouse no
+workspace_layout default
+hide_edge_borders none
 
 set $alt Mod1
 set $ctrl Control
@@ -30,7 +31,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-# font pango:Terminus 10px
+# font pango:Terminus 13px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -226,10 +227,6 @@ bar {
         #urgent_workspace    $rd        $bg        $ac
     #}
 }
-
-focus_follows_mouse no
-workspace_layout tabbed
-hide_edge_borders both
 
 # skype, steam, wine: float Gimp
 # for_window [class="Code"] floating enable
