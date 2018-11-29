@@ -317,9 +317,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>325 281 918 512 0 0 1440 878 </string>
+	<string>325 394 770 429 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 23 1440 855 0 0 1440 878 </string>
+	<string>41 525 570 352 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>435 158 650 501 0 0 1440 878 </string>
 	<key>NeverWarnAboutMeta</key>
