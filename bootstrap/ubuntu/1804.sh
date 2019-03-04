@@ -146,8 +146,7 @@ apt-get install -y --no-install-recommends \
 	mc \
 	ranger atool caca-utils w3m w3m-img highlight python-chardet
 
-
-# X & DE
+# i3 and xorg tools
 apt-get install -y --no-install-recommends \
 	xorg \
 	slim \
@@ -166,20 +165,23 @@ apt-get install -y --no-install-recommends \
     xkbset \
 	xbacklight \
 	xarchiver \
-	dmz-cursor-theme \
-	xcursor-themes \
-	redshift \
 	arandr \
 	xclip \
 	xsel \
     gxkb \
+	redshift \
+    usbmount
+
+# Themes
+apt-get install -y --no-install-recommends \
+	xcursor-themes \
+	dmz-cursor-theme \
 	arc-theme \
 	murrine-themes \
 	numix-gtk-theme \
 	numix-icon-theme-circle \
 	gtk2-engines-murrine:i386 \
 	gtk2-engines-pixbuf:i386 \
-    usbmount
 
 # Wine
 apt-get install -y --no-install-recommends \

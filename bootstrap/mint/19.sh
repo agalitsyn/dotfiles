@@ -121,6 +121,17 @@ apt-get install --yes \
 apt-get install --yes \
 	mc
 
+# Themes
+apt-get install -y --no-install-recommends \
+	xcursor-themes \
+	dmz-cursor-theme \
+	arc-theme \
+	murrine-themes \
+	numix-gtk-theme \
+	numix-icon-theme-circle \
+	gtk2-engines-murrine:i386 \
+	gtk2-engines-pixbuf:i386 \
+
 # Fonts
 apt-get install --yes \
 	fonts-liberation \
@@ -186,9 +197,9 @@ apt-get install --yes \
 # Docker
 if ! docker version > /dev/null 2>&1; then
     curl --silent --show-error --location "https://get.docker.com/" | sh
-    usermod -aG docker "$USER"
-    newgrp docker
 fi
+usermod -aG docker "$USER"
+newgrp docker
 
 apt-get clean
 
