@@ -26,7 +26,7 @@ docker-cleanup-containers() {
 }
 alias dcc="docker-cleanup-containers"
 
-docker-enter-vm() {
+docker-enter-osx-vm() {
 	screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
 }
-alias dvm="docker-enter-vm"
+alias dvm="docker-enter-osx-vm"

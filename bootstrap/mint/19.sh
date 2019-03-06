@@ -25,14 +25,14 @@ apt-get update
 apt-get upgrade --yes
 
 # Build tools
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	build-essential \
 	cmake \
 	dkms \
 	linux-headers-generic
 
 # Essential
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	sudo \
 	ssh \
 	ntp \
@@ -42,7 +42,7 @@ apt-get install --yes \
 	ca-certificates
 
 # Utils
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
     moreutils \
 	tree \
 	curl \
@@ -67,7 +67,7 @@ apt-get install --yes \
     gnupg-agent
 
 # Debug
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	linux-tools-generic \
 	htop \
 	iotop \
@@ -77,19 +77,19 @@ apt-get install --yes \
 	lsof
 
 # System info
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	lshw \
 	inxi
 
 # Networking
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	mtr \
 	traceroute \
 	nmap \
 	arp-scan
 
 # IDE
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	vim \
 	neovim \
 	ctags \
@@ -102,24 +102,54 @@ apt-get install --yes \
 	httpie
 
 # Editors
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	sublime-text
 
 # Diff
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	meld
 
 # Keyboard tools
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	parcellite
 
 # Charts
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	graphviz
 
 # Filebrowsers
-apt-get install --yes \
-	mc
+apt-get install --yes --no-install-recommends \
+	mc \
+    ranger atool caca-utils w3m w3m-img highlight python-chardet
+
+# i3 env
+apt-get install -y --no-install-recommends \
+	xorg \
+	slim \
+	i3-wm \
+	i3status \
+	i3lock \
+	dunst \
+    rofi \
+	suckless-tools \
+	lxappearance \
+	feh \
+	numlockx \
+	unclutter \
+	xautolock \
+    xscreensaver \
+    xdotool \
+    xkbset \
+	xbacklight \
+	xarchiver \
+	arandr \
+	xclip \
+	xsel \
+    gxkb \
+	redshift \
+    usbmount \
+    pcmanfm \
+    rxvt-unicode
 
 # Themes
 apt-get install -y --no-install-recommends \
@@ -127,13 +157,11 @@ apt-get install -y --no-install-recommends \
 	dmz-cursor-theme \
 	arc-theme \
 	murrine-themes \
-	numix-gtk-theme \
-	numix-icon-theme-circle \
 	gtk2-engines-murrine:i386 \
-	gtk2-engines-pixbuf:i386 \
+	gtk2-engines-pixbuf:i386
 
 # Fonts
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	fonts-liberation \
 	ttf-mscorefonts-installer \
 	xfonts-terminus \
@@ -143,63 +171,83 @@ apt-get install --yes \
 	fonts-hack
 
 # CM
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	ansible
 
 # Spellchecker
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	hunspell-en-us \
 	hunspell-ru
 
 # Images
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	imagemagick \
 	pandoc
 
+# Screenshoots
+apt-get install --yes --no-install-recommends \
+    shutter \
+    scrot
+
 # Fun
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	cowsay \
 	fortune \
 	figlet
 
 # Golang
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	golang-doc \
 	golang-src \
 	golang-go \
 	golang-race-detector-runtime
 
 # Python
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	python \
 	python-dev \
 	python3 \
 	python3-dev
 
 # Google chrome
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	google-chrome-stable
 
 # Sound
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	pavucontrol
 
 # extfat
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	exfat-utils \
 	exfat-fuse
 
 # IM
-apt-get install --yes \
+apt-get install --yes --no-install-recommends \
 	telegram-desktop \
     skypeforlinux
 
 # Docker
 if ! docker version > /dev/null 2>&1; then
     curl --silent --show-error --location "https://get.docker.com/" | sh
+
+    curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+    curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 fi
 usermod -aG docker "$USER"
 newgrp docker
+
+# Nodejs
+if ! npm version > /dev/null 2>&1; then
+	curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+	apt-get install -y nodejs
+
+    curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+    apt-get update
+    apt-get install yarn
+fi
 
 apt-get clean
 

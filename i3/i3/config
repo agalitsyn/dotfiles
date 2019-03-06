@@ -252,12 +252,15 @@ for_window [class="VirtualBox"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="Wireshark"] floating enable
+for_window [class="Nemo"] floating enable
 for_window [class="Nautilus"] floating enable
+for_window [class="Pcmanfm"] floating enable
 for_window [class="Shutter"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Arandr"] floating enable
 
+for_window [class="JetBrains Toolbox"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [title="Commit Changes"] floating disable # intellij commit changes fullscreen always (easier to see diffs)
 
@@ -299,14 +302,15 @@ exec --no-startup-id parcellite &
 exec --no-startup-id shutter --min_at_startup &
 exec --no-startup-id dropbox start &
 
-exec --no-startup-id ~/mattermost-desktop-4.1.2/mattermost-desktop &
-exec --no-startup-id ~/Telegram/Telegram &
 exec --no-startup-id skypeforlinux &
 exec --no-startup-id franz &
+exec --no-startup-id /opt/Mattermost/mattermost-desktop &
+exec --no-startup-id ~/Telegram/Telegram &
+
+exec --no-startup-id /opt/jetbrains/jetbrains-toolbox-1.13.4801/jetbrains-toolbox &
 
 exec_always --no-startup-id feh --bg-fill ${HOME}/Pictures/wallpapper.jpg &
 exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &
 
 # run the merge for good colors
-exec_always -merge $HOME/.Xresources
-
+exec_always xrdb $HOME/.Xresources

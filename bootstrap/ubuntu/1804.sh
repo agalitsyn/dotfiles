@@ -181,7 +181,7 @@ apt-get install -y --no-install-recommends \
 	numix-gtk-theme \
 	numix-icon-theme-circle \
 	gtk2-engines-murrine:i386 \
-	gtk2-engines-pixbuf:i386 \
+	gtk2-engines-pixbuf:i386
 
 # Wine
 apt-get install -y --no-install-recommends \
