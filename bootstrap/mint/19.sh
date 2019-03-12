@@ -26,41 +26,41 @@ apt-get upgrade --yes
 
 # Build tools
 apt-get install --yes --no-install-recommends \
-	build-essential \
-	cmake \
-	dkms \
-	linux-headers-generic
+    build-essential \
+    cmake \
+    dkms \
+    linux-headers-generic
 
 # Essential
 apt-get install --yes --no-install-recommends \
-	sudo \
-	ssh \
-	ntp \
-	smartmontools \
-	openvpn \
-	apt-transport-https \
-	ca-certificates
+    sudo \
+    ssh \
+    ntp \
+    smartmontools \
+    openvpn \
+    apt-transport-https \
+    ca-certificates
 
 # Utils
 apt-get install --yes --no-install-recommends \
     moreutils \
-	tree \
-	curl \
-	wget \
-	silversearcher-ag \
-	tmux \
-	grc \
-	apache2-utils \
-	unzip \
-	p7zip-full \
-	p7zip-rar \
-	pbzip2 \
-	unrar \
-	lzop \
-	gettext \
-	pwgen \
-	rng-tools \
-	net-tools \
+    tree \
+    curl \
+    wget \
+    silversearcher-ag \
+    tmux \
+    grc \
+    apache2-utils \
+    unzip \
+    p7zip-full \
+    p7zip-rar \
+    pbzip2 \
+    unrar \
+    lzop \
+    gettext \
+    pwgen \
+    rng-tools \
+    net-tools \
     bridge-utils \
     iptables-persistent \
     zsh \
@@ -68,121 +68,124 @@ apt-get install --yes --no-install-recommends \
 
 # Debug
 apt-get install --yes --no-install-recommends \
-	linux-tools-generic \
-	htop \
-	iotop \
-	strace \
-	ltrace \
-	tcpdump \
-	lsof
+    linux-tools-generic \
+    htop \
+    iotop \
+    strace \
+    ltrace \
+    tcpdump \
+    lsof
 
 # System info
 apt-get install --yes --no-install-recommends \
-	lshw \
-	inxi
+    lshw \
+    inxi
 
 # Networking
 apt-get install --yes --no-install-recommends \
-	mtr \
-	traceroute \
-	nmap \
-	arp-scan
+    mtr \
+    traceroute \
+    nmap \
+    arp-scan
 
 # IDE
 apt-get install --yes --no-install-recommends \
-	vim \
-	neovim \
-	ctags \
-	git \
-	gitk \
-	shellcheck \
-	xsel \
-	sloccount \
-	jq \
-	httpie
+    vim \
+    neovim \
+    ctags \
+    git \
+    gitk \
+    shellcheck \
+    xsel \
+    sloccount \
+    jq \
+    httpie
 
 # Editors
 apt-get install --yes --no-install-recommends \
-	sublime-text
+    sublime-text
 
 # Diff
 apt-get install --yes --no-install-recommends \
-	meld
+    meld
 
 # Keyboard tools
 apt-get install --yes --no-install-recommends \
-	parcellite
+    parcellite
 
 # Charts
 apt-get install --yes --no-install-recommends \
-	graphviz
+    graphviz
 
 # Filebrowsers
 apt-get install --yes --no-install-recommends \
-	mc \
+    mc \
     ranger atool caca-utils w3m w3m-img highlight python-chardet
 
 # i3 env
 apt-get install -y --no-install-recommends \
-	xorg \
-	slim \
-	i3-wm \
-	i3status \
-	i3lock \
-	dunst \
+    xorg \
+    slim \
+    i3-wm \
+    i3status \
+    i3lock \
+    dunst \
     rofi \
-	suckless-tools \
-	lxappearance \
-	feh \
-	numlockx \
-	unclutter \
-	xautolock \
+    suckless-tools \
+    lxappearance \
+    feh \
+    numlockx \
+    unclutter \
+    xautolock \
     xscreensaver \
     xdotool \
     xkbset \
-	xbacklight \
-	xarchiver \
-	arandr \
-	xclip \
-	xsel \
+    xbacklight \
+    xarchiver \
+    arandr \
+    xclip \
+    xsel \
     gxkb \
-	redshift \
     usbmount \
     pcmanfm \
     rxvt-unicode
 
+# Night work
+apt-get install -y --no-install-recommends \
+    redshift
+
 # Themes
 apt-get install -y --no-install-recommends \
-	xcursor-themes \
-	dmz-cursor-theme \
-	arc-theme \
-	murrine-themes \
-	gtk2-engines-murrine:i386 \
-	gtk2-engines-pixbuf:i386
+    xcursor-themes \
+    dmz-cursor-theme \
+    arc-theme \
+    murrine-themes \
+    gtk2-engines-murrine:i386 \
+    gtk2-engines-pixbuf:i386
 
 # Fonts
 apt-get install --yes --no-install-recommends \
-	fonts-liberation \
-	ttf-mscorefonts-installer \
-	xfonts-terminus \
-	ttf-dejavu-extra \
-	ttf-dejavu \
-	ttf-dejavu-core \
-	fonts-hack
+    fonts-liberation \
+    ttf-mscorefonts-installer \
+    xfonts-terminus \
+    ttf-dejavu-extra \
+    ttf-dejavu \
+    ttf-dejavu-core \
+    fonts-hack
 
 # CM
 apt-get install --yes --no-install-recommends \
-	ansible
+    ansible
 
 # Spellchecker
 apt-get install --yes --no-install-recommends \
-	hunspell-en-us \
-	hunspell-ru
+    hunspell-en-us \
+    hunspell-ru
 
 # Images
 apt-get install --yes --no-install-recommends \
-	imagemagick \
-	pandoc
+    imagemagick \
+    pandoc
 
 # Screenshoots
 apt-get install --yes --no-install-recommends \
@@ -191,41 +194,45 @@ apt-get install --yes --no-install-recommends \
 
 # Fun
 apt-get install --yes --no-install-recommends \
-	cowsay \
-	fortune \
-	figlet
+    cowsay \
+    fortune \
+    figlet
 
 # Golang
 apt-get install --yes --no-install-recommends \
-	golang-doc \
-	golang-src \
-	golang-go \
-	golang-race-detector-runtime
+    golang-doc \
+    golang-src \
+    golang-go \
+    golang-race-detector-runtime
 
 # Python
 apt-get install --yes --no-install-recommends \
-	python \
-	python-dev \
-	python3 \
-	python3-dev
+    python \
+    python-dev \
+    python3 \
+    python3-dev
 
 # Google chrome
 apt-get install --yes --no-install-recommends \
-	google-chrome-stable
+    google-chrome-stable
 
 # Sound
 apt-get install --yes --no-install-recommends \
-	pavucontrol
+    pavucontrol
 
 # extfat
 apt-get install --yes --no-install-recommends \
-	exfat-utils \
-	exfat-fuse
+    exfat-utils \
+    exfat-fuse
 
 # IM
 apt-get install --yes --no-install-recommends \
-	telegram-desktop \
+    telegram-desktop \
     skypeforlinux
+
+# Webcam
+apt-get install --yes --no-install-recommends \
+    guvcview
 
 # Docker
 if ! docker version > /dev/null 2>&1; then
@@ -240,8 +247,8 @@ newgrp docker
 
 # Nodejs
 if ! npm version > /dev/null 2>&1; then
-	curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-	apt-get install -y nodejs
+    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+    apt-get install -y nodejs
 
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list

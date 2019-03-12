@@ -229,33 +229,40 @@ bar {
 }
 
 # skype, steam, wine: float Gimp
-# for_window [class="Code"] floating enable
-# for_window [class="Firefox"] floating enable
-# for_window [class="google-chrome"] floating enable
-# for_window [class="Google-chrome"] floating enable
+for_window [class="Code"] floating enable
+for_window [class="Firefox"] floating enable
+for_window [class="google-chrome"] floating enable
+for_window [class="Google-chrome"] floating enable
 for_window [class="Gimp"] floating enable
 for_window [class="Keybase"] floating enable
 for_window [class="Neoman"] floating enable
-for_window [class="NES"] floating enabler
-for_window [class="Pidgin"] floating enable
+for_window [class="NES"] floating enable
+
 for_window [class="Portal"] floating enable
 for_window [class="RStudio"] floating enable
+
+for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Slack"] floating enable
-for_window [class="Telegram"] floating enable
+for_window [class="TelegramDesktop"] floating enable
 for_window [class="Mattermost"] floating enable
 for_window [class="Franz"] floating enable
-for_window [class="Steam"] floating enable
 for_window [class="Tor Browser"] floating enable
+for_window [class="Steam"] floating enable
+
 for_window [class="Virt-viewer"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="vlc"] floating enable
+
 for_window [class="Wine"] floating enable
 for_window [class="Wireshark"] floating enable
+
 for_window [class="Nemo"] floating enable
 for_window [class="Nautilus"] floating enable
 for_window [class="Pcmanfm"] floating enable
+
 for_window [class="Shutter"] floating enable
+
 for_window [class="Lxappearance"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Arandr"] floating enable
@@ -268,7 +275,7 @@ assign [class="^jetbrains-pycharm-ce$"] 3
 assign [class="^jetbrains-goland$"] 3
 assign [class="^Skype$"] 4
 assign [class="^Slack$"] 4
-assign [class="^Telegram$"] 4
+assign [class="^TelegramDesktop$"] 4
 assign [class="^Mattermost$"] 4
 assign [class="^Franz$"] 4
 
@@ -312,5 +319,5 @@ exec --no-startup-id /opt/jetbrains/jetbrains-toolbox-1.13.4801/jetbrains-toolbo
 exec_always --no-startup-id feh --bg-fill ${HOME}/Pictures/wallpapper.jpg &
 exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &
 
-# run the merge for good colors
 exec_always xrdb $HOME/.Xresources
+
