@@ -315,11 +315,11 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>258 402 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1440 877 </string>
+	<string>269 139 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>325 394 770 429 0 0 1440 877 </string>
+	<string>325 321 918 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>41 525 570 352 0 0 1440 877 </string>
+	<string>41 517 570 352 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>435 158 650 501 0 0 1440 878 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -612,7 +612,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1323,7 +1323,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1998,7 +1998,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -2648,7 +2648,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -3143,13 +3143,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-15T05:45:39Z</date>
+	<date>2018-12-23T06:29:35Z</date>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.19993489583333335</real>
 	<key>TabStyle</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UseBorder</key>
