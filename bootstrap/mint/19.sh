@@ -126,9 +126,12 @@ apt-get install --yes --no-install-recommends \
 apt-get install -y --no-install-recommends \
     xorg \
     slim \
+    lightdm-gtk-greeter-settings \
     i3-wm \
     i3status \
     i3lock \
+    xautolock \
+    xscreensaver \
     dunst \
     rofi \
     suckless-tools \
@@ -136,8 +139,6 @@ apt-get install -y --no-install-recommends \
     feh \
     numlockx \
     unclutter \
-    xautolock \
-    xscreensaver \
     xdotool \
     xkbset \
     xbacklight \
@@ -146,9 +147,13 @@ apt-get install -y --no-install-recommends \
     xclip \
     xsel \
     gxkb \
+    pasystray \
+    blueman \
     usbmount \
     pcmanfm \
-    rxvt-unicode
+    rxvt-unicode \
+    nitrogen \
+    mpd
 
 # Night work
 apt-get install -y --no-install-recommends \
