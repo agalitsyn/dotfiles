@@ -154,6 +154,12 @@ brew cask install teamviewer
 brew cask install slack
 brew cask install skype
 
+# NTFS
+brew cask install osxfuse
+brew install ntfs-3g
+#sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
+#sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
+
 # Cleariness
 # brew cask install cleanmymac
 
