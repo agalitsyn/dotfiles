@@ -4,7 +4,7 @@
 
 set -xe
 
-apt-get install --yes software-properties-common
+apt-get install --yes --no-install-recommends software-properties-common
 
 echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/02norecommends
 echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/03disabletranslations
@@ -16,6 +16,14 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
 
 echo "deb https://download.sublimetext.com/ apt/stable/" > /etc/apt/sources.list.d/sublime-text.list
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
+
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" > /etc/apt/sources.list.d/yandex-disk.list
+wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | apt-key add -
+add-apt-repository -y ppa:slytomcat/ppa
+
+add-apt-repository -y ppa:numix/ppa
+add-apt-repository -y ppa:webupd8team/java
+apt-add-repository -y ppa:ansible/ansible
 
 # Support for multiarch packages.
 dpkg --add-architecture i386
@@ -100,6 +108,9 @@ apt-get install --yes --no-install-recommends \
     sloccount \
     jq \
     httpie
+#update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+#update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+#update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
 # Editors
 apt-get install --yes --no-install-recommends \
@@ -178,6 +189,27 @@ apt-get install --yes --no-install-recommends \
     ttf-dejavu-core \
     fonts-hack
 
+# Wine
+apt-get install -y --no-install-recommends \
+    wine-stable \
+    wine32 \
+    winetricks
+
+# VM
+apt-get install -y --no-install-recommends \
+    virtualbox \
+    virtualbox-dkms \
+    virtualbox-qt \
+    virtualbox-guest-additions-iso
+
+apt-get install -y --no-install-recommends \
+    qemu-system-x86 \
+    qemu-utils \
+    libvirt-bin \
+    dnsmasq \
+    dnsutils \
+    ebtables
+
 # CM
 apt-get install --yes --no-install-recommends \
     ansible
@@ -197,11 +229,30 @@ apt-get install --yes --no-install-recommends \
     shutter \
     scrot
 
+# Video
+apt-get install -y --no-install-recommends \
+    mesa-utils \
+    vainfo \
+    vlc \
+    browser-plugin-vlc \
+    libavcodec-extra \
+    ffmpeg \
+    x264 \
+    libvdpau-va-gl1 \
+    vdpauinfo \
+    i965-va-driver
+
 # Fun
 apt-get install --yes --no-install-recommends \
     cowsay \
     fortune \
     figlet
+
+# Oracle Java
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+apt-get install --yes \
+    oracle-java8-installer \
+    oracle-java8-set-default
 
 # Golang
 apt-get install --yes --no-install-recommends \
@@ -216,6 +267,17 @@ apt-get install --yes --no-install-recommends \
     python-dev \
     python3 \
     python3-dev
+
+# Dev libs (for pip packages)
+apt-get install -y --no-install-recommends \
+    libpq-dev \
+    libssl-dev \
+    libjpeg-dev \
+    zlib1g-dev
+
+# Office
+apt-get install -y --force-yes --no-install-recommends \
+    libreoffice
 
 # Google chrome
 apt-get install --yes --no-install-recommends \
@@ -239,6 +301,14 @@ apt-get install --yes --no-install-recommends \
 apt-get install --yes --no-install-recommends \
     guvcview
 
+apt-get install --yes --no-install-recommends \
+    yandex-disk \
+    yd-tools
+
+# Partition tools
+apt-get install -y --force-yes --no-install-recommends \
+    gparted
+
 # Docker
 if ! docker version > /dev/null 2>&1; then
     curl --silent --show-error --location "https://get.docker.com/" | sh
@@ -252,7 +322,7 @@ newgrp docker
 
 # Nodejs
 if ! npm version > /dev/null 2>&1; then
-    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
     apt-get install -y nodejs
 
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
