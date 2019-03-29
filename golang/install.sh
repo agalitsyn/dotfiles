@@ -3,7 +3,7 @@
 set -xe
 
 # Env
-GOVERSION=${GOVERSION:-"1.8.3"}
+GOVERSION=${GOVERSION:-"1.12.1"}
 GODIR=${GODIR:-"/opt/google/golang"}
 
 # Constants
@@ -17,13 +17,13 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 function install_golang() {
-	if [ -f $GOROOT/bin/go ]; then
+	if [ -f "$GOROOT/bin/go" ]; then
 		return
 	fi
 
-	sudo mkdir -pv $GOROOT
+	sudo mkdir -pv "$GOROOT"
 	cd /tmp && curl --show-error --location "https://storage.googleapis.com/golang/go${GOVERSION}.${GOOS}-${GOARCH}.tar.gz" | tar --extract --gzip
-	sudo mv /tmp/go/* $GOROOT
+	sudo mv /tmp/go/* "$GOROOT"
 	rm -r /tmp/go
 }
 
@@ -34,9 +34,17 @@ export GOPATH=$GOPATH
 export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
 EOL
 
+	cat > ~/.zsh.d/goenv.zsh << EOL
+export GOROOT=$GOROOT
+export GOPATH=$GOPATH
+export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
+EOL
+}
+
 function main() {
 	install_golang
 	configure_golang_env
 }
 
 main
+

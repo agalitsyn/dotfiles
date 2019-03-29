@@ -254,13 +254,6 @@ apt-get install --yes \
     oracle-java8-installer \
     oracle-java8-set-default
 
-# Golang
-apt-get install --yes --no-install-recommends \
-    golang-doc \
-    golang-src \
-    golang-go \
-    golang-race-detector-runtime
-
 # Python
 apt-get install --yes --no-install-recommends \
     python \
