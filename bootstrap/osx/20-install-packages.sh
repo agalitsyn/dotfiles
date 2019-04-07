@@ -164,23 +164,22 @@ brew install ntfs-3g
 # brew cask install cleanmymac
 
 # IDE
-# brew cask install pycharm-ce
-# brew cask install intellij-idea-ce
+brew cask install jetbrains-toolbox
 
 # Screenshoting
-# brew cask install skitch
+brew cask install skitch
 
 # P2P
 # brew cask install eiskaltdcpp
 
 # Mindmap
-# brew cask install xmind
+brew cask install xmind
 
 # Graphs
-# brew cask install yed
+brew cask install yed
 
 # Emulator
-# brew cask install dosbox
+brew cask install dosbox
 
 # Images
 # brew cask install \
@@ -207,3 +206,4 @@ brew install ntfs-3g
 
 # Remove outdated versions from the cellar
 brew cleanup
+

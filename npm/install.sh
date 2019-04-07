@@ -12,7 +12,7 @@ sudo npm install --global \
 	typings \
 	typescript \
 	node-static \
-    json-server \
+	json-server \
 	git-open \
 	git-recent \
 	diff-so-fancy \

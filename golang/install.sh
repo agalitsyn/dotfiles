@@ -31,13 +31,13 @@ function configure_golang_env() {
 	cat > ~/.bash.d/goenv.sh << EOL
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
-export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
+export PATH=\$GOROOT/bin:\$GOPATH/bin:\$PATH
 EOL
 
 	cat > ~/.zsh.d/goenv.zsh << EOL
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
-export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
+export PATH=\$GOROOT/bin:\$GOPATH/bin:\$PATH
 EOL
 }
 
