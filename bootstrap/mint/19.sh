@@ -143,6 +143,8 @@ apt-get install -y --no-install-recommends \
     i3lock \
     xautolock \
     xscreensaver \
+    xscreensaver-gl-extra \
+    xscreensaver-data-extra \
     dunst \
     rofi \
     suckless-tools \
