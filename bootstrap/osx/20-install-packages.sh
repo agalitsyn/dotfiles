@@ -21,7 +21,7 @@ brew install coreutils \
 	moreutils \
 	findutils --with-default-names \
 	gnu-sed --with-default-names \
-	gnutls \ 
+	gnutls \
 	gnu-tar --with-default-names \
 	gawk \
 	watch \
@@ -124,6 +124,9 @@ brew cask install iterm2
 
 # Window enhancements
 brew cask install spectacle
+
+# External monitor resolution tool
+brew cask install avibrazil-rdm
 
 # Clipboard
 brew cask install flycut
