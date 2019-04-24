@@ -1,8 +1,7 @@
 #!/bin/bash
 
 lock() {
-    #xautolock -locknow
-    xscreensaver-command -lock
+    xautolock -locknow
 }
 
 case "$1" in
