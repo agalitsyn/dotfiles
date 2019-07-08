@@ -190,42 +190,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# color defines for zenburn styled i3
-#set $bg     #2c2c2e
-#set $fg     #9f9f9f
-#set $hi     #efef8f
-#set $ac     #a0afa0
-#set $tx     #040404
-#set $ia     #8f8f8f
-#set $be     #8faf9f
-#set $yw     #ccdc90
-#set $gn     #88b090
-#set $rd     #e89393
-
-# set some nice colors      border     background  text
-#client.focused              $ac        $ac         $tx
-#client.unfocused            $bg        $bg         $ia
-#client.focused_inactive     $bg        $bg         $ac
-#client.urgent               $rd        $rd         $tx
+# Colors adopted to Mint-Y Dark theme
+#
+# class                 border  backgr. text    indicator child_border
+client.focused          #1f1f1f #1f1f1f #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     status_command i3status
     position top
-
     # This enforces to output tray only on primary monitor using xrandr --output NAME --primary
-    #tray_output primary
-
-    #colors {
-        #background          $bg
-        #statusline          $fg
-        #separator           $hi
-        #focused_workspace   $gn        $bg        $ac
-        #active_workspace    $gn        $ac        $tx
-        #inactive_workspace  $bg        $bg        $ia
-        #urgent_workspace    $rd        $bg        $ac
-    #}
+    tray_output primary
 }
 
 # skype, steam, wine: float Gimp
@@ -244,6 +224,7 @@ for_window [class="RStudio"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Slack"] floating enable
+for_window [class="zoom"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Mattermost"] floating enable
 for_window [class="Franz"] floating enable
@@ -270,6 +251,7 @@ for_window [class="Arandr"] floating enable
 for_window [class="Nitrogen"] floating enable
 
 for_window [class="JetBrains Toolbox"] floating enable
+for_window [class="jetbrains-toolbox"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [title="Commit Changes"] floating disable # intellij commit changes fullscreen always (easier to see diffs)
 
@@ -278,6 +260,7 @@ assign [class="^jetbrains-goland$"] 3
 assign [class="^Skype$"] 4
 assign [class="^Slack$"] 4
 assign [class="^Mattermost$"] 4
+assign [class="^zoom$"] 4
 assign [class="^TelegramDesktop$"] 5
 assign [class="^Franz$"] 5
 
@@ -293,8 +276,7 @@ bindsym $ctrl+equal exec --no-startup-id exec pactl set-sink-volume @DEFAULT_SIN
 bindsym $ctrl+minus exec --no-startup-id exec pactl -- set-sink-volume @DEFAULT_SINK@ -3%
 
 # Autostart
-exec --no-startup-id xrandr --output DP-2 --off --output HDMI-3 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output HDMI-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal &
-
+exec --no-startup-id xrandr --output DP-2 --off --output HDMI-3 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate normal &
 exec --no-startup-id xautolock -time 5 -locker 'i3lock --nofork --image ~/.config/wallpapers/lock-wide.png' &
 
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
@@ -318,7 +300,7 @@ exec --no-startup-id /opt/Telegram/Telegram &
 
 exec --no-startup-id /opt/jetbrains/jetbrains-toolbox-1.13.4801/jetbrains-toolbox &
 
-exec_always --no-startup-id feh --bg-fill ${HOME}/config/wallpappers/wallpapper.jpg &
+exec_always --no-startup-id feh --bg-fill ${HOME}/.config/wallpapers/wallpaper.jpg &
 exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru &
 
 exec_always xrdb $HOME/.Xresources
