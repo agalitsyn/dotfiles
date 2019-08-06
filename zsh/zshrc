@@ -40,7 +40,8 @@ ZSH_CUSTOM=~/.zsh.d
 
 # Save a ton of history
 HISTSIZE=20000
-HISTFILE=~/.zsh_history
+# Share history between bash and zsh
+HISTFILE=~/.bash_history
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=20000
 
@@ -57,6 +58,7 @@ chpwd() {
 
 source "$ZSH/oh-my-zsh.sh"
 unsetopt share_history
+unsetopt extended_history
 
 export EDITOR='vim'
 
