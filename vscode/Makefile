@@ -7,7 +7,7 @@ PACKAGES := ms-vscode.cpptools \
 			PeterJausovec.vscode-docker \
 			PKief.material-icon-theme \
 			wayou.vscode-todo-highlight \
-			fatihacet.gitlab-workflow
+			tonsky.theme-alabaster
 
 .PHONY: install
 install:

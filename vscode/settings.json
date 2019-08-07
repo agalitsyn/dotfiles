@@ -54,5 +54,6 @@
     "breadcrumbs.symbolPath": "off",
     "search.location": "panel",
     "terminal.integrated.fontSize": 12,
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Alabaster"
 }
