@@ -5,20 +5,45 @@
     "editor.renderWhitespace": "none",
     "editor.rulers": [80, 120],
     "editor.minimap.enabled": false,
-    "problems.decorations.enabled": false,
+
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+
     "terminal.integrated.shell.osx": "zsh",
     "terminal.integrated.shell.linux": "zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
+    "terminal.integrated.fontSize": 12,
+
     "files.associations": {
         "Vagrantfile": "ruby"
     },
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "files.trimTrailingWhitespace": true,
+
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#303030",
+        "statusBar.noFolderBackground" : "#222225",
+        "statusBar.debuggingBackground": "#511f1f"
+    },
+    "workbench.startupEditor": "none",
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolPath": "off",
+    "search.location": "panel",
+    "problems.decorations.enabled": false,
+    "window.titleBarStyle": "custom",
+
     "go.buildOnSave": "package",
     "go.lintOnSave": "package",
     "go.vetOnSave": "package",
     "go.buildTags": "",
     "go.buildFlags": [],
-    "go.lintTool": "megacheck",
+    "go.lintTool": "golangci-lint",
     "go.lintFlags": [],
     "go.vetFlags": [],
     "go.addTags": {
@@ -29,31 +54,13 @@
     },
     "go.coverOnSave": false,
     "go.useCodeSnippetsOnFunctionSuggest": false,
-    "go.formatTool": "goreturns",
+    "go.formatTool": "goimports",
     "go.gopath": "~",
     "go.gocodeAutoBuild": false,
-    "workbench.startupEditor": "none",
+
     "extensions.autoUpdate": false,
+    "extensions.ignoreRecommendations": true,
     "update.mode": "none",
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "explorer.confirmDragAndDrop": false,
-    "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 0,
-    "explorer.confirmDelete": false,
-    "files.autoSave": "onFocusChange",
-    "files.exclude": {
-        "**/__pycache__": true
-    },
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#242424",
-    },
-    "breadcrumbs.enabled": true,
-    "breadcrumbs.symbolPath": "off",
-    "search.location": "panel",
-    "terminal.integrated.fontSize": 12,
-    "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Alabaster"
+    "telemetry.enableTelemetry": false
 }
