@@ -11,7 +11,7 @@
     pu = pull
     co = checkout
     st = status
-    br = branch
+    br = !git --no-pager branch
     brs = for-each-ref --sort=committerdate --format='%(refname:short) * %(authorname) * %(committerdate:relative)' refs/remotes/ | column -t -s '*'
     ci = commit
     dh = diff HEAD
@@ -30,6 +30,9 @@
 	it = !git init && git commit -m “root” --allow-empty
 	commend = commit --amend --no-edit
 	please = push --force-with-lease
+
+    # Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	# Amend the currently staged files to the latest commit
 	amend = commit --amend --reuse-message=HEAD
@@ -70,11 +73,4 @@
 #	insteadOf = https://bitbucket.org/
 [http "https://gopkg.in"]
 	followRedirects = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/anton/.stCommitMsg
+
