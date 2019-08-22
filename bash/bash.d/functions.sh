@@ -272,12 +272,6 @@ pswdgen() {
     LC_ALL=C tr -dc 'a-zA-Z' < /dev/urandom | head -c "$length" | xargs
 }
 
-
-# Notes app
-note() {
-    $EDITOR ~/Dropbox/notes
-}
-
 # Clip web site to markdown
 webclipper() {
     local usage="Usage: clip-note <url> <file-path>"

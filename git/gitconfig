@@ -59,7 +59,7 @@
     date = local
 [core]
     filemode = false
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/anton/.gitignore
 	autocrlf = input
 [push]
     default = simple
@@ -70,3 +70,11 @@
 #	insteadOf = https://bitbucket.org/
 [http "https://gopkg.in"]
 	followRedirects = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/anton/.stCommitMsg
