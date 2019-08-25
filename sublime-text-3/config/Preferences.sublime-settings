@@ -6,7 +6,7 @@
     // Font
     "font_face": "Source Code Pro",
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 10,
+    "font_size": 11,
 
     // Cursor style - slightly wider than default
     "wide_caret": true,

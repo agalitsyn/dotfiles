@@ -33,14 +33,6 @@
         // Additional syntax
         "Dotfiles Syntax Highlighting",
 
-        // RST
-        "RestructuredText Improved",
-        "Restructured Text (RST) Snippets",
-
-        // Markdown
-        "MarkdownEditing",
-        "Markdown Preview",
-
         // Django
         "Djaneiro",
 
@@ -48,9 +40,6 @@
         "requirementstxt",
 
         // Code intel
-        "SublimeCodeIntel",
-
-        // Theme
-        "Theme - Soda"
+        "SublimeCodeIntel"
     ]
 }
