@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "InputMono, Hack, FiraCode-Retina, Source Code Pro, Go Mono, Monaco",
+    "editor.fontFamily": "Hack, InputMono, FiraCode-Retina, Source Code Pro, Go Mono, Monaco",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
