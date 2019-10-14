@@ -1,4 +1,12 @@
+# colored cat
 alias c='pygmentize -O style=monokai -f console256 -g'
+
+# search with pager
+alias agp="ag --pager='less -XFR'"
+
+function rgp() {
+  rg -p "$@" | less -XFR
+}
 
 # Create a new directory and enter it
 mkd() {
@@ -48,3 +56,4 @@ calc() {
 	fi
 	printf "\\n"
 }
+
