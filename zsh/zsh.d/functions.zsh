@@ -1,5 +1,7 @@
+alias c='pygmentize -O style=monokai -f console256 -g'
+
 # Create a new directory and enter it
-md() {
+mkd() {
     mkdir -pv "$@" && cd "$@"
 }
 
