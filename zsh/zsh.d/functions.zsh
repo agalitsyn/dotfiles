@@ -9,22 +9,22 @@ function rgp() {
 }
 
 # Create a new directory and enter it
-mkd() {
+function mkd() {
     mkdir -pv "$@" && cd "$@"
 }
 
 # find shorthand
-f() {
+function f() {
     find . -name "$1"
 }
 
 # Goto temp dir
-cdt() {
+function cdt() {
     [ -z "$TMPDIR" ] && cd /tmp || cd "$TMPDIR"
 }
 
 # cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
+function cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
@@ -32,12 +32,12 @@ cdf() {  # short for cdfinder
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-tre() {
+function tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
 # Simple calculator
-calc() {
+function calc() {
 	local result=""
 	result="$(printf "scale=10;%s\\n" "$*" | bc --mathlib | tr -d '\\\n')"
 	#						└─ default (when `--mathlib` is used) is 20
