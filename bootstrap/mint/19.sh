@@ -78,7 +78,9 @@ apt-get install --yes --no-install-recommends \
     bridge-utils \
     iptables-persistent \
     zsh \
-    gnupg-agent
+    gnupg-agent \
+    hibernate \
+    acpitool
 
 # Debug
 apt-get install --yes --no-install-recommends \
