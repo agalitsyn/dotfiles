@@ -57,9 +57,10 @@ brew install vim --with-override-system-vi \
 	ctags \
 	shellcheck
 
-# Handle rest services
+# cli tools
 brew install httpie \
-	jq
+	jq \
+    yq
 
 # Add fonts
 brew tap caskroom/fonts
