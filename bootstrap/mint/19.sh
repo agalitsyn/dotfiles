@@ -30,6 +30,7 @@ add-apt-repository -y ppa:slytomcat/ppa
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
 apt-add-repository -y ppa:ansible/ansible
+add-apt-repository -y ppa:rmescandon/yq
 
 # Support for multiarch packages.
 dpkg --add-architecture i386
@@ -115,6 +116,7 @@ apt-get install --yes --no-install-recommends \
     xsel \
     sloccount \
     jq \
+    yq \
     httpie
 #update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 #update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
