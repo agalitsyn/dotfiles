@@ -1,15 +1,10 @@
-# colored cat
-alias c='pygmentize -O style=monokai -f console256 -g'
-
-# search with pager
-alias agp="ag --pager='less -XFR'"
-
+# search
 function rgp() {
   rg -p "$@" | less -XFR
 }
 
 # Create a new directory and enter it
-function mkd() {
+function md() {
     mkdir -pv "$@" && cd "$@"
 }
 
@@ -36,24 +31,8 @@ function tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
-# Simple calculator
-function calc() {
-	local result=""
-	result="$(printf "scale=10;%s\\n" "$*" | bc --mathlib | tr -d '\\\n')"
-	#						└─ default (when `--mathlib` is used) is 20
-
-	if [[ "$result" == *.* ]]; then
-		# improve the output for decimal numbers
-		# add "0" for cases like ".5"
-		# add "0" for cases like "-.5"
-		# remove trailing zeros
-		printf "%s" "$result" |
-			sed -e 's/^\./0./'  \
-			-e 's/^-\./-0./' \
-			-e 's/0*$//;s/\.$//'
-	else
-		printf "%s" "$result"
-	fi
-	printf "\\n"
+function jwt-decode() {
+    local token="$1"
+    python3 -c "import json, jwt; print(json.dumps(jwt.decode('$token', verify=False)));" | jq
 }
 

@@ -72,9 +72,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 alias sudo='sudo ';
 
 # Handy stuff
-alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'
-alias bashrc='$EDITOR ~/.bashrc && source ~/.bashrc'
 
 # Stupid hardcode way to check network interface
 # TODO: seems not working for ubuntu 16.04+
@@ -92,8 +90,10 @@ alias local-ip="ifconfig getifaddr ${ninterface}"
 #alias local-ips="sudo nmap -sP 192.168.0.0/24"
 alias local-ips="sudo arp-scan --localnet"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
+
 # View HTTP traffic
 alias sniff="sudo ngrep -d '${ninterface}' -t '^(GET|POST) ' 'tcp and port 80'"
 alias http-dump="sudo tcpdump -i ${ninterface} -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
@@ -135,6 +135,8 @@ fi;
 # Use GNU time
 alias gtime='/usr/bin/time'
 
+# search
 alias ag='ag --follow --hidden'
 alias agg='ag --follow --hidden --skip-vcs-ignores --ignore=vendor --ignore=node_modules --ignore=.tox --after=3 --before=3'
+alias agp="ag --pager='less -XFR'"
 
