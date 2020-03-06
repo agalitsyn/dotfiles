@@ -84,12 +84,10 @@ brew cask install java
 # better to update ruby, for some tools
 brew install ruby
 	python \
-	python3 \
 	pyenv \
 	node \
 	yarn --without-node \
 	go \
-	dep \
 	go-delve/delve/delve
 
 # Add backing services primarily for python builds

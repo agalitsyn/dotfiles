@@ -2,7 +2,7 @@
 
 set -xe
 
-sudo npm install --global \
+npm install --global \
 	eslint \
 	gulp-cli \
 	bower \
@@ -17,3 +17,4 @@ sudo npm install --global \
 	git-recent \
 	diff-so-fancy \
 	trash-cli
+

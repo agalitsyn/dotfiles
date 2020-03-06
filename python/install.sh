@@ -2,12 +2,7 @@
 
 set -xe
 
-# Newest pip
-if ! pip3 --version > /dev/null 2>&1; then
-	curl --silent --show-error --location "https://bootstrap.pypa.io/get-pip.py" | sudo python3
-fi
-
-sudo -H pip3 install --upgrade \
+pip3 install --user --upgrade \
 	pip \
 	setuptools \
 	ipython[all] \
@@ -19,14 +14,10 @@ sudo -H pip3 install --upgrade \
 	sh \
 	plumbum \
 	pygments \
-	sphinx \
-	sphinx-autobuild \
-	sphinxcontrib-plantuml \
-	sphinxcontrib-seqdiag \
-	sphinxcontrib-blockdiag \
-	pylint \
-	jedi \
 	mkdocs \
-	pygments \
-    pyjwt
+    pyjwt \
+    requests \
+    jinja2 \
+    fake-useragent \
+    beautifulsoup4
 
