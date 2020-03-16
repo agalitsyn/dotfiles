@@ -183,6 +183,9 @@ brew cask install yed
 # Emulator
 brew cask install dosbox
 
+# Keyboard
+brew cask install karabiner-elements
+
 # Images
 # brew cask install \
 # 	sketchbook \
@@ -201,10 +204,6 @@ brew cask install dosbox
 
 # Save eyes
 # brew cask install flux
-
-# Keyboard
-# brew cask install seil \
-# 	karabiner
 
 # Remove outdated versions from the cellar
 brew cleanup
