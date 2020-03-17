@@ -28,10 +28,9 @@ assoc() {
     done
 }
 
-SUBLIME=$(get_bundle_id "Sublime Text")
-TEXT_EDIT=$(get_bundle_id "TextEdit")
-MPLAYERX=$(get_bundle_id "MPlayerX")
+TEXT_EDITOR=$(get_bundle_id "Sublime Text")
+MEDIA_PLAYER=$(get_bundle_id "VLC")
 
-assoc "$SUBLIME" "editor" txt md js jse json reg bat ps1 cfg sh bash yaml
-assoc "$MPLAYERX" "viewer" mkv mp4 avi mov webm
-assoc "$MPLAYERX" "viewer" flac fla ape wav mp3 wma m4a ogg ac3
+assoc "$TEXT_EDITOR" "editor" txt md js jse json reg bat ps1 cfg sh bash yaml
+assoc "$MEDIA_PLAYER" "viewer" mkv mp4 avi mov webm
+assoc "$MEDIA_PLAYER" "viewer" flac fla ape wav mp3 wma m4a ogg ac3

@@ -91,10 +91,10 @@ brew install ruby
 	go-delve/delve/delve
 
 # Add backing services primarily for python builds
-# brew install postgresql \
-# 	libmemcached \
-# 	memcached \
-# 	redis
+brew install postgresql \
+ 	libmemcached \
+ 	memcached \
+ 	redis
 
 # Graphs
 brew install graphviz
