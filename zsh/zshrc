@@ -2,9 +2,9 @@
 ZSH="$HOME/.oh-my-zsh"
 
 # awesome dark theme borrowed from https://github.com/mitsuhiko/dotfiles/tree/master/zsh/custom/themes
-#ZSH_THEME="mitsuhiko"
-# ok for dark and lights backgrounds, also very minimal
-ZSH_THEME="robbyrussell"
+ZSH_THEME="mitsuhiko"
+# default
+#ZSH_THEME="robbyrussell"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

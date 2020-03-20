@@ -85,6 +85,7 @@ brew cask install java
 brew install ruby
 	python \
 	pyenv \
+    pipenv \
 	node \
 	yarn --without-node \
 	go \
