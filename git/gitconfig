@@ -60,7 +60,7 @@
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
     # Remove all branches
-	cb = "!git branch | grep -v '\\*' | xargs -n 1 git branch -D; git remote -v update -p"
+	dbr = "!git branch | grep -v '\\*' | xargs -n 1 git branch -D; git remote -v update -p"
 [log]
     date = local
 [core]

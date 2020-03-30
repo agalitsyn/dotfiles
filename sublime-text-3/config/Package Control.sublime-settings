@@ -19,6 +19,7 @@
         "Zen Tabs",
 
         // Additional syntax
-        "Dotfiles Syntax Highlighting"
+        "Dotfiles Syntax Highlighting",
+        "Dockerfile Syntax Highlighting"
     ]
 }
