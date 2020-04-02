@@ -1,12 +1,14 @@
-PACKAGES := ms-vscode.cpptools \
-			ms-vscode.go \
-			ms-python.python \
-			ms-vscode.csharp \
-			ms-kubernetes-tools.vscode-kubernetes-tools \
+# Python, Django, Ansible, Docker packages
+PACKAGES := ms-python.python \
+			wholroyd.jinja \
+			batisteo.vscode-django \
+			mikestead.dotenv \
+			ms-azuretools.vscode-docker \
 			EditorConfig.EditorConfig \
-			PeterJausovec.vscode-docker \
-			PKief.material-icon-theme \
 			wayou.vscode-todo-highlight \
+			esbenp.prettier-vscode \
+			dbaeumer.vscode-eslint \
+			PKief.material-icon-theme \
 			tonsky.theme-alabaster
 
 .PHONY: install
