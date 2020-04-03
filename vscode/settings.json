@@ -1,55 +1,80 @@
 {
     "update.mode": "none",
     "extensions.autoUpdate": false,
-    "extensions.ignoreRecommendations": true,
+
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
 
-    "editor.fontFamily": "Source Code Pro, Input Mono, Hack, Monaco",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 12,
-    "editor.renderWhitespace": "all",
-    "editor.rulers": [80, 120],
-    "editor.minimap.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
 
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+
+    "editor.formatOnSave": false,
+    "editor.fontFamily": "JetBrains Mono, Source Code Pro, Input Mono, Hack, Monaco",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "editor.renderWhitespace": "selection",
+    "editor.rulers": [
+        120
+    ],
+    "editor.minimap.enabled": false,
+
+    "problems.decorations.enabled": false,
 
     "terminal.integrated.shell.osx": "zsh",
     "terminal.integrated.shell.linux": "zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
-    "terminal.integrated.fontSize": 12,
+
+    "git.enableSmartCommit": true
 
     "files.associations": {
-        "Vagrantfile": "ruby"
+        "Vagrantfile": "ruby",
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
-    "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/__pycache__": true
     },
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
 
-    "window.zoomLevel": 0,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorCustomizations": {
-        "statusBar.background" : "#303030",
-        "statusBar.noFolderBackground" : "#222225",
-        "statusBar.debuggingBackground": "#511f1f"
-    },
     "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Alabaster",
+    "workbench.editor.enablePreview": false,
+    "workbench.activityBar.visible": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.title": "${activeEditorFull}${separator}${rootName}",
 
-    "breadcrumbs.enabled": true,
-    "breadcrumbs.symbolPath": "off",
-    "problems.decorations.enabled": false,
-    "window.titleBarStyle": "custom",
+    "editor.find.seedSearchStringFromSelection": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.tabSize": 4,
+    "editor.useTabStops": true,
+    "editor.wordWrap": "off",
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+
+    "material-icon-theme.activeIconPack": "angular",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.folders.color": "#90a4ae",
+    "material-icon-theme.hidesExplorerArrows": false,
+    "material-icon-theme.opacity": 1,
+    "material-icon-theme.files.associations": {},
+    "material-icon-theme.folders.associations": {},
+    "material-icon-theme.languages.associations": {},
 
     "go.buildOnSave": "package",
     "go.lintOnSave": "package",
     "go.vetOnSave": "package",
     "go.buildTags": "",
     "go.buildFlags": [],
-    "go.lintTool": "golangci-lint",
+    "go.lintTool": "megacheck",
     "go.lintFlags": [],
     "go.vetFlags": [],
     "go.addTags": {
@@ -64,5 +89,15 @@
     "go.gopath": "~",
     "go.gocodeAutoBuild": false,
 
-    "git.enableSmartCommit": true
+    "python.linting.lintOnSave": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "flake8",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "pylint",
+    "python.linting.prospectorEnabled": true,
+    "python.linting.prospectorPath": "prospector",
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Path": "autopep8",
+    "python.jediEnabled": false,
 }
+
