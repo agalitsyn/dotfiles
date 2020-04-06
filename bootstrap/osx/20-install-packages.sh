@@ -132,8 +132,9 @@ brew cask install avibrazil-rdm
 brew cask install flycut
 
 # Storage
-brew cask install dropbox
 brew cask install google-backup-and-sync
+brew cask install yandex-disk
+# brew cask install dropbox
 # brew cask install google-photos-backup-and-sync
 
 # Torrents

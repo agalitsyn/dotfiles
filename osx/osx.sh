@@ -22,3 +22,6 @@ alias memcached-start="memcached -vv"
 alias memcached-statistics="memstat --servers=127.0.0.1:11211"
 alias memcached-dump="memdump --servers=127.0.0.1:11211"
 
+# catalina
+alias mount-root-fs="sudo mount -uw /"
+
