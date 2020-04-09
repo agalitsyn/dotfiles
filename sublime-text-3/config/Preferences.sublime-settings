@@ -16,7 +16,7 @@
     "caret_style": "phase",
 
     // Editor look and feel
-    "draw_white_space": "all",
+    "draw_white_space": "selection",
     "highlight_line": true,
     "show_full_path": true,
     "indent_guide_options": ["draw_active"],

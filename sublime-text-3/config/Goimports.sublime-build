@@ -1,0 +1,5 @@
+{
+    "shell_cmd": "goimports -e -w $file",
+    "selector": "source.go",
+    "file_patterns": "*.go"
+}
