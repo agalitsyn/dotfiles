@@ -32,14 +32,10 @@ brew install coreutils \
 	curl \
 	telnet \
 	wget --enable-iri \
-	ag \
-	ripgrep \
 	tree \
 	mc \
 	htop-osx \
 	netcat \
-	mtr \
-	z \
 	ncdu \
 	pv \
 	rename
@@ -57,10 +53,21 @@ brew install vim --with-override-system-vi \
 	ctags \
 	shellcheck
 
-# cli tools
+# New cli tools
 brew install httpie \
-	jq \
-    yq
+    tig \
+    jq \
+    yq \
+    exa \
+    bat \
+    ripgrep \
+    the_silver_searcher \
+    mtr \
+    z \
+    micro \
+    pgcli \
+    glances \
+    fzf
 
 # Add fonts
 brew tap caskroom/fonts
@@ -93,9 +100,9 @@ brew install ruby
 
 # Add backing services primarily for python builds
 brew install postgresql \
- 	libmemcached \
- 	memcached \
- 	redis
+	libmemcached \
+	memcached \
+	redis
 
 # Graphs
 brew install graphviz
