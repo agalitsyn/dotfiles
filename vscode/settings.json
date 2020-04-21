@@ -12,14 +12,15 @@
     "explorer.confirmDelete": false,
 
     "editor.formatOnSave": false,
-    "editor.fontFamily": "JetBrains Mono, Source Code Pro, Input Mono, Hack, Monaco",
+    "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
-    "editor.fontSize": 13,
     "editor.renderWhitespace": "selection",
     "editor.rulers": [
         120
     ],
     "editor.minimap.enabled": false,
+
+    "git.enableSmartCommit": true,
 
     "problems.decorations.enabled": false,
 
@@ -27,8 +28,6 @@
     "terminal.integrated.shell.linux": "zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
-
-    "git.enableSmartCommit": true
 
     "files.associations": {
         "Vagrantfile": "ruby",
@@ -45,7 +44,6 @@
     "files.trimTrailingWhitespace": true,
 
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Alabaster",
     "workbench.editor.enablePreview": false,
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "material-icon-theme",
@@ -69,12 +67,28 @@
     "material-icon-theme.folders.associations": {},
     "material-icon-theme.languages.associations": {},
 
+    // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "bottom",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
     "go.buildOnSave": "package",
     "go.lintOnSave": "package",
     "go.vetOnSave": "package",
     "go.buildTags": "",
     "go.buildFlags": [],
-    "go.lintTool": "megacheck",
+    "go.lintTool": "golangci-lint",
     "go.lintFlags": [],
     "go.vetFlags": [],
     "go.addTags": {
@@ -99,5 +113,9 @@
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Path": "autopep8",
     "python.jediEnabled": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.colorTheme": "Alabaster",
+    "diffEditor.renderSideBySide": false,
 }
 
