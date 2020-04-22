@@ -117,5 +117,9 @@
     "workbench.list.openMode": "doubleClick",
     "workbench.colorTheme": "Alabaster",
     "diffEditor.renderSideBySide": false,
+    "zenMode.hideTabs": false,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 6,
 }
 
