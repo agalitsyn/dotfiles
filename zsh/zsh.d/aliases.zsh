@@ -1,8 +1,14 @@
+# gnu utils modern alternatives
+alias l='exa --all --long --group-directories-first'
+alias f='fd'
+alias c='bat'
+alias gr='rg'
+
+
 color_flag="--color"
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
 alias ls='ls $color_flag --group-directories-first -p -CAFh';
-alias l='ls -lAh $color_flag --group-directories-first';
 alias ll='ls -lah $color_flag --group-directories-first'
 alias lsd='ls -l | grep "^d"' # only directories
 
@@ -22,7 +28,6 @@ alias vdir='vdir $color_flag'
 grep_options="--exclude=*.pyc --exclude-dir=.git --exclude-dir=.svn"
 alias grep='grep $color_flag $grep_options'
 alias fgrep='fgrep $color_flag $grep_options'
-alias egrep='egrep $color_flag $grep_options'
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -60,10 +65,6 @@ alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
 
 # Force tmux 256 color
 alias tmux="tmux -2"
-
-# `cat` with beautiful colors. requires Pygments installed.
-#  sudo easy_install Pygments
-alias c='pygmentize -O style=monokai -f console256 -g'
 
 # Enable simple aliases to be sudo'ed.
 # http://www.gnu.org/software/bash/manual/bashref.html#Aliases says: "If the
@@ -134,9 +135,4 @@ fi;
 
 # Use GNU time
 alias gtime='/usr/bin/time'
-
-# search
-alias ag='ag --follow --hidden'
-alias agg='ag --follow --hidden --skip-vcs-ignores --ignore=vendor --ignore=node_modules --ignore=.tox --after=3 --before=3'
-alias agp="ag --pager='less -XFR'"
 

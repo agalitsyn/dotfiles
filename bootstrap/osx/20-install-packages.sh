@@ -71,24 +71,25 @@ brew install httpie \
 
 # Add fonts
 brew tap caskroom/fonts
-brew cask install font-source-code-pro \
+brew cask install \
+    font-source-code-pro \
 	font-fira-code \
-	font-hack
+	font-hack \
+    font-jetbrains-mono
 
 # Necessary for CLI on images
 brew install imagemagick
 brew install ffmpeg --with-libvpx
 
 # You might want there editors:
-brew cask install sublime-text
-	visual-studio-code \
+brew cask install \
+    sublime-text \
+	visual-studio-code
 
 # Git GUI
-brew cask install sourcetree
+#brew cask install sourcetree
 
 # Languages
-brew cask install java
-# better to update ruby, for some tools
 brew install ruby
 	python \
 	pyenv \
@@ -131,6 +132,7 @@ brew cask install iterm2
 
 # Window enhancements
 brew cask install spectacle
+#brew cask install rectangle
 
 # External monitor resolution tool
 brew cask install avibrazil-rdm
@@ -171,26 +173,38 @@ brew install ntfs-3g
 #sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 
-# Cleariness
+# Cleaner
 # brew cask install cleanmymac
+
+# Tray improvements
+brew cask install itsycal
+
+brew cask install caffeine
+
+# sync brightness
+brew cask install brisync
+
+# os theme switcher
+brew cask install nightowl
+
+# Screen recording
+brew cask install kap
+brew install asciinema
 
 # IDE
 brew cask install jetbrains-toolbox
 
 # Screenshoting
-brew cask install skitch
-
-# P2P
-# brew cask install eiskaltdcpp
+#brew cask install skitch
 
 # Mindmap
-brew cask install xmind
+#brew cask install xmind
 
 # Graphs
-brew cask install yed
+#brew cask install yed
 
 # Emulator
-brew cask install dosbox
+#brew cask install dosbox
 
 # Keyboard
 brew cask install karabiner-elements
@@ -198,21 +212,8 @@ brew cask install karabiner-elements
 # Images
 # brew cask install \
 # 	sketchbook \
-# 	gimp \
 # 	adobe-photoshop-cc \
 # 	adobe-photoshop-lightroom
-
-# Monitoring tools
-# brew cask install menumeters \
-# 	smcfancontrol
-# brew cask install istat-menus
-
-############################
-### Not needed on sierra ###
-############################
-
-# Save eyes
-# brew cask install flux
 
 # Remove outdated versions from the cellar
 brew cleanup

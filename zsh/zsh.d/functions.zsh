@@ -1,4 +1,4 @@
-# search
+# Grep alternative
 function rgp() {
   rg -p "$@" | less -XFR
 }
@@ -6,11 +6,6 @@ function rgp() {
 # Create a new directory and enter it
 function md() {
     mkdir -pv "$@" && cd "$@"
-}
-
-# find shorthand
-function f() {
-    find . -name "$1"
 }
 
 # Goto temp dir
