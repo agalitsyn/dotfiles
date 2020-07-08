@@ -1,16 +1,12 @@
 {
-    "update.mode": "none",
+    "update.mode": "start",
     "extensions.autoUpdate": false,
-
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-
     "editor.formatOnSave": false,
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
@@ -19,16 +15,12 @@
         120
     ],
     "editor.minimap.enabled": false,
-
     "git.enableSmartCommit": true,
-
     "problems.decorations.enabled": false,
-
     "terminal.integrated.shell.osx": "zsh",
     "terminal.integrated.shell.linux": "zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
-
     "files.associations": {
         "Vagrantfile": "ruby",
         "**/*.html": "html",
@@ -42,13 +34,11 @@
     "files.insertFinalNewline": true,
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
-
     "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false,
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "material-icon-theme",
     "window.title": "${activeEditorFull}${separator}${rootName}",
-
     "editor.find.seedSearchStringFromSelection": true,
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 4,
@@ -57,7 +47,6 @@
     "editor.formatOnPaste": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
-
     "material-icon-theme.activeIconPack": "angular",
     "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.folders.color": "#90a4ae",
@@ -66,7 +55,6 @@
     "material-icon-theme.files.associations": {},
     "material-icon-theme.folders.associations": {},
     "material-icon-theme.languages.associations": {},
-
     // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
     "go.useLanguageServer": true,
     "[go]": {
@@ -102,7 +90,6 @@
     "go.formatTool": "goimports",
     "go.gopath": "~",
     "go.gocodeAutoBuild": false,
-
     "python.linting.lintOnSave": true,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "flake8",
@@ -115,11 +102,11 @@
     "python.jediEnabled": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.list.openMode": "doubleClick",
-    "workbench.colorTheme": "Alabaster",
-    "diffEditor.renderSideBySide": false,
+    "diffEditor.renderSideBySide": true,
     "zenMode.hideTabs": false,
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 6,
+    "window.zoomLevel": 0,
+    "workbench.sideBar.location": "left",
 }
-

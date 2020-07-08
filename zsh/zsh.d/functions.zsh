@@ -28,6 +28,11 @@ function tre() {
 
 function jwt-decode() {
     local token="$1"
-    python3 -c "import json, jwt; print(json.dumps(jwt.decode('$token', verify=False)));" | jq
+    python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq
+}
+
+function timestamp-to-datetime() {
+    local ts="$1"
+    python3 -c "from datetime import datetime; ts = int('${ts}'); print(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f'));"
 }
 

@@ -136,3 +136,4 @@ fi;
 # Use GNU time
 alias gtime='/usr/bin/time'
 
+alias timestamp='date +%s'

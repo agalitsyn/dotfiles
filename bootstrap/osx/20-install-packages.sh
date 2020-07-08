@@ -14,31 +14,31 @@ brew upgrade
 # Additional shells
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 brew install bash \
-	bash-completion
+    bash-completion
 
 # Make it GNU/Linux :)
 brew install coreutils \
-	moreutils \
-	findutils --with-default-names \
-	gnu-sed --with-default-names \
-	gnutls \
-	gnu-tar --with-default-names \
-	gawk \
-	watch \
-	gettext \
-	grep --with-default-names \
-	git \
-	tmux \
-	curl \
-	telnet \
-	wget --enable-iri \
-	tree \
-	mc \
-	htop-osx \
-	netcat \
-	ncdu \
-	pv \
-	rename
+    moreutils \
+    findutils --with-default-names \
+    gnu-sed --with-default-names \
+    gnutls \
+    gnu-tar --with-default-names \
+    gawk \
+    watch \
+    gettext \
+    grep --with-default-names \
+    git \
+    tmux \
+    curl \
+    telnet \
+    wget --enable-iri \
+    tree \
+    mc \
+    htop-osx \
+    netcat \
+    ncdu \
+    pv \
+    rename
 
 # Fix htop permissions
 find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
@@ -50,8 +50,8 @@ sudo chown root "$mtrlocation/sbin/mtr"
 
 # Editors
 brew install vim --with-override-system-vi \
-	ctags \
-	shellcheck
+    ctags \
+    shellcheck
 
 # New cli tools
 brew install httpie \
@@ -69,12 +69,14 @@ brew install httpie \
     glances \
     fzf
 
+brew cask install ngrok
+
 # Add fonts
 brew tap caskroom/fonts
 brew cask install \
     font-source-code-pro \
-	font-fira-code \
-	font-hack \
+    font-fira-code \
+    font-hack \
     font-jetbrains-mono
 
 # Necessary for CLI on images
@@ -84,48 +86,48 @@ brew install ffmpeg --with-libvpx
 # You might want there editors:
 brew cask install \
     sublime-text \
-	visual-studio-code
+    visual-studio-code
 
 # Git GUI
 #brew cask install sourcetree
 
 # Languages
 brew install ruby
-	python \
-	pyenv \
+    python \
+    pyenv \
     pipenv \
-	node \
-	yarn --without-node \
-	go \
-	go-delve/delve/delve
+    node \
+    yarn --without-node \
+    go \
+    go-delve/delve/delve
 
 # Add backing services primarily for python builds
 brew install postgresql \
-	libmemcached \
-	memcached \
-	redis
+    libmemcached \
+    memcached \
+    redis
 
 # Graphs
 brew install graphviz
 
 # Virt
 brew cask install virtualbox \
-	virtualbox-extension-pack \
-	vagrant \
-	docker
+    virtualbox-extension-pack \
+    vagrant \
+    docker
 
 # CMS
 brew install ansible
 
 # Cloud
 brew install terraform \
-	doctl \
-	awscli
+    doctl \
+    awscli
 
 # Browsers
 brew cask install firefox \
-	google-chrome \
-	torbrowser
+    google-chrome \
+    torbrowser
 
 # Terminal
 brew cask install iterm2
@@ -211,9 +213,9 @@ brew cask install karabiner-elements
 
 # Images
 # brew cask install \
-# 	sketchbook \
-# 	adobe-photoshop-cc \
-# 	adobe-photoshop-lightroom
+#   sketchbook \
+#   adobe-photoshop-cc \
+#   adobe-photoshop-lightroom
 
 # Remove outdated versions from the cellar
 brew cleanup
