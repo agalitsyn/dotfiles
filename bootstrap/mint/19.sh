@@ -62,7 +62,6 @@ apt-get install --yes --no-install-recommends \
     tree \
     curl \
     wget \
-    silversearcher-ag \
     tmux \
     grc \
     apache2-utils \
@@ -117,7 +116,11 @@ apt-get install --yes --no-install-recommends \
     sloccount \
     jq \
     yq \
-    httpie
+    httpie \
+    ripgrep \
+    bat \
+    fd-find
+
 #update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 #update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 #update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
@@ -204,6 +207,16 @@ apt-get install --yes --no-install-recommends \
     ttf-dejavu \
     ttf-dejavu-core \
     fonts-hack
+
+FONTS_HOME=~/.local/share/fonts
+mkdir -p "$FONTS_HOME/adobe-fonts"
+
+(git clone \
+   --branch release \
+   --depth 1 \
+   'https://github.com/adobe-fonts/source-code-pro.git' \
+   "$FONTS_HOME/adobe-fonts/source-code-pro" && \
+fc-cache -f -v "$FONTS_HOME/adobe-fonts/source-code-pro")
 
 # Wine
 apt-get install --yes --no-install-recommends \

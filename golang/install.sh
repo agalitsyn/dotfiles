@@ -3,7 +3,7 @@
 set -xe
 
 # Env
-GOVERSION=${GOVERSION:-"1.13.7"}
+GOVERSION=${GOVERSION:-"1.14.6"}
 GODIR=${GODIR:-"/opt/golang/go"}
 
 # Constants
