@@ -3,18 +3,18 @@
 set -xe
 
 pip3 install --user --upgrade \
-	pip \
-	setuptools \
-	ipython[all] \
-	jupyter \
-	flake8 \
-	pylint \
-	tox \
-	debug \
-	sh \
-	plumbum \
-	pygments \
-	mkdocs \
+    pip \
+    setuptools \
+    ipython[all] \
+    jupyter \
+    flake8 \
+    pylint \
+    tox \
+    debug \
+    sh \
+    plumbum \
+    pygments \
+    mkdocs \
     pyjwt \
     requests \
     jinja2 \
