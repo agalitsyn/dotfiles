@@ -63,24 +63,14 @@ apt-get install --yes --no-install-recommends \
     curl \
     wget \
     tmux \
-    grc \
     apache2-utils \
     unzip \
     p7zip-full \
     p7zip-rar \
     pbzip2 \
     unrar \
-    lzop \
     gettext \
-    pwgen \
-    rng-tools \
-    net-tools \
-    bridge-utils \
-    iptables-persistent \
-    zsh \
-    gnupg-agent \
-    hibernate \
-    acpitool
+    xclip
 
 # Debug
 apt-get install --yes --no-install-recommends \
@@ -90,12 +80,8 @@ apt-get install --yes --no-install-recommends \
     strace \
     ltrace \
     tcpdump \
-    lsof
-
-# System info
-apt-get install --yes --no-install-recommends \
-    lshw \
-    inxi
+    lsof \
+    lshw
 
 # Networking
 apt-get install --yes --no-install-recommends \
@@ -106,11 +92,12 @@ apt-get install --yes --no-install-recommends \
 
 # IDE
 apt-get install --yes --no-install-recommends \
+    zsh \
     vim \
-    neovim \
     ctags \
     git \
     gitk \
+    tig \
     shellcheck \
     xsel \
     sloccount \
@@ -121,10 +108,6 @@ apt-get install --yes --no-install-recommends \
     bat \
     fd-find
 
-#update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-#update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-#update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-
 # Editors
 apt-get install --yes --no-install-recommends \
     sublime-text \
@@ -133,6 +116,10 @@ apt-get install --yes --no-install-recommends \
 # Diff
 apt-get install --yes --no-install-recommends \
     meld
+
+# Terminal emulator
+apt-get install --yes --no-install-recommends \
+    tilix
 
 # Keyboard tools
 apt-get install --yes --no-install-recommends \
@@ -144,44 +131,7 @@ apt-get install --yes --no-install-recommends \
 
 # Filebrowsers
 apt-get install --yes --no-install-recommends \
-    mc \
-    ranger atool caca-utils w3m w3m-img highlight python-chardet
-
-# i3 DE
-apt-get install --yes --no-install-recommends \
-    xorg \
-    slim \
-    lightdm-gtk-greeter-settings \
-    i3-wm \
-    i3status \
-    i3lock \
-    xautolock \
-    xscreensaver \
-    xscreensaver-gl-extra \
-    xscreensaver-data-extra \
-    dunst \
-    rofi \
-    suckless-tools \
-    lxappearance \
-    feh \
-    numlockx \
-    unclutter \
-    xdotool \
-    xkbset \
-    xbacklight \
-    xarchiver \
-    arandr \
-    xclip \
-    xsel \
-    gxkb \
-    pasystray \
-    blueman \
-    usbmount \
-    pcmanfm \
-    rxvt-unicode \
-    nitrogen \
-    mpd \
-    rxvt-unicode
+    mc
 
 # Night work
 apt-get install --yes --no-install-recommends \
@@ -192,11 +142,8 @@ apt-get install --yes --no-install-recommends \
     xcursor-themes \
     dmz-cursor-theme \
     arc-theme \
-    murrine-themes \
-    gtk2-engines-murrine:i386 \
-    gtk2-engines-pixbuf:i386 \
-	numix-gtk-theme \
-	numix-icon-theme-circle
+    numix-gtk-theme \
+    numix-icon-theme-circle
 
 # Fonts
 apt-get install --yes --no-install-recommends \
@@ -218,26 +165,12 @@ mkdir -p "$FONTS_HOME/adobe-fonts"
    "$FONTS_HOME/adobe-fonts/source-code-pro" && \
 fc-cache -f -v "$FONTS_HOME/adobe-fonts/source-code-pro")
 
-# Wine
-apt-get install --yes --no-install-recommends \
-    wine-stable \
-    wine32 \
-    winetricks
-
 # VM
 apt-get install --yes --no-install-recommends \
     virtualbox \
     virtualbox-dkms \
     virtualbox-qt \
     virtualbox-guest-additions-iso
-
-apt-get install --yes --no-install-recommends \
-    qemu-system-x86 \
-    qemu-utils \
-    libvirt-bin \
-    dnsmasq \
-    dnsutils \
-    ebtables
 
 # CM
 apt-get install --yes --no-install-recommends \
@@ -253,40 +186,19 @@ apt-get install --yes --no-install-recommends \
     imagemagick \
     pandoc
 
-# Image editors
-apt-get install -y --no-install-recommends \
-	gimp
-	#krita
-
 # Screenshoots
 apt-get install --yes --no-install-recommends \
-    shutter \
-    scrot
+    shutter
 
 # Video
 apt-get install --yes --no-install-recommends \
-    mesa-utils \
-    vainfo \
-    vlc \
-    browser-plugin-vlc \
-    libavcodec-extra \
-    ffmpeg \
-    x264 \
-    libvdpau-va-gl1 \
-    vdpauinfo \
-    i965-va-driver
+    vlc
 
 # Fun
 apt-get install --yes --no-install-recommends \
     cowsay \
     fortune \
     figlet
-
-# Oracle Java 8
-echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-apt-get install --yes \
-    oracle-java8-installer \
-    oracle-java8-set-default
 
 # Python
 apt-get install --yes --no-install-recommends \
@@ -306,7 +218,7 @@ apt-get install --yes --no-install-recommends \
 apt-get install --yes --no-install-recommends \
     libreoffice
 
-# Google chrome
+# Google Chrome
 apt-get install --yes --no-install-recommends \
     google-chrome-stable
 
@@ -314,7 +226,7 @@ apt-get install --yes --no-install-recommends \
 apt-get install --yes --no-install-recommends \
     pavucontrol
 
-# extfat
+# ExFAT support
 apt-get install --yes --no-install-recommends \
     exfat-utils \
     exfat-fuse
@@ -324,10 +236,7 @@ apt-get install --yes --no-install-recommends \
     telegram-desktop \
     skypeforlinux
 
-# Webcam
-apt-get install --yes --no-install-recommends \
-    guvcview
-
+# Cloud
 apt-get install --yes --no-install-recommends \
     yandex-disk \
     yd-tools
@@ -338,22 +247,22 @@ apt-get install --yes --no-install-recommends \
 
 # Torrent
 apt-get install --yes --no-install-recommends \
-	transmission
+    transmission
 
 # Docker
 if ! docker version > /dev/null 2>&1; then
     curl --silent --show-error --location "https://get.docker.com/" | sh
 
-    curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
-    curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+    curl -L https://raw.githubusercontent.com/docker/compose/1.26.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 fi
 usermod -aG docker "$USER"
 newgrp docker
 
 # Nodejs
 if ! npm version > /dev/null 2>&1; then
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     apt-get install -y nodejs
 
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
