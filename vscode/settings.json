@@ -8,7 +8,7 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "editor.formatOnSave": false,
-    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontFamily": "Input Mono",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "selection",
     "editor.rulers": [
@@ -109,4 +109,6 @@
     "workbench.editor.limit.value": 6,
     "window.zoomLevel": 0,
     "workbench.sideBar.location": "left",
+    "editor.codeActionsOnSave": null,
+    "editor.fontSize": 13,
 }

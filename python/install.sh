@@ -2,22 +2,12 @@
 
 set -xe
 
+# see: https://pip.pypa.io/en/stable/installing/#id4
 pip3 install --user --upgrade \
     pip \
     setuptools \
     ipython[all] \
-    jupyter \
-    flake8 \
-    pylint \
     tox \
-    debug \
-    sh \
-    plumbum \
-    pygments \
-    mkdocs \
-    pyjwt \
-    requests \
-    jinja2 \
-    fake-useragent \
-    beautifulsoup4
+    pipenv \
+    pyjwt
 
