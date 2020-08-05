@@ -9,5 +9,6 @@ pip3 install --user --upgrade \
     ipython[all] \
     tox \
     pipenv \
+    pgcli \
     pyjwt
 
