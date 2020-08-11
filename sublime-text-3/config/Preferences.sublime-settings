@@ -7,9 +7,9 @@
     "color_scheme": "Packages/Alabaster Color Scheme/Alabaster.sublime-color-scheme",
 
     // Font (Menlo, Source Code Pro, Input Mono, Hack)
-    "font_face": "Source Code Pro",
+    "font_face": "Input Mono",
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 12,
+    "font_size": 10,
 
     // Cursor style - slightly wider than default
     "wide_caret": true,
@@ -27,8 +27,8 @@
     "scroll_past_end": false,
     "highlight_modified_tabs": true,
     "find_selected_text": true,
-    "word_wrap": true,
-    "wrap_width": 80,
+    "word_wrap": false,
+    "wrap_width": 120,
     "rulers": [ 80, 120],
     "indent_to_bracket": false,
     "save_on_focus_lost": true,
