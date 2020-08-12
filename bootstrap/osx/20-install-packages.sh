@@ -181,6 +181,7 @@ brew install ntfs-3g
 # Tray improvements
 brew cask install itsycal
 
+# Controls sleep
 brew cask install caffeine
 
 # sync brightness
@@ -188,6 +189,12 @@ brew cask install brisync
 
 # os theme switcher
 brew cask install nightowl
+
+# Control GPUs
+brew cask install gswitch
+
+# Monitor temp
+brew cask install fanny
 
 # Screen recording
 brew cask install kap
