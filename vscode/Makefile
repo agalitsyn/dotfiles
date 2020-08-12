@@ -3,13 +3,13 @@ PACKAGES := ms-python.python \
 			batisteo.vscode-django \
 			mikestead.dotenv \
 			ms-azuretools.vscode-docker \
-			EditorConfig.EditorConfig \
+			editorconfig.editorconfig \
 			wayou.vscode-todo-highlight \
-			PKief.material-icon-theme \
+			pkief.material-icon-theme \
 			tonsky.theme-alabaster \
 			christian-kohler.path-intellisense \
-			ms-vscode.sublime-keybindings \
-			ms-vscode.go
+			golang.go \
+			vscoss.vscode-ansible
 
 .PHONY: install
 install:

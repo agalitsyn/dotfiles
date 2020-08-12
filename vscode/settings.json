@@ -1,26 +1,17 @@
 {
+    // Updates
     "update.mode": "start",
     "extensions.autoUpdate": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "editor.formatOnSave": false,
-    "editor.fontFamily": "Input Mono",
-    "editor.fontLigatures": true,
-    "editor.renderWhitespace": "selection",
-    "editor.rulers": [
-        120
-    ],
-    "editor.minimap.enabled": false,
-    "git.enableSmartCommit": true,
-    "problems.decorations.enabled": false,
+    // Term
     "terminal.integrated.shell.osx": "zsh",
     "terminal.integrated.shell.linux": "zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.external.linuxExec": "x-terminal-emulator",
+    // Files
     "files.associations": {
         "Vagrantfile": "ruby",
         "**/*.html": "html",
@@ -34,10 +25,22 @@
     "files.insertFinalNewline": true,
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
+    // Workbench
     "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false,
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 6,
+    "workbench.sideBar.location": "left",
+    "zenMode.hideTabs": false,
+    "window.zoomLevel": 0,
+    "problems.decorations.enabled": false,
+    // Editor
+    "git.enableSmartCommit": true,
     "window.title": "${activeEditorFull}${separator}${rootName}",
     "editor.find.seedSearchStringFromSelection": true,
     "editor.scrollBeyondLastLine": false,
@@ -47,6 +50,20 @@
     "editor.formatOnPaste": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
+    "editor.formatOnSave": false,
+    "editor.fontFamily": "Input Mono",
+    "editor.fontLigatures": true,
+    "editor.renderWhitespace": "selection",
+    "editor.rulers": [
+        120
+    ],
+    "editor.minimap.enabled": false,
+    "diffEditor.renderSideBySide": true,
+    "editor.codeActionsOnSave": {},
+    "editor.fontSize": 13,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    // Icons
     "material-icon-theme.activeIconPack": "angular",
     "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.folders.color": "#90a4ae",
@@ -55,6 +72,7 @@
     "material-icon-theme.files.associations": {},
     "material-icon-theme.folders.associations": {},
     "material-icon-theme.languages.associations": {},
+    // Go
     // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
     "go.useLanguageServer": true,
     "[go]": {
@@ -90,6 +108,14 @@
     "go.formatTool": "goimports",
     "go.gopath": "~",
     "go.gocodeAutoBuild": false,
+    // Python
+    "[python]": {
+        // "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
     "python.linting.lintOnSave": true,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "flake8",
@@ -97,18 +123,11 @@
     "python.linting.pylintPath": "pylint",
     "python.linting.prospectorEnabled": true,
     "python.linting.prospectorPath": "prospector",
-    "python.formatting.provider": "autopep8",
-    "python.formatting.autopep8Path": "autopep8",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
     "python.jediEnabled": false,
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.list.openMode": "doubleClick",
-    "diffEditor.renderSideBySide": true,
-    "zenMode.hideTabs": false,
-    "workbench.editor.limit.perEditorGroup": true,
-    "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 6,
-    "window.zoomLevel": 0,
-    "workbench.sideBar.location": "left",
-    "editor.codeActionsOnSave": null,
-    "editor.fontSize": 13,
 }
