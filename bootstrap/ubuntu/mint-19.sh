@@ -27,6 +27,9 @@ echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" > /etc/apt/sources
 wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | apt-key add -
 add-apt-repository -y ppa:slytomcat/ppa
 
+wget -O- https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/postgresql.list
+
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:webupd8team/java
 apt-add-repository -y ppa:ansible/ansible
@@ -106,7 +109,8 @@ apt-get install --yes --no-install-recommends \
     httpie \
     ripgrep \
     bat \
-    fd-find
+    fd-find \
+    postgresql-client-12
 
 # Editors
 apt-get install --yes --no-install-recommends \
