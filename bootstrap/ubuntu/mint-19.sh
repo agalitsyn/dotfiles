@@ -160,14 +160,19 @@ apt-get install --yes --no-install-recommends \
     fonts-hack
 
 FONTS_HOME=~/.local/share/fonts
-mkdir -p "$FONTS_HOME/adobe-fonts"
+mkdir -p "$FONTS_HOME"
 
 (git clone \
    --branch release \
    --depth 1 \
    'https://github.com/adobe-fonts/source-code-pro.git' \
-   "$FONTS_HOME/adobe-fonts/source-code-pro" && \
-fc-cache -f -v "$FONTS_HOME/adobe-fonts/source-code-pro")
+   "$FONTS_HOME/source-code-pro" && \
+fc-cache -f -v "$FONTS_HOME/source-code-pro")
+
+# Also install:
+# Input Mono https://input.fontbureau.com
+# Cascadia code https://github.com/microsoft/cascadia-code/releases
+# JetBrains Mono https://www.jetbrains.com/lp/mono/#how-to-install
 
 # VM
 apt-get install --yes --no-install-recommends \
