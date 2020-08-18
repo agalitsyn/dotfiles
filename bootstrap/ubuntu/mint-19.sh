@@ -197,7 +197,7 @@ apt-get install --yes --no-install-recommends \
 
 # Screenshoots
 apt-get install --yes --no-install-recommends \
-    shutter
+    flameshot
 
 # Video
 apt-get install --yes --no-install-recommends \
