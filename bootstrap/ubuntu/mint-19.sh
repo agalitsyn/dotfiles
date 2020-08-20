@@ -258,6 +258,11 @@ apt-get install --yes --no-install-recommends \
 apt-get install --yes --no-install-recommends \
     transmission
 
+# Configuration for some QT apps
+apt-get install --yes --no-install-recommends \
+    qt4-qtconfig \
+    qt5ct
+
 # Docker
 if ! docker version > /dev/null 2>&1; then
     curl --silent --show-error --location "https://get.docker.com/" | sh
