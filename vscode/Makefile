@@ -18,6 +18,7 @@ install:
 .PHONY: configure-linux
 configure-linux:
 	ln -sf $(CURDIR)/settings.json ~/.config/Code/User/settings.json
+	ln -sf $(CURDIR)/keybindings.json ~/.config/Code/User/keybindings.json
 	ln -sf $(CURDIR)/go.json ~/.config/Code/User/snippets/go.json
 
 .PHONY: configure-osx

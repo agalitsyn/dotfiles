@@ -57,7 +57,6 @@
     ],
     "editor.minimap.enabled": false,
     "diffEditor.renderSideBySide": true,
-    "editor.fontSize": 13,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     // Icons
@@ -120,6 +119,10 @@
     "python.linting.pylintPath": "pylint",
     "python.linting.prospectorEnabled": true,
     "python.linting.prospectorPath": "prospector",
+    "python.linting.prospectorArgs": [
+        "--ignore-paths",
+        ".venv"
+    ],
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "black",
     "python.formatting.blackArgs": [
@@ -128,4 +131,5 @@
     ],
     "python.jediEnabled": false,
     "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Input Mono', 'Source Code Pro'",
+    "editor.codeActionsOnSave": null,
 }
