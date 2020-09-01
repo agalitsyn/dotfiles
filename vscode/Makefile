@@ -1,3 +1,5 @@
+include ../vars.mk
+
 PACKAGES := batisteo.vscode-django \
 			christian-kohler.path-intellisense \
 			EditorConfig.EditorConfig \
@@ -23,6 +25,7 @@ configure-linux:
 	ln -sf $(CURDIR)/settings.json ~/.config/Code/User/settings.json
 	ln -sf $(CURDIR)/keybindings.json ~/.config/Code/User/keybindings.json
 	ln -sf $(CURDIR)/go.json ~/.config/Code/User/snippets/go.json
+	ln -sf $(CURDIR)/vscode.zsh $(ZSH_HOOKS_FOLDER)/vscode.zsh
 
 .PHONY: configure-osx
 configure-osx:

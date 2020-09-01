@@ -28,7 +28,7 @@
     // Workbench
     "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.list.openMode": "doubleClick",
