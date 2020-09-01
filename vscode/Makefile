@@ -1,15 +1,18 @@
-PACKAGES := ms-python.python \
-			wholroyd.jinja \
-			batisteo.vscode-django \
+PACKAGES := batisteo.vscode-django \
+			christian-kohler.path-intellisense \
+			EditorConfig.EditorConfig \
+			formulahendry.auto-close-tag \
+			golang.go \
+			HookyQR.beautify \
 			mikestead.dotenv \
 			ms-azuretools.vscode-docker \
-			editorconfig.editorconfig \
-			wayou.vscode-todo-highlight \
-			pkief.material-icon-theme \
+			ms-python.python \
+			ms-vscode.sublime-keybindings \
+			PKief.material-icon-theme \
 			tonsky.theme-alabaster \
-			christian-kohler.path-intellisense \
-			golang.go \
-			vscoss.vscode-ansible
+			vscoss.vscode-ansible \
+			wayou.vscode-todo-highlight \
+			wholroyd.jinja
 
 .PHONY: install
 install:
