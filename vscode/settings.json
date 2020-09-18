@@ -1,149 +1,148 @@
 {
-    // Updates
-    "update.mode": "start",
-    "extensions.autoUpdate": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "extensions.ignoreRecommendations": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
-    // Term
-    "terminal.integrated.shell.osx": "zsh",
-    "terminal.integrated.shell.linux": "zsh",
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.external.linuxExec": "x-terminal-emulator",
-    // Files
-    "files.associations": {
-        "Vagrantfile": "ruby",
-        "**/*.html": "html",
-        "**/templates/**/*.html": "django-html",
-        "**/templates/**/*": "django-txt",
-        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  // Updates
+  "update.mode": "start",
+  "extensions.autoUpdate": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  // Term
+  "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.shell.linux": "zsh",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.linuxExec": "x-terminal-emulator",
+  // Files
+  "files.associations": {
+    "Vagrantfile": "ruby",
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "files.insertFinalNewline": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  // Workbench
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.visible": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.list.openMode": "doubleClick",
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 6,
+  "workbench.sideBar.location": "left",
+  "workbench.iconTheme": "material-icon-theme",
+  "zenMode.hideTabs": false,
+  "window.zoomLevel": 0,
+  "problems.decorations.enabled": false,
+  // Editor
+  "editor.fontSize": 13,
+  "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Input Mono', 'Source Code Pro'",
+  "editor.fontLigatures": true,
+  "window.title": "${activeEditorFull}${separator}${rootName}",
+  "editor.codeActionsOnSave": {},
+  "editor.find.seedSearchStringFromSelection": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.tabSize": 4,
+  "editor.useTabStops": true,
+  "editor.wordWrap": "off",
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.renderWhitespace": "selection",
+  "editor.rulers": [120],
+  "editor.minimap.enabled": false,
+  "git.enableSmartCommit": true,
+  "diffEditor.renderSideBySide": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // Icons
+  "material-icon-theme.activeIconPack": "angular",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.folders.color": "#42a5f5",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.opacity": 1,
+  "material-icon-theme.files.associations": {},
+  "material-icon-theme.folders.associations": {},
+  "material-icon-theme.languages.associations": {},
+  // Go
+  // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
     },
-    "files.exclude": {
-        "**/__pycache__": true
-    },
-    "files.insertFinalNewline": true,
-    "files.autoSave": "onFocusChange",
-    "files.trimTrailingWhitespace": true,
-    // Workbench
-    "workbench.startupEditor": "none",
-    "workbench.editor.enablePreview": false,
-    "workbench.activityBar.visible": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.list.openMode": "doubleClick",
-    "workbench.editor.limit.perEditorGroup": true,
-    "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 6,
-    "workbench.sideBar.location": "left",
-    "zenMode.hideTabs": false,
-    "window.zoomLevel": 0,
-    "problems.decorations.enabled": false,
-    // Editor
-    "git.enableSmartCommit": true,
-    "window.title": "${activeEditorFull}${separator}${rootName}",
-    "editor.fontSize": 13,
-    "editor.codeActionsOnSave": {},
-    "editor.find.seedSearchStringFromSelection": true,
-    "editor.scrollBeyondLastLine": false,
-    "editor.tabSize": 4,
-    "editor.useTabStops": true,
-    "editor.wordWrap": "off",
-    "editor.formatOnPaste": true,
-    "editor.snippetSuggestions": "top",
-    "editor.formatOnSave": false,
-    "editor.fontLigatures": true,
-    "editor.renderWhitespace": "selection",
-    "editor.rulers": [
-        120
-    ],
-    "editor.minimap.enabled": false,
-    "diffEditor.renderSideBySide": true,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    // Icons
-    "material-icon-theme.activeIconPack": "angular",
-    "material-icon-theme.folders.theme": "specific",
-    "material-icon-theme.folders.color": "#42a5f5",
-    "material-icon-theme.hidesExplorerArrows": false,
-    "material-icon-theme.opacity": 1,
-    "material-icon-theme.files.associations": {},
-    "material-icon-theme.folders.associations": {},
-    "material-icon-theme.languages.associations": {},
-    // Go
-    // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
-    "go.useLanguageServer": true,
-    "[go]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
-        // Optional: Disable snippets, as they conflict with completion ranking.
-        "editor.snippetSuggestions": "bottom",
-    },
-    "[go.mod]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
-    },
-    "go.buildOnSave": "package",
-    "go.lintOnSave": "package",
-    "go.vetOnSave": "package",
-    "go.buildTags": "",
-    "go.buildFlags": [],
-    "go.lintTool": "golangci-lint",
-    "go.lintFlags": [],
-    "go.vetFlags": [],
-    "go.addTags": {
-        "tags": "json",
-        "options": "json=omitempty",
-        "promptForTags": true,
-        "transform": "snakecase"
-    },
-    "go.coverOnSave": false,
-    "go.useCodeSnippetsOnFunctionSuggest": false,
-    "go.formatTool": "goimports",
-    "go.gopath": "~",
-    "go.gocodeAutoBuild": false,
-    // Python
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": false,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        }
-    },
-    "python.linting.lintOnSave": true,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "flake8",
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintPath": "pylint",
-    "python.linting.prospectorEnabled": true,
-    "python.linting.prospectorPath": "prospector",
-    "python.linting.prospectorArgs": [
-        "--ignore-paths",
-        ".venv"
-    ],
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "black",
-    "python.formatting.blackArgs": [
-        "--line-length",
-        "120"
-    ],
-    "python.jediEnabled": false,
-    "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Input Mono', 'Source Code Pro'",
-    "beautify.language": {
-        "html": [
-            "htm",
-            "html",
-            "django-html",
-        ]
-    },
-    "auto-close-tag.enableAutoCloseTag": true,
-    "auto-close-tag.activationOnLanguage": [
-        "htm",
-        "html",
-        "django-html",
-    ],
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    "editor.snippetSuggestions": "bottom"
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.buildOnSave": "package",
+  "go.lintOnSave": "package",
+  "go.vetOnSave": "package",
+  "go.buildTags": "",
+  "go.buildFlags": [],
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [],
+  "go.vetFlags": [],
+  "go.addTags": {
+    "tags": "json",
+    "options": "json=omitempty",
+    "promptForTags": true,
+    "transform": "snakecase"
+  },
+  "go.coverOnSave": false,
+  "go.useCodeSnippetsOnFunctionSuggest": false,
+  "go.formatTool": "goimports",
+  "go.gopath": "~",
+  "go.gocodeAutoBuild": false,
+  // Python
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "python.languageServer": "Microsoft",
+  "python.linting.lintOnSave": true,
+  "python.linting.prospectorEnabled": true,
+  "python.linting.prospectorPath": "prospector",
+  "python.linting.prospectorArgs": ["--max-line-length", "120", "--ignore-paths", ".venv"],
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "black",
+  "python.formatting.blackArgs": ["--line-length", "120"],
+  // Frontend
+  "prettier.jsxBracketSameLine": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.trailingComma": "all",
+  "prettier.disableLanguages": ["html", "django-html"],
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "beautify.ignore": ["*.js", "*.css", "*.json"],
+  "beautify.language": {
+    "html": ["html", "django-html"]
+  },
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "auto-close-tag.enableAutoCloseTag": true,
+  "auto-close-tag.activationOnLanguage": ["html", "django-html"],
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true
 }

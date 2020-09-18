@@ -1,24 +1,10 @@
 include ../vars.mk
 
-PACKAGES := batisteo.vscode-django \
-			christian-kohler.path-intellisense \
-			EditorConfig.EditorConfig \
-			formulahendry.auto-close-tag \
-			golang.go \
-			HookyQR.beautify \
-			mikestead.dotenv \
-			ms-azuretools.vscode-docker \
-			ms-python.python \
-			ms-vscode.sublime-keybindings \
-			PKief.material-icon-theme \
-			tonsky.theme-alabaster \
-			vscoss.vscode-ansible \
-			wayou.vscode-todo-highlight \
-			wholroyd.jinja
-
 .PHONY: install
 install:
-	$(foreach pkg,$(PACKAGES), code --install-extension $(pkg);)
+	for i in $(shell cat extensions); do\
+		code --install-extension $$i; \
+	done
 
 .PHONY: configure-linux
 configure-linux:
