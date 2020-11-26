@@ -148,5 +148,9 @@
   "emmet.includeLanguages": {
     "django-html": "html"
   },
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "python.showStartPage": false,
+  "[django-html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  }
 }

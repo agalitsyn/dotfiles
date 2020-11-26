@@ -69,15 +69,17 @@ brew install httpie \
     glances \
     fzf
 
-brew cask install ngrok
+#brew cask install ngrok
 
 # Add fonts
 brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install \
     font-source-code-pro \
     font-fira-code \
     font-hack \
-    font-jetbrains-mono
+    font-jetbrains-mono \
+    font-cascadia
 
 # Necessary for CLI on images
 brew install imagemagick
@@ -139,6 +141,9 @@ brew cask install spectacle
 # External monitor resolution tool
 brew cask install avibrazil-rdm
 
+# sync ext monitor  brightness
+#brew cask install brisync
+
 # Clipboard
 brew cask install flycut
 
@@ -168,6 +173,7 @@ brew cask install teamviewer
 # IM
 brew cask install slack
 brew cask install skype
+brew cask install zoomus
 
 # NTFS
 brew cask install osxfuse
@@ -182,26 +188,24 @@ brew install ntfs-3g
 brew cask install itsycal
 
 # Controls sleep
-brew cask install caffeine
-
-# sync brightness
-brew cask install brisync
+#brew cask install caffeine
 
 # os theme switcher
-brew cask install nightowl
+#brew cask install nightowl
 
 # Control GPUs
-brew cask install gswitch
+#brew cask install gswitch
 
 # Monitor temp
-brew cask install fanny
+brew cask install smcfancontrol
+# alt: fanny
 
 # Screen recording
-brew cask install kap
-brew install asciinema
+#brew cask install kap
+#brew install asciinema
 
 # IDE
-brew cask install jetbrains-toolbox
+#brew cask install jetbrains-toolbox
 
 # Screenshoting
 #brew cask install skitch

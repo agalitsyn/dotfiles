@@ -1,0 +1,6 @@
+{
+  "debug": {
+    "prefix": "fd",
+    "body": "print(f\"DEBUG: {type(${1:var})} ${1:var}: {${1:var}}\")"
+  }
+}
