@@ -3,7 +3,7 @@
 set -ex
 
 # homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Make sure we’re using the latest Homebrew
 brew update
@@ -14,42 +14,33 @@ brew upgrade
 # Additional shells
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 brew install bash \
-    bash-completion
+    bash-completion \
+    zsh \
+    zsh-completions
 
 # Make it GNU/Linux :)
 brew install coreutils \
     moreutils \
-    findutils --with-default-names \
-    gnu-sed --with-default-names \
+    findutils \
+    gnu-sed \
     gnutls \
-    gnu-tar --with-default-names \
+    gnu-tar \
     gawk \
     watch \
     gettext \
-    grep --with-default-names \
+    grep \
     git \
     tmux \
     curl \
     telnet \
-    wget --enable-iri \
+    wget \
     tree \
     mc \
-    htop-osx \
     netcat \
-    ncdu \
-    pv \
-    rename
-
-# Fix htop permissions
-find /usr/local/Cellar/ -name htop -exec chmod 6555 {} \; -exec sudo chown root {} \;
-
-# Fix mtr perms
-mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//')
-sudo chmod 4755 "$mtrlocation/sbin/mtr"
-sudo chown root "$mtrlocation/sbin/mtr"
+    pv
 
 # Editors
-brew install vim --with-override-system-vi \
+brew install vim \
     ctags \
     shellcheck
 
@@ -61,29 +52,20 @@ brew install httpie \
     exa \
     bat \
     ripgrep \
-    the_silver_searcher \
-    mtr \
     z \
-    micro \
-    pgcli \
-    glances \
-    fzf
-
-#brew cask install ngrok
+    pgcli
 
 # Add fonts
-brew tap caskroom/fonts
 brew tap homebrew/cask-fonts
 brew cask install \
     font-source-code-pro \
     font-fira-code \
     font-hack \
     font-jetbrains-mono \
-    font-cascadia
+    font-cascadia-code
 
 # Necessary for CLI on images
 brew install imagemagick
-brew install ffmpeg --with-libvpx
 
 # You might want there editors:
 brew cask install \
@@ -91,17 +73,16 @@ brew cask install \
     visual-studio-code
 
 # Git GUI
-#brew cask install sourcetree
+brew cask install sublime-merge
 
 # Languages
-brew install ruby
+brew install \
     python \
     pyenv \
     pipenv \
     node \
-    yarn --without-node \
-    go \
-    go-delve/delve/delve
+    yarn \
+    go
 
 # Add backing services primarily for python builds
 brew install postgresql \
@@ -113,23 +94,24 @@ brew install postgresql \
 brew install graphviz
 
 # Virt
-brew cask install virtualbox \
-    virtualbox-extension-pack \
-    vagrant \
-    docker
+#brew cask install virtualbox \
+#    virtualbox-extension-pack \
+#    vagrant
+
+# Containers
+brew cask install docker
 
 # CMS
 brew install ansible
 
 # Cloud
-brew install terraform \
-    doctl \
-    awscli
+#brew install terraform \
+#    doctl \
+#    awscli
 
 # Browsers
 brew cask install firefox \
-    google-chrome \
-    torbrowser
+    google-chrome
 
 # Terminal
 brew cask install iterm2
@@ -161,19 +143,21 @@ brew cask install vlc
 brew install youtube-dl
 
 # Phones
-brew cask install android-file-transfer
-brew cask install ifunbox
+#brew cask install android-file-transfer
+#brew cask install ifunbox
 
 # djview
 brew cask install djview
 
 # Help unlucky windows guys
-brew cask install teamviewer
+#brew cask install teamviewer
 
 # IM
-brew cask install slack
-brew cask install skype
-brew cask install zoomus
+brew cask install \
+    slack
+    skype \
+    zoom \
+    telegram
 
 # NTFS
 brew cask install osxfuse
@@ -197,7 +181,7 @@ brew cask install itsycal
 #brew cask install gswitch
 
 # Monitor temp
-brew cask install smcfancontrol
+#brew cask install smcfancontrol
 # alt: fanny
 
 # Screen recording
