@@ -1,5 +1,5 @@
-.PHONY: vim
-vim:
+.PHONY: configure
+configure:
 	ln -sf $(CURDIR)/vimrc ~/.vimrc
 
 .PHONY: nvim

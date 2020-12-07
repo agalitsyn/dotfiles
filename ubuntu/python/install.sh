@@ -11,4 +11,3 @@ pip3 install --user --upgrade \
     pipenv \
     pgcli \
     pyjwt
-

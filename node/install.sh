@@ -17,4 +17,3 @@ npm install --global \
 	git-recent \
 	diff-so-fancy \
 	trash-cli
-

@@ -11,4 +11,3 @@ Open BIOS using F1:
 
 * Insert live USB
 * Open boot menu F12, load from it
-

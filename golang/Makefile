@@ -1,9 +1,15 @@
+include ../vars.mk
+
+.PHONY: configure
+configure:
+	ln -sf $(CURDIR)/goenv.sh $(BASH_HOOKS_FOLDER)/goenv.sh
+	ln -sf $(CURDIR)/goenv.sh $(ZSH_HOOKS_FOLDER)/goenv.zsh
+
 .PHONY: install
 install:
 	$$(bash install.sh)
 
 PACKAGES := golang.org/x/tools/cmd/goimports \
-			github.com/mdempsky/gocode \
 			github.com/stamblerre/gocode \
 			github.com/uudashr/gopkgs/cmd/gopkgs \
 			github.com/ramya-rao-a/go-outline \

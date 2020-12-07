@@ -152,12 +152,13 @@ brew cask install djview
 # Help unlucky windows guys
 #brew cask install teamviewer
 
-# IM
-brew cask install \
-    slack
-    skype \
-    zoom \
-    telegram
+# IM (choose what your need)
+brew cask install slack 
+brew cask install skype
+brew cask install zoom
+brew cask install telegram
+brew cask install discord
+brew cask install whatsapp
 
 # NTFS
 brew cask install osxfuse

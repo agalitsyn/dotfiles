@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#
+# Use for manage multiple Go versions
 
 set -xe
 

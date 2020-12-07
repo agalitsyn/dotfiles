@@ -49,6 +49,9 @@ More see in http://osxdaily.com/2015/10/05/disable-rootless-system-integrity-pro
 ## Copy file to System folder
 
 ```sh
+# mount root-fs
+sudo mount -uw /
+# copy file
 sudo cp DisplayProductID-a0c3 /System/Library/Displays/Contents/Resources/Overrides/DisplayVendorID-10ac/DisplayProductID-a0c3
 ```
 

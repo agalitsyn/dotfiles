@@ -1,4 +1,0 @@
-[submodule "fish/functions/pure"]
-	path = fish/functions/pure
-	url = https://github.com/rafaelrinaldi/pure.git
-	branch = master
