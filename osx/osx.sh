@@ -26,4 +26,3 @@ alias memcached-dump="memdump --servers=127.0.0.1:11211"
 alias mount-root-fs="sudo mount -uw /"
 
 export PATH=~/.local/bin:$PATH
-
