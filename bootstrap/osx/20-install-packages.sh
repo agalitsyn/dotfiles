@@ -153,7 +153,7 @@ brew cask install djview
 #brew cask install teamviewer
 
 # IM (choose what your need)
-brew cask install slack 
+brew cask install slack
 brew cask install skype
 brew cask install zoom
 brew cask install telegram
@@ -182,8 +182,7 @@ brew cask install itsycal
 #brew cask install gswitch
 
 # Monitor temp
-#brew cask install smcfancontrol
-# alt: fanny
+brew cask install fanny
 
 # Screen recording
 #brew cask install kap

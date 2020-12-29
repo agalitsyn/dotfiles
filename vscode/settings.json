@@ -39,6 +39,9 @@
   "zenMode.hideTabs": false,
   "window.zoomLevel": 0,
   "problems.decorations.enabled": false,
+  "workbench.colorTheme": "Default Light+",
+  "autoDarkMode.darkTheme": "Default Dark+",
+  "autoDarkMode.lightTheme": "Default Light+",
   // Editor
   "editor.fontSize": 13,
   "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Input Mono', 'Source Code Pro'",
