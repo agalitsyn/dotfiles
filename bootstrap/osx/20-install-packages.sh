@@ -160,6 +160,9 @@ brew cask install telegram
 brew cask install discord
 brew cask install whatsapp
 
+brew cask install cloudflare-warp
+brew cask install protonvpn
+
 # NTFS
 brew cask install osxfuse
 brew install ntfs-3g

@@ -155,5 +155,8 @@
   "python.showStartPage": false,
   "[django-html]": {
     "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
