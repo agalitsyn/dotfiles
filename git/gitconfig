@@ -1,18 +1,19 @@
 [user]
     name = Anton Galitsyn
     email = agalitsyn@users.noreply.github.com
+
 [color]
     diff = auto
     status = auto
     interactive = auto
     branch = auto
+
 [alias]
     f = fetch --all --prune
     pu = pull
     co = checkout
     st = status
     br = !git --no-pager branch
-    brs = for-each-ref --sort=committerdate --format='%(refname:short) * %(authorname) * %(committerdate:relative)' refs/remotes/ | column -t -s '*'
     ci = commit
     dh = diff HEAD
     dc = diff --cached
@@ -24,7 +25,6 @@
     unmerged = log --no-merges master..
     last = log -1 HEAD
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
-    dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
     smb = submodule update --init --recursive
     sha = rev-parse HEAD
     it = !git init && git commit -m “root” --allow-empty
@@ -57,16 +57,17 @@
 
     # Remove branches that have already been merged with master
     # a.k.a. ‘delete merged’
-    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
+    dm = "!git branch --merged | grep -v '\\*' | grep -v 'master' | xargs -n 1 git branch -d; git remote -v update -p"
 
-    # Remove all branches
-    dbr = "!git branch | grep -v '\\*' | xargs -n 1 git branch -D; git remote -v update -p"
 [log]
     date = local
+
 [core]
     filemode = false
     excludesfile = /Users/anton/.gitignore
     autocrlf = input
+    pager = delta
+
 [push]
     default = simple
 
@@ -82,5 +83,14 @@ path = ~/.gitconfig.local
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
+
 [pull]
 	rebase = true
+
+[fetch]
+	prune = true
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+

@@ -39,7 +39,7 @@
   "zenMode.hideTabs": false,
   "window.zoomLevel": 0,
   "problems.decorations.enabled": false,
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Default Dark+",
   "autoDarkMode.darkTheme": "Default Dark+",
   "autoDarkMode.lightTheme": "Default Light+",
   // Editor

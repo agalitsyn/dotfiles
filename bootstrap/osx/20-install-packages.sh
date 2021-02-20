@@ -39,21 +39,21 @@ brew install coreutils \
     netcat \
     pv
 
-# Editors
+# cli editor
 brew install vim \
     ctags \
     shellcheck
 
 # New cli tools
 brew install httpie \
-    tig \
     jq \
     yq \
     exa \
     bat \
     ripgrep \
     z \
-    pgcli
+    pgcli \
+    git-delta
 
 # Add fonts
 brew tap homebrew/cask-fonts
