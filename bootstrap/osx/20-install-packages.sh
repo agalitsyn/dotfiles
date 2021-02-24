@@ -85,7 +85,8 @@ brew install \
     go
 
 # Add backing services primarily for python builds
-brew install postgresql \
+brew install \
+    postgresql \
     libmemcached \
     memcached \
     redis
@@ -123,11 +124,11 @@ brew cask install spectacle
 # External monitor resolution tool
 brew cask install avibrazil-rdm
 
-# sync ext monitor  brightness
+# sync ext monitor brightness
 #brew cask install brisync
 
 # Clipboard
-brew cask install flycut
+brew cask install maccy
 
 # Storage
 brew cask install google-backup-and-sync
@@ -143,7 +144,7 @@ brew cask install vlc
 brew install youtube-dl
 
 # Phones
-#brew cask install android-file-transfer
+brew cask install android-file-transfer
 #brew cask install ifunbox
 
 # djview
@@ -164,8 +165,9 @@ brew cask install cloudflare-warp
 brew cask install protonvpn
 
 # NTFS
-brew cask install osxfuse
-brew install ntfs-3g
+# This driver is slow, writig speed 20x slower than on appfs. Better to use paragon ntfs.
+#brew cask install osxfuse
+#brew install ntfs-3g
 #sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 
