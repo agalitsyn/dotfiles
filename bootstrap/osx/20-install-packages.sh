@@ -161,6 +161,7 @@ brew cask install telegram
 brew cask install discord
 brew cask install whatsapp
 
+# Avoid rkn
 brew cask install cloudflare-warp
 brew cask install protonvpn
 
@@ -200,13 +201,16 @@ brew cask install fanny
 #brew cask install skitch
 
 # Mindmap
-#brew cask install xmind
+brew cask install xmind
 
 # Graphs
 #brew cask install yed
 
 # Emulator
 #brew cask install dosbox
+
+# Manage ebooks
+brew cask install calibre
 
 # Keyboard
 brew cask install karabiner-elements
