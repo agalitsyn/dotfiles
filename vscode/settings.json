@@ -5,7 +5,6 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "extensions.ignoreRecommendations": true,
-  "extensions.showRecommendationsOnlyOnDemand": true,
   // Term
   "terminal.integrated.shell.osx": "zsh",
   "terminal.integrated.shell.linux": "zsh",
@@ -39,7 +38,7 @@
   "zenMode.hideTabs": false,
   "window.zoomLevel": 0,
   "problems.decorations.enabled": false,
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Default Light+",
   "autoDarkMode.darkTheme": "Default Dark+",
   "autoDarkMode.lightTheme": "Default Light+",
   // Editor
@@ -61,7 +60,7 @@
   "editor.find.cursorMoveOnType": true,
   "editor.rulers": [120],
   "editor.minimap.enabled": false,
-  "editor.renameOnType": true,
+  "editor.linkedEditing": true,
 
   "git.enableSmartCommit": true,
   "diffEditor.renderSideBySide": true,
