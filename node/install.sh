@@ -8,6 +8,9 @@ npm install --global \
 	typescript \
 	node-static \
 	json-server \
+    yo \
+    gulp-cli \
+    generator-webapp \
 	git-open \
 	trash-cli
 
