@@ -38,7 +38,6 @@
   "zenMode.hideTabs": false,
   "window.zoomLevel": 0,
   "problems.decorations.enabled": false,
-  "workbench.colorTheme": "Default Light+",
   "autoDarkMode.darkTheme": "Default Dark+",
   "autoDarkMode.lightTheme": "Default Light+",
   // Editor
@@ -157,5 +156,6 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorTheme": "Default Light+"
 }
