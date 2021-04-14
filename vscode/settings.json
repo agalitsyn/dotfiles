@@ -117,7 +117,7 @@
       "source.organizeImports": true
     }
   },
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Pylance",
   "python.linting.lintOnSave": true,
   "python.linting.prospectorEnabled": true,
   "python.linting.prospectorPath": "prospector",

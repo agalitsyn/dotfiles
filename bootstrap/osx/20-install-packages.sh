@@ -57,23 +57,24 @@ brew install httpie \
 
 # Add fonts
 brew tap homebrew/cask-fonts
-brew cask install \
+brew install --cask \
     font-source-code-pro \
     font-fira-code \
     font-hack \
     font-jetbrains-mono \
-    font-cascadia-code
+    font-cascadia-code \
+    font-input
 
 # Necessary for CLI on images
 brew install imagemagick
 
 # You might want there editors:
-brew cask install \
+brew install --cask \
     sublime-text \
     visual-studio-code
 
 # Git GUI
-brew cask install sublime-merge
+brew install --cask sublime-merge
 
 # Languages
 brew install \
@@ -95,12 +96,12 @@ brew install \
 brew install graphviz
 
 # Virt
-#brew cask install virtualbox \
+#brew install --cask virtualbox \
 #    virtualbox-extension-pack \
 #    vagrant
 
 # Containers
-brew cask install docker
+brew install --cask docker
 
 # CMS
 brew install ansible
@@ -111,112 +112,112 @@ brew install ansible
 #    awscli
 
 # Browsers
-brew cask install firefox \
+brew install --cask firefox \
     google-chrome
 
 # Terminal
-brew cask install iterm2
+brew install --cask iterm2
 
 # Window enhancements
-brew cask install spectacle
-#brew cask install rectangle
+brew install --cask spectacle
+#brew install --cask rectangle
 
 # External monitor resolution tool
-brew cask install avibrazil-rdm
+brew install --cask avibrazil-rdm
 
 # sync ext monitor brightness
-#brew cask install brisync
+#brew install --cask brisync
 
 # Clipboard
-brew cask install maccy
+brew install --cask maccy
 
 # Storage
-brew cask install google-backup-and-sync
-brew cask install yandex-disk
-# brew cask install dropbox
-# brew cask install google-photos-backup-and-sync
+brew install --cask google-backup-and-sync
+brew install --cask yandex-disk
+# brew install --cask dropbox
+# brew install --cask google-photos-backup-and-sync
 
 # Torrents
-brew cask install transmission
+brew install --cask transmission
 
 # Media
-brew cask install vlc
+brew install --cask vlc
 brew install youtube-dl
 
 # Phones
-brew cask install android-file-transfer
-#brew cask install ifunbox
+brew install --cask android-file-transfer
+#brew install --cask ifunbox
 
 # djview
-brew cask install djview
+brew install --cask djview
 
 # Help unlucky windows guys
-#brew cask install teamviewer
+#brew install --cask teamviewer
 
 # IM (choose what your need)
-brew cask install slack
-brew cask install skype
-brew cask install zoom
-brew cask install telegram
-brew cask install discord
-brew cask install whatsapp
+brew install --cask slack
+brew install --cask skype
+brew install --cask zoom
+brew install --cask telegram
+brew install --cask discord
+brew install --cask whatsapp
 
 # Avoid rkn
-brew cask install cloudflare-warp
-brew cask install protonvpn
+brew install --cask cloudflare-warp
+brew install --cask protonvpn
 
 # NTFS
 # This driver is slow, writig speed 20x slower than on appfs. Better to use paragon ntfs.
-#brew cask install osxfuse
+#brew install --cask osxfuse
 #brew install ntfs-3g
 #sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 
 # Cleaner
-# brew cask install cleanmymac
+# brew install --cask cleanmymac
 
 # Tray improvements
-brew cask install itsycal
+brew install --cask itsycal
 
 # Controls sleep
-#brew cask install caffeine
+#brew install --cask caffeine
 
 # os theme switcher
-#brew cask install nightowl
+#brew install --cask nightowl
 
 # Control GPUs
-#brew cask install gswitch
+#brew install --cask gswitch
 
 # Monitor temp
-brew cask install fanny
+brew install --cask fanny
 
 # Screen recording
-#brew cask install kap
+#brew install --cask kap
 #brew install asciinema
 
 # IDE
-#brew cask install jetbrains-toolbox
+#brew install --cask jetbrains-toolbox
 
 # Screenshoting
-#brew cask install skitch
+#brew install --cask skitch
 
 # Mindmap
-brew cask install xmind
+brew install --cask xmind
 
 # Graphs
-#brew cask install yed
+#brew install --cask yed
 
 # Emulator
-#brew cask install dosbox
+#brew install --cask dosbox
 
 # Manage ebooks
-brew cask install calibre
+brew install --cask calibre
 
 # Keyboard
-brew cask install karabiner-elements
+brew install --cask karabiner-elements
 
 # Images
-# brew cask install \
+# brew install --cask \
 #   sketchbook \
 #   adobe-photoshop-cc \
 #   adobe-photoshop-lightroom
