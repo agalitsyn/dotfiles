@@ -128,6 +128,12 @@ brew install --cask avibrazil-rdm
 # sync ext monitor brightness
 #brew install --cask brisync
 
+# Select default apps
+brew install duti
+
+# Anybar
+brew install --cask anybar
+
 # Clipboard
 brew install --cask maccy
 

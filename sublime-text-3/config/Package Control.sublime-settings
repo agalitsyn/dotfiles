@@ -8,14 +8,12 @@
         "GitGutter",
 
         // Files and foldes
-        "AdvancedNewFile",
         "SideBarEnhancements",
 
         // Editor powerups
         "EditorConfig",
         "BracketHighlighter",
         "AutoFileName",
-        "A File Icon",
         "Zen Tabs",
 
         // Additional syntax

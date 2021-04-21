@@ -2,8 +2,13 @@
 alias l='exa --all --long --group-directories-first'
 alias f='fd'
 alias c='bat'
+
+# Grep alternative
 alias gr='rg'
 
+function rgp() {
+  rg -p "$@" | less -XFR
+}
 
 color_flag="--color"
 
@@ -41,6 +46,16 @@ alias -- -="cd -"
 # Handy make directory
 alias mkdir='mkdir -pv'
 
+# Create a new directory and enter it
+function md() {
+    mkdir -pv "$@" && cd "$@"
+}
+
+# Goto temp dir
+function cdt() {
+    [ -z "$TMPDIR" ] && cd /tmp || cd "$TMPDIR"
+}
+
 # Confirm before overwriting
 # -----------------------------------------------------------------------------
 # I know it is bad practice to override the default commands, but this is for
@@ -52,16 +67,20 @@ alias cp='cp -i';
 alias mv='mv -i';
 alias rm='rm -i';
 
-# Programs
+# File size
+alias fs="stat -f \"%z bytes\""
+
+# File path
+alias fp="readlink -f $1"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# Empty the Trash on all mounted volumes and the main HDD
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -rfv ~/.local/share/Trash/files/*"
+
+# Pager
 alias less='less -Ri'
-
-alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
-
-# Always use chrome as mp3 and video player, pdf viewer, etc
-alias gc="google-chrome --new-window"
-
-# Date & time shortcuts
-alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
 
 # Force tmux 256 color
 alias tmux="tmux -2"
@@ -105,23 +124,11 @@ type hd > /dev/null || alias hd="hexdump -C"
 # OS X has no `md5sum`, so use `md5` as a fallback
 type md5sum > /dev/null || alias md5sum="md5"
 
-# Trim new lines and copy to clipboard
-alias trimcopy="tr -d '\n' | pbcopy"
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
-
-# File size
-alias fs="stat -f \"%z bytes\""
-
-# File path
-alias fp="readlink -f $1"
-
 # ROT13-encode/decode text.
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
-# Empty the Trash on all mounted volumes and the main HDD
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -rfv ~/.local/share/Trash/files/*"
+# Trim new lines and copy to clipboard
+alias trimcopy="tr -d '\n' | pbcopy"
 
 # Clipboard access. I created these aliases to have the same command on
 # Cygwin, Linux and OS X.
@@ -136,4 +143,28 @@ fi;
 # Use GNU time
 alias gtime='/usr/bin/time'
 
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
+}
+
+# Enhanced rsync
+alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
+
+# Date & time shortcuts
+alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
 alias timestamp='date +%s'
+
+function timestamp-to-datetime() {
+    local ts="$1"
+    python3 -c "from datetime import datetime; ts = int('${ts}'); print(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f'));"
+}
+
+# web dev
+function jwt-decode() {
+    local token="$1"
+    python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq
+}

@@ -7,9 +7,9 @@
     "color_scheme": "Packages/Alabaster Color Scheme/Alabaster.sublime-color-scheme",
 
     // Font (Menlo, Source Code Pro, Input Mono, Hack)
-    "font_face": "Input Mono",
+    "font_face": "Source Code Pro",
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 10,
+    "font_size": 12,
 
     // Cursor style - slightly wider than default
     "wide_caret": true,

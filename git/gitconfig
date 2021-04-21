@@ -66,7 +66,7 @@
     filemode = false
     excludesfile = /Users/anton/.gitignore
     autocrlf = input
-    #pager = delta --light
+    pager = delta
 
 [push]
     default = simple
@@ -85,10 +85,10 @@ path = ~/.gitconfig.local
     process = git-lfs filter-process
 
 [pull]
-	rebase = true
+    rebase = true
 
 [fetch]
-	prune = true
+    prune = true
 
 [delta]
     features = side-by-side line-numbers decorations
