@@ -60,7 +60,6 @@
   "editor.rulers": [120],
   "editor.minimap.enabled": false,
   "editor.linkedEditing": true,
-
   "git.enableSmartCommit": true,
   "diffEditor.renderSideBySide": true,
   "explorer.confirmDragAndDrop": false,
@@ -125,6 +124,7 @@
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "black",
   "python.formatting.blackArgs": ["--line-length", "120"],
+  "python.showStartPage": false,
   // Frontend
   "prettier.jsxBracketSameLine": true,
   "prettier.jsxSingleQuote": true,
@@ -150,12 +150,18 @@
     "django-html": "html"
   },
   "emmet.triggerExpansionOnTab": true,
-  "python.showStartPage": false,
+  "emmet.showSuggestionsAsSnippets": true,
   "[django-html]": {
     "editor.defaultFormatter": "HookyQR.beautify"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
   "workbench.colorTheme": "Default Light+"
 }

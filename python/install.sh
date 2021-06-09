@@ -6,4 +6,6 @@ set -xe
 pip3 install --user --upgrade \
     ipython \
     tox \
-    pyjwt
+    pyjwt \
+    cookiecutter
+

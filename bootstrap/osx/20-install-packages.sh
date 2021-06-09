@@ -53,7 +53,8 @@ brew install httpie \
     ripgrep \
     z \
     pgcli \
-    git-delta
+    git-delta \
+    xh
 
 # Add fonts
 brew tap homebrew/cask-fonts
