@@ -64,7 +64,7 @@
 
 [core]
     filemode = false
-    excludesfile = /Users/anton/.gitignore
+    excludesfile = ~/.gitignore
     autocrlf = input
     pager = delta
 
