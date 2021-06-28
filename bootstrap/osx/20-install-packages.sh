@@ -82,6 +82,7 @@ brew install \
     python \
     pyenv \
     pipenv \
+    poetry \
     node \
     yarn \
     go
@@ -104,13 +105,11 @@ brew install graphviz
 # Containers
 brew install --cask docker
 
-# CMS
-brew install ansible
-
-# Cloud
-#brew install terraform \
-#    doctl \
-#    awscli
+# Ops
+brew install ansible \
+    terraform \
+    doctl \
+    awscli
 
 # Browsers
 brew install --cask firefox \
@@ -129,7 +128,7 @@ brew install --cask avibrazil-rdm
 # sync ext monitor brightness
 #brew install --cask brisync
 
-# Select default apps
+# Select default apps by cli tool
 brew install duti
 
 # Anybar
@@ -141,8 +140,6 @@ brew install --cask maccy
 # Storage
 brew install --cask google-backup-and-sync
 brew install --cask yandex-disk
-# brew install --cask dropbox
-# brew install --cask google-photos-backup-and-sync
 
 # Torrents
 brew install --cask transmission

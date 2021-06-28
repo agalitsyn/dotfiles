@@ -54,9 +54,9 @@ setopt AUTO_PUSHD
 bindkey "^N" insert-last-word
 
 # Show contents of directory after cd-ing into it
-chpwd() {
-    ls -lrthG
-}
+#chpwd() {
+    #ls -lrthG
+#}
 
 source "$ZSH/oh-my-zsh.sh"
 unsetopt share_history

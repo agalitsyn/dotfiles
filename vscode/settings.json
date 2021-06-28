@@ -35,6 +35,9 @@
   "workbench.editor.limit.value": 6,
   "workbench.sideBar.location": "left",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "zenMode.hideTabs": false,
   "window.zoomLevel": 0,
   "problems.decorations.enabled": false,
@@ -126,12 +129,6 @@
   "python.formatting.blackArgs": ["--line-length", "120"],
   "python.showStartPage": false,
   // Frontend
-  "prettier.jsxBracketSameLine": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.printWidth": 120,
-  "prettier.htmlWhitespaceSensitivity": "ignore",
-  "prettier.trailingComma": "all",
-  "prettier.disableLanguages": ["html", "django-html"],
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -145,7 +142,7 @@
     "editor.defaultFormatter": "HookyQR.beautify"
   },
   "auto-close-tag.enableAutoCloseTag": true,
-  "auto-close-tag.activationOnLanguage": ["html", "django-html"],
+  "auto-close-tag.activationOnLanguage": ["html", "django-html", "vue"],
   "emmet.includeLanguages": {
     "django-html": "html"
   },
@@ -157,11 +154,11 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "workbench.colorTheme": "Default Light+"
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "workbench.colorTheme": "Default Dark+",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
