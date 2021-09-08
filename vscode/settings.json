@@ -32,14 +32,13 @@
   "workbench.list.openMode": "doubleClick",
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 6,
+  "workbench.editor.limit.value": 9,
   "workbench.sideBar.location": "left",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "zenMode.hideTabs": false,
-  "window.zoomLevel": 0,
   "problems.decorations.enabled": false,
   "autoDarkMode.darkTheme": "Default Dark+",
   "autoDarkMode.lightTheme": "Default Light+",
@@ -157,8 +156,9 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "workbench.colorTheme": "Default Dark+",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorTheme": "Default Light+",
+  "git.autofetch": true
 }

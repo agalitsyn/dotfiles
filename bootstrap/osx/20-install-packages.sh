@@ -54,6 +54,8 @@ brew install httpie \
     z \
     pgcli \
     git-delta \
+    tig \
+    lazygit \
     xh
 
 # Add fonts
@@ -81,7 +83,6 @@ brew install --cask sublime-merge
 brew install \
     python \
     pyenv \
-    pipenv \
     poetry \
     node \
     yarn \
@@ -104,6 +105,7 @@ brew install graphviz
 
 # Containers
 brew install --cask docker
+brew install lazydocker
 
 # Ops
 brew install ansible \
