@@ -106,6 +106,7 @@ brew install graphviz
 # Containers
 brew install --cask docker
 brew install lazydocker
+brew install ctop
 
 # Ops
 brew install ansible \
