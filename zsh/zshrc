@@ -41,11 +41,12 @@ plugins=(git-prompt osx z extract gnu-utils virtualenv docker docker-compose)
 ZSH_CUSTOM=~/.zsh.d
 
 # Save a ton of history
-HISTSIZE=20000
+export HISTSIZE=50000000
+export HISTFILESIZE=$HISTSIZE;
+
 # Share history between bash and zsh
 HISTFILE=~/.bash_history
 HIST_STAMPS="yyyy-mm-dd"
-SAVEHIST=20000
 
 # Never know when you're gonna need to popd!
 setopt AUTO_PUSHD
@@ -62,10 +63,13 @@ source "$ZSH/oh-my-zsh.sh"
 unsetopt share_history
 unsetopt extended_history
 
-export EDITOR='vim'
-
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
 autoload -Uz zcalc
 
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH"
+
+# Editor
+export EDITOR='vim'

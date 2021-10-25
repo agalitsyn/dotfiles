@@ -95,6 +95,9 @@ brew install \
     memcached \
     redis
 
+# Finder quicklook plugins
+brew install --cask WebPQuickLook
+
 # Graphs
 brew install graphviz
 

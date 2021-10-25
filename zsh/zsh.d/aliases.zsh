@@ -4,8 +4,6 @@ alias f='fd'
 alias c='bat'
 
 # Grep alternative
-alias gr='rg'
-
 function rgp() {
   rg -p "$@" | less -XFR
 }
