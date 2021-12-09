@@ -24,7 +24,16 @@ Since I want to set scale resolutions for my external monitor I need to look at 
 
 Open https://comsysto.github.io/Display-Override-PropertyList-File-Parser-and-Generator-with-HiDPI-Support-For-Scaled-Resolutions/
 
-## Disable System Integrity Protection
+## Big Sur
+
+```
+sudo mkdir -pv /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-10ac
+sudo cp DisplayProductID-a0c3 /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-10ac
+```
+
+## Older OSX
+
+### Disable System Integrity Protection
 
 * Reboot the Mac and hold down Command + R keys simultaneously after you hear the startup chime, this will boot OS X into Recovery Mode
 * When the “OS X Utilities” screen appears, pull down the ‘Utilities’ menu at the top of the screen instead, and choose “Terminal”
@@ -46,7 +55,7 @@ Then reboot
 
 More see in http://osxdaily.com/2015/10/05/disable-rootless-system-integrity-protection-mac-os-x/
 
-## Copy file to System folder
+### Copy file to System folder
 
 ```sh
 # mount root-fs

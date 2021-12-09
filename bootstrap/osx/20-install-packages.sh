@@ -125,8 +125,8 @@ brew install --cask firefox \
 brew install --cask iterm2
 
 # Window enhancements
-brew install --cask spectacle
-#brew install --cask rectangle
+#brew install --cask spectacle
+brew install --cask rectangle
 
 # External monitor resolution tool
 brew install --cask avibrazil-rdm

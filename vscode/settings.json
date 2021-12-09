@@ -138,7 +138,7 @@
   },
   "[html]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "HookyQR.beautify"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "auto-close-tag.enableAutoCloseTag": true,
   "auto-close-tag.activationOnLanguage": ["html", "django-html", "vue"],
@@ -159,6 +159,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Default Light+",
-  "git.autofetch": true
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "workbench.colorTheme": "Default Light+"
 }
