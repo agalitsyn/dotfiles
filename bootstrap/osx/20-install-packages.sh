@@ -143,6 +143,9 @@ brew install --cask anybar
 # Clipboard
 brew install --cask maccy
 
+# App switch
+brew install --cask alt-tab
+
 # Storage
 brew install --cask google-backup-and-sync
 brew install --cask yandex-disk
