@@ -1,12 +1,15 @@
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+eval $(/opt/homebrew/bin/brew shellenv)
 
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
-export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl/lib/pkgconfig"
 
 export PATH=~/.local/bin:$PATH
 
@@ -16,16 +19,13 @@ alias apache2-stop="sudo apachectl -k stop"
 alias apache2-restart="sudo apachectl -k restart"
 
 # postgres from homebrew
-alias postgresql-start="pg_ctl -D /usr/local/var/postgres start"
-alias postgresql-stop="pg_ctl -D /usr/local/var/postgres stop"
+alias postgresql-start="pg_ctl -D /opt/homebrew/var/postgres start"
+alias postgresql-stop="pg_ctl -D /opt/homebrew/var/postgres stop"
 
 # memcached from homebrew
 alias memcached-start="memcached -vv"
 alias memcached-statistics="memstat --servers=127.0.0.1:11211"
 alias memcached-dump="memdump --servers=127.0.0.1:11211"
-
-# catalina
-alias mount-root-fs="sudo mount -uw /"
 
 # cd into whatever is the forefront Finder window.
 function cdf() {  # short for cdfinder

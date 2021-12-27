@@ -35,7 +35,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git osx node npm brew)
-plugins=(git-prompt osx z extract gnu-utils virtualenv docker docker-compose)
+plugins=(git-prompt macos z extract gnu-utils virtualenv docker docker-compose)
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh.d

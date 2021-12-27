@@ -1,5 +1,11 @@
 include ../vars.mk
 
+.PHONY: install
+install:
+	for i in $(shell cat extensions); do\
+		code --install-extension $$i; \
+	done
+
 .PHONY: configure-linux
 configure-linux:
 	ln -sf $(CURDIR)/settings.json ~/.config/Code/User/settings.json
@@ -14,9 +20,3 @@ configure-osx:
 	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	ln -sf $(CURDIR)/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
 	ln -sf $(CURDIR)/python.json ~/Library/Application\ Support/Code/User/snippets/python.json
-
-.PHONY: install
-install:
-	for i in $(shell cat extensions); do\
-		code --install-extension $$i; \
-	done

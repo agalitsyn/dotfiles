@@ -3,13 +3,13 @@
 set -ex
 
 # homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Make sure we’re using the latest Homebrew
-brew update
+#brew update
 
 # Upgrade any already-installed formulae
-brew upgrade
+#brew upgrade
 
 # Additional shells
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
@@ -147,7 +147,7 @@ brew install --cask maccy
 brew install --cask alt-tab
 
 # Storage
-brew install --cask google-backup-and-sync
+#brew install --cask google-backup-and-sync
 brew install --cask yandex-disk
 
 # Torrents
@@ -168,8 +168,8 @@ brew install --cask djview
 #brew install --cask teamviewer
 
 # IM (choose what your need)
-brew install --cask slack
-brew install --cask skype
+#brew install --cask slack
+#brew install --cask skype
 brew install --cask zoom
 brew install --cask telegram
 brew install --cask discord
@@ -209,13 +209,20 @@ brew install --cask fanny
 #brew install asciinema
 
 # IDE
-#brew install --cask jetbrains-toolbox
+brew install --cask jetbrains-toolbox
 
 # Screenshoting
 #brew install --cask skitch
 
 # Mindmap
 brew install --cask xmind
+
+# Superdocs
+brew install --casks notion
+
+# Password manager
+brew install bitwarden-cli
+brew install --casks bitwarden
 
 # Graphs
 #brew install --cask yed
@@ -228,6 +235,12 @@ brew install --cask calibre
 
 # Keyboard
 brew install --cask karabiner-elements
+
+# Record screen
+brew install --casks obs
+
+
+
 
 # Images
 # brew install --cask \
