@@ -82,3 +82,19 @@ export EDITOR='vim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# If iTerm is detected these themes are used for regular windows
+# and ssh respectively
+ITERM_NORMAL_PROFILE='Fancy'
+ITERM_SSH_PROFILE='FancySSH'
+
+# On iTerm we switch terminals for SSH if we have it.  This switches to
+# the SSH profile and back when ssh is run from the terminal.
+if [[ "$TERM_PROGRAM" == iTerm.app ]]; then
+  function ssh() {
+    echo -n -e $'\033]50;SetProfile='$ITERM_SSH_PROFILE'\a'
+    command ssh "$@"
+    echo -n -e $'\033]50;SetProfile='$ITERM_NORMAL_PROFILE'\a'
+  }
+fi
+
