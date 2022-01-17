@@ -24,14 +24,26 @@ Since I want to set scale resolutions for my external monitor I need to look at 
 
 Open https://comsysto.github.io/Display-Override-PropertyList-File-Parser-and-Generator-with-HiDPI-Support-For-Scaled-Resolutions/
 
-## Big Sur
+## M1 proccessor
+
+Seems that solution not works more.
+* https://developer.apple.com/forums/thread/672552
+* https://github.com/xzhih/one-key-hidpi/issues/164
+
+Tried:
+* SwitchResX
+
+Try:
+* https://github.com/waydabber/BetterDummy/
+
+## OSX Big Sur
 
 ```
 sudo mkdir -pv /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-10ac
 sudo cp DisplayProductID-a0c3 /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-10ac
 ```
 
-## Older OSX
+## OSX Calalina and older
 
 ### Disable System Integrity Protection
 
