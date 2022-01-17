@@ -131,16 +131,13 @@ brew install --cask rectangle
 # External monitor resolution tool
 brew install --cask avibrazil-rdm
 
-# sync ext monitor brightness
-#brew install --cask brisync
-
 # Select default apps by cli tool
 brew install duti
 
 # Anybar
 brew install --cask anybar
 
-# Clipboard
+# Clipboard manager
 brew install --cask maccy
 
 # App switch
@@ -164,9 +161,6 @@ brew install --cask android-file-transfer
 # djview
 brew install --cask djview
 
-# Help unlucky windows guys
-#brew install --cask teamviewer
-
 # IM (choose what your need)
 #brew install --cask slack
 #brew install --cask skype
@@ -180,33 +174,18 @@ brew install --cask cloudflare-warp
 brew install --cask protonvpn
 
 # NTFS
-# This driver is slow, writig speed 20x slower than on appfs. Better to use paragon ntfs.
+#
+# This driver is slow, writig speed 20x slower than on appfs.
 #brew install --cask osxfuse
 #brew install ntfs-3g
 #sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
-
-# Cleaner
-# brew install --cask cleanmymac
+#
+#Better to use paragon ntfs.
+#brew install --cask paragon-ntfs
 
 # Tray improvements
 brew install --cask itsycal
-
-# Controls sleep
-#brew install --cask caffeine
-
-# os theme switcher
-#brew install --cask nightowl
-
-# Control GPUs
-#brew install --cask gswitch
-
-# Monitor temp
-brew install --cask fanny
-
-# Screen recording
-#brew install --cask kap
-#brew install asciinema
 
 # IDE
 brew install --cask jetbrains-toolbox
@@ -238,15 +217,18 @@ brew install --cask karabiner-elements
 
 # Record screen
 brew install --casks obs
+#brew install asciinema
+#brew install --cask kap
 
+# Help unlucky windows guys
+#brew install --cask teamviewer
+#brew install --cask anydesk
 
-
-
-# Images
-# brew install --cask \
-#   sketchbook \
-#   adobe-photoshop-cc \
-#   adobe-photoshop-lightroom
+# Some not free apps
+#brew install --cask cleanmymac
+#brew install --cask istat-menus
+#brew install --cask switchresx
+#brew install --cask microsoft-office
 
 # Remove outdated versions from the cellar
 brew cleanup

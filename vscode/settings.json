@@ -2,12 +2,9 @@
   // Updates
   "update.mode": "start",
   "extensions.autoUpdate": false,
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "extensions.ignoreRecommendations": true,
   // Term
-  "terminal.integrated.shell.osx": "zsh",
-  "terminal.integrated.shell.linux": "zsh",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
   // Files
@@ -162,5 +159,6 @@
   },
   "git.autofetch": true,
   "git.confirmSync": false,
-  "workbench.colorTheme": "Default Light+"
+  "workbench.colorTheme": "Default Light+",
+  "editor.unicodeHighlight.ambiguousCharacters": false
 }
