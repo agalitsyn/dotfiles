@@ -66,7 +66,14 @@ brew install --cask \
     font-hack \
     font-jetbrains-mono \
     font-cascadia-code \
-    font-input
+    font-input \
+    font-go \
+    font-juliamono \
+    font-ibm-plex-mono \
+    font-iosevka \
+    font-inconsolata \
+    font-monoid \
+    font-pt-mono
 
 # Necessary for CLI on images
 brew install imagemagick
