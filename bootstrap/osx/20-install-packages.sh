@@ -123,6 +123,7 @@ brew install ansible \
     terraform \
     doctl \
     awscli
+brew install --cask yandex-cloud-cli
 
 # Browsers
 brew install --cask firefox \
