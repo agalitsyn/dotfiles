@@ -2,14 +2,16 @@
 
 set -ex
 
-# homebrew
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-# Make sure we’re using the latest Homebrew
-#brew update
+if [[ $(command -v brew) == "" ]]; then
+    echo "Installing Hombrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+    echo "Updating Homebrew"
+    brew update
+fi
 
 # Upgrade any already-installed formulae
-#brew upgrade
+brew upgrade
 
 # Additional shells
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
@@ -35,7 +37,6 @@ brew install coreutils \
     telnet \
     wget \
     tree \
-    mc \
     netcat \
     pv
 
@@ -73,20 +74,22 @@ brew install --cask \
     font-iosevka \
     font-inconsolata \
     font-monoid \
-    font-pt-mono
+    font-pt-mono \
+    font-space-mono
 
 # Necessary for CLI on images
 brew install imagemagick
 
-# You might want there editors:
+# Editor
 brew install --cask \
     sublime-text \
+    sublime-merge \
     visual-studio-code
 
-# Git GUI
-brew install --cask sublime-merge
+# Separate vscode for experiments
+brew install --cask vscodium
 
-# Languages
+# Programming
 brew install \
     python \
     pyenv \
