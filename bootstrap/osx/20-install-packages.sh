@@ -231,6 +231,12 @@ brew install --casks obs
 #brew install asciinema
 #brew install --cask kap
 
+# Linux USB drives
+brew install --cask balenaetcher
+
+# Open rar files
+brew install --cask the-unarchiver
+
 # Help unlucky windows guys
 #brew install --cask teamviewer
 #brew install --cask anydesk

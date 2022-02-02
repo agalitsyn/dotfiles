@@ -483,9 +483,9 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>7.0478365384615378</real>
+			<real>5.0478365384615378</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -886,6 +886,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>MesloLGS-NF-Regular 13</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prevent Opening in a Tab</key>
