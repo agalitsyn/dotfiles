@@ -108,9 +108,6 @@ brew install \
 # Finder quicklook plugins
 brew install --cask WebPQuickLook
 
-# Graphs
-brew install graphviz
-
 # Virt
 #brew install --cask virtualbox \
 #    virtualbox-extension-pack \
@@ -169,9 +166,6 @@ brew install youtube-dl
 brew install --cask android-file-transfer
 #brew install --cask ifunbox
 
-# djview
-brew install --cask djview
-
 # IM (choose what your need)
 #brew install --cask slack
 #brew install --cask skype
@@ -184,28 +178,17 @@ brew install --cask whatsapp
 brew install --cask cloudflare-warp
 brew install --cask protonvpn
 
-# NTFS
-#
-# This driver is slow, writig speed 20x slower than on appfs.
-#brew install --cask osxfuse
-#brew install ntfs-3g
-#sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
-#sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
-#
-#Better to use paragon ntfs.
-#brew install --cask paragon-ntfs
-
 # Tray improvements
 brew install --cask itsycal
 
 # IDE
 brew install --cask jetbrains-toolbox
 
-# Screenshoting
-#brew install --cask skitch
-
 # Mindmap
 brew install --cask xmind
+
+# Notes
+brew install --cask fsnotes
 
 # Superdocs
 brew install --casks notion
@@ -216,12 +199,20 @@ brew install --casks bitwarden
 
 # Graphs
 #brew install --cask yed
+brew install mermaid-cli
+brew install graphviz
 
 # Emulator
 #brew install --cask dosbox
 
 # Manage ebooks
 brew install --cask calibre
+
+# djview
+brew install --cask djview
+
+# Kindle
+#brew install --cask kindle
 
 # Keyboard
 brew install --cask karabiner-elements
@@ -230,6 +221,9 @@ brew install --cask karabiner-elements
 brew install --casks obs
 #brew install asciinema
 #brew install --cask kap
+
+# Screenshoting
+#brew install --cask skitch
 
 # Linux USB drives
 brew install --cask balenaetcher
@@ -240,6 +234,20 @@ brew install --cask the-unarchiver
 # Help unlucky windows guys
 #brew install --cask teamviewer
 #brew install --cask anydesk
+
+# NTFS
+#
+# This driver is slow, writig speed 20x slower than on appfs.
+#brew install --cask osxfuse
+#brew install ntfs-3g
+#sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
+#sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
+#
+#Better to use paragon ntfs.
+#brew install --cask paragon-ntfs
+#
+# For native driver
+#brew install --cask mounty
 
 # Some not free apps
 #brew install --cask cleanmymac

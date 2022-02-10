@@ -64,9 +64,8 @@
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "workbench.colorTheme": "Default Light+",
   "workbench.tree.expandMode": "doubleClick",
-  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
   // Icons
   "material-icon-theme.activeIconPack": "angular",
   "material-icon-theme.folders.theme": "classic",
@@ -128,6 +127,14 @@
   "python.formatting.blackPath": "black",
   "python.formatting.blackArgs": ["--line-length", "120"],
   // Frontend
+  "auto-close-tag.enableAutoCloseTag": true,
+  "auto-close-tag.activationOnLanguage": ["html", "django-html", "vue", "typescriptreact", "javascriptreact", "jinja"],
+  "emmet.includeLanguages": {
+    "django-html": "html",
+    "jinja": "html",
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -136,20 +143,26 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "auto-close-tag.enableAutoCloseTag": true,
-  "auto-close-tag.activationOnLanguage": ["html", "django-html", "vue"],
-  "emmet.includeLanguages": {
-    "django-html": "html"
-  },
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.showSuggestionsAsSnippets": true,
+
   "[json]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "vetur.experimental.templateInterpolationService": true,
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // vim
@@ -159,7 +172,6 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.sneak": true,
-  "vim.easymotionMarkerooundColor": "#020202",
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "d"],
@@ -204,12 +216,8 @@
       "after": ["d", "d"]
     },
     {
-      "before": ["<C-n>"],
+      "before": ["<C-/>"],
       "commands": [":nohl"]
-    },
-    {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.splitEditor"]
     },
     {
       "before": ["<leader>", "e"],
@@ -219,28 +227,6 @@
       "before": ["<leader>", "f"],
       "commands": ["revealInExplorer"]
     },
-    {
-      "before": ["<leader>", "h"],
-      "after": ["_"]
-    },
-    {
-      "before": ["<leader>", "l"],
-      "after": ["$"]
-    }
   ],
   "vim.leader": "<space>",
-  // "vim.handleKeys": {
-  //   "<C-a>": false,
-  //   "<C-f>": false,
-  //   // VS Code new marker @ next occurence
-  //   "<C-d>": true,
-  //   // Copy
-  //   "<C-c>": false,
-  //   // Cut
-  //   "<C-x>": false,
-  //   // Paste
-  //   "<C-v>": false,
-  //   "<C-z>": false,
-  //   "<C-y>": false
-  // },
 }
