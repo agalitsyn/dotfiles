@@ -177,6 +177,8 @@ brew install --cask whatsapp
 # Avoid rkn
 brew install --cask cloudflare-warp
 brew install --cask protonvpn
+brew install --cask tunnelblick
+brew install --cask tor-browser
 
 # Tray improvements
 brew install --cask itsycal

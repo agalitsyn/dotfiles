@@ -39,7 +39,7 @@
   "workbench.tree.expandMode": "doubleClick",
   "window.autoDetectColorScheme": false,
   // Editor
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontFamily": "'JuliaMono', 'PT Mono', 'Cascadia Code', 'JetBrains Mono', 'Input Mono', 'Fira Code Retina', 'Source Code Pro'",
   "editor.fontLigatures": true,
   "window.title": "${activeEditorFull}${separator}${rootName}",
@@ -122,16 +122,28 @@
   "python.linting.lintOnSave": true,
   "python.linting.prospectorEnabled": true,
   "python.linting.prospectorPath": "prospector",
-  "python.linting.prospectorArgs": ["--max-line-length", "120", "--ignore-paths", ".venv"],
+  "python.linting.prospectorArgs": [
+    "--max-line-length",
+    "120",
+    "--ignore-paths",
+    ".venv"
+  ],
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "black",
   "python.formatting.blackArgs": ["--line-length", "120"],
   // Frontend
   "auto-close-tag.enableAutoCloseTag": true,
-  "auto-close-tag.activationOnLanguage": ["html", "django-html", "vue", "typescriptreact", "javascriptreact", "jinja"],
+  "auto-close-tag.activationOnLanguage": [
+    "html",
+    "django-html",
+    "vue",
+    "typescriptreact",
+    "javascriptreact",
+    "jinja"
+  ],
   "emmet.includeLanguages": {
     "django-html": "html",
-    "jinja": "html",
+    "jinja": "html"
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showSuggestionsAsSnippets": true,
@@ -150,7 +162,7 @@
   },
   "[vue]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "vetur.experimental.templateInterpolationService": true,
   "[javascriptreact]": {
@@ -184,7 +196,7 @@
     {
       "before": ["<S-tab>"],
       "commands": ["workbench.action.previousEditor"]
-    },
+    }
   ],
   "vim.insertModeKeyBindings": [
     {
@@ -208,7 +220,7 @@
     {
       "before": ["<"],
       "after": ["<", "g", "v"]
-    },
+    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -226,7 +238,11 @@
     {
       "before": ["<leader>", "f"],
       "commands": ["revealInExplorer"]
-    },
+    }
   ],
   "vim.leader": "<space>",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "workbench.colorTheme": "Default Light+"
 }
