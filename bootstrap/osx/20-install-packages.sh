@@ -118,11 +118,16 @@ brew install --cask docker
 brew install lazydocker
 brew install ctop
 
-# Ops
+# Cloud OPS tools
 brew install ansible \
     terraform \
-    doctl \
-    awscli
+    packer
+
+# AWS tools
+brew install awscli
+# Digital Ocean tools
+brew install doctl
+# Yandex cloud tools
 brew install --cask yandex-cloud-cli
 
 # Browsers

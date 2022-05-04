@@ -36,3 +36,8 @@ function cdf() {  # short for cdfinder
 function anybar {
     echo -n $1 | nc -u -c localhost ${2:-1738}
 }
+
+function find-process-by-port {
+    lsof -nP -iTCP -sTCP:LISTEN | grep $1
+}
+
