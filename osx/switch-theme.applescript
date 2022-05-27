@@ -4,8 +4,4 @@ tell application "System Events"
 		set var to dark mode
 		log var
 	end tell
-
-	tell every desktop
-		set picture to "~/Pictures/" & var & ".jpeg"
-	end tell
 end tell

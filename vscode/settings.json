@@ -243,5 +243,6 @@
   "vim.leader": "<space>",
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "redhat.telemetry.enabled": false
 }
