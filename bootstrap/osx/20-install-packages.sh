@@ -105,6 +105,9 @@ brew install \
     memcached \
     redis
 
+# Alternative for Finder
+brew install --cask marta
+
 # Finder quicklook plugins
 brew install --cask WebPQuickLook
 
