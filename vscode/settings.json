@@ -23,13 +23,11 @@
   // Workbench
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
-  "workbench.activityBar.visible": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.list.openMode": "doubleClick",
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 9,
-  "workbench.sideBar.location": "left",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
