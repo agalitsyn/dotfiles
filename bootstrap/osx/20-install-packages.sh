@@ -46,18 +46,25 @@ brew install vim \
     shellcheck
 
 # New cli tools
-brew install httpie \
+brew install \
     jq \
     yq \
     exa \
     bat \
     ripgrep \
     z \
-    pgcli \
     git-delta \
     tig \
-    lazygit \
     xh
+
+# HTTP tools
+brew isntall httpie
+brew install --cask insomnia
+
+# DB tools
+brew install pgcli
+#brew install --cask pgadmin4
+brew install --cask dbeaver-community
 
 # Add fonts
 brew tap homebrew/cask-fonts
