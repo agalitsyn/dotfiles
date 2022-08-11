@@ -4,9 +4,12 @@
   "extensions.autoUpdate": false,
   "telemetry.telemetryLevel": "off",
   "extensions.ignoreRecommendations": true,
+  "redhat.telemetry.enabled": false,
+
   // Term
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
+
   // Files
   "files.associations": {
     "Vagrantfile": "ruby",
@@ -20,15 +23,18 @@
   "files.insertFinalNewline": true,
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
+
   // Workbench
+  "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.list.openMode": "doubleClick",
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 9,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.limit.value": 10,
+  "workbench.iconTheme": "quill-icons-minimal",
+  "workbench.productIconTheme": "icons-carbon",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
@@ -36,6 +42,7 @@
   "problems.decorations.enabled": false,
   "workbench.tree.expandMode": "doubleClick",
   "window.autoDetectColorScheme": false,
+
   // Editor
   "editor.fontSize": 14,
   "editor.fontFamily": "'JuliaMono', 'PT Mono', 'Cascadia Code', 'JetBrains Mono', 'Input Mono', 'Fira Code Retina', 'Source Code Pro'",
@@ -56,14 +63,18 @@
   "editor.rulers": [80, 120],
   "editor.minimap.enabled": false,
   "editor.linkedEditing": true,
-  "diffEditor.renderSideBySide": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.experimental.stickyScroll.enabled": true,
+  "diffEditor.renderSideBySide": true,
+
+  // git
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.bracketPairColorization.enabled": true,
+
   // Icons
   "material-icon-theme.activeIconPack": "angular",
   "material-icon-theme.folders.theme": "classic",
@@ -73,6 +84,7 @@
   "material-icon-theme.files.associations": {},
   "material-icon-theme.folders.associations": {},
   "material-icon-theme.languages.associations": {},
+
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
   "go.useLanguageServer": true,
@@ -109,6 +121,7 @@
   "go.formatTool": "goimports",
   "go.gopath": "~",
   "go.gocodeAutoBuild": false,
+
   // Python
   "[python]": {
     "editor.formatOnSave": true,
@@ -129,6 +142,7 @@
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "black",
   "python.formatting.blackArgs": ["--line-length", "120"],
+
   // Frontend
   "auto-close-tag.enableAutoCloseTag": true,
   "auto-close-tag.activationOnLanguage": [
@@ -175,7 +189,12 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
   // vim
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
@@ -189,12 +208,28 @@
     },
     {
       "before": ["<tab>"],
-      "commands": ["workbench.action.nextEditor"]
+      "commands": ["workbench.action.nextEditorInGroup"]
     },
     {
       "before": ["<S-tab>"],
-      "commands": ["workbench.action.previousEditor"]
-    }
+      "commands": ["workbench.action.previousEditorInGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
   ],
   "vim.insertModeKeyBindings": [
     {
@@ -239,8 +274,9 @@
     }
   ],
   "vim.leader": "<space>",
+
+  // gitlens
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
-  "redhat.telemetry.enabled": false
 }

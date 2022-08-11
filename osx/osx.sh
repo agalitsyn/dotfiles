@@ -13,6 +13,7 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl/lib/pkgconfig"
 
 export PATH=~/.local/bin:$PATH
 
+
 # OSX has builtin apache2
 alias apache2-start="sudo apachectl -k start"
 alias apache2-stop="sudo apachectl -k stop"
@@ -26,6 +27,7 @@ alias postgresql-stop="pg_ctl -D /opt/homebrew/var/postgres stop"
 alias memcached-start="memcached -vv"
 alias memcached-statistics="memstat --servers=127.0.0.1:11211"
 alias memcached-dump="memdump --servers=127.0.0.1:11211"
+
 
 # cd into whatever is the forefront Finder window.
 function cdf() {  # short for cdfinder

@@ -40,6 +40,9 @@ brew install coreutils \
     netcat \
     pv
 
+# Add utilities
+brew tap daipeihust/tap && brew install im-select
+
 # cli editor
 brew install vim \
     ctags \
@@ -101,7 +104,7 @@ brew install \
     python \
     pyenv \
     poetry \
-    node \
+    node@16 \
     yarn \
     go
 
