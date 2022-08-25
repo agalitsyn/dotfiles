@@ -23,9 +23,6 @@
   "files.insertFinalNewline": true,
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
-
-  // Workbench
-  "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
@@ -279,4 +276,5 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
+  "workbench.colorTheme": "poimandres-noitalics-storm",
 }

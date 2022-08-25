@@ -1,5 +1,5 @@
 [
-    // enter, ctrl + enter to open, cmd+enter to rename
+    // enter to open, ctrl + enter to open in split, cmd + enter to rename
     {
       "key": "cmd+enter",
       "command": "renameFile",

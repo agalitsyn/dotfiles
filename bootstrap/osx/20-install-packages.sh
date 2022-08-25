@@ -1,4 +1,4 @@
-#!/bin/bash
+/bin/bash
 
 set -ex
 
@@ -178,6 +178,7 @@ brew install --cask transmission
 
 # Media
 brew install --cask vlc
+brew install --cask handbrake
 brew install youtube-dl
 
 # Phones
