@@ -1,5 +1,6 @@
 adpyke.codesnap
 antfu.icons-carbon
+astro-build.astro-vscode
 batisteo.vscode-django
 bradlc.vscode-tailwindcss
 bungcip.better-toml
@@ -11,9 +12,6 @@ EditorConfig.EditorConfig
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
-GitHub.github-vscode-theme
-GitHub.remotehub
-GitHub.vscode-pull-request-github
 golang.go
 mikestead.dotenv
 mrmlnc.vscode-duplicate
@@ -27,10 +25,9 @@ ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-wsl
 ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.remote-repositories
-ms-vsliveshare.vsliveshare
+ms-vscode.sublime-keybindings
 Nixon.env-cmd-file-syntax
 octref.vetur
-PKief.material-icon-theme
 pmndrs.pmndrs
 Prisma.prisma
 rangav.vscode-thunder-client
@@ -38,6 +35,5 @@ redhat.vscode-yaml
 ritwickdey.LiveServer
 vincaslt.highlight-matching-tag
 vscode-icons-team.vscode-icons
-vscodevim.vim
 wayou.vscode-todo-highlight
 wholroyd.jinja

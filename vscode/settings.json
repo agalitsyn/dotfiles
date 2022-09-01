@@ -63,7 +63,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.enabled": false,
   "editor.experimental.stickyScroll.enabled": true,
   "diffEditor.renderSideBySide": true,
 
