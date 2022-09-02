@@ -64,10 +64,13 @@ brew install \
 brew isntall httpie
 brew install --cask insomnia
 
+# Cert tools
+brew install easy-rsa
+
 # DB tools
 brew install pgcli
 #brew install --cask pgadmin4
-brew install --cask dbeaver-community
+#brew install --cask dbeaver-community
 
 # Add fonts
 brew tap homebrew/cask-fonts

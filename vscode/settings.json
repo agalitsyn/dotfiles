@@ -277,4 +277,7 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
   "workbench.colorTheme": "poimandres-noitalics-storm",
+  "vsicons.dontShowNewVersionMessage": true,
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontWeight": "normal",
 }
