@@ -9,6 +9,8 @@
   // Term
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "normal",
 
   // Files
   "files.associations": {
@@ -39,6 +41,10 @@
   "problems.decorations.enabled": false,
   "workbench.tree.expandMode": "doubleClick",
   "window.autoDetectColorScheme": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorTheme": "poimandres-noitalics-storm",
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.statusBar.visible": false,
 
   // Editor
   "editor.fontSize": 14,
@@ -276,8 +282,5 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
-  "workbench.colorTheme": "poimandres-noitalics-storm",
-  "vsicons.dontShowNewVersionMessage": true,
-  "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontWeight": "normal",
+
 }
