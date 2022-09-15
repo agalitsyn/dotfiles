@@ -13,8 +13,8 @@ configure-linux:
 	ln -sf $(CURDIR)/go.json ~/.config/Code/User/snippets/go.json
 	ln -sf $(CURDIR)/python.json ~/.config/Code/User/snippets/python.json
 
-	ln -sf $(CURDIR)/vscode.sh $(BASH_HOOKS_FOLDER)/vscode.sh
-	ln -sf $(CURDIR)/vscode.sh $(ZSH_HOOKS_FOLDER)/vscode.zsh
+# 	ln -sf $(CURDIR)/vscode.sh $(BASH_HOOKS_FOLDER)/vscode.sh
+# 	ln -sf $(CURDIR)/vscode.sh $(ZSH_HOOKS_FOLDER)/vscode.zsh
 
 .PHONY: configure-osx
 configure-osx:

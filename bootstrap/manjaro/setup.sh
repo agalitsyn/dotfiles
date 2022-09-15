@@ -52,7 +52,7 @@ yay -S --noconfirm powertop
 
 yay -S --noconfirm google-chrome
 
-yay -S --noconfirm gnome-disk-utility gnome-keyring
+yay -S --noconfirm gnome-disk-utility gnome-keyring gnome-tweaks gnome-shell-extensions
 
 yay -S --noconfirm sublime-text-4 sublime-merge
 yay -S --noconfirm visual-studio-code-bin
@@ -60,6 +60,7 @@ yay -S --noconfirm visual-studio-code-bin
 yay -S --noconfirm parcellite
 
 yay -S --noconfirm yandex-disk yandex-disk-indicator
+# Setup: https://yandex.com/support/disk-desktop-linux/start.html#cli-setup
 
 yay -S --noconfirm ttf-ms-fonts
 yay -S --noconfirm adobe-source-code-pro-fonts
@@ -111,15 +112,17 @@ newgrp docker
 
 yay -S --noconfirm ansible
 
-yay -S --noconfirm  imagemagick
+yay -S --noconfirm imagemagick
 
-yay -S --noconfirm  vlc
+yay -S --noconfirm vlc
 
-yay -S --noconfirm  libreoffice-fresh
+yay -S --noconfirm libreoffice-fresh
 
-yay -S --noconfirm  postgresql-libs pgcli
+yay -S --noconfirm postgresql-libs pgcli
 
 yay -S --noconfirm zoom telegram-desktop
+
+yay -S --noconfirm flameshot
 
 
 echo "Official packages"
@@ -134,4 +137,9 @@ pacman -Qm
 #sudo powertop --calibrate
 #Navigate to "Tunables" tab and fix all the remaining issues by pressing enter staying on it.
 
-# gnome-tweaks
+# Setup gnome in settings and gnome-tweaks
+# mkdir -pv ~/.local/share/gnome-shell/extensions directory.
+# Download extensions
+# Next, open metadata.json file inside it and check for the value of uuid and make sure it is the same value as extension folder’s name. If it isn’t, rename the folder to the value of the uuid.
+# alt+f2 -> r
+# Open extensions and enable them
