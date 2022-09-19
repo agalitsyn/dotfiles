@@ -71,12 +71,8 @@
 [push]
     default = simple
 
-# go get fixes
-[http "https://gopkg.in"]
-    followRedirects = true
-
 [include]
-path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
 
 [filter "lfs"]
     required = true

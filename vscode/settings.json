@@ -70,7 +70,6 @@
   "explorer.confirmDelete": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.bracketPairColorization.enabled": false,
-  "editor.experimental.stickyScroll.enabled": true,
   "diffEditor.renderSideBySide": true,
 
   // git
@@ -282,5 +281,6 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
+  "editor.stickyScroll.enabled": true,
 
 }

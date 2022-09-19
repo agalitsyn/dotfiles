@@ -1,20 +1,20 @@
-# OS: Manjaro Linux x86_64 
-# Host: 21B1 Lenovo ThinkBook 15p Gen 2 
-# Kernel: 5.15.65-1-MANJARO 
-# Uptime: 2 hours, 41 mins 
-# Packages: 1124 (pacman) 
-# Shell: zsh 5.9 
-# Resolution: 1920x1080 
-# DE: GNOME 42.4 
-# WM: Mutter 
-# WM Theme: Adwaita 
-# Theme: Adw-dark [GTK2/3] 
-# Icons: Papirus-Dark [GTK2/3] 
-# Terminal: gnome-terminal 
-# CPU: 11th Gen Intel i7-11800H (16) @ 800MHz 
-# GPU: NVIDIA GeForce GTX 1650 Mobile / Max-Q 
-# GPU: Intel TigerLake-H GT1 [UHD Graphics] 
-# Memory: 3668MiB / 31886MiB 
+# OS: Manjaro Linux x86_64
+# Host: 21B1 Lenovo ThinkBook 15p Gen 2
+# Kernel: 5.15.65-1-MANJARO
+# Uptime: 2 hours, 41 mins
+# Packages: 1124 (pacman)
+# Shell: zsh 5.9
+# Resolution: 1920x1080
+# DE: GNOME 42.4
+# WM: Mutter
+# WM Theme: Adwaita
+# Theme: Adw-dark [GTK2/3]
+# Icons: Papirus-Dark [GTK2/3]
+# Terminal: gnome-terminal
+# CPU: 11th Gen Intel i7-11800H (16) @ 800MHz
+# GPU: NVIDIA GeForce GTX 1650 Mobile / Max-Q
+# GPU: Intel TigerLake-H GT1 [UHD Graphics]
+# Memory: 3668MiB / 31886MiB
 
 # also see https://github.com/lionell/manjaro-guide
 
@@ -45,14 +45,15 @@ nvidia-smi
 
 # Setup power management
 yay -S --noconfirm tlp linux515-tp_smapi linux515-acpi_call
-sudo systemctl enable tlp.service 
+sudo systemctl enable tlp.service
 sudo tlp start
 yay -S --noconfirm powertop
 
 
 yay -S --noconfirm google-chrome
 
-yay -S --noconfirm gnome-disk-utility gnome-keyring gnome-tweaks gnome-shell-extensions
+yay -S --noconfirm gnome-disk-utility gnome-keyring gnome-tweaks gnome-shell-extensions font-manager
+yay -S --noconfirm pavucontrol
 
 yay -S --noconfirm sublime-text-4 sublime-merge
 yay -S --noconfirm visual-studio-code-bin
@@ -71,9 +72,15 @@ yay -S --noconfirm neofetch
 
 yay -S --noconfirm termite
 
-yay -S --noconfirm tree curl tmux gettext
+yay -S --noconfirm tree curl tmux gettext sshpass
 yay -S --noconfirm unrar p7zip pbzip2
 yay -S --noconfirm htop iotop strace tcpdump mtr traceroute
+
+yay -S --noconfirm ranger manjaro-ranger-settings
+yay -S --noconfirm pdfarranger
+
+yay -S --noconfirm obsidian
+yay -S --noconfirm obs-studio
 
 
 # IDE
@@ -93,14 +100,18 @@ yay -S --noconfirm \
 	z \
 	exa \
 	bat \
-	git-delta
-	
+	git-delta \
+    fd
 
-yay -S --noconfirm go python nodejs-lts-gallium jre-openjdk
+yay -S --noconfirm nodejs-lts-gallium npm yarn
+yay -S --noconfirm jre-openjdk
+yay -S --noconfirm go
+yay -S --noconfirm protobuf
+yay -S --noconfirm python python2
 
 yay -S --noconfirm meld
 
-yay -S --noconfirm graphviz    
+yay -S --noconfirm graphviz
 
 yay -S --noconfirm openvpn networkmanager-openvpn
 
