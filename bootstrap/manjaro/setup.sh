@@ -101,7 +101,8 @@ yay -S --noconfirm \
 	exa \
 	bat \
 	git-delta \
-    fd
+    fd \
+    atuin
 
 yay -S --noconfirm nodejs-lts-gallium npm yarn
 yay -S --noconfirm jre-openjdk
