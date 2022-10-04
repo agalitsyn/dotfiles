@@ -1,3 +1,5 @@
+# vim: tabstop=4 shiftwidth=4 noexpandtab
+
 # OS: Manjaro Linux x86_64
 # Host: 21B1 Lenovo ThinkBook 15p Gen 2
 # Kernel: 5.15.65-1-MANJARO
@@ -34,7 +36,7 @@ mhwd-kernel -li
 # If you see error: GPGME error: No data try running sudo pacman-key --init
 
 # Install kernel headers
-yay -S --noconfirm  linux515 linux515-headers
+yay -S --noconfirm	linux515 linux515-headers
 
 # Setup NVIDIA
 sudo mhwd -a pci nonfree 0300
@@ -49,8 +51,7 @@ sudo systemctl enable tlp.service
 sudo tlp start
 yay -S --noconfirm powertop
 
-
-yay -S --noconfirm google-chrome
+yay -S --noconfirm google-chrome brave-browser firefox firefox-developer-edition
 
 yay -S --noconfirm gnome-disk-utility gnome-keyring gnome-tweaks gnome-shell-extensions font-manager
 yay -S --noconfirm pavucontrol
@@ -66,24 +67,22 @@ yay -S --noconfirm yandex-disk yandex-disk-indicator
 yay -S --noconfirm ttf-ms-fonts
 yay -S --noconfirm adobe-source-code-pro-fonts
 
-
 yay -S --noconfirm neofetch
 
-
-yay -S --noconfirm termite
+yay -S --noconfirm kitty
 
 yay -S --noconfirm tree curl tmux gettext sshpass
 yay -S --noconfirm unrar p7zip pbzip2
 yay -S --noconfirm htop iotop strace tcpdump mtr traceroute
 
-yay -S --noconfirm ranger manjaro-ranger-settings
+yay -S --noconfirm mc ranger manjaro-ranger-settings
 yay -S --noconfirm pdfarranger
 
 yay -S --noconfirm obsidian
 yay -S --noconfirm obs-studio
 
 
-# IDE
+# shell IDE
 yay -S --noconfirm \
 	vim \
 	neovim \
@@ -101,8 +100,8 @@ yay -S --noconfirm \
 	exa \
 	bat \
 	git-delta \
-    fd \
-    atuin
+	fd \
+	atuin
 
 yay -S --noconfirm nodejs-lts-gallium npm yarn
 yay -S --noconfirm jre-openjdk
