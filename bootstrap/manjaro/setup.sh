@@ -44,7 +44,7 @@ yay -S --noconfirm powertop
 
 yay -S --noconfirm google-chrome brave-browser firefox firefox-developer-edition
 
-yay -S --noconfirm pavucontrol
+yay -S --noconfirm alsa-utils pavucontrol
 
 yay -S --noconfirm sublime-text-4 sublime-merge
 yay -S --noconfirm visual-studio-code-bin

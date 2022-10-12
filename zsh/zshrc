@@ -49,10 +49,11 @@ ZSH_CUSTOM=~/.zsh.d
 # Save a ton of history
 export HISTSIZE=50000000
 export HISTFILESIZE=$HISTSIZE;
-
 # Share history between bash and zsh
 HISTFILE=~/.bash_history
 HIST_STAMPS="yyyy-mm-dd"
+# Ignore basic commands
+export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help:.."
 
 # Never know when you're gonna need to popd!
 setopt AUTO_PUSHD
