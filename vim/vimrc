@@ -4,13 +4,8 @@ set nocompatible
 
 let mapleader=","              " change leader to comma
 
-if has('nvim')
-	let s:plug_path = '~/.local/share/nvim/site/autoload/plug.vim'
-	let s:plug_dir = '~/.local/share/nvim/plugged'
-else
-	let s:plug_path = '~/.vim/autoload/plug.vim'
-	let s:plug_dir = '~/.vim/plugged'
-endif
+let s:plug_path = '~/.vim/autoload/plug.vim'
+let s:plug_dir = '~/.vim/plugged'
 
 if empty(glob(s:plug_path))
   silent execute '!curl -fLo '.s:plug_path.' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
