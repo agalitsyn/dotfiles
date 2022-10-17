@@ -42,7 +42,7 @@ sudo systemctl enable tlp.service
 sudo tlp start
 yay -S --noconfirm powertop
 
-yay -S --noconfirm google-chrome brave-browser firefox firefox-developer-edition
+yay -S --noconfirm brave-browser firefox firefox-developer-edition
 
 yay -S --noconfirm alsa-utils pavucontrol
 
