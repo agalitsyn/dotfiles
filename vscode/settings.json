@@ -54,7 +54,6 @@
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 4,
   "editor.useTabStops": true,
-  "editor.wordWrap": "wordWrapColumn",
   "editor.snippetSuggestions": "top",
   "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
@@ -281,5 +280,5 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
-  "files.autoSave": "onWindowChange"
+  "files.autoSave": "onFocusChange"
 }
