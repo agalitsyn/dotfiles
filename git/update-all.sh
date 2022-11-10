@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: tabstop=4 shiftwidth=4 noexpandtab
 
 # store the current dir
 CUR_DIR=$(pwd)
@@ -15,8 +16,8 @@ for i in $(find . -name ".git" | cut -c 3-); do
     cd "$i";
     cd ..;
 
-	git checkout master;
-	git fetch --all --prune;
+    git checkout master;
+    git fetch --all --prune;
     git pull origin master;
 
     # lets get back to the CUR_DIR

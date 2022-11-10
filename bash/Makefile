@@ -10,3 +10,5 @@ configure:
 	ln -sf $(CURDIR)/bash.d/aliases.sh $(BASH_HOOKS_FOLDER)/aliases.sh
 	ln -sf $(CURDIR)/bash.d/exports.sh $(BASH_HOOKS_FOLDER)/exports.sh
 	ln -sf $(CURDIR)/bash.d/functions.sh $(BASH_HOOKS_FOLDER)/functions.sh
+	touch $(BASH_HOOKS_FOLDER)/local.sh
+

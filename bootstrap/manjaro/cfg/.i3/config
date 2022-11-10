@@ -38,10 +38,10 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec exec rofi -show run
+bindsym $mod+$alt+space exec rofi -show drun -theme solarized -font "URWGothic-Book 12" -show-icons -icon-theme "Papirus"
 
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+# launch winbdows menu
+bindsym $mod+Tab exec rofi -show window -theme solarized -font "URWGothic-Book 12" -show-icons -icon-theme "Papirus"
 
 ################################################################################################
 
@@ -104,8 +104,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+s sticky toggle
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+bindsym $alt+Tab workspace back_and_forth
 
 ################################################################################################
 
@@ -117,7 +116,7 @@ set $ws1 1:web
 set $ws2 2:term
 set $ws3 3:code
 set $ws4 4:msg
-set $ws5 5
+set $ws5 5:notes
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -151,6 +150,12 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+# Move between monitors
+bindsym $mod+Ctrl+Shift+Left move container to output left
+bindsym $mod+Ctrl+Shift+Right move container to output right
+
+
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -281,9 +286,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 
-exec --no-startup-id pulseaudio --start
 exec --no-startup-id pasystray
-exec --no-startup-id volumeicon
+exec --no-startup-id pulseaudio --start &
 
 exec --no-startup-id numlockx
 exec --no-startup-id gxkb
@@ -308,6 +312,8 @@ exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,gr
 
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+
+exec_always ~/.config/i3/gnome-keyring.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:

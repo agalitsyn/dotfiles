@@ -19,7 +19,6 @@ yay -S --noconfirm \
 	numlockx \
 	xautolock \
 	pasystray \
-	volumeicon \
 	blueman \
 	gxkb \
 	rofi \
