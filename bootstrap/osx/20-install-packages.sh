@@ -209,7 +209,8 @@ brew install --cask itsycal
 brew install --cask jetbrains-toolbox
 
 # Mindmap
-brew install --cask xmind
+#brew install --cask xmind
+# Manually download xmind 8. xmind zen is bad
 
 # Notes
 brew install --cask fsnotes

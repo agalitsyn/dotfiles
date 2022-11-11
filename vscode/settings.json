@@ -204,17 +204,20 @@
   "vim.sneak": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
+      "before": ["<leader>", "b"],
+       "commands": ["goToNextReference"]
     },
     {
-      "before": ["<tab>"],
-      "commands": ["workbench.action.nextEditorInGroup"]
+      "before": ["<leader>", "/"],
+       "commands": ["editor.action.commentLine"]
     },
-    {
-      "before": ["<S-tab>"],
-      "commands": ["workbench.action.previousEditorInGroup"]
-    },
+    //   "before": ["<tab>"],
+    //   "commands": ["workbench.action.nextEditorInGroup"]
+    // },
+    // {
+    //   "before": ["<S-tab>"],
+    //   "commands": ["workbench.action.previousEditorInGroup"]
+    // },
     {
       "before": ["<C-l>"],
       "commands": ["workbench.action.navigateRight"]
@@ -230,6 +233,18 @@
     {
       "before": ["<C-k>"],
       "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<leader>", "]"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      "before": ["<leader>", "["],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["<leader>", "backspace"],
+      "commands": ["workbench.action.navigateToLastEditLocation"]
     },
   ],
   "vim.insertModeKeyBindings": [
@@ -254,6 +269,10 @@
     {
       "before": ["<"],
       "after": ["<", "g", "v"]
+    },
+    {
+      "before": ["<leader>", "/"],
+       "commands": ["editor.action.commentLine"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
