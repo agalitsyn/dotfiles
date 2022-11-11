@@ -112,11 +112,11 @@ bindsym $alt+Tab workspace back_and_forth
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:web
-set $ws2 2:term
-set $ws3 3:code
-set $ws4 4:msg
-set $ws5 5:notes
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:ﴬ
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -308,8 +308,10 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 
+# do not run here, because it lauched with systemd
+# systemctl --user status pulseaudio.service
+#exec --no-startup-id pulseaudio --daemonize=no --log-target=journal
 exec --no-startup-id pasystray
-exec --no-startup-id pulseaudio --start &
 
 exec --no-startup-id numlockx
 exec --no-startup-id gxkb
@@ -322,7 +324,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id parcellite
 exec --no-startup-id flameshot
 
-exec --no-startup-id /opt/jetbrains/toolbox/jetbrains-toolbox
+exec --no-startup-id /opt/jetbrains/toolbox/jetbrains-toolbox --minimize
 
 # exec_always --no-startup-id sbxkb
 
@@ -370,18 +372,24 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	position top
+    i3bar_command i3bar
+    status_command i3status
+    position top
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	tray_output primary
-#	tray_output eDP1
+    separator_symbol " | "
 
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+    # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+    tray_output primary
+    tray_padding 2
+
+    bindsym button4 nop
+    bindsym button5 nop
+
+    font xft:URWGothic-Book 12
+
+    workspace_min_width 40
+    workspace_buttons yes
+    strip_workspace_numbers yes
 
     colors {
         background #222D31
