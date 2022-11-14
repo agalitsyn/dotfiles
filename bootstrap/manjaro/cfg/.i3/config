@@ -210,8 +210,8 @@ for_window [class="subl"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Skype"] floating enable border normal
-for_window [class="TelegramDesktop"] floating enable
-for_window [class="Mattermost"] floating enable
+#for_window [class="TelegramDesktop"] floating enable
+#for_window [class="Mattermost"] floating enable
 for_window [class="jetbrains-toolbox"] floating enable
 # intellij commit changes fullscreen always (easier to see diffs)
 for_window [title="Commit Changes"] floating disable
