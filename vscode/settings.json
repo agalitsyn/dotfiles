@@ -192,6 +192,8 @@
   },
 
   // vim
+  // https://github.com/Microsoft/vscode/issues/23991
+  "keyboard.dispatch": "keyCode",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
