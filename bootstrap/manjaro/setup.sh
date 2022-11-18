@@ -56,17 +56,19 @@ yay -S --noconfirm yandex-disk yandex-disk-indicator
 
 yay -S --noconfirm font-manager
 
-yay -S --noconfirm ttf-ms-fonts \
-    ttf-ibm-plex \
-    ttf-juliamono \
-    ttf-iosevka-nerd \
-    ttf-monofur \
-    ttf-monoid \
-    ttf-jetbrains-mono \
-    ttf-roboto-mono \
-    ttf-ubuntu-font-family \
-    ttf-mac-fonts \
-    adobe-source-code-pro-fonts
+yay -S --noconfirm \
+	ttf-ms-fonts \
+	ttf-ibm-plex \
+	ttf-juliamono \
+	ttf-iosevka-nerd \
+	ttf-monofur \
+	ttf-monoid \
+	ttf-jetbrains-mono \
+	ttf-roboto-mono \
+	ttf-ubuntu-font-family \
+	ttf-mac-fonts \
+	adobe-source-code-pro-fonts \
+	nerd-fonts-complete
 
 yay -S --noconfirm neofetch
 

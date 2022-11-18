@@ -197,6 +197,7 @@ for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="nm-connection-editor"] floating enable
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [class="Arandr"] floating enable sticky enable border normal
 for_window [class="vlc"] floating enable
@@ -225,11 +226,11 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+d mode "$mode_display"
 set $mode_display (l)aptop, (h)ome-single, (Shift+h)ome-dual, (o)ffice-single, (Shift+o)ffice-dual, (m)anual
 mode "$mode_display" {
-    bindsym l exec --no-startup-id ~/.i3/display-preset-switcher laptop, mode "default"
-    bindsym h exec --no-startup-id ~/.i3/display-preset-switcher home-single, mode "default"
-    bindsym Shift+h exec --no-startup-id ~/.i3/display-preset-switcher home-dual, mode "default"
-    bindsym o exec --no-startup-id ~/.i3/display-preset-switcher office-single, mode "default"
-    bindsym Shift+o exec --no-startup-id ~/.i3/display-preset-switcher office-dual, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/display-preset-switcher laptop, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/display-preset-switcher home-single, mode "default"
+    bindsym Shift+h exec --no-startup-id ~/.config/i3/display-preset-switcher home-dual, mode "default"
+    bindsym o exec --no-startup-id ~/.config/i3/display-preset-switcher office-single, mode "default"
+    bindsym Shift+o exec --no-startup-id ~/.config/i3/display-preset-switcher office-dual, mode "default"
     bindsym m exec --no-startup-id arandr, mode "default"
 
     # exit system mode: "Enter" or "Escape"
