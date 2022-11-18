@@ -1,4 +1,3 @@
 # Dotfiles
 
-Mac OSX and Ubuntu.
-
+Config files for Linux and OSX.
