@@ -103,7 +103,8 @@ yay -S --noconfirm \
 	bat \
 	git-delta \
 	fd \
-	atuin
+	atuin \
+	tldr
 
 yay -S --noconfirm nodejs-lts-gallium npm yarn
 yay -S --noconfirm jre-openjdk
