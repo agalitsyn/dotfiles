@@ -57,18 +57,18 @@ yay -S --noconfirm yandex-disk yandex-disk-indicator
 yay -S --noconfirm font-manager
 
 yay -S --noconfirm \
-	ttf-ms-fonts \
-	ttf-ibm-plex \
-	ttf-juliamono \
-	ttf-iosevka-nerd \
-	ttf-monofur \
-	ttf-monoid \
-	ttf-jetbrains-mono \
-	ttf-roboto-mono \
-	ttf-ubuntu-font-family \
-	ttf-mac-fonts \
-	adobe-source-code-pro-fonts \
-	nerd-fonts-complete
+    ttf-ms-fonts \
+    ttf-ibm-plex \
+    ttf-juliamono \
+    ttf-iosevka-nerd \
+    ttf-monofur \
+    ttf-monoid \
+    ttf-jetbrains-mono \
+    ttf-roboto-mono \
+    ttf-ubuntu-font-family \
+    ttf-mac-fonts \
+    adobe-source-code-pro-fonts \
+    nerd-fonts-complete
 
 yay -S --noconfirm neofetch
 
@@ -86,25 +86,25 @@ yay -S --noconfirm obs-studio
 
 # shell tools
 yay -S --noconfirm \
-	vim \
-	neovim \
-	ctags \
-	git \
-	tig \
-	shellcheck \
-	jq \
-	httpie \
-	zsh \
-	jq \
-	yq \
-	ripgrep \
-	z \
-	exa \
-	bat \
-	git-delta \
-	fd \
-	atuin \
-	tldr
+    vim \
+    neovim \
+    ctags \
+    git \
+    tig \
+    shellcheck \
+    httpie \
+    zsh \
+    jq \
+    yq \
+    htmlq \
+    ripgrep \
+    z \
+    exa \
+    bat \
+    git-delta \
+    fd \
+    atuin \
+    tldr
 
 yay -S --noconfirm nodejs-lts-gallium npm yarn
 yay -S --noconfirm jre-openjdk
@@ -137,6 +137,8 @@ yay -S --noconfirm postgresql-libs pgcli
 yay -S --noconfirm zoom telegram-desktop
 
 yay -S --noconfirm flameshot
+
+yay -S --noconfirm zathura zathura-pdf-mupdf zathura-djvu
 
 echo "Official packages"
 pacman -Qn

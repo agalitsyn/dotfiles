@@ -30,8 +30,8 @@ font xft:URWGothic-Book 11
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec terminal
+# kill x
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -248,7 +248,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
+bindsym $mod+Shift+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
@@ -297,16 +297,28 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id exec pactl set-sink-volume @DE
 bindsym XF86AudioLowerVolume exec --no-startup-id exec pactl -- set-sink-volume @DEFAULT_SINK@ -3%
 bindsym XF86AudioMute exec --no-startup-id exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+# for default keyboard
+bindsym $mod+Shift+m exec --no-startup-id exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Applications hotkeys
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $alt+$ctrl+l exec --no-startup-id blurlock
 bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Pictures
-bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+b exec --no-startup-id ~/.config/i3/bookmarks search
+bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/bookmarks add
+
+bindsym $mod+Return exec terminal
+bindsym $mod+F1 exec terminal -e ranger 
+bindsym $mod+F2 exec terminal -e nvim
+bindsym $mod+F3 exec brave --new-window
+bindsym $mod+F4 exec subl --new-window
+bindsym $mod+F5 exec terminal -hold -e cal --year --week
+bindsym $mod+F9 exec nautilus --new-window
+bindsym $mod+F11 exec pavucontrol
+bindsym $mod+F12 exec terminal -e htop
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 60 -locker blurlock
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 
 # do not run here, because it lauched with systemd
@@ -334,7 +346,7 @@ exec --no-startup-id yandex-disk-indicator &
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id start_conky_solarized
 
-exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru
+exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,grp:alt_space_toggle,grp_led:caps,caps:escape us,ru
 
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
