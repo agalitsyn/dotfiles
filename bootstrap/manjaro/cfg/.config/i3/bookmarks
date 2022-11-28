@@ -9,24 +9,24 @@ BOOKMARKS_FILE=${BOOKMARKS_FILE:-~/Yandex.Disk/misc/bookmarks.txt}
 
 # Do not create it automatically, because it should exists and should not be empty
 if [[ -d $BOOKMARKS_FILE ]]; then
-	notify-send "File '${BOOKMARKS_FILE}' is not exists"
-	exit 2
+    notify-send "File is not exists" "$BOOKMARKS_FILE"
+    exit 2
 fi
 
 case "$1" in
 add)
-	text=$(xclip -o)
-	[[ -n "$text" ]] && echo "$text" >>"$BOOKMARKS_FILE"
-	notify-send "$text added to bookmarks"
-	;;
+    text=$(xclip -o)
+    [[ -n "$text" ]] && echo "$text" >>"$BOOKMARKS_FILE"
+    notify-send "Added to bookmarks" "$text"
+    ;;
 search)
-	xdotool type $(grep -v '^#' "$BOOKMARKS_FILE" | dmenu -i -l 50 | cut -d ' ' -f1)
-	;;
+    xdotool type $(grep -v '^#' "$BOOKMARKS_FILE" | dmenu -i -l 50 | cut -d ' ' -f1)
+    ;;
 format)
-	cat "$BOOKMARKS_FILE" | sort | uniq >"$BOOKMARKS_FILE"
-	;;
+    cat "$BOOKMARKS_FILE" | sort | uniq >"$BOOKMARKS_FILE"
+    ;;
 *)
-	echo "Usage: $0 {add|search|format}"
-	exit 2
-	;;
+    echo "Usage: $0 {add|search|format}"
+    exit 2
+    ;;
 esac

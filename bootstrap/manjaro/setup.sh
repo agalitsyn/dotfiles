@@ -124,6 +124,8 @@ sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
 newgrp docker
 
+yay -S --noconfirm podman podman-compose
+
 yay -S --noconfirm ansible
 
 yay -S --noconfirm imagemagick
