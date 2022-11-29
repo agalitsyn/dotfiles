@@ -7,6 +7,9 @@ set $ctrl Control
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
+#set $terminal terminal
+set $terminal alacritty
+
 focus_follows_mouse no
 # set default desktop layout (default is tiling, also stacking, tabbed)
 workspace_layout default
@@ -215,7 +218,8 @@ for_window [class="Skype"] floating enable border normal
 #for_window [class="Mattermost"] floating enable
 for_window [class="jetbrains-toolbox"] floating enable
 # intellij commit changes fullscreen always (easier to see diffs)
-for_window [title="Commit Changes"] floating disable
+for_window [title="Commit Changes"] floating enable
+for_window [title="Rebase"] floating enable
 
 for_window [window_role="pop-up"] floating enable
 
@@ -306,15 +310,15 @@ bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Pictures
 bindsym $mod+b exec --no-startup-id ~/.config/i3/bookmarks search
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/bookmarks add
 
-bindsym $mod+Return exec terminal
-bindsym $mod+F1 exec terminal -e ranger 
-bindsym $mod+F2 exec terminal -e nvim
+bindsym $mod+Return exec $terminal
+bindsym $mod+F1 exec $terminal -e ranger 
+bindsym $mod+F2 exec $terminal -e nvim
 bindsym $mod+F3 exec brave --new-window
 bindsym $mod+F4 exec subl --new-window
-bindsym $mod+F5 exec terminal -hold -e cal --year --week
+bindsym $mod+F5 exec $terminal -hold -e cal --year --week
 bindsym $mod+F9 exec nautilus --new-window
 bindsym $mod+F11 exec pavucontrol
-bindsym $mod+F12 exec terminal -e htop
+bindsym $mod+F12 exec $terminal -e htop
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

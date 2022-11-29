@@ -92,7 +92,6 @@ yay -S --noconfirm \
     git \
     tig \
     shellcheck \
-    httpie \
     zsh \
     jq \
     yq \
@@ -104,7 +103,9 @@ yay -S --noconfirm \
     git-delta \
     fd \
     atuin \
-    tldr
+    tldr \
+    httpie \
+    hurl-bin
 
 yay -S --noconfirm nodejs-lts-gallium npm yarn
 yay -S --noconfirm jre-openjdk
