@@ -71,9 +71,6 @@
 [push]
     default = simple
 
-[include]
-    path = ~/.gitconfig.local
-
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
@@ -90,3 +87,5 @@
     features = side-by-side line-numbers decorations
     whitespace-error-style = 22 reverse
 
+[include]
+    path = ~/.gitconfig.local
