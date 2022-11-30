@@ -311,14 +311,14 @@ bindsym $mod+b exec --no-startup-id ~/.config/i3/bookmarks search
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/bookmarks add
 
 bindsym $mod+Return exec $terminal
-bindsym $mod+F1 exec $terminal -e ranger 
-bindsym $mod+F2 exec $terminal -e nvim
+bindsym $mod+F1 exec $terminal --title 'File Explorer' --command ranger 
+bindsym $mod+F2 exec $terminal --title 'Editor' --command nvim
 bindsym $mod+F3 exec brave --new-window
 bindsym $mod+F4 exec subl --new-window
-bindsym $mod+F5 exec $terminal -hold -e cal --year --week
+bindsym $mod+F5 exec $terminal --hold --title 'Calendar' --command cal --year --week
 bindsym $mod+F9 exec nautilus --new-window
 bindsym $mod+F11 exec pavucontrol
-bindsym $mod+F12 exec $terminal -e htop
+bindsym $mod+F12 exec $terminal --command htop
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
