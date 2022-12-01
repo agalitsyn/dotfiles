@@ -5,7 +5,7 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- Modes
 --   normal_mode = "n",

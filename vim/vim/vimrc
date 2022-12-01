@@ -2,7 +2,7 @@
 
 set nocompatible
 
-let mapleader=","              " change leader to comma
+let mapleader=" "
 
 let s:plug_path = '~/.vim/autoload/plug.vim'
 let s:plug_dir = '~/.vim/plugged'
@@ -16,32 +16,21 @@ call plug#begin(s:plug_dir)
 
 " Editor
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'majutsushi/tagbar'
-
 Plug 'scrooloose/nerdcommenter'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'Raimondi/delimitMate'
-
-Plug 'easymotion/vim-easymotion'
-Plug 'unblevable/quick-scope'
-Plug 'AndrewRadev/splitjoin.vim'
-
-Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-
-Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 
-Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
+
+Plug 'mileszs/ack.vim'
+
+Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " UI
-Plug 'altercation/vim-colors-solarized'
-Plug 'fatih/molokai'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Completion
 Plug 'ervandew/supertab'
@@ -120,17 +109,10 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 
 " ### UI ###
-"set background=dark
-"let g:rehash256 = 1
-"let g:hybrid_use_Xresources = 1
+set background=dark
+set termguicolors
 
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"let g:solarized_visibility="high"
-"colorscheme solarized
-
-"let g:molokai_original = 1
-"colorscheme molokai
+colorscheme catppuccin_mocha
 
 set nocursorcolumn             " speed up syntax highlighting
 set nocursorline
@@ -170,22 +152,22 @@ set laststatus=2
 set ruler
 
 if has('cmdline_info')
-	set ruler                   " Show the ruler
-	set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-	set showcmd                 " Show partial commands in status line and
-								" Selected characters/lines in visual mode
+    set ruler                   " Show the ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+    set showcmd                 " Show partial commands in status line and
+                                " Selected characters/lines in visual mode
 endif
 
 if has('statusline')
-	set laststatus=2
+    set laststatus=2
 
-	" Broken down into easily includeable segments
-	set statusline=%<%f\                     " Filename
-	set statusline+=%w%h%m%r                 " Options
+    " Broken down into easily includeable segments
+    set statusline=%<%f\                     " Filename
+    set statusline+=%w%h%m%r                 " Options
     set statusline+=%{fugitive#statusline()} " Git Hotness
-	set statusline+=\ [%{&ff}/%Y]            " Filetype
-	set statusline+=\ [%{getcwd()}]          " Current dir
-	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    set statusline+=\ [%{&ff}/%Y]            " Filetype
+    set statusline+=\ [%{getcwd()}]          " Current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
@@ -259,8 +241,8 @@ cmap Tabe tabe
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
-	map + <C-W>+
-	map - <C-W>-
+    map + <C-W>+
+    map - <C-W>-
 endif
 
 " Adjust viewports to the same size
@@ -332,15 +314,15 @@ nnoremap <leader>fp :let @+=expand('%:p')<CR>
 " ### Functions ###
 
 function! StripTrailingWhitespace()
-	" Preparation: save last search, and cursor position.
-	let _s=@/
-	let l = line(".")
-	let c = col(".")
-	" do the business:
-	%s/\s\+$//e
-	" clean up: restore previous search history, and cursor position
-	let @/=_s
-	call cursor(l, c)
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " do the business:
+    %s/\s\+$//e
+    " clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
 endfunction
 
 
