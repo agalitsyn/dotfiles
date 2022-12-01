@@ -70,21 +70,13 @@
   "diffEditor.renderSideBySide": true,
   "window.zoomLevel": 0.125,
   "editor.stickyScroll.enabled": false,
+  "editor.autoClosingBrackets": "never",
 
   // git
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
 
-  // Icons
-  "material-icon-theme.activeIconPack": "angular",
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.folders.color": "#42a5f5",
-  "material-icon-theme.hidesExplorerArrows": false,
-  "material-icon-theme.opacity": 1,
-  "material-icon-theme.files.associations": {},
-  "material-icon-theme.folders.associations": {},
-  "material-icon-theme.languages.associations": {},
 
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
@@ -296,6 +288,7 @@
     }
   ],
   "vim.leader": "<space>",
+  "vim.enable": false,
 
   // gitlens
   "gitlens.currentLine.enabled": false,
