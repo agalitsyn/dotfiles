@@ -7,7 +7,6 @@ bungcip.better-toml
 cdonohue.quill-icons
 christian-kohler.path-intellisense
 dsznajder.es7-react-js-snippets
-eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
@@ -35,3 +34,5 @@ vincaslt.highlight-matching-tag
 vscode-icons-team.vscode-icons
 wayou.vscode-todo-highlight
 wholroyd.jinja
+Vue.volar
+Vue.vscode-typescript-vue-plugin
