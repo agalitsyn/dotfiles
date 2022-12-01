@@ -36,3 +36,5 @@ wayou.vscode-todo-highlight
 wholroyd.jinja
 Vue.volar
 Vue.vscode-typescript-vue-plugin
+dbaeumer.vscode-eslint
+

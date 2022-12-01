@@ -22,33 +22,34 @@
   "files.exclude": {
     "**/__pycache__": true
   },
+
+  // Editor
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.list.openMode": "doubleClick",
-  "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 10,
   "workbench.iconTheme": "quill-icons-minimal",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "zenMode.hideTabs": false,
-  "problems.decorations.enabled": false,
   "workbench.tree.expandMode": "doubleClick",
-  "window.autoDetectColorScheme": false,
   "workbench.layoutControl.enabled": false,
   "workbench.colorTheme": "poimandres-noitalics-storm",
   "vsicons.dontShowNewVersionMessage": true,
-
-  // Editor
+  "problems.decorations.enabled": false,
+  "window.autoDetectColorScheme": false,
+  "zenMode.hideTabs": false,
+  "window.zoomLevel": 0.3,
+  "window.title": "${activeEditorFull}${separator}${rootName}",
   "editor.fontSize": 14,
   "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontLigatures": true,
-  "window.title": "${activeEditorFull}${separator}${rootName}",
   "editor.codeActionsOnSave": {},
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
@@ -68,15 +69,14 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.bracketPairColorization.enabled": false,
   "diffEditor.renderSideBySide": true,
-  "window.zoomLevel": 0.125,
   "editor.stickyScroll.enabled": false,
   "editor.autoClosingBrackets": "never",
+  "files.autoSave": "onFocusChange",
 
   // git
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-
 
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
@@ -289,12 +289,4 @@
   ],
   "vim.leader": "<space>",
   "vim.enable": false,
-
-  // gitlens
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false,
-  "files.autoSave": "onFocusChange",
-  "svelte.enable-ts-plugin": true,
-  "svelte.plugin.svelte.note-new-transformation": false
 }
