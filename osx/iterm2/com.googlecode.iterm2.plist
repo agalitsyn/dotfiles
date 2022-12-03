@@ -561,7 +561,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>EF0BBDF8-AF5B-428A-AE78-66C8CF617F56</string>
+	<string>97A72D92-5DF2-4536-9E37-6FECDDAB2FCD</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -581,11 +581,11 @@
 	<key>HideTabNumber</key>
 	<false/>
 	<key>Hotkey</key>
-	<false/>
+	<true/>
 	<key>HotkeyChar</key>
-	<integer>63246</integer>
+	<integer>63247</integer>
 	<key>HotkeyCode</key>
-	<integer>103</integer>
+	<integer>111</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>HotkeyModifiers</key>
