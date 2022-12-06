@@ -15,10 +15,12 @@ yay -S --noconfirm \
     gnome-disk-utility \
     gnome-keyring \
     gnome-tweaks \
-    gnome-shell-extensions
+    gnome-shell-extensions \
+	gnome-shell-extension-dash-to-dock
 
 # extensions
 # https://extensions.gnome.org/extension/3843/just-perfection/
 # https://extensions.gnome.org/extension/3100/maximize-to-empty-workspace/
 # https://extensions.gnome.org/extension/615/appindicator-support/
 # dash-to-dock
+

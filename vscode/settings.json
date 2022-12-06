@@ -289,4 +289,5 @@
   ],
   "vim.leader": "<space>",
   "vim.enable": false,
+  "window.menuBarVisibility": "toggle",
 }
