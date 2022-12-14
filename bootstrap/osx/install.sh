@@ -58,7 +58,8 @@ brew install \
     z \
     git-delta \
     tig \
-    xh
+    xh \
+    fzf
 
 # HTTP tools
 brew isntall httpie
