@@ -1,2 +1,0 @@
-set shortcut (eq Printscreen) to command
-flameshot gui --path ~/Pictures

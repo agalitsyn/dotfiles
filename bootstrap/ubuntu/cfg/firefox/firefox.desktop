@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Firefox
-GenericName=Firefox
-Exec=/opt/mozilla/firefox/firefox %u
-Terminal=false
-Icon=/opt/mozilla/firefox/browser/chrome/icons/default/default128.png
-Type=Application
-Categories=Application;Network;X-Developer;
-Comment=Firefox Web Browser.

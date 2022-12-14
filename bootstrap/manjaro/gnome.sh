@@ -15,8 +15,10 @@ yay -S --noconfirm \
     gnome-disk-utility \
     gnome-keyring \
     gnome-tweaks \
+	dconf-editor \
     gnome-shell-extensions \
-	gnome-shell-extension-dash-to-dock
+	gnome-shell-extension-dash-to-dock \
+	gnome-shell-extension-appindicator
 
 # extensions
 # https://extensions.gnome.org/extension/3843/just-perfection/

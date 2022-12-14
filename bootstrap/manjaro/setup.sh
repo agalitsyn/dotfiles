@@ -42,7 +42,7 @@ sudo systemctl enable tlp.service
 sudo tlp start
 yay -S --noconfirm powertop
 
-yay -S --noconfirm brave-browser firefox firefox-developer-edition
+yay -S --noconfirm brave-browser firefox
 
 yay -S --noconfirm alsa-utils pavucontrol
 
@@ -60,7 +60,6 @@ yay -S --noconfirm \
     ttf-ms-fonts \
     ttf-ibm-plex \
     ttf-juliamono \
-    ttf-iosevka-nerd \
     ttf-monofur \
     ttf-monoid \
     ttf-jetbrains-mono \
@@ -72,14 +71,16 @@ yay -S --noconfirm \
 
 yay -S --noconfirm neofetch
 
-yay -S --noconfirm kitty
+yay -S --noconfirm alacritty
 
 yay -S --noconfirm tree curl tmux gettext sshpass
 yay -S --noconfirm unrar p7zip pbzip2
 yay -S --noconfirm htop iotop strace tcpdump mtr traceroute
 
 yay -S --noconfirm mc ranger manjaro-ranger-settings
+
 yay -S --noconfirm pdfarranger
+yay -S --noconfirm zathura zathura-pdf-mupdf zathura-djvu
 
 yay -S --noconfirm obsidian
 yay -S --noconfirm obs-studio
@@ -88,7 +89,6 @@ yay -S --noconfirm obs-studio
 yay -S --noconfirm \
     vim \
     neovim \
-    ctags \
     git \
     tig \
     shellcheck \
@@ -102,6 +102,7 @@ yay -S --noconfirm \
     bat \
     git-delta \
     fd \
+	fzf \
     atuin \
     tldr \
     httpie \
@@ -140,8 +141,6 @@ yay -S --noconfirm postgresql-libs pgcli
 yay -S --noconfirm zoom telegram-desktop
 
 yay -S --noconfirm flameshot
-
-yay -S --noconfirm zathura zathura-pdf-mupdf zathura-djvu
 
 echo "Official packages"
 pacman -Qn
