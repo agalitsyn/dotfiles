@@ -117,7 +117,8 @@ brew install \
     postgresql \
     libmemcached \
     memcached \
-    redis
+    redis \
+    sqlite
 
 # Alternative for Finder
 brew install --cask marta
