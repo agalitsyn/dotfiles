@@ -47,7 +47,7 @@
   "zenMode.hideTabs": false,
   "window.zoomLevel": 0.3,
   "window.title": "${activeEditorFull}${separator}${rootName}",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontLigatures": true,
   "editor.codeActionsOnSave": {},
@@ -199,11 +199,11 @@
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "b"],
-       "commands": ["goToNextReference"]
+      "commands": ["goToNextReference"]
     },
     {
       "before": ["<leader>", "/"],
-       "commands": ["editor.action.commentLine"]
+      "commands": ["editor.action.commentLine"]
     },
     //   "before": ["<tab>"],
     //   "commands": ["workbench.action.nextEditorInGroup"]
@@ -239,7 +239,7 @@
     {
       "before": ["<leader>", "backspace"],
       "commands": ["workbench.action.navigateToLastEditLocation"]
-    },
+    }
   ],
   "vim.insertModeKeyBindings": [
     {
@@ -266,7 +266,7 @@
     },
     {
       "before": ["<leader>", "/"],
-       "commands": ["editor.action.commentLine"]
+      "commands": ["editor.action.commentLine"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -289,5 +289,5 @@
   ],
   "vim.leader": "<space>",
   "vim.enable": false,
-  "window.menuBarVisibility": "toggle",
+  "window.menuBarVisibility": "toggle"
 }

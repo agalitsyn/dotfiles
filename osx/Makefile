@@ -1,4 +1,4 @@
-include ../../../vars.mk
+include ../vars.mk
 
 .PHONY: configure
 configure:
