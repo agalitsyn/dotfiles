@@ -14,5 +14,5 @@
       "key": "enter",
       "command": "list.select",
       "when": "listFocus && !inputFocus"
-    }
+    },
 ]

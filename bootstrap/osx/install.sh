@@ -63,7 +63,10 @@ brew install \
 
 # HTTP tools
 brew isntall httpie
-brew install --cask insomnia
+#brew install --cask insomnia
+
+# SS with UI
+brew install --cask sloth
 
 # Cert tools
 brew install easy-rsa
@@ -160,7 +163,7 @@ brew install --cask iterm2
 brew install --cask rectangle
 
 # External monitor resolution tool
-brew install --cask avibrazil-rdm
+#brew install --cask avibrazil-rdm
 
 # Select default apps by cli tool
 brew install duti
@@ -193,9 +196,9 @@ brew install --cask android-file-transfer
 # IM (choose what your need)
 #brew install --cask slack
 #brew install --cask skype
+#brew install --cask discord
 brew install --cask zoom
 brew install --cask telegram
-brew install --cask discord
 brew install --cask whatsapp
 
 # Avoid rkn
@@ -215,10 +218,7 @@ brew install --cask jetbrains-toolbox
 # Manually download xmind 8. xmind zen is bad
 
 # Notes
-brew install --cask fsnotes
-
-# Superdocs
-brew install --casks notion
+brew install --cask obsidian
 
 # Password manager
 brew install bitwarden-cli
@@ -260,7 +260,7 @@ brew install --cask the-unarchiver
 
 # Help unlucky windows guys
 #brew install --cask teamviewer
-#brew install --cask anydesk
+brew install --cask anydesk
 
 # NTFS
 #

@@ -22,7 +22,6 @@ ms-toolsai.jupyter
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode.remote-repositories
-ms-vscode.sublime-keybindings
 Nixon.env-cmd-file-syntax
 octref.vetur
 pmndrs.pmndrs
@@ -37,4 +36,4 @@ wholroyd.jinja
 Vue.volar
 Vue.vscode-typescript-vue-plugin
 dbaeumer.vscode-eslint
-
+ms-vscode.sublime-keybindings

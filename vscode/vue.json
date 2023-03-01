@@ -1,0 +1,78 @@
+{
+	// Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"TypeScript Class Component": {
+		"prefix": "comp",
+		"body": [
+			"<template>",
+			"  <v-card flat>",
+			"    <v-card-title>",
+			"      <span class=\"text-h5\">{{ title }}</span>",
+			"    </v-card-title>",
+			"",
+			"    <validation-observer ref=\"observer\" v-slot=\"{ invalid }\">",
+			"      <form @submit.prevent=\"handleSubmit\">",
+			"        <v-card-text>",
+			"          <v-container>",
+			"            <v-row>",
+			"              <v-col cols=\"12\">",
+			"                <v-select :items=\"['a', 'b', 'c']\" label=\"Выбор\"></v-select>",
+			"              </v-col>",
+			"            </v-row>",
+			"          </v-container>",
+			"        </v-card-text>",
+			"",
+			"        <v-card-actions>",
+			"          <v-spacer></v-spacer>",
+			"          <v-btn @click=\"handleCancel\">Отмена</v-btn>",
+			"          <v-btn type=\"submit\" :disabled=\"invalid\">Сохранить</v-btn>",
+			"        </v-card-actions>",
+			"      </form>",
+			"    </validation-observer>",
+			"  </v-card>",
+			"</template>",
+			"",
+			"<script lang=\"ts\">",
+			"  import { Vue, Component, Prop } from \"vue-property-decorator\";",
+			"",
+			"  import { ValidationProvider, ValidationObserver, extend } from \"vee-validate\";",
+			"  import { required } from \"vee-validate/dist/rules\";",
+			"",
+			"  // register validation rules",
+			"  extend(\"required\", { ...required, message: \"{_field_} не может быть пустым\" });",
+			"",
+			"  @Component({",
+			"    components: {",
+			"      ValidationObserver,",
+			"      ValidationProvider,",
+			"    },",
+			"  })",
+			"  export default class ${1:ClassName} extends Vue {",
+			"    @Prop({ default: \"Заголовок\" })",
+			"    title!: string;",
+			"",
+			"    handleCancel() {",
+			"      this.$emit(\"on-cancel\", true);",
+			"    }",
+			"",
+			"    handleSubmit() {",
+			"      this.$emit(\"on-submit\", true);",
+			"    }",
+			"  }",
+			"</script>",
+		],
+		"description": "Vue2 class-based component with Vuetify"
+	}
+}
