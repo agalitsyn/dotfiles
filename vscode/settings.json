@@ -59,7 +59,7 @@
   "editor.formatOnPaste": false,
   "editor.renderWhitespace": "selection",
   "editor.find.cursorMoveOnType": true,
-  "editor.rulers": [80, 120],
+  "editor.rulers": [120],
   "editor.minimap.enabled": false,
   "editor.linkedEditing": true,
   "explorer.confirmDragAndDrop": false,

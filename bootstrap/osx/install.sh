@@ -111,8 +111,10 @@ brew install \
     python \
     pyenv \
     poetry \
+    pdm \
     node@16 \
     yarn \
+    pnpm \
     go
 
 # Add backing services primarily for python builds
