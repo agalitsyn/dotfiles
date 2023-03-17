@@ -191,6 +191,9 @@ brew install --cask vlc
 brew install --cask handbrake
 brew install youtube-dl
 
+# Screenshot
+brew install --cask flameshot
+
 # Phones
 brew install --cask android-file-transfer
 #brew install --cask ifunbox
