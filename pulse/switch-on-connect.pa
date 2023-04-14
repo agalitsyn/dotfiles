@@ -1,0 +1,2 @@
+# https://wiki.archlinux.org/title/PulseAudio#Switch_on_connect
+load-module module-switch-on-connect
