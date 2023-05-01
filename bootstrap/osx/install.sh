@@ -147,9 +147,11 @@ brew install ansible \
     packer
 
 # AWS tools
-brew install awscli
+#brew install awscli
+
 # Digital Ocean tools
 brew install doctl
+
 # Yandex cloud tools
 brew install --cask yandex-cloud-cli
 
@@ -177,7 +179,7 @@ brew install --cask anybar
 brew install --cask maccy
 
 # App switch
-brew install --cask alt-tab
+#brew install --cask alt-tab
 
 # Storage
 #brew install --cask google-backup-and-sync
