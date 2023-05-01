@@ -138,7 +138,7 @@ brew install --cask WebPQuickLook
 
 # Containers
 brew install --cask docker
-brew install lazydocker
+#brew install lazydocker
 brew install ctop
 
 # Cloud OPS tools
@@ -193,9 +193,11 @@ brew install youtube-dl
 
 # Screenshot
 brew install --cask flameshot
+#brew install --cask skitch
 
 # Phones
 brew install --cask android-file-transfer
+brew install --cask imazing
 #brew install --cask ifunbox
 
 # IM (choose what your need)
@@ -207,10 +209,10 @@ brew install --cask telegram
 brew install --cask whatsapp
 
 # Avoid rkn
-brew install --cask cloudflare-warp
-brew install --cask protonvpn
 brew install --cask tunnelblick
-brew install --cask tor-browser
+#brew install --cask cloudflare-warp
+#brew install --cask protonvpn
+#brew install --cask tor-browser
 
 # Tray improvements
 brew install --cask itsycal
@@ -219,8 +221,9 @@ brew install --cask itsycal
 brew install --cask jetbrains-toolbox
 
 # Mindmap
+# Manually download xmind 8 from website https://xmind.app/download/xmind8/
+# xmind from brew is xmind zen, which is bad
 #brew install --cask xmind
-# Manually download xmind 8. xmind zen is bad
 
 # Notes
 brew install --cask obsidian
@@ -239,11 +242,7 @@ brew install graphviz
 
 # Manage ebooks
 brew install --cask calibre
-
-# djview
 brew install --cask djview
-
-# Kindle
 #brew install --cask kindle
 
 # Keyboard
@@ -253,9 +252,6 @@ brew install --cask karabiner-elements
 brew install --casks obs
 #brew install asciinema
 #brew install --cask kap
-
-# Screenshoting
-#brew install --cask skitch
 
 # Linux USB drives
 brew install --cask balenaetcher
@@ -276,15 +272,13 @@ brew install --cask anydesk
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 #
 #Better to use paragon ntfs.
-#brew install --cask paragon-ntfs
+brew install --cask paragon-ntfs
 #
 # For native driver
 #brew install --cask mounty
 
 # Some not free apps
 #brew install --cask cleanmymac
-#brew install --cask istat-menus
-#brew install --cask switchresx
 #brew install --cask microsoft-office
 
 # Remove outdated versions from the cellar
