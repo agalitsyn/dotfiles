@@ -39,7 +39,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "workbench.tree.expandMode": "doubleClick",
-  "workbench.layoutControl.enabled": false,
   "vsicons.dontShowNewVersionMessage": true,
   "problems.decorations.enabled": false,
   "window.autoDetectColorScheme": false,
@@ -70,6 +69,8 @@
   "editor.autoClosingBrackets": "never",
   "files.autoSave": "onFocusChange",
   "window.zoomLevel": 0.3,
+  "workbench.layoutControl.enabled": false,
+  "editor.fontFamily": "'Julia Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
 
   // git
   "git.autofetch": true,
@@ -286,7 +287,6 @@
   "vim.leader": "<space>",
   "vim.enable": false,
   "window.menuBarVisibility": "toggle",
-  "editor.fontFamily": "'Julia Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
 }
