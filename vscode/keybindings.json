@@ -15,4 +15,5 @@
       "command": "list.select",
       "when": "listFocus && !inputFocus"
     },
+    { "key": "cmd+k cmd+\\",          "command": "workbench.action.splitEditorRight" },
 ]
