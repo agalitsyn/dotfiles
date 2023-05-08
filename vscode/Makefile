@@ -1,10 +1,14 @@
 include ../vars.mk
 
-.PHONY: install
-install:
+.PHONY: install-extensions
+install-extensions:
 	for i in $(shell cat extensions.txt); do\
 		code --install-extension $$i; \
 	done
+
+.PHONY: dump-extensions
+dump-extensions:
+	code --list-extensions > extensions.txt
 
 .PHONY: configure-linux
 configure-linux:
