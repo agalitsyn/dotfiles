@@ -43,11 +43,20 @@ sudo tlp start
 yay -S --noconfirm powertop
 
 yay -S --noconfirm brave-browser firefox
+# Alternatives:
+#yay -S --noconfirm firefox-developer-edition
+#yay -S --noconfirm ungoogled-chromium-bin
 
 yay -S --noconfirm alsa-utils pavucontrol
 
 yay -S --noconfirm sublime-text-4 sublime-merge
+
 yay -S --noconfirm visual-studio-code-bin
+# Alternatives
+# OSS build
+# yay -S --noconfirm code
+# Unmicrosofted vscode
+# yay -S --noconfirm vscodium-bin
 
 yay -S --noconfirm parcellite
 
@@ -108,11 +117,11 @@ yay -S --noconfirm \
     httpie \
     hurl-bin
 
-yay -S --noconfirm nodejs-lts-gallium npm yarn
-yay -S --noconfirm jre-openjdk
 yay -S --noconfirm go
+yay -S --noconfirm python
+yay -S --noconfirm nodejs-lts-hydrogen npm yarn pnpm
+yay -S --noconfirm jre-openjdk
 yay -S --noconfirm protobuf
-yay -S --noconfirm python python2
 
 yay -S --noconfirm meld
 
@@ -138,7 +147,7 @@ yay -S --noconfirm libreoffice-fresh
 
 yay -S --noconfirm postgresql-libs pgcli
 
-yay -S --noconfirm zoom telegram-desktop
+yay -S --noconfirm telegram-desktop
 
 yay -S --noconfirm flameshot
 

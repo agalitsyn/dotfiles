@@ -44,7 +44,7 @@
   "window.autoDetectColorScheme": false,
   "zenMode.hideTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontLigatures": true,
   "editor.codeActionsOnSave": {},
   "editor.find.seedSearchStringFromSelection": "selection",

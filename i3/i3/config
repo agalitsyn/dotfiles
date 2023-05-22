@@ -206,8 +206,8 @@ for_window [class="nm-connection-editor"] floating enable
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [class="Arandr"] floating enable sticky enable border normal
 for_window [class="vlc"] floating enable
-for_window [class="obs"] floating enable
-for_window [class="anydesk"] floating enable
+#for_window [class="obs"] floating enable
+#for_window [class="anydesk"] floating enable
 #for_window [class="obsidian"] floating enable
 #for_window [class="subl"] floating enable
 #for_window [class="Code"] floating enable
@@ -217,6 +217,8 @@ for_window [class="anydesk"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Skype"] floating enable border normal
+for_window [class="ktalk"] floating enable border normal
+for_window [class="ktalk"] floating enable border normal
 #for_window [class="TelegramDesktop"] floating enable
 #for_window [class="Mattermost"] floating enable
 for_window [class="jetbrains-toolbox"] floating enable
@@ -309,21 +311,21 @@ bindsym $mod+Shift+plus exec --no-startup-id "pactl set-sink-volume @DEFAULT_SIN
 bindsym $mod+Shift+m exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle; notify-send 'mute audio'"
 
 # Applications hotkeys
+bindsym $mod+Return exec $terminal
 bindsym $alt+$ctrl+l exec --no-startup-id blurlock
 bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Pictures
 bindsym $mod+b exec --no-startup-id ~/.config/i3/bookmarks search
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/bookmarks add
 
-bindsym $mod+Return exec $terminal
-
-bindsym $mod+F1 exec $terminal --title 'File Explorer' --command ranger
-bindsym $mod+F2 exec $terminal --title 'Editor' --command nvim ~
-bindsym $mod+F3 exec brave --new-window
+bindsym $mod+F1 exec nautilus --new-window
+#bindsym $mod+F2 exec $terminal --title 'Editor' --command nvim ~
+#bindsym $mod+F3 exec brave --new-window
 bindsym $mod+F4 exec $terminal --hold --title 'Calendar' --command cal --year --week
 
 bindsym $mod+F5 exec subl --new-window
-bindsym $mod+F8 exec nautilus --new-window
+#bindsym $mod+F8 exec nautilus --new-window
 
+bindsym $mod+F9 exec --no-startup-id "setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru"
 bindsym $mod+F11 exec pavucontrol
 bindsym $mod+F12 exec $terminal --command htop
 
