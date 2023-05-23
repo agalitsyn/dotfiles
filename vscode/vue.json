@@ -14,7 +14,7 @@
 	// }
 
 	"TypeScript Class Component": {
-		"prefix": "comp",
+		"prefix": "vuecomp",
 		"body": [
 			"<template>",
 			"  <v-card flat>",
