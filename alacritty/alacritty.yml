@@ -14,25 +14,25 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  TERM: xterm-256color
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. Both lines and columns
   # must be non-zero for this to take effect. The number of columns must be at
   # least `2`, while using a value of `0` for columns and lines will fall back
   # to the window manager's recommended size
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 125
+    lines: 45
 
   # Window position (changes require restart)
   #
@@ -46,12 +46,12 @@
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 0
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -62,13 +62,13 @@
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  decorations: full
 
   # Background opacity
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  #opacity: 1.0
+  opacity: 1.0
 
   # Startup Mode (changes require restart)
   #
@@ -79,20 +79,20 @@
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  dynamic_title: true
 
   # Window class (Linux/BSD only):
-  #class:
+  class:
     # Application instance name
-    #instance: Alacritty
+    instance: Alacritty
     # General application class
-    #general: Alacritty
+    general: Alacritty
 
   # Decorations theme variant (Linux/BSD only)
   #
@@ -101,64 +101,89 @@
   # the default theme variant.
   #decorations_theme_variant: None
 
-#scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 100000
 
   # Scrolling distance multiplier.
-  #multiplier: 3
+  multiplier: 3
 
-# Font configuration
-#font:
+# Font configuration (changes require restart)
+font:
   # Normal (roman) font face
-  #normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
+  normal:
+    family: BlexMono Nerd Font Mono
+    style: Regular
 
   # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+  bold:
+    family: BlexMono Nerd Font Mono
+    style: Bold
 
   # Italic font face
-  #italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
+  italic:
+    family: BlexMono Nerd Font Mono
+    style: Italic
 
   # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+  bold_italic:
+    family: BlexMono Nerd Font Mono
+    style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 11.0
+
+# Font configuration
+# font:
+#   # Normal (roman) font face
+#   normal:
+#     # Font family
+#     #
+#     # Default:
+#     #   - (macOS) Menlo
+#     #   - (Linux/BSD) monospace
+#     #   - (Windows) Consolas
+#     family: monospace
+#
+#     # The `style` can be specified to pick a specific face.
+#     #style: Regular
+#
+#   # Bold font face
+#   bold:
+#     # Font family
+#     #
+#     # If the bold family is not specified, it will fall back to the
+#     # value specified for the normal font.
+#     family: monospace
+#
+#     # The `style` can be specified to pick a specific face.
+#     style: Bold
+#
+#   # Italic font face
+#   italic:
+#     # Font family
+#     #
+#     # If the italic family is not specified, it will fall back to the
+#     # value specified for the normal font.
+#     family: monospace
+#
+#     # The `style` can be specified to pick a specific face.
+#     style: Italic
+#
+#   # Bold italic font face
+#   bold_italic:
+#     # Font family
+#     #
+#     # If the bold italic family is not specified, it will fall back to the
+#     # value specified for the normal font.
+#     family: monospace
+#
+#     # The `style` can be specified to pick a specific face.
+#     style: Bold Italic
+#
+   # Point size
+  # size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -182,15 +207,43 @@
   #builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
-#colors:
+# Colors (Solarized Dark)
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+    background: '0x002b36'
+    foreground: '0x839496'
 
+  # Normal colors
+  normal:
+    black:   '0x073642'
+    red:     '0xdc322f'
+    green:   '0x859900'
+    yellow:  '0xb58900'
+    blue:    '0x268bd2'
+    magenta: '0xd33682'
+    cyan:    '0x2aa198'
+    white:   '0xeee8d5'
+
+  # Bright colors
+  bright:
+    black:   '0x002b36'
+    red:     '0xcb4b16'
+    green:   '0x586e75'
+    yellow:  '0x657b83'
+    blue:    '0x839496'
+    magenta: '0x6c71c4'
+    cyan:    '0x93a1a1'
+    white:   '0xfdf6e3'
+
+# colors:
+  # Default colors
+  # primary:
+  #   background: '0xffffff'
+  #   foreground: '0x4d4d4c'
+  #
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not
@@ -281,27 +334,27 @@
   #  background: CellForeground
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
-
+  # normal:
+  #   black:   '0xffffff'
+  #   red:     '0xc82829'
+  #   green:   '0x718c00'
+  #   yellow:  '0xeab700'
+  #   blue:    '0x4271ae'
+  #   magenta: '0x8959a8'
+  #   cyan:    '0x3e999f'
+  #   white:   '0x4d4d4c'
+  #
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
-
+  # bright:
+  #   black:   '0x8e908c'
+  #   red:     '0xf5871f'
+  #   green:   '0xe0e0e0'
+  #   yellow:  '0xd6d6d6'
+  #   blue:    '0x969896'
+  #   magenta: '0x282a2e'
+  #   cyan:    '0xa3685a'
+  #   white:   '0x1d1f21'
+  #
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
@@ -758,10 +811,10 @@
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
-  #- { key: Paste,                                       action: Paste          }
-  #- { key: Copy,                                        action: Copy           }
-  #- { key: L,         mods: Control,                    action: ClearLogNotice }
+key_bindings:
+  - { key: Paste,                                       action: Paste          }
+  - { key: Copy,                                        action: Copy           }
+  - { key: L,         mods: Control,                    action: ClearLogNotice }
   #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
   #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
   #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
