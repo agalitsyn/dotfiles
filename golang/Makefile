@@ -6,6 +6,7 @@ configure:
 	ln -sf $(CURDIR)/goenv.sh $(ZSH_HOOKS_FOLDER)/goenv.zsh
 
 PACKAGES := golang.org/x/tools/cmd/goimports \
+			github.com/incu6us/goimports-reviser/v3 \
 			mvdan.cc/gofumpt \
 			github.com/segmentio/golines \
 			github.com/golangci/golangci-lint/cmd/golangci-lint \
