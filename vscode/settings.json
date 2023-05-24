@@ -44,7 +44,7 @@
   "window.autoDetectColorScheme": false,
   "zenMode.hideTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.codeActionsOnSave": {},
   "editor.find.seedSearchStringFromSelection": "selection",
@@ -73,7 +73,7 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
   "workbench.colorTheme": "poimandres-noitalics-storm",
-  "window.zoomLevel": 0.3,
+  "window.zoomLevel": 0.0,
 
   // git
   "git.autofetch": true,
