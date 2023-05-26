@@ -120,17 +120,17 @@ font:
 
   # Bold font face
   bold:
-    family: BlexMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold
 
   # Italic font face
   italic:
-    family: BlexMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: BlexMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold Italic
 
   # Point size

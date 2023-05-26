@@ -95,7 +95,8 @@ brew install --cask \
     font-monoid \
     font-pt-mono \
     font-space-mono \
-    font-blex-mono-nerd-font
+    font-blex-mono-nerd-font \
+    font-jetbrains-mono-nerd-font
 
 # Necessary for CLI on images
 brew install imagemagick
