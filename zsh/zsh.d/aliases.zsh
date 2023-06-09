@@ -1,12 +1,6 @@
 # gnu utils modern alternatives
 alias l='exa --all --long --group-directories-first'
-alias f='fd'
 alias c='bat'
-
-# Grep alternative
-function rgp() {
-  rg -p "$@" | less -XFR
-}
 
 color_flag="--color"
 
@@ -65,12 +59,6 @@ alias cp='cp -i';
 alias mv='mv -i';
 alias rm='rm -i';
 
-# File size
-alias fs="stat -f \"%z bytes\""
-
-# File path
-alias fp="readlink -f $1"
-
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
@@ -79,9 +67,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -r
 
 # Pager
 alias less='less -Ri'
-
-# Force tmux 256 color
-alias tmux="tmux -2"
 
 # Enable simple aliases to be sudo'ed.
 # http://www.gnu.org/software/bash/manual/bashref.html#Aliases says: "If the
@@ -141,14 +126,6 @@ fi;
 # Use GNU time
 alias gtime='/usr/bin/time'
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-function tre() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
-}
-
 # Enhanced rsync
 alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --partial --progress --delete'
 
@@ -166,3 +143,36 @@ function jwt-decode() {
     local token="$1"
     python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq
 }
+
+# Files
+
+# file find
+alias f='fd'
+
+# file fuzzy search and open
+if command -v open > /dev/null; then
+  alias fo='open $(fzf)';
+elif command -v xdg-open > /dev/null; then
+  alias fo='xdg-open $(fzf)';
+fi;
+
+# file search by content
+function fs() {
+  rg -p "$@" | less -XFR
+}
+
+# file tree
+# shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function ft() {
+    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
+}
+
+# File size
+alias fs="stat $1"
+
+# File path
+alias fp="readlink -f $1"
+
