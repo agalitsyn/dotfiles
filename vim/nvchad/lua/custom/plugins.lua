@@ -3,6 +3,7 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
       opts = {
           ensure_installed = {
+              "bash",
               "go",
               "gomod",
               "gosum",
@@ -13,6 +14,7 @@ local plugins = {
               "lua",
               "ini",
               "json",
+              "yaml",
           },
     },
 },
@@ -24,13 +26,21 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        -- go
         "gopls",
+        "golines",
+        "gofumpt",
+        "goimports-reviser",
         "delve",
+        -- python
         "black",
         "debugpy",
         "mypy",
         "pyright",
         "ruff",
+        -- bash
+        "bash-language-server",
+        "shfmt",
       },
     },
   },
