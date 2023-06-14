@@ -115,7 +115,7 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: BlexMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Regular
 
   # Bold font face
@@ -134,7 +134,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 15.0
+  size: 12.0
 
 # Font configuration
 # font:
@@ -429,13 +429,13 @@ colors:
   #
   #command: None
 
-selection:
+#selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: true
+  #save_to_clipboard: true
 
 #cursor:
   # Cursor style
@@ -816,7 +816,8 @@ selection:
 key_bindings:
   - { key: Paste,                                       action: Paste          }
   - { key: Copy,                                        action: Copy           }
-  - { key: L,         mods: Control,                    action: ClearLogNotice }
+#  - { key: L,         mods: Control,                    action: ClearLogNotice }
+  - { key: L,         mods: Control, chars: "\x0c"          }
   - { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
   - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
   - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
@@ -916,7 +917,7 @@ key_bindings:
   - { key: C,              mods: Command,                    action: Copy                  }
   - { key: C,              mods: Command, mode: Vi|~Search,  action: ClearSelection        }
   - { key: H,              mods: Command,                    action: Hide                  }
-  - { key: H,              mods: Command|Alt,                action: HideOtherApplications }
+# - { key: H,              mods: Command|Alt,                action: HideOtherApplications }
   - { key: M,              mods: Command,                    action: Minimize              }
   - { key: Q,              mods: Command,                    action: Quit                  }
   - { key: W,              mods: Command,                    action: Quit                  }

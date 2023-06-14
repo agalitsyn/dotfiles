@@ -235,11 +235,11 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+d mode "$mode_display"
 set $mode_display (l)aptop, (h)ome-single, (Shift+h)ome-dual, (o)ffice-single, (Shift+o)ffice-dual, (m)anual
 mode "$mode_display" {
-    bindsym l exec --no-startup-id ~/.config/i3/display-preset-switcher laptop, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/display-preset-switcher home-single, mode "default"
-    bindsym Shift+h exec --no-startup-id ~/.config/i3/display-preset-switcher home-dual, mode "default"
-    bindsym o exec --no-startup-id ~/.config/i3/display-preset-switcher office-single, mode "default"
-    bindsym Shift+o exec --no-startup-id ~/.config/i3/display-preset-switcher office-dual, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/scripts/display-preset-switcher.sh laptop, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/scripts/display-preset-switcher.sh home-single, mode "default"
+    bindsym Shift+h exec --no-startup-id ~/.config/i3/scripts/display-preset-switcher.sh home-dual, mode "default"
+    bindsym o exec --no-startup-id ~/.config/i3/scripts/display-preset-switcher.sh office-single, mode "default"
+    bindsym Shift+o exec --no-startup-id ~/.config/i3/scripts/display-preset-switcher.sh office-dual, mode "default"
     bindsym m exec --no-startup-id arandr, mode "default"
 
     # exit system mode: "Enter" or "Escape"
@@ -314,8 +314,8 @@ bindsym $mod+Shift+m exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym $mod+Return exec $terminal
 bindsym $alt+$ctrl+l exec --no-startup-id blurlock
 bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Pictures
-bindsym $mod+b exec --no-startup-id ~/.config/i3/bookmarks search
-bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/bookmarks add
+bindsym $mod+b exec --no-startup-id ~/.config/i3/scripts/bookmarks.sh search
+bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/bookmarks.sh add
 
 bindsym $mod+F1 exec nautilus --new-window
 #bindsym $mod+F2 exec $terminal --title 'Editor' --command nvim ~
@@ -326,6 +326,7 @@ bindsym $mod+F5 exec subl --new-window
 #bindsym $mod+F8 exec nautilus --new-window
 
 bindsym $mod+F9 exec --no-startup-id "setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps,caps:escape us,ru"
+bindsym $mod+F10 exec arandr
 bindsym $mod+F11 exec pavucontrol
 bindsym $mod+F12 exec $terminal --command htop
 
@@ -364,10 +365,11 @@ exec_always --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle,gr
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# initial run is in systemd
+# if initial run is in systemd
 # systemctl --user cat gnome-keyring-daemon.service
 # we need to replace keyring for getting it env vars to DE session
-exec_always ~/.config/i3/gnome-keyring.sh
+# otherwise run here
+exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:

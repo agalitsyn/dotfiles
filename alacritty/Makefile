@@ -1,4 +1,5 @@
 .PHONY: configure
 configure:
-	ln -sf $(CURDIR) ~/.config/alacritty
+	mkdir -pv ~/.config/alacritty
+	ln -sf $(CURDIR)/alacritty.yml ~/.config/alacritty/alacritty.yml
 
