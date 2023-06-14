@@ -1,0 +1,14 @@
+if [ -f ~/.ssh/agent.env ] ; then
+    source ~/.ssh/agent.env > /dev/null
+
+    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+        echo "Stale agent file found. Spawning a new agent. "
+        eval `ssh-agent | tee ~/.ssh/agent.env`
+        ssh-add
+    fi
+else
+    echo "Starting ssh-agent"
+    eval `ssh-agent | tee ~/.ssh/agent.env`
+    ssh-add
+fi
+
