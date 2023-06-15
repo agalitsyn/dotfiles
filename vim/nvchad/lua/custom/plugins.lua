@@ -179,6 +179,10 @@ local plugins = {
                 desc = "Split the object under cursor",
             },
         },
+        config = function(_, opts)
+            require("splitjoin").setup(opts)
+            require("core.utils").load_mappings("splitjoin")
+        end,
     },
 }
 
