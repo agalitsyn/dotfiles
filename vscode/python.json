@@ -1,14 +1,29 @@
 {
   "dump": {
     "prefix": "fd",
-    "body": "print(f\"DEBUG: {type(${1:var})} ${1:var}: {${1:var}}\")"
+    "body": [
+      "# TODO: remove",
+      "print(f\"DEBUG: {type(${1:var})} ${1:var}: {${1:var}}\")",
+    ]
   },
   "dumpdict": {
     "prefix": "fdd",
     "body": [
+      "# TODO: remove",
       "import json",
       "dump = json.dumps(${1:var}, indent=4, sort_keys=True)",
       "print(dump)",
+    ],
+  },
+  "pprint": {
+    "prefix": "pp",
+    "body": [
+      "# TODO: remove",
+      "import pprint",
+      "print(\"\")",
+      "print(\"DEBUG\")",
+      "pprint.pprint(${1:var}, indent=4)",
+      "print(\"\")"
     ],
   },
 }

@@ -289,4 +289,6 @@
   ],
   "vim.leader": "<space>",
   "vim.enable": false,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.persistentSessionScrollback": 300,
 }
