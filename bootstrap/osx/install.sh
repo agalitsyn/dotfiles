@@ -166,12 +166,13 @@ brew install --cask firefox \
 # Terminal
 brew install --cask iterm2
 
-# Window enhancements
+# Window management
 #brew install --cask spectacle
 brew install --cask rectangle
 
-# External monitor resolution tool
+# External monitor tool
 #brew install --cask avibrazil-rdm
+brew install --cask monitorcontrol
 
 # Select default apps by cli tool
 brew install duti
