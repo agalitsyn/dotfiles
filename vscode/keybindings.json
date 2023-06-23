@@ -1,5 +1,4 @@
 [
-    // enter to open, ctrl + enter to open in split, cmd + enter to rename
     {
       "key": "cmd+enter",
       "command": "renameFile",
@@ -15,5 +14,24 @@
       "command": "list.select",
       "when": "listFocus && !inputFocus"
     },
-    { "key": "cmd+k cmd+\\",          "command": "workbench.action.splitEditorRight" },
+    {
+      "key": "ctrl+tab",
+      "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+      "key": "ctrl+shift+tab",
+      "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+      "key": "cmd+k cmd+r",
+      "command": "workbench.action.evenEditorWidths"
+    },
+    {
+      "key": "cmd+k cmd+m",
+      "command": "workbench.action.minimizeOtherEditors"
+    },
+    {
+      "key": "cmd+e",
+      "command": "workbench.action.showEditorsInActiveGroup"
+    },
 ]

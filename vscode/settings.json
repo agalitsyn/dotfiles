@@ -293,4 +293,5 @@
   "vim.enable": false,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 300,
+  "workbench.activityBar.visible": true,
 }
