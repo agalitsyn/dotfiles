@@ -29,7 +29,7 @@
     "find_selected_text": true,
     "word_wrap": false,
     "wrap_width": 120,
-    "rulers": [ 80, 120],
+    "rulers": [120],
     "indent_to_bracket": false,
     "save_on_focus_lost": true,
 
