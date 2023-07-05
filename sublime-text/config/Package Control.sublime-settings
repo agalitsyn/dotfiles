@@ -1,23 +1,20 @@
 {
     "installed_packages": [
-        // Theme
         "Alabaster Color Scheme",
-
-        // VCS integration
-        "Git",
-        "GitGutter",
-
-        // Files and foldes
-        "SideBarEnhancements",
-
-        // Editor powerups
-        "EditorConfig",
-        "BracketHighlighter",
         "AutoFileName",
-        "Zen Tabs",
-
-        // Additional syntax
-        "Dotfiles Syntax Highlighting",
         "Dockerfile Syntax Highlighting",
-    ]
+        "Dotfiles Syntax Highlighting",
+        "EditorConfig",
+        "GitGutter",
+        "LSP",
+        "LSP-pyright",
+        "LSP-typescript",
+        "LSP-volar",
+        "Package Control",
+        "SideBarEnhancements",
+    ],
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
 }

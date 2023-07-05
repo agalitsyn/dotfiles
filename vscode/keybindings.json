@@ -15,14 +15,6 @@
       "when": "listFocus && !inputFocus"
     },
     {
-      "key": "ctrl+tab",
-      "command": "workbench.action.nextEditorInGroup"
-    },
-    {
-      "key": "ctrl+shift+tab",
-      "command": "workbench.action.previousEditorInGroup"
-    },
-    {
       "key": "cmd+k cmd+r",
       "command": "workbench.action.evenEditorWidths"
     },

@@ -4,16 +4,20 @@
 
     // theme
     "theme": "Adaptive.sublime-theme",
-    "color_scheme": "Packages/Alabaster Color Scheme/Alabaster.sublime-color-scheme",
+    "color_scheme": "auto",
+    "dark_theme": "Adaptive.sublime-theme",
+    "light_theme": "Adaptive.sublime-theme",
+    "dark_color_scheme": "Alabaster Dark.sublime-color-scheme",
+    "light_color_scheme": "Alabaster.sublime-color-scheme",
 
-    // Font (Menlo, Source Code Pro, Input Mono, Hack)
-    "font_face": "Source Code Pro",
+    // Font (Menlo, Source Code Pro, Input Mono, Hack, IBM Plex Mono)
+    "font_face": "Julia Mono",
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 12,
+    "font_size": 15,
 
     // Cursor style - slightly wider than default
     "wide_caret": true,
-    "caret_style": "phase",
+    "caret_style": "solid",
 
     // Editor look and feel
     "draw_white_space": "selection",
@@ -22,6 +26,10 @@
     "indent_guide_options": ["draw_active"],
     "show_panel_on_build": false,
     "preview_on_click": false,
+    "hide_tab_scrolling_buttons": true,
+    "hide_new_tab_button": true,
+    "ui_scale": 0.0,
+    "console_max_history_lines": 10000,
 
     // Editor behavior
     "scroll_past_end": false,
@@ -31,6 +39,7 @@
     "wrap_width": 120,
     "rulers": [120],
     "indent_to_bracket": false,
+    "auto_match_enabled": false,
     "save_on_focus_lost": true,
 
     // Whitespace - no tabs, trimming, end files with \n
@@ -55,6 +64,7 @@
         ".git",
         ".hg",
         "CVS",
-        "__pycache__"
-    ]
+        "__pycache__",
+        ".venv",
+    ],
 }

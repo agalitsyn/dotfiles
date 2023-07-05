@@ -39,7 +39,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "workbench.tree.expandMode": "doubleClick",
-  "vsicons.dontShowNewVersionMessage": true,
   "problems.decorations.enabled": false,
   "window.autoDetectColorScheme": false,
   "zenMode.hideTabs": false,
@@ -75,7 +74,6 @@
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
   "workbench.colorTheme": "poimandres-noitalics-storm",
-  "window.zoomLevel": 0.0,
 
   // git
   "git.autofetch": true,
@@ -293,5 +291,5 @@
   "vim.enable": false,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 300,
-  "workbench.activityBar.visible": true,
+  "workbench.activityBar.visible": true
 }

@@ -8,4 +8,3 @@ CONFIG=$HOME/.config/sublime-text
 mkdir -p "$CONFIG/Packages/User"
 # copy instead of linking because sublime reformats it and delete all the comments
 cp config/* "$CONFIG/Packages/User"
-
