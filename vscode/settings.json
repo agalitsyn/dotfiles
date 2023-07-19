@@ -70,6 +70,8 @@
   "editor.bracketPairColorization.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.autoClosingBrackets": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.autoClosingQuotes": "never",
   "diffEditor.renderSideBySide": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,

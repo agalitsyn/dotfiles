@@ -142,7 +142,7 @@ brew install --cask WebPQuickLook
 
 # Containers
 brew install --cask docker
-#brew install lazydocker
+brew install lazydocker
 brew install ctop
 
 # Cloud OPS tools
