@@ -1,4 +1,9 @@
 {
+
+  // Experimental
+  "diffEditor.experimental.useVersion2": true,
+  "diffEditor.experimental.collapseUnchangedRegions": true,
+
   // Updates
   "update.mode": "start",
   "extensions.autoUpdate": false,

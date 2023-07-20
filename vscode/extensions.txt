@@ -1,8 +1,6 @@
 adpyke.codesnap
 antfu.icons-carbon
 bradlc.vscode-tailwindcss
-Catppuccin.catppuccin-vsc
-Catppuccin.catppuccin-vsc-icons
 cdonohue.quill-icons
 christian-kohler.path-intellisense
 dsznajder.es7-react-js-snippets
