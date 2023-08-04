@@ -15,12 +15,12 @@
       "when": "listFocus && !inputFocus"
     },
     {
-      "key": "cmd+k cmd+r",
-      "command": "workbench.action.evenEditorWidths"
-    },
-    {
       "key": "cmd+k cmd+m",
       "command": "workbench.action.minimizeOtherEditors"
+    },
+    {
+      "key": "cmd+k cmd+r",
+      "command": "workbench.action.evenEditorWidths"
     },
     {
       "key": "cmd+e",

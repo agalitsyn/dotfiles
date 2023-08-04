@@ -52,12 +52,12 @@
   "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.visible": true,
+  "workbench.settings.editor": "json",
   "problems.decorations.enabled": false,
   "zenMode.hideTabs": false,
   "editor.fontFamily": "'Julia Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
-  "editor.codeActionsOnSave": {},
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 4,
@@ -77,9 +77,12 @@
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
+  "editor.suggest.insertMode": "replace",
   "diffEditor.renderSideBySide": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
+  "editor.codeActionsOnSave": {}, // setup per language
+
 
   // git
   "git.autofetch": true,
