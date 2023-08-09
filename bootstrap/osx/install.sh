@@ -147,8 +147,7 @@ brew install ctop
 
 # Cloud OPS tools
 brew install ansible \
-    terraform \
-    packer
+    terraform
 
 # AWS tools
 #brew install awscli

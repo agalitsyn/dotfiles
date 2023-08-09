@@ -167,7 +167,7 @@ function fs() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 function ft() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
+    tree -aC -I '.git|node_modules|bower_components|vendor|.venv' --dirsfirst "$@" | less -FRNX
 }
 
 # File size
