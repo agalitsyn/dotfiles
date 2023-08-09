@@ -78,10 +78,13 @@
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
   "editor.suggest.insertMode": "replace",
-  "diffEditor.renderSideBySide": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "editor.codeActionsOnSave": {}, // setup per language
+  "diffEditor.renderSideBySide": true,
+
+  // markdown
+  "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
 
 
   // git
