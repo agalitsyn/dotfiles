@@ -1,5 +1,4 @@
 {
-
   // Experimental
   "diffEditor.experimental.useVersion2": true,
   "diffEditor.experimental.collapseUnchangedRegions": true,
@@ -108,7 +107,7 @@
       "source.organizeImports": true
     },
     // Optional: Disable snippets, as they conflict with completion ranking.
-    "editor.snippetSuggestions": "bottom"
+    // "editor.snippetSuggestions": "bottom"
   },
   "[go.mod]": {
     "editor.formatOnSave": true,
@@ -306,5 +305,4 @@
     }
   ],
   "vim.leader": "<space>",
-  "vim.enable": false
 }

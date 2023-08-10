@@ -221,7 +221,8 @@ brew install --cask tunnelblick
 #brew install --cask tor-browser
 
 # Tray improvements
-brew install --cask itsycal
+brew install --cask itsycal \
+    hiddenbar
 
 # IDE
 brew install --cask jetbrains-toolbox

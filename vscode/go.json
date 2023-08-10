@@ -1,6 +1,11 @@
 {
 	"debug": {
 		"prefix": "fd",
-		"body": "fmt.Printf(\"(${1:var}): %#v\\n\", ${1:var})"
+		"body": [
+			"",
+			"// TODO: remove",
+			"fmt.Printf(\"(${1:var}): %#v\\n\", ${1:var})",
+			"",
+		]
 	}
 }
