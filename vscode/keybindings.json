@@ -24,6 +24,30 @@
     },
     {
       "key": "cmd+e",
-      "command": "workbench.action.showEditorsInActiveGroup"
+      "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+    },
+    {
+      "key": "shift+cmd+backspace",
+      "command": "workbench.action.navigateToLastEditLocation"
+    },
+    {
+      "key": "cmd+k cmd+q",
+      "command": "-workbench.action.navigateToLastEditLocation"
+    },
+    {
+      "key": "cmd+r",
+      "command": "workbench.action.gotoSymbol"
+    },
+    {
+      "key": "shift+cmd+o",
+      "command": "-workbench.action.gotoSymbol"
+    },
+    {
+      "key": "shift+cmd+r",
+      "command": "workbench.action.showAllSymbols"
+    },
+    {
+      "key": "cmd+t",
+      "command": "-workbench.action.showAllSymbols"
     },
 ]
