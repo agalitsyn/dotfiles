@@ -98,3 +98,5 @@ if [[ "$TERM_PROGRAM" == iTerm.app ]]; then
     echo -n -e $'\033]50;SetProfile='$ITERM_NORMAL_PROFILE'\a'
   }
 fi
+
+setopt no_nomatch
