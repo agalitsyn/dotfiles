@@ -124,6 +124,7 @@
   "gopls": {
       "ui.semanticTokens": true,
       // "ui.completion.usePlaceholders": true,
+      "formatting.gofumpt": true,
   },
   "[go]": {
     "editor.formatOnSave": true,
@@ -155,9 +156,23 @@
   },
   "go.coverOnSave": false,
   "go.useCodeSnippetsOnFunctionSuggest": false,
-  "go.formatTool": "goimports",
   "go.gopath": "~",
   "go.gocodeAutoBuild": false,
+
+  // "go.formatTool": "custom",
+  // "go.alternateTools": {
+  //   "customFormatter": "goimports-reviser"
+  // },
+
+  "emeraldwalk.runonsave": {
+    "commands": [
+        {
+            "match": "\\.go$",
+            "cmd": "golines ${file} --write-output --max-len=120"
+        }
+    ]
+  },
+
 
   // Python
   "[python]": {
