@@ -16,38 +16,88 @@
     },
     {
       "key": "cmd+k cmd+m",
-      "command": "workbench.action.minimizeOtherEditors"
+      "command": "workbench.action.minimizeOtherEditors",
+      "when": "isMac"
+    },
+    {
+      "key": "ctrl+k ctrl+m",
+      "command": "workbench.action.minimizeOtherEditors",
+      "when": "not isMac"
     },
     {
       "key": "cmd+k cmd+r",
-      "command": "workbench.action.evenEditorWidths"
+      "command": "workbench.action.evenEditorWidths",
+      "when": "isMac"
+    },
+    {
+      "key": "ctrl+k ctrl+r",
+      "command": "workbench.action.evenEditorWidths",
+      "when": "not isMac"
     },
     {
       "key": "cmd+e",
-      "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+      "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
+      "when": "isMac"
+    },
+    {
+      "key": "alt+e",
+      "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
+      "when": "not isMac"
     },
     {
       "key": "shift+cmd+backspace",
-      "command": "workbench.action.navigateToLastEditLocation"
+      "command": "workbench.action.navigateToLastEditLocation",
+      "when": "isMac"
     },
     {
       "key": "cmd+k cmd+q",
-      "command": "-workbench.action.navigateToLastEditLocation"
+      "command": "-workbench.action.navigateToLastEditLocation",
+      "when": "isMac"
+    },
+    {
+      "key": "ctrl+shift+backspace",
+      "command": "workbench.action.navigateToLastEditLocation",
+      "when": "not isMac"
     },
     {
       "key": "cmd+r",
-      "command": "workbench.action.gotoSymbol"
+      "command": "workbench.action.gotoSymbol",
+      "when": "isMac"
     },
     {
       "key": "shift+cmd+o",
-      "command": "-workbench.action.gotoSymbol"
+      "command": "-workbench.action.gotoSymbol",
+      "when": "isMac"
     },
     {
+      "key": "alt+r",
+      "command": "workbench.action.gotoSymbol",
+      "when": "not isMac"
+    },
+
+    {
       "key": "shift+cmd+r",
-      "command": "workbench.action.showAllSymbols"
+      "command": "workbench.action.showAllSymbols",
+      "when": "isMac"
     },
     {
       "key": "cmd+t",
-      "command": "-workbench.action.showAllSymbols"
+      "command": "-workbench.action.showAllSymbols",
+      "when": "isMac"
+    },
+    {
+      "key": "ctrl+shift+r",
+      "command": "workbench.action.showAllSymbols",
+      "when": "not isMac"
+    },
+    {
+      "key": "alt+[",
+      "command": "workbench.action.navigateBack",
+      "when": "not isMac"
+    },
+    {
+      "key": "alt+]",
+      "command": "workbench.action.navigateForward",
+      "when": "not isMac"
     },
 ]

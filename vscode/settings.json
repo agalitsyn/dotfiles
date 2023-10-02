@@ -44,8 +44,11 @@
   // Editor look and feel
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "poimandres-noitalics-storm",
   "window.nativeTabs": true,
   "window.autoDetectColorScheme": false,
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
@@ -59,7 +62,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "workbench.tree.expandMode": "doubleClick",
-  "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.visible": true,
   "workbench.settings.editor": "json",
@@ -67,10 +69,11 @@
     "editorInlayHint.background": "#252b37",
     "editorInlayHint.foreground": "#676b81",
   },
+
   "problems.decorations.enabled": false,
   "zenMode.hideTabs": false,
   "editor.fontFamily": "'Julia Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontLigatures": true,
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
@@ -108,6 +111,7 @@
   "diffEditor.experimental.useVersion2": true,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.renderSideBySide": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
 
   // Gitlens
   "gitlens.hovers.currentLine.over": "line",
@@ -179,7 +183,7 @@
     "editor.formatOnSave": true
   },
   "python.languageServer": "Pylance",
-  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.typeCheckingMode": "basic",
   "python.linting.lintOnSave": true,
   "python.linting.prospectorEnabled": true,
   "python.linting.prospectorPath": "prospector",
@@ -345,5 +349,4 @@
       "commands": ["revealInExplorer"]
     }
   ],
-  "diffEditor.hideUnchangedRegions.enabled": true,
 }
