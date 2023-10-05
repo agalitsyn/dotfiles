@@ -117,12 +117,13 @@ bindsym $alt+Tab workspace back_and_forth
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
+# see https://www.nerdfonts.com/cheat-sheet
 set $ws1 1:
 set $ws2 2:
 set $ws3 3:
 set $ws4 4:
 set $ws5 5:ﴬ
-set $ws6 6
+set $ws6 6:
 set $ws7 7
 set $ws8 8
 
@@ -173,6 +174,8 @@ assign [class="jetbrains-goland"] $ws2
 assign [class="Code"] $ws2
 assign [class="Mattermost"] $ws4
 assign [class="TelegramDesktop"] $ws4
+assign [class="obsidian"] $ws5
+assign [class="ktalk"] $ws6
 
 # Open specific applications in floating mode
 # To determine window class use:
@@ -302,11 +305,11 @@ mode "resize" {
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +3%; notify-send 'volume up'"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl -- set-sink-volume @DEFAULT_SINK@ -3%; notify-send 'volume down'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -3%; notify-send 'volume down'"
 bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle; notify-send 'mute audio'"
 bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle; notify-send 'mute mic'"
 # for default keyboard
-bindsym $mod+Shift+underscore exec --no-startup-id "pactl -- set-sink-volume @DEFAULT_SINK@ -3%; notify-send 'volume down'"
+bindsym $mod+Shift+underscore exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -3%; notify-send 'volume down'"
 bindsym $mod+Shift+plus exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +3%; notify-send 'volume up'"
 bindsym $mod+Shift+m exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle; notify-send 'mute audio'"
 

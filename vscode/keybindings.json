@@ -2,7 +2,17 @@
     {
       "key": "cmd+enter",
       "command": "renameFile",
-      "when": "explorerViewletVisible && filesExplorerFocus"
+      "when": "isMac && explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+      "key": "alt+enter",
+      "command": "renameFile",
+      "when": "not isMac && explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+      "key": "alt+w",
+      "command": "workbench.action.closeActiveEditor",
+      "when": "not isMac"
     },
     {
       "key": "enter",
@@ -15,22 +25,22 @@
       "when": "listFocus && !inputFocus"
     },
     {
-      "key": "cmd+k cmd+m",
+      "key": "alt+k alt+m",
       "command": "workbench.action.minimizeOtherEditors",
       "when": "isMac"
     },
     {
-      "key": "ctrl+k ctrl+m",
+      "key": "alt+k alt+m",
       "command": "workbench.action.minimizeOtherEditors",
       "when": "not isMac"
     },
     {
-      "key": "cmd+k cmd+r",
+      "key": "alt+k alt+r",
       "command": "workbench.action.evenEditorWidths",
       "when": "isMac"
     },
     {
-      "key": "ctrl+k ctrl+r",
+      "key": "alt+k alt+r",
       "command": "workbench.action.evenEditorWidths",
       "when": "not isMac"
     },
@@ -55,7 +65,7 @@
       "when": "isMac"
     },
     {
-      "key": "ctrl+shift+backspace",
+      "key": "alt+shift+backspace",
       "command": "workbench.action.navigateToLastEditLocation",
       "when": "not isMac"
     },
@@ -86,7 +96,7 @@
       "when": "isMac"
     },
     {
-      "key": "ctrl+shift+r",
+      "key": "alt+shift+r",
       "command": "workbench.action.showAllSymbols",
       "when": "not isMac"
     },
@@ -98,6 +108,16 @@
     {
       "key": "alt+]",
       "command": "workbench.action.navigateForward",
+      "when": "not isMac"
+    },
+    {
+      "key": "alt+1",
+      "command": "workbench.action.focusFirstEditorGroup",
+      "when": "not isMac"
+    },
+    {
+      "key": "alt+2",
+      "command": "workbench.action.focusSecondEditorGroup",
       "when": "not isMac"
     },
 ]
