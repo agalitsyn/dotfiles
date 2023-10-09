@@ -47,6 +47,8 @@ for dir in [&undodir, &backupdir, &directory]
 endfor
 
 " ### Editor ###
+"set shortmess+=at            " no uganda
+set shortmess+=I               " no startup message
 set t_Co=256                   " Xterm 256 colors
 filetype plugin indent on      " Automatically detect file types.
 syntax on                      " Syntax highlighting

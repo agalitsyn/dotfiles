@@ -115,7 +115,8 @@ yay -S --noconfirm \
     atuin \
     tldr \
     httpie \
-    hurl-bin
+    hurl-bin \
+	inotify-tools
 
 yay -S --noconfirm go
 yay -S --noconfirm python

@@ -1,3 +1,5 @@
+alias v="nvim"
+
 # gnu utils modern alternatives
 alias l='exa --all --long --group-directories-first'
 alias c='bat'
