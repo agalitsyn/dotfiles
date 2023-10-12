@@ -6,3 +6,8 @@ install:
 configure:
 	ln -sf $(CURDIR)/lua/custom ~/.config/nvim/lua/
 
+.PHONY: uninstall
+uninstall:
+	rm -rf ~/.local/share/nvim
+	rm -rf ~/.config/nvim
+
