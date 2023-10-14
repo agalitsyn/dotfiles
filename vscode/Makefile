@@ -3,7 +3,7 @@ include ../vars.mk
 .PHONY: install-extensions
 install-extensions:
 	for i in $(shell cat extensions.txt); do\
-		code --install-extension $$i; \
+		code --install-extension $$i --force; \
 	done
 
 .PHONY: dump-extensions

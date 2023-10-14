@@ -23,7 +23,8 @@
     "Vagrantfile": "ruby",
     "**/*.html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
-    "*.j2": "jinja"
+    "**/*.j2": "jinja",
+    "**/*.jinja2": "jinja"
   },
   "files.exclude": {
     "**/__pycache__": true
@@ -179,7 +180,6 @@
     ]
   },
 
-
   // Python
   "[python]": {
     "editor.formatOnSave": true
@@ -203,27 +203,64 @@
   "auto-close-tag.enableAutoCloseTag": true,
   "auto-close-tag.activationOnLanguage": [
     "html",
-    "django-html",
     "vue",
     "typescriptreact",
     "javascriptreact",
-    "jinja"
+    "jinja",
+    "jinja-html",
+    "django-html",
+    "phoenix-heex",
   ],
   "emmet.includeLanguages": {
+    "jinja": "html",
+    "jinja-html": "html",
     "django-html": "html",
-    "jinja": "html"
+    "phoenix-heex": "html",
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showSuggestionsAsSnippets": true,
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+  "tailwindCSS.includeLanguages": {
+    "jinja": "html",
+    "jinja-html": "html",
+    "django-html": "html",
+    "phoenix-heex": "html",
+    "elixir": "html",
   },
+
   "[html]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jinja]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "monosans.djlint",
+  },
+  "[jinja-html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "monosans.djlint",
+  },
+  "[django-html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "monosans.djlint",
+  },
+  "[css]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -233,14 +270,6 @@
   },
   "volar.inlayHints.eventArgumentInInlineHandlers": false,
   "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
