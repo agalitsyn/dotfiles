@@ -8,12 +8,14 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-
+-- start of custom config
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 
 config.font_size = 15
 config.font = wezterm.font {
-  family = 'JetBrains Mono',
+--  family = 'JetBrains Mono',
+--  family = 'BlexMono Nerd Font Mono',
+  family = 'JetBrainsMono Nerd Font Mono',
 }
 
 config.window_frame = {
@@ -23,11 +25,11 @@ config.window_frame = {
   -- Whatever font is selected here, it will have the
   -- main font setting appended to it to pick up any
   -- fallback fonts you may have used there.
-  font = wezterm.font { family = 'Roboto', weight = 'Bold' },
+  font = wezterm.font { family = 'JetBrainsMono', weight = 'Bold' },
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 12.0,
+  font_size = 13.0,
 
   -- The overall background color of the tab bar when
   -- the window is focused
