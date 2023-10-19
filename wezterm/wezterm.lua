@@ -62,6 +62,12 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 1
 
+-- Do not hold on exit by default.
+-- Because the default 'CloseOnCleanExit' can be annoying when exiting with
+-- Ctrl-D and the last command exited with non-zero: the shell will exit
+-- with non-zero and the terminal would hang until the window is closed manually.
+exit_behavior = 'Close',
+
 wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
   window:gui_window():maximize()
