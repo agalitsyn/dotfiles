@@ -1,4 +1,6 @@
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
+local act = wezterm.action
 
 local config = {}
 
@@ -10,11 +12,11 @@ end
 
 -- start of custom config
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
+config.color_scheme = 'Atelier Cave Light (base16)'
 
 config.font_size = 15
 config.font = wezterm.font {
---  family = 'JetBrains Mono',
---  family = 'BlexMono Nerd Font Mono',
+  family = 'BlexMono Nerd Font Mono',
   family = 'JetBrainsMono Nerd Font Mono',
 }
 
@@ -56,7 +58,52 @@ config.enable_scroll_bar = true
 -- How many lines of scrollback you want to retain per tab
 config.scrollback_lines = 20000
 
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+config.window_background_opacity = 1
+
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  window:gui_window():maximize()
+end)
+
 -- default keybindings https://wezfurlong.org/wezterm/config/default-keys.html?h=def
+config.keys = {
+  {
+    key = 't',
+    mods = 'CMD|SHIFT',
+    action = act.ShowTabNavigator,
+  },
+  {
+    key = 'R',
+    mods = 'CMD|SHIFT',
+    action = act.PromptInputLine {
+      description = 'Enter new name for tab',
+      action = wezterm.action_callback(function(window, _, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end),
+    },
+  },
+  {
+    key = ',',
+    mods = 'CMD',
+    action = act.SpawnCommandInNewTab {
+      cwd = os.getenv('WEZTERM_CONFIG_DIR'),
+      set_environment_variables = {
+        TERM = 'screen-256color',
+      },
+      args = {
+        '/usr/local/bin/nvim',
+        os.getenv('WEZTERM_CONFIG_FILE'),
+      },
+    },
+  },
+}
 
 return config
 

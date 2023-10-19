@@ -46,14 +46,12 @@
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "poimandres-noitalics-storm",
+  "workbench.colorTheme": "Default Light Modern",
   "workbench.preferredLightColorTheme": "Default Light Modern",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   "window.nativeTabs": true,
-  "window.menuBarVisibility": "compact",
   "window.commandCenter": false,
   "workbench.startupEditor": "none",
-  "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.list.openMode": "doubleClick",
   "workbench.editor.limit.enabled": true,
@@ -100,6 +98,7 @@
   "editor.suggest.insertMode": "replace",
   "editor.codeActionsOnSave": {}, // setup per language
   "editor.inlayHints.enabled": "on",
+
 
   // Markdown
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
@@ -380,4 +379,5 @@
       "commands": ["revealInExplorer"]
     }
   ],
+  "workbench.editor.enablePreview": false,
 }

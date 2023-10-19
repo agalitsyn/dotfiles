@@ -6,13 +6,13 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
-
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl/lib/pkgconfig"
 
-export PATH=~/.local/bin:$PATH
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+export PATH=~/.local/bin:$PATH
 
 # OSX has builtin apache2
 alias apache2-start="sudo apachectl -k start"
