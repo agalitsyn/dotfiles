@@ -87,7 +87,13 @@
     features = side-by-side line-numbers decorations
     whitespace-error-style = 22 reverse
     navigate = true
+
+[delta "light-mode"]
     light = true
+
+[delta "dark-mode"]
+    dark = true
 
 [include]
     path = ~/.gitconfig.local
+

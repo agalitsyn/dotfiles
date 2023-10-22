@@ -1,5 +1,16 @@
 eval $(/opt/homebrew/bin/brew shellenv)
 
+function get_os_theme {
+    if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)"  == "Dark" ]]; then
+        export OS_THEME='dark'
+        export DELTA_FEATURES="+dark-mode"
+    else
+        export OS_THEME='light'
+        export DELTA_FEATURES="+light-mode"
+    fi
+}
+get_os_theme
+
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -28,7 +39,6 @@ alias memcached-start="memcached -vv"
 alias memcached-statistics="memstat --servers=127.0.0.1:11211"
 alias memcached-dump="memdump --servers=127.0.0.1:11211"
 
-
 # cd into whatever is the forefront Finder window.
 function cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
@@ -39,6 +49,7 @@ function anybar {
     echo -n $1 | nc -u -c localhost ${2:-1738}
 }
 
+# instead of ss
 function find-process-by-port {
     lsof -nP -iTCP -sTCP:LISTEN | grep $1
 }

@@ -46,7 +46,7 @@
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.preferredLightColorTheme": "Default Light Modern",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   "window.nativeTabs": true,

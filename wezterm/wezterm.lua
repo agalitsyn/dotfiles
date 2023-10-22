@@ -10,9 +10,29 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- start of custom config
-config.color_scheme = 'Solarized (dark) (terminal.sexy)'
-config.color_scheme = 'Atelier Cave Light (base16)'
+-- begin of custom config
+
+-- Sync theme with OS
+--
+-- wezterm.gui is not available to the mux server, so take care to
+-- do something reasonable when this config is evaluated by the mux
+function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
+  return 'Dark'
+end
+
+function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'Solarized (dark) (terminal.sexy)'
+  else
+    return 'Atelier Cave Light (base16)'
+  end
+end
+
+config.color_scheme = scheme_for_appearance(get_appearance())
+-- end
 
 config.font_size = 15
 config.font = wezterm.font {
