@@ -9,8 +9,8 @@ fi
 ZSH="$HOME/.oh-my-zsh"
 
 # awesome dark theme borrowed from https://github.com/mitsuhiko/dotfiles/tree/master/zsh/custom/themes
-#ZSH_THEME="mitsuhiko"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="mitsuhiko"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -69,6 +69,7 @@ bindkey "^N" insert-last-word
 source "$ZSH/oh-my-zsh.sh"
 unsetopt share_history
 unsetopt extended_history
+setopt no_nomatch
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -99,4 +100,3 @@ if [[ "$TERM_PROGRAM" == iTerm.app ]]; then
   }
 fi
 
-setopt no_nomatch
