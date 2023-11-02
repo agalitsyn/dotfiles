@@ -51,7 +51,7 @@ config.window_frame = {
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 13.0,
+  font_size = 15.0,
 
   -- The overall background color of the tab bar when
   -- the window is focused
@@ -69,11 +69,14 @@ config.colors = {
   },
 }
 
--- Enable the scrollbar.
--- It will occupy the right window padding space.
--- If right padding is set to 0 then it will be increased
--- to a single cell width
-config.enable_scroll_bar = true
+-- Cleaner UI
+config.enable_scroll_bar = false
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
 
 -- How many lines of scrollback you want to retain per tab
 config.scrollback_lines = 20000
@@ -81,12 +84,17 @@ config.scrollback_lines = 20000
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 1
+config.window_close_confirmation = "NeverPrompt"
+-- disable titlebar (needed on macOS)
+config.window_decorations = "RESIZE"
 
 -- Do not hold on exit by default.
 -- Because the default 'CloseOnCleanExit' can be annoying when exiting with
 -- Ctrl-D and the last command exited with non-zero: the shell will exit
 -- with non-zero and the terminal would hang until the window is closed manually.
-exit_behavior = 'Close',
+config.exit_behavior = 'Close'
+
+config.audible_bell = "Disabled"
 
 wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
@@ -124,10 +132,43 @@ config.keys = {
         TERM = 'screen-256color',
       },
       args = {
-        '/usr/local/bin/nvim',
+        'vim',
         os.getenv('WEZTERM_CONFIG_FILE'),
       },
     },
+  },
+  {
+    key = 'k',
+    mods = 'CMD',
+    action = act.Multiple {
+      -- act.SendKey { key = 'l', mods = 'CTRL' },
+      act.ClearScrollback 'ScrollbackAndViewport',
+    },
+  },
+  {
+    key = 'Enter',
+    mods = 'CMD',
+    action = act.ToggleFullScreen,
+  },
+  {
+    key="d",
+    mods="CMD",
+    action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}},
+  },
+  {
+    key="d",
+    mods = 'CMD|SHIFT',
+    action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}},
+  },
+  {
+    key="]",
+    mods="CMD",
+    action = act.ActivatePaneDirection 'Next',
+  },
+  {
+    key="[",
+    mods="CMD",
+    action = act.ActivatePaneDirection 'Prev',
   },
 }
 
