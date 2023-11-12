@@ -101,6 +101,21 @@
       "when": "not isMac"
     },
     {
+      "key": "cmd+shift+\\",
+      "command": "workbench.action.splitEditorDown",
+      "when": "isMac"
+    },
+    {
+      "key": "cmd+[",
+      "command": "workbench.action.navigateBack",
+      "when": "isMac"
+    },
+    {
+      "key": "cmd+]",
+      "command": "workbench.action.navigateForward",
+      "when": "isMac"
+    },
+    {
       "key": "alt+[",
       "command": "workbench.action.navigateBack",
       "when": "not isMac"

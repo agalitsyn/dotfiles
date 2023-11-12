@@ -160,7 +160,7 @@ brew install --cask yandex-cloud-cli
 
 # Browsers
 brew install --cask firefox \
-    google-chrome
+    eloston-chromium
 
 # Terminal
 brew install --cask iterm2
@@ -210,12 +210,13 @@ brew install --cask imazing
 #brew install --cask slack
 #brew install --cask skype
 #brew install --cask discord
-brew install --cask zoom
+#brew install --cask zoom
 brew install --cask telegram
 brew install --cask whatsapp
 
-# Avoid rkn
+# VPN
 brew install --cask tunnelblick
+brew install --cask wireguard-tools
 #brew install --cask cloudflare-warp
 #brew install --cask protonvpn
 #brew install --cask tor-browser
