@@ -89,7 +89,6 @@
   "editor.linkedEditing": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.bracketPairColorization.enabled": false,
-  "editor.stickyScroll.enabled": true,
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
