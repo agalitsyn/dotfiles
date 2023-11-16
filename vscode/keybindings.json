@@ -102,7 +102,7 @@
     },
     {
       "key": "cmd+shift+\\",
-      "command": "workbench.action.splitEditorDown",
+      "command": "workbench.action.splitEditorToBelowGroup",
       "when": "isMac"
     },
     {
