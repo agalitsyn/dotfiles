@@ -241,9 +241,10 @@ brew install bitwarden-cli
 brew install --casks bitwarden
 
 # Graphs
-#brew install --cask yed
-brew install mermaid-cli
 brew install graphviz
+brew install plantuml
+#brew install mermaid-cli
+#brew install --cask yed
 
 # Emulator
 #brew install --cask dosbox
