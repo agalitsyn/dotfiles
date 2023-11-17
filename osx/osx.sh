@@ -23,6 +23,8 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl/lib/pkgconfig"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 export PATH=~/.local/bin:$PATH
 
 # OSX has builtin apache2

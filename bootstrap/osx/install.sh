@@ -40,7 +40,7 @@ brew install coreutils \
     netcat \
     pv
 
-# Add utilities
+# Tool for set default apps by file extension
 brew tap daipeihust/tap && brew install im-select
 
 # cli editor
@@ -57,6 +57,7 @@ brew install \
     ripgrep \
     z \
     git-delta \
+    lazygit \
     tig \
     xh \
     fzf \
@@ -106,28 +107,35 @@ brew install --cask \
     sublime-text \
     sublime-merge \
     visual-studio-code
-
 # Separate vscode for experiments
 brew install --cask vscodium
 
-# Programming
+# Python
 brew install \
     python \
     pyenv \
     poetry \
-    pdm \
-    node@16 \
-    yarn \
-    pnpm \
-    go
+    pdm
 
-# Add backing services primarily for python builds
+# DB packages, also required for build python packages
 brew install \
     postgresql \
     libmemcached \
     memcached \
     redis \
     sqlite
+
+# Javascript
+brew install \
+    node \
+    yarn \
+    pnpm
+
+# Go
+brew install go
+
+# Java
+brew install java openjdk
 
 # Alternative for Finder
 brew install --cask marta
@@ -282,7 +290,6 @@ brew install --cask anydesk
 #
 #Better to use paragon ntfs.
 brew install --cask paragon-ntfs
-#
 # For native driver
 #brew install --cask mounty
 
