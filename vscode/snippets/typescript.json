@@ -1,0 +1,20 @@
+{
+	"const arrow function": {
+		"prefix": "caf",
+		"description": "const arrow func",
+		"body": [
+			"const ${1:name} = () => {",
+			"",
+			"};",
+		],
+	},
+	"async const arrow function": {
+		"prefix": "acaf",
+		"description": "const arrow func",
+		"body": [
+			"const ${1:name} = async () => {",
+			"",
+			"};",
+		],
+	},
+}
