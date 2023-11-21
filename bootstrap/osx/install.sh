@@ -141,7 +141,10 @@ brew install java openjdk
 brew install --cask marta
 
 # Finder quicklook plugins
-brew install --cask WebPQuickLook
+brew install --cask \
+    WebPQuickLook \
+    quicklook-csv \
+    quicklook-json
 
 # Virt
 #brew install --cask virtualbox \
