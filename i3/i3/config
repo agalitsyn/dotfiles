@@ -123,10 +123,10 @@ set $ws2 2:
 set $ws3 3:
 set $ws4 4:
 set $ws5 5:ﴬ
-set $ws6 6:
+set $ws6 6
 set $ws7 7
-set $ws8 8
-set $ws9 9
+set $ws8 8:
+set $ws9 9:󰐎
 
 # main spaces always on primary display
 workspace $ws1 output primary
@@ -173,13 +173,13 @@ bindsym $mod+Ctrl+Shift+Left move container to output left
 bindsym $mod+Ctrl+Shift+Right move container to output right
 
 # Open applications on specific workspaces
-assign [class="brave-browser"] $ws1
+assign [class="firefox"] $ws1
 assign [class="jetbrains-goland"] $ws2
 assign [class="Code"] $ws2
 assign [class="Mattermost"] $ws4
 assign [class="TelegramDesktop"] $ws4
 assign [class="obsidian"] $ws5
-assign [class="ktalk"] $ws6
+assign [class="ktalk"] $ws8
 
 # Open specific applications in floating mode
 # To determine window class use:
@@ -222,17 +222,16 @@ for_window [class="vlc"] floating enable
 #for_window [class="google-chrome"] floating enable
 #for_window [class="brave-browser"] floating enable
 for_window [class="flameshot"] floating enable
-for_window [class="zoom"] floating enable
-for_window [class="Skype"] floating enable border normal
-for_window [class="ktalk"] floating enable border normal
-for_window [class="ktalk"] floating enable border normal
+#for_window [class="zoom"] floating enable
+#for_window [class="Skype"] floating enable border normal
+#for_window [class="ktalk"] floating enable border normal
+#for_window [class="ktalk"] floating enable border normal
 #for_window [class="TelegramDesktop"] floating enable
 #for_window [class="Mattermost"] floating enable
 for_window [class="jetbrains-toolbox"] floating enable
 # intellij commit changes fullscreen always (easier to see diffs)
 for_window [title="Commit Changes"] floating enable
 for_window [title="Rebase"] floating enable
-
 for_window [window_role="pop-up"] floating enable
 
 # switch to workspace with urgent window automatically
@@ -415,7 +414,7 @@ bar {
     status_command i3status
     position top
 
-    separator_symbol " | "
+    separator_symbol "|"
 
     # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
@@ -434,28 +433,26 @@ bar {
         background #222D31
         statusline #F9FAF9
         separator  #454947
-
-#                      border  backgr. text
+        #                  border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
         active_workspace   #595B5B #353836 #FDF6E3
         inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
+        binding_mode       #16a085 #2C2C2C #F9FAF9
     }
 }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
-
-  client.background       #2B2C2B
+# Solarized dark theme colors
+#class                   border  backgr. text    indic.   child_border
+client.focused          #556064 #556064 #80FFF9 #FDF6E3
+client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
