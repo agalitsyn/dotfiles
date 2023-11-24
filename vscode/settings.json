@@ -78,7 +78,7 @@
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 4,
   "editor.useTabStops": true,
-  "editor.snippetSuggestions": "top",
+
   "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
   "editor.formatOnPaste": false,
@@ -92,9 +92,13 @@
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
-  "editor.suggest.insertMode": "replace",
+
   "editor.codeActionsOnSave": {}, // setup per language
   "editor.inlayHints.enabled": "on",
+  "editor.lightbulb.enabled": false,
+  "editor.snippetSuggestions": "top",
+
+  "editor.suggest.insertMode": "replace",
 
   // Markdown
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
@@ -111,6 +115,8 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
 
   // Gitlens
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
