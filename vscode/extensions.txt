@@ -1,7 +1,9 @@
 adpyke.codesnap
+alefragnani.Bookmarks
 antfu.icons-carbon
 batisteo.vscode-django
 bradlc.vscode-tailwindcss
+Catppuccin.catppuccin-vsc
 cdonohue.quill-icons
 charliermarsh.ruff
 christian-kohler.path-intellisense
@@ -15,6 +17,7 @@ formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 golang.go
 JakeBecker.elixir-ls
+jdinhlife.gruvbox
 jebbs.plantuml
 mikestead.dotenv
 monosans.djlint

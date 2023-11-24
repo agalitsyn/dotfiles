@@ -176,4 +176,9 @@
     "command": "workbench.action.decreaseViewSize",
     "when": "not isMac",
   },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.files.action.showActiveFileInExplorer",
+    "when": "editorTextFocus",
+  },
 ]

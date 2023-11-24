@@ -9,6 +9,7 @@
   // Term
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.scrollback": 10000,
@@ -32,8 +33,13 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
+
+  // Explorer
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
+  "explorer.autoReveal": false,
+  "explorer.enableUndo": true,
+  "explorer.incrementalNaming": "smart",
 
   // Search
   "search.exclude": {
@@ -49,11 +55,15 @@
   "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.preferredLightColorTheme": "Default Light Modern",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
+  "workbench.colorCustomizations": {
+    "editorInlayHint.background": "#252b37",
+    "editorInlayHint.foreground": "#676b81",
+  },
   "window.nativeTabs": true,
   "window.commandCenter": false,
   "workbench.startupEditor": "none",
-  "workbench.editor.highlightModifiedTabs": true,
   "workbench.list.openMode": "doubleClick",
+  "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 10,
@@ -65,23 +75,19 @@
   "workbench.tree.expandMode": "doubleClick",
   "workbench.layoutControl.enabled": false,
   "workbench.settings.editor": "json",
-  "workbench.colorCustomizations": {
-    "editorInlayHint.background": "#252b37",
-    "editorInlayHint.foreground": "#676b81",
-  },
 
   "problems.decorations.enabled": false,
-  "editor.fontFamily": "'Julia Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
-  "editor.fontSize": 14,
+  "editor.fontFamily": "'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
+  "editor.fontSize": 13,
   "editor.fontLigatures": true,
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 4,
   "editor.useTabStops": true,
-
   "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
   "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {}, // setup per language
   "editor.renderWhitespace": "selection",
   "editor.find.cursorMoveOnType": true,
   "editor.rulers": [120],
@@ -92,12 +98,9 @@
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
-
-  "editor.codeActionsOnSave": {}, // setup per language
   "editor.inlayHints.enabled": "on",
   "editor.lightbulb.enabled": false,
   "editor.snippetSuggestions": "top",
-
   "editor.suggest.insertMode": "replace",
 
   // Markdown
