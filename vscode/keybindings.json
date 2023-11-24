@@ -1,138 +1,179 @@
 [
-    {
-      "key": "cmd+enter",
-      "command": "renameFile",
-      "when": "isMac && explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-      "key": "alt+enter",
-      "command": "renameFile",
-      "when": "not isMac && explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-      "key": "alt+w",
-      "command": "workbench.action.closeActiveEditor",
-      "when": "not isMac"
-    },
-    {
-      "key": "enter",
-      "command": "-renameFile",
-      "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-      "key": "enter",
-      "command": "list.select",
-      "when": "listFocus && !inputFocus"
-    },
-    {
-      "key": "alt+k alt+m",
-      "command": "workbench.action.minimizeOtherEditors",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+k alt+m",
-      "command": "workbench.action.minimizeOtherEditors",
-      "when": "not isMac"
-    },
-    {
-      "key": "alt+k alt+r",
-      "command": "workbench.action.evenEditorWidths",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+k alt+r",
-      "command": "workbench.action.evenEditorWidths",
-      "when": "not isMac"
-    },
-    {
-      "key": "cmd+e",
-      "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+e",
-      "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
-      "when": "not isMac"
-    },
-    {
-      "key": "shift+cmd+backspace",
-      "command": "workbench.action.navigateToLastEditLocation",
-      "when": "isMac"
-    },
-    {
-      "key": "cmd+k cmd+q",
-      "command": "-workbench.action.navigateToLastEditLocation",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+shift+backspace",
-      "command": "workbench.action.navigateToLastEditLocation",
-      "when": "not isMac"
-    },
-    {
-      "key": "cmd+r",
-      "command": "workbench.action.gotoSymbol",
-      "when": "isMac"
-    },
-    {
-      "key": "shift+cmd+o",
-      "command": "-workbench.action.gotoSymbol",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+r",
-      "command": "workbench.action.gotoSymbol",
-      "when": "not isMac"
-    },
+  // Explorer
+  {
+    "key": "cmd+enter",
+    "command": "renameFile",
+    "when": "isMac && explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "alt+enter",
+    "command": "renameFile",
+    "when": "not isMac && explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "not isMac"
+  },
+  {
+    "key": "cmd+k cmd+m",
+    "command": "workbench.action.minimizeOtherEditors",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+k alt+m",
+    "command": "workbench.action.minimizeOtherEditors",
+    "when": "not isMac"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+k alt+r",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "not isMac"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+e",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
+    "when": "not isMac"
+  },
+  {
+    "key": "shift+cmd+backspace",
+    "command": "-workbench.action.navigateToLastEditLocation",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+k cmd+q",
+    "command": "-workbench.action.navigateToLastEditLocation",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+shift+backspace",
+    "command": "workbench.action.navigateToLastEditLocation",
+    "when": "not isMac"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.gotoSymbol",
+    "when": "isMac"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.action.gotoSymbol",
+    "when": "not isMac"
+  },
 
-    {
-      "key": "shift+cmd+r",
-      "command": "workbench.action.showAllSymbols",
-      "when": "isMac"
-    },
-    {
-      "key": "cmd+t",
-      "command": "-workbench.action.showAllSymbols",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+shift+r",
-      "command": "workbench.action.showAllSymbols",
-      "when": "not isMac"
-    },
-    {
-      "key": "cmd+shift+\\",
-      "command": "workbench.action.splitEditorToBelowGroup",
-      "when": "isMac"
-    },
-    {
-      "key": "cmd+[",
-      "command": "workbench.action.navigateBack",
-      "when": "isMac"
-    },
-    {
-      "key": "cmd+]",
-      "command": "workbench.action.navigateForward",
-      "when": "isMac"
-    },
-    {
-      "key": "alt+[",
-      "command": "workbench.action.navigateBack",
-      "when": "not isMac"
-    },
-    {
-      "key": "alt+]",
-      "command": "workbench.action.navigateForward",
-      "when": "not isMac"
-    },
-    {
-      "key": "alt+1",
-      "command": "workbench.action.focusFirstEditorGroup",
-      "when": "not isMac"
-    },
-    {
-      "key": "alt+2",
-      "command": "workbench.action.focusSecondEditorGroup",
-      "when": "not isMac"
-    },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.showAllSymbols",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+shift+r",
+    "command": "workbench.action.showAllSymbols",
+    "when": "not isMac"
+  },
+  {
+    "key": "cmd+shift+\\",
+    "command": "workbench.action.splitEditorToBelowGroup",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+[",
+    "command": "workbench.action.navigateBack",
+    "when": "not isMac"
+  },
+  {
+    "key": "alt+]",
+    "command": "workbench.action.navigateForward",
+    "when": "not isMac"
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "not isMac"
+  },
+  {
+    "key": "alt+2",
+    "command": "workbench.action.focusSecondEditorGroup",
+    "when": "not isMac"
+  },
+  {
+    "key": "cmd+k cmd+]",
+    "command": "-editor.unfoldRecursively",
+    "when": "isMac && editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+k cmd+[",
+    "command": "-editor.foldRecursively",
+    "when": "isMac && editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+k cmd+]",
+    "command": "workbench.action.increaseViewSize",
+    "when": "isMac",
+  },
+  {
+    "key": "cmd+k cmd+[",
+    "command": "workbench.action.decreaseViewSize",
+    "when": "isMac",
+  },
+  {
+    "key": "ctrl+k ctrl+]",
+    "command": "-editor.unfoldRecursively",
+    "when": "not isMac && editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+[",
+    "command": "-editor.foldRecursively",
+    "when": "not isMac && editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+]",
+    "command": "workbench.action.increaseViewSize",
+    "when": "not isMac",
+  },
+  {
+    "key": "ctrl+k ctrl+[",
+    "command": "workbench.action.decreaseViewSize",
+    "when": "not isMac",
+  },
 ]

@@ -376,7 +376,7 @@
     }
   ],
   "go.toolsManagement.autoUpdate": true,
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "multiple",
   "terminal.integrated.tabStopWidth": 4,
   "explorer.openEditors.visible": 1,
   "workbench.editor.enablePreview": false,

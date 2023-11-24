@@ -11,9 +11,14 @@ function get_os_theme {
 }
 get_os_theme
 
+# link all bins
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
+# link python3 as python
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
+# substitute man pages
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -26,6 +31,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH=~/.local/bin:$PATH
+
 
 # OSX has builtin apache2
 alias apache2-start="sudo apachectl -k start"
