@@ -1,0 +1,13 @@
+{
+    "installed_packages": [
+        "EditorConfig",
+        "Package Control",
+        "Profile Switcher",
+        "SideBarEnhancements",
+        "Writer Color Scheme",
+    ],
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+}

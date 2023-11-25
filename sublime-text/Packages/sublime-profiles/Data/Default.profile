@@ -3,8 +3,8 @@
     "enable_telemetry": false,
 
     // theme
-    "theme": "Adaptive.sublime-theme",
-    "color_scheme": "auto",
+    "theme": "auto",
+    "color_scheme": "Alabaster Dark.sublime-color-scheme",
     "dark_theme": "Adaptive.sublime-theme",
     "light_theme": "Adaptive.sublime-theme",
     "dark_color_scheme": "Alabaster Dark.sublime-color-scheme",
@@ -13,7 +13,7 @@
     // Font (Menlo, Source Code Pro, Input Mono, Hack, IBM Plex Mono)
     "font_face": "Julia Mono",
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 15,
+    "font_size": 14,
 
     // Cursor style - slightly wider than default
     "wide_caret": true,
@@ -66,5 +66,9 @@
         "CVS",
         "__pycache__",
         ".venv",
+    ],
+    "ignored_packages":
+    [
+		"Vintage",
     ],
 }

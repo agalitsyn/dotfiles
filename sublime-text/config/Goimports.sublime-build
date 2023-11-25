@@ -1,8 +1,0 @@
-{
-    "shell_cmd": "goimports -e -w $file",
-    "env": {
-        "PATH": "~/bin:$PATH"
-    },
-    "selector": "source.go",
-    "file_patterns": "*.go"
-}
