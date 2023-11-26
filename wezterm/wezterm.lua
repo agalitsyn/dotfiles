@@ -28,6 +28,7 @@ function scheme_for_appearance(appearance)
     return 'Solarized (dark) (terminal.sexy)'
   else
     return 'Atelier Cave Light (base16)'
+    --return 'Gruvbox light, soft (base16)'
   end
 end
 
@@ -36,7 +37,7 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.font_size = 15
 config.font = wezterm.font {
-  family = 'BlexMono Nerd Font Mono',
+  --family = 'BlexMono Nerd Font Mono',
   family = 'JetBrainsMono Nerd Font Mono',
 }
 
@@ -82,7 +83,7 @@ config.window_padding = {
 config.scrollback_lines = 20000
 
 config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
 -- disable titlebar (needed on macOS)
