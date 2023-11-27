@@ -101,9 +101,9 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 
 " ### UI ###
-set background=dark
+"set background=dark
 
-colorscheme catppuccin_mocha
+"colorscheme catppuccin_mocha
 
 set nocursorcolumn             " speed up syntax highlighting
 set nocursorline
