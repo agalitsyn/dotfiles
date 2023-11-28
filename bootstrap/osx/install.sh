@@ -176,7 +176,7 @@ brew install --cask firefox \
     google-chrome
 
 # Terminal
-brew install --cask iterm2
+brew install --cask wezterm
 
 # Window management
 #brew install --cask spectacle
