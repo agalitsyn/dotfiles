@@ -211,7 +211,7 @@ brew install --cask handbrake
 brew install youtube-dl
 
 # Screenshot
-brew install --cask flameshot
+#brew install --cask flameshot
 #brew install --cask skitch
 
 # Phones
