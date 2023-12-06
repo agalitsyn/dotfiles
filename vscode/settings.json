@@ -52,7 +52,6 @@
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
   "window.commandCenter": false,
-  "workbench.activityBar.location": "top",
   "window.autoDetectColorScheme": true,
   "workbench.startupEditor": "none",
   "workbench.list.openMode": "doubleClick",
@@ -225,6 +224,14 @@
     "phoenix-heex": "html",
     "elixir": "html",
   },
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+  ],
 
   "[html]": {
     "editor.formatOnSave": true,

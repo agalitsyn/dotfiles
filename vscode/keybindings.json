@@ -27,12 +27,12 @@
   },
   {
     "key": "cmd+k cmd+m",
-    "command": "workbench.action.minimizeOtherEditors",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
     "when": "isMac"
   },
   {
     "key": "alt+k alt+m",
-    "command": "workbench.action.minimizeOtherEditors",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
     "when": "not isMac"
   },
   {
