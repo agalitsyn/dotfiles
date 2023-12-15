@@ -25,10 +25,12 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'Solarized (dark) (terminal.sexy)'
+    --return 'Solarized (dark) (terminal.sexy)'
+    return 'Catppuccin Macchiato'
   else
+    return 'Catppuccin Latte'
     --return 'Atelier Cave Light (base16)'
-    return 'Gruvbox light, soft (base16)'
+    --return 'Gruvbox light, soft (base16)'
   end
 end
 

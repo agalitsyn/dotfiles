@@ -16,14 +16,14 @@
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.hideOnStartup": "always",
-  "terminal.integrated.cursorStyle":"block",
-  "terminal.integrated.cursorStyleInactive":"outline",
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorStyleInactive": "outline",
   "terminal.integrated.tabStopWidth": 4,
 
   // Files
   "files.associations": {
     "Vagrantfile": "ruby",
-    "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
   "files.exclude": {
     "**/__pycache__": true
@@ -44,7 +44,7 @@
     "**/.git": true,
     "**/node_modules": true,
     "**/.venv": true,
-    "**/vendor": true,
+    "**/vendor": true
   },
 
   // Editor look and feel
@@ -71,7 +71,7 @@
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   "workbench.colorCustomizations": {
     "editorInlayHint.background": "#252b37",
-    "editorInlayHint.foreground": "#676b81",
+    "editorInlayHint.foreground": "#676b81"
   },
   "problems.decorations.enabled": false,
   "editor.fontFamily": "'Martian Mono Std Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
@@ -132,15 +132,15 @@
   // "go.inlayHints.functionTypeParameters": true,
   // "go.inlayHints.parameterNames": true,
   "gopls": {
-      "ui.semanticTokens": true,
-      // "ui.completion.usePlaceholders": true,
-      "formatting.gofumpt": true,
+    "ui.semanticTokens": true,
+    // "ui.completion.usePlaceholders": true,
+    "formatting.gofumpt": true
   },
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
-    },
+    }
     // Optional: Disable snippets, as they conflict with completion ranking.
     // "editor.snippetSuggestions": "bottom"
   },
@@ -176,10 +176,10 @@
 
   "emeraldwalk.runonsave": {
     "commands": [
-        {
-            "match": "\\.go$",
-            "cmd": "golines ${file} --write-output --max-len=120"
-        }
+      {
+        "match": "\\.go$",
+        "cmd": "golines ${file} --write-output --max-len=120"
+      }
     ]
   },
 
@@ -189,8 +189,8 @@
   "[python]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.organizeImports": true
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
     },
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
@@ -205,14 +205,14 @@
     "jinja",
     "jinja-html",
     "django-html",
-    "phoenix-heex",
+    "phoenix-heex"
   ],
 
   "emmet.includeLanguages": {
     "jinja": "html",
     "jinja-html": "html",
     "django-html": "html",
-    "phoenix-heex": "html",
+    "phoenix-heex": "html"
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showSuggestionsAsSnippets": true,
@@ -222,7 +222,7 @@
     "jinja-html": "html",
     "django-html": "html",
     "phoenix-heex": "html",
-    "elixir": "html",
+    "elixir": "html"
   },
 
   "eslint.validate": [
@@ -230,7 +230,7 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue",
+    "vue"
   ],
 
   "[html]": {
@@ -239,15 +239,15 @@
   },
   "[jinja]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "monosans.djlint",
+    "editor.defaultFormatter": "monosans.djlint"
   },
   "[jinja-html]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "monosans.djlint",
+    "editor.defaultFormatter": "monosans.djlint"
   },
   "[django-html]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "monosans.djlint",
+    "editor.defaultFormatter": "monosans.djlint"
   },
   "[css]": {
     "editor.formatOnSave": true,
@@ -384,4 +384,9 @@
       "commands": ["revealInExplorer"]
     }
   ],
+  "[go][go.mod]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  }
 }
