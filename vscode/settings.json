@@ -7,13 +7,13 @@
   "redhat.telemetry.enabled": false,
 
   // Term
-  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "Terminal.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
-  "terminal.integrated.fontFamily": "JetBrains Mono",
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.persistentSessionScrollback": 300,
+  "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.hideOnStartup": "always",
   "terminal.integrated.cursorStyle": "block",
@@ -68,14 +68,14 @@
   "workbench.colorTheme": "Gruvbox Light Soft",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
-  "workbench.colorCustomizations": {
-    "editorInlayHint.background": "#252b37",
-    "editorInlayHint.foreground": "#676b81"
-  },
+  // "workbench.colorCustomizations": {
+  //   "editorInlayHint.background": "#252b37",
+  //   "editorInlayHint.foreground": "#676b81"
+  // },
   "problems.decorations.enabled": false,
-  "editor.fontSize": 14,
-  "editor.fontFamily": "'Monaspace Argon', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  "editor.fontSize": 13.5,
+  "editor.fontFamily": "'Martian Mono Nr Lt', 'Monaspace Neon', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
+  // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 4,
@@ -167,6 +167,11 @@
   "go.useCodeSnippetsOnFunctionSuggest": false,
   "go.gopath": "~",
   "go.gocodeAutoBuild": false,
+  "[go][go.mod]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
 
   // "go.formatTool": "custom",
   // "go.alternateTools": {
@@ -383,9 +388,7 @@
       "commands": ["revealInExplorer"]
     }
   ],
-  "[go][go.mod]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  }
+  "zig.path": "",
+  "zig.zls.path": "/Users/agalitsyn/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+  "zig.initialSetupDone": true,
 }

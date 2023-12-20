@@ -45,3 +45,4 @@ Vue.volar
 Vue.vscode-typescript-vue-plugin
 wayou.vscode-todo-highlight
 wholroyd.jinja
+ziglang.vscode-zig

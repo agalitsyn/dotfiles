@@ -35,7 +35,7 @@
 		"prefix": "vemit",
 		"body": [
 			"const emit = defineEmits<{",
-			"  (event: ${1:name}), value: ${2:type}: void;",
+			"  (e: ${1:\"name\"}, value: ${2:number}): void",
 			"}>();",
 		],
 	},
@@ -50,7 +50,7 @@
 	"vue 3 ts computed": {
 		"prefix": "vcomp",
 		"body": [
-			"const ${1:name} = computed((): ${2:type} => {",
+			"const ${1:name} = computed<${2:type}>((): ${2:type} => {",
 			"",
 			"});",
 		],
