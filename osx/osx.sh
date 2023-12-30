@@ -32,6 +32,8 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH=~/.local/bin:$PATH
 
+# Fix mc slow startup
+alias mc="mc --nosubshell"
 
 # OSX has builtin apache2
 alias apache2-start="sudo apachectl -k start"

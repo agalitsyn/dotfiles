@@ -1,3 +1,4 @@
+a-h.templ
 adpyke.codesnap
 alefragnani.Bookmarks
 antfu.icons-carbon
@@ -20,6 +21,7 @@ golang.go
 JakeBecker.elixir-ls
 jdinhlife.gruvbox
 jebbs.plantuml
+jkjustjoshing.vscode-text-pastry
 mikestead.dotenv
 monosans.djlint
 mrmlnc.vscode-duplicate

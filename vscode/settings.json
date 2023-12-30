@@ -52,10 +52,11 @@
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
   "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.list.openMode": "doubleClick",
   "workbench.tree.expandMode": "doubleClick",
-  "workbench.layoutControl.enabled": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
@@ -65,7 +66,7 @@
   "workbench.settings.editor": "json",
   "workbench.iconTheme": "quill-icons-minimal",
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.colorTheme": "Gruvbox Light Soft",
+  "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   // "workbench.colorCustomizations": {
@@ -282,6 +283,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  // Zig
+  "zig.path": "",
+  "zig.zls.path": "/Users/agalitsyn/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+  "zig.initialSetupDone": true,
+
   // Vim
   // https://github.com/Microsoft/vscode/issues/23991
   "keyboard.dispatch": "keyCode",
@@ -388,7 +394,4 @@
       "commands": ["revealInExplorer"]
     }
   ],
-  "zig.path": "",
-  "zig.zls.path": "/Users/agalitsyn/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
-  "zig.initialSetupDone": true,
 }
