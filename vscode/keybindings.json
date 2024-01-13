@@ -57,7 +57,7 @@
   },
   {
     "key": "shift+cmd+backspace",
-    "command": "-workbench.action.navigateToLastEditLocation",
+    "command": "workbench.action.navigateToLastEditLocation",
     "when": "isMac"
   },
   {
@@ -180,5 +180,15 @@
     "key": "ctrl+0",
     "command": "workbench.files.action.showActiveFileInExplorer",
     "when": "editorTextFocus",
+  },
+  {
+    "key": "cmd+\\",
+    "command": "-workbench.action.splitEditor",
+    "when": "isMac",
+  },
+  {
+    "key": "cmd+\\",
+    "command": "workbench.action.moveEditorToNextGroup",
+    "when": "isMac",
   },
 ]

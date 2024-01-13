@@ -118,7 +118,8 @@ brew install \
     python \
     pyenv \
     poetry \
-    pdm
+    pdm \
+    ipython
 
 # DB packages, also required for build python packages
 brew install \
