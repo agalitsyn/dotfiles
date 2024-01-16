@@ -176,18 +176,19 @@ brew install --cask yandex-cloud-cli
 # Browsers
 brew install --cask firefox \
     eloston-chromium \
-    google-chrome
+    google-chrome \
+    yandex
 
 # Terminal
 brew install --cask wezterm
 
 # Window management
-#brew install --cask spectacle
 brew install --cask rectangle
 
 # External monitor tool
-#brew install --cask avibrazil-rdm
 brew install --cask monitorcontrol
+# Not needed on newer macos, because it has "show all resolutions"
+#brew install --cask usr-sse2-rdm
 
 # Select default apps by cli tool
 brew install duti
