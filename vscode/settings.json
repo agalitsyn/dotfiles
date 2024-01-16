@@ -66,7 +66,7 @@
   "workbench.settings.editor": "json",
   "workbench.iconTheme": "quill-icons-minimal",
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.colorTheme": "poimandres-noitalics-storm",
+  "workbench.colorTheme": "Gruvbox Light Soft",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   // "workbench.colorCustomizations": {

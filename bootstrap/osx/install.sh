@@ -175,6 +175,7 @@ brew install --cask yandex-cloud-cli
 
 # Browsers
 brew install --cask firefox \
+    eloston-chromium \
     google-chrome
 
 # Terminal
