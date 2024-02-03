@@ -25,12 +25,9 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    --return 'Solarized (dark) (terminal.sexy)'
-    return 'Catppuccin Macchiato'
+    return 'Solarized (dark) (terminal.sexy)'
   else
-    return 'Catppuccin Latte'
-    --return 'Atelier Cave Light (base16)'
-    --return 'Gruvbox light, soft (base16)'
+    return 'Github (base16)'
   end
 end
 
@@ -39,7 +36,6 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.font_size = 15
 config.font = wezterm.font {
-  --family = 'BlexMono Nerd Font Mono',
   family = 'JetBrainsMono Nerd Font Mono',
 }
 
@@ -84,12 +80,12 @@ config.window_padding = {
 -- How many lines of scrollback you want to retain per tab
 config.scrollback_lines = 20000
 
-config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = false
+config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
--- disable titlebar (needed on macOS)
-config.window_decorations = "RESIZE"
+-- disable titlebar
+--config.window_decorations = "RESIZE"
 
 -- Do not hold on exit by default.
 -- Because the default 'CloseOnCleanExit' can be annoying when exiting with

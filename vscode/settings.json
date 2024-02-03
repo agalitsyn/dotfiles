@@ -6,12 +6,16 @@
   "extensions.ignoreRecommendations": true,
   "redhat.telemetry.enabled": false,
 
+  // Font size
+  "window.zoomLevel": 0.2,
+  "chat.editor.fontSize": 14,
+
   // Term
   "terminal.external.osxExec": "Terminal.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": true,
@@ -48,9 +52,10 @@
   },
 
   // Editor look and feel
-  "window.nativeTabs": false,
+  "window.nativeTabs": true,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
+  "window.customTitleBarVisibility": "windowed",
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
@@ -60,25 +65,27 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 10,
+  "workbench.editor.limit.value": 12,
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.enablePreview": false,
   "workbench.settings.editor": "json",
-  "workbench.iconTheme": "quill-icons-minimal",
+  "workbench.iconTheme": "quill-icons",
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.colorTheme": "Gruvbox Light Soft",
-  "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
+  "workbench.colorTheme": "Default Light Modern",
+  "workbench.preferredLightColorTheme": "Default Light Modern",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   // "workbench.colorCustomizations": {
   //   "editorInlayHint.background": "#252b37",
   //   "editorInlayHint.foreground": "#676b81"
   // },
   "problems.decorations.enabled": false,
-  "editor.fontSize": 13.5,
-  "editor.fontFamily": "'Martian Mono Nr Lt', 'Monaspace Neon', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
-  // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  "editor.fontSize": 13.3,
+  "editor.fontFamily": "'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
+  "editor.lineHeight": 20,
+  "editor.lineNumbers": "relative",
   "editor.tabSize": 4,
   "editor.useTabStops": true,
   "editor.formatOnSave": false,
@@ -96,9 +103,10 @@
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
   "editor.inlayHints.enabled": "on",
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.snippetSuggestions": "top",
   "editor.suggest.insertMode": "replace",
+  "editor.accessibilitySupport": "off",
 
   // Markdown
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
@@ -108,6 +116,7 @@
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.mergeEditor": true,
+  "git.openRepositoryInParentFolders": "never",
 
   // Diff
   "diffEditor.experimental.showMoves": true,
@@ -127,6 +136,7 @@
 
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
+  "go.gopath": "~",
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   // "go.inlayHints.functionTypeParameters": true,
@@ -139,45 +149,28 @@
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
     // Optional: Disable snippets, as they conflict with completion ranking.
     // "editor.snippetSuggestions": "bottom"
   },
-  "[go.mod]": {
-    "editor.formatOnSave": true,
+  "[go][go.mod]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
-  "go.buildOnSave": "package",
-  "go.lintOnSave": "package",
-  "go.vetOnSave": "package",
-  "go.buildTags": "",
-  "go.buildFlags": [],
-  "go.lintTool": "golangci-lint",
-  "go.lintFlags": [],
-  "go.vetFlags": [],
   "go.addTags": {
     "tags": "json",
     "options": "json=omitempty",
     "promptForTags": true,
     "transform": "snakecase"
   },
+  "go.vetOnSave": "package",
+  "go.vetFlags": [],
+  "go.lintOnSave": "package",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [],
   "go.coverOnSave": false,
-  "go.useCodeSnippetsOnFunctionSuggest": false,
-  "go.gopath": "~",
-  "go.gocodeAutoBuild": false,
-  "[go][go.mod]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  },
-
-  // "go.formatTool": "custom",
-  // "go.alternateTools": {
-  //   "customFormatter": "goimports-reviser"
-  // },
 
   "emeraldwalk.runonsave": {
     "commands": [

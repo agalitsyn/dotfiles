@@ -191,4 +191,35 @@
     "command": "workbench.action.moveEditorToNextGroup",
     "when": "isMac",
   },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+alt+1",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+cmd+3",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "alt+cmd+2",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "alt+cmd+0",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
 ]

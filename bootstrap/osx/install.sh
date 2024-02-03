@@ -38,7 +38,9 @@ brew install coreutils \
     wget \
     tree \
     netcat \
-    pv
+    pv \
+    htop \
+    neofetch
 
 # Tool for set default apps by file extension
 brew tap daipeihust/tap && brew install im-select
@@ -67,6 +69,9 @@ brew install \
 # HTTP tools
 brew isntall httpie
 #brew install --cask insomnia
+
+# Firewall
+brew install --cask lulu
 
 # SS with UI
 brew install --cask sloth
@@ -175,7 +180,7 @@ brew install --cask yandex-cloud-cli
 
 # Browsers
 brew install --cask firefox \
-    eloston-chromium \
+    chromium \
     google-chrome \
     yandex
 
@@ -200,7 +205,10 @@ brew install --cask anybar
 brew install --cask maccy
 
 # App switch
-#brew install --cask alt-tab
+brew install --cask alt-tab
+
+# Fix dumb Music.app launch
+brew install --cask notuneS
 
 # Storage
 #brew install --cask google-backup-and-sync
