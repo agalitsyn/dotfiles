@@ -205,8 +205,12 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "cmd+alt+1",
+    "key": "cmd+alt+b",
     "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+alt+1",
+    "command": "workbench.view.explorer"
   },
   {
     "key": "alt+cmd+3",
@@ -221,5 +225,34 @@
     "key": "alt+cmd+0",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
+  },
+  {
+		"key": "alt+enter",
+		"command": "editor.action.quickFix",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "alt+enter",
+		"command": "workbench.action.terminal.quickFix",
+		"when": "terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "alt+enter",
+		"command": "problems.action.showQuickFixes",
+		"when": "problemFocus"
+	},
+  {
+		"key": "a",
+		"command": "explorer.newFile",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"key": "shift+a",
+		"command": "explorer.newFolder",
+		"when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+k cmd+g",
+    "command": "git.closeAllDiffEditors"
   },
 ]
