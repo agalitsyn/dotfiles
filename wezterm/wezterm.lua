@@ -34,9 +34,10 @@ end
 config.color_scheme = scheme_for_appearance(get_appearance())
 -- end
 
-config.font_size = 15
+config.font_size = 17
 config.font = wezterm.font {
-  family = 'JetBrainsMono Nerd Font Mono',
+  --family = 'JetBrainsMono Nerd Font Mono',
+  family = 'IosevkaTerm Nerd Font Mono',
 }
 
 config.window_frame = {
@@ -80,12 +81,13 @@ config.window_padding = {
 -- How many lines of scrollback you want to retain per tab
 config.scrollback_lines = 20000
 
-config.use_fancy_tab_bar = true
+config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 1
+config.window_background_opacity = 0.999
+
 config.window_close_confirmation = "NeverPrompt"
 -- disable titlebar
---config.window_decorations = "RESIZE"
+config.window_decorations = "TITLE|RESIZE|MACOS_FORCE_DISABLE_SHADOW"
 
 -- Do not hold on exit by default.
 -- Because the default 'CloseOnCleanExit' can be annoying when exiting with
