@@ -42,9 +42,6 @@ brew install coreutils \
     htop \
     neofetch
 
-# Tool for set default apps by file extension
-brew tap daipeihust/tap && brew install im-select
-
 # cli editor
 brew install vim \
     ctags \
@@ -68,21 +65,12 @@ brew install \
 
 # HTTP tools
 brew isntall httpie
-#brew install --cask insomnia
-
-# Firewall
-brew install --cask lulu
-
-# SS with UI
-brew install --cask sloth
 
 # Cert tools
 brew install easy-rsa
 
 # DB tools
 brew install pgcli
-#brew install --cask pgadmin4
-#brew install --cask dbeaver-community
 
 # Add fonts
 brew tap homebrew/cask-fonts
@@ -109,14 +97,6 @@ brew install --cask \
 
 # Necessary for CLI on images
 brew install imagemagick
-
-# Editor
-brew install --cask \
-    sublime-text \
-    sublime-merge \
-    visual-studio-code
-# Separate vscode for experiments
-brew install --cask vscodium
 
 # Python
 brew install \
@@ -146,6 +126,49 @@ brew install go
 # Java
 brew install java openjdk
 
+# Browsers
+brew install --cask firefox \
+    chromium \
+    google-chrome \
+    yandex
+
+# Editors
+brew install --cask \
+    sublime-text \
+    sublime-merge \
+    visual-studio-code
+# Separate vscode for experiments
+brew install --cask vscodium
+
+# IDE
+brew install --cask jetbrains-toolbox
+
+# Terminal
+brew install --cask wezterm
+
+# Firewall
+brew install --cask lulu
+
+# Sockets
+brew install --cask sloth
+
+# Hex editor
+brew install --cask imhex
+
+# Window management
+brew install --cask rectangle
+
+# Displays
+brew install --cask monitorcontrol
+# Not needed on newer macos, because it has "show all resolutions"
+#brew install --cask usr-sse2-rdm
+
+# Tool for changing keyboard layouts
+brew tap daipeihust/tap && brew install im-select
+
+# Select default apps from cli
+brew install duti
+
 # Alternative for Finder
 brew install --cask marta
 
@@ -155,48 +178,35 @@ brew install --cask \
     quicklook-csv \
     quicklook-json
 
-# Virt
+# Open rar files
+brew install --cask the-unarchiver
+
+# Uninstall helper
+brew install --cask appcleaner
+
+# Keyboard
+brew install --cask karabiner-elements
+
+# Virtualization
 #brew install --cask virtualbox \
 #    virtualbox-extension-pack \
 #    vagrant
+
+# Emulation
+#brew install --cask dosbox
 
 # Containers
 brew install --cask docker
 brew install lazydocker
 brew install ctop
 
-# Cloud OPS tools
+# Cloud
 brew install ansible \
     terraform
 
-# AWS tools
 #brew install awscli
-
-# Digital Ocean tools
 brew install doctl
-
-# Yandex cloud tools
 brew install --cask yandex-cloud-cli
-
-# Browsers
-brew install --cask firefox \
-    chromium \
-    google-chrome \
-    yandex
-
-# Terminal
-brew install --cask wezterm
-
-# Window management
-brew install --cask rectangle
-
-# External monitor tool
-brew install --cask monitorcontrol
-# Not needed on newer macos, because it has "show all resolutions"
-#brew install --cask usr-sse2-rdm
-
-# Select default apps by cli tool
-brew install duti
 
 # Anybar
 brew install --cask anybar
@@ -250,9 +260,6 @@ brew install --cask wireguard-tools
 brew install --cask itsycal \
     hiddenbar
 
-# IDE
-brew install --cask jetbrains-toolbox
-
 # Mindmap
 # Manually download xmind 8 from website https://xmind.app/download/xmind8/
 # xmind from brew is xmind zen, which is bad
@@ -271,27 +278,18 @@ brew install plantuml
 #brew install mermaid-cli
 #brew install --cask yed
 
-# Emulator
-#brew install --cask dosbox
-
-# Manage ebooks
+# E-books
 brew install --cask calibre
 brew install --cask djview
 #brew install --cask kindle
-
-# Keyboard
-brew install --cask karabiner-elements
 
 # Record screen
 brew install --casks obs
 #brew install asciinema
 #brew install --cask kap
 
-# Linux USB drives
+# Create Linux USB drives
 brew install --cask balenaetcher
-
-# Open rar files
-brew install --cask the-unarchiver
 
 # Help unlucky windows guys
 #brew install --cask teamviewer
