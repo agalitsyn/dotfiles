@@ -1,18 +1,13 @@
 [
-  // Explorer
-  {
-    "key": "cmd+enter",
-    "command": "renameFile",
-    "when": "isMac && explorerViewletVisible && filesExplorerFocus"
-  },
-  {
-    "key": "alt+enter",
-    "command": "renameFile",
-    "when": "not isMac && explorerViewletVisible && filesExplorerFocus"
-  },
+  // File explorer
   {
     "key": "enter",
     "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus"
   },
   {
@@ -21,211 +16,22 @@
     "when": "listFocus && !inputFocus"
   },
   {
-    "key": "alt+w",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "not isMac"
-  },
-  {
-    "key": "cmd+k cmd+m",
-    "command": "workbench.action.toggleMaximizeEditorGroup",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+k alt+m",
-    "command": "workbench.action.toggleMaximizeEditorGroup",
-    "when": "not isMac"
-  },
-  {
-    "key": "cmd+k cmd+r",
-    "command": "workbench.action.evenEditorWidths",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+k alt+r",
-    "command": "workbench.action.evenEditorWidths",
-    "when": "not isMac"
-  },
-  {
-    "key": "cmd+e",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+e",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
-    "when": "not isMac"
-  },
-  {
-    "key": "shift+cmd+backspace",
-    "command": "workbench.action.navigateToLastEditLocation",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+k cmd+q",
-    "command": "-workbench.action.navigateToLastEditLocation",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+shift+backspace",
-    "command": "workbench.action.navigateToLastEditLocation",
-    "when": "not isMac"
-  },
-  {
-    "key": "cmd+r",
-    "command": "workbench.action.gotoSymbol",
-    "when": "isMac"
-  },
-  {
-    "key": "shift+cmd+o",
-    "command": "-workbench.action.gotoSymbol",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+r",
-    "command": "workbench.action.gotoSymbol",
-    "when": "not isMac"
-  },
-
-  {
-    "key": "shift+cmd+r",
-    "command": "workbench.action.showAllSymbols",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+t",
-    "command": "-workbench.action.showAllSymbols",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+shift+r",
-    "command": "workbench.action.showAllSymbols",
-    "when": "not isMac"
-  },
-  {
-    "key": "cmd+shift+\\",
-    "command": "workbench.action.splitEditorToBelowGroup",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+[",
-    "command": "workbench.action.navigateBack",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+]",
-    "command": "workbench.action.navigateForward",
-    "when": "isMac"
-  },
-  {
-    "key": "alt+[",
-    "command": "workbench.action.navigateBack",
-    "when": "not isMac"
-  },
-  {
-    "key": "alt+]",
-    "command": "workbench.action.navigateForward",
-    "when": "not isMac"
-  },
-  {
-    "key": "alt+1",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "not isMac"
-  },
-  {
-    "key": "alt+2",
-    "command": "workbench.action.focusSecondEditorGroup",
-    "when": "not isMac"
-  },
-  {
-    "key": "cmd+k cmd+]",
-    "command": "-editor.unfoldRecursively",
-    "when": "isMac && editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "cmd+k cmd+[",
-    "command": "-editor.foldRecursively",
-    "when": "isMac && editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "cmd+k cmd+]",
-    "command": "workbench.action.increaseViewSize",
-    "when": "isMac",
-  },
-  {
-    "key": "cmd+k cmd+[",
-    "command": "workbench.action.decreaseViewSize",
-    "when": "isMac",
-  },
-  {
-    "key": "ctrl+k ctrl+]",
-    "command": "-editor.unfoldRecursively",
-    "when": "not isMac && editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "ctrl+k ctrl+[",
-    "command": "-editor.foldRecursively",
-    "when": "not isMac && editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "ctrl+k ctrl+]",
-    "command": "workbench.action.increaseViewSize",
-    "when": "not isMac",
-  },
-  {
-    "key": "ctrl+k ctrl+[",
-    "command": "workbench.action.decreaseViewSize",
-    "when": "not isMac",
+		"key": "a",
+		"command": "explorer.newFile",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"key": "shift+a",
+		"command": "explorer.newFolder",
+		"when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "ctrl+0",
     "command": "workbench.files.action.showActiveFileInExplorer",
     "when": "editorTextFocus",
   },
-  {
-    "key": "cmd+\\",
-    "command": "-workbench.action.splitEditor",
-    "when": "isMac",
-  },
-  {
-    "key": "cmd+\\",
-    "command": "workbench.action.moveEditorToNextGroup",
-    "when": "isMac",
-  },
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "alt+cmd+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "cmd+b",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "cmd+alt+b",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+alt+1",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "alt+cmd+3",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "alt+cmd+2",
-    "command": "workbench.action.findInFiles"
-  },
-  {
-    "key": "alt+cmd+0",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
+
+  // Autocomplete actions like Intellij
   {
 		"key": "alt+enter",
 		"command": "editor.action.quickFix",
@@ -241,18 +47,141 @@
 		"command": "problems.action.showQuickFixes",
 		"when": "problemFocus"
 	},
+
+  // Navigation like Intellij
   {
-		"key": "a",
-		"command": "explorer.newFile",
-		"when": "filesExplorerFocus && !inputFocus"
-	},
-	{
-		"key": "shift+a",
-		"command": "explorer.newFolder",
-		"when": "filesExplorerFocus && !inputFocus"
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
   },
   {
-    "key": "cmd+k cmd+g",
-    "command": "git.closeAllDiffEditors"
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward",
   },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
+  },
+  {
+    "key": "shift+cmd+backspace",
+    "command": "workbench.action.navigateToLastEditLocation",
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.gotoSymbol",
+  },
+
+  // Navgation inspired by Vim
+  {
+    "key":"cmd+shift+5",
+    "command": "editor.emmet.action.matchTag"
+  }
+
+  // {
+  //   "key": "cmd+k cmd+m",
+  //   "command": "workbench.action.toggleMaximizeEditorGroup",
+  // },
+  // {
+  //   "key": "cmd+k cmd+r",
+  //   "command": "workbench.action.evenEditorWidths",
+  // },
+
+  // {
+  //   "key": "cmd+k cmd+q",
+  //   "command": "-workbench.action.navigateToLastEditLocation",
+  // },
+
+  // {
+  //   "key": "shift+cmd+o",
+  //   "command": "-workbench.action.gotoSymbol",
+  // },
+  // {
+  //   "key": "shift+cmd+r",
+  //   "command": "workbench.action.showAllSymbols",
+  // },
+  // {
+  //   "key": "cmd+t",
+  //   "command": "-workbench.action.showAllSymbols",
+  // },
+
+  // {
+  //   "key": "cmd+k cmd+]",
+  //   "command": "-editor.unfoldRecursively",
+  //   "when": "editorTextFocus && foldingEnabled"
+  // },
+  // {
+  //   "key": "cmd+k cmd+[",
+  //   "command": "-editor.foldRecursively",
+  //   "when": "editorTextFocus && foldingEnabled"
+  // },
+  // {
+  //   "key": "cmd+k cmd+]",
+  //   "command": "workbench.action.increaseViewSize",
+  // },
+  // {
+  //   "key": "cmd+k cmd+[",
+  //   "command": "workbench.action.decreaseViewSize",
+  // },
+
+  // {
+  //   "key": "alt+cmd+b",
+  //   "command": "-workbench.action.toggleAuxiliaryBar"
+  // },
+
+  // {
+  //   "key": "cmd+alt+b",
+  //   "command": "workbench.action.toggleSidebarVisibility"
+  // },
+  // {
+  //   "key": "cmd+alt+1",
+  //   "command": "workbench.view.explorer"
+  // },
+  // {
+  //   "key": "alt+cmd+3",
+  //   "command": "workbench.view.scm",
+  //   "when": "workbench.scm.active"
+  // },
+  // {
+  //   "key": "alt+cmd+2",
+  //   "command": "workbench.action.findInFiles"
+  // },
+  // {
+  //   "key": "alt+cmd+0",
+  //   "command": "workbench.action.terminal.toggleTerminal",
+  //   "when": "terminal.active"
+  // },
+
+  // {
+  //   "key": "cmd+k cmd+g",
+  //   "command": "git.closeAllDiffEditors"
+  // },
+  // {
+  //   "key": "cmd+l",
+  //   "command": "-expandLineSelection",
+  //   "when": "textInputFocus"
+  // },
+  // {
+  //   "key": "cmd+l",
+  //   "command": "workbench.action.focusRightGroup"
+  // },
+  // {
+  //   "key": "cmd+h",
+  //   "command": "workbench.action.focusLeftGroup"
+  // },
+  // {
+  //   "key": "cmd+k",
+  //   "command": "workbench.action.focusAboveGroup"
+  // },
+  // {
+  //   "key": "cmd+j",
+  //   "command": "workbench.action.focusBelowGroup"
+  // },
 ]

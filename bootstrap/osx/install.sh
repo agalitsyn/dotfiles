@@ -47,7 +47,7 @@ brew install vim \
     ctags \
     shellcheck
 
-# New cli tools
+# Newer cli tools, in Rust btw
 brew install \
     jq \
     yq \
@@ -61,7 +61,8 @@ brew install \
     xh \
     fzf \
     fd \
-    tldr
+    tldr \
+    zellij
 
 # HTTP tools
 brew isntall httpie

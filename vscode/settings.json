@@ -7,15 +7,15 @@
   "redhat.telemetry.enabled": false,
 
   // Font size
-  "window.zoomLevel": 0.2,
-  "chat.editor.fontSize": 14,
+  "window.zoomLevel": 0.0,
+  "chat.editor.fontSize": 15,
 
   // Term
   "terminal.external.osxExec": "Terminal.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": true,
@@ -27,7 +27,7 @@
   // Files
   "files.associations": {
     "Vagrantfile": "ruby",
-    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements",
   },
   "files.exclude": {
     "**/__pycache__": true
@@ -40,16 +40,17 @@
   // Explorer
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "explorer.autoReveal": false,
+  "explorer.autoReveal": true,
   "explorer.enableUndo": true,
   "explorer.incrementalNaming": "smart",
-
 
   // Search
   "search.exclude": {
     "**/.git": true,
     "**/node_modules": true,
     "**/.venv": true,
+    "**/.nuxt": true,
+    "**/.next": true,
     "**/vendor": true
   },
 
@@ -71,8 +72,8 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.enablePreview": false,
   "workbench.settings.editor": "json",
-  "workbench.iconTheme": "catppuccin-frappe",
   "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "catppuccin-frappe",
   "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.preferredLightColorTheme": "Default Light Modern",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
@@ -81,13 +82,14 @@
   //   "editorInlayHint.foreground": "#676b81"
   // },
   "problems.decorations.enabled": false,
-  "editor.fontSize": 14,
-  "editor.fontFamily": "'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  // "editor.fontSize": 13.8,
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
+  // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
   "editor.lineHeight": 20,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "editor.tabSize": 4,
   "editor.useTabStops": true,
   "editor.formatOnSave": false,
@@ -206,7 +208,7 @@
 
   // Python
   "python.languageServer": "Pylance",
-  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.typeCheckingMode": "standard",
   "[python]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
@@ -226,14 +228,12 @@
     "jinja",
     "jinja-html",
     "django-html",
-    "phoenix-heex"
   ],
 
   "emmet.includeLanguages": {
     "jinja": "html",
     "jinja-html": "html",
     "django-html": "html",
-    "phoenix-heex": "html"
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showSuggestionsAsSnippets": true,
@@ -242,8 +242,6 @@
     "jinja": "html",
     "jinja-html": "html",
     "django-html": "html",
-    "phoenix-heex": "html",
-    "elixir": "html"
   },
 
   "eslint.validate": [
@@ -410,4 +408,12 @@
       "commands": ["revealInExplorer"]
     }
   ],
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "security.workspace.trust.enabled": false,
 }
