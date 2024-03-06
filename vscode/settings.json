@@ -6,9 +6,17 @@
   "extensions.ignoreRecommendations": true,
   "redhat.telemetry.enabled": false,
 
+  "security.workspace.trust.enabled": false,
+
   // Font size
-  "window.zoomLevel": 0.0,
+  "window.zoomLevel": 0.05,
   "chat.editor.fontSize": 15,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
 
   // Term
   "terminal.external.osxExec": "Terminal.app",
@@ -23,6 +31,7 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.cursorStyleInactive": "outline",
   "terminal.integrated.tabStopWidth": 4,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
 
   // Files
   "files.associations": {
@@ -48,9 +57,9 @@
   "search.exclude": {
     "**/.git": true,
     "**/node_modules": true,
-    "**/.venv": true,
     "**/.nuxt": true,
     "**/.next": true,
+    "**/.venv": true,
     "**/vendor": true
   },
 
@@ -221,27 +230,22 @@
   // Frontend
   "auto-close-tag.enableAutoCloseTag": true,
   "auto-close-tag.activationOnLanguage": [
-    "html",
     "vue",
     "typescriptreact",
     "javascriptreact",
     "jinja",
-    "jinja-html",
-    "django-html",
   ],
+
+  "html.autoClosingTags": true,
 
   "emmet.includeLanguages": {
     "jinja": "html",
-    "jinja-html": "html",
-    "django-html": "html",
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showSuggestionsAsSnippets": true,
 
   "tailwindCSS.includeLanguages": {
     "jinja": "html",
-    "jinja-html": "html",
-    "django-html": "html",
   },
 
   "eslint.validate": [
@@ -255,18 +259,6 @@
   "[html]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jinja]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "monosans.djlint"
-  },
-  "[jinja-html]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "monosans.djlint"
-  },
-  "[django-html]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "monosans.djlint"
   },
   "[css]": {
     "editor.formatOnSave": true,
@@ -296,11 +288,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
-  // Zig
-  "zig.path": "",
-  "zig.zls.path": "/Users/agalitsyn/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
-  "zig.initialSetupDone": true,
 
   // Vim
   // https://github.com/Microsoft/vscode/issues/23991
@@ -408,12 +395,4 @@
       "commands": ["revealInExplorer"]
     }
   ],
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-  "security.workspace.trust.enabled": false,
 }
