@@ -5,7 +5,7 @@ install:
 
 .PHONY: configure
 configure:
-	ln -sf $(CURDIR)/custom ~/.config/nvim/lua/custom
+	ln -sf $(CURDIR)/custom ~/.config/nvim/lua/
 
 .PHONY: uninstall
 uninstall:

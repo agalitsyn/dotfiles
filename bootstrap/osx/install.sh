@@ -105,7 +105,10 @@ brew install \
     pyenv \
     poetry \
     pdm \
-    ipython
+    ipython \
+    pipx \
+    ruff \
+    cookiecutter
 
 # DB packages, also required for build python packages
 brew install \

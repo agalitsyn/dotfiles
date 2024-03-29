@@ -2,9 +2,9 @@
 
 set -xe
 
-# see: https://pip.pypa.io/en/stable/installing/#id4
-pip3 install --user --upgrade \
-    tox \
-    pyjwt \
-    cookiecutter
+pipx install djlint
+
+echo
+echo "installation paths"
+pipx environment --value PIPX_LOCAL_VENVS
 

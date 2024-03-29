@@ -57,15 +57,15 @@
     "key": "cmd+]",
     "command": "workbench.action.navigateForward",
   },
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+b",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
+  // {
+  //   "key": "cmd+b",
+  //   "command": "-workbench.action.toggleSidebarVisibility"
+  // },
+  // {
+  //   "key": "cmd+b",
+  //   "command": "editor.action.revealDefinition",
+  //   "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  // },
   {
     "key": "cmd+e",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
@@ -83,16 +83,20 @@
   {
     "key":"cmd+shift+5",
     "command": "editor.emmet.action.matchTag"
-  }
+  },
 
-  // {
-  //   "key": "cmd+k cmd+m",
-  //   "command": "workbench.action.toggleMaximizeEditorGroup",
-  // },
-  // {
-  //   "key": "cmd+k cmd+r",
-  //   "command": "workbench.action.evenEditorWidths",
-  // },
+  {
+    "key": "cmd+k cmd+m",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "workbench.action.evenEditorWidths",
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "workbench.action.splitEditorToBelowGroup"
+  },
 
   // {
   //   "key": "cmd+k cmd+q",

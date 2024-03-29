@@ -8,9 +8,9 @@
 
   "security.workspace.trust.enabled": false,
 
-  // Font size
-  "window.zoomLevel": 0.05,
-  "chat.editor.fontSize": 15,
+
+  // Copilot
+  "chat.editor.fontSize": 15.5,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -19,11 +19,11 @@
   },
 
   // Term
-  "terminal.external.osxExec": "Terminal.app",
+  "terminal.external.osxExec": "WezTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": true,
@@ -63,23 +63,27 @@
     "**/vendor": true
   },
 
+  // Only 1 editor per split
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 8,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.enablePreview": false,
+
   // Editor look and feel
+  "window.zoomLevel": 0.2,
   "window.nativeTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
   "window.customTitleBarVisibility": "windowed",
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
+  "window.confirmBeforeClose": "keyboardOnly",
   "workbench.startupEditor": "none",
   "workbench.list.openMode": "doubleClick",
   "workbench.tree.expandMode": "doubleClick",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 12,
-  "workbench.editor.showTabs": "multiple",
-  "workbench.editor.enablePreview": false,
+
   "workbench.settings.editor": "json",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "catppuccin-frappe",
@@ -92,7 +96,7 @@
   // },
   "problems.decorations.enabled": false,
   // "editor.fontSize": 13.8,
-  "editor.fontSize": 16,
+  "editor.fontSize": 15.5,
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "editor.find.seedSearchStringFromSelection": "selection",
@@ -100,6 +104,11 @@
   "editor.lineHeight": 20,
   "editor.lineNumbers": "on",
   "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces`
+  // will be detected based on the file contents. Set to false to keep
+  // the values you've explicitly set, above.
+  // "editor.detectIndentation": false,
   "editor.useTabStops": true,
   "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
@@ -107,14 +116,16 @@
   "editor.codeActionsOnSave": {}, // setup per language
   "editor.renderWhitespace": "selection",
   "editor.find.cursorMoveOnType": true,
-  "editor.rulers": [120],
+  "editor.rulers": [140],
   "editor.minimap.enabled": false,
-  "editor.linkedEditing": true,
+  "editor.linkedEditing": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.bracketPairColorization.enabled": false,
-  "editor.autoClosingBrackets": "never",
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
+  "editor.autoClosingBrackets": "never",
+  "editor.matchBrackets": "near",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.inlayHints.enabled": "on",
   "editor.lightbulb.enabled": "off",
   "editor.snippetSuggestions": "top",
@@ -122,9 +133,11 @@
   "editor.accessibilitySupport": "off",
   "editor.quickSuggestionsDelay": 0,
   "editor.scrollbar.horizontal": "hidden",
-	"editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.vertical": "auto",
   "window.density.editorTabHeight": "compact",
-	"workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "top",
+  "editor.semanticHighlighting.enabled": true,
+  "prettier.bracketSameLine": true,
 
   // Breadcrumbs
 	"breadcrumbs.icons": false,
@@ -167,6 +180,7 @@
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.hovers.avatars": false,
   "gitlens.hovers.currentLine.over": "line",
+  "gitlens.plusFeatures.enabled": false,
 
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
@@ -210,7 +224,7 @@
     "commands": [
       {
         "match": "\\.go$",
-        "cmd": "golines ${file} --write-output --max-len=120"
+        "cmd": "golines ${file} --write-output --max-len=140"
       }
     ]
   },
@@ -227,26 +241,48 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
 
-  // Frontend
+  // HTML and templating languages
+  "html.autoClosingTags": true,
+
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "jinja": "html",
+    "jinja-html": "html",
+    "django-html": "html",
+  },
+
+  "[html][jinja][jinja-html][django-html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.language.colorizedBracketPairs": [
+      ["<", "</"],
+      ["<", "/>"]
+    ],
+    "editor.guides.bracketPairs": "active",
+    "editor.matchBrackets": "near",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  },
+
+  // CSS
+  "[css]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tailwindCSS.includeLanguages": {
+    "jinja": "html",
+    "jinja-html": "html",
+    "django-html": "html",
+  },
+
+  // JavaScript and TypeScript
   "auto-close-tag.enableAutoCloseTag": true,
   "auto-close-tag.activationOnLanguage": [
     "vue",
     "typescriptreact",
     "javascriptreact",
-    "jinja",
   ],
-
-  "html.autoClosingTags": true,
-
-  "emmet.includeLanguages": {
-    "jinja": "html",
-  },
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.showSuggestionsAsSnippets": true,
-
-  "tailwindCSS.includeLanguages": {
-    "jinja": "html",
-  },
 
   "eslint.validate": [
     "javascript",
@@ -256,14 +292,6 @@
     "vue"
   ],
 
-  "[html]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[json]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -291,7 +319,6 @@
 
   // Vim
   // https://github.com/Microsoft/vscode/issues/23991
-  "keyboard.dispatch": "keyCode",
   "vim.disableExtension": true,
   "vim.leader": "<space>",
   "vim.autoSwitchInputMethod.enable": true,
@@ -395,4 +422,9 @@
       "commands": ["revealInExplorer"]
     }
   ],
+  "workbench.layoutControl.enabled": false,
+  "zenMode.showTabs": "none",
+  "prettier.printWidth": 120,
+  "workbench.tree.enableStickyScroll": false,
+  "editor.stickyScroll.enabled": false,
 }
