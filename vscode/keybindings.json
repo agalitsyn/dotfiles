@@ -97,95 +97,16 @@
     "key": "shift+cmd+\\",
     "command": "workbench.action.splitEditorToBelowGroup"
   },
-
-  // {
-  //   "key": "cmd+k cmd+q",
-  //   "command": "-workbench.action.navigateToLastEditLocation",
-  // },
-
-  // {
-  //   "key": "shift+cmd+o",
-  //   "command": "-workbench.action.gotoSymbol",
-  // },
-  // {
-  //   "key": "shift+cmd+r",
-  //   "command": "workbench.action.showAllSymbols",
-  // },
-  // {
-  //   "key": "cmd+t",
-  //   "command": "-workbench.action.showAllSymbols",
-  // },
-
-  // {
-  //   "key": "cmd+k cmd+]",
-  //   "command": "-editor.unfoldRecursively",
-  //   "when": "editorTextFocus && foldingEnabled"
-  // },
-  // {
-  //   "key": "cmd+k cmd+[",
-  //   "command": "-editor.foldRecursively",
-  //   "when": "editorTextFocus && foldingEnabled"
-  // },
-  // {
-  //   "key": "cmd+k cmd+]",
-  //   "command": "workbench.action.increaseViewSize",
-  // },
-  // {
-  //   "key": "cmd+k cmd+[",
-  //   "command": "workbench.action.decreaseViewSize",
-  // },
-
-  // {
-  //   "key": "alt+cmd+b",
-  //   "command": "-workbench.action.toggleAuxiliaryBar"
-  // },
-
-  // {
-  //   "key": "cmd+alt+b",
-  //   "command": "workbench.action.toggleSidebarVisibility"
-  // },
-  // {
-  //   "key": "cmd+alt+1",
-  //   "command": "workbench.view.explorer"
-  // },
-  // {
-  //   "key": "alt+cmd+3",
-  //   "command": "workbench.view.scm",
-  //   "when": "workbench.scm.active"
-  // },
-  // {
-  //   "key": "alt+cmd+2",
-  //   "command": "workbench.action.findInFiles"
-  // },
-  // {
-  //   "key": "alt+cmd+0",
-  //   "command": "workbench.action.terminal.toggleTerminal",
-  //   "when": "terminal.active"
-  // },
-
-  // {
-  //   "key": "cmd+k cmd+g",
-  //   "command": "git.closeAllDiffEditors"
-  // },
-  // {
-  //   "key": "cmd+l",
-  //   "command": "-expandLineSelection",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "cmd+l",
-  //   "command": "workbench.action.focusRightGroup"
-  // },
-  // {
-  //   "key": "cmd+h",
-  //   "command": "workbench.action.focusLeftGroup"
-  // },
-  // {
-  //   "key": "cmd+k",
-  //   "command": "workbench.action.focusAboveGroup"
-  // },
-  // {
-  //   "key": "cmd+j",
-  //   "command": "workbench.action.focusBelowGroup"
-  // },
+  {
+    "key": "shift+cmd+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "-workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.closeOtherEditors"
+  }
 ]

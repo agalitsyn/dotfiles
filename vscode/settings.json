@@ -10,7 +10,7 @@
 
 
   // Copilot
-  "chat.editor.fontSize": 15.5,
+  "chat.editor.fontSize": 15.8,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -63,7 +63,7 @@
     "**/vendor": true
   },
 
-  // Only 1 editor per split
+  // Editor per split
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
@@ -87,7 +87,6 @@
   "workbench.settings.editor": "json",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "catppuccin-frappe",
-  "workbench.colorTheme": "poimandres-noitalics-storm",
   "workbench.preferredLightColorTheme": "Default Light Modern",
   "workbench.preferredDarkColorTheme": "poimandres-noitalics-storm",
   // "workbench.colorCustomizations": {
@@ -96,7 +95,7 @@
   // },
   "problems.decorations.enabled": false,
   // "editor.fontSize": 13.8,
-  "editor.fontSize": 15.5,
+  "editor.fontSize": 15.8,
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "editor.find.seedSearchStringFromSelection": "selection",
@@ -255,14 +254,14 @@
   "[html][jinja][jinja-html][django-html]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.language.colorizedBracketPairs": [
-      ["<", "</"],
-      ["<", "/>"]
-    ],
-    "editor.guides.bracketPairs": "active",
-    "editor.matchBrackets": "near",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    // "editor.language.colorizedBracketPairs": [
+    //   ["<", "</"],
+    //   ["<", "/>"],
+    // ],
+    // "editor.guides.bracketPairs": "active",
+    // "editor.matchBrackets": "near",
+    // "editor.bracketPairColorization.enabled": true,
+    // "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   },
 
   // CSS
@@ -316,6 +315,18 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  "todohighlight.keywords": [
+    "DEBUG:",
+    "TODO:",
+    {
+      "text": "NOTE:",
+      "color": "#ffffff",
+      "backgroundColor": "#A7C7E7",
+      "overviewRulerColor": "grey"
+    },
+  ],
+  "todohighlight.isCaseSensitive": true,
 
   // Vim
   // https://github.com/Microsoft/vscode/issues/23991
@@ -424,7 +435,8 @@
   ],
   "workbench.layoutControl.enabled": false,
   "zenMode.showTabs": "none",
-  "prettier.printWidth": 120,
+  "prettier.printWidth": 140,
   "workbench.tree.enableStickyScroll": false,
   "editor.stickyScroll.enabled": false,
+  "workbench.colorTheme": "poimandres-noitalics-storm",
 }
