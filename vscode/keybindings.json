@@ -32,21 +32,21 @@
   },
 
   // Autocomplete actions like Intellij
-  {
-		"key": "alt+enter",
-		"command": "editor.action.quickFix",
-		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+enter",
-		"command": "workbench.action.terminal.quickFix",
-		"when": "terminalFocus && terminalProcessSupported"
-	},
-	{
-		"key": "alt+enter",
-		"command": "problems.action.showQuickFixes",
-		"when": "problemFocus"
-	},
+  // {
+	// 	"key": "alt+enter",
+	// 	"command": "editor.action.quickFix",
+	// 	"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	// },
+	// {
+	// 	"key": "alt+enter",
+	// 	"command": "workbench.action.terminal.quickFix",
+	// 	"when": "terminalFocus && terminalProcessSupported"
+	// },
+	// {
+	// 	"key": "alt+enter",
+	// 	"command": "problems.action.showQuickFixes",
+	// 	"when": "problemFocus"
+	// },
 
   // Navigation like Intellij
   {

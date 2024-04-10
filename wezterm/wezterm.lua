@@ -25,7 +25,7 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'Solarized (dark) (terminal.sexy)'
+    return 'Catppuccin Macchiato'
   else
     return 'Github (base16)'
   end

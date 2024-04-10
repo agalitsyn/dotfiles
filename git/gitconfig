@@ -10,6 +10,7 @@
 
 [alias]
     f = fetch --all --prune
+    s = switch
     pu = pull
     co = checkout
     st = status
@@ -22,26 +23,10 @@
     rsh = reset --hard
     clh = clean -fdx
     rollback = reset --soft HEAD~1
-    unmerged = log --no-merges master..
-    last = log -1 HEAD
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
     smb = submodule update --init --recursive
-    sha = rev-parse HEAD
     it = !git init && git commit -m “root” --allow-empty
-    commend = commit --amend --no-edit
     please = push --force-with-lease
-
-    # Switch to a branch, creating it if necessary
-    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
-    # Amend the currently staged files to the latest commit
-    amend = commit --amend --reuse-message=HEAD
-
-    # Credit an author on the latest commit
-    credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
-
-    # Interactive rebase with the given number of latest commits
-    reb = "!r() { git rebase -i HEAD~$1; }; r"
 
     # Find branches containing commit
     fb = "!f() { git branch -a --contains $1; }; f"
@@ -58,6 +43,10 @@
     # Remove branches that have already been merged with master
     # a.k.a. ‘delete merged’
     dm = "!git branch --merged | grep -v '\\*' | grep -v 'master' | xargs -n 1 git branch -d; git remote -v update -p"
+
+    # Interactive rebase on latest commit of main branch
+    main-branch="!git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4"
+    rebase-on-main="!git fetch origin $(git main-branch) && git rebase --interactive origin/$(git main-branch) --autostash"
 
 [log]
     date = local
