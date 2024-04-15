@@ -42,12 +42,7 @@ brew install coreutils \
     htop \
     neofetch
 
-# cli editor
-brew install vim \
-    ctags \
-    shellcheck
-
-# Newer cli tools, in Rust btw
+# Newer blazingly fast cli tools, in Rust btw
 brew install \
     jq \
     yq \
@@ -131,21 +126,16 @@ brew install go
 brew install java openjdk
 
 # Browsers
-brew install --cask firefox \
-    chromium \
-    google-chrome \
-    yandex
+brew install --cask firefox
+brew install --cask chromium --no-quarantine
 
-# Editors
+# True editors
+brew install vim neovim
+# Noob editors
 brew install --cask \
     sublime-text \
     sublime-merge \
     visual-studio-code
-# Separate vscode for experiments
-brew install --cask vscodium
-
-# IDE
-brew install --cask jetbrains-toolbox
 
 # Terminal
 brew install --cask wezterm
@@ -158,9 +148,6 @@ brew install --cask sloth
 
 # Hex editor
 brew install --cask imhex
-
-# Window management
-brew install --cask rectangle
 
 # Displays
 brew install --cask monitorcontrol
@@ -213,18 +200,24 @@ brew install doctl
 brew install --cask yandex-cloud-cli
 
 # Anybar
-brew install --cask anybar
+#brew install --cask anybar
+
+# all in one tool
+brew install --cask raycast
+
+# Window management
+# brew install --cask rectangle
 
 # Clipboard manager
-brew install --cask maccy
+#brew install --cask maccy
 
-# App switch
-brew install --cask alt-tab
+# App switcher
+#brew install --cask alt-tab
 
-# Fix dumb Music.app launch
-brew install --cask notuneS
+# Fix dumb Music.app autolaunch
+brew install --cask notunes
 
-# Storage
+# Cloud storage
 #brew install --cask google-backup-and-sync
 brew install --cask yandex-disk
 
@@ -250,8 +243,8 @@ brew install --cask imazing
 #brew install --cask skype
 #brew install --cask discord
 #brew install --cask zoom
+#brew install --cask whatsapp
 brew install --cask telegram
-brew install --cask whatsapp
 
 # VPN
 brew install --cask tunnelblick
@@ -261,8 +254,8 @@ brew install --cask wireguard-tools
 #brew install --cask tor-browser
 
 # Tray improvements
-brew install --cask itsycal \
-    hiddenbar
+brew install --cask itsycal
+brew install --cask hiddenbar
 
 # Mindmap
 # Manually download xmind 8 from website https://xmind.app/download/xmind8/
@@ -274,7 +267,7 @@ brew install --cask obsidian
 
 # Password manager
 brew install bitwarden-cli
-brew install --casks bitwarden
+brew install --cask bitwarden
 
 # Graphs
 brew install graphviz
@@ -307,15 +300,13 @@ brew install --cask anydesk
 #sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 #
-#Better to use paragon ntfs.
+# Better to use paragon ntfs.
 brew install --cask paragon-ntfs
 # For native driver
 #brew install --cask mounty
 
 # Some not free apps
-#brew install --cask cleanmymac
 #brew install --cask microsoft-office
 
 # Remove outdated versions from the cellar
 brew cleanup
-
