@@ -14,5 +14,6 @@
 # @raycast.author
 # @raycast.authorURL
 
+# osascript -e 'id of app "Firefox"'
 browser='org.mozilla.firefox'
 open --new -b "$browser"
