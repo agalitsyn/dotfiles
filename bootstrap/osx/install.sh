@@ -32,6 +32,7 @@ brew install coreutils \
     gettext \
     grep \
     git \
+    tig \
     tmux \
     curl \
     telnet \
@@ -52,12 +53,10 @@ brew install \
     z \
     git-delta \
     lazygit \
-    tig \
     xh \
     fzf \
     fd \
-    tldr \
-    zellij
+    tldr
 
 # HTTP tools
 brew isntall httpie
@@ -65,8 +64,10 @@ brew isntall httpie
 # Cert tools
 brew install easy-rsa
 
-# DB tools
-brew install pgcli
+# Reverse engineering tools
+brew install \
+    nmap \
+    gobuster
 
 # Add fonts
 brew tap homebrew/cask-fonts
@@ -113,6 +114,13 @@ brew install \
     redis \
     sqlite
 
+# DB clients
+brew install pgcli
+brew install kcat
+brew install --cask studio-3t
+# for installing DataGrip EAP (free)
+brew install --cask jetbrains-toolbox
+
 # Javascript
 brew install \
     node \
@@ -143,11 +151,15 @@ brew install --cask wezterm
 # Firewall
 brew install --cask lulu
 
-# Sockets
+# SS UI
 brew install --cask sloth
 
 # Hex editor
 brew install --cask imhex
+
+# Network
+brew install --cask wireshark
+#brew install --cask burp-suite
 
 # Displays
 brew install --cask monitorcontrol
@@ -288,24 +300,24 @@ brew install --casks obs
 # Create Linux USB drives
 brew install --cask balenaetcher
 
-# Help unlucky windows guys
-#brew install --cask teamviewer
+#    Windows
+# Remote desktop
+brew install --cask microsoft-remote-desktop
 brew install --cask anydesk
-
-# NTFS
+#brew install --cask teamviewer
 #
-# This driver is slow, writig speed 20x slower than on appfs.
+# NTFS
+brew install --cask paragon-ntfs
+# Other drivers are slow, writig speed 20x slower than on appfs.
 #brew install --cask osxfuse
 #brew install ntfs-3g
 #sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
 #sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 #
-# Better to use paragon ntfs.
-brew install --cask paragon-ntfs
 # For native driver
 #brew install --cask mounty
-
-# Some not free apps
+#
+# Office
 #brew install --cask microsoft-office
 
 # Remove outdated versions from the cellar
