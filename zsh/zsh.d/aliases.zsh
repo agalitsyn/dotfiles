@@ -150,7 +150,7 @@ function jwt-decode() {
 # Files
 
 # file find
-alias f='fd'
+alias f="find . -name $1"
 
 # file fuzzy search and open
 if command -v open > /dev/null; then
