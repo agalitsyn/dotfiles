@@ -50,13 +50,16 @@ brew install \
     exa \
     bat \
     ripgrep \
+    fd \
     z \
     git-delta \
     lazygit \
     xh \
     fzf \
-    fd \
     tldr
+
+# Files browser
+brew install ranger
 
 # HTTP tools
 brew isntall httpie

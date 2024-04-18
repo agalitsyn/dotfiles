@@ -330,7 +330,7 @@
 
   // Vim
   // https://github.com/Microsoft/vscode/issues/23991
-  "vim.disableExtension": true,
+  "vim.disableExtension": false,
   "vim.leader": "<space>",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
@@ -344,11 +344,11 @@
   "vim.sneak": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "b"],
+      "before": ["<leader>", "gd"],
       "commands": ["goToNextReference"]
     },
     {
-      "before": ["<leader>", "/"],
+      "before": ["<leader>", "gc"],
       "commands": ["editor.action.commentLine"]
     },
     //   "before": ["<tab>"],
