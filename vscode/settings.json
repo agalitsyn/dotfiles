@@ -554,5 +554,5 @@
       "commands": ["revealInExplorer"]
     }
   ],
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Gruvbox Light Soft",
 }

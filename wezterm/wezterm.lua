@@ -40,6 +40,7 @@ config.font = wezterm.font {
   family = 'IosevkaTerm Nerd Font Mono',
 }
 
+-- Note: works only with config.use_fancy_tab_bar = true
 config.window_frame = {
   -- The font used in the tab bar.
   -- Roboto Bold is the default; this font is bundled
@@ -76,6 +77,18 @@ config.window_padding = {
   right = 0,
   top = 0,
   bottom = 0,
+}
+
+-- When terminal theme matches other themes (browser, wallpapper, etc) it don't have good visibility without borders
+config.window_frame = {
+  border_left_width = '0.5cell',
+  border_right_width = '0.5cell',
+  border_bottom_height = '0.25cell',
+  border_top_height = '0.25cell',
+  border_left_color = 'black',
+  border_right_color = 'black',
+  border_bottom_color = 'black',
+  border_top_color = 'black',
 }
 
 -- How many lines of scrollback you want to retain per tab
