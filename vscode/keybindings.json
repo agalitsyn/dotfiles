@@ -108,5 +108,9 @@
   {
     "key": "shift+cmd+w",
     "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "cmd+k cmd+m",
+    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]
