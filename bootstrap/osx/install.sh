@@ -121,8 +121,12 @@ brew install \
 brew install pgcli
 brew install kcat
 brew install --cask studio-3t
+
 # for installing DataGrip EAP (free)
 brew install --cask jetbrains-toolbox
+
+# The native Mac app for PostgreSQL
+brew install --cask postico
 
 # Javascript
 brew install \
