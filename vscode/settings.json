@@ -66,12 +66,12 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 8,
+  "workbench.editor.limit.value": 15,
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.enablePreview": false,
 
   // Editor look and feel
-  "window.zoomLevel": 0.2,
+  "window.zoomLevel": 0.3,
   "window.nativeTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
@@ -84,7 +84,6 @@
   "workbench.tree.expandMode": "doubleClick",
   "workbench.settings.editor": "json",
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   // "workbench.colorCustomizations": {
@@ -131,7 +130,6 @@
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "auto",
   "window.density.editorTabHeight": "compact",
-  "workbench.activityBar.location": "top",
   "editor.semanticHighlighting.enabled": true,
   "workbench.layoutControl.enabled": false,
   "zenMode.showTabs": "none",
@@ -555,4 +553,5 @@
     }
   ],
   "workbench.colorTheme": "Gruvbox Light Soft",
+  "workbench.iconTheme": "bearded-icons",
 }
