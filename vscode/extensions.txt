@@ -1,6 +1,5 @@
 adpyke.codesnap
 beardedbear.beardedicons
-beardedbear.beardedtheme
 bradlc.vscode-tailwindcss
 catppuccin.catppuccin-vsc
 catppuccin.catppuccin-vsc-icons
@@ -12,11 +11,10 @@ ecmel.vscode-html-css
 editorconfig.editorconfig
 emeraldwalk.runonsave
 equinusocio.vsc-material-theme
+equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
 firefox-devtools.vscode-firefox-debug
 formulahendry.auto-close-tag
-github.copilot
-github.copilot-chat
 golang.go
 jakebecker.elixir-ls
 jdinhlife.gruvbox
@@ -28,6 +26,7 @@ miguelsolorio.fluent-icons
 mikestead.dotenv
 mrmlnc.vscode-duplicate
 ms-azuretools.vscode-docker
+ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
@@ -38,14 +37,11 @@ ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
 ms-vscode-remote.remote-containers
 oderwat.indent-rainbow
-peymanslh.blueberry-dark-theme
 phoenixframework.phoenix
 pmndrs.pmndrs
 rangav.vscode-thunder-client
 redhat.vscode-yaml
-robertrossmann.remedy
 samuelcolvin.jinjahtml
 tamasfe.even-better-toml
-vscodevim.vim
 vue.volar
 wayou.vscode-todo-highlight
