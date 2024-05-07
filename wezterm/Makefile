@@ -1,6 +1,6 @@
 .PHONY: configure
 configure:
-	ln -sf $(CURDIR) ~/.config/wezterm
+	ln -sf $(CURDIR) ~/.config/
 
 .PHONY: uninstall
 uninstall:

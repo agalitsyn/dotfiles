@@ -12,5 +12,8 @@ configure:
 .PHONY: install
 install:
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+.PHONY: install-theme
+install-theme:
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $(ZSH_HOOKS_FOLDER)/themes/powerlevel10k
 

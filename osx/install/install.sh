@@ -1,10 +1,11 @@
-/bin/bash
+#!/bin/bash
 
 set -ex
 
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Hombrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     echo "Updating Homebrew"
     brew update
@@ -47,7 +48,7 @@ brew install coreutils \
 brew install \
     jq \
     yq \
-    exa \
+    eza \
     bat \
     ripgrep \
     fd \
@@ -62,7 +63,7 @@ brew install \
 brew install ranger
 
 # HTTP tools
-brew isntall httpie
+brew install httpie
 
 # Cert tools
 brew install easy-rsa
@@ -93,7 +94,9 @@ brew install --cask \
     font-blex-mono-nerd-font \
     font-jetbrains-mono-nerd-font \
     font-martian-mono-nerd-font \
-    font-monaspace
+    font-monaspace \
+    font-iosevka-term-nerd-font \
+    font-iosevka-nerd-font
 
 # Necessary for CLI on images
 brew install imagemagick
@@ -143,9 +146,12 @@ brew install java openjdk
 # Browsers
 brew install --cask firefox
 brew install --cask chromium --no-quarantine
+brew install --cask google-chrome
 
 # True editors
-brew install vim neovim
+brew install vim \
+	neovim
+
 # Noob editors
 brew install --cask \
     sublime-text \
@@ -214,9 +220,9 @@ brew install ctop
 brew install ansible \
     terraform
 
-#brew install awscli
-brew install doctl
-brew install --cask yandex-cloud-cli
+# brew install awscli
+# brew install doctl
+# brew install --cask yandex-cloud-cli
 
 # Anybar
 #brew install --cask anybar
@@ -228,16 +234,16 @@ brew install --cask raycast
 # brew install --cask rectangle
 
 # Clipboard manager
-#brew install --cask maccy
+# brew install --cask maccy
 
 # App switcher
-#brew install --cask alt-tab
+# brew install --cask alt-tab
 
 # Fix dumb Music.app autolaunch
 brew install --cask notunes
 
 # Cloud storage
-#brew install --cask google-backup-and-sync
+# brew install --cask google-backup-and-sync
 brew install --cask yandex-disk
 
 # Torrents
@@ -249,28 +255,29 @@ brew install --cask handbrake
 brew install youtube-dl
 
 # Screenshot
-#brew install --cask flameshot
-#brew install --cask skitch
+# brew install --cask flameshot
+# brew install --cask skitch
 
 # Phones
 brew install --cask android-file-transfer
 brew install --cask imazing
-#brew install --cask ifunbox
+# brew install --cask ifunbox
 
 # IM (choose what your need)
-#brew install --cask slack
-#brew install --cask skype
-#brew install --cask discord
-#brew install --cask zoom
-#brew install --cask whatsapp
+# brew install --cask slack
+# brew install --cask skype
+brew install --cask discord
+brew install --cask zoom
+# brew install --cask whatsapp
 brew install --cask telegram
 
 # VPN
+brew install wireguard-tools
 brew install --cask tunnelblick
-brew install --cask wireguard-tools
-#brew install --cask cloudflare-warp
-#brew install --cask protonvpn
-#brew install --cask tor-browser
+# brew install --cask openvpn-connect
+# brew install --cask cloudflare-warp
+# brew install --cask protonvpn
+# brew install --cask tor-browser
 
 # Tray improvements
 brew install --cask itsycal
@@ -279,7 +286,7 @@ brew install --cask hiddenbar
 # Mindmap
 # Manually download xmind 8 from website https://xmind.app/download/xmind8/
 # xmind from brew is xmind zen, which is bad
-#brew install --cask xmind
+# brew install --cask xmind
 
 # Notes
 brew install --cask obsidian
@@ -291,41 +298,43 @@ brew install --cask bitwarden
 # Graphs
 brew install graphviz
 brew install plantuml
-#brew install mermaid-cli
-#brew install --cask yed
+# brew install mermaid-cli
+# brew install --cask yed
 
 # E-books
 brew install --cask calibre
 brew install --cask djview
-#brew install --cask kindle
+# brew install --cask kindle
 
 # Record screen
 brew install --casks obs
-#brew install asciinema
-#brew install --cask kap
+# brew install asciinema
+# brew install --cask kap
 
 # Create Linux USB drives
 brew install --cask balenaetcher
 
-#    Windows
+##    Windows
+
 # Remote desktop
 brew install --cask microsoft-remote-desktop
 brew install --cask anydesk
-#brew install --cask teamviewer
-#
+# brew install --cask teamviewer
+
 # NTFS
 brew install --cask paragon-ntfs
+#
 # Other drivers are slow, writig speed 20x slower than on appfs.
-#brew install --cask osxfuse
-#brew install ntfs-3g
-#sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
-#sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
+# brew install --cask osxfuse
+# brew install ntfs-3g
+# sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig
+# sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 #
 # For native driver
-#brew install --cask mounty
-#
+# brew install --cask mounty
+
 # Office
-#brew install --cask microsoft-office
+brew install --cask microsoft-office
 
 # Remove outdated versions from the cellar
 brew cleanup
