@@ -43,3 +43,8 @@ Then clone dotfiles and install everything with homebrew and link configs.
 - SSH keys
 - Raycast settings
 
+## Security
+
+- Enable Firewall
+- Enable FireVault
+
