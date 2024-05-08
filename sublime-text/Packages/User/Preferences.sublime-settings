@@ -3,7 +3,7 @@
     "enable_telemetry": false,
 
     // theme
-    "theme": "Writer.sublime-color-scheme",
+    "theme": "Adaptive.sublime-theme",
     "color_scheme": "auto",
     "dark_theme": "Adaptive.sublime-theme",
     "light_theme": "Adaptive.sublime-theme",
