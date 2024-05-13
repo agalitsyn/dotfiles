@@ -71,7 +71,7 @@
   "workbench.editor.enablePreview": false,
 
   // Editor look and feel
-  "window.zoomLevel": 0.3,
+  "window.zoomLevel": 0.2,
   "window.nativeTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
@@ -85,7 +85,6 @@
   "workbench.settings.editor": "json",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
-  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   // "workbench.colorCustomizations": {
   //   "editorInlayHint.background": "#252b37",
   //   "editorInlayHint.foreground": "#676b81"
@@ -95,7 +94,7 @@
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "editor.find.seedSearchStringFromSelection": "selection",
-  "editor.scrollBeyondLastLine": false,
+  "editor.scrollBeyondLastLine": true,
   "editor.lineHeight": 20,
   "editor.lineNumbers": "on",
   "editor.tabSize": 4,

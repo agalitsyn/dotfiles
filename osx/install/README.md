@@ -25,6 +25,10 @@
 
 Probably to latest
 
+## Disable Airplay receiver (consumes port 7000)
+
+System Settings -> General -> Airdrop & Handoff -> Airplay receiver
+
 ## Install software
 
 Type `git` and follow installation guide for xcode cli tools.

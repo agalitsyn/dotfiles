@@ -1,16 +1,5 @@
 eval $(/opt/homebrew/bin/brew shellenv)
 
-function get_os_theme {
-    if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)"  == "Dark" ]]; then
-        export OS_THEME='dark'
-        export DELTA_FEATURES="+dark-mode"
-    else
-        export OS_THEME='light'
-        export DELTA_FEATURES="+light-mode"
-    fi
-}
-get_os_theme
-
 # link all bins
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
@@ -25,6 +14,7 @@ export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl/lib/pkgconfig"
+export LDFLAGS="-I/opt/homebrew/opt/openssl/include -L/opt/homebrew/opt/openssl/lib"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
@@ -54,13 +44,22 @@ function cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
-# control anybar
 function anybar {
     echo -n $1 | nc -u -c localhost ${2:-1738}
 }
 
-# instead of ss
-function find-process-by-port {
-    lsof -nP -iTCP -sTCP:LISTEN | grep $1
+function ss {
+    sudo lsof -nP -iTCP -sTCP:LISTEN
 }
+
+function get_os_theme {
+    if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)"  == "Dark" ]]; then
+        export OS_THEME='dark'
+        export DELTA_FEATURES="+dark-mode"
+    else
+        export OS_THEME='light'
+        export DELTA_FEATURES="+light-mode"
+    fi
+}
+get_os_theme
 
