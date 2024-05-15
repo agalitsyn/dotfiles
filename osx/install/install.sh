@@ -216,18 +216,18 @@ brew install --cask docker
 brew install lazydocker
 brew install ctop
 
-# Cloud
-brew install ansible \
-    terraform
+# Configuration
+brew install ansible
 
+# Cloud
 # brew install awscli
 # brew install doctl
 # brew install --cask yandex-cloud-cli
 
 # Anybar
-#brew install --cask anybar
+# brew install --cask anybar
 
-# all in one tool
+# All in one tool
 brew install --cask raycast
 
 # Window management
@@ -266,13 +266,14 @@ brew install --cask imazing
 # IM (choose what your need)
 # brew install --cask slack
 # brew install --cask skype
-brew install --cask discord
-brew install --cask zoom
 # brew install --cask whatsapp
+# brew install --cask zoom
+brew install --cask discord
 brew install --cask telegram
 
 # VPN
-brew install wireguard-tools
+brew install wireguard-eools
+brew install --cask openvpn-connect
 brew install --cask tunnelblick
 # brew install --cask openvpn-connect
 # brew install --cask cloudflare-warp
