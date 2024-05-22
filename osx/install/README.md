@@ -20,6 +20,7 @@
 - Keyboard - Shortcuts
     - Modifier keys - Caps lock = Escape
     - Mission control ctrl+opt+left right = move to space;
+    - Services - disable all
 
 ## Upgrade Mac OS
 

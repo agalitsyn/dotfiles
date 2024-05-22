@@ -57,7 +57,8 @@ brew install \
     lazygit \
     xh \
     fzf \
-    tldr
+    tldr \
+    tz
 
 # Files browser
 brew install ranger
