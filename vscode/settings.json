@@ -553,4 +553,5 @@
   ],
   "workbench.colorTheme": "Gruvbox Light Soft",
   "workbench.iconTheme": "bearded-icons",
+  "workbench.activityBar.location": "top",
 }
