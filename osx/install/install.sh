@@ -58,7 +58,8 @@ brew install \
     xh \
     fzf \
     tldr \
-    tz
+    tz \
+    yazi
 
 # Files browser
 brew install ranger
