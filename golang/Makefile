@@ -2,7 +2,6 @@ include ../vars.mk
 
 .PHONY: configure
 configure:
-	ln -sf $(CURDIR)/goenv.sh $(BASH_HOOKS_FOLDER)/goenv.sh
 	ln -sf $(CURDIR)/goenv.sh $(ZSH_HOOKS_FOLDER)/goenv.zsh
 
 PACKAGES := golang.org/x/tools/cmd/goimports \

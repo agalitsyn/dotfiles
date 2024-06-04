@@ -1,2 +1,2 @@
-# nvim config for [kickstart](https://github.com/nvim-lua/kickstart.nvim)
+# nvim configs for [lazy.nvim](https://www.lazyvim.org/installation)
 
