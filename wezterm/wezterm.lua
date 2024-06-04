@@ -40,6 +40,8 @@ config.font = wezterm.font {
   family = 'IosevkaTerm Nerd Font Mono',
 }
 
+config.adjust_window_size_when_changing_font_size = false
+
 -- Note: works only with config.use_fancy_tab_bar = true
 config.window_frame = {
   -- The font used in the tab bar.
@@ -109,11 +111,6 @@ config.window_decorations = "TITLE|RESIZE|MACOS_FORCE_DISABLE_SHADOW"
 config.exit_behavior = 'Close'
 
 config.audible_bell = "Disabled"
-
-wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
-end)
 
 -- default keybindings https://wezfurlong.org/wezterm/config/default-keys.html?h=def
 config.keys = {
