@@ -3,11 +3,11 @@
 set -ex
 
 if [[ $(command -v brew) == "" ]]; then
-    echo "Installing Hombrew"
+    echo "Installing homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-    echo "Updating Homebrew"
+    echo "Updating homebrew"
     brew update
 fi
 
@@ -61,9 +61,6 @@ brew install \
     tz \
     yazi
 
-# Files browser
-brew install ranger
-
 # HTTP tools
 brew install httpie
 
@@ -103,17 +100,6 @@ brew install --cask \
 # Necessary for CLI on images
 brew install imagemagick
 
-# Python
-brew install \
-    python \
-    pyenv \
-    poetry \
-    pdm \
-    ipython \
-    pipx \
-    ruff \
-    cookiecutter
-
 # DB packages, also required for build python packages
 brew install \
     postgresql \
@@ -127,11 +113,11 @@ brew install pgcli
 brew install kcat
 brew install --cask studio-3t
 
-# for installing DataGrip EAP (free)
-brew install --cask jetbrains-toolbox
-
-# The native Mac app for PostgreSQL
+# Native Mac app for PostgreSQL
 brew install --cask postico
+
+# Java
+brew install java openjdk
 
 # Javascript
 brew install \
@@ -139,26 +125,40 @@ brew install \
     yarn \
     pnpm
 
+# Python
+brew install \
+    python \
+    pyenv \
+    poetry \
+    pdm \
+    ipython \
+    pipx \
+    ruff \
+    cookiecutter
+
 # Go
 brew install go
 
-# Java
-brew install java openjdk
-
 # Browsers
 brew install --cask firefox
-brew install --cask chromium --no-quarantine
-brew install --cask google-chrome
+brew install --cask brave-browser
+#brew install --cask chromium --no-quarantine
+#brew install --cask google-chrome
 
 # True editors
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@29 --with-native-comp
 brew install vim \
-	neovim
+    neovim
 
-# Noob editors
+# Noob's editors
 brew install --cask \
     sublime-text \
     sublime-merge \
     visual-studio-code
+
+# Absolute noob's editors
+brew install --cask jetbrains-toolbox
 
 # Terminal
 brew install --cask wezterm
@@ -231,13 +231,10 @@ brew install ansible
 
 # All in one tool
 brew install --cask raycast
-
 # Window management
 # brew install --cask rectangle
-
 # Clipboard manager
 # brew install --cask maccy
-
 # App switcher
 # brew install --cask alt-tab
 
@@ -257,8 +254,8 @@ brew install --cask handbrake
 brew install youtube-dl
 
 # Screenshot
-# brew install --cask flameshot
-# brew install --cask skitch
+brew install --cask flameshot
+brew install --cask skitch
 
 # Phones
 brew install --cask android-file-transfer
@@ -274,7 +271,7 @@ brew install --cask discord
 brew install --cask telegram
 
 # VPN
-brew install wireguard-eools
+brew install wireguard-tools
 brew install --cask openvpn-connect
 brew install --cask tunnelblick
 # brew install --cask openvpn-connect
