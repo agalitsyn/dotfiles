@@ -1,4 +1,5 @@
 return {
+  -- list of themes
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -11,6 +12,12 @@ return {
       end,
     },
   },
+
+  { "ellisonleao/gruvbox.nvim" },
+
+  { "folke/tokyonight.nvim" },
+
+  -- set theme
   {
     "LazyVim/LazyVim",
     opts = {

@@ -25,7 +25,10 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'Catppuccin Macchiato'
+    --return 'Catppuccin Macchiato'
+    --return 'Everblush (Gogh)'
+    --return 'Gruvbox Dark (Gogh)'
+    return 'Tokyo Night Storm (Gogh)'
   else
     return 'Github (base16)'
   end
