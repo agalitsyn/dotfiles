@@ -41,7 +41,6 @@ alias -- -="cd -"
 alias mkdir='mkdir -pv'
 
 # Create a new directory and enter it
-unalias md
 function md() {
     mkdir -pv "$@" && cd "$@"
 }
