@@ -13,3 +13,7 @@ configure:
 install-theme:
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $(ZSH_HOOKS_FOLDER)/themes/powerlevel10k
 
+.PHONY: install-plugins
+install-plugins:
+	wget -O $(ZSH_HOOKS_FOLDER)/zsh-fzf-history-search.zsh https://raw.githubusercontent.com/joshskidmore/zsh-fzf-history-search/master/zsh-fzf-history-search.zsh
+

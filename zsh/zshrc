@@ -2,6 +2,7 @@ source ~/.zsh.d/themes/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# load hooks
 ZSH_CUSTOM=~/.zsh.d
 
 for config_file ("$ZSH_CUSTOM"/*.zsh(N)); do
@@ -38,8 +39,9 @@ setopt AUTO_PUSHD
 # Disable "zsh: no matches found"
 setopt no_nomatch
 
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+# case-insensitive matching
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
