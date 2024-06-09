@@ -20,9 +20,9 @@
   // Term
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
-  "terminal.integrated.fontFamily": "Iosevka Term Light",
+  "terminal.integrated.fontFamily": "Iosevka Term",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": true,
