@@ -43,7 +43,7 @@ Then clone dotfiles and install everything with homebrew and link configs.
 - Firefox
 - Chrome
 
-## Transer sensitive data
+## Transfer sensitive data
 
 - SSH keys
 - Raycast settings
@@ -53,3 +53,6 @@ Then clone dotfiles and install everything with homebrew and link configs.
 - Enable Firewall
 - Enable FireVault
 
+## Prevent disconnecting VPNs on screen lock
+
+- Battery - Options - Prevent automatic sleeping
