@@ -22,7 +22,7 @@
   "terminal.external.linuxExec": "x-terminal-emulator",
   "terminal.integrated.fontFamily": "Iosevka Term",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 16.5,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": true,
@@ -63,7 +63,7 @@
   },
 
   // Editor per split
-  "workbench.editor.highlightModifiedTabs": true,
+
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 15,
@@ -80,6 +80,7 @@
   "window.confirmBeforeClose": "keyboardOnly",
   "window.density.editorTabHeight": "compact",
   "window.autoDetectColorScheme": true,
+  "workbench.editor.highlightModifiedTabs": true,
 
   "workbench.startupEditor": "none",
   "workbench.list.openMode": "doubleClick",
@@ -96,7 +97,7 @@
 
   "editor.fontSize": 16.5,
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
-  // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  "editor.fontLigatures": "'ss08', 'calt'",
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": true,
   "editor.lineHeight": 20,

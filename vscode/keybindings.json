@@ -87,8 +87,13 @@
 
   {
     "key": "cmd+k cmd+m",
+    "command": "-workbench.action.toggleMaximizedPanel",
+  },
+  {
+    "key": "cmd+k cmd+m",
     "command": "workbench.action.toggleMaximizeEditorGroup",
   },
+
   {
     "key": "cmd+k cmd+r",
     "command": "workbench.action.evenEditorWidths",
@@ -101,6 +106,7 @@
     "key": "shift+cmd+w",
     "command": "-workbench.action.closeWindow"
   },
+
   {
     "key": "alt+cmd+t",
     "command": "-workbench.action.closeOtherEditors"
@@ -108,9 +114,5 @@
   {
     "key": "shift+cmd+w",
     "command": "workbench.action.closeOtherEditors"
-  },
-  {
-    "key": "cmd+k cmd+m",
-    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]

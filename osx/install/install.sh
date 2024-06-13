@@ -146,8 +146,6 @@ brew install --cask brave-browser
 #brew install --cask google-chrome
 
 # True editors
-brew tap d12frosted/emacs-plus
-brew install emacs-plus@29 --with-native-comp
 brew install vim \
     neovim
 

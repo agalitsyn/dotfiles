@@ -15,13 +15,15 @@ return {
 
   { "ellisonleao/gruvbox.nvim" },
 
+  { "sainnhe/everforest" },
+
   { "folke/tokyonight.nvim" },
 
   -- set theme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-macchiato",
+      colorscheme = "everforest",
     },
   },
 }

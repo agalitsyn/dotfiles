@@ -129,6 +129,9 @@ set splitbelow                  " Puts new split windows to the bottom of the cu
 set diffopt=filler              " Add vertical spaces to keep right and left aligned.
 set diffopt+=iwhite             " Ignore whitespace changes (focus on code changes).
 
+" Update term title but restore old title after leaving Vim
+set titleold=
+
 set hlsearch                    " Highlight search terms
 
 set wildmenu                    " for command line completion
