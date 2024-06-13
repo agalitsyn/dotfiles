@@ -72,8 +72,12 @@
   },
   {
     "key": "shift+cmd+backspace",
-    "command": "workbench.action.navigateToLastEditLocation",
-  },
+    // "command": "workbench.action.navigateToLastEditLocation",
+    // "command": "workbench.action.navigatePreviousInEditLocations",
+    // "command": "workbench.action.editor.previousChange",
+    // This is proper behaviour:
+    "command": "workbench.action.navigateBackInEditLocations",
+    },
   {
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol",
@@ -114,5 +118,23 @@
   {
     "key": "shift+cmd+w",
     "command": "workbench.action.closeOtherEditors"
+  },
+  // macOS clear screen
+  // https://code.visualstudio.com/docs/terminal/advanced#_macos-clear-screen
+  {
+    "key": "cmd+k",
+    "command": "-workbench.action.terminal.clear"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+
+  // lazygit from tasks
+  {
+    "key": "cmd+k cmd+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "lazygit"
   }
 ]

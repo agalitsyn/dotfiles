@@ -31,6 +31,7 @@
   "terminal.integrated.cursorStyleInactive": "outline",
   "terminal.integrated.tabStopWidth": 4,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.tabs.enabled": false,
 
   // Files
   "files.associations": {
@@ -238,6 +239,7 @@
     },
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
+  "python.terminal.activateEnvironment": false,
 
   // HTML and templating languages
   "html.autoClosingTags": true,

@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "lazygit",
+            "type": "shell",
+            "command": "lazygit",
+            "args": [
+                ""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "focus": true,
+                "echo": false,
+                "reveal": "always",
+                "showReuseMessage": false,
+                "panel": "new",
+                "close": true,
+                "clear": true
+            }
+        }
+    ]
+}

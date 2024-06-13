@@ -20,5 +20,6 @@ configure-linux:
 configure-osx:
 	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	ln -sf $(CURDIR)/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+	ln -sf $(CURDIR)/tasks.json ~/Library/Application\ Support/Code/User/tasks.json
 	ln -sf $(CURDIR)/snippets ~/Library/Application\ Support/Code/User
 
