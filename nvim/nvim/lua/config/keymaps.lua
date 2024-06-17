@@ -14,4 +14,5 @@ vim.cmd([[
     command! -bang Qa qa<bang>
 ]])
 
+-- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

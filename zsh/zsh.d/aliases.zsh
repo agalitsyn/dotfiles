@@ -135,10 +135,6 @@ alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --
 alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
 alias timestamp='date +%s'
 
-function timestamp-to-datetime() {
-    local ts="$1"
-    python3 -c "from datetime import datetime; ts = int('${ts}'); print(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f'));"
-}
 
 # web dev
 function jwt-decode() {
@@ -146,12 +142,17 @@ function jwt-decode() {
     python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq
 }
 
-# Files
+function timestamp-to-datetime() {
+    local ts="$1"
+    python3 -c "from datetime import datetime; ts = int('${ts}'); print(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f'));"
+}
+
+### Files
 
 # file find
 alias f="find . -name $1"
 
-# file fuzzy search and open
+# file open: fuzzy search and open
 if command -v open > /dev/null; then
   alias fo='open $(fzf)';
 elif command -v xdg-open > /dev/null; then
@@ -159,8 +160,8 @@ elif command -v xdg-open > /dev/null; then
 fi;
 
 # file search by content
-function fs() {
-  rg -p "$@" | less -XFR
+function fc() {
+  rg --pretty --glob '!vendor/*' --glob '!node_modules/*' "$@" | less -XFR
 }
 
 # file tree
@@ -172,13 +173,14 @@ function ft() {
     tree -aC -I '.git|node_modules|bower_components|vendor|.venv' --dirsfirst "$@" | less -FRNX
 }
 
-# File size
+# file size
 alias fs="stat $1"
 
-# File path
+# file path
 alias fp="readlink -f $1"
 
-extract() {
+# Extract archive
+function extract() {
     if [ -z "$1" ]; then
     # display usage if no parameters given
     echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
