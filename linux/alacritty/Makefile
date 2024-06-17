@@ -1,6 +1,6 @@
 .PHONY: configure
 configure:
-	mkdir -pv ~/.config/alacritty/themes
-	ln -sf $(CURDIR)/alacritty.yml ~/.config/alacritty/alacritty.yml
-	git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+	mkdir -pv ~/.config/alacritty
+	ln -sf $(CURDIR)/alacritty.toml ~/.config/alacritty/alacritty.toml
+	ln -sf $(CURDIR)/catppuccin-macchiato.toml ~/.config/alacritty/catppuccin-macchiato.toml
 

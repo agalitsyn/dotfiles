@@ -1,7 +1,11 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    keys = {},
+
+    -- this will be merged with defaults
+    keys = {
+      { "<leader>sc", "<cmd>Telescope git_status<CR>", desc = "[S]earch [C]hanged Files" },
+    },
 
     opts = {
       defaults = {
