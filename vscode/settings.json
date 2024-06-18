@@ -20,7 +20,7 @@
   // Term
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
-  "terminal.integrated.fontFamily": "Iosevka Term",
+  "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontSize": 16.5,
   "terminal.integrated.scrollback": 10000,
@@ -31,7 +31,6 @@
   "terminal.integrated.cursorStyleInactive": "outline",
   "terminal.integrated.tabStopWidth": 4,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.tabs.enabled": false,
 
   // Files
   "files.associations": {
@@ -54,6 +53,7 @@
   "explorer.incrementalNaming": "smart",
 
   // Search
+  "search.quickOpen.history.filterSortOrder": "recency",
   "search.exclude": {
     "**/.git": true,
     "**/node_modules": true,
@@ -63,8 +63,7 @@
     "**/vendor": true
   },
 
-  // Editor per split
-
+  // Editors per split
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 15,
@@ -91,12 +90,14 @@
   "workbench.colorTheme": "Everforest Dark",
   "workbench.preferredDarkColorTheme": "Everforest Dark",
   "workbench.iconTheme": "bearded-icons",
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "hidden",
   "workbench.tree.enableStickyScroll": false,
   "workbench.layoutControl.enabled": false,
   "problems.decorations.enabled": false,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
 
   "editor.fontSize": 16.5,
+  "editor.fontWeight": "300",
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontLigatures": "'ss08', 'calt'",
   "editor.find.seedSearchStringFromSelection": "selection",
@@ -137,6 +138,7 @@
   "editor.semanticHighlighting.enabled": true,
   "editor.stickyScroll.enabled": false,
   "zenMode.showTabs": "none",
+
 
   // Breadcrumbs
 	"breadcrumbs.icons": false,

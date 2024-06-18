@@ -1,19 +1,58 @@
 [
+  // These keybindings are mix between vscode, vim and intellij
+
   // File explorer
+  // Enter to select
   {
     "key": "enter",
     "command": "-renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
-  },
-  {
-    "key": "cmd+enter",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "filesExplorerFocus"
   },
   {
     "key": "enter",
     "command": "list.select",
     "when": "listFocus && !inputFocus"
+  },
+  // Reveal in explorer
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility",
+  },
+  {
+    "key": "cmd+b",
+    "command": "workbench.files.action.showActiveFileInExplorer",
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus"
+  },
+
+  // Telescope style grep as default search
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "workbench.action.quickTextSearch"
+  },
+  {
+    "key": "cmd+k cmd+f",
+    "command": "workbench.action.findInFiles",
+  },
+
+  // Vim-style tree actions
+  {
+    "key": "m",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
 		"key": "a",
@@ -26,29 +65,29 @@
 		"when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "ctrl+0",
-    "command": "workbench.files.action.showActiveFileInExplorer",
-    "when": "editorTextFocus",
-  },
+		"key": "shift+s",
+		"command": "explorer.openToSide",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
 
-  // Autocomplete actions like Intellij
-  // {
-	// 	"key": "alt+enter",
-	// 	"command": "editor.action.quickFix",
-	// 	"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-	// },
-	// {
-	// 	"key": "alt+enter",
-	// 	"command": "workbench.action.terminal.quickFix",
-	// 	"when": "terminalFocus && terminalProcessSupported"
-	// },
-	// {
-	// 	"key": "alt+enter",
-	// 	"command": "problems.action.showQuickFixes",
-	// 	"when": "problemFocus"
-	// },
+  // Intellij-style quick actions
+  {
+		"key": "alt+enter",
+		"command": "editor.action.quickFix",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "alt+enter",
+		"command": "workbench.action.terminal.quickFix",
+		"when": "terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "alt+enter",
+		"command": "problems.action.showQuickFixes",
+		"when": "problemFocus"
+	},
 
-  // Navigation like Intellij
+  // Intellij-style navigation
   {
     "key": "cmd+[",
     "command": "workbench.action.navigateBack",
@@ -57,15 +96,6 @@
     "key": "cmd+]",
     "command": "workbench.action.navigateForward",
   },
-  // {
-  //   "key": "cmd+b",
-  //   "command": "-workbench.action.toggleSidebarVisibility"
-  // },
-  // {
-  //   "key": "cmd+b",
-  //   "command": "editor.action.revealDefinition",
-  //   "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  // },
   {
     "key": "cmd+e",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
@@ -77,25 +107,32 @@
     // "command": "workbench.action.editor.previousChange",
     // This is proper behaviour:
     "command": "workbench.action.navigateBackInEditLocations",
-    },
+  },
   {
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol",
   },
 
-  // Navgation inspired by Vim
+  // Vim-style navigation
   {
     "key":"cmd+shift+5",
     "command": "editor.emmet.action.matchTag"
   },
 
+  // Panes
   {
     "key": "cmd+k cmd+m",
     "command": "-workbench.action.toggleMaximizedPanel",
   },
   {
     "key": "cmd+k cmd+m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+k cmd+m",
     "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorTextFocus",
   },
 
   {
@@ -106,11 +143,11 @@
     "key": "shift+cmd+\\",
     "command": "workbench.action.splitEditorToBelowGroup"
   },
+
   {
     "key": "shift+cmd+w",
     "command": "-workbench.action.closeWindow"
   },
-
   {
     "key": "alt+cmd+t",
     "command": "-workbench.action.closeOtherEditors"
@@ -119,6 +156,7 @@
     "key": "shift+cmd+w",
     "command": "workbench.action.closeOtherEditors"
   },
+
   // macOS clear screen
   // https://code.visualstudio.com/docs/terminal/advanced#_macos-clear-screen
   {
@@ -131,7 +169,7 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
-  // lazygit from tasks
+  // Open lazygit in terminal
   {
     "key": "cmd+k cmd+g",
     "command": "workbench.action.tasks.runTask",
