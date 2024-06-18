@@ -43,9 +43,17 @@ setopt no_nomatch
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# highlight on tab
+zmodload -i zsh/complist
+zstyle ':completion:*' menu select
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
 # Editor
-export EDITOR='vim'
+export EDITOR='nvim'
+
+# Ctrl + left/right arrow keys issue
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
