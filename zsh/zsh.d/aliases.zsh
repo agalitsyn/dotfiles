@@ -135,7 +135,6 @@ alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --
 alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
 alias timestamp='date +%s'
 
-
 # web dev
 function jwt-decode() {
     local token="$1"
@@ -160,7 +159,7 @@ elif command -v xdg-open > /dev/null; then
 fi;
 
 # file search by content
-function fc() {
+function fgrep() {
   rg --pretty --glob '!vendor/*' --glob '!node_modules/*' "$@" | less -XFR
 }
 
@@ -169,15 +168,15 @@ function fc() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function ft() {
+function tre() {
     tree -aC -I '.git|node_modules|bower_components|vendor|.venv' --dirsfirst "$@" | less -FRNX
 }
 
 # file size
-alias fs="stat $1"
+alias fstat="stat $1"
 
 # file path
-alias fp="readlink -f $1"
+alias fpath="readlink -f $1"
 
 # Extract archive
 function extract() {
