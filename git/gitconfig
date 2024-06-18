@@ -55,7 +55,7 @@
     filemode = false
     excludesfile = ~/.gitignore
     autocrlf = input
-    pager = delta
+    pager = "delta" # --plus-style=\"#333B2F\" --minus-style=\"#382F32\"
 
 [push]
     default = simple
@@ -76,6 +76,8 @@
     features = side-by-side line-numbers decorations
     whitespace-error-style = 22 reverse
     navigate = true
+    hyperlinks = true
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 [delta "light-mode"]
     light = true
@@ -85,4 +87,3 @@
 
 [include]
     path = ~/.gitconfig.local
-
