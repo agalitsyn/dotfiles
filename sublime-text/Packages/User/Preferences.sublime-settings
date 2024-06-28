@@ -11,9 +11,9 @@
     "light_color_scheme": "Writer.sublime-color-scheme",
 
     // Font (Menlo, Source Code Pro, Input Mono, Hack, IBM Plex Mono)
-    "font_face": "Iosevka Term Light",
+    "font_face": "Iosevka",
     "font_options": ["subpixel_antialias", "no_bold"],
-    "font_size": 16,
+    "font_size": 16.5,
 
     // Cursor style - slightly wider than default
     "wide_caret": true,
