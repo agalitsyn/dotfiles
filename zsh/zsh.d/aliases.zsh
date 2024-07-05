@@ -208,3 +208,7 @@ function extract() {
     fi
 }
 
+function youtube-dl-playlist() {
+    yt-dlp -f "bestvideo+bestaudio" --yes-playlist -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --embed-chapters $@
+}
+
