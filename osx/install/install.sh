@@ -249,7 +249,7 @@ brew install --cask transmission
 # Media
 brew install --cask vlc
 brew install --cask handbrake
-brew install youtube-dl
+brew install yt-dlp
 
 # Screenshot
 brew install --cask flameshot
