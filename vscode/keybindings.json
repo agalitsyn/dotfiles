@@ -69,6 +69,12 @@
 		"command": "explorer.openToSide",
 		"when": "filesExplorerFocus && !inputFocus"
 	},
+  // Win style
+  {
+    "key": "f2",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
 
   // Intellij-style quick actions
   {

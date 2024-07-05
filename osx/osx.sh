@@ -39,6 +39,7 @@ alias postgresql-stop="pg_ctl -D $HOMEBREW_PREFIX/var/postgres stop"
 alias memcached-start="memcached -vv"
 alias memcached-statistics="memstat --servers=127.0.0.1:11211"
 alias memcached-dump="memdump --servers=127.0.0.1:11211"
+export LIBMEMCACHED=/opt/homebrew
 
 # cd into whatever is the forefront Finder window.
 function cdf() { # short for cdfinder
