@@ -1,5 +1,7 @@
 adpyke.codesnap
 beardedbear.beardedicons
+beardedbear.beardedtheme
+bigonesystems.django
 bradlc.vscode-tailwindcss
 catppuccin.catppuccin-vsc
 catppuccin.catppuccin-vsc-icons
@@ -10,8 +12,7 @@ dbaeumer.vscode-eslint
 ecmel.vscode-html-css
 editorconfig.editorconfig
 emeraldwalk.runonsave
-equinusocio.vsc-material-theme
-equinusocio.vsc-material-theme-icons
+enkia.tokyo-night
 esbenp.prettier-vscode
 firefox-devtools.vscode-firefox-debug
 formulahendry.auto-close-tag
@@ -21,7 +22,6 @@ jdinhlife.gruvbox
 jebbs.plantuml
 jgrundback.vscode-mc-theme
 jkjustjoshing.vscode-text-pastry
-mhutchie.git-graph
 miguelsolorio.fluent-icons
 mikestead.dotenv
 mrmlnc.vscode-duplicate
@@ -41,6 +41,7 @@ phoenixframework.phoenix
 pmndrs.pmndrs
 rangav.vscode-thunder-client
 redhat.vscode-yaml
+sainnhe.everforest
 samuelcolvin.jinjahtml
 tamasfe.even-better-toml
 vue.volar

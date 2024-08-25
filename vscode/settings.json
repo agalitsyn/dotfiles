@@ -8,15 +8,6 @@
 
   "security.workspace.trust.enabled": false,
 
-  // Copilot
-  "chat.editor.fontSize": 17,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-
   // Term
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
@@ -25,7 +16,7 @@
   "terminal.integrated.fontSize": 16.5,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
-  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.copyOnSelection": false,
   "terminal.integrated.hideOnStartup": "always",
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.cursorStyleInactive": "outline",
@@ -71,7 +62,7 @@
   "workbench.editor.enablePreview": false,
 
   // Editor look and feel
-  "window.zoomLevel": 0.2,
+  "window.zoomLevel": 0.5,
   "window.nativeTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
@@ -88,7 +79,6 @@
   "workbench.settings.editor": "json",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.colorTheme": "Everforest Dark",
-  "workbench.preferredDarkColorTheme": "Everforest Dark",
   "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
   "workbench.tree.enableStickyScroll": false,
@@ -96,8 +86,8 @@
   "problems.decorations.enabled": false,
   "workbench.editor.enablePreviewFromQuickOpen": true,
 
-  "editor.fontSize": 16.5,
-  "editor.fontWeight": "200",
+  "editor.fontSize": 16,
+  "editor.fontWeight": "400",
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontLigatures": "'ss08', 'calt'",
   "editor.find.seedSearchStringFromSelection": "selection",
@@ -174,9 +164,9 @@
   // Gitlens
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
-  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.enabled": true,
   "gitlens.statusBar.enabled": false,
-  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.enabled": true,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.hovers.avatars": false,
@@ -256,6 +246,8 @@
 
   "indentRainbow.includedLanguages": [
     "html",
+    "vue",
+    "tsx"
   ],
 
   "[html][jinja][jinja-html][django-html]": {
@@ -303,6 +295,9 @@
 
   "[json]": {
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
