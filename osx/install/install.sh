@@ -141,9 +141,10 @@ brew install go
 
 # Browsers
 brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask chromium --no-quarantine
 brew install --cask brave-browser
-#brew install --cask chromium --no-quarantine
-#brew install --cask google-chrome
+brew install --cask yandex
 
 # True editors
 brew install vim \
@@ -157,6 +158,11 @@ brew install --cask \
 
 # Absolute noob's editors
 brew install --cask jetbrains-toolbox
+
+# AI code tools
+brew install ollama \
+    aider
+brew install --cask zed
 
 # Terminal
 brew install --cask wezterm
@@ -270,9 +276,9 @@ brew install --cask telegram
 
 # VPN
 brew install wireguard-tools
+brew install spoofdpi
 brew install --cask openvpn-connect
-brew install --cask tunnelblick
-# brew install --cask openvpn-connect
+# brew install --cask tunnelblick
 # brew install --cask cloudflare-warp
 # brew install --cask protonvpn
 # brew install --cask tor-browser

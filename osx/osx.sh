@@ -81,3 +81,6 @@ if [[ "$TERM_PROGRAM" == iTerm.app ]]; then
 fi
 
 source $HOMEBREW_PREFIX/etc/profile.d/z.sh
+
+alias spoofdpi="spoofdpi -banner=false -port=1234"
+
