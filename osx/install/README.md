@@ -56,3 +56,8 @@ Then clone dotfiles and install everything with homebrew and link configs.
 ## Prevent disconnecting VPNs on screen lock
 
 - Battery - Options - Prevent automatic sleeping
+
+## Spotlight
+
+- Siri and Spotlight ->  Remove all items from Spotlight index, especially PDF to avoid `CGPDFService` high CPU usage
+

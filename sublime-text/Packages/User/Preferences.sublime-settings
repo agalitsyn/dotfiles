@@ -19,8 +19,9 @@
     "wide_caret": true,
     "caret_style": "solid",
 
+
     // Editor look and feel
-    "draw_white_space": "selection",
+    "draw_white_space": "all",
     "highlight_line": true,
     "show_full_path": true,
     "indent_guide_options": ["draw_active"],
