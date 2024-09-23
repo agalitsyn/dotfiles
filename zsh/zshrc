@@ -51,7 +51,7 @@ zstyle ':completion:*' menu select
 export PATH="$HOME/bin:$PATH"
 
 # Editor
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # Ctrl + left/right arrow keys issue
 bindkey "^[[1;5C" forward-word
