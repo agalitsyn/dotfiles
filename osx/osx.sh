@@ -82,5 +82,3 @@ fi
 
 source $HOMEBREW_PREFIX/etc/profile.d/z.sh
 
-alias spoofdpi="spoofdpi -port=1234"
-

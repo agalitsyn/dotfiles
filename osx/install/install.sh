@@ -76,24 +76,11 @@ brew install \
 brew tap homebrew/cask-fonts
 brew install --cask \
     font-source-code-pro \
-    font-fira-code \
     font-hack \
-    font-jetbrains-mono \
-    font-cascadia-code \
     font-input \
-    font-go \
-    font-juliamono \
-    font-ibm-plex-mono \
-    font-iosevka \
-    font-inconsolata \
-    font-monoid \
-    font-pt-mono \
-    font-space-mono \
-    font-martian-mono \
     font-blex-mono-nerd-font \
     font-jetbrains-mono-nerd-font \
-    font-martian-mono-nerd-font \
-    font-monaspace \
+    font-iosevka \
     font-iosevka-term-nerd-font \
     font-iosevka-nerd-font
 
@@ -111,10 +98,10 @@ brew install \
 # DB clients
 brew install pgcli
 brew install kcat
-brew install --cask studio-3t
+# brew install --cask studio-3t
 
 # Native Mac app for PostgreSQL
-brew install --cask postico
+# brew install --cask postico
 
 # Java
 brew install java openjdk
@@ -140,11 +127,11 @@ brew install \
 brew install go
 
 # Browsers
+brew install --cask eloston-chromium --no-quarantine
 brew install --cask firefox
-brew install --cask google-chrome
-brew install --cask chromium --no-quarantine
-brew install --cask brave-browser
-brew install --cask yandex
+# brew install --cask google-chrome
+# brew install --cask brave-browser
+# brew install --cask yandex
 
 # True editors
 brew install vim \
@@ -160,8 +147,7 @@ brew install --cask \
 brew install --cask jetbrains-toolbox
 
 # AI code tools
-brew install ollama \
-    aider
+brew install ollama
 brew install --cask zed
 
 # Terminal
@@ -177,11 +163,11 @@ brew install --cask sloth
 brew install --cask imhex
 
 # Network
-brew install --cask wireshark
-#brew install --cask burp-suite
+# brew install --cask wireshark
+# brew install --cask burp-suite
 
 # Displays
-brew install --cask monitorcontrol
+# brew install --cask monitorcontrol
 # Not needed on newer macos, because it has "show all resolutions"
 #brew install --cask usr-sse2-rdm
 
@@ -258,8 +244,8 @@ brew install --cask handbrake
 brew install yt-dlp
 
 # Screenshot
-brew install --cask flameshot
-brew install --cask skitch
+#brew install --cask flameshot
+#brew install --cask skitch
 
 # Phones
 brew install --cask android-file-transfer
@@ -271,21 +257,17 @@ brew install --cask imazing
 # brew install --cask skype
 # brew install --cask whatsapp
 # brew install --cask zoom
-brew install --cask discord
+# brew install --cask discord
 brew install --cask telegram
 
 # VPN
-brew install wireguard-tools
-brew install spoofdpi
 brew install --cask openvpn-connect
 # brew install --cask tunnelblick
-# brew install --cask cloudflare-warp
-# brew install --cask protonvpn
-# brew install --cask tor-browser
+# brew install spoofdpi
 
 # Tray improvements
 brew install --cask itsycal
-brew install --cask hiddenbar
+#brew install --cask hiddenbar
 
 # Mindmap
 # Manually download xmind 8 from website https://xmind.app/download/xmind8/
@@ -321,12 +303,12 @@ brew install --cask balenaetcher
 ##    Windows
 
 # Remote desktop
-brew install --cask microsoft-remote-desktop
 brew install --cask anydesk
+# brew install --cask microsoft-remote-desktop
 # brew install --cask teamviewer
 
 # NTFS
-brew install --cask paragon-ntfs
+#brew install --cask paragon-ntfs
 #
 # Other drivers are slow, writig speed 20x slower than on appfs.
 # brew install --cask osxfuse
@@ -338,7 +320,8 @@ brew install --cask paragon-ntfs
 # brew install --cask mounty
 
 # Office
-brew install --cask microsoft-office
+# brew install --cask microsoft-office
 
 # Remove outdated versions from the cellar
 brew cleanup
+
