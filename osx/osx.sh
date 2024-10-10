@@ -82,3 +82,5 @@ fi
 
 source $HOMEBREW_PREFIX/etc/profile.d/z.sh
 
+alias google-chrome-guest="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --guest"
+
