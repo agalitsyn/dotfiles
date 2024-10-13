@@ -1,6 +1,6 @@
 {
   "auto_reveal_entries": true,
-  "auto_fold_dirs": true,
+  "auto_fold_dirs": false,
   "soft_wrap": "none",
   "preferred_line_length": 140,
   "use_autoclose": false,

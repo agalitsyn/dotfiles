@@ -1,5 +1,5 @@
 os:
-  editPreset: 'nvim'
+  editPreset: 'vim'
 git:
     paging:
         colorArg: always
