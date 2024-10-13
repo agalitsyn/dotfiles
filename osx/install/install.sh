@@ -95,22 +95,23 @@ brew install \
     redis \
     sqlite
 
-# DB clients
+# Postgres client
 brew install pgcli
-brew install kcat
-# brew install --cask studio-3t
 
 # Native Mac app for PostgreSQL
 # brew install --cask postico
 
-# Java
-brew install java openjdk
+# sqlite client
+brew install litecli
 
-# Javascript
-brew install \
-    node \
-    yarn \
-    pnpm
+# Kafka client
+brew install kcat
+
+# Mongo client
+# brew install --cask studio-3t
+
+# Go
+brew install go
 
 # Python
 brew install \
@@ -123,14 +124,23 @@ brew install \
     ruff \
     cookiecutter
 
-# Go
-brew install go
+# JS
+brew install \
+    node \
+    yarn \
+    pnpm
+
+# Java
+brew install java openjdk
+
+# Elixir
+brew install elixir
 
 # Browsers
-brew install --cask eloston-chromium --no-quarantine
 brew install --cask firefox
+brew install --cask brave-browser
+# brew install --cask eloston-chromium --no-quarantine
 # brew install --cask google-chrome
-# brew install --cask brave-browser
 # brew install --cask yandex
 
 # True editors
