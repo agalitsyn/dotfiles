@@ -1,4 +1,9 @@
 {
+  "theme": {
+    "mode": "system",
+    "light": "Cyberdream light",
+    "dark": "Cyberdream dark"
+  },
   "auto_reveal_entries": true,
   "auto_fold_dirs": false,
   "soft_wrap": "none",
@@ -25,7 +30,6 @@
   "vim_mode": false,
   "excluded_patterns": ["**/__pycache__"],
   "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/.DS_Store", "**/Thumbs.db", "**/__pycache__"],
-  "theme": "Gruvbox Dark",
   "base_keymap": "VSCode",
   "telemetry": {
     "diagnostics": false,
