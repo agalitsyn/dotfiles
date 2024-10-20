@@ -89,7 +89,7 @@ brew install imagemagick
 
 # DB packages, also required for build python packages
 brew install \
-    postgresql \
+    postgresql@17 \
     libmemcached \
     memcached \
     redis \

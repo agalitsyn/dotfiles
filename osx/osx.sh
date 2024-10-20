@@ -17,7 +17,7 @@ export PATH="$HOMEBREW_PREFIX/opt/curl/bin:$PATH"
 export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/openssl/lib/pkgconfig"
 export LDFLAGS="-I$HOMEBREW_PREFIX/opt/openssl/include -L$HOMEBREW_PREFIX/opt/openssl/lib"
 
-export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/postgresql@17/bin:$PATH"
 
 export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 
