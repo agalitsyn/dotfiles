@@ -79,7 +79,6 @@
   "workbench.settings.editor": "json",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.colorTheme": "Everforest Dark",
-  "workbench.preferredDarkColorTheme": "Everforest Dark",
   "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
   "workbench.tree.enableStickyScroll": false,
