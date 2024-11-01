@@ -1,8 +1,8 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Cyberdream light",
-    "dark": "Cyberdream dark"
+    "light": "Gruvbox Light Soft",
+    "dark": "Gruvbox Dark"
   },
   "auto_reveal_entries": true,
   "auto_fold_dirs": false,
