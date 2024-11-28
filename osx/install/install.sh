@@ -75,10 +75,8 @@ brew install \
 # Add fonts
 brew tap homebrew/cask-fonts
 brew install --cask \
-    font-source-code-pro \
     font-hack \
     font-input \
-    font-blex-mono-nerd-font \
     font-jetbrains-mono-nerd-font \
     font-iosevka \
     font-iosevka-term-nerd-font \

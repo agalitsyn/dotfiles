@@ -1,3 +1,7 @@
+.PHONY: configure
+configure:
+	ln -sf $(CURDIR)/nvim ~/.config/nvim
+
 .PHONY: lazyvim-configure
 lazyvim-configure:
 	ln -sf $(CURDIR)/lazyvim ~/.config/nvim
