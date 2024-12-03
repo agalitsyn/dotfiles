@@ -1,11 +1,19 @@
 {
+  "vim_mode": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
     "dark": "Gruvbox Dark"
   },
   "auto_reveal_entries": true,
-  "auto_fold_dirs": false,
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "auto_reveal_entries": true
+  },
   "soft_wrap": "none",
   "preferred_line_length": 140,
   "use_autoclose": false,
@@ -27,14 +35,9 @@
   "tabs": {
     "file_icons": true
   },
-  "vim_mode": false,
   "excluded_patterns": ["**/__pycache__"],
   "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/.DS_Store", "**/Thumbs.db", "**/__pycache__"],
   "base_keymap": "VSCode",
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
   "autosave": "on_window_change",
   "ui_font_size": 16,
   "buffer_font_size": 17,
@@ -87,5 +90,8 @@
         }
       ]
     }
+    // "YAML": {
+    //   "format_on_save": "off"
+    // }
   }
 }

@@ -4,6 +4,9 @@ local act = wezterm.action
 
 local config = {}
 
+config.initial_rows = 25
+config.initial_cols = 120
+
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
 if wezterm.config_builder then
