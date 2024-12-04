@@ -7,15 +7,23 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
     "context": "Editor",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !u",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+
+      "ctrl-H": ["workspace::SwapPaneInDirection", "Left"],
+      "ctrl-J": ["workspace::SwapPaneInDirection", "Down"],
+      "ctrl-L": ["workspace::SwapPaneInDirection", "Right"],
+      "ctrl-K": ["workspace::SwapPaneInDirection", "Up"]
     }
   }
 ]

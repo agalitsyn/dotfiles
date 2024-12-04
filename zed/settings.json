@@ -1,5 +1,13 @@
 {
-  "vim_mode": false,
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "buffer_line_height": {
+    "custom": 1.7
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -49,6 +57,9 @@
       "enabled": true
     }
   },
+  "inlay_hints": {
+    "enabled": false
+  },
   "lsp": {
     "pyright": {
       "settings": {
@@ -58,6 +69,30 @@
         },
         "python": {
           "pythonPath": ".venv/bin/python"
+        }
+      }
+    },
+    "gopls": {
+      "initialization_options": {
+        "gofumpt": true,
+        "usePlaceholders": true,
+        "staticcheck": true,
+        "codelenses": {
+          "gc_details": true,
+          "generate": true,
+          "regenerate_cgo": true,
+          "tidy": true,
+          "upgrade_dependency": true,
+          "vendor": true
+        },
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
         }
       }
     }
