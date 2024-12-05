@@ -44,7 +44,7 @@
     "file_icons": true
   },
   "excluded_patterns": ["**/__pycache__"],
-  "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/.DS_Store", "**/Thumbs.db", "**/__pycache__"],
+  "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/.DS_Store", "**/Thumbs.db", "**/__pycache__", "**/vendor"],
   "base_keymap": "VSCode",
   "autosave": "on_window_change",
   "ui_font_size": 16,
