@@ -1,9 +1,9 @@
 {
-  "vim_mode": true,
-  "relative_line_numbers": true,
+  "vim_mode": false,
+  "relative_line_numbers": false,
   "cursor_blink": false,
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   "buffer_line_height": {
     "custom": 1.7

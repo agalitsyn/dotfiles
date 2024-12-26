@@ -42,7 +42,7 @@ brew install coreutils \
     netcat \
     pv \
     htop \
-    neofetch
+    p7zip
 
 # Newer blazingly fast cli tools, in Rust btw
 brew install \
