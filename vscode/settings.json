@@ -444,4 +444,5 @@
       "commands": ["revealInExplorer"]
     }
   ],
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
 }
