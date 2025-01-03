@@ -1,0 +1,13 @@
+font-family = "IosevkaTerm NFM"
+font-size = 17
+
+cursor-style = block
+cursor-style-blink = false
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+
+unfocused-split-opacity = 1.0
+
+theme = "Everforest Dark - Hard"
+

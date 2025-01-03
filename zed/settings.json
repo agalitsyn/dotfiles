@@ -46,7 +46,7 @@
   "excluded_patterns": ["**/__pycache__"],
   "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/.DS_Store", "**/Thumbs.db", "**/__pycache__", "**/vendor"],
   "base_keymap": "VSCode",
-  "autosave": "on_window_change",
+  "autosave": "on_focus_change",
   "ui_font_size": 16,
   "buffer_font_size": 17,
   "buffer_font_family": "Iosevka",
