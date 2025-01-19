@@ -1,29 +1,18 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
     "context": "Editor",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-0": "pane::RevealInProjectPanel"
     }
   },
   {
-    "context": "Editor && VimControl && !VimWaiting && !u",
+    "context": "ProjectPanel",
+    "use_key_equivalents": true,
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-
-      "ctrl-H": ["workspace::SwapPaneInDirection", "Left"],
-      "ctrl-J": ["workspace::SwapPaneInDirection", "Down"],
-      "ctrl-L": ["workspace::SwapPaneInDirection", "Right"],
-      "ctrl-K": ["workspace::SwapPaneInDirection", "Up"]
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "m": "project_panel::Rename",
+      "d": ["project_panel::Trash", { "skip_prompt": false }]
     }
   }
 ]
