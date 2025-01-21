@@ -9,4 +9,4 @@ cursor-style-blink = false
 
 confirm-close-surface = false
 clipboard-paste-protection = false
-
+copy-on-select = true
