@@ -26,7 +26,7 @@
 
 Probably to latest
 
-## Disable Airplay receiver (consumes port 7000)
+## Disable Airplay receiver (consumes ports 5000 and 7000)
 
 System Settings -> General -> Airdrop & Handoff -> Airplay receiver
 

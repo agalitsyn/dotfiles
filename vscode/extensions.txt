@@ -1,5 +1,6 @@
 adpyke.codesnap
 beardedbear.beardedicons
+beardedbear.beardedtheme
 bigonesystems.django
 bradlc.vscode-tailwindcss
 charliermarsh.ruff

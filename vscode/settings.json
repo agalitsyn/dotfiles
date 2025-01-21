@@ -13,7 +13,7 @@
   "terminal.external.linuxExec": "x-terminal-emulator",
   "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.persistentSessionScrollback": 1000,
   "terminal.integrated.copyOnSelection": false,
@@ -87,8 +87,7 @@
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "problems.decorations.enabled": false,
 
-  "editor.fontSize": 17,
-  "editor.fontWeight": "400",
+  "editor.fontSize": 16,
   "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontLigatures": "'ss08', 'calt'",
   "editor.find.seedSearchStringFromSelection": "selection",
@@ -338,4 +337,5 @@
     },
   ],
   "todohighlight.isCaseSensitive": true,
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
 }
