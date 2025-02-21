@@ -15,7 +15,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "VSCode Dark Modern"
   },
   "auto_reveal_entries": true,
   "project_panel": {

@@ -23,6 +23,10 @@ export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 
 export PATH=~/.local/bin:$PATH
 
+# Fix 'gpg: signing failed: Inappropriate ioctl for device'
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # Fix mc slow startup
 alias mc="mc --nosubshell"
 

@@ -34,6 +34,8 @@ brew install coreutils \
     grep \
     git \
     tig \
+    gpg \
+    pinentry-mac \
     tmux \
     curl \
     telnet \
@@ -59,7 +61,8 @@ brew install \
     fzf \
     tldr \
     tz \
-    yazi
+    yazi \
+    go-task
 
 # HTTP tools
 brew install httpie
@@ -115,10 +118,9 @@ brew install go
 brew install \
     python \
     pyenv \
-    poetry \
-    pdm \
-    ipython \
     pipx \
+    uv \
+    ipython \
     ruff \
     cookiecutter
 

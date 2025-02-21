@@ -159,7 +159,7 @@ elif command -v xdg-open > /dev/null; then
 fi;
 
 # file search by content
-function fgrep() {
+function rgg() {
   rg --pretty --glob '!vendor/*' --glob '!node_modules/*' "$@" | less -XFR
 }
 

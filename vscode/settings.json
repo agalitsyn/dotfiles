@@ -61,14 +61,12 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.enablePreview": false,
 
-
   // Editor look and feel
   "window.zoomLevel": 0.4,
   "window.nativeTabs": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "window.titleBarStyle": "custom",
   "window.customTitleBarVisibility": "windowed",
-  "window.commandCenter": false,
   "window.confirmBeforeClose": "keyboardOnly",
   "window.density.editorTabHeight": "compact",
   "window.autoDetectColorScheme": true,
@@ -82,7 +80,6 @@
   "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
   "workbench.tree.enableStickyScroll": false,
-  "workbench.layoutControl.enabled": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "problems.decorations.enabled": false,
@@ -162,7 +159,6 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
 
   // Gitlens
-  "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.currentLine.enabled": true,
   "gitlens.statusBar.enabled": false,
@@ -325,6 +321,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "svelte.enable-ts-plugin": true,
 
   "todohighlight.keywords": [
     "DEBUG:",
@@ -337,5 +334,16 @@
     },
   ],
   "todohighlight.isCaseSensitive": true,
-  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+
+  // AI
+  "chat.editor.fontSize": 16,
+
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "chat.commandCenter.enabled": false,
+  "workbench.layoutControl.enabled": false,
 }

@@ -1,6 +1,7 @@
 [user]
     name = Anton Galitsyn
     email = anton.galitsyn@gmail.com
+	signingkey = 4ECB81A0A7C24CF5
 
 [color]
     diff = auto
@@ -88,3 +89,7 @@
 
 [include]
     path = ~/.gitconfig.local
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
