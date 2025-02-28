@@ -46,7 +46,7 @@ brew install coreutils \
     htop \
     p7zip
 
-# Newer blazingly fast cli tools, in Rust btw
+# Newer blazingly fast cli tools, mostly in Rust BTW
 brew install \
     jq \
     yq \
@@ -57,12 +57,8 @@ brew install \
     z \
     git-delta \
     lazygit \
-    xh \
     fzf \
-    tldr \
-    tz \
-    yazi \
-    go-task
+    tz
 
 # HTTP tools
 brew install httpie
@@ -72,8 +68,7 @@ brew install easy-rsa
 
 # Reverse engineering tools
 brew install \
-    nmap \
-    gobuster
+    nmap
 
 # Add fonts
 brew tap homebrew/cask-fonts
@@ -126,22 +121,18 @@ brew install \
 
 # JS
 brew install \
-    node \
+    node@20 \
     yarn \
     pnpm
 
 # Java
 brew install java openjdk
 
-# Elixir
-brew install elixir
-
 # Browsers
+brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask brave-browser
-# brew install --cask eloston-chromium --no-quarantine
-# brew install --cask google-chrome
-# brew install --cask yandex
+brew install --cask yandex
 
 # True editors
 brew install vim \
@@ -156,12 +147,14 @@ brew install --cask \
 # Absolute noob's editors
 brew install --cask jetbrains-toolbox
 
-# AI code tools
+# AI code editors
 brew install ollama
-brew install --cask zed
+brew install --cask \
+    cursor \
+    zed
 
-# Terminal
-brew install --cask wezterm
+# Terminals
+brew install --cask wezterm ghostty
 
 # Firewall
 brew install --cask lulu
@@ -187,7 +180,7 @@ brew tap daipeihust/tap && brew install im-select
 # Select default apps from cli
 brew install duti
 
-# Alternative for Finder
+# Alternative for Total Commander
 brew install --cask marta
 
 # Finder quicklook plugins
@@ -249,9 +242,10 @@ brew install --cask yandex-disk
 brew install --cask transmission
 
 # Media
+brew install yt-dlp
 brew install --cask vlc
 brew install --cask handbrake
-brew install yt-dlp
+brew install --cask shotcut
 
 # Screenshot
 #brew install --cask flameshot
@@ -271,7 +265,7 @@ brew install --cask imazing
 brew install --cask telegram
 
 # VPN
-brew install --cask openvpn-connect
+# brew install --cask openvpn-connect
 # brew install --cask tunnelblick
 # brew install spoofdpi
 
