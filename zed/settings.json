@@ -15,7 +15,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "VSCode Dark Modern"
+    "dark": "Gruvbox Dark Hard"
   },
   "auto_reveal_entries": true,
   "project_panel": {
@@ -31,7 +31,7 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },

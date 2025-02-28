@@ -162,6 +162,10 @@
     "key": "shift+cmd+w",
     "command": "workbench.action.closeOtherEditors"
   },
+  {
+    "key": "cmd+k cmd+w",
+    "command": "workbench.action.closeAllEditors"
+  },
 
   // macOS clear screen
   // https://code.visualstudio.com/docs/terminal/advanced#_macos-clear-screen

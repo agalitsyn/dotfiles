@@ -1,4 +1,11 @@
 {
+	"dump": {
+		"prefix": "fd",
+		"body": [
+			"// TODO: remove",
+			"console.log(\"DEBUG: ${1:var}\", ${1:var})",
+		]
+  	},
 	"const arrow function": {
 		"prefix": "caf",
 		"description": "const arrow func",
