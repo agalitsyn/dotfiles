@@ -10,6 +10,9 @@ for config_file ("$ZSH_CUSTOM"/*.zsh(N)); do
 done
 unset config_file
 
+# Fix readline actions
+set -o emacs
+
 # Save a ton of history
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
