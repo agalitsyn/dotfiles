@@ -148,10 +148,11 @@ brew install --cask \
 brew install --cask jetbrains-toolbox
 
 # AI code editors
-brew install ollama
 brew install --cask \
     cursor \
     zed
+brew install --cask claude chatgpt
+# brew install ollama
 
 # Terminals
 brew install --cask wezterm ghostty
