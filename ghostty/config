@@ -1,4 +1,4 @@
-theme = "Everforest Dark - Hard"
+theme = dark:Builtin Tango Dark,light:Builtin Tango Light
 
 font-family = "IosevkaTerm NFM"
 font-size = 17
