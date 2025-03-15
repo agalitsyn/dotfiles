@@ -58,7 +58,8 @@ brew install \
     git-delta \
     lazygit \
     fzf \
-    tz
+    tz \
+    superfile
 
 # HTTP tools
 brew install httpie
