@@ -113,10 +113,9 @@ brew install go
 # Python
 brew install \
     python \
-    pyenv \
     pipx \
-    uv \
     ipython \
+    uv \
     ruff \
     cookiecutter
 
@@ -150,10 +149,14 @@ brew install --cask jetbrains-toolbox
 
 # AI code editors
 brew install --cask \
-    cursor \
-    zed
+    zed \
+    cursor
+# Chat apps
 brew install --cask claude chatgpt
-# brew install ollama
+# Agentic apps
+brew install aider
+# Local LLM manager
+brew install ollama
 
 # Terminals
 brew install --cask wezterm ghostty
@@ -252,6 +255,7 @@ brew install --cask shotcut
 # Screenshot
 #brew install --cask flameshot
 #brew install --cask skitch
+brew install --cask shottr
 
 # Phones
 brew install --cask android-file-transfer
