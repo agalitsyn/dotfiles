@@ -1,0 +1,22 @@
+{
+	"shebang": {
+		"prefix": "#!",
+		"body": [
+			"#!/usr/bin/env bash",
+			"",
+			"set -eo pipefail; [[ $TRACE ]] && set -x}",
+		],
+	},
+	"script dir": {
+		"prefix": "scriptdir",
+		"body": [
+			"SCRIPT_DIR=\"$(dirname \"\\$0\")\"",
+		],
+	},
+	"variable": {
+		"prefix": "var",
+		"body": [
+			"${1:VAR}=${${1:VAR}:-${2:\"default\"}}",
+		],
+	}
+}

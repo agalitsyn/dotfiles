@@ -1,0 +1,21 @@
+{
+	"new plantuml diagram": {
+		"prefix": "newdiag",
+		"body": [
+			"@startuml",
+			"",
+			"person user as \"User\"",
+			"",
+			"node foo as \"Foo\" {",
+			"    component bar as \"Bar\"",
+			"}",
+			"",
+			"cloud baz as \"Baz\"",
+			"",
+			"user --> foo : Call",
+			"bar --> baz : Use",
+			"",
+			"@enduml",
+		]
+	}
+}
