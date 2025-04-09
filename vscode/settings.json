@@ -76,9 +76,7 @@
   "workbench.list.openMode": "doubleClick",
   "workbench.tree.expandMode": "doubleClick",
   "workbench.settings.editor": "json",
-  "workbench.productIconTheme": "fluent-icons",
   "workbench.colorTheme": "Everforest Dark",
-  "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
   "workbench.tree.enableStickyScroll": false,
   "workbench.editor.highlightModifiedTabs": true,
@@ -345,6 +343,8 @@
     "markdown": false,
     "scminput": false
   },
-  "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.productIconTheme": "fluent-icons",
 }

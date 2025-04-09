@@ -90,10 +90,10 @@ config.window_padding = {
 
 -- When terminal theme matches other themes (browser, wallpapper, etc) it don't have good visibility without borders
 config.window_frame = {
-    border_left_width = "0.5cell",
-    border_right_width = "0.5cell",
-    border_bottom_height = "0.25cell",
-    border_top_height = "0.25cell",
+    border_left_width = "0.25cell",
+    border_right_width = "0.25cell",
+    border_bottom_height = "0.1cell",
+    border_top_height = "0.1cell",
     border_left_color = "black",
     border_right_color = "black",
     border_bottom_color = "black",

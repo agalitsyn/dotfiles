@@ -49,7 +49,7 @@
     "workbench.editor.limit.value": 15,
     "workbench.editor.showTabs": "multiple",
     "workbench.editor.enablePreview": false,
-    "window.zoomLevel": 0.4,
+    "window.zoomLevel": 0.6,
     "window.nativeTabs": false,
     "window.title": "${activeEditorFull}${separator}${rootName}",
     "window.titleBarStyle": "custom",
@@ -57,7 +57,7 @@
     "window.confirmBeforeClose": "keyboardOnly",
     "window.density.editorTabHeight": "compact",
     "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme":"Catppuccin Macchiato",
+    "workbench.preferredDarkColorTheme":"Default Dark Modern",
     "workbench.preferredLightColorTheme": "chalice-color-theme-light",
     "workbench.list.openMode": "doubleClick",
     "workbench.tree.expandMode": "doubleClick",
@@ -68,9 +68,8 @@
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
-    "window.commandCenter": true,
     "problems.decorations.enabled": false,
-    "editor.fontSize": 16,
+    "editor.fontSize": 15.5,
     "editor.fontFamily": "'Iosevka', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
     "editor.fontLigatures": "'ss08', 'calt'",
     "editor.find.seedSearchStringFromSelection": "selection",
@@ -286,5 +285,10 @@
         "scminput"
     ],
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.general.disableHttp2": true,
+    "oneDarkPro.editorTheme": "ayu",
+    "workbench.layoutControl.enabled": false
+
 
 }

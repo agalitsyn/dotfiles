@@ -179,10 +179,26 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
-  // Open lazygit in terminal
+  // Commands
   {
     "key": "cmd+k cmd+g",
     "command": "workbench.action.tasks.runTask",
     "args": "lazygit"
+  },
+  {
+    "key": "cmd+k cmd+l",
+    "command": "workbench.action.tasks.runTask",
+    "args": "copy_gitlab_link"
+  },
+
+  // Cursor
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "aipopup.action.modal.generate",
+    "when": "editorTextFocus"
   }
 ]

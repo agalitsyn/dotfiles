@@ -1,4 +1,5 @@
 {
+  "icon_theme": "Zed (Default)",
   "vim_mode": false,
   "relative_line_numbers": false,
   "cursor_blink": false,
