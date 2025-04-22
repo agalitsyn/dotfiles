@@ -7,6 +7,8 @@ editorconfig.editorconfig
 emeraldwalk.runonsave
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
+github.copilot
+github.copilot-chat
 golang.go
 jdinhlife.gruvbox
 jkjustjoshing.vscode-text-pastry

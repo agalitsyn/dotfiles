@@ -124,6 +124,7 @@
   "editor.semanticHighlighting.enabled": true,
   "editor.stickyScroll.enabled": false,
   "zenMode.showTabs": "none",
+  "window.newWindowDimensions": "maximized" ,
 
 
   // Breadcrumbs
@@ -343,8 +344,8 @@
     "markdown": false,
     "scminput": false
   },
-  "chat.commandCenter.enabled": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "workbench.productIconTheme": "fluent-icons",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
 }
