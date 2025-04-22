@@ -75,7 +75,7 @@
         "context_servers": {}
       }
     },
-    "default_profile": "write",
+    "default_profile": "ask",
     "always_allow_tool_actions": false,
     "enable_experimental_live_diffs": true,
     "default_model": {
@@ -121,12 +121,13 @@
   ],
   "base_keymap": "VSCode",
   "autosave": "on_focus_change",
-  "buffer_font_size": 15.3,
-  "buffer_font_family": "Victor Mono",
+  "buffer_font_size": 17,
+  "buffer_font_family": "Iosevka Fixed",
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
+
   "ui_font_family": "Zed Plex Sans",
-  "ui_font_size": 16,
+  "ui_font_size": 17,
   "confirm_quit": true,
   "git": {
     "git_gutter": "tracked_files",
