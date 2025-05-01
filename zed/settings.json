@@ -21,7 +21,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "One Dark"
+    "dark": "Gruvbox Dark"
   },
   "auto_reveal_entries": true,
   "project_panel": {
@@ -149,7 +149,7 @@
   "base_keymap": "VSCode",
   "autosave": "on_focus_change",
   "buffer_font_size": 17,
-  "buffer_font_family": "Iosevka Fixed",
+  "buffer_font_family": "Iosevka",
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
   "ui_font_family": "Zed Plex Sans",
