@@ -1,4 +1,12 @@
 {
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
   "icon_theme": "Bearded Icon Theme",
   "vim_mode": false,
   "relative_line_numbers": false,
@@ -13,7 +21,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "Gruvbox Dark"
+    "dark": "Gruvbox Dark Hard"
   },
   "auto_reveal_entries": true,
   "project_panel": {
@@ -21,7 +29,7 @@
     "auto_reveal_entries": true
   },
   "preferred_line_length": 140,
-  "soft_wrap": "editor_width",
+  "soft_wrap": "preferred_line_length",
   "use_autoclose": false,
   "features": {
     "edit_prediction_provider": "zed"
@@ -36,9 +44,9 @@
           "fetch": true,
           "list_directory": false,
           "now": true,
-          "path_search": true,
+          "find_path": true,
           "read_file": true,
-          "regex_search": true,
+          "grep": true,
           "thinking": true,
           "batch_tool": false
         },
@@ -59,14 +67,14 @@
           "create_file": true,
           "delete_path": false,
           "diagnostics": true,
-          "find_replace_file": true,
+          "edit_file": true,
           "fetch": true,
           "list_directory": true,
           "move_path": false,
           "now": true,
-          "path_search": true,
+          "find_path": true,
           "read_file": true,
-          "regex_search": true,
+          "grep": true,
           "rename": true,
           "symbol_info": true,
           "thinking": true
@@ -89,6 +97,9 @@
       "settings": {
         "brave_api_key": ""
       }
+    },
+    "mcp-server-sequential-thinking": {
+      "settings": {}
     }
   },
   "preview_tabs": {
@@ -125,9 +136,8 @@
   "buffer_font_family": "Iosevka Fixed",
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
-
   "ui_font_family": "Zed Plex Sans",
-  "ui_font_size": 17,
+  "ui_font_size": 18,
   "confirm_quit": true,
   "git": {
     "git_gutter": "tracked_files",

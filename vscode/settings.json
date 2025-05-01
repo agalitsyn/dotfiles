@@ -76,7 +76,7 @@
   "workbench.list.openMode": "doubleClick",
   "workbench.tree.expandMode": "doubleClick",
   "workbench.settings.editor": "json",
-  "workbench.colorTheme": "Everforest Dark",
+  "workbench.colorTheme": "Default Dark Modern",
   "workbench.activityBar.location": "top",
   "workbench.tree.enableStickyScroll": false,
   "workbench.editor.highlightModifiedTabs": true,
@@ -336,16 +336,27 @@
   "todohighlight.isCaseSensitive": true,
 
   // AI
-  "chat.editor.fontSize": 16,
+  "chat.editor.fontSize": 17,
 
   "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
+    "*": false
   },
   "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
+  "workbench.preferredDarkColorTheme": "poimandres",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "augment.chat.userGuidelines": "",
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+
 }

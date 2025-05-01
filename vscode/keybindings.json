@@ -13,6 +13,7 @@
     "command": "list.select",
     "when": "listFocus && !inputFocus"
   },
+
   // Reveal in explorer
   {
     "key": "cmd+b",
@@ -75,8 +76,14 @@
     "command": "renameFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
+  // intellij style
+  {
+    "key": "shift+enter",
+    "command": "renameFile",
+    "when": "filesExplorerFocus"
+  },
 
-  // Intellij-style quick actions
+  // Intellij style quick actions
   {
 		"key": "alt+enter",
 		"command": "editor.action.quickFix",
