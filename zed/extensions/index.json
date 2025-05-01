@@ -1,0 +1,885 @@
+{
+  "extensions": {
+    "alabaster": {
+      "manifest": {
+        "id": "alabaster",
+        "name": "Alabaster",
+        "version": "0.0.2",
+        "schema_version": 1,
+        "description": "Alabaster color scheme (port of https://github.com/tonsky/sublime-scheme-alabaster)",
+        "repository": "https://github.com/tsimoshka/zed-theme-alabaster",
+        "authors": [
+          "Vitali Tsimoshka <tck@tck9f.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/alabaster-color-theme.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "bearded-icon-theme": {
+      "manifest": {
+        "id": "bearded-icon-theme",
+        "name": "Bearded Icon Theme",
+        "version": "0.4.0",
+        "schema_version": 1,
+        "description": "Bearded icon theme for Zed with over 1000+ icons",
+        "repository": "https://github.com/sethstha/bearded-icons-theme",
+        "authors": [
+          "Sanjeev Shrestha <sethstha@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [
+          "icon_themes/bearded-icon-theme.json"
+        ],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "catppuccin": {
+      "manifest": {
+        "id": "catppuccin",
+        "name": "Catppuccin",
+        "version": "0.2.22",
+        "schema_version": 1,
+        "description": "🦀 Soothing pastel theme for Zed",
+        "repository": "https://github.com/catppuccin/zed",
+        "authors": [
+          "Catppuccin <releases@catppuccin.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/catppuccin-no-italics-mauve.json",
+          "themes/catppuccin-mauve.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "catppuccin-icons": {
+      "manifest": {
+        "id": "catppuccin-icons",
+        "name": "Catppuccin Icons",
+        "version": "1.19.0",
+        "schema_version": 1,
+        "description": "🦊 Soothing pastel icons for Zed",
+        "repository": "https://github.com/catppuccin/zed-icons",
+        "authors": [
+          "Catppuccin <releases@catppuccin.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [
+          "icon_themes/catppuccin-icons.json"
+        ],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "everforest": {
+      "manifest": {
+        "id": "everforest",
+        "name": "Everforest Theme",
+        "version": "0.0.2",
+        "schema_version": 0,
+        "description": "Everforest is a green based color scheme; it's designed to be warm and soft in order to protect developers' eyes.",
+        "repository": "https://github.com/ThomasAlban/everforest-zed",
+        "authors": [
+          "Sainnhe <https://github.com/sainnhe>",
+          "Thomas Alban <https://github.com/ThomasAlban>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/everforest-dark.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "git-firefly": {
+      "manifest": {
+        "id": "git-firefly",
+        "name": "Git Firefly",
+        "version": "0.0.3",
+        "schema_version": 1,
+        "description": "Provides Git Syntax Highlighting",
+        "repository": "https://github.com/d1y/git_firefly",
+        "authors": [
+          "d1y <chenhonzho@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/gitconfig",
+          "languages/diff",
+          "languages/gitcommit",
+          "languages/gitignore",
+          "languages/gitrebase",
+          "languages/gitattributes"
+        ],
+        "grammars": {
+          "diff": {
+            "repository": "https://github.com/the-mikedavis/tree-sitter-diff",
+            "rev": "c165725c28e69b36c5799ff0e458713a844f1aaf",
+            "path": null
+          },
+          "git_commit": {
+            "repository": "https://github.com/the-mikedavis/tree-sitter-git-commit",
+            "rev": "6f193a66e9aa872760823dff020960c6cedc37b3",
+            "path": null
+          },
+          "git_config": {
+            "repository": "https://github.com/the-mikedavis/tree-sitter-git-config",
+            "rev": "9c2a1b7894e6d9eedfe99805b829b4ecd871375e",
+            "path": null
+          },
+          "git_rebase": {
+            "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase",
+            "rev": "d8a4207ebbc47bd78bacdf48f883db58283f9fd8",
+            "path": null
+          },
+          "gitattributes": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-gitattributes",
+            "rev": "41940e199ba5763abea1d21b4f717014b45f01ea",
+            "path": null
+          },
+          "gitignore": {
+            "repository": "https://github.com/shunsambongi/tree-sitter-gitignore",
+            "rev": "f4685bf11ac466dd278449bcfe5fd014e94aa504",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "html": {
+      "manifest": {
+        "id": "html",
+        "name": "HTML",
+        "version": "0.2.1",
+        "schema_version": 1,
+        "description": "HTML support.",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [
+          "Isaac Clayton <slightknack@gmail.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.1.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/html"
+        ],
+        "grammars": {
+          "html": {
+            "repository": "https://github.com/tree-sitter/tree-sitter-html",
+            "rev": "bfa075d83c6b97cd48440b3829ab8d24a2319809",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "vscode-html-language-server": {
+            "language": "HTML",
+            "languages": [],
+            "language_ids": {
+              "CSS": "css",
+              "HTML": "html"
+            },
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "make": {
+      "manifest": {
+        "id": "make",
+        "name": "Make",
+        "version": "1.1.0",
+        "schema_version": 1,
+        "description": "Makefile syntax highlighting",
+        "repository": "https://github.com/caius/zed-make",
+        "authors": [
+          "Caius Durling <dev@caius.name>",
+          "d1y <chenhonzhou@gmail.com>",
+          "Marshall Bowers <elliott.codes@gmail.com>",
+          "Luke Naylor <luke@grahamnaylor.net>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/make"
+        ],
+        "grammars": {
+          "make": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-make",
+            "rev": "5e9e8f8ff3387b0edcaa90f46ddf3629f4cfeb1d",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "mcp-server-brave-search": {
+      "manifest": {
+        "id": "mcp-server-brave-search",
+        "name": "Brave Search MCP Server",
+        "version": "0.0.1",
+        "schema_version": 1,
+        "description": "Model Context Protocol Server for Brave Search",
+        "repository": "https://github.com/zed-extensions/mcp-server-brave-search",
+        "authors": [
+          "Zed Industries <support@zed.dev>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.3.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {
+          "mcp-server-brave-search": {}
+        },
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "mcp-server-sequential-thinking": {
+      "manifest": {
+        "id": "mcp-server-sequential-thinking",
+        "name": "Sequential Thinking MCP Server",
+        "version": "0.0.1",
+        "schema_version": 1,
+        "description": "Model Context Protocol Server for Sequential Thinking",
+        "repository": "https://github.com/LoamStudios/zed-mcp-server-sequential-thinking",
+        "authors": [
+          "Jeffrey Guenther <guenther.jeffrey@gmail.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.3.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {
+          "mcp-server-sequential-thinking": {}
+        },
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "poimandres": {
+      "manifest": {
+        "id": "poimandres",
+        "name": "poimandres",
+        "version": "0.0.4",
+        "schema_version": 1,
+        "description": "poimandres themes",
+        "repository": "https://github.com/mshaugh/poimandres.zed",
+        "authors": [
+          "mshaugh <max@mshaugh.com>",
+          "luk4h <luizmarcondes@lgvm.dev>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/poimandres-storm.json",
+          "themes/poimandres.json",
+          "themes/poimandres-white.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "ruff": {
+      "manifest": {
+        "id": "ruff",
+        "name": "Ruff",
+        "version": "0.1.0",
+        "schema_version": 1,
+        "description": "Support for Ruff, the Python linter and formatter",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.1.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {
+          "ruff": {
+            "language": null,
+            "languages": [
+              "Python"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "sql": {
+      "manifest": {
+        "id": "sql",
+        "name": "SQL",
+        "version": "1.1.2",
+        "schema_version": 1,
+        "description": "SQL language support.",
+        "repository": "https://github.com/nervenes/zed-sql",
+        "authors": [
+          "nervenes",
+          "notpeter",
+          "phileix",
+          "tammyxiong"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/sql"
+        ],
+        "grammars": {
+          "sql": {
+            "repository": "https://github.com/nervenes/tree-sitter-sql",
+            "rev": "6dfca8b6dcb196d943c10e9cabab25e60232d332",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "tokyo-night": {
+      "manifest": {
+        "id": "tokyo-night",
+        "name": "Tokyo Night Themes",
+        "version": "0.5.0",
+        "schema_version": 1,
+        "description": "Tokyo Night Themes",
+        "repository": "https://github.com/ssaunderss/zed-tokyo-night",
+        "authors": [
+          "ssaunderss <austinsaunders@me.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/tokyo-night.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "toml": {
+      "manifest": {
+        "id": "toml",
+        "name": "TOML",
+        "version": "0.1.3",
+        "schema_version": 1,
+        "description": "TOML support.",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [
+          "Max Brunsfeld <max@zed.dev>",
+          "Ammar Arif <evergreenkary@gmail.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.1.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/toml"
+        ],
+        "grammars": {
+          "toml": {
+            "repository": "https://github.com/tree-sitter/tree-sitter-toml",
+            "rev": "342d9be207c2dba869b9967124c679b5e6fd0ebe",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "taplo": {
+            "language": "TOML",
+            "languages": [],
+            "language_ids": {},
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "vscode-dark-modern": {
+      "manifest": {
+        "id": "vscode-dark-modern",
+        "name": "VSCode Dark Modern",
+        "version": "0.0.5",
+        "schema_version": 1,
+        "description": "VSCode Dark Modern Theme for Zed",
+        "repository": "https://github.com/kcamcam/vscode_dark_modern.zed",
+        "authors": [
+          "kcamcam <kevincamellini@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/vscode-dark-modern.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "vue": {
+      "manifest": {
+        "id": "vue",
+        "name": "Vue",
+        "version": "0.2.4",
+        "schema_version": 1,
+        "description": "Vue support.",
+        "repository": "https://github.com/zed-extensions/vue",
+        "authors": [
+          "Zed Industries <support@zed.dev>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.1.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/vue"
+        ],
+        "grammars": {
+          "vue": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-vue",
+            "rev": "7e48557b903a9db9c38cea3b7839ef7e1f36c693",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "vue-language-server": {
+            "language": "Vue.js",
+            "languages": [],
+            "language_ids": {
+              "Vue.js": "vue"
+            },
+            "code_action_kinds": [
+              "",
+              "quickfix",
+              "refactor.rewrite"
+            ]
+          }
+        },
+        "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    }
+  },
+  "themes": {
+    "Alabaster": {
+      "extension": "alabaster",
+      "path": "themes/alabaster-color-theme.json"
+    },
+    "Catppuccin Frappé": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Frappé - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Catppuccin Latte": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Latte - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Catppuccin Macchiato": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Macchiato - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Catppuccin Mocha": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Mocha - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Everforest Dark": {
+      "extension": "everforest",
+      "path": "themes/everforest-dark.json"
+    },
+    "Tokyo Night": {
+      "extension": "tokyo-night",
+      "path": "themes/tokyo-night.json"
+    },
+    "Tokyo Night Light": {
+      "extension": "tokyo-night",
+      "path": "themes/tokyo-night.json"
+    },
+    "Tokyo Night Storm": {
+      "extension": "tokyo-night",
+      "path": "themes/tokyo-night.json"
+    },
+    "VSCode Dark Modern": {
+      "extension": "vscode-dark-modern",
+      "path": "themes/vscode-dark-modern.json"
+    },
+    "poimandres": {
+      "extension": "poimandres",
+      "path": "themes/poimandres.json"
+    },
+    "poimandres (no italics)": {
+      "extension": "poimandres",
+      "path": "themes/poimandres.json"
+    },
+    "poimandres blurry": {
+      "extension": "poimandres",
+      "path": "themes/poimandres.json"
+    },
+    "poimandres storm": {
+      "extension": "poimandres",
+      "path": "themes/poimandres-storm.json"
+    },
+    "poimandres storm (no italics)": {
+      "extension": "poimandres",
+      "path": "themes/poimandres-storm.json"
+    },
+    "poimandres white": {
+      "extension": "poimandres",
+      "path": "themes/poimandres-white.json"
+    },
+    "poimandres white (no italics)": {
+      "extension": "poimandres",
+      "path": "themes/poimandres-white.json"
+    }
+  },
+  "icon_themes": {
+    "Bearded Icon Theme": {
+      "extension": "bearded-icon-theme",
+      "path": "icon_themes/bearded-icon-theme.json"
+    },
+    "Catppuccin Frappé": {
+      "extension": "catppuccin-icons",
+      "path": "icon_themes/catppuccin-icons.json"
+    },
+    "Catppuccin Latte": {
+      "extension": "catppuccin-icons",
+      "path": "icon_themes/catppuccin-icons.json"
+    },
+    "Catppuccin Macchiato": {
+      "extension": "catppuccin-icons",
+      "path": "icon_themes/catppuccin-icons.json"
+    },
+    "Catppuccin Mocha": {
+      "extension": "catppuccin-icons",
+      "path": "icon_themes/catppuccin-icons.json"
+    }
+  },
+  "languages": {
+    "Diff": {
+      "extension": "git-firefly",
+      "path": "languages/diff",
+      "matcher": {
+        "path_suffixes": [
+          "diff"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "diff"
+    },
+    "Git Attributes": {
+      "extension": "git-firefly",
+      "path": "languages/gitattributes",
+      "matcher": {
+        "path_suffixes": [
+          ".gitattributes"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "gitattributes"
+    },
+    "Git Commit": {
+      "extension": "git-firefly",
+      "path": "languages/gitcommit",
+      "matcher": {
+        "path_suffixes": [
+          "TAG_EDITMSG",
+          "MERGE_MSG",
+          "COMMIT_EDITMSG",
+          "NOTES_EDITMSG",
+          "EDIT_DESCRIPTION"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "git_commit"
+    },
+    "Git Config": {
+      "extension": "git-firefly",
+      "path": "languages/gitconfig",
+      "matcher": {
+        "path_suffixes": [
+          ".gitconfig",
+          ".gitmodules"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "git_config"
+    },
+    "Git Ignore": {
+      "extension": "git-firefly",
+      "path": "languages/gitignore",
+      "matcher": {
+        "path_suffixes": [
+          ".gitignore",
+          ".dockerignore"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "gitignore"
+    },
+    "Git Rebase": {
+      "extension": "git-firefly",
+      "path": "languages/gitrebase",
+      "matcher": {
+        "path_suffixes": [
+          "git-rebase-todo"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "git_rebase"
+    },
+    "HTML": {
+      "extension": "html",
+      "path": "languages/html",
+      "matcher": {
+        "path_suffixes": [
+          "html",
+          "htm",
+          "shtml"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "html"
+    },
+    "Make": {
+      "extension": "make",
+      "path": "languages/make",
+      "matcher": {
+        "path_suffixes": [
+          "makefile",
+          "Makefile",
+          "GNUmakefile",
+          "OCamlMakefile",
+          "mk",
+          "mak"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "make"
+    },
+    "SQL": {
+      "extension": "sql",
+      "path": "languages/sql",
+      "matcher": {
+        "path_suffixes": [
+          "sql"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "sql"
+    },
+    "TOML": {
+      "extension": "toml",
+      "path": "languages/toml",
+      "matcher": {
+        "path_suffixes": [
+          "Cargo.lock",
+          "toml",
+          "Pipfile",
+          "uv.lock"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "toml"
+    },
+    "Vue.js": {
+      "extension": "vue",
+      "path": "languages/vue",
+      "matcher": {
+        "path_suffixes": [
+          "vue"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "vue"
+    }
+  }
+}

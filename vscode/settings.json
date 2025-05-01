@@ -254,14 +254,6 @@
   "[html][jinja][jinja-html][django-html]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    // "editor.language.colorizedBracketPairs": [
-    //   ["<", "</"],
-    //   ["<", "/>"],
-    // ],
-    // "editor.guides.bracketPairs": "active",
-    // "editor.matchBrackets": "near",
-    // "editor.bracketPairColorization.enabled": true,
-    // "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   },
 
   "prettier.bracketSameLine": true,
@@ -321,7 +313,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "svelte.enable-ts-plugin": true,
 
   "todohighlight.keywords": [
     "DEBUG:",
@@ -335,12 +326,12 @@
   ],
   "todohighlight.isCaseSensitive": true,
 
-  // AI
+  // Copilot
   "chat.editor.fontSize": 17,
+  "chat.agent.enabled": true,
+  "chat.mcp.enabled": true,
+  "chat.mcp.discovery.enabled": true,
 
-  "github.copilot.enable": {
-    "*": false
-  },
   "window.commandCenter": false,
   "workbench.productIconTheme": "fluent-icons",
   "workbench.preferredDarkColorTheme": "poimandres",
@@ -349,7 +340,6 @@
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
-  "augment.chat.userGuidelines": "",
   "roo-cline.allowedCommands": [
     "npm test",
     "npm install",

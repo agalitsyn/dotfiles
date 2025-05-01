@@ -1,8 +1,9 @@
 .PHONY: configure
 configure:
-	ln -sf $(CURDIR)/settings.json ~/.config/zed/settings.json
-	ln -sf $(CURDIR)/keymap.json ~/.config/zed/keymap.json
-	ln -sf $(CURDIR)/tasks.json ~/.config/zed/tasks.json
-	ln -sf $(CURDIR)/snippets ~/.config/zed/snippets
-	ln -sf $(CURDIR)/themes ~/.config/zed/themes
-
+	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Zed/settings.json
+	ln -sf $(CURDIR)/keymap.json ~/Library/Application\ Support/Zed/keymap.json
+	ln -sf $(CURDIR)/tasks.json ~/Library/Application\ Support/Zed/tasks.json
+	ln -sf $(CURDIR)/snippets ~/Library/Application\ Support/Zed/snippets
+	ln -sf $(CURDIR)/themes ~/Library/Application\ Support/Zed/themes
+	mkdir -pv ~/Library/Application\ Support/Zed/extensions
+	ln -sf $(CURDIR)/extensions/index.json ~/Library/Application\ Support/Zed/extensions/index.json

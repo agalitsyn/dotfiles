@@ -21,7 +21,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "One Dark"
   },
   "auto_reveal_entries": true,
   "project_panel": {
@@ -39,23 +39,39 @@
       "ask": {
         "name": "Ask",
         "tools": {
+          "symbol_info": true,
+          "open": true,
+          "terminal": true,
+          "web_search": true,
           "contents": true,
           "diagnostics": true,
           "fetch": true,
-          "list_directory": false,
+          "list_directory": true,
           "now": true,
           "find_path": true,
           "read_file": true,
           "grep": true,
           "thinking": true,
-          "batch_tool": false
+          "batch_tool": true
         },
         "enable_all_context_servers": false,
-        "context_servers": {}
+        "context_servers": {
+          "mcp-server-sequential-thinking": {
+            "tools": {
+              "sequentialthinking": true
+            }
+          },
+          "mcp-server-brave-search": {
+            "tools": {
+              "brave_web_search": true
+            }
+          }
+        }
       },
       "write": {
         "name": "Write",
         "tools": {
+          "web_search": true,
           "open": true,
           "create_directory": true,
           "terminal": true,
@@ -83,8 +99,8 @@
         "context_servers": {}
       }
     },
-    "default_profile": "ask",
-    "always_allow_tool_actions": false,
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
     "enable_experimental_live_diffs": true,
     "default_model": {
       "provider": "zed.dev",
@@ -114,7 +130,7 @@
   },
   "tab_bar": {
     "show": true,
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": true
   },
   "excluded_patterns": ["**/__pycache__"],
   "file_scan_exclusions": [
@@ -137,7 +153,7 @@
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
   "ui_font_family": "Zed Plex Sans",
-  "ui_font_size": 18,
+  "ui_font_size": 16.5,
   "confirm_quit": true,
   "git": {
     "git_gutter": "tracked_files",
