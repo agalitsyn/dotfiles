@@ -1,0 +1,4 @@
+export OPENAI_API_KEY=
+export ANTHROPIC_API_KEY=
+export OPENROUTER_API_KEY=
+export BRAVE_API_KEY=

@@ -6,16 +6,6 @@
     }
   },
   {
-    "context": "ProjectPanel",
-    "use_key_equivalents": true,
-    "bindings": {
-      "a": "project_panel::NewFile",
-      "A": "project_panel::NewDirectory",
-      "m": "project_panel::Rename",
-      "d": ["project_panel::Trash", { "skip_prompt": false }]
-    }
-  },
-  {
     "context": "Editor",
     "bindings": {
       "cmd-[": "pane::GoBack"
