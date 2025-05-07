@@ -250,8 +250,8 @@
             "language": "HTML",
             "languages": [],
             "language_ids": {
-              "CSS": "css",
-              "HTML": "html"
+              "HTML": "html",
+              "CSS": "css"
             },
             "code_action_kinds": null
           }
@@ -337,7 +337,7 @@
       "manifest": {
         "id": "mcp-server-sequential-thinking",
         "name": "Sequential Thinking MCP Server",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "schema_version": 1,
         "description": "Model Context Protocol Server for Sequential Thinking",
         "repository": "https://github.com/LoamStudios/zed-mcp-server-sequential-thinking",

@@ -11,7 +11,7 @@
       "proxy": null,
       "proxy_no_verify": null
     },
-    "enabled_in_assistant": false
+    "enabled_in_text_threads": false
   },
   "icon_theme": "Bearded Icon Theme",
   "vim_mode": false,
@@ -40,7 +40,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "assistant": {
+  "agent": {
     "profiles": {
       "ask": {
         "name": "Ask",

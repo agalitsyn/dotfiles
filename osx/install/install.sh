@@ -142,21 +142,17 @@ brew install vim \
 brew install --cask \
     sublime-text \
     sublime-merge \
-    visual-studio-code
+    visual-studio-code \
+    zed
 
 # Absolute noob's editors
 brew install --cask jetbrains-toolbox
 
-# AI code editors
-brew install --cask \
-    zed \
-    cursor
-# Chat apps
-brew install --cask claude chatgpt
-# Agentic apps
-brew install aider
 # Local LLM manager
 brew install ollama
+
+# Chat apps
+brew install --cask claude
 
 # Terminals
 brew install --cask wezterm ghostty
