@@ -1,4 +1,5 @@
-theme = dark:Everforest Dark - Hard,light:Github-Light-Default
+#theme = dark:Everforest Dark - Hard,light:Github-Light-Default
+theme = Everforest Dark - Hard
 
 font-family = "IosevkaTerm NFM"
 font-size = 17
@@ -10,3 +11,5 @@ cursor-style-blink = false
 confirm-close-surface = false
 clipboard-paste-protection = false
 copy-on-select = true
+
+scrollback-limit = 50000

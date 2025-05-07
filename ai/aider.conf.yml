@@ -1,5 +1,4 @@
-# see full list with `aider --list-models openrouter/`
-model: openrouter/google/gemini-2.5-pro-preview-03-25
+model: chat
 
 dark-mode: true
 
@@ -8,6 +7,13 @@ auto-commits: false
 attribute-committer: false
 
 auto-lint: true
+
+# see full list with `aider --list-models openrouter/`
+alias:
+  - "arch:openrouter/deepseek/deepseek-r1"
+  - "chat:openrouter/deepseek/deepseek-chat"
+  - "code:openrouter/anthropic/claude-3.7-sonnet"
+  - "code-think:openrouter/google/gemini-2.5-pro-preview-03-25"
 
 read:
   - CONVENTIONS.md

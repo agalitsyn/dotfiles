@@ -3,6 +3,8 @@ IdentitiesOnly yes
 AddKeysToAgent yes
 UseKeychain yes
 IdentityFile ~/.ssh/id_rsa
+# https://ghostty.org/docs/help/terminfo#configure-ssh-to-fall-back-to-a-known-terminfo-entry
+SetEnv TERM=xterm-256color
 
 # Per-host configuration:
 # Host my-server-alias

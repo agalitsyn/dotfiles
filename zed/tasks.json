@@ -2,6 +2,29 @@
 //
 // Example:
 [
+  // {
+  //       "icon": {"id": "git-branch"},
+  //       "label": "copy_git_link",
+  //       "type": "shell",
+  //       "command": "echo \"https://gitlab.gx-testdmnweb.com/dex/trader-bot/-/blob/$(git rev-parse --abbrev-ref HEAD)/${relativeFile}?ref_type=heads#L${lineNumber}\" | pbcopy",
+  //       "options": {
+  //           "cwd": "${workspaceFolder}"
+  //       },
+  //       "problemMatcher": [],
+  //       "presentation": {
+  //           "reveal": "never",
+  //           "panel": "shared",
+  //           "showReuseMessage": false,
+  //           "focus": false,
+  //           "echo": false,
+  //           "close": true,
+  //           "clear": true
+  //       },
+  //       "group": {
+  //           "kind": "build",
+  //           "isDefault": true
+  //       },
+  //   }
   {
     "label": "Example task",
     "command": "for i in {1..5}; do echo \"Hello $i/5\"; sleep 1; done",
