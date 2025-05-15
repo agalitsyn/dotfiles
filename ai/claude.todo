@@ -1,0 +1,27 @@
+I have task list for you. Read it thoroughly and THINK about implementation of all steps. Follow plan step by step.
+
+After each step:
+- Lint code using `make lint`
+- Update step item in this file, like `- [X]`
+- Optionally you may add notes with prefix `Claude: {note content}`.
+
+After all steps:
+- In diff you just created remove all comments which are not related to business logic. Remove progress comments, change comments.
+- Lint code using `make lint`. Iterate until fix lint errors.
+- Run tests `make test`. Iterate until fix tests errors.
+
+Tasks:
+
+-- [ ] In `internal/model/settings.go:15` update `Settings` struct and add new fields
+
+```
+// NOTE: you may want to describe wanted structs, interfaces and etc
+
+type Settings struct {
+}
+```
+
+- [ ]
+
+- [ ]
+

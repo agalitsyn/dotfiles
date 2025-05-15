@@ -307,7 +307,7 @@
       "manifest": {
         "id": "mcp-server-brave-search",
         "name": "Brave Search MCP Server",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "schema_version": 1,
         "description": "Model Context Protocol Server for Brave Search",
         "repository": "https://github.com/zed-extensions/mcp-server-brave-search",
@@ -316,7 +316,7 @@
         ],
         "lib": {
           "kind": "Rust",
-          "version": "0.3.0"
+          "version": "0.5.0"
         },
         "themes": [],
         "icon_themes": [],
@@ -389,6 +389,36 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "postgres-context-server": {
+      "manifest": {
+        "id": "postgres-context-server",
+        "name": "Postgres Context Server",
+        "version": "0.0.3",
+        "schema_version": 1,
+        "description": "Model Context Server for PostgreSQL",
+        "repository": "https://github.com/zed-extensions/postgres-context-server",
+        "authors": [
+          "Max Brunsfeld <max@zed.dev>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.5.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {
+          "postgres-context-server": {}
+        },
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
@@ -578,7 +608,7 @@
       "manifest": {
         "id": "vue",
         "name": "Vue",
-        "version": "0.2.4",
+        "version": "0.2.5",
         "schema_version": 1,
         "description": "Vue support.",
         "repository": "https://github.com/zed-extensions/vue",
@@ -587,7 +617,7 @@
         ],
         "lib": {
           "kind": "Rust",
-          "version": "0.1.0"
+          "version": "0.4.0"
         },
         "themes": [],
         "icon_themes": [],
