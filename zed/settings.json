@@ -160,6 +160,7 @@
   "buffer_line_height": "comfortable",
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 17,
+  "agent_font_size": 18,
   "confirm_quit": true,
   "git": {
     "git_gutter": "tracked_files",
