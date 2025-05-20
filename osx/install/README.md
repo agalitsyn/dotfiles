@@ -61,3 +61,12 @@ Then clone dotfiles and install everything with homebrew and link configs.
 
 - Siri and Spotlight ->  Remove all items from Spotlight index, especially PDF to avoid `CGPDFService` high CPU usage
 
+Disable spotlight completly:
+- Restart in Recovery mode (hold power button)
+- Open terminal and run `csrutil disable`
+- Restart
+
+- Disable spotlight on all disks `sudo mdutil -a -i off`
+- Unload service `sudo launchctl bootout gui/$UID /System/Library/LaunchDaemons/com.apple.metadata.mds.plist`
+- Restart
+

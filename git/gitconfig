@@ -79,7 +79,9 @@
     whitespace-error-style = 22 reverse
     navigate = true
     hyperlinks = true
-    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+    hyperlinks-file-link-format = "zed://file/{path}:{line}"
+    tab-width = 2
+	syntax-theme = OneHalfDark
 
 [delta "light-mode"]
     light = true
