@@ -30,7 +30,8 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
   },
   "files.exclude": {
-    "**/__pycache__": true
+    "**/__pycache__": true,
+    "**/*.pyc": true
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -47,6 +48,8 @@
   // Search
   "search.quickOpen.history.filterSortOrder": "recency",
   "search.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
     "**/.git": true,
     "**/node_modules": true,
     "**/.nuxt": true,
@@ -81,6 +84,13 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "problems.decorations.enabled": false,
+  "window.commandCenter": false,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "top",
+  "workbench.preferredDarkColorTheme": "Atom One Dark",
 
   "editor.fontSize": 16,
   "editor.fontWeight": 400,
@@ -89,7 +99,7 @@
 
   "editor.find.seedSearchStringFromSelection": "selection",
   "editor.scrollBeyondLastLine": false,
-  "editor.lineHeight": 20,
+  "editor.lineHeight": 1.4,
   "editor.lineNumbers": "on",
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
@@ -106,7 +116,7 @@
   "editor.find.cursorMoveOnType": true,
   "editor.rulers": [140],
   "editor.minimap.enabled": false,
-  "editor.linkedEditing": false,
+  "editor.linkedEditing": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
@@ -180,7 +190,52 @@
   "gopls": {
     "ui.semanticTokens": true,
     // "ui.completion.usePlaceholders": true,
-    "formatting.gofumpt": true
+    "formatting.gofumpt": true,
+    "ui.codelenses": {
+      "generate": true,
+      "gc_details": true,
+      "test": true,
+      "tidy": true,
+      "upgrade_dependency": true,
+      "vendor": true
+    },
+    "ui.diagnostics": {
+      "staticcheck": true,
+      "unusedparams": true,
+      "shadow": true,
+      "nilness": true,
+      "fieldalignment": true,
+      "compositesizes": true,
+      "printfuncs": true
+    },
+    "ui.hoverKind": "FullDocumentation",
+    "ui.symbolMatcher": "CaseInsensitive",
+    "ui.symbolStyle": "FullName",
+    "ui.symbols": {
+      "functionTypeParameters": true,
+      "parameterNames": true,
+      "parameterTypes": true,
+      "returnTypes": true
+    },
+    "ui.completion": {
+      "usePlaceholders": true,
+      "insertTextFormat": "Snippet",
+      "snippetMode": "Unrestricted"
+    },
+    "ui.completionDocumentation": true,
+    "ui.completionUnimportedPackages": true,
+    "ui.completionUnimportedSymbols": true,
+    "ui.completionUnreachable": true,
+    "ui.completionUnexported": true,
+    "ui.completionUnexportedSymbols": true,
+    "ui.completionUnexportedPackages": true,
+    "ui.completionUnexportedFunctions": true,
+    "ui.completionUnexportedMethods": true,
+    "ui.completionUnexportedTypes": true,
+    "ui.completionUnexportedVariables": true,
+    "ui.completionUnexportedConstants": true,
+    "ui.completionUnexportedStructs": true,
+    "ui.completionUnexportedInterfaces": true,
   },
   "[go]": {
     "editor.formatOnSave": true,
@@ -253,6 +308,8 @@
     "vue",
     "tsx",
   ],
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
 
   "[html][jinja][jinja-html][django-html]": {
     "editor.formatOnSave": true,
@@ -334,22 +391,32 @@
   "chat.agent.enabled": true,
   "chat.mcp.enabled": true,
   "chat.mcp.discovery.enabled": true,
-  "github.copilot.nextEditSuggestions.enabled": true,
-
-  "window.commandCenter": false,
-  "workbench.productIconTheme": "fluent-icons",
-  "workbench.iconTheme": "bearded-icons",
-  "workbench.navigationControl.enabled": false,
-  "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
-  "roo-cline.allowedCommands": [
-    "npm test",
-    "npm install",
-    "tsc",
-    "git log",
-    "git diff",
-    "git show"
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "pgsql.serverGroups": [
+    {
+      "name": "Servers",
+      "id": "736FF73A-2D49-4ADB-8AB8-FAC34A8A957B",
+      "isDefault": true
+    }
   ],
-  "workbench.activityBar.location": "top",
-  "workbench.preferredDarkColorTheme": "Gruvbox Dark Soft",
+  "pgsql.connections": [
+    {
+      "id": "957984D5-FB9F-4CE7-94C1-41C1CFFECEB0",
+      "groupId": "736FF73A-2D49-4ADB-8AB8-FAC34A8A957B",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "prefer",
+      "server": "localhost",
+      "user": "postgres",
+      "port": "5432",
+      "database": "app",
+      "password": "",
+      "profileName": "localhost, app (postgres)",
+      "expiresOn": 0
+    }
+  ],
+  "pgsql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
 }

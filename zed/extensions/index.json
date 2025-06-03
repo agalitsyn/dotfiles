@@ -26,7 +26,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -56,7 +57,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -87,7 +89,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -117,7 +120,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -161,7 +165,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -192,7 +197,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -258,7 +264,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -294,8 +301,8 @@
             "language": "HTML",
             "languages": [],
             "language_ids": {
-              "CSS": "css",
-              "HTML": "html"
+              "HTML": "html",
+              "CSS": "css"
             },
             "code_action_kinds": null
           }
@@ -304,7 +311,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -343,7 +351,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -373,7 +382,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -403,7 +413,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -436,7 +447,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -466,7 +478,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -501,7 +514,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -540,7 +554,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -570,7 +585,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -578,7 +594,7 @@
       "manifest": {
         "id": "toml",
         "name": "TOML",
-        "version": "0.1.3",
+        "version": "0.1.4",
         "schema_version": 1,
         "description": "TOML support.",
         "repository": "https://github.com/zed-industries/zed",
@@ -614,7 +630,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -644,7 +661,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     },
@@ -693,7 +711,8 @@
         "slash_commands": {},
         "indexed_docs_providers": {},
         "snippets": null,
-        "capabilities": []
+        "capabilities": [],
+        "debug_adapters": []
       },
       "dev": false
     }

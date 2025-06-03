@@ -12,4 +12,4 @@ confirm-close-surface = false
 clipboard-paste-protection = false
 copy-on-select = true
 
-scrollback-limit = 50000
+scrollback-limit = 4294967295

@@ -23,7 +23,7 @@
     unstage = reset HEAD --
     rsh = reset --hard
     clh = clean -fdx
-    rollback = reset --soft HEAD~1
+    continue = reset --soft HEAD~1
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
     smb = submodule update --init --recursive
     it = !git init && git commit -m “root” --allow-empty

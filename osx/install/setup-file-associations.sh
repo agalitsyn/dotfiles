@@ -33,7 +33,7 @@ assoc() {
     done
 }
 
-TEXT_EDITOR=$(get_bundle_id "Zed")
+TEXT_EDITOR=$(get_bundle_id "Sublime Text")
 MEDIA_PLAYER=$(get_bundle_id "VLC")
 
 assoc "$TEXT_EDITOR" "editor" txt md js jse json reg bat ps1 cfg sh bash yaml py ts tsx vue go java xml xsd log makefile
