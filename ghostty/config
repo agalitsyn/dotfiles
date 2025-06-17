@@ -13,3 +13,4 @@ clipboard-paste-protection = false
 copy-on-select = true
 
 scrollback-limit = 4294967295
+keybind = shift+enter=text:\n

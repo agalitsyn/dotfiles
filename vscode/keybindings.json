@@ -191,5 +191,13 @@
     "key": "cmd+k cmd+g",
     "command": "workbench.action.tasks.runTask",
     "args": "lazygit"
-  }
+},
+{
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+        "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+}
 ]

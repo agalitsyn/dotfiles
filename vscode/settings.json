@@ -90,7 +90,7 @@
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "top",
-  "workbench.preferredDarkColorTheme": "Atom One Dark",
+  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
 
   "editor.fontSize": 16,
   "editor.fontWeight": 400,
@@ -209,33 +209,12 @@
       "printfuncs": true
     },
     "ui.hoverKind": "FullDocumentation",
-    "ui.symbolMatcher": "CaseInsensitive",
-    "ui.symbolStyle": "FullName",
     "ui.symbols": {
       "functionTypeParameters": true,
       "parameterNames": true,
       "parameterTypes": true,
       "returnTypes": true
     },
-    "ui.completion": {
-      "usePlaceholders": true,
-      "insertTextFormat": "Snippet",
-      "snippetMode": "Unrestricted"
-    },
-    "ui.completionDocumentation": true,
-    "ui.completionUnimportedPackages": true,
-    "ui.completionUnimportedSymbols": true,
-    "ui.completionUnreachable": true,
-    "ui.completionUnexported": true,
-    "ui.completionUnexportedSymbols": true,
-    "ui.completionUnexportedPackages": true,
-    "ui.completionUnexportedFunctions": true,
-    "ui.completionUnexportedMethods": true,
-    "ui.completionUnexportedTypes": true,
-    "ui.completionUnexportedVariables": true,
-    "ui.completionUnexportedConstants": true,
-    "ui.completionUnexportedStructs": true,
-    "ui.completionUnexportedInterfaces": true,
   },
   "[go]": {
     "editor.formatOnSave": true,
@@ -311,7 +290,11 @@
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 1,
 
-  "[html][jinja][jinja-html][django-html]": {
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  "[jinja][jinja-html][django-html]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
@@ -403,7 +386,7 @@
   "pgsql.connections": [
     {
       "id": "957984D5-FB9F-4CE7-94C1-41C1CFFECEB0",
-      "groupId": "736FF73A-2D49-4ADB-8AB8-FAC34A8A957B",
+       "groupId": "736FF73A-2D49-4ADB-8AB8-FAC34A8A957B",
       "authenticationType": "SqlLogin",
       "connectTimeout": 15,
       "applicationName": "vscode-pgsql",
@@ -419,4 +402,10 @@
     }
   ],
   "pgsql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
 }
