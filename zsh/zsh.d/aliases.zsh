@@ -1,4 +1,7 @@
+# nvim
 alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # gnu utils modern alternatives
 alias l='eza --all --long --group-directories-first'
@@ -178,7 +181,12 @@ alias fstat="stat $1"
 # file path
 alias fpath="readlink -f $1"
 
-# Extract archive
+# diff 2 files
+function gdiff() {
+    git diff --no-index $1 $2
+}
+
+# archive
 function extract() {
     if [ -z "$1" ]; then
     # display usage if no parameters given
@@ -210,5 +218,9 @@ function extract() {
 
 function youtube-dl-playlist() {
     yt-dlp -f "bestvideo+bestaudio" --yes-playlist -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --embed-chapters $@
+}
+
+function what-is-my-ip() {
+    curl -s wtfismyip.com/json | jq -r "\"🌐 Public IP: \" + .YourFuckingIPAddress + \"\n📍 Location: \" + .YourFuckingLocation + \"\n🏢 ISP: \" + .YourFuckingISP + \"\n🌍 Country: \" + .YourFuckingCountryCode"
 }
 

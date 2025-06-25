@@ -85,8 +85,6 @@
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "problems.decorations.enabled": false,
   "window.commandCenter": false,
-  "workbench.productIconTheme": "fluent-icons",
-  "workbench.iconTheme": "bearded-icons",
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "top",

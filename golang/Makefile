@@ -12,7 +12,7 @@ PACKAGES := golang.org/x/tools/cmd/goimports \
 			golang.org/x/tools/cmd/gopls \
 			github.com/go-delve/delve/cmd/dlv
 
-.PHONY: install
-install:
+.PHONY: install-packages
+install-packages:
 	$(foreach pkg,$(PACKAGES),go install $(pkg)@latest;)
 

@@ -27,7 +27,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -58,7 +59,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -90,7 +92,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -121,7 +124,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -166,7 +170,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -198,7 +203,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -265,7 +271,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -312,7 +319,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -354,7 +362,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -385,7 +394,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -416,7 +426,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -450,7 +461,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -481,7 +493,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -517,7 +530,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -557,7 +571,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -588,7 +603,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -633,7 +649,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -664,7 +681,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     },
@@ -714,7 +732,8 @@
         "indexed_docs_providers": {},
         "snippets": null,
         "capabilities": [],
-        "debug_adapters": []
+        "debug_adapters": {},
+        "debug_locators": {}
       },
       "dev": false
     }
