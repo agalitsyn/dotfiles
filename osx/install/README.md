@@ -70,3 +70,17 @@ Disable spotlight completly:
 - Unload service `sudo launchctl bootout gui/$UID /System/Library/LaunchDaemons/com.apple.metadata.mds.plist`
 - Restart
 
+## Dock
+
+Speed up animation speed
+
+```sh
+defaults write com.apple.dock autohide-time-modifier -float 0; killall Dock
+```
+
+## Apple intelligence
+
+System Settings -> Apple Intelligence and Siri -> Disable
+
+About Siri ... -> Disable all
+
