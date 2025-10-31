@@ -4,14 +4,14 @@
     "body": [
       "",
       "// TODO: remove",
-      "fmt.Printf(\"(${1:var}): %#v\\n\", ${1:var})",
+      "fmt.Printf(\"DEBUG (${1:var}): %#v\\n\", ${1:var})",
       ""
     ]
   },
   "return formatted error": {
-    "prefix": "fe",
+    "prefix": "ref",
     "body": [
-      "return fmt.Errorf(\"could not ${1}: %w\", err)"
+      "return ${1}, fmt.Errorf(\"could not ${1}: %w\", err)"
     ]
   },
   "return error": {

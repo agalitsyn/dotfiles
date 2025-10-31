@@ -78,6 +78,12 @@ Speed up animation speed
 defaults write com.apple.dock autohide-time-modifier -float 0; killall Dock
 ```
 
+Show app switcher on all desktops
+
+```
+defaults write com.apple.dock appswitcher-all-displays -bool true && killall Dock
+```
+
 ## Apple intelligence
 
 System Settings -> Apple Intelligence and Siri -> Disable

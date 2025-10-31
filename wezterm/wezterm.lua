@@ -32,7 +32,7 @@ function scheme_for_appearance(appearance)
         --return 'Everblush (Gogh)'
         --return 'Tokyo Night Storm (Gogh)'
         --return "Gruvbox Dark (Gogh)"
-        return 'Everforest Dark (Gogh)'
+        return 'Everforest Dark Hard (Gogh)'
     else
         return "Github (base16)"
     end
@@ -121,6 +121,7 @@ config.audible_bell = "Disabled"
 
 -- default keybindings https://wezfurlong.org/wezterm/config/default-keys.html?h=def
 config.keys = {
+    {key="Enter", mods="SHIFT", action=wezterm.action{SendString="\x1b\r"}},
     {
         key = "t",
         mods = "CMD|SHIFT",

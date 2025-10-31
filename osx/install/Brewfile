@@ -1,0 +1,404 @@
+tap "chipmk/tap"
+tap "daipeihust/tap"
+tap "homebrew/services"
+# C parser in Python
+brew "pycparser"
+# C Foreign Function Interface for Python
+brew "cffi"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Cryptographic recipes and primitives for Python
+brew "cryptography"
+# NaCl networking and cryptography library
+brew "libsodium"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# New file format for still image compression
+brew "jpeg-xl"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
+# Companion library to apr, the Apache Portable Runtime library
+brew "apr-util"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Programmable completion for Bash 3.2
+brew "bash-completion"
+# Platform built on V8 to build network applications
+brew "node"
+# Language Server for Bash
+brew "bash-language-server"
+# C library implementing the SSH2 protocol
+brew "libssh2"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Secure and free password manager for all of your devices
+brew "bitwarden-cli"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
+# XML-based font configuration API for X Windows
+brew "fontconfig"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# Core application library for C
+brew "glib"
+# Command-line Interface File Manager
+brew "clifm"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Reimplementation of ctags(1)
+brew "ctags"
+# Top-like interface for container metrics
+brew "ctop"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Language server for Dockerfiles powered by Node, TypeScript, and VSCode
+brew "dockerfile-language-server"
+# Text processing system for reStructuredText
+brew "docutils"
+# More intuitive version of du in rust
+brew "dust"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# CLI utility to build and manage a PKI CA
+brew "easy-rsa"
+# Maintain consistent coding style between multiple editors
+brew "editorconfig"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Library for JPEG-2000 image manipulation
+brew "openjpeg"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# Libraries to talk to Microsoft SQL Server and Sybase databases
+brew "freetds"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU awk utility
+brew "gawk"
+# Library for encoding and decoding .avif files
+brew "libavif"
+# Graphics library to dynamically manipulate images
+brew "gd"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# GitHub command-line tool
+brew "gh"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Open source programming language to build simple/reliable/efficient software
+brew "go@1.23"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Directory/file & DNS busting tool written in Go
+brew "gobuster"
+# Image manipulation
+brew "netpbm"
+# GNU triangulated surface library
+brew "gts"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# GNU grep, egrep and fgrep
+brew "grep"
+# World's fastest and most advanced password recovery utility
+brew "hashcat"
+# Improved top (interactive process viewer)
+brew "htop"
+# Configurable static site generator
+brew "hugo"
+# Run and Test HTTP Requests with plain text and curl
+brew "hurl"
+# Database of common MIME types
+brew "shared-mime-info"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Library for reading RAW files from digital photo cameras
+brew "libraw"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
+# Interactive computing in Python
+brew "ipython"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# C and C++ client library to the memcached server
+brew "libmemcached"
+# GNOME XML library
+brew "libxml2"
+# CLI for SQLite Databases with auto-completion and syntax highlighting
+brew "litecli"
+# Language Server for the Lua language
+brew "lua-language-server"
+# High performance, distributed memory object caching system
+brew "memcached"
+# Replacement for ls, cp and other commands for object storage
+brew "minio-mc"
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Utility for managing network connections
+brew "netcat"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node@20"
+# Development kit for the Java programming language
+brew "openjdk"
+# Open source suite of directory software
+brew "openldap"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Highly capable, feature-rich programming language
+brew "perl"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Draw UML diagrams
+brew "plantuml"
+# Paste PNG into files
+brew "pngpaste"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Object-relational database system
+brew "postgresql@17", link: true
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
+# Monitor data's progress through a pipe
+brew "pv"
+# Python version management
+brew "pyenv"
+# Pretty-print tabular data in Python
+brew "python-tabulate"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# QR Code generation
+brew "qrencode"
+# Persistent key-value database, with built-in net interface
+brew "redis"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# S/MIME signing utility for use with Git
+brew "smimesign"
+# Language Server for SQL
+brew "sql-language-server"
+# Modern and pretty fancy file manager for the terminal
+brew "superfile"
+# User interface to the TELNET protocol
+brew "telnet"
+# Text interface for Git repositories
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Language Server Protocol implementation for TypeScript wrapping tsserver
+brew "typescript-language-server"
+# CLI time zone visualizer
+brew "tz"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Internet file retriever
+brew "wget"
+# Tools for the WireGuard secure network tunnel
+brew "wireguard-tools"
+# Friendly and fast tool for sending HTTP requests
+brew "xh"
+# Language Server for Yaml Files
+brew "yaml-language-server"
+# JavaScript package manager
+brew "yarn"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Tracks most-used directories to make cd smarter
+brew "z"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Connect directly to Docker-for-Mac containers via IP address 🐳 💻
+brew "chipmk/tap/docker-mac-net-connect"
+# Switch your input method through terminal
+brew "daipeihust/tap/im-select"
+# Enable Windows-like alt-tab
+cask "alt-tab"
+# Transfer files from and to an Android smartphone
+cask "android-file-transfer"
+# Allows connection to a computer remotely
+cask "anydesk"
+# Application uninstaller
+cask "appcleaner"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
+# Desktop password and login vault
+cask "bitwarden"
+# Virtual Audio Driver
+cask "blackhole-2ch"
+# Web browser focusing on privacy
+cask "brave-browser"
+# E-books management software
+cask "calibre"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# DjVu viewer and browser plugin
+cask "djview"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Web browser
+cask "firefox"
+cask "font-cascadia-code"
+cask "font-fira-code"
+cask "font-go"
+cask "font-hack"
+cask "font-inconsolata"
+cask "font-input"
+cask "font-iosevka"
+cask "font-iosevka-term-nerd-font"
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-liberation"
+cask "font-martian-mono"
+cask "font-monaspace"
+cask "font-monoid"
+cask "font-overpass-mono"
+cask "font-pt-mono"
+cask "font-source-code-pro"
+cask "font-space-mono"
+cask "font-victor-mono"
+cask "font-zed-mono"
+cask "font-zed-sans"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# Open-source video transcoder
+cask "handbrake-app"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# iPhone management application
+cask "imazing"
+# Hex editor for reverse engineers
+cask "imhex"
+# Menu bar calendar
+cask "itsycal"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# Keyboard customiser
+cask "karabiner-elements"
+# Open-source firewall to block unknown outgoing connections
+cask "lulu"
+# File system integration
+cask "macfuse"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Office suite
+cask "microsoft-office"
+# Tool to control external monitor brightness & volume
+cask "monitorcontrol"
+# Simple application that will prevent iTunes or Apple Music from launching
+cask "notunes"
+# Open-source software for live streaming and screen recording
+cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Read/write support for NTFS formatted volumes
+cask "paragon-ntfs"
+# GUI client for PostgreSQL databases
+cask "postico"
+# Quick Look plugin for CSV files
+cask "quicklook-csv"
+# Quick Look plugin for JSON files
+cask "quicklook-json"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Video editor
+cask "shotcut"
+# Screenshot measurement and annotation tool
+cask "shottr"
+# Displays all open files and sockets in use by all running processes
+cask "sloth"
+# Git client
+cask "sublime-merge"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Unpacks archive files
+cask "the-unarchiver"
+# Open-source BitTorrent client
+cask "transmission"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Quick Look plugin for webp files
+cask "webpquicklook"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+# Network protocol analyzer
+cask "wireshark-app"
+# Web browser
+cask "yandex"
+# Cloud storage
+cask "yandex-disk"
+# Multiplayer code editor
+cask "zed"

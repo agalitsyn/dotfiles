@@ -5,11 +5,10 @@ configure:
 	ln -sf $(CURDIR)/goenv.sh $(ZSH_HOOKS_FOLDER)/goenv.zsh
 
 PACKAGES := golang.org/x/tools/cmd/goimports \
-			github.com/incu6us/goimports-reviser/v3 \
+			github.com/golangci/golangci-lint/v2/cmd/golangci-lint \
 			mvdan.cc/gofumpt \
 			github.com/segmentio/golines \
-			github.com/golangci/golangci-lint/cmd/golangci-lint \
-			golang.org/x/tools/cmd/gopls \
+			golang.org/x/tools/gopls \
 			github.com/go-delve/delve/cmd/dlv
 
 .PHONY: install-packages

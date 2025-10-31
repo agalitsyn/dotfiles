@@ -17,34 +17,17 @@
   // Reveal in explorer
   {
     "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility",
-  },
-  {
-    "key": "cmd+b",
     "command": "workbench.files.action.showActiveFileInExplorer",
     "when": "editorTextFocus",
   },
   {
-    "key": "cmd+b",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "filesExplorerFocus"
-  },
-
-  // Telescope style grep as default search
-  {
     "key": "shift+cmd+f",
-    "command": "-workbench.action.findInFiles"
+    "command": "workbench.action.findInFiles"
   },
-  {
-    "key": "shift+cmd+f",
-    "command": "workbench.action.quickTextSearch"
-  },
-  {
-    "key": "cmd+k cmd+f",
-    "command": "workbench.action.findInFiles",
-  },
-
-  // Vim-style tree actions
+  // {
+  //   "key": "shift+cmd+f",
+  //   "command": "workbench.action.quickTextSearch"
+  // },
   {
     "key": "m",
     "command": "renameFile",
@@ -125,6 +108,14 @@
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol",
   },
+  {
+    "key": "cmd+shift+w",
+    "command": "-workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "cmd+shift+w",
+    "command": "workbench.action.closeAllEditors"
+  },
 
   // Vim-style navigation
   {
@@ -171,7 +162,7 @@
   },
   {
     "key": "cmd+k cmd+w",
-    "command": "workbench.action.closeAllEditors"
+    "command": "workbench.action.closeEditorsAndGroup"
   },
 
   // macOS clear screen
@@ -191,13 +182,62 @@
     "key": "cmd+k cmd+g",
     "command": "workbench.action.tasks.runTask",
     "args": "lazygit"
-},
-{
+  },
+  {
     "key": "shift+enter",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
         "text": "\\\r\n"
     },
     "when": "terminalFocus"
-}
+  },
+
+  // Disable python execution hotkeys
+  // see https://github.com/mitsuhiko/dotfiles/blob/master/vscode/keybindings.json
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-jupyter.execSelectionInteractive",
+    "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  // rest
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.scm.focus"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "shift+cmd+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "outline.focus"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "cmd+0",
+    "command": "revealInExplorer"
+  }
 ]

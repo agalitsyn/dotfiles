@@ -16,5 +16,48 @@
     "bindings": {
       "cmd-]": "pane::GoForward"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-backspace": "pane::GoBack"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-c": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f7": "project_panel::SelectNextGitEntry"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd+shift+g": "git_panel::OpenMenu"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd+shift+o": "outline::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus"
+    }
+  },
+
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-e": "tab_switcher::Toggle"
+    }
   }
 ]

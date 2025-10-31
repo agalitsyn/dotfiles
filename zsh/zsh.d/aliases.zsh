@@ -217,7 +217,11 @@ function extract() {
 }
 
 function youtube-dl-playlist() {
-    yt-dlp -f "bestvideo+bestaudio" --yes-playlist -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --embed-chapters $@
+    yt-dlp -f "bestvideo+bestaudio" --yes-playlist -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --embed-chapters --cookies-from-browser brave $@
+}
+
+function youtube-dl-video() {
+    yt-dlp -f "bestvideo+bestaudio" --no-playlist -o "%(title)s-%(id)s.%(ext)s" --embed-chapters --cookies-from-browser brave $@
 }
 
 function what-is-my-ip() {

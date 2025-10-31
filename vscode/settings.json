@@ -1,28 +1,44 @@
 {
-  // Updates
+  // Debugger
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.javascript.codelens.npmScripts": "never",
+  "debug.console.closeOnEnd": true,
+
+  // Updates and security
   "update.mode": "start",
-  "extensions.autoUpdate": false,
   "telemetry.telemetryLevel": "off",
   "extensions.ignoreRecommendations": true,
   "redhat.telemetry.enabled": false,
-
   "security.workspace.trust.enabled": false,
 
   // Term
-  "terminal.external.osxExec": "WezTerm.app",
+  "terminal.external.osxExec": "Ghostty.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
+  "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.persistentSessionScrollback": 1000,
-  "terminal.integrated.copyOnSelection": false,
+  "terminal.integrated.scrollback": 100000,
+  "terminal.integrated.persistentSessionScrollback": 10000,
+  "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.hideOnStartup": "always",
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.cursorStyleInactive": "outline",
   "terminal.integrated.tabStopWidth": 4,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.shellIntegration.enabled": false,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "accessibility.signals.terminalBell": {
+    "sound": "off",
+    "announcement": "off",
+  },
+  "terminal.integrated.enableVisualBell": false,
+  "terminal.integrated.fontLigatures.enabled": false,
 
   // Files
   "files.associations": {
@@ -39,11 +55,14 @@
   "files.defaultLanguage": "plaintext",
 
   // Explorer
-  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 1,
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.decorations.badges": false,
   "explorer.autoReveal": true,
   "explorer.enableUndo": true,
   "explorer.incrementalNaming": "smart",
+  "explorer.compactFolders": false,
 
   // Search
   "search.quickOpen.history.filterSortOrder": "recency",
@@ -61,36 +80,37 @@
   // Editors per split
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 15,
-  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.limit.value": 10,
   "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "multiple",
 
   // Editor look and feel
   "window.zoomLevel": 0.4,
   "window.nativeTabs": false,
-  "window.title": "${activeEditorFull}${separator}${rootName}",
+  "window.title": "${rootName}${separator}${activeEditorMedium}",
   "window.titleBarStyle": "custom",
   "window.customTitleBarVisibility": "windowed",
-  "window.confirmBeforeClose": "keyboardOnly",
+  "window.confirmBeforeClose": "never",
   "window.density.editorTabHeight": "compact",
   "window.autoDetectColorScheme": true,
 
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "newUntitledFile",
   "workbench.list.openMode": "doubleClick",
   "workbench.tree.expandMode": "doubleClick",
   "workbench.settings.editor": "json",
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
   "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.showIcons": false,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "problems.decorations.enabled": false,
-  "window.commandCenter": false,
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "top",
-  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+  "workbench.tips.enabled": false,
+  "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
 
-  "editor.fontSize": 16,
+  "editor.fontSize": 16.5,
   "editor.fontWeight": 400,
   "editor.fontFamily": "'Iosevka Fixed', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
   "editor.fontLigatures": "'ss08', 'calt'",
@@ -116,9 +136,7 @@
   "editor.minimap.enabled": false,
   "editor.linkedEditing": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.autoClosingOvertype": "never",
-  "editor.autoClosingQuotes": "never",
-  "editor.autoClosingBrackets": "never",
+
   "editor.matchBrackets": "near",
   "editor.bracketPairColorization.enabled": false,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -130,27 +148,21 @@
   "editor.quickSuggestionsDelay": 0,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "auto",
-  "editor.semanticHighlighting.enabled": true,
-  "editor.stickyScroll.enabled": false,
+  "editor.semanticHighlighting.enabled": false,
+  "editor.stickyScroll.enabled": true,
   "zenMode.showTabs": "none",
   "window.newWindowDimensions": "maximized" ,
 
+  // do not overthink
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
 
   // Breadcrumbs
-	"breadcrumbs.icons": false,
-	"breadcrumbs.showKeys": false,
-	"breadcrumbs.showFiles": false,
-	"breadcrumbs.symbolPath": "off",
-	"breadcrumbs.showArrays": false,
-	"breadcrumbs.showEvents": false,
-	"breadcrumbs.showFields": false,
-	"breadcrumbs.showClasses": false,
-	"breadcrumbs.showMethods": false,
-	"breadcrumbs.showBooleans": false,
-	"breadcrumbs.showFunctions": false,
-	"breadcrumbs.showConstants": false,
-	"breadcrumbs.showEnumMembers": false,
-	"breadcrumbs.showConstructors": false,
+  "breadcrumbs.enabled": false,
 
   // Markdown
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
@@ -183,36 +195,12 @@
   "go.gopath": "~",
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
-  // "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.functionTypeParameters": true,
   // "go.inlayHints.parameterNames": true,
   "gopls": {
     "ui.semanticTokens": true,
-    // "ui.completion.usePlaceholders": true,
+    "ui.completion.usePlaceholders": true,
     "formatting.gofumpt": true,
-    "ui.codelenses": {
-      "generate": true,
-      "gc_details": true,
-      "test": true,
-      "tidy": true,
-      "upgrade_dependency": true,
-      "vendor": true
-    },
-    "ui.diagnostics": {
-      "staticcheck": true,
-      "unusedparams": true,
-      "shadow": true,
-      "nilness": true,
-      "fieldalignment": true,
-      "compositesizes": true,
-      "printfuncs": true
-    },
-    "ui.hoverKind": "FullDocumentation",
-    "ui.symbols": {
-      "functionTypeParameters": true,
-      "parameterNames": true,
-      "parameterTypes": true,
-      "returnTypes": true
-    },
   },
   "[go]": {
     "editor.formatOnSave": true,
@@ -356,8 +344,13 @@
   },
 
   "todohighlight.keywords": [
-    "DEBUG:",
-    "TODO:",
+    "DEBUG",
+    {
+      "text": "TODO",
+      "color": "#000000",
+      "backgroundColor": "#A7C7E7",
+      "overviewRulerColor": "grey"
+    },
     {
       "text": "NOTE:",
       "color": "#ffffff",
@@ -370,41 +363,34 @@
   // Copilot
   "chat.editor.fontSize": 17,
   "chat.agent.enabled": true,
-  "chat.mcp.enabled": true,
-  "chat.mcp.discovery.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  },
   "chat.commandCenter.enabled": false,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "pgsql.serverGroups": [
-    {
-      "name": "Servers",
-      "id": "736FF73A-2D49-4ADB-8AB8-FAC34A8A957B",
-      "isDefault": true
-    }
-  ],
-  "pgsql.connections": [
-    {
-      "id": "957984D5-FB9F-4CE7-94C1-41C1CFFECEB0",
-       "groupId": "736FF73A-2D49-4ADB-8AB8-FAC34A8A957B",
-      "authenticationType": "SqlLogin",
-      "connectTimeout": 15,
-      "applicationName": "vscode-pgsql",
-      "clientEncoding": "utf8",
-      "sslmode": "prefer",
-      "server": "localhost",
-      "user": "postgres",
-      "port": "5432",
-      "database": "app",
-      "password": "",
-      "profileName": "localhost, app (postgres)",
-      "expiresOn": 0
-    }
-  ],
-  "pgsql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
-  "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
+  "window.commandCenter": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "chat.mcp.access": "all",
+  "workbench.activityBar.location": "top",
+  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // https://github.com/subframe7536/vscode-custom-ui-style extension:
+  // Hide unwanted elements from the UI:
+  // "custom-ui-style.stylesheet": {
+  //   // Hide extra items:
+  //   ".monaco-toolbar, .quick-input-list .scrollbar, .quick-input-list .action-label": {
+  //     "visiblity": "hidden !important",
+  //     "display": "none !important",
+  //   },
+  // },
 }
