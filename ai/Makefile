@@ -6,6 +6,5 @@ configure:
 
 .PHONY: install
 install:
-	npm install -g @anthropic-ai/claude-code
-	npm install -g @openai/codex
+	curl -fsSL https://claude.ai/install.sh | bash
 	uv tool install --force --python python3.12 aider-chat@latest

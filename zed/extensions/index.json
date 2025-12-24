@@ -1,5 +1,113 @@
 {
   "extensions": {
+    "html": {
+      "manifest": {
+        "id": "html",
+        "name": "HTML",
+        "version": "0.2.3",
+        "schema_version": 1,
+        "description": "HTML support.",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [
+          "Isaac Clayton <slightknack@gmail.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.7.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/html"
+        ],
+        "grammars": {
+          "html": {
+            "repository": "https://github.com/tree-sitter/tree-sitter-html",
+            "rev": "bfa075d83c6b97cd48440b3829ab8d24a2319809",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "vscode-html-language-server": {
+            "language": "HTML",
+            "languages": [],
+            "language_ids": {
+              "CSS": "css",
+              "HTML": "html"
+            },
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "intellij-newui-theme": {
+      "manifest": {
+        "id": "intellij-newui-theme",
+        "name": "JetBrains New UI Theme",
+        "version": "0.1.0",
+        "schema_version": 1,
+        "description": "A Zed theme based on the JetBrains IntelliJ \"New UI\" colors (default Dark theme only).",
+        "repository": "https://github.com/kpitt/zed-theme-intellij-newui",
+        "authors": [
+          "Kenny Pitt <kenny@pittcrew.org>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/intellij-newui.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "kanagawa-themes": {
+      "manifest": {
+        "id": "kanagawa-themes",
+        "name": "Kanagawa Themes",
+        "version": "0.1.2",
+        "schema_version": 1,
+        "description": "🌊 Zed port of rebelot's Kanagawa.nvim theme 🐉",
+        "repository": "https://github.com/ethangilmore/zed-kanagawa",
+        "authors": [
+          "Ethan Gilmore <ethanmckgilmore@gmail.com>",
+          "Yair Chan <enyaoficial001@gmail.com"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/Kanagawa-no-italics.json",
+          "themes/Kanagawa.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "make": {
       "manifest": {
         "id": "make",
@@ -34,6 +142,7 @@
         },
         "language_servers": {},
         "context_servers": {},
+        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -72,6 +181,7 @@
         },
         "language_servers": {},
         "context_servers": {},
+        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -108,6 +218,7 @@
         },
         "language_servers": {},
         "context_servers": {},
+        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -115,9 +226,56 @@
       "dev": false
     }
   },
-  "themes": {},
+  "themes": {
+    "JetBrains New Dark": {
+      "extension": "intellij-newui-theme",
+      "path": "themes/intellij-newui.json"
+    },
+    "Kanagawa": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa.json"
+    },
+    "Kanagawa Dragon": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa.json"
+    },
+    "Kanagawa Dragon - No Italics": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa-no-italics.json"
+    },
+    "Kanagawa Lotus": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa.json"
+    },
+    "Kanagawa Lotus - No Italics": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa-no-italics.json"
+    },
+    "Kanagawa Wave": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa.json"
+    },
+    "Kanagawa Wave - No Italics": {
+      "extension": "kanagawa-themes",
+      "path": "themes/Kanagawa-no-italics.json"
+    }
+  },
   "icon_themes": {},
   "languages": {
+    "HTML": {
+      "extension": "html",
+      "path": "languages/html",
+      "matcher": {
+        "path_suffixes": [
+          "html",
+          "htm",
+          "shtml"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "html"
+    },
     "Make": {
       "extension": "make",
       "path": "languages/make",

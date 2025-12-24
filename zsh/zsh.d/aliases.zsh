@@ -161,10 +161,8 @@ elif command -v xdg-open > /dev/null; then
   alias fo='xdg-open $(fzf)';
 fi;
 
-# file search by content
-function rgg() {
-  rg --pretty --glob '!vendor/*' --glob '!node_modules/*' "$@" | less -XFR
-}
+# rg settings
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
 # file tree
 # shorthand for `tree` with hidden files and color enabled, ignoring

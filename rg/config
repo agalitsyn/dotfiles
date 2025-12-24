@@ -1,0 +1,41 @@
+# Ripgrep configuration file
+# This file is automatically loaded by ripgrep
+
+# Ignore version control directories
+--glob=!.git/
+--glob=!.svn/
+--glob=!.hg/
+
+# Ignore dependency directories
+--glob=!node_modules/
+--glob=!vendor/
+--glob=!bower_components/
+
+# Ignore build output directories
+--glob=!dist/
+--glob=!build/
+--glob=!out/
+--glob=!.next/
+--glob=!target/
+
+# Ignore log files and databases
+--glob=!*.log
+--glob=!*.sqlite
+--glob=!*.db
+
+# Ignore OS files
+--glob=!.DS_Store
+--glob=!Thumbs.db
+--glob=!desktop.ini
+
+# Ignore IDE and editor files
+--glob=!.vscode/
+--glob=!.idea/
+--glob=!*.swp
+--glob=!*.swo
+--glob=!*~
+
+# Ignore cache directories
+--glob=!.cache/
+--glob=!__pycache__/
+--glob=!*.pyc

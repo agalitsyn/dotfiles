@@ -142,7 +142,7 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.inlayHints.enabled": "on",
   "editor.lightbulb.enabled": "off",
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "bottom",
   "editor.suggest.insertMode": "replace",
   "editor.accessibilitySupport": "off",
   "editor.quickSuggestionsDelay": 0,
