@@ -360,37 +360,22 @@
   ],
   "todohighlight.isCaseSensitive": true,
 
-  // Copilot
-  "chat.editor.fontSize": 17,
-  "chat.agent.enabled": true,
-  "chat.mcp.discovery.enabled": {
-    "claude-desktop": true,
-    "windsurf": true,
-    "cursor-global": true,
-    "cursor-workspace": true
-  },
-  "chat.commandCenter.enabled": false,
-  "github.copilot.nextEditSuggestions.enabled": true,
+  // Disable AI/Copilot completely
   "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
+    "*": false
   },
+  "github.copilot.editor.enableAutoCompletions": false,
+  "chat.agent.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "inlineChat.mode": "disabled",
+
+  // UI
   "window.commandCenter": false,
   "workbench.editor.editorActionsLocation": "hidden",
-  "chat.mcp.access": "all",
   "workbench.activityBar.location": "top",
-  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
 
-  // https://github.com/subframe7536/vscode-custom-ui-style extension:
-  // Hide unwanted elements from the UI:
-  // "custom-ui-style.stylesheet": {
-  //   // Hide extra items:
-  //   ".monaco-toolbar, .quick-input-list .scrollbar, .quick-input-list .action-label": {
-  //     "visiblity": "hidden !important",
-  //     "display": "none !important",
-  //   },
-  // },
+  // Claude Code
+  "claudeCode.preferredLocation": "panel",
 }
