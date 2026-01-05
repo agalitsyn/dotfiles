@@ -14,5 +14,11 @@
 # @raycast.author
 # @raycast.authorURL
 
-osascript -e 'tell application "Finder" to make new Finder window'
+osascript -e 'tell application "Finder"
+    set newWindow to make new Finder window
+    set target of newWindow to folder "Downloads" of home
+    activate newWindow
+end tell'
+
+exit 0
 

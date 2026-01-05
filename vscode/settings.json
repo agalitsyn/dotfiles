@@ -374,7 +374,7 @@
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+  "workbench.preferredDarkColorTheme": "Vesper",
 
   // Claude Code
   "claudeCode.preferredLocation": "panel",
