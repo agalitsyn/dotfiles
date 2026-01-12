@@ -90,3 +90,7 @@ System Settings -> Apple Intelligence and Siri -> Disable
 
 About Siri ... -> Disable all
 
+## Facetime
+
+Open Facetime -> Settings -> Disable calls from iPhone
+

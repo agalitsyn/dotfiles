@@ -23,5 +23,6 @@ ms-python.python
 ms-python.vscode-pylance
 ms-python.vscode-python-envs
 oderwat.indent-rainbow
+raunofreiberg.vesper
 sdras.night-owl
 wayou.vscode-todo-highlight

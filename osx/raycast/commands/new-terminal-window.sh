@@ -25,6 +25,10 @@ osascript -e 'tell application "System Events"
     else
         tell application "Ghostty" to activate
     end if
+    delay 0.3
+    tell application "Ghostty" to activate
+    keystroke "cd ~"
+    keystroke return
 end tell'
 
 exit 0
