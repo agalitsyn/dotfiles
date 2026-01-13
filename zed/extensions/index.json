@@ -112,7 +112,7 @@
       "manifest": {
         "id": "make",
         "name": "Make",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "schema_version": 1,
         "description": "Makefile syntax highlighting",
         "repository": "https://github.com/caius/zed-make",
@@ -122,7 +122,8 @@
           "Marshall Bowers <elliott.codes@gmail.com>",
           "Luke Naylor <luke@grahamnaylor.net>",
           "Igor Támara <igor.tamara@gmail.com>",
-          "Michael Alexander <michael.alexander@karlstorz.com>"
+          "Michael Alexander <michael.alexander@karlstorz.com>",
+          "Donnie Adams <donnie@thedadams.com>"
         ],
         "lib": {
           "kind": null,

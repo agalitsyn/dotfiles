@@ -16,3 +16,6 @@ scrollback-limit = 4294967295
 keybind = shift+enter=text:\n
 
 macos-option-as-alt = true
+
+unfocused-split-opacity = 0.7
+unfocused-split-fill = #333333
