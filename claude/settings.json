@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(tee:*)",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(go:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(rg:*)",
+      "Bash(make:*)",
+      "Bash(ls:*)",
+      "Bash(golangci-lint:*)",
+      "Bash(source .env)",
+      "Bash(psql:*)",
+      "Bash(TEST_POSTGRES_URI=\"postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable\" make test:*)",
+      "WebFetch(domain:*)",
+      "Bash(gofmt:*)",
+      "Bash(docker:*)",
+      "Bash(poetry:*)",
+      "Bash(uv:*)",
+      "Bash(rg:*)",
+      "Bash(tree:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(gh:*)",
+      "Bash(git:*)",
+      "Bash(open:*)",
+      "mcp__postgres__query",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_fill_form",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_close",
+      "mcp__plugin_playwright_playwright__browser_type"
+    ],
+    "deny": [],
+    "ask": [
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "gitlab@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754295236582
+  },
+  "fileExclusions": [
+    "**/vendor/**",
+    "**/.git/**",
+    "**/.venv/**",
+    "**/venv/**",
+    "**/node_modules/**"
+  ]
+}
