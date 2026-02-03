@@ -1,5 +1,145 @@
 {
   "extensions": {
+    "dockerfile": {
+      "manifest": {
+        "id": "dockerfile",
+        "name": "Dockerfile",
+        "version": "0.1.0",
+        "schema_version": 1,
+        "description": "Dockerfile support.",
+        "repository": "https://github.com/zed-extensions/dockerfile",
+        "authors": [
+          "d1y <chenhonzho@gmail.com>",
+          "joshmeads <github@joshmeads.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.7.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/dockerfile"
+        ],
+        "grammars": {
+          "dockerfile": {
+            "repository": "https://github.com/camdencheek/tree-sitter-dockerfile",
+            "rev": "868e44ce378deb68aac902a9db68ff82d2299dd0",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "dockerfile-language-server": {
+            "language": "Dockerfile",
+            "languages": [],
+            "language_ids": {},
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": [],
+        "debug_adapters": {
+          "buildx-dockerfile": {
+            "schema_path": "./debug_adapter_schemas/buildx-dockerfile.json"
+          }
+        }
+      },
+      "dev": false
+    },
+    "editorconfig": {
+      "manifest": {
+        "id": "editorconfig",
+        "name": "Editorconfig",
+        "version": "0.1.0",
+        "schema_version": 1,
+        "description": "Editorconfig language support for Zed.",
+        "repository": "https://github.com/notpeter/editorconfig-zed",
+        "authors": [
+          "Peter Tripp <petertripp@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/editorconfig"
+        ],
+        "grammars": {
+          "editorconfig": {
+            "repository": "https://github.com/ValdezFOmar/tree-sitter-editorconfig",
+            "rev": "439a3fcdbf239db35f587936a36f48b704ba8357",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "git-firefly": {
+      "manifest": {
+        "id": "git-firefly",
+        "name": "Git Firefly",
+        "version": "0.1.3",
+        "schema_version": 1,
+        "description": "Provides Git Syntax Highlighting",
+        "repository": "https://github.com/d1y/git_firefly",
+        "authors": [
+          "d1y <chenhonzhou@gmail.com>",
+          "Peter Tripp <petertripp@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/gitattributes",
+          "languages/gitignore",
+          "languages/gitconfig",
+          "languages/gitrebase"
+        ],
+        "grammars": {
+          "git_config": {
+            "repository": "https://github.com/the-mikedavis/tree-sitter-git-config",
+            "rev": "9c2a1b7894e6d9eedfe99805b829b4ecd871375e",
+            "path": null
+          },
+          "git_rebase": {
+            "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase",
+            "rev": "d8a4207ebbc47bd78bacdf48f883db58283f9fd8",
+            "path": null
+          },
+          "gitattributes": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-gitattributes",
+            "rev": "41940e199ba5763abea1d21b4f717014b45f01ea",
+            "path": null
+          },
+          "gitignore": {
+            "repository": "https://github.com/shunsambongi/tree-sitter-gitignore",
+            "rev": "f4685bf11ac466dd278449bcfe5fd014e94aa504",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "html": {
       "manifest": {
         "id": "html",
@@ -150,6 +290,204 @@
       },
       "dev": false
     },
+    "mermaid": {
+      "manifest": {
+        "id": "mermaid",
+        "name": "Mermaid",
+        "version": "0.1.0",
+        "schema_version": 1,
+        "description": "Mermaid support.",
+        "repository": "https://github.com/gabeidx/zed-mermaid",
+        "authors": [
+          "Gabriel Silva <gabe@gabe.id>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/mermaid"
+        ],
+        "grammars": {
+          "mermaid": {
+            "repository": "https://github.com/monaqa/tree-sitter-mermaid",
+            "rev": "90ae195b31933ceb9d079abfa8a3ad0a36fee4cc",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "php": {
+      "manifest": {
+        "id": "php",
+        "name": "PHP",
+        "version": "0.4.6",
+        "schema_version": 1,
+        "description": "PHP support.",
+        "repository": "https://github.com/zed-extensions/php",
+        "authors": [
+          "Piotr Osiewicz <piotr@zed.dev>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.7.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/php",
+          "languages/phpdoc"
+        ],
+        "grammars": {
+          "php": {
+            "repository": "https://github.com/tree-sitter/tree-sitter-php",
+            "rev": "8ab93274065cbaf529ea15c24360cfa3348ec9e4",
+            "path": "php"
+          },
+          "phpdoc": {
+            "repository": "https://github.com/claytonrcarter/tree-sitter-phpdoc",
+            "rev": "03bb10330704b0b371b044e937d5cc7cd40b4999",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "intelephense": {
+            "language": "PHP",
+            "languages": [],
+            "language_ids": {
+              "PHP": "php"
+            },
+            "code_action_kinds": null
+          },
+          "phpactor": {
+            "language": "PHP",
+            "languages": [],
+            "language_ids": {},
+            "code_action_kinds": null
+          },
+          "phptools": {
+            "language": "PHP",
+            "languages": [],
+            "language_ids": {
+              "PHP": "php"
+            },
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": [],
+        "debug_adapters": {
+          "Xdebug": {
+            "schema_path": null
+          }
+        }
+      },
+      "dev": false
+    },
+    "proto": {
+      "manifest": {
+        "id": "proto",
+        "name": "Proto",
+        "version": "0.3.1",
+        "schema_version": 1,
+        "description": "Protocol Buffers support.",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [
+          "Zed Industries <support@zed.dev>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.7.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/proto"
+        ],
+        "grammars": {
+          "proto": {
+            "repository": "https://github.com/coder3101/tree-sitter-proto",
+            "rev": "a6caac94b5aa36b322b5b70040d5b67132f109d0",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "buf": {
+            "language": null,
+            "languages": [
+              "Proto"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          },
+          "protobuf-language-server": {
+            "language": null,
+            "languages": [
+              "Proto"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          },
+          "protols": {
+            "language": null,
+            "languages": [
+              "Proto"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          }
+        },
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "rich-vesper": {
+      "manifest": {
+        "id": "rich-vesper",
+        "name": "Rich Vesper",
+        "version": "0.0.5",
+        "schema_version": 1,
+        "description": "Modified peppermint and orange flavored dark theme.",
+        "repository": "https://github.com/zezic/rich-vesper-zed",
+        "authors": [
+          "Sergey Ukolov <zezic51@yandex.ru>",
+          "bdsqqq <igorbedesqui@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/rich-vesper-dark.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "sql": {
       "manifest": {
         "id": "sql",
@@ -225,6 +563,36 @@
         "capabilities": []
       },
       "dev": false
+    },
+    "vesper": {
+      "manifest": {
+        "id": "vesper",
+        "name": "Vesper",
+        "version": "0.0.2",
+        "schema_version": 1,
+        "description": "Peppermint and orange flavored dark theme.",
+        "repository": "https://github.com/bdsqqq/vesper-zed",
+        "authors": [
+          "bdsqqq <igorbedesqui@gmail.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/vesper-dark.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
     }
   },
   "themes": {
@@ -259,10 +627,107 @@
     "Kanagawa Wave - No Italics": {
       "extension": "kanagawa-themes",
       "path": "themes/Kanagawa-no-italics.json"
+    },
+    "Rich Vesper": {
+      "extension": "rich-vesper",
+      "path": "themes/rich-vesper-dark.json"
+    },
+    "Vesper": {
+      "extension": "vesper",
+      "path": "themes/vesper-dark.json"
     }
   },
   "icon_themes": {},
   "languages": {
+    "Dockerfile": {
+      "extension": "dockerfile",
+      "path": "languages/dockerfile",
+      "matcher": {
+        "path_suffixes": [
+          "Dockerfile",
+          "Containerfile",
+          "dockerfile"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "dockerfile"
+    },
+    "Editorconfig": {
+      "extension": "editorconfig",
+      "path": "languages/editorconfig",
+      "matcher": {
+        "path_suffixes": [
+          "editorconfig"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "editorconfig"
+    },
+    "Git Attributes": {
+      "extension": "git-firefly",
+      "path": "languages/gitattributes",
+      "matcher": {
+        "path_suffixes": [
+          "gitattributes",
+          ".gitattributes"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "gitattributes"
+    },
+    "Git Config": {
+      "extension": "git-firefly",
+      "path": "languages/gitconfig",
+      "matcher": {
+        "path_suffixes": [
+          "config.worktree",
+          ".gitconfig",
+          ".gitmodules",
+          ".lfsconfig"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "git_config"
+    },
+    "Git Ignore": {
+      "extension": "git-firefly",
+      "path": "languages/gitignore",
+      "matcher": {
+        "path_suffixes": [
+          ".containerignore",
+          ".cursorignore",
+          ".dockerignore",
+          ".eslintignore",
+          ".fdignore",
+          ".gitignore",
+          ".git-blame-ignore-revs",
+          ".ignore",
+          ".npmignore",
+          ".prettierignore",
+          ".rgignore",
+          ".vscodeignore"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "gitignore"
+    },
+    "Git Rebase": {
+      "extension": "git-firefly",
+      "path": "languages/gitrebase",
+      "matcher": {
+        "path_suffixes": [
+          "git-rebase-todo"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "git_rebase"
+    },
     "HTML": {
       "extension": "html",
       "path": "languages/html",
@@ -293,6 +758,53 @@
       },
       "hidden": false,
       "grammar": "make"
+    },
+    "Mermaid": {
+      "extension": "mermaid",
+      "path": "languages/mermaid",
+      "matcher": {
+        "path_suffixes": [
+          "mermaid",
+          "mmd"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "mermaid"
+    },
+    "PHP": {
+      "extension": "php",
+      "path": "languages/php",
+      "matcher": {
+        "path_suffixes": [
+          "php"
+        ],
+        "first_line_pattern": "^#!.*php"
+      },
+      "hidden": false,
+      "grammar": "php"
+    },
+    "PHPDoc": {
+      "extension": "php",
+      "path": "languages/phpdoc",
+      "matcher": {
+        "path_suffixes": [],
+        "first_line_pattern": null
+      },
+      "hidden": true,
+      "grammar": "phpdoc"
+    },
+    "Proto": {
+      "extension": "proto",
+      "path": "languages/proto",
+      "matcher": {
+        "path_suffixes": [
+          "proto"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "proto"
     },
     "SQL": {
       "extension": "sql",
