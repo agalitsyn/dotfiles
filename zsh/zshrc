@@ -50,10 +50,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zmodload -i zsh/complist
 zstyle ':completion:*' menu select
 
-# Editor
-export EDITOR='nvim'
-
 # Ctrl + left/right arrow keys issue
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Exports
+export EDITOR='nvim'
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

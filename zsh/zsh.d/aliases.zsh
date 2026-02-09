@@ -138,17 +138,6 @@ alias mrsync='rsync --cvs-exclude --verbose --archive --compress --copy-links --
 alias mcal="date +%Y-%m-%d; cal -A 1 -B 1"
 alias timestamp='date +%s'
 
-# web dev
-function jwt-decode() {
-    local token="$1"
-    python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq
-}
-
-function timestamp-to-datetime() {
-    local ts="$1"
-    python3 -c "from datetime import datetime; ts = int('${ts}'); print(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f'));"
-}
-
 ### Files
 
 # file find
@@ -160,9 +149,6 @@ if command -v open > /dev/null; then
 elif command -v xdg-open > /dev/null; then
   alias fo='xdg-open $(fzf)';
 fi;
-
-# rg settings
-export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
 # file tree
 # shorthand for `tree` with hidden files and color enabled, ignoring
@@ -212,6 +198,17 @@ function extract() {
     else
         echo "$1 - file does not exist"
     fi
+}
+
+# Misc
+function jwt-decode() {
+    local token="$1"
+    python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq
+}
+
+function timestamp-to-datetime() {
+    local ts="$1"
+    python3 -c "from datetime import datetime; ts = int('${ts}'); print(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f'));"
 }
 
 function youtube-dl-playlist() {

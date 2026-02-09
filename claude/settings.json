@@ -19,36 +19,27 @@
       "Bash(ls:*)",
       "Bash(source:*)",
       "Bash(awk:*)",
-
       "Bash(git:*)",
       "Bash(gh:*)",
-
       "Bash(go:*)",
       "Bash(gofmt:*)",
       "Bash(golangci-lint:*)",
-
       "Bash(python:*)",
       "Bash(python3:*)",
       "Bash(uv:*)",
       "Bash(poetry:*)",
-
       "Bash(docker:*)",
-
       "Bash(node:*)",
       "Bash(bun:*)",
       "Bash(npm:*)",
       "Bash(npx:*)",
       "Bash(pnpm:*)",
-
       "WebFetch(domain:*)",
       "WebSearch",
-
       "Bash(curl:*)",
       "Bash(hurl:*)",
-
       "Bash(psql:*)",
       "mcp__postgres__query",
-
       "mcp__plugin_playwright_playwright__browser_click",
       "mcp__plugin_playwright_playwright__browser_console_messages",
       "mcp__plugin_playwright_playwright__browser_drag",
@@ -75,13 +66,10 @@
       "mcp__plugin_playwright_playwright__browser_mouse_move_xy",
       "mcp__plugin_playwright_playwright__browser_mouse_click_xy",
       "mcp__plugin_playwright_playwright__browser_mouse_drag_xy",
-
       "mcp__plugin_context7_context7__resolve-library-id",
       "mcp__plugin_context7_context7__query-docs",
-
       "mcp__shadcn__get_add_command_for_items",
       "mcp__shadcn__get_add_command_for_items",
-
       "mcp__ide__getDiagnostics"
     ],
     "deny": [],
@@ -101,7 +89,17 @@
     "pr-review-toolkit@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "gitlab@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "explanatory-output-style@claude-plugins-official": true,
+    "learning-output-style@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754295236582
