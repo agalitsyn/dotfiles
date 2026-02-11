@@ -360,21 +360,27 @@
   "todohighlight.isCaseSensitive": true,
 
   // Disable AI/Copilot completely
+  "chat.disableAIFeatures": true,
   "github.copilot.enable": {
     "*": false
   },
   "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
+  "chat.detectParticipant.enabled": false,
+  "chat.mcp.discovery.enabled": false,
   "inlineChat.mode": "disabled",
+  "terminal.integrated.initialHint": false,
 
   // UI
   "window.commandCenter": false,
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.preferredDarkColorTheme": "Vesper",
 
   // Claude Code
-  "claudeCode.preferredLocation": "panel",
+  "claudeCode.preferredLocation": "sidebar",
 }
