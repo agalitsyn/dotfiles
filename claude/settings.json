@@ -101,6 +101,7 @@
     "claude-md-management@claude-plugins-official": true,
     "context7@claude-plugins-official": true
   },
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754295236582
   },

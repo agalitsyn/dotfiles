@@ -85,7 +85,7 @@
   "workbench.editor.showTabs": "multiple",
 
   // Editor look and feel
-  "window.zoomLevel": 0.4,
+  "window.zoomLevel": 0.0,
   "window.nativeTabs": false,
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "window.titleBarStyle": "custom",
@@ -110,7 +110,7 @@
   "workbench.tips.enabled": false,
   "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
 
-  "editor.fontSize": 16.5,
+  "editor.fontSize": 17,
   "editor.fontWeight": 400,
   "editor.fontFamily": "'Iosevka Fixed', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
 
@@ -371,7 +371,12 @@
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
   "chat.detectParticipant.enabled": false,
-  "chat.mcp.discovery.enabled": false,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": false,
+    "windsurf": false,
+    "cursor-global": false,
+    "cursor-workspace": false
+  },
   "inlineChat.mode": "disabled",
   "terminal.integrated.initialHint": false,
 
@@ -383,4 +388,5 @@
 
   // Claude Code
   "claudeCode.preferredLocation": "sidebar",
+  "workbench.preferredDarkColorTheme": "Vesper",
 }

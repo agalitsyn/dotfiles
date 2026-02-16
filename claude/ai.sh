@@ -1,7 +1,9 @@
-export OPENAI_API_KEY=''                                                      │    │
-export ANTHROPIC_API_KEY=''                                                   │    │
-export DEEPSEEK_API_KEY=''                                                    │    │
-export GEMINI_API_KEY=''                                                      │    │
-export OPENROUTER_API_KEY=''                                                  │    │
+export OPENAI_API_KEY=''
+export ANTHROPIC_API_KEY=''
+export DEEPSEEK_API_KEY=''
+export GEMINI_API_KEY=''
+export OPENROUTER_API_KEY=''
 export BRAVE_API_KEY=''
+
+alias cc="claude --allow-dangerously-skip-permissions"
 
