@@ -81,7 +81,17 @@
     hyperlinks = true
     hyperlinks-file-link-format = "zed://file/{path}:{line}"
     tab-width = 2
-	syntax-theme = OneHalfDark
+    dark = true
+    syntax-theme = Vesper
+    minus-style = syntax "#2a1517"
+    minus-emph-style = syntax "#3d1a1e"
+    plus-style = syntax "#152a25"
+    plus-emph-style = syntax "#1a3d33"
+    line-numbers-minus-style = "#FF8080"
+    line-numbers-plus-style = "#99FFE4"
+    line-numbers-zero-style = "#8B8B8B"
+    hunk-header-decoration-style = "#FFC799" box ul
+    hunk-header-style = file line-number "#FFC799"
 
 [delta "light-mode"]
     light = true

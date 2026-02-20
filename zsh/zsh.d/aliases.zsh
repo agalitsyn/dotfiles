@@ -162,8 +162,17 @@ function tre() {
 # file size
 alias fstat="stat $1"
 
-# file path
-alias fpath="readlink -f $1"
+# file path (cross-platform absolute path)
+function fp() {
+    if [ -d "$1" ]; then
+        (cd "$1" && pwd)
+    elif [ -f "$1" ]; then
+        echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+    else
+        echo "fp: $1: No such file or directory" >&2
+        return 1
+    fi
+}
 
 # diff 2 files
 function gdiff() {
