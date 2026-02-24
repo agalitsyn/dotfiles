@@ -12,7 +12,7 @@
 [alias]
     f = fetch --all --prune
     s = switch
-    pu = pull
+    p = pull --rebase
     co = checkout
     st = status
     br = !git --no-pager branch
@@ -102,3 +102,5 @@
 [include]
     path = ~/.gitconfig.local
 
+[rebase]
+	autoStash = true
