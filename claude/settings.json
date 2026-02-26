@@ -112,5 +112,6 @@
     "**/.venv/**",
     "**/venv/**",
     "**/node_modules/**"
-  ]
+  ],
+  "promptSuggestionEnabled": false
 }

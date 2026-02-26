@@ -89,7 +89,7 @@
       "manifest": {
         "id": "elixir",
         "name": "Elixir",
-        "version": "0.2.4",
+        "version": "0.3.0",
         "schema_version": 1,
         "description": "Elixir support.",
         "repository": "https://github.com/zed-extensions/elixir",
@@ -103,8 +103,8 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/elixir",
-          "languages/heex"
+          "languages/heex",
+          "languages/elixir"
         ],
         "grammars": {
           "elixir": {
@@ -409,7 +409,7 @@
       "manifest": {
         "id": "php",
         "name": "PHP",
-        "version": "0.4.9",
+        "version": "0.4.10",
         "schema_version": 1,
         "description": "PHP support.",
         "repository": "https://github.com/zed-extensions/php",
@@ -423,8 +423,8 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/phpdoc",
-          "languages/php"
+          "languages/php",
+          "languages/phpdoc"
         ],
         "grammars": {
           "php": {
@@ -610,7 +610,7 @@
       "manifest": {
         "id": "toml",
         "name": "TOML",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "schema_version": 1,
         "description": "TOML support.",
         "repository": "https://github.com/zed-extensions/toml",
