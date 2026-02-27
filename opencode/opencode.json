@@ -3,7 +3,7 @@
   "plugin": [
     "oh-my-opencode@latest"
   ],
-  "default_agent": "default",
+  "default_agent": "clever",
   "agent": {
     "clever": {
       "mode": "primary",
@@ -24,7 +24,11 @@
       "mode": "primary",
       "model": "openrouter/moonshotai/kimi-k2.5",
       "description": "Kimi K2.5 via OpenRouter"
-    }
+    },
+    "sisyphus": { "disable": true },
+    "hephaestus": { "disable": true },
+    "prometheus": { "disable": true },
+    "atlas": { "disable": true }
   },
   "provider": {
     "openrouter": {
