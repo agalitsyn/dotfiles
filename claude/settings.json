@@ -3,6 +3,7 @@
   "permissions": {
     "allow": [
       "Bash(cat:*)",
+      "Bash(wc:*)",
       "Bash(tee:*)",
       "Bash(grep:*)",
       "Bash(sed:*)",
@@ -91,12 +92,11 @@
     "code-review@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
     "explanatory-output-style@claude-plugins-official": true,
     "learning-output-style@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
@@ -112,6 +112,5 @@
     "**/.venv/**",
     "**/venv/**",
     "**/node_modules/**"
-  ],
-  "promptSuggestionEnabled": false
+  ]
 }
