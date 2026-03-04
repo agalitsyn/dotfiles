@@ -9,8 +9,6 @@
       "Bash(sed:*)",
       "Bash(rg:*)",
       "Bash(tree:*)",
-      "Bash(rm:*)",
-      "Bash(mv:*)",
       "Bash(xargs:*)",
       "Bash(jq:*)",
       "Bash(open:*)",
@@ -73,7 +71,11 @@
       "mcp__shadcn__get_add_command_for_items"
     ],
     "deny": [],
-    "ask": [],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(chmod:*)"
+    ],
     "defaultMode": "acceptEdits"
   },
   "model": "opus",
