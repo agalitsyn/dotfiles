@@ -1,1 +1,2 @@
-alias cc="claude --allow-dangerously-skip-permissions"
+alias claude="claude --allow-dangerously-skip-permissions"
+

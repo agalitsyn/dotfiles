@@ -1,0 +1,34 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-opus-4-6",
+  "autoupdate": true,
+  "agent": {
+    "build": {
+      "variant": "high",
+    },
+    "plan": {
+      "variant": "high",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    },
+    "ask": {
+      "mode": "primary",
+      "model": "anthropic/claude-sonnet-4-6",
+      "tools": {
+        "write": false,
+        "edit": false,
+      }
+    },
+    "quick": {
+      "mode": "primary",
+      "model": "anthropic/claude-haiku-4-5",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+  },
+}
