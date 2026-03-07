@@ -5,7 +5,6 @@ alias vim="nvim"
 
 # gnu utils modern alternatives
 alias l='eza --all --long --group-directories-first'
-alias c='bat'
 
 color_flag="--color"
 
