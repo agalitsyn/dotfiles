@@ -49,6 +49,16 @@
     "**/__pycache__": true,
     "**/*.pyc": true
   },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.venv/**": true,
+    "**/vendor/**": true,
+    "**/.nuxt/**": true,
+    "**/.next/**": true,
+    "**/__pycache__/**": true
+  },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
@@ -148,9 +158,9 @@
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "auto",
   "editor.semanticHighlighting.enabled": false,
-  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": false,
   "zenMode.showTabs": "none",
-  "window.newWindowDimensions": "maximized" ,
+  "window.newWindowDimensions": "inherit" ,
 
   // do not overthink
   "editor.autoClosingBrackets": "never",
@@ -163,13 +173,29 @@
   // Breadcrumbs
   "breadcrumbs.enabled": false,
 
+  // Performance
+  "workbench.reduceMotion": "on",
+  "editor.smoothScrolling": false,
+  "editor.cursorSmoothCaretAnimation": "off",
+  "workbench.list.smoothScrolling": false,
+  "terminal.integrated.smoothScrolling": false,
+  "terminal.integrated.gpuAcceleration": "on",
+  "editor.occurrencesHighlight": "off",
+  "editor.renderLineHighlight": "gutter",
+  "editor.guides.indentation": false,
+  "editor.guides.bracketPairs": false,
+  "editor.glyphMargin": false,
+  "editor.hover.delay": 200,
+  "search.followSymlinks": false,
+  "extensions.autoUpdate": false,
+
   // Markdown
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
 
   // Git
   "git.autofetch": true,
   "git.enableSmartCommit": true,
-  "git.confirmSync": false,
+  "git.confirmSync": true,
   "git.mergeEditor": true,
   "git.openRepositoryInParentFolders": "never",
 
@@ -182,7 +208,7 @@
   "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.currentLine.enabled": true,
   "gitlens.statusBar.enabled": false,
-  "gitlens.codeLens.enabled": true,
+  "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.hovers.avatars": false,
@@ -385,7 +411,9 @@
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.preferredDarkColorTheme": "Vesper",
+  "workbench.preferredDarkColorTheme": "Experimental Dark",
+  "workbench.editor.useModal": "some",
+  "extensions.allowOpenInModalEditor": true,
 
   // Claude Code
   "claudeCode.preferredLocation": "sidebar",

@@ -2,6 +2,9 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(chmod:*)",
       "Bash(cat:*)",
       "Bash(wc:*)",
       "Bash(tee:*)",
@@ -71,11 +74,7 @@
       "mcp__shadcn__get_add_command_for_items"
     ],
     "deny": [],
-    "ask": [
-      "Bash(rm:*)",
-      "Bash(mv:*)",
-      "Bash(chmod:*)"
-    ],
+    "ask": [],
     "defaultMode": "acceptEdits"
   },
   "model": "opus",
