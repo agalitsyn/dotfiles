@@ -114,7 +114,6 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showIcons": false,
   "problems.decorations.enabled": false,
-  "workbench.navigationControl.enabled": false,
   "workbench.tips.enabled": false,
   "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
 
@@ -403,7 +402,7 @@
   },
   "inlineChat.mode": "disabled",
   "terminal.integrated.initialHint": false,
-  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.preferredDarkColorTheme": "Experimental Dark",
@@ -417,6 +416,4 @@
   "claudeCode.useCtrlEnterToSend": true,
   "claudeCode.environmentVariables": [],
   "workbench.editor.titleScrollbarSizing": "large",
-  "workbench.layoutControl.enabled": false,
-  "window.commandCenter": false,
 }
