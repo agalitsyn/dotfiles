@@ -5,10 +5,10 @@ alias vim="nvim"
 
 # gnu utils modern alternatives
 alias l='eza --all --long --group-directories-first'
-
-color_flag="--color"
+alias c='bat'
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+color_flag="--color"
 alias ls='ls $color_flag --group-directories-first -p -CAFh';
 alias ll='ls -lah $color_flag --group-directories-first'
 alias lsd='ls -l | grep "^d"' # only directories

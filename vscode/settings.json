@@ -90,7 +90,7 @@
   // Editors per split
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 10,
+  "workbench.editor.limit.value": 12,
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "multiple",
 
@@ -113,10 +113,8 @@
   "workbench.tree.renderIndentGuides": "none",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showIcons": false,
-  "workbench.editor.enablePreviewFromQuickOpen": true,
   "problems.decorations.enabled": false,
   "workbench.navigationControl.enabled": false,
-  "workbench.layoutControl.enabled": false,
   "workbench.tips.enabled": false,
   "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
 
@@ -405,9 +403,6 @@
   },
   "inlineChat.mode": "disabled",
   "terminal.integrated.initialHint": false,
-
-  // UI
-  "window.commandCenter": false,
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
@@ -421,4 +416,7 @@
   "claudeCode.initialPermissionMode": "acceptEdits",
   "claudeCode.useCtrlEnterToSend": true,
   "claudeCode.environmentVariables": [],
+  "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
 }

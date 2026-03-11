@@ -104,3 +104,5 @@
 
 [rebase]
 	autoStash = true
+[credential]
+	helper = osxkeychain

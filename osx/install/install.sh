@@ -65,7 +65,10 @@ brew install \
 brew install httpie
 
 # Cert tools
-brew install easy-rsa
+brew install \
+    easy-rsa \
+    mkcert \
+    nss
 
 # Reverse engineering tools
 brew install \

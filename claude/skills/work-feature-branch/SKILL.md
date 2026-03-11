@@ -13,7 +13,7 @@ description: Create feature branch, commit, push
 
 Based on the above changes:
 
-1. Ask user about task number from task tracker using `AskUserQuestionTool`
+1. The task number is: `$ARGUMENTS`. If `$ARGUMENTS` is empty, ask user about task number from task tracker using `AskUserQuestionTool`
 2. Create a new feature branch if on main or master using format `{task number}-{short description}`
 3. Create a single commit with an appropriate message
 4. Push the branch to origin
