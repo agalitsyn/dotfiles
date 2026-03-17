@@ -95,7 +95,6 @@
   "workbench.editor.showTabs": "multiple",
 
   // Editor look and feel
-  "window.zoomLevel": 0.0,
   "window.nativeTabs": false,
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "window.titleBarStyle": "custom",
@@ -416,4 +415,5 @@
   "claudeCode.useCtrlEnterToSend": true,
   "claudeCode.environmentVariables": [],
   "workbench.editor.titleScrollbarSizing": "large",
+  "scm.inputFontSize": 15,
 }

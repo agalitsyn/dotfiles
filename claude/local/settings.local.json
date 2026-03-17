@@ -1,0 +1,12 @@
+{
+  "env": {
+    "CLAUDE_CODE_OAUTH_TOKEN": ""
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": ["postgres"]
+}
