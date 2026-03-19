@@ -114,5 +114,6 @@
     "**/.venv/**",
     "**/venv/**",
     "**/node_modules/**"
-  ]
+  ],
+  "model": "opus[1m]"
 }
