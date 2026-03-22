@@ -115,5 +115,7 @@
     "**/venv/**",
     "**/node_modules/**"
   ],
-  "model": "opus[1m]"
+  "model": "opus[1m]",
+  "respectGitignore": true,
+  "spinnerTipsEnabled": false
 }
