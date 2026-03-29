@@ -143,6 +143,7 @@ brew install vim \
 
 # Noob's editors
 brew install --cask \
+    coteditor \
     sublime-text \
     sublime-merge \
     visual-studio-code \

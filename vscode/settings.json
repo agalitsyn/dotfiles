@@ -107,14 +107,14 @@
   "workbench.list.openMode": "doubleClick",
   "workbench.tree.expandMode": "doubleClick",
   "workbench.settings.editor": "json",
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Dark Modern",
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showIcons": false,
   "problems.decorations.enabled": false,
   "workbench.tips.enabled": false,
-  "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
+
 
   "editor.fontSize": 17,
   "editor.fontWeight": 400,
@@ -191,7 +191,7 @@
   // Git
   "git.autofetch": true,
   "git.enableSmartCommit": true,
-  "git.confirmSync": true,
+  "git.confirmSync": false,
   "git.mergeEditor": true,
   "git.openRepositoryInParentFolders": "never",
 
@@ -404,7 +404,8 @@
   "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.preferredDarkColorTheme": "Experimental Dark",
+  "workbench.preferredLightColorTheme": "VS Code Light",
+  "workbench.preferredDarkColorTheme": "VS Code Dark",
   "workbench.editor.useModal": "some",
   "extensions.allowOpenInModalEditor": true,
 

@@ -101,7 +101,7 @@
       "manifest": {
         "id": "elixir",
         "name": "Elixir",
-        "version": "0.3.4",
+        "version": "0.3.5",
         "schema_version": 1,
         "description": "Elixir support.",
         "repository": "https://github.com/zed-extensions/elixir",
@@ -116,8 +116,8 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/heex",
-          "languages/elixir"
+          "languages/elixir",
+          "languages/heex"
         ],
         "grammars": {
           "elixir": {
@@ -181,7 +181,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.3",
+        "version": "0.1.4",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -196,10 +196,10 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/gitattributes",
           "languages/gitignore",
-          "languages/gitconfig",
-          "languages/gitrebase"
+          "languages/gitattributes",
+          "languages/gitrebase",
+          "languages/gitconfig"
         ],
         "grammars": {
           "git_config": {
@@ -236,7 +236,7 @@
       "manifest": {
         "id": "html",
         "name": "HTML",
-        "version": "0.3.0",
+        "version": "0.3.1",
         "schema_version": 1,
         "description": "HTML support.",
         "repository": "https://github.com/zed-industries/zed",
