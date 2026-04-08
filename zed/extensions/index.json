@@ -101,7 +101,7 @@
       "manifest": {
         "id": "elixir",
         "name": "Elixir",
-        "version": "0.3.5",
+        "version": "0.4.2",
         "schema_version": 1,
         "description": "Elixir support.",
         "repository": "https://github.com/zed-extensions/elixir",
@@ -117,6 +117,7 @@
         "icon_themes": [],
         "languages": [
           "languages/elixir",
+          "languages/eex",
           "languages/heex"
         ],
         "grammars": {
@@ -127,7 +128,7 @@
           },
           "heex": {
             "repository": "https://github.com/phoenixframework/tree-sitter-heex",
-            "rev": "008626a3fad379d17c81d5ed576edd9bd7a4fbf7",
+            "rev": "5842537f734d7c12685bf27d6005313e3e5a47a0",
             "path": null
           }
         },
@@ -136,36 +137,56 @@
             "language": null,
             "languages": [
               "Elixir",
-              "HEEX"
+              "EEx",
+              "HEEx"
             ],
-            "language_ids": {},
+            "language_ids": {
+              "Elixir": "elixir",
+              "HEEx": "heex",
+              "EEx": "eex"
+            },
             "code_action_kinds": null
           },
           "expert": {
             "language": null,
             "languages": [
               "Elixir",
-              "HEEX"
+              "EEx",
+              "HEEx"
             ],
-            "language_ids": {},
+            "language_ids": {
+              "Elixir": "elixir",
+              "HEEx": "heex",
+              "EEx": "eex"
+            },
             "code_action_kinds": null
           },
           "lexical": {
             "language": null,
             "languages": [
               "Elixir",
-              "HEEX"
+              "EEx",
+              "HEEx"
             ],
-            "language_ids": {},
+            "language_ids": {
+              "Elixir": "elixir",
+              "HEEx": "heex",
+              "EEx": "eex"
+            },
             "code_action_kinds": null
           },
           "next-ls": {
             "language": null,
             "languages": [
               "Elixir",
-              "HEEX"
+              "EEx",
+              "HEEx"
             ],
-            "language_ids": {},
+            "language_ids": {
+              "Elixir": "elixir",
+              "HEEx": "heex",
+              "EEx": "eex"
+            },
             "code_action_kinds": null
           }
         },
@@ -779,6 +800,18 @@
       "hidden": false,
       "grammar": "dockerfile"
     },
+    "EEx": {
+      "extension": "elixir",
+      "path": "languages/eex",
+      "matcher": {
+        "path_suffixes": [
+          "eex"
+        ],
+        "first_line_pattern": null
+      },
+      "hidden": false,
+      "grammar": "heex"
+    },
     "Editorconfig": {
       "extension": "editorconfig",
       "path": "languages/editorconfig",
@@ -797,7 +830,8 @@
       "matcher": {
         "path_suffixes": [
           "ex",
-          "exs"
+          "exs",
+          "mix.lock"
         ],
         "first_line_pattern": null
       },
@@ -867,7 +901,7 @@
       "hidden": false,
       "grammar": "git_rebase"
     },
-    "HEEX": {
+    "HEEx": {
       "extension": "elixir",
       "path": "languages/heex",
       "matcher": {

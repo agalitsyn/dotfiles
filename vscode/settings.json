@@ -404,8 +404,8 @@
   "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.preferredLightColorTheme": "VS Code Light",
-  "workbench.preferredDarkColorTheme": "VS Code Dark",
+  "workbench.preferredLightColorTheme": "Light 2026",
+  "workbench.preferredDarkColorTheme": "Dark 2026",
   "workbench.editor.useModal": "some",
   "extensions.allowOpenInModalEditor": true,
 
@@ -417,4 +417,5 @@
   "claudeCode.environmentVariables": [],
   "workbench.editor.titleScrollbarSizing": "large",
   "scm.inputFontSize": 15,
+  "git.replaceTagsWhenPull": true,
 }

@@ -119,5 +119,6 @@
   ],
   "model": "opus[1m]",
   "respectGitignore": true,
-  "spinnerTipsEnabled": false
+  "spinnerTipsEnabled": false,
+  "includeCoAuthoredBy": false
 }

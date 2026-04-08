@@ -209,6 +209,10 @@ function extract() {
 }
 
 # Misc
+function get-uuid() {
+    python3 -c "import uuid; print(uuid.uuid4())"
+}
+
 function jwt-decode() {
     local token="$1"
     python3 -c "import json, jwt; print(json.dumps(jwt.decode('${token}', verify=False)));" | jq

@@ -33,10 +33,10 @@ assoc() {
     done
 }
 
-TEXT_EDITOR=$(get_bundle_id "CotEditor")
+TEXT_EDITOR=$(get_bundle_id "Sublime Text")
 MEDIA_PLAYER=$(get_bundle_id "VLC")
 
-assoc "$TEXT_EDITOR" "editor" txt md js jse json reg bat ps1 cfg sh bash yaml py ts tsx vue go java xml xsd log makefile
+assoc "$TEXT_EDITOR" "editor" txt md js jse json jsonc reg bat ps1 cfg sh bash yaml py ts tsx vue go java xml xsd log makefile sql csv
 assoc "$MEDIA_PLAYER" "viewer" mkv mp4 avi mov webm
 assoc "$MEDIA_PLAYER" "viewer" flac fla ape wav mp3 wma m4a ogg ac3
 
