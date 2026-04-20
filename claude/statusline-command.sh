@@ -13,12 +13,19 @@ RED='\033[38;2;245;161;145m'      # #f5a191 - salmon (model name)
 GREEN='\033[38;2;144;185;159m'    # #90b99f - sage (progress bar & git branch)
 YELLOW='\033[38;2;255;199;153m'   # #ffc799 - bright peach (percentage)
 TAN='\033[38;2;230;185;157m'      # #e6b99d - warm tan (project name)
+LAVENDER='\033[38;2;172;161;207m' # #aca1cf - lavender (login name)
 DIMGRAY='\033[38;2;126;126;126m'  # #7e7e7e - dim gray (separators)
 WHITE='\033[38;2;255;255;255m'    # #ffffff - white (token counts)
 RESET='\033[0m'
 
 # Get project name (basename of project directory)
 project_name=$(basename "$project_dir")
+
+# Get Claude account login (OAuth email) from ~/.claude.json
+account_login=""
+if [[ -r "$HOME/.claude.json" ]]; then
+  account_login=$(jq -r '.oauthAccount.emailAddress // empty' "$HOME/.claude.json" 2>/dev/null)
+fi
 
 # Get git branch if in a git repository
 git_branch=""
@@ -90,5 +97,10 @@ fi
 
 # Add project name
 output+=$(printf " ${DIMGRAY}|${RESET} ${TAN}%s${RESET}" "$project_name")
+
+# Add Claude account login
+if [[ -n "$account_login" ]]; then
+  output+=$(printf " ${DIMGRAY}|${RESET} ${LAVENDER}%s${RESET}" "$account_login")
+fi
 
 printf "%s" "$output"

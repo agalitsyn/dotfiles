@@ -97,107 +97,6 @@
       },
       "dev": false
     },
-    "elixir": {
-      "manifest": {
-        "id": "elixir",
-        "name": "Elixir",
-        "version": "0.4.2",
-        "schema_version": 1,
-        "description": "Elixir support.",
-        "repository": "https://github.com/zed-extensions/elixir",
-        "authors": [
-          "Marshall Bowers <elliott.codes@gmail.com>",
-          "Alonso Rocha Tapia <altcode@vivaldi.net>"
-        ],
-        "lib": {
-          "kind": "Rust",
-          "version": "0.7.0"
-        },
-        "themes": [],
-        "icon_themes": [],
-        "languages": [
-          "languages/elixir",
-          "languages/eex",
-          "languages/heex"
-        ],
-        "grammars": {
-          "elixir": {
-            "repository": "https://github.com/elixir-lang/tree-sitter-elixir",
-            "rev": "450a8194f5a66561135962cfc8d7545a27b61c4c",
-            "path": null
-          },
-          "heex": {
-            "repository": "https://github.com/phoenixframework/tree-sitter-heex",
-            "rev": "5842537f734d7c12685bf27d6005313e3e5a47a0",
-            "path": null
-          }
-        },
-        "language_servers": {
-          "elixir-ls": {
-            "language": null,
-            "languages": [
-              "Elixir",
-              "EEx",
-              "HEEx"
-            ],
-            "language_ids": {
-              "Elixir": "elixir",
-              "HEEx": "heex",
-              "EEx": "eex"
-            },
-            "code_action_kinds": null
-          },
-          "expert": {
-            "language": null,
-            "languages": [
-              "Elixir",
-              "EEx",
-              "HEEx"
-            ],
-            "language_ids": {
-              "Elixir": "elixir",
-              "HEEx": "heex",
-              "EEx": "eex"
-            },
-            "code_action_kinds": null
-          },
-          "lexical": {
-            "language": null,
-            "languages": [
-              "Elixir",
-              "EEx",
-              "HEEx"
-            ],
-            "language_ids": {
-              "Elixir": "elixir",
-              "HEEx": "heex",
-              "EEx": "eex"
-            },
-            "code_action_kinds": null
-          },
-          "next-ls": {
-            "language": null,
-            "languages": [
-              "Elixir",
-              "EEx",
-              "HEEx"
-            ],
-            "language_ids": {
-              "Elixir": "elixir",
-              "HEEx": "heex",
-              "EEx": "eex"
-            },
-            "code_action_kinds": null
-          }
-        },
-        "context_servers": {},
-        "agent_servers": {},
-        "slash_commands": {},
-        "snippets": null,
-        "capabilities": []
-      },
-      "dev": false
-    },
     "git-firefly": {
       "manifest": {
         "id": "git-firefly",
@@ -795,22 +694,11 @@
           "Containerfile",
           "dockerfile"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "dockerfile"
-    },
-    "EEx": {
-      "extension": "elixir",
-      "path": "languages/eex",
-      "matcher": {
-        "path_suffixes": [
-          "eex"
-        ],
-        "first_line_pattern": null
-      },
-      "hidden": false,
-      "grammar": "heex"
     },
     "Editorconfig": {
       "extension": "editorconfig",
@@ -819,24 +707,11 @@
         "path_suffixes": [
           "editorconfig"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "editorconfig"
-    },
-    "Elixir": {
-      "extension": "elixir",
-      "path": "languages/elixir",
-      "matcher": {
-        "path_suffixes": [
-          "ex",
-          "exs",
-          "mix.lock"
-        ],
-        "first_line_pattern": null
-      },
-      "hidden": false,
-      "grammar": "elixir"
     },
     "Git Attributes": {
       "extension": "git-firefly",
@@ -846,7 +721,8 @@
           "gitattributes",
           ".gitattributes"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "gitattributes"
@@ -861,7 +737,8 @@
           ".gitmodules",
           ".lfsconfig"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "git_config"
@@ -884,7 +761,8 @@
           ".rgignore",
           ".vscodeignore"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "gitignore"
@@ -896,25 +774,11 @@
         "path_suffixes": [
           "git-rebase-todo"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "git_rebase"
-    },
-    "HEEx": {
-      "extension": "elixir",
-      "path": "languages/heex",
-      "matcher": {
-        "path_suffixes": [
-          "heex",
-          "html.eex",
-          "leex",
-          "neex"
-        ],
-        "first_line_pattern": null
-      },
-      "hidden": false,
-      "grammar": "heex"
     },
     "HTML": {
       "extension": "html",
@@ -925,7 +789,8 @@
           "htm",
           "shtml"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "html"
@@ -942,7 +807,8 @@
           "mk",
           "mak"
         ],
-        "first_line_pattern": "^#!.*\\b(?:make -f)\\b"
+        "first_line_pattern": "^#!.*\\b(?:make -f)\\b",
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "make"
@@ -955,7 +821,8 @@
           "mermaid",
           "mmd"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "mermaid"
@@ -968,7 +835,8 @@
           "php",
           "phtml"
         ],
-        "first_line_pattern": "^#!.*php"
+        "first_line_pattern": "^#!.*php",
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "php"
@@ -978,7 +846,8 @@
       "path": "languages/phpdoc",
       "matcher": {
         "path_suffixes": [],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": true,
       "grammar": "phpdoc"
@@ -990,7 +859,8 @@
         "path_suffixes": [
           "proto"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "proto"
@@ -1002,7 +872,8 @@
         "path_suffixes": [
           "sql"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "sql"
@@ -1017,7 +888,8 @@
           "Pipfile",
           "uv.lock"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "toml"
