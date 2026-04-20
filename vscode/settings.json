@@ -95,6 +95,7 @@
   "workbench.editor.showTabs": "multiple",
 
   // Editor look and feel
+  "window.zoomLevel": 0.2,
   "window.nativeTabs": false,
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "window.titleBarStyle": "custom",
@@ -116,7 +117,7 @@
   "workbench.tips.enabled": false,
 
 
-  "editor.fontSize": 17,
+  "editor.fontSize": 16.5,
   "editor.fontWeight": 400,
   "editor.fontFamily": "'Iosevka Fixed', 'Martian Mono Nr Lt', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'IBM Plex Mono', 'Input Mono', 'Source Code Pro'",
 
@@ -158,6 +159,7 @@
   "editor.stickyScroll.enabled": false,
   "zenMode.showTabs": "none",
   "window.newWindowDimensions": "inherit" ,
+  "workbench.editor.titleScrollbarSizing": "large",
 
   // do not overthink
   "editor.autoClosingBrackets": "never",
@@ -185,32 +187,27 @@
   "editor.hover.delay": 200,
   "search.followSymlinks": false,
   "extensions.autoUpdate": false,
+  "editor.minimap.enabled": false,
 
   // Markdown
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
 
   // Git
+  "scm.inputFontSize": 15,
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.mergeEditor": true,
   "git.openRepositoryInParentFolders": "never",
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.template": "${authorName} · ${authorDateAgo} · ${subject}",
+  "git.blame.statusBarItem.enabled": true,
+  "git.replaceTagsWhenPull": true,
 
   // Diff
   "diffEditor.experimental.showMoves": true,
   "diffEditor.renderSideBySide": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
-
-  // Gitlens
-  "gitlens.showWhatsNewAfterUpgrades": false,
-  "gitlens.currentLine.enabled": true,
-  "gitlens.statusBar.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.hovers.avatars": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.plusFeatures.enabled": false,
 
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
@@ -252,6 +249,7 @@
   "go.testEnvFile": "${workspaceFolder}/.env",
   "go.buildTags": "integration",
   "go.testTags": "integration",
+  "go.testFlags": ["-v", "-race"],
 
   "emeraldwalk.runonsave": {
     "commands": [
@@ -415,11 +413,7 @@
   // Claude Code
   "claudeCode.preferredLocation": "sidebar",
   "claudeCode.allowDangerouslySkipPermissions": true,
-  "claudeCode.initialPermissionMode": "acceptEdits",
+  "claudeCode.initialPermissionMode": "default",
   "claudeCode.useCtrlEnterToSend": true,
   "claudeCode.environmentVariables": [],
-  "workbench.editor.titleScrollbarSizing": "large",
-  "scm.inputFontSize": 15,
-  "git.replaceTagsWhenPull": true,
-  "editor.minimap.enabled": false,
 }
