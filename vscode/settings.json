@@ -2,7 +2,7 @@
   // Debugger
   "debug.allowBreakpointsEverywhere": true,
   "debug.javascript.codelens.npmScripts": "never",
-  "debug.console.closeOnEnd": true,
+  "debug.console.closeOnEnd": false,
 
   // Updates and security
   "update.mode": "start",
@@ -137,8 +137,9 @@
   "editor.codeActionsOnSave": {}, // setup per language
   "editor.renderWhitespace": "selection",
   "editor.find.cursorMoveOnType": true,
-  "editor.rulers": [140],
-  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    140
+  ],
   "editor.linkedEditing": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
 
@@ -180,7 +181,7 @@
   "editor.renderLineHighlight": "gutter",
   "editor.guides.indentation": false,
   "editor.guides.bracketPairs": false,
-  "editor.glyphMargin": false,
+  "editor.glyphMargin": true,
   "editor.hover.delay": 200,
   "search.followSymlinks": false,
   "extensions.autoUpdate": false,
@@ -249,6 +250,8 @@
   "go.lintFlags": [],
   "go.coverOnSave": false,
   "go.testEnvFile": "${workspaceFolder}/.env",
+  "go.buildTags": "integration",
+  "go.testTags": "integration",
 
   "emeraldwalk.runonsave": {
     "commands": [
@@ -406,8 +409,8 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.preferredLightColorTheme": "Light 2026",
   "workbench.preferredDarkColorTheme": "Dark 2026",
-  "workbench.editor.useModal": "some",
-  "extensions.allowOpenInModalEditor": true,
+  "workbench.editor.useModal": "off",
+  "extensions.allowOpenInModalEditor": false,
 
   // Claude Code
   "claudeCode.preferredLocation": "sidebar",
@@ -418,4 +421,5 @@
   "workbench.editor.titleScrollbarSizing": "large",
   "scm.inputFontSize": 15,
   "git.replaceTagsWhenPull": true,
+  "editor.minimap.enabled": false,
 }
