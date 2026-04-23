@@ -43,7 +43,8 @@ setopt AUTO_PUSHD
 setopt no_nomatch
 
 # case-insensitive matching
-autoload -Uz compinit && compinit
+FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+autoload -Uz compinit && compinit -u
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # highlight on tab
@@ -58,5 +59,3 @@ bindkey "^[[1;5D" backward-word
 export EDITOR='nvim'
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

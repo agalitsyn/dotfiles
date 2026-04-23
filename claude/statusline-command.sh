@@ -90,13 +90,13 @@ if [[ -n "$used_pct" ]] && [[ "$used_pct" != "null" ]]; then
   output+=$(printf " ${WHITE}%s/%s${RESET}" "$tokens_used" "$tokens_max")
 fi
 
+# Add project name
+output+=$(printf " ${DIMGRAY}|${RESET} ${TAN}%s${RESET}" "$project_name")
+
 # Add git branch if available
 if [[ -n "$git_branch" ]]; then
   output+=$(printf " ${DIMGRAY}|${RESET} ${GREEN}%s${RESET}" "$git_branch")
 fi
-
-# Add project name
-output+=$(printf " ${DIMGRAY}|${RESET} ${TAN}%s${RESET}" "$project_name")
 
 # Add Claude account login
 if [[ -n "$account_login" ]]; then
