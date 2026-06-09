@@ -207,7 +207,6 @@
   // Diff
   "diffEditor.experimental.showMoves": true,
   "diffEditor.renderSideBySide": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
 
   // Go
   // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
@@ -403,7 +402,6 @@
   "inlineChat.mode": "disabled",
   "terminal.integrated.initialHint": false,
   "workbench.editor.editorActionsLocation": "titleBar",
-  "workbench.activityBar.location": "top",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.preferredLightColorTheme": "Light 2026",
   "workbench.preferredDarkColorTheme": "Dark 2026",

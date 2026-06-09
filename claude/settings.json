@@ -102,13 +102,20 @@
     "claude-md-management@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "revdiff@revdiff": true
+    "revdiff@revdiff": true,
+    "grothex@grothex": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {
       "source": {
         "source": "github",
         "repo": "umputun/revdiff"
+      }
+    },
+    "grothex": {
+      "source": {
+        "source": "git",
+        "url": "https://gitlab.gx-testdmnweb.com/grothex/claude.git"
       }
     }
   },
