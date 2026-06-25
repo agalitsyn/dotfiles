@@ -23,7 +23,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -34,7 +33,7 @@
       "manifest": {
         "id": "dockerfile",
         "name": "Dockerfile",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "schema_version": 1,
         "description": "Dockerfile support.",
         "repository": "https://github.com/zed-extensions/dockerfile",
@@ -79,7 +78,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": [],
@@ -120,7 +118,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -131,7 +128,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.6",
+        "version": "0.1.8",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -146,10 +143,10 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
+          "languages/gitrebase",
           "languages/gitignore",
-          "languages/gitconfig",
           "languages/gitattributes",
-          "languages/gitrebase"
+          "languages/gitconfig"
         ],
         "grammars": {
           "git_config": {
@@ -175,7 +172,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -221,7 +217,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -263,7 +258,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -299,7 +293,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -341,7 +334,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -377,7 +369,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -438,7 +429,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -477,7 +467,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -514,7 +503,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -544,7 +532,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -601,7 +588,9 @@
           ".gitattributes"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitattributes"
+        ]
       },
       "hidden": false,
       "grammar": "gitattributes"
@@ -617,7 +606,9 @@
           ".lfsconfig"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitconfig"
+        ]
       },
       "hidden": false,
       "grammar": "git_config"
@@ -633,6 +624,7 @@
           ".eslintignore",
           ".fdignore",
           ".gitignore",
+          ".gitignore_global",
           ".git-blame-ignore-revs",
           ".ignore",
           ".npmignore",
@@ -641,7 +633,9 @@
           ".vscodeignore"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitignore"
+        ]
       },
       "hidden": false,
       "grammar": "gitignore"
@@ -654,7 +648,9 @@
           "git-rebase-todo"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitrebase"
+        ]
       },
       "hidden": false,
       "grammar": "git_rebase"

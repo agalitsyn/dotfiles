@@ -186,7 +186,7 @@
   "editor.glyphMargin": true,
   "editor.hover.delay": 200,
   "search.followSymlinks": false,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "editor.minimap.enabled": false,
 
   // Markdown
