@@ -1,4 +1,4 @@
-theme = light:Bluloco Light,dark:vesper
+theme = light:Apple System Colors Light,dark:vesper
 
 font-family = "IosevkaTerm NFM"
 font-size = 17
@@ -14,6 +14,12 @@ copy-on-select = true
 
 scrollback-limit = 4294967295
 keybind = shift+enter=text:\n
+
+# Split below current pane, inheriting its CWD (split-inherit-working-directory).
+# Not global; per-tab CWD is preserved since each tab is its own surface.
+# Splits open 50/50; chain a resize to shrink the new bottom pane (~200px).
+keybind = cmd+grave_accent=new_split:down
+keybind = chain=resize_split:down,500
 
 macos-option-as-alt = true
 

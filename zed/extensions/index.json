@@ -473,6 +473,57 @@
       },
       "dev": false
     },
+    "terraform": {
+      "manifest": {
+        "id": "terraform",
+        "name": "Terraform",
+        "version": "0.1.8",
+        "schema_version": 1,
+        "description": "Terraform support.",
+        "repository": "https://github.com/zed-extensions/terraform",
+        "authors": [
+          "Caius Durling <dev@caius.name>",
+          "Daniel Banck <dbanck@users.noreply.github.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.1.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/terraform-vars",
+          "languages/terraform",
+          "languages/hcl"
+        ],
+        "grammars": {
+          "hcl": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-hcl",
+            "rev": "fad991865fee927dd1de5e172fb3f08ac674d914",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "terraform-ls": {
+            "language": null,
+            "languages": [
+              "Terraform",
+              "Terraform Vars"
+            ],
+            "language_ids": {
+              "Terraform Vars": "terraform-vars",
+              "Terraform": "terraform"
+            },
+            "code_action_kinds": []
+          }
+        },
+        "context_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "toml": {
       "manifest": {
         "id": "toml",
@@ -530,6 +581,41 @@
         "icon_themes": [],
         "languages": [],
         "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "xml": {
+      "manifest": {
+        "id": "xml",
+        "name": "XML",
+        "version": "0.1.0",
+        "schema_version": 1,
+        "description": "XML syntax support.",
+        "repository": "https://github.com/sweetppro/zed-xml",
+        "authors": [
+          "sweetppro"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/xml"
+        ],
+        "grammars": {
+          "xml": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-xml",
+            "rev": "863dbc381f44f6c136a399e684383b977bb2beaa",
+            "path": "xml"
+          }
+        },
         "language_servers": {},
         "context_servers": {},
         "slash_commands": {},
@@ -655,6 +741,19 @@
       "hidden": false,
       "grammar": "git_rebase"
     },
+    "HCL": {
+      "extension": "terraform",
+      "path": "languages/hcl",
+      "matcher": {
+        "path_suffixes": [
+          "hcl"
+        ],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "hcl"
+    },
     "HTML": {
       "extension": "html",
       "path": "languages/html",
@@ -769,6 +868,46 @@
       },
       "hidden": false,
       "grammar": "toml"
+    },
+    "Terraform": {
+      "extension": "terraform",
+      "path": "languages/terraform",
+      "matcher": {
+        "path_suffixes": [
+          "tf",
+          "tofu"
+        ],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "hcl"
+    },
+    "Terraform Vars": {
+      "extension": "terraform",
+      "path": "languages/terraform-vars",
+      "matcher": {
+        "path_suffixes": [
+          "tfvars"
+        ],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "hcl"
+    },
+    "XML": {
+      "extension": "xml",
+      "path": "languages/xml",
+      "matcher": {
+        "path_suffixes": [
+          "xml"
+        ],
+        "first_line_pattern": "^<.*xml",
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "xml"
     },
     "http": {
       "extension": "http",

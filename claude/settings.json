@@ -81,6 +81,7 @@
     "ask": [],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
@@ -103,25 +104,30 @@
     "context7@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "revdiff@revdiff": true,
-    "grothex@grothex": true
+    "grothex@grothex": true,
+    "revdiff-planning@revdiff": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {
       "source": {
         "source": "github",
         "repo": "umputun/revdiff"
-      }
+      },
+      "autoUpdate": true
     },
     "grothex": {
       "source": {
         "source": "git",
         "url": "https://gitlab.gx-testdmnweb.com/grothex/claude.git"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "spinnerTipsEnabled": false,
   "effortLevel": "high",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754295236582

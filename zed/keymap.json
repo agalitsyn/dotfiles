@@ -48,6 +48,12 @@
     }
   },
   {
+    "context": "Editor",
+    "bindings": {
+      "cmd-k cmd-g": "editor::CopyPermalinkToLine"
+    }
+  },
+  {
     "context": "Workspace",
     "bindings": {
       "cmd-shift-g": "git_panel::ToggleFocus"

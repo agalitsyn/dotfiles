@@ -8,7 +8,7 @@
     "reveal": "always",
     "reveal_target": "center",
     "hide": "on_success",
-    "shell": "system"
+    "shell": "system",
   },
   {
     "label": "Git diff current file with default branch",
@@ -19,7 +19,7 @@
     "reveal": "always",
     "reveal_target": "center",
     "hide": "on_success",
-    "shell": "system"
+    "shell": "system",
   },
   {
     "label": "Git history current file",
@@ -30,7 +30,7 @@
     "reveal": "always",
     "reveal_target": "center",
     "hide": "on_success",
-    "shell": "system"
+    "shell": "system",
   },
   {
     "label": "lazygit",
@@ -41,7 +41,7 @@
     "reveal": "always",
     "reveal_target": "center",
     "hide": "on_success",
-    "shell": "system"
+    "shell": "system",
   },
   {
     "label": "superfile",
@@ -52,6 +52,6 @@
     "reveal": "always",
     "reveal_target": "center",
     "hide": "on_success",
-    "shell": "system"
-  }
+    "shell": "system",
+  },
 ]

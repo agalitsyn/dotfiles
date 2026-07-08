@@ -14,7 +14,7 @@
   // Term
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.external.linuxExec": "x-terminal-emulator",
-  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultLocation": "view",
   "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontSize": 16,
