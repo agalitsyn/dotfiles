@@ -24,7 +24,11 @@
     },
     "enabled_in_text_threads": false,
   },
-  "icon_theme": "Bearded Icon Theme",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Bearded Icon Theme",
+    "dark": "Bearded Icon Theme"
+  },
   "vim_mode": false,
   "relative_line_numbers": "disabled",
   "cursor_blink": false,
@@ -37,7 +41,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Light Soft",
+    "light": "One Light",
     "dark": "0x96f Theme",
   },
   "auto_reveal_entries": true,

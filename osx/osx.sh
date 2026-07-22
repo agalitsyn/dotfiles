@@ -58,16 +58,24 @@ function ss {
     sudo lsof -nP -iTCP -sTCP:LISTEN
 }
 
+# delta: diff backgrounds follow the terminal live via `detect-dark-light`
+# in gitconfig; DELTA_FEATURES only selects the matching syntax-theme
+# (light-mode/dark-mode sections). Re-detected each prompt so it tracks
+# system-appearance changes without needing a new shell.
 function get_os_theme {
     if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
         export OS_THEME='dark'
-        export DELTA_FEATURES="+dark-mode"
+        export DELTA_FEATURES='+dark-mode'
     else
         export OS_THEME='light'
-        export DELTA_FEATURES="+light-mode"
+        export DELTA_FEATURES='+light-mode'
     fi
 }
 get_os_theme
+if [[ -n "$ZSH_VERSION" ]]; then
+    autoload -Uz add-zsh-hook
+    add-zsh-hook precmd get_os_theme
+fi
 
 # If iTerm is detected these themes are used for regular windows
 # and ssh respectively
