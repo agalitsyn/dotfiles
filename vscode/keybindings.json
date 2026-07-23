@@ -24,10 +24,10 @@
     "key": "shift+cmd+f",
     "command": "workbench.action.findInFiles"
   },
-  // {
-  //   "key": "shift+cmd+f",
-  //   "command": "workbench.action.quickTextSearch"
-  // },
+  {
+    "key": "shift+cmd+alt+f",
+    "command": "workbench.action.quickTextSearch"
+  },
   {
     "key": "m",
     "command": "renameFile",
@@ -212,7 +212,20 @@
   },
   {
     "key": "shift+cmd+c",
-    "command": "copyRelativeFilePath",
+    "command": "copy-relative-path-and-line-numbers.both",
+  },
+  // Free ctrl+l (moved copy-relative-path to shift+cmd+c above) so open-in-github
+  // can use ctrl+l as a chord prefix (ctrl+l c / g / p)
+  {
+    "key": "ctrl+l",
+    "command": "-copy-relative-path-and-line-numbers.both",
+    "when": "editorTextFocus"
+  },
+  // Copy self-hosted GitLab permalink for current file + line on current branch
+  {
+    "key": "shift+cmd+alt+c",
+    "command": "extension.copyGitHubLinkToClipboard",
+    "when": "editorTextFocus"
   },
   {
     "key": "shift+cmd+g",

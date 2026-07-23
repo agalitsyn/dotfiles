@@ -10,6 +10,7 @@ ecmel.vscode-html-css
 editorconfig.editorconfig
 emeraldwalk.runonsave
 esbenp.prettier-vscode
+ezforo.copy-relative-path-and-line-numbers
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 golang.go
@@ -26,3 +27,4 @@ oderwat.indent-rainbow
 raunofreiberg.vesper
 sdras.night-owl
 wayou.vscode-todo-highlight
+ziyasal.vscode-open-in-github

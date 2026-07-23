@@ -414,4 +414,5 @@
   "claudeCode.initialPermissionMode": "default",
   "claudeCode.useCtrlEnterToSend": true,
   "claudeCode.environmentVariables": [],
+  "workbench.activityBar.location": "top",
 }
