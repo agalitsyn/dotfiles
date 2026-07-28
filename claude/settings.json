@@ -82,50 +82,93 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' blocked"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' active --blink"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' completed --auto-reset"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' active --blink"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "explanatory-output-style@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "grothex@grothex": true,
+    "learning-output-style@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "explanatory-output-style@claude-plugins-official": true,
-    "learning-output-style@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
+    "revdiff-planning@revdiff": true,
     "revdiff@revdiff": true,
-    "grothex@grothex": true,
-    "revdiff-planning@revdiff": true
+    "security-guidance@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
-    "revdiff": {
-      "source": {
-        "source": "github",
-        "repo": "umputun/revdiff"
-      },
-      "autoUpdate": true
-    },
     "grothex": {
       "source": {
         "source": "git",
         "url": "https://gitlab.gx-testdmnweb.com/grothex/claude.git"
       },
       "autoUpdate": true
+    },
+    "revdiff": {
+      "source": {
+        "source": "github",
+        "repo": "umputun/revdiff"
+      },
+      "autoUpdate": true
     }
   },
   "spinnerTipsEnabled": false,
   "effortLevel": "high",
-  "tui": "fullscreen",
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "theme": "auto",
   "skipAutoPermissionPrompt": true,
