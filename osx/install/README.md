@@ -22,6 +22,12 @@
     - Mission control ctrl+opt+left right = move to space;
     - Services - disable all
 
+When Keyboard Setup Assistant asks which key sits next to left Shift, answering
+wrong flags an external ANSI board as ISO, and macOS then swaps ` and § — so
+ctrl+` arrives as ctrl+§. Fix with `./setup-keyboard-type.sh fix`, then reboot
+(see the script header for the mechanism). `./setup-keyboard-type.sh devices`
+lists connected keyboards and the identifier keys the relevant plists use.
+
 ## Upgrade Mac OS
 
 Probably to latest

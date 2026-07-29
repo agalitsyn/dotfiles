@@ -153,16 +153,16 @@ brew install --cask \
 brew install --cask jetbrains-toolbox
 
 # Local LLM manager
-brew install ollama
+#brew install ollama
 
 # Chat apps
 brew install --cask claude
 
 # Terminals
-brew install --cask wezterm ghostty
+brew install --cask ghostty
 
 # Firewall
-brew install --cask lulu
+#brew install --cask lulu
 
 # SS UI
 brew install --cask sloth
@@ -186,7 +186,7 @@ brew tap daipeihust/tap && brew install im-select
 brew install duti
 
 # Alternative for Total Commander
-brew install --cask marta
+#brew install --cask marta
 
 # Finder quicklook plugins
 brew install --cask \
@@ -201,7 +201,7 @@ brew install --cask the-unarchiver
 brew install --cask appcleaner
 
 # Keyboard
-brew install --cask karabiner-elements
+#brew install --cask karabiner-elements
 
 # Virtualization
 #brew install --cask virtualbox \
@@ -213,8 +213,8 @@ brew install --cask karabiner-elements
 
 # Containers
 brew install --cask docker
-brew install lazydocker
-brew install ctop
+#brew install lazydocker
+#brew install ctop
 
 # Configuration
 brew install ansible
@@ -241,7 +241,7 @@ brew install --cask notunes
 
 # Cloud storage
 # brew install --cask google-backup-and-sync
-brew install --cask yandex-disk
+#brew install --cask yandex-disk
 
 # Torrents
 brew install --cask transmission
@@ -299,7 +299,7 @@ brew install plantuml
 
 # E-books
 brew install --cask calibre
-brew install --cask djview
+#brew install --cask djview
 # brew install --cask kindle
 
 # Record screen
