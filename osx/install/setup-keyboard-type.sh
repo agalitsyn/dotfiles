@@ -48,54 +48,47 @@ current_type() {
 # remaps as HIDKeyboardModifierMappingSrc/Dst pairs in
 #   com.apple.keyboard.modifiermapping.<VendorID>-<ProductID>-<CountryCode>
 # (note: vendor-product, the reverse of the keyboardtype plist's key order)
-# and applies them by writing the device's *UserKeyMapping* HID property —
-# the very same property hidutil sets. A bare `hidutil --set UserKeyMapping`
-# therefore silently wipes your Caps Lock -> Escape and Option/Command swap.
+# (note: vendor-product, the reverse of the keyboardtype plist's key order).
 #
-# So always build the full set: macOS's stored modifier remaps *plus* whatever
-# we are adding. Emits the JSON hidutil wants on stdout.
-build_mapping() {
-    local vendor=$1 product=$2 country=$3 with_grave=$4
-    defaults -currentHost export -g - | python3 -c '
-import sys, plistlib, json
-vendor, product, country, with_grave, grave, non_us = sys.argv[1:7]
-d = plistlib.loads(sys.stdin.buffer.read())
-key = f"com.apple.keyboard.modifiermapping.{vendor}-{product}-{country}"
-entries = [dict(e) for e in d.get(key, [])]
-if with_grave == "1":
-    entries += [
-        {"HIDKeyboardModifierMappingSrc": int(grave, 16), "HIDKeyboardModifierMappingDst": int(non_us, 16)},
-        {"HIDKeyboardModifierMappingSrc": int(non_us, 16), "HIDKeyboardModifierMappingDst": int(grave, 16)},
-    ]
-print(json.dumps({"UserKeyMapping": entries}))
-' "$vendor" "$product" "$country" "$with_grave" "$GRAVE_USAGE" "$NON_US_USAGE"
-}
+# Those defaults are only macOS's *record* of the setting — it does NOT apply
+# them via the device's UserKeyMapping HID property. Proof: the internal
+# keyboard has a stored caps_lock -> escape entry that demonstrably works,
+# while `hidutil --matching '{"VendorID":1452,"ProductID":641}' --get
+# UserKeyMapping` reports (null). macOS applies them further up the stack.
+#
+# Consequence: UserKeyMapping is ours alone and must contain ONLY the grave
+# swap. Do not helpfully re-add the stored modifier entries here — they would
+# be applied twice, and a double Option<->Command swap cancels itself out, so
+# the key you expect to be Command produces Option and every cmd+<key>
+# shortcut silently dies.
 
 # Pre-compensate for the ISO swap at the HID layer. Takes effect immediately,
 # but is bound to the device's registry entries: it is lost on unplug and on
-# reboot (macOS then re-applies its modifier remaps alone). Use it to get a
-# working ` before the reboot that `persist` needs.
+# reboot. Use it to get a working ` before the reboot that `persist` needs.
 remap() {
-    local kb product vendor country
+    local kb product vendor
     for kb in "${KEYBOARDS[@]}"; do
-        IFS=- read -r product vendor country <<<"$kb"
-        echo "remapping $kb (vendor $vendor, product $product) + preserving modifier remaps"
+        IFS=- read -r product vendor _ <<<"$kb"
+        echo "remapping $kb (vendor $vendor, product $product)"
         hidutil property \
             --matching "{\"VendorID\":$vendor,\"ProductID\":$product}" \
-            --set "$(build_mapping "$vendor" "$product" "$country" 1)" >/dev/null
+            --set "{\"UserKeyMapping\":[
+                {\"HIDKeyboardModifierMappingSrc\":$GRAVE_USAGE,\"HIDKeyboardModifierMappingDst\":$NON_US_USAGE},
+                {\"HIDKeyboardModifierMappingSrc\":$NON_US_USAGE,\"HIDKeyboardModifierMappingDst\":$GRAVE_USAGE}
+            ]}" >/dev/null
     done
 }
 
-# Drop our grave swap while leaving the Modifier Keys remaps in place. Run
-# after `persist` + reboot, or if the swap ever lands the wrong way round.
+# Drop our grave swap. The Modifier Keys remaps are untouched either way, since
+# macOS does not keep them here. Run if the swap ever lands the wrong way round.
 unmap() {
-    local kb product vendor country
+    local kb product vendor
     for kb in "${KEYBOARDS[@]}"; do
-        IFS=- read -r product vendor country <<<"$kb"
-        echo "restoring $kb to modifier remaps only"
+        IFS=- read -r product vendor _ <<<"$kb"
+        echo "clearing remap for $kb"
         hidutil property \
             --matching "{\"VendorID\":$vendor,\"ProductID\":$product}" \
-            --set "$(build_mapping "$vendor" "$product" "$country" 0)" >/dev/null
+            --set '{"UserKeyMapping":[]}' >/dev/null
     done
 }
 
