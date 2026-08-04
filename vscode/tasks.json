@@ -25,6 +25,33 @@
             }
         },
         {
+            // Git history of the focused file: lazygit in filter mode
+            // (commits/reflog/stash scoped to `git log -- <path>`).
+            // cwd is the file's own dir so lazygit finds the enclosing repo
+            // even when it isn't the workspace root (monorepos, nested repos).
+            "icon": {"id": "history"},
+            "label": "git_file_history",
+            "type": "shell",
+            "command": "lazygit",
+            "args": [
+                "--filter",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "focus": true,
+                "echo": false,
+                "reveal": "always",
+                "showReuseMessage": false,
+                "panel": "new",
+                "close": true,
+                "clear": true
+            }
+        },
+        {
             "icon": {"id": "git-branch"},
             "label": "copy_git_link",
             "type": "shell",

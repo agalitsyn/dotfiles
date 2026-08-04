@@ -89,7 +89,16 @@
         "hooks": [
           {
             "type": "command",
-            "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' blocked"
+            "command": "'/Users/agalitsyn/.config/agterm/agterm-notify.sh' blocked --blink"
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/agalitsyn/.config/agterm/agterm-notify.sh' blocked --blink"
           }
         ]
       }
@@ -109,7 +118,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' completed --auto-reset"
+            "command": "'/Users/agalitsyn/.config/agterm/agterm-notify.sh' completed --auto-reset"
           }
         ]
       }

@@ -65,5 +65,21 @@
     "bindings": {
       "cmd-e": "tab_switcher::Toggle"
     }
+  },
+
+  // macOS native window tabs ("use_system_window_tabs": true). Zed ships these
+  // actions unbound. They are registered on the Workspace only while the window
+  // has >1 tab (MergeAllWindows only while >1 tab group), so they are inert --
+  // including in the command palette -- until tabs actually exist.
+  //   cmd-[ / cmd-]           history within a project (GoBack/GoForward)
+  //   ctrl-cmd-[ / ctrl-cmd-] between projects (window tabs)
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-cmd-]": "window::ShowNextWindowTab",
+      "ctrl-cmd-[": "window::ShowPreviousWindowTab",
+      "ctrl-cmd-m": "window::MergeAllWindows",
+      "ctrl-cmd-n": "window::MoveTabToNewWindow"
+    }
   }
 ]

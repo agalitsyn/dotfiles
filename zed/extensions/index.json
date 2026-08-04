@@ -29,6 +29,41 @@
       },
       "dev": false
     },
+    "comment": {
+      "manifest": {
+        "id": "comment",
+        "name": "Comments Highlighter",
+        "version": "0.6.6",
+        "schema_version": 1,
+        "description": "Comment language extension for highlighting special comments",
+        "repository": "https://github.com/thedadams/zed-comment",
+        "authors": [
+          "Donnie Adams <donnie@thedadams.com>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/comment"
+        ],
+        "grammars": {
+          "comment": {
+            "repository": "https://github.com/thedadams/tree-sitter-comment",
+            "rev": "3c25c172802fbb23c27580d77b1328c268beec43",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "context_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "dockerfile": {
       "manifest": {
         "id": "dockerfile",
@@ -128,7 +163,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -151,7 +186,7 @@
         "grammars": {
           "git_config": {
             "repository": "https://github.com/the-mikedavis/tree-sitter-git-config",
-            "rev": "0fbc9f99d5a28865f9de8427fb0672d66f9d83a5",
+            "rev": "3a61756a81a86291a0f48e3eeeaa0692b9981aa9",
             "path": null
           },
           "git_rebase": {
@@ -589,11 +624,59 @@
       },
       "dev": false
     },
+    "vue": {
+      "manifest": {
+        "id": "vue",
+        "name": "Vue",
+        "version": "0.4.0",
+        "schema_version": 1,
+        "description": "Vue support.",
+        "repository": "https://github.com/zed-extensions/vue",
+        "authors": [
+          "Zed Industries <support@zed.dev>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.7.0"
+        },
+        "themes": [],
+        "icon_themes": [],
+        "languages": [
+          "languages/vue"
+        ],
+        "grammars": {
+          "vue": {
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-vue",
+            "rev": "7e48557b903a9db9c38cea3b7839ef7e1f36c693",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "vue-language-server": {
+            "language": "Vue.js",
+            "languages": [],
+            "language_ids": {
+              "Vue.js": "vue"
+            },
+            "code_action_kinds": [
+              "",
+              "quickfix",
+              "refactor.rewrite"
+            ]
+          }
+        },
+        "context_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "xml": {
       "manifest": {
         "id": "xml",
         "name": "XML",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "schema_version": 1,
         "description": "XML syntax support.",
         "repository": "https://github.com/sweetppro/zed-xml",
@@ -612,7 +695,7 @@
         "grammars": {
           "xml": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-xml",
-            "rev": "863dbc381f44f6c136a399e684383b977bb2beaa",
+            "rev": "5000ae8f22d11fbe93939b05c1e37cf21117162d",
             "path": "xml"
           }
         },
@@ -896,6 +979,19 @@
       "hidden": false,
       "grammar": "hcl"
     },
+    "Vue.js": {
+      "extension": "vue",
+      "path": "languages/vue",
+      "matcher": {
+        "path_suffixes": [
+          "vue"
+        ],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "vue"
+    },
     "XML": {
       "extension": "xml",
       "path": "languages/xml",
@@ -908,6 +1004,17 @@
       },
       "hidden": false,
       "grammar": "xml"
+    },
+    "comment": {
+      "extension": "comment",
+      "path": "languages/comment",
+      "matcher": {
+        "path_suffixes": [],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": true,
+      "grammar": "comment"
     },
     "http": {
       "extension": "http",

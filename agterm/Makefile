@@ -6,4 +6,5 @@ configure:
 	mkdir -pv ~/.config/agterm
 	ln -sf $(CURDIR)/keymap.conf ~/.config/agterm/keymap.conf
 	ln -sf $(CURDIR)/ghostty.conf ~/.config/agterm/ghostty.conf
+	ln -sf $(CURDIR)/agterm-notify.sh ~/.config/agterm/agterm-notify.sh
 

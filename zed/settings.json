@@ -1,6 +1,9 @@
 {
+  "use_system_window_tabs": true,
   "cli_default_open_behavior": "new_window",
   "git_panel": {
+    "group_by": "staging",
+    "tree_view": true,
     "dock": "left",
   },
   "debugger": {
@@ -40,9 +43,52 @@
     "metrics": false,
   },
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "0x96f Theme",
+    "dark": "One Dark",
+  },
+  // TODO/NOTE/FIXME chips, mirroring vscode's todohighlight.
+  // Requires the "comment" extension (Comments Highlighter), which injects a tag
+  // grammar into (comment) nodes. Tag groups are fixed by the extension:
+  //   constant.comment.todo  -> TODO WIP MAYBE QUESTION ?
+  //   string.comment.info    -> NOTE XXX INFO DOCS PERF TEST *
+  //   property.comment.error -> FIXME FIX BUG ERROR DELETE !
+  //   keyword.comment.warn   -> HACK WARNING WARN SAFETY IMPORTANT #
+  // The base capture styles the tag itself; ".prefix" (the // or #) and ".text"
+  // (everything after the tag) are reset so only the tag gets the chip.
+  "theme_overrides": {
+    "One Dark": {
+      "syntax": {
+        "constant.comment.todo": { "color": "#000000", "background_color": "#a7c7e7", "font_weight": 400 },
+        "constant.comment.todo.prefix": { "color": "#5c6370", "background_color": "#00000000", "font_weight": 500 },
+        "constant.comment.todo.text": { "color": "#8b98a8", "background_color": "#00000000", "font_weight": 500 },
+        "string.comment.info": { "color": "#ffffff", "background_color": "#a7c7e7", "font_weight": 400 },
+        "string.comment.info.prefix": { "color": "#5c6370", "background_color": "#00000000", "font_weight": 500 },
+        "string.comment.info.text": { "color": "#8b98a8", "background_color": "#00000000", "font_weight": 500 },
+        "property.comment.error": { "color": "#000000", "background_color": "#e7a7a7", "font_weight": 400 },
+        "property.comment.error.prefix": { "color": "#5c6370", "background_color": "#00000000", "font_weight": 500 },
+        "property.comment.error.text": { "color": "#a88b8b", "background_color": "#00000000", "font_weight": 500 },
+        "keyword.comment.warn": { "color": "#000000", "background_color": "#e7cba7", "font_weight": 400 },
+        "keyword.comment.warn.prefix": { "color": "#5c6370", "background_color": "#00000000", "font_weight": 500 },
+        "keyword.comment.warn.text": { "color": "#a89b8b", "background_color": "#00000000", "font_weight": 500 },
+      },
+    },
+    "One Light": {
+      "syntax": {
+        "constant.comment.todo": { "color": "#000000", "background_color": "#a7c7e7", "font_weight": 400 },
+        "constant.comment.todo.prefix": { "color": "#a0a1a7", "background_color": "#00000000", "font_weight": 500 },
+        "constant.comment.todo.text": { "color": "#7c8794", "background_color": "#00000000", "font_weight": 500 },
+        "string.comment.info": { "color": "#ffffff", "background_color": "#a7c7e7", "font_weight": 400 },
+        "string.comment.info.prefix": { "color": "#a0a1a7", "background_color": "#00000000", "font_weight": 500 },
+        "string.comment.info.text": { "color": "#7c8794", "background_color": "#00000000", "font_weight": 500 },
+        "property.comment.error": { "color": "#000000", "background_color": "#e7a7a7", "font_weight": 400 },
+        "property.comment.error.prefix": { "color": "#a0a1a7", "background_color": "#00000000", "font_weight": 500 },
+        "property.comment.error.text": { "color": "#94787c", "background_color": "#00000000", "font_weight": 500 },
+        "keyword.comment.warn": { "color": "#000000", "background_color": "#e7cba7", "font_weight": 400 },
+        "keyword.comment.warn.prefix": { "color": "#a0a1a7", "background_color": "#00000000", "font_weight": 500 },
+        "keyword.comment.warn.text": { "color": "#948a78", "background_color": "#00000000", "font_weight": 500 },
+      },
+    },
   },
   "auto_reveal_entries": true,
   "project_panel": {
@@ -129,6 +175,9 @@
     },
   },
   "preview_tabs": {
+    "enable_preview_from_multibuffer": false,
+    "enable_preview_file_from_code_navigation": false,
+    "enable_preview_from_project_panel": false,
     "enabled": false,
     "enable_preview_from_file_finder": false,
     "enable_keep_preview_on_code_navigation": false,
@@ -206,7 +255,21 @@
       "initialization_options": {
         "gofumpt": true,
         "usePlaceholders": true,
+        // gopls does NOT read .golangci.yml. "staticcheck": true enables *every*
+        // staticcheck analyzer, including non-default ST* style checks that
+        // golangci-lint v2 disables by default. The "analyses" opt-outs below
+        // mirror golangci-lint's default staticcheck set:
+        //   ["all", "-ST1000", "-ST1003", "-ST1016", "-ST1020", "-ST1021", "-ST1022"]
+        // (golangci-lint/v2/pkg/golinters/staticcheck/staticcheck.go)
         "staticcheck": true,
+        "analyses": {
+          "ST1000": false, // incorrect or missing package comment
+          "ST1003": false, // poorly chosen identifier (naming conventions)
+          "ST1016": false, // inconsistent method receiver names
+          "ST1020": false, // comment on exported function
+          "ST1021": false, // comment on exported type
+          "ST1022": false, // comment on exported var/const
+        },
         "codelenses": {
           "gc_details": true,
           "generate": true,
