@@ -27,9 +27,6 @@ export PATH=~/.local/bin:$PATH
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# Fix mc slow startup
-alias mc="mc --nosubshell"
-
 # OSX has builtin apache2
 alias apache2-start="sudo apachectl -k start"
 alias apache2-stop="sudo apachectl -k stop"

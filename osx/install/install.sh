@@ -129,8 +129,17 @@ brew install awscli session-manager-plugin
 # brew install doctl
 # brew install --cask yandex-cloud-cli
 
+# vault
 brew trust --formula hashicorp/tap/vault
 brew install vault
+
+# terraform
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+brew install terragrunt terraform
+
+# k8s
+brew install kubernetes-cli helm argocd k9s
 
 # Go
 brew install go
