@@ -4,5 +4,5 @@ include ../vars.mk
 configure:
 	ln -sf $(CURDIR)/bin.zsh $(ZSH_HOOKS_FOLDER)/bin.zsh
 	mkdir -pv ~/bin
-	ln -sf $(CURDIR)/*.sh ~/bin
+	ln -sf $(CURDIR)/*.sh $(CURDIR)/*.py ~/bin
 

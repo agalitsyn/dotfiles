@@ -39,6 +39,36 @@ alias .....="cd ../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
+# Work repos live nested under this root: <org>/<repo>, sometimes one level deeper.
+export WORK_ROOT="$HOME/src/work"
+
+# Fuzzy-jump to any git repo under $WORK_ROOT, whatever its nesting depth.
+#   w            -> picker over every repo
+#   w ms-auth    -> jumps straight there when the query matches exactly one repo
+function work() {
+    local root="${WORK_ROOT:-$HOME/src/work}"
+    [[ -d "$root" ]] || { print -u2 "work: no such directory: $root"; return 1 }
+
+    # Locate the .git markers, then strip "/.git/" to get the repo itself and the
+    # root prefix so fzf offers short "org/repo" candidates instead of long paths.
+    # Retired repos under an "archive" dir are noise in the picker, so prune them.
+    local -a repos
+    repos=( ${${${(f)"$(fd --hidden --type d --glob .git --max-depth 4 --exclude archive "$root")"}%/.git/}#$root/} )
+    (( $#repos )) || { print -u2 "work: no git repos under $root"; return 1 }
+
+    local target
+    target=$(print -rl -- ${(o)repos} | fzf \
+        --query="$*" --select-1 --exit-0 \
+        --height=60% --reverse --border --prompt='work> ' \
+        --preview-window='right:55%' \
+        --preview="git -C $root/{} -c color.status=always status -sb | head -1; git -C $root/{} log --oneline --color=always -10") || return
+
+    cd -- "$root/$target"
+}
+
+# `w` shadows w(1) (who is logged on); drop this line if you ever want it back.
+alias w=work
+
 # Handy make directory
 alias mkdir='mkdir -pv'
 

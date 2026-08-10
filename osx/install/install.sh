@@ -107,8 +107,30 @@ brew install litecli
 # Kafka client
 brew install kcat
 
+# minio
+brew install minio-mc
+
 # Mongo client
 # brew install --cask studio-3t
+
+# Containers
+brew install --cask docker
+#brew install lazydocker
+#brew install ctop
+
+# Configuration
+brew install ansible
+
+# Git services
+brew install gh glab
+
+# Cloud
+brew install awscli session-manager-plugin
+# brew install doctl
+# brew install --cask yandex-cloud-cli
+
+brew trust --formula hashicorp/tap/vault
+brew install vault
 
 # Go
 brew install go
@@ -210,19 +232,6 @@ brew install --cask appcleaner
 
 # Emulation
 #brew install --cask dosbox
-
-# Containers
-brew install --cask docker
-#brew install lazydocker
-#brew install ctop
-
-# Configuration
-brew install ansible
-
-# Cloud
-# brew install awscli
-# brew install doctl
-# brew install --cask yandex-cloud-cli
 
 # Anybar
 # brew install --cask anybar

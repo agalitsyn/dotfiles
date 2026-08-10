@@ -7,6 +7,7 @@ input=$(cat)
 cwd=$(echo "$input" | jq -r '.workspace.current_dir')
 project_dir=$(echo "$input" | jq -r '.workspace.project_dir')
 model=$(echo "$input" | jq -r '.model.display_name')
+effort=$(echo "$input" | jq -r '.effort.level // empty')
 
 # Vesper theme colors (using ANSI escape codes)
 RED='\033[38;2;245;161;145m'      # #f5a191 - salmon (model name)
@@ -47,6 +48,16 @@ output=""
 
 # Model name in red/salmon
 output+=$(printf "${RED}%s${RESET}" "$model")
+
+# Reasoning effort, colored by intensity so overrides stand out
+if [[ -n "$effort" ]]; then
+  case "$effort" in
+    xhigh|max) effort_color="$RED" ;;
+    high)      effort_color="$YELLOW" ;;
+    *)         effort_color="$DIMGRAY" ;;
+  esac
+  output+=$(printf "${DIMGRAY}:${RESET}${effort_color}%s${RESET}" "$effort")
+fi
 
 # Context window info if available
 if [[ -n "$used_pct" ]] && [[ "$used_pct" != "null" ]]; then

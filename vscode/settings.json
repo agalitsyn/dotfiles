@@ -96,8 +96,9 @@
 
   // Editor look and feel
   "window.zoomLevel": 0.2,
-  "window.nativeTabs": false,
-  "window.title": "${rootName}${separator}${activeEditorMedium}",
+  "window.nativeTabs": true,
+  // "window.title": "${rootName}${separator}${activeEditorMedium}",
+  "window.title": "${rootName}",
   "window.titleBarStyle": "custom",
   "window.customTitleBarVisibility": "windowed",
   "window.confirmBeforeClose": "never",
@@ -409,7 +410,7 @@
   "extensions.allowOpenInModalEditor": false,
 
   // Claude Code
-  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.preferredLocation": "panel",
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.initialPermissionMode": "default",
   "claudeCode.useCtrlEnterToSend": true,
