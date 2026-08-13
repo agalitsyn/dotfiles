@@ -141,6 +141,11 @@ brew install terragrunt terraform
 # k8s
 brew install kubernetes-cli helm argocd k9s
 
+# jira
+brew tap atlassian/homebrew-acli
+brew trust atlassian/acli
+brew install acli
+
 # Go
 brew install go
 

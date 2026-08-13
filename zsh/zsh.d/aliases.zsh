@@ -69,6 +69,8 @@ function work() {
 # `w` shadows w(1) (who is logged on); drop this line if you ever want it back.
 alias w=work
 
+alias df="cd ~/.dotfiles"
+
 # Handy make directory
 alias mkdir='mkdir -pv'
 

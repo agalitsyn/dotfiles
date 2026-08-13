@@ -185,6 +185,10 @@
   "editor.guides.indentation": false,
   "editor.guides.bracketPairs": false,
   "editor.glyphMargin": true,
+  // Plain mouse hover never opens the docs popup. Point at a symbol and hold
+  // Cmd to reveal it, or hit Cmd+K Cmd+I to show it at the cursor.
+  // The modifier is derived from `editor.multiCursorModifier` (alt -> Cmd/Ctrl).
+  "editor.hover.enabled": "onKeyboardModifier",
   "editor.hover.delay": 200,
   "search.followSymlinks": false,
   "extensions.autoUpdate": "off",
@@ -200,8 +204,11 @@
   "git.confirmSync": false,
   "git.mergeEditor": true,
   "git.openRepositoryInParentFolders": "never",
-  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.enabled": false,
   "git.blame.editorDecoration.template": "${authorName} · ${authorDateAgo} · ${subject}",
+  // No hover popup in the editor; use the status bar blame item on demand
+  // (hover it for commit details, click it to open the commit).
+  "git.blame.editorDecoration.disableHover": true,
   "git.blame.statusBarItem.enabled": true,
   "git.replaceTagsWhenPull": true,
 
