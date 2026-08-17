@@ -41,6 +41,15 @@
 # below omit them and `status` filters them out before comparing. A device
 # showing only identity pairs has been *registered* but not actually remapped.
 #
+# CAVEAT 4 — the usages must be stored as plist INTEGERS. Store them as strings
+# and macOS discards the whole array silently: the remaps simply stop working,
+# with nothing logged and the Modifier Keys dialog still looking correct. This is
+# easy to do by accident, because `defaults write key '( { a = 1; } )'` uses
+# old-style plist syntax, which has no numeric type and quietly makes every bare
+# number a string. Hence `apply` passes XML, and `status` type-checks separately —
+# `defaults read` renders both types identically, so comparing the numbers alone
+# reports a perfect match on a mapping that does nothing.
+#
 # Capturing a board configured through the GUI: set it up in System Settings,
 # then run `./setup-modifier-keys.sh capture` and paste the line it prints into
 # DEVICES below.
@@ -55,8 +64,14 @@ set -euo pipefail
 # using the key names from usage_for() below. Order within a line is irrelevant.
 #
 # PC-layout boards want Option<->Command swapped — the key physically where a Mac
-# puts Command is Alt — plus Caps Lock -> Escape, since Caps Lock is wasted
-# space. Apple boards only want the Caps Lock half.
+# puts Command is Alt — plus Caps Lock -> Escape, since Caps Lock is wasted space.
+#
+# EXTERNAL KEYBOARDS ONLY. The built-in keyboard is configured by hand in System
+# Settings and is deliberately absent, so nothing here can touch it — in
+# particular `clear` cannot strip its Caps Lock -> Escape. Do not add Apple
+# built-ins (vendor 1452) back in: they need nothing but the Caps Lock half, and
+# leaving them out keeps this script unable to break the keyboard you would need
+# in order to fix it.
 #
 # Every device below was captured from what macOS had already recorded on this
 # Mac (via `capture`), so this reproduces the existing setup rather than
@@ -70,7 +85,6 @@ set -euo pipefail
 # whatever it already had rather than being normalised to a guess.
 SWAP_AND_ESCAPE='caps_lock:escape,left_option:left_command,left_command:left_option,right_option:right_command,right_command:right_option'
 CROSS_SWAP_AND_ESCAPE='caps_lock:escape,left_option:right_command,left_command:right_option,right_option:left_command,right_command:left_option'
-ESCAPE_ONLY='caps_lock:escape'
 DEVICES=(
     # External, PC layout: full swap.
     "13652-64007-0|AULA-F75 5.0 KB, Compx 0x3554, Bluetooth LE|$SWAP_AND_ESCAPE"
@@ -80,11 +94,6 @@ DEVICES=(
     # External, PC layout, recorded with the side-crossing variant.
     "1133-49948-0|Logitech 0x046d, product 0xc31c|$CROSS_SWAP_AND_ESCAPE"
     "1241-41169-0|Holtek 0x04d9, product 0xa0d1|$CROSS_SWAP_AND_ESCAPE"
-
-    # Apple built-in keyboards: Caps Lock only, never swap the modifiers.
-    # 641 is this MacBook; 592 is an older one kept so a restore is complete.
-    "1452-641-0|Apple Internal Keyboard / Trackpad, product 0x0281|$ESCAPE_ONLY"
-    "1452-592-0|Apple internal keyboard, product 0x0250|$ESCAPE_ONLY"
 )
 
 DOMAIN=com.apple.keyboard.modifiermapping
@@ -154,33 +163,73 @@ wanted_pairs() {
     echo "$1" | tr ',' '\n' | sort
 }
 
+# Whether every usage recorded for device $1 is stored as a plist *integer*.
+# 0 = all integers, 1 = at least one is not, 2 = nothing recorded, 3 = could not
+# tell. 3 is kept distinct on purpose: reporting a failed check as "wrong types"
+# sends you off fixing a non-problem.
+#
+# Worth checking at all because a string-typed usage makes macOS discard the
+# whole array with no error, while `defaults read` prints strings and integers
+# identically — so comparing the numbers alone (recorded_pairs above) reports a
+# perfect match on a mapping that does nothing. `defaults export` emits a real
+# plist, which is what preserves the distinction.
+#
+# plistlib.loads on the bytes, not plistlib.load on the stream: it is fed by a
+# pipe, and load() seeks, which a pipe cannot do.
+types_ok() {
+    defaults -currentHost export -g - |
+        MM_KEY="$DOMAIN.$1" python3 -c '
+import os, plistlib, sys
+try:
+    entries = plistlib.loads(sys.stdin.buffer.read()).get(os.environ["MM_KEY"])
+except Exception as e:
+    print("  could not parse exported prefs: %s" % e, file=sys.stderr)
+    sys.exit(3)
+if not entries:
+    sys.exit(2)
+sys.exit(1 if any(not isinstance(v, int)
+                  for e in entries for v in e.values()) else 0)
+'
+}
+
+# The usages MUST be written as plist <integer>s. macOS silently ignores the
+# entire array if they are strings — the remaps just stop working, with no error
+# anywhere, and `defaults read` renders both types identically so it looks fine.
+#
+# That rules out the obvious `defaults write ... '( { k = 1; } )'` form: that is
+# old-style NeXTSTEP plist syntax, which has no numeric type at all, so every
+# bare number silently becomes a string. Passing XML instead keeps the types.
 apply() {
-    local entry id label spec pair src dst plist
+    local entry id label spec pair src dst xml
     for entry in "${DEVICES[@]}"; do
         IFS='|' read -r id label spec <<<"$entry"
-        plist="("
+        xml="<array>"
         for pair in $(echo "$spec" | tr ',' ' '); do
             src=$(usage_for "${pair%%:*}")
             dst=$(usage_for "${pair##*:}")
-            plist+="{HIDKeyboardModifierMappingSrc=$src;HIDKeyboardModifierMappingDst=$dst;},"
+            xml+="<dict>"
+            xml+="<key>HIDKeyboardModifierMappingSrc</key><integer>$src</integer>"
+            xml+="<key>HIDKeyboardModifierMappingDst</key><integer>$dst</integer>"
+            xml+="</dict>"
         done
-        plist="${plist%,})"
+        xml+="</array>"
         echo "writing $DOMAIN.$id  ($label)"
-        defaults -currentHost write -g "$DOMAIN.$id" "$plist"
+        defaults -currentHost write -g "$DOMAIN.$id" "$xml"
     done
     echo
     echo "log out and back in (or re-attach the keyboard) — macOS reads these at"
     echo "login and on device attach, not on write"
 }
 
-# Note this includes the built-in keyboard, so it also drops Caps Lock -> Escape
-# there — recovering that means `apply`, or the Modifier Keys dialog. Hence the
-# confirmation prompt; skip it with `clear -y` for unattended use.
+# Only ever touches the external boards in DEVICES; the built-in keyboard is not
+# listed, so its hand-made Caps Lock -> Escape is safe from this. Still asks
+# first, since re-doing five boards through the GUI is tedious — skip the prompt
+# with `clear -y` for unattended use.
 clear_all() {
     local entry id label spec reply
     if [ "${1:-}" != "-y" ]; then
-        echo "about to clear the recorded mapping for ${#DEVICES[@]} devices,"
-        echo "including the built-in keyboard's Caps Lock -> Escape."
+        echo "about to clear the recorded mapping for ${#DEVICES[@]} external"
+        echo "keyboards. The built-in keyboard is not in DEVICES and is unaffected."
         printf 'continue? [y/N] '
         read -r reply
         case "$reply" in
@@ -202,7 +251,7 @@ clear_all() {
 }
 
 status() {
-    local entry id label spec have want
+    local entry id label spec have want rc
     for entry in "${DEVICES[@]}"; do
         IFS='|' read -r id label spec <<<"$entry"
         echo "=== $label ==="
@@ -221,11 +270,23 @@ status() {
             echo "  DIFFERS from this script, which wants:"
             echo "$want" | sed 's/^/    /'
         fi
+
+        types_ok "$id" && rc=0 || rc=$?
+        case $rc in
+        0) echo "  types OK (integers)" ;;
+        1) echo "  BROKEN: usages stored as strings — macOS ignores these; run apply" ;;
+        2) ;; # nothing recorded, already reported above
+        *) echo "  type check inconclusive (see error above)" ;;
+        esac
     done
 }
 
 # Print a DEVICES line for every device macOS has a non-identity mapping for, so
 # a board configured through the GUI can be pasted straight into the list above.
+#
+# It reports everything recorded on this Mac, built-in keyboards included, since
+# it is a discovery tool rather than a description of DEVICES. Do not paste the
+# vendor-1452 lines in — those are managed by hand, see the note on DEVICES.
 capture() {
     local id pairs
     for id in $(defaults -currentHost read -g 2>/dev/null |

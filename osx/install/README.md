@@ -39,15 +39,17 @@ NSGlobalDomain) — per-machine, and not carried over to a new Mac. That is what
 ```
 
 PC-layout boards get Option<->Command swapped both sides (the key physically where
-a Mac puts Command is Alt) plus Caps Lock -> Escape; Apple boards get only the
-Caps Lock half. All seven keyboards this Mac has ever had remapped are covered —
-the AULA-F75, the BY Tech "Gaming Keyboard", Microsoft, Logitech and Holtek
-boards, and two Apple built-ins. Entries for keyboards no longer in use are
-harmless, since the preference is per-device and never consulted for an absent
-one.
+a Mac puts Command is Alt) plus Caps Lock -> Escape. Covered: the AULA-F75, the
+BY Tech "Gaming Keyboard", and Microsoft, Logitech and Holtek boards. Entries for
+keyboards no longer in use are harmless, since the preference is per-device and
+never consulted for an absent one.
 
-`clear` therefore also wipes the built-in keyboard's Caps Lock -> Escape, so it
-asks for confirmation first; pass `-y` to skip the prompt.
+**External keyboards only.** The built-in keyboard is set up by hand in System
+Settings (Caps Lock -> Escape, no modifier swap) and is deliberately not in
+`DEVICES`, so neither `apply` nor `clear` can touch it. `capture` still lists it,
+because it reports everything recorded on the machine — do not paste the
+vendor-1452 lines into `DEVICES`. `clear` still asks for confirmation, since
+redoing five boards by hand is tedious; pass `-y` to skip.
 
 The workflow for a new board is to set it up in System Settings once, then run
 `capture` and paste the line it prints into `DEVICES`.
@@ -68,6 +70,15 @@ Three things to know:
   (`left_option -> right_command`) — likely different macOS versions. Both behave
   the same for ordinary shortcuts, so each board keeps whatever it already had
   instead of being normalised to a guess.
+- The usages must be stored as plist **integers**. As strings, macOS discards the
+  whole array silently — the remaps stop working with nothing logged, while the
+  Modifier Keys dialog still looks right. `defaults write key '( { a = 1; } )'`
+  produces exactly that, because old-style plist syntax has no numeric type, so
+  `apply` passes XML instead and `status` type-checks separately. Watch for
+  `types OK (integers)` in its output; `defaults read` cannot show the difference.
+
+Because these are read on device attach, a keyboard that is plugged in while the
+mapping changes keeps its old behaviour until it is re-attached (or you log out).
 
 Do not try to apply these through the device's `UserKeyMapping` HID property —
 see the warning in the next section.
