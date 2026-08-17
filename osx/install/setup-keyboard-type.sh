@@ -28,9 +28,18 @@ set -euo pipefail
 [[ "$OSTYPE" =~ ^darwin ]] || exit 1
 
 # Keyboards to force to ANSI, as "<ProductID>-<VendorID>-<CountryCode>".
-# 268-9610-0 = "Gaming Keyboard", SINOWEALTH (0x258a)
+#
+# 268-9610-0     = "Gaming Keyboard", BY Tech / SINOWEALTH (0x258a), USB.
+#                  Was recorded ISO and needed the fix.
+# 64007-13652-0  = "AULA-F75 5.0 KB", vendor 0x3554, Bluetooth LE.
+#                  Setup Assistant already got this one right — recorded ANSI
+#                  from the start, so it is here to be *asserted*, not fixed.
+#
+# Note the Aula is a Bluetooth board and so has an identity unrelated to the USB
+# one; a board reached over both USB and Bluetooth gets an entry per transport.
 KEYBOARDS=(
     "268-9610-0"
+    "64007-13652-0"
 )
 
 PLIST=/Library/Preferences/com.apple.keyboardtype
@@ -62,6 +71,37 @@ current_type() {
 # the key you expect to be Command produces Option and every cmd+<key>
 # shortcut silently dies.
 
+# Whether $1 still needs the HID grave swap, i.e. whether WindowServer is
+# *currently* treating it as ISO. This is deliberately not the same question as
+# "is the recorded type ISO", because of the window between `persist` and the
+# reboot:
+#
+#   recorded ISO                     -> WindowServer says ISO  -> needs swap
+#   recorded ANSI before last boot   -> WindowServer says ANSI  -> must NOT swap
+#   recorded ANSI after last boot     -> WindowServer says ISO  -> needs swap
+#
+# The third row is why `persist` prints its reboot notice, and why a plain
+# "skip anything recorded ANSI" test would leave you with a broken ` for the
+# rest of the session. Distinguishing rows 2 and 3 means asking whether the
+# plist was written before or after boot:
+#
+#   /usr/bin/stat -f %m /Library/Preferences/com.apple.keyboardtype.plist
+#   sysctl -n kern.boottime          # -> { sec = 1785943826, usec = ... }
+#
+# Note /usr/bin/stat by full path: this repo installs GNU coreutils onto PATH,
+# where `stat -f` means something else entirely and fails.
+#
+# Caveat: the plist mtime is per-file, not per-key, so one board's edit makes
+# every entry look freshly written. Erring that way is the safe direction — a
+# needless swap on an ANSI board is visible instantly and `unmap` undoes it,
+# whereas wrongly skipping leaves a subtly broken key.
+#
+# TODO(agalitsyn): implement. Returns 0 to swap, 1 to skip.
+needs_grave_swap() {
+    local kb=$1
+    return 0 # placeholder: today's unconditional behaviour
+}
+
 # Pre-compensate for the ISO swap at the HID layer. Takes effect immediately,
 # but is bound to the device's registry entries: it is lost on unplug and on
 # reboot. Use it to get a working ` before the reboot that `persist` needs.
@@ -69,6 +109,10 @@ remap() {
     local kb product vendor
     for kb in "${KEYBOARDS[@]}"; do
         IFS=- read -r product vendor _ <<<"$kb"
+        if ! needs_grave_swap "$kb"; then
+            echo "$kb already reads as ANSI, leaving its \` alone"
+            continue
+        fi
         echo "remapping $kb (vendor $vendor, product $product)"
         hidutil property \
             --matching "{\"VendorID\":$vendor,\"ProductID\":$product}" \

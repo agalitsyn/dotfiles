@@ -18,9 +18,48 @@
 - Increase repeat rate and delay
 - Text input - Input sources - Add "Russian PC"
 - Keyboard - Shortcuts
-    - Modifier keys - Caps lock = Escape
+    - Modifier keys - Caps lock = Escape (scripted, see below)
     - Mission control ctrl+opt+left right = move to space;
     - Services - disable all
+
+### Per-device modifier keys (Option<->Command swap, Caps Lock -> Escape)
+
+Modifier Keys is a *per-keyboard* setting, so every external board needs it set
+again, and it is stored ByHost
+(`~/Library/Preferences/ByHost/`, key
+`com.apple.keyboard.modifiermapping.<VendorID>-<ProductID>-<CountryCode>` in
+NSGlobalDomain) — per-machine, and not carried over to a new Mac. That is what
+`setup-modifier-keys.sh` captures:
+
+```sh
+./setup-modifier-keys.sh status    # recorded vs. what the script wants
+./setup-modifier-keys.sh apply     # write them
+./setup-modifier-keys.sh capture   # dump every remapped board as config lines
+# log out and back in — macOS reads these at login and on device attach
+```
+
+PC-layout boards get the same treatment: Option<->Command swapped both sides (the
+key physically where a Mac puts Command is Alt) plus Caps Lock -> Escape.
+Currently covered: the AULA-F75 over Bluetooth and the BY Tech "Gaming Keyboard"
+over USB. The internal keyboard is left out — it only wants Caps Lock -> Escape
+and already has it.
+
+The workflow for a new board is to set it up in System Settings once, then run
+`capture` and paste the line it prints into `DEVICES`.
+
+Two things to know:
+
+- The identifier order is the **reverse** of the keyboard-type plist's:
+  `modifiermapping` keys on `<Vendor>-<Product>`, `keyboardtype` on
+  `<Product>-<Vendor>`. Same keyboard, e.g. `13652-64007-0` vs `64007-13652-0`.
+  Getting it backwards writes a key macOS never reads and silently does nothing.
+- Identity pairs (Src == Dst) are no-ops. The GUI writes them for some untouched
+  rows and not others, so the script omits them and `status` filters them out
+  before comparing. A device with *only* identity pairs has been registered but
+  not actually remapped.
+
+Do not try to apply these through the device's `UserKeyMapping` HID property —
+see the warning in the next section.
 
 ### External keyboard types § instead of backtick
 
@@ -60,6 +99,37 @@ not where System Settings > Keyboard > Modifier Keys stores its remaps, so
 re-adding those entries there applies them twice, and a double Option<->Command
 swap cancels itself out and kills every cmd+<key> shortcut. See the script
 header.
+
+### Shortcuts for menu items that ship without one
+
+Any menu item can be bound by writing a per-app `NSUserKeyEquivalents` dict,
+which is what System Settings > Keyboard > Keyboard Shortcuts > App Shortcuts
+edits. `setup-app-shortcuts.sh` holds the list and writes it:
+
+```sh
+./setup-app-shortcuts.sh status   # recorded shortcuts + the live menu bar
+./setup-app-shortcuts.sh apply    # write them
+./setup-app-shortcuts.sh clear    # drop them all
+```
+
+Currently bound: shift+cmd+l toggles Safari's sidebar. Safari 26 dropped the
+binding it had through Safari 14 — `View > Show Sidebar` has no key equivalent
+at all now, so this restores the old one rather than overriding anything.
+
+Three things bite when adding more:
+
+- Titles are matched literally in the current UI language, and these menus
+  render in en-GB ("Minimise", "Show Favourites Bar", "Centre"), so titles
+  copied from US screenshots will silently fail to match.
+- A toggling item renames itself and needs an entry per name — "Show Sidebar"
+  *and* "Hide Sidebar".
+- AppKit reads the dict only while building the menu bar, so the app has to be
+  relaunched before the shortcut appears.
+
+`status` dumps the live menu bar through the Accessibility API, which is the way
+to get a title exactly right and to check a combo is free before taking it. It
+needs Accessibility permission granted to the terminal, and it can only read an
+app that is running.
 
 ## Upgrade Mac OS
 
