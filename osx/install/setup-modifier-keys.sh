@@ -54,14 +54,37 @@ set -euo pipefail
 #   "<VendorID>-<ProductID>-<CountryCode>|<label>|<src>:<dst>,<src>:<dst>,..."
 # using the key names from usage_for() below. Order within a line is irrelevant.
 #
-# Both boards get the same treatment: they are PC-layout keyboards, so the key
-# physically where a Mac puts Command is Alt and has to be swapped, and Caps
-# Lock is wasted space. The internal MacBook keyboard is deliberately absent —
-# it only wants Caps Lock -> Escape, and it already has it.
+# PC-layout boards want Option<->Command swapped — the key physically where a Mac
+# puts Command is Alt — plus Caps Lock -> Escape, since Caps Lock is wasted
+# space. Apple boards only want the Caps Lock half.
+#
+# Every device below was captured from what macOS had already recorded on this
+# Mac (via `capture`), so this reproduces the existing setup rather than
+# imposing a new one. Boards no longer in use are harmless to keep: the key is
+# per-device, so an entry for an absent keyboard is simply never consulted.
+#
+# On the two spec shapes: the Modifier Keys dialog has one row for Option and one
+# for Command with no left/right distinction, yet macOS recorded a same-side swap
+# for some boards and a side-crossing one for others (probably different macOS
+# versions). Both behave the same for ordinary shortcuts, so each board keeps
+# whatever it already had rather than being normalised to a guess.
 SWAP_AND_ESCAPE='caps_lock:escape,left_option:left_command,left_command:left_option,right_option:right_command,right_command:right_option'
+CROSS_SWAP_AND_ESCAPE='caps_lock:escape,left_option:right_command,left_command:right_option,right_option:left_command,right_command:left_option'
+ESCAPE_ONLY='caps_lock:escape'
 DEVICES=(
-    "13652-64007-0|AULA-F75 5.0 KB, Bluetooth LE|$SWAP_AND_ESCAPE"
-    "9610-268-0|Gaming Keyboard, BY Tech, USB|$SWAP_AND_ESCAPE"
+    # External, PC layout: full swap.
+    "13652-64007-0|AULA-F75 5.0 KB, Compx 0x3554, Bluetooth LE|$SWAP_AND_ESCAPE"
+    "9610-268-0|Gaming Keyboard, BY Tech / SINOWEALTH 0x258a, USB|$SWAP_AND_ESCAPE"
+    "1118-1957-0|Microsoft 0x045e, product 0x07a5|$SWAP_AND_ESCAPE"
+
+    # External, PC layout, recorded with the side-crossing variant.
+    "1133-49948-0|Logitech 0x046d, product 0xc31c|$CROSS_SWAP_AND_ESCAPE"
+    "1241-41169-0|Holtek 0x04d9, product 0xa0d1|$CROSS_SWAP_AND_ESCAPE"
+
+    # Apple built-in keyboards: Caps Lock only, never swap the modifiers.
+    # 641 is this MacBook; 592 is an older one kept so a restore is complete.
+    "1452-641-0|Apple Internal Keyboard / Trackpad, product 0x0281|$ESCAPE_ONLY"
+    "1452-592-0|Apple internal keyboard, product 0x0250|$ESCAPE_ONLY"
 )
 
 DOMAIN=com.apple.keyboard.modifiermapping
@@ -150,8 +173,24 @@ apply() {
     echo "login and on device attach, not on write"
 }
 
+# Note this includes the built-in keyboard, so it also drops Caps Lock -> Escape
+# there — recovering that means `apply`, or the Modifier Keys dialog. Hence the
+# confirmation prompt; skip it with `clear -y` for unattended use.
 clear_all() {
-    local entry id label spec
+    local entry id label spec reply
+    if [ "${1:-}" != "-y" ]; then
+        echo "about to clear the recorded mapping for ${#DEVICES[@]} devices,"
+        echo "including the built-in keyboard's Caps Lock -> Escape."
+        printf 'continue? [y/N] '
+        read -r reply
+        case "$reply" in
+        y | Y) ;;
+        *)
+            echo "aborted"
+            return 0
+            ;;
+        esac
+    fi
     for entry in "${DEVICES[@]}"; do
         IFS='|' read -r id label spec <<<"$entry"
         echo "clearing $DOMAIN.$id ($label)"
@@ -200,14 +239,15 @@ capture() {
 case "${1:-}" in
 apply) apply ;;
 status) status ;;
-clear) clear_all ;;
+clear) clear_all "${2:-}" ;;
 capture) capture ;;
 *)
-    echo "usage: $0 {apply|status|clear|capture}"
+    echo "usage: $0 {apply|status|clear [-y]|capture}"
     echo
     echo "  apply    write the mappings in DEVICES to ByHost user defaults"
     echo "  status   compare what is recorded against what this script wants"
-    echo "  clear    delete the recorded mapping for every device in DEVICES"
+    echo "  clear    delete the recorded mapping for every device in DEVICES,"
+    echo "           built-in keyboard included; asks first unless given -y"
     echo "  capture  print DEVICES lines for every remapped device on this Mac"
     exit 1
     ;;

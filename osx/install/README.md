@@ -38,16 +38,21 @@ NSGlobalDomain) — per-machine, and not carried over to a new Mac. That is what
 # log out and back in — macOS reads these at login and on device attach
 ```
 
-PC-layout boards get the same treatment: Option<->Command swapped both sides (the
-key physically where a Mac puts Command is Alt) plus Caps Lock -> Escape.
-Currently covered: the AULA-F75 over Bluetooth and the BY Tech "Gaming Keyboard"
-over USB. The internal keyboard is left out — it only wants Caps Lock -> Escape
-and already has it.
+PC-layout boards get Option<->Command swapped both sides (the key physically where
+a Mac puts Command is Alt) plus Caps Lock -> Escape; Apple boards get only the
+Caps Lock half. All seven keyboards this Mac has ever had remapped are covered —
+the AULA-F75, the BY Tech "Gaming Keyboard", Microsoft, Logitech and Holtek
+boards, and two Apple built-ins. Entries for keyboards no longer in use are
+harmless, since the preference is per-device and never consulted for an absent
+one.
+
+`clear` therefore also wipes the built-in keyboard's Caps Lock -> Escape, so it
+asks for confirmation first; pass `-y` to skip the prompt.
 
 The workflow for a new board is to set it up in System Settings once, then run
 `capture` and paste the line it prints into `DEVICES`.
 
-Two things to know:
+Three things to know:
 
 - The identifier order is the **reverse** of the keyboard-type plist's:
   `modifiermapping` keys on `<Vendor>-<Product>`, `keyboardtype` on
@@ -57,6 +62,12 @@ Two things to know:
   rows and not others, so the script omits them and `status` filters them out
   before comparing. A device with *only* identity pairs has been registered but
   not actually remapped.
+- The Modifier Keys dialog has a single Option row and a single Command row, with
+  no left/right distinction, yet macOS recorded a same-side swap for some boards
+  (`left_option -> left_command`) and a side-crossing one for others
+  (`left_option -> right_command`) — likely different macOS versions. Both behave
+  the same for ordinary shortcuts, so each board keeps whatever it already had
+  instead of being normalised to a guess.
 
 Do not try to apply these through the device's `UserKeyMapping` HID property —
 see the warning in the next section.

@@ -96,10 +96,30 @@ current_type() {
 # needless swap on an ANSI board is visible instantly and `unmap` undoes it,
 # whereas wrongly skipping leaves a subtly broken key.
 #
-# TODO(agalitsyn): implement. Returns 0 to swap, 1 to skip.
+# Returns 0 to swap, 1 to skip.
 needs_grave_swap() {
-    local kb=$1
-    return 0 # placeholder: today's unconditional behaviour
+    local kb=$1 type mtime boot
+
+    type=$(current_type "$kb")
+    # ISO, or no entry at all: WindowServer is swapping, so pre-compensate.
+    [ "$type" = "$ANSI" ] || return 0
+
+    # ANSI is recorded, but it is only in force if it was written before boot.
+    mtime=$(/usr/bin/stat -f %m "$PLIST.plist")
+
+    # `{ sec = 1785943826, usec = 915071 } Wed Aug  5 22:30:26 2026`
+    #
+    # Anchored, because an unanchored `.*sec = ` is greedy and matches the *usec*
+    # field instead — yielding a tiny number that is always less than an mtime,
+    # so every board would look like it needed the swap and the guard would
+    # silently do nothing at all.
+    boot=$(sysctl -n kern.boottime | sed -n 's/^{ *sec *= *\([0-9]*\).*/\1/p')
+    if [ -z "$boot" ]; then
+        echo >&2 "warning: cannot parse kern.boottime, assuming $kb needs the swap"
+        return 0
+    fi
+
+    [ "$mtime" -gt "$boot" ]
 }
 
 # Pre-compensate for the ISO swap at the HID layer. Takes effect immediately,
