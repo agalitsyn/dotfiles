@@ -16,8 +16,47 @@ YELLOW='\033[38;2;255;199;153m'   # #ffc799 - bright peach (percentage)
 TAN='\033[38;2;230;185;157m'      # #e6b99d - warm tan (project name)
 LAVENDER='\033[38;2;172;161;207m' # #aca1cf - lavender (login name)
 DIMGRAY='\033[38;2;126;126;126m'  # #7e7e7e - dim gray (separators)
-WHITE='\033[38;2;255;255;255m'    # #ffffff - white (token counts)
 RESET='\033[0m'
+
+# Context bar shape. BAR_FILLED/BAR_EMPTY are the glyphs, BAR_WIDTH the length.
+BAR_WIDTH=12
+BAR_FILLED='⣿'
+BAR_EMPTY='⣀'
+
+# Usage-window tuning. RATE_WARN_AT/RATE_CRIT_AT drive the colour of the
+# percentage; RATE_RESET_HINT_AT is the point past which the "resets in"
+# countdown earns its screen space (0 = always show it, 101 = never).
+RATE_WARN_AT=50
+RATE_CRIT_AT=80
+RATE_RESET_HINT_AT=50
+
+# Pick a palette colour for a 0-100 usage percentage: calm while there is room,
+# warm past the halfway mark, alarming once the window is nearly spent.
+usage_color() {
+  local pct=${1%%.*}
+  if [[ $pct -ge $RATE_CRIT_AT ]]; then
+    printf '%s' "$RED"
+  elif [[ $pct -ge $RATE_WARN_AT ]]; then
+    printf '%s' "$YELLOW"
+  else
+    printf '%s' "$GREEN"
+  fi
+}
+
+# Render seconds-until-reset as a compact "2h05m" / "43m".
+fmt_countdown() {
+  local target=${1%%.*} now remain hours mins
+  now=$(date +%s)
+  remain=$((target - now))
+  [[ $remain -lt 0 ]] && remain=0
+  hours=$((remain / 3600))
+  mins=$(((remain % 3600) / 60))
+  if [[ $hours -gt 0 ]]; then
+    printf '%dh%02dm' "$hours" "$mins"
+  else
+    printf '%dm' "$mins"
+  fi
+}
 
 # Get project name (basename of project directory)
 project_name=$(basename "$project_dir")
@@ -39,9 +78,11 @@ fi
 
 # Get context window information
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
-total_input=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
-total_output=$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')
-context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 0')
+
+# Get Claude.ai subscription usage windows. Absent for API-key auth and until the
+# first API response of a session, so every consumer below must tolerate empty.
+five_pct=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+five_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
 
 # Build status line
 output=""
@@ -59,46 +100,27 @@ if [[ -n "$effort" ]]; then
   output+=$(printf "${DIMGRAY}:${RESET}${effort_color}%s${RESET}" "$effort")
 fi
 
-# Context window info if available
+# Context window, as a single indicator: progress bar plus percentage
 if [[ -n "$used_pct" ]] && [[ "$used_pct" != "null" ]]; then
-  # Calculate total tokens used
-  total_tokens=$((total_input + total_output))
+  filled=$(printf "%.0f" $(echo "scale=2; $used_pct * $BAR_WIDTH / 100" | bc 2>/dev/null || echo "0"))
+  empty=$((BAR_WIDTH - filled))
 
-  # Create progress bar (12 characters wide)
-  bar_width=12
-  filled=$(printf "%.0f" $(echo "scale=2; $used_pct * $bar_width / 100" | bc 2>/dev/null || echo "0"))
-  empty=$((bar_width - filled))
+  bar=""
+  for ((i=0; i<filled; i++)); do bar="${bar}${BAR_FILLED}"; done
+  for ((i=0; i<empty; i++)); do bar="${bar}${BAR_EMPTY}"; done
 
-  bar="["
-  for ((i=0; i<filled; i++)); do bar="${bar}="; done
-  for ((i=0; i<empty; i++)); do bar="${bar} "; done
-  bar="${bar}]"
-
-  # Format tokens with k suffix for thousands
-  if [[ $total_tokens -ge 1000 ]]; then
-    tokens_used=$(printf "%.0fk" $(echo "scale=0; $total_tokens / 1000" | bc))
-  else
-    tokens_used="${total_tokens}"
-  fi
-
-  # Format context size with k suffix
-  if [[ $context_size -ge 1000 ]]; then
-    tokens_max=$(printf "%.0fk" $(echo "scale=0; $context_size / 1000" | bc))
-  else
-    tokens_max="${context_size}"
-  fi
-
-  # Add progress bar in green
   output+=$(printf " ${GREEN}%s${RESET}" "$bar")
-
-  # Add percentage in yellow
   output+=$(printf " ${YELLOW}%.0f%%${RESET}" "$used_pct")
+fi
 
-  # Add separator in dim gray
-  output+=$(printf " ${DIMGRAY}|${RESET}")
+# 5-hour session window usage, next to the context figures it competes with
+if [[ -n "$five_pct" ]]; then
+  five_color=$(usage_color "$five_pct")
+  output+=$(printf " ${DIMGRAY}|${RESET} ${DIMGRAY}5h${RESET} ${five_color}%.0f%%${RESET}" "$five_pct")
 
-  # Add token counts in white
-  output+=$(printf " ${WHITE}%s/%s${RESET}" "$tokens_used" "$tokens_max")
+  if [[ -n "$five_reset" ]] && [[ ${five_pct%%.*} -ge $RATE_RESET_HINT_AT ]]; then
+    output+=$(printf " ${DIMGRAY}(%s)${RESET}" "$(fmt_countdown "$five_reset")")
+  fi
 fi
 
 # Add project name

@@ -171,7 +171,8 @@
       "source": {
         "source": "git",
         "url": "https://gitlab.gx-testdmnweb.com/team/claude.git"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "spinnerTipsEnabled": false,
