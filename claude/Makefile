@@ -6,4 +6,5 @@ configure:
 	ln -sf $(CURDIR)/settings.json ~/.claude/settings.json
 	ln -sf $(CURDIR)/statusline-command.sh ~/.claude/statusline-command.sh
 	ln -sf $(CURDIR)/skills ~/.claude/skills
+	ln -sf $(CURDIR)/hooks ~/.claude/hooks
 
