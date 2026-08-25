@@ -14,13 +14,26 @@ description: >
   comments are still accurate, or a comment-rot report, use `comment-analyzer` instead. It never
   restructures executable code — that is `/simplify`.
 when_to_use: >
-  Trigger on: unslop, unslop-comments, de-slop, comment slop, too many comments, excessive comments,
-  remove comments, strip comments, clean up comments, prune comments, comment noise, comment
-  hygiene, obvious comments, useless comments, redundant comments, narrating comments, AI comments,
-  LLM comments, generated comments, stale comments, outdated comments, obsolete comments, comment
-  rot, misleading comment, bloated docstring, trim docstrings, tighten godoc, shorten comments,
-  condense comments, make this look hand-written, clean up before MR, tidy the branch before review.
+  The target is comments inside source code: line and block comments, docstrings, godoc, JSDoc —
+  text a compiler, interpreter or linter reads past. Never prose files; that is `unslop-text`.
+  Bare "unslop", "de-slop", "slop", "AI slop", "расслопить", "убрать слоп" name no target and fit
+  both skills; decide by the artifact in front of the user, not by the word. Source file, code
+  branch, diff, or an MR/PR whose subject is the code → `unslop-comments`. Document, README, any
+  Markdown or docs file, commit message, MR/PR *description*, email, chat message or prose draft →
+  `unslop-text`; a fenced code block inside such a file does not move it. Both present, such as a
+  code branch plus the MR description written for it → run both, one on each, and say which ran
+  where. Neither identifiable → ask before editing. An explicitly typed slash command overrides all
+  of this.
   Do NOT trigger for read-only comment audits or accuracy reports — that is `comment-analyzer`.
+  Trigger on: unslop-comments, comment slop, too many comments, excessive comments, remove
+  comments, strip comments, clean up comments, prune comments, comment noise, comment hygiene,
+  obvious comments, useless comments, redundant comments, narrating comments, AI comments, LLM
+  comments, generated comments, stale comments, outdated comments, obsolete comments, comment rot,
+  misleading comment, bloated docstring, trim docstrings, tighten godoc, shorten comments, condense
+  comments, make this code look hand-written, clean the comments up before the MR, tidy the branch
+  before review. По-русски: почисти комментарии, убери комментарии, слишком много комментариев,
+  лишние комментарии, комментарии как у нейросети, комментарии от нейросети, устаревшие
+  комментарии, комментарий не соответствует коду, причеши комментарии перед МР.
 ---
 
 # Unslop comments
@@ -35,91 +48,71 @@ makes it safe to apply without confirmation and keeps `git blame` on the logic i
 is only redundant because the code beneath it is convoluted, note it in the report and leave the
 code alone; restructuring is `/simplify`'s job.
 
-## Step 1 — Establish the scope
+## Step 1 — Get the comments, not the code
 
-The unit of work is the merge request: everything this branch has changed since it diverged from
-the default branch, whether committed or still in the working tree.
-
-This block is the safety interlock on a pass that edits without asking, so it refuses rather than
-guesses. Getting the base branch wrong does not produce a slightly-off diff — it aims comment
-deletion at files this branch never touched, and the report then lists them as cleaned.
+The unit of work is the merge request: everything this branch has changed since it diverged from the
+default branch, committed or still in the working tree. Reading that diff, or the files themselves,
+is the slow way in — executable code is most of the bytes and none of the job.
 
 ```sh
-resolve_scope() {
-  base=""
-  ref=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null) || ref=""
-  # A cached origin/HEAD keeps pointing at the old name forever after a default-branch rename,
-  # and `git fetch --prune` does not correct it. Verify before trusting it, and only pay for a
-  # network round trip when it is actually stale.
-  if [ -n "$ref" ] && ! git rev-parse --verify --quiet "$ref^{commit}" >/dev/null; then
-    git remote set-head origin --auto >/dev/null 2>&1
-    ref=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null) || ref=""
-  fi
-  if [ -n "$ref" ] && git rev-parse --verify --quiet "$ref^{commit}" >/dev/null; then
-    base=$ref
-  else
-    n=0; cands=""
-    for c in origin/main origin/master origin/develop origin/trunk; do
-      git rev-parse --verify --quiet "$c^{commit}" >/dev/null && { n=$((n+1)); cands="$cands $c"; base=$c; }
-    done
-    [ "$n" -eq 1 ] || {
-      echo "SCOPE ERROR: cannot determine the base branch (candidates:${cands:- none})." >&2
-      echo "  Ask the user which branch this MR targets. Edit nothing." >&2
-      return 1
-    }
-    echo "SCOPE WARN: origin/HEAD was unusable; assuming $base." >&2
-  fi
-
-  mb=$(git merge-base HEAD "$base") || {
-    echo "SCOPE ERROR: no merge base between HEAD and $base — unrelated histories, or a shallow" >&2
-    echo "  clone (try git fetch --unshallow). Ask for an explicit base. Edit nothing." >&2
-    return 1
-  }
-
-  echo "SCOPE: base=$base@$(git rev-parse --short "$base") merge-base=$(git rev-parse --short "$mb")"
-  { git diff --stat "$mb" && git diff "$mb"; } || return 1
-  git ls-files --others --exclude-standard | grep . &&
-    echo "SCOPE NOTE: the files above are untracked, so they are absent from the diff." >&2
-  return 0
-}
-resolve_scope
+~/.claude/skills/unslop-comments/scripts/unslop.sh scan
 ```
 
-**Never fall back to a local branch name.** `git symbolic-ref` does not verify that its target
-exists, so on any clone made before a `master` → `main` rename the cached ref resolves to a branch
-the remote no longer has. Falling through to the stale local `master` turns a one-file MR into a
-nine-file one — exit 0, no warning, and eight of those files belong to other people. Refusing and
-asking which branch the MR targets costs five seconds and is always the better trade.
+The script resolves the base branch, then prints comment lines only, from the ranges this branch
+touched:
 
-**Do not wrap this in `set -euo pipefail`.** `pipefail` propagates a failing `git symbolic-ref`
-through the pipeline and kills the block before it prints anything at all, which reads exactly like
-"no changes on this branch".
+```
+SCOPE: base=origin/main@a1b2c3d merge-base=e4f5a6b
+=== internal/api/user.go [go] lines 2-22
+     5| // ---- User handling ----
+     9| 	// Validate the input
+    11| 		return nil, ErrInvalidID // return early   <TRAILING>
+    17| 	//go:noinline   <DIRECTIVE>
+    18| 	// TODO: add error handling   <TODO>
+TOTALS: 18 comment lines in 2 files
+```
 
-`git diff "$mb"` with no `--cached` and no `HEAD` compares the **working tree** to the merge base,
-so committed and uncommitted changes arrive together. It does *not* list untracked files, which is
-why the block reports those separately: a freshly generated file is the densest slop there is and
-is invisible to every `git diff`. Untracked files come into scope only after you say so explicitly.
+Tags mark what needs care rather than deciding for you: `<TRAILING>` is a comment after code on the
+same line, `<DIRECTIVE>` matched the recognition rule in `languages.md`, `<TODO>` and `<LICENCE>`
+are the report-don't-delete classes. Absence of a tag proves nothing — a directive the rule misses
+still behaves like one.
 
-When `HEAD` is the default branch the merge base is the remote tip, so unpushed commits are still
-covered — no special case needed.
+Flags: `-c N` widens the window around each changed hunk (default 3 lines). Passing paths, or
+`--all`, takes whole files instead of hunk windows — that is what a user naming a file means, and
+it turns off the branch-adjacency rule below. Untracked files are listed but never scanned; a
+freshly generated file is the densest slop there is and is invisible to every `git diff`, so it
+comes into scope only when the user says so, by naming it as a path.
 
-If the user named a path or file, treat that as an explicit widening: the whole file is in scope and
-the branch-adjacency rule below does not apply.
+Scan also snapshots every file it lists under `.git/unslop-snapshot`, which is what `check` and
+`restore` compare against later. Run it before editing anything.
 
-Read the full current contents of each file you intend to edit, not just the diff hunks. Judging
-whether a comment is redundant requires seeing the code it describes, and judging whether a comment
-has gone stale requires seeing code the diff may not include.
+**Where the script refuses, ask — do not guess.** A wrong base branch does not produce a
+slightly-off diff; it aims comment deletion at files this branch never touched, and the report then
+lists them as cleaned. Cached `origin/HEAD` refs survive a default-branch rename and `git fetch
+--prune` does not correct them, so the script verifies the ref, re-resolves it once, and refuses
+when several plausible bases exist. Falling back to a local branch name is never the answer.
 
-**Scope the edits to what this branch touched.** A file that the branch modified is in scope, but
-prefer comments in or adjacent to the branch's own changes; do not sweep unrelated legacy comments
-out of a file you happened to touch. Unrelated churn buries the real change and invites reviewers
-to reject the whole thing.
+Generated files, `vendor/`, `node_modules/`, `dist/`, `*/testdata/` and migrations are skipped and
+listed under `SKIPPED:`. Edits there are lost on regeneration, and applied migrations are history
+some tools checksum.
 
-Before editing, check the size of what you are about to change. If the scope exceeds roughly twenty
-files, summarise the plan and ask before proceeding — an unreviewable diff defeats the purpose. And
-if the files you are about to edit already have uncommitted changes, say so in the report: your
-edits will interleave with the user's own in the same unstaged hunks, so they lose selective revert.
-Suggesting they commit first costs nothing.
+**Read code only where the printed line does not decide itself.** Banners, narration and signature
+echoes are decidable from the scan output alone. When you do need the code — judging drift, or
+whether a doc comment still describes the function — pull the narrowest window that answers it:
+
+```sh
+sed -n '40,60p' internal/api/user.go
+```
+
+**Scope the edits to what this branch touched.** A file the branch modified is in scope, but prefer
+comments in or adjacent to the branch's own changes; do not sweep unrelated legacy comments out of a
+file you happened to touch. Unrelated churn buries the real change and invites reviewers to reject
+the whole thing.
+
+If the scan exceeds roughly twenty files, summarise the plan and ask before proceeding — an
+unreviewable diff defeats the purpose. If the files you are about to edit already have uncommitted
+changes, say so in the report: your edits will interleave with the user's own in the same unstaged
+hunks, so they lose selective revert. Suggesting they commit first costs nothing.
 
 ## Step 2 — Classify every comment
 
@@ -208,11 +201,43 @@ Match the file's existing idiom: comment style, position, sentences versus fragm
 language** — a Russian comment stays Russian when compressed. The result should read as though the
 file's author wrote it.
 
-## Step 4 — Verify before reporting
+## Step 4 — Apply the edits
 
-The no-confirmation guarantee rests on "only comments changed", so confirm it rather than assuming
-it. Re-read your own diff and check that every added and removed line is comment syntax. Then, per
-language:
+Deletions go through one batched call, not one Edit per comment. Feed `path:lineno` lines, exactly
+as the scan numbered them:
+
+```sh
+printf '%s\n' internal/api/user.go:5 internal/api/user.go:9 svc.py:11 |
+  ~/.claude/skills/unslop-comments/scripts/unslop.sh prune
+```
+
+`prune` re-checks that every target line is still a comment in that file's language and refuses the
+whole file if one is not, so a stale line number cannot delete code. Whole-line comments are
+deleted; a `<TRAILING>` line is stripped back to the code and its trailing whitespace; a comment
+removed from between two blank lines takes one blank with it. It echoes every change — `-` deleted,
+`~` stripped — and that echo is your removal record for the report. Add `--dry-run` to see the echo
+without writing.
+
+Line numbers shift as soon as a file is written, so build the whole plan for a file from one scan,
+send it in one call, and re-scan before citing any number again.
+
+Rewrites — tightening and drift corrections — are the minority and stay manual: edit them one at a
+time with the Edit tool. Do them after the prune for a file, working from a fresh
+scan of it.
+
+`unslop.sh restore` puts every scanned file back the way it was, at any point.
+
+## Step 5 — Verify before reporting
+
+The no-confirmation guarantee rests on "only comments changed", so prove it rather than assuming it:
+
+```sh
+~/.claude/skills/unslop-comments/scripts/unslop.sh check
+```
+
+It strips every comment from the snapshot and from the current file and compares what is left, so
+any executable line that moved, changed or vanished shows up as a `CHECK FAIL` with a diff. Then,
+per language:
 
 - **Go** — `gofmt -l` on the touched files. gofmt reformats doc-comment structure since 1.19, so a
   hand-shaped comment can fail a `gofmt -l`/`gofumpt` gate even with no executable change.
@@ -222,12 +247,14 @@ language:
 - **TypeScript** — if the project has a typecheck script, run it; `@ts-expect-error` becomes an
   error when the line below it stops failing, so a directive you thought was inert may not be.
 
-If verification fails, fix it before reporting. Reporting a clean pass you did not verify is the one
-failure mode that destroys trust in every future run.
+`check` does not catch a deletion that breaks the parse — a Python docstring that was a function's
+entire body leaves valid-looking code and an `IndentationError` — which is why the per-language
+checks stay. If verification fails, fix it before reporting, or `restore` and start over. Reporting
+a clean pass you did not verify is the one failure mode that destroys trust in every future run.
 
-## Step 5 — Report
+## Step 6 — Report
 
-Apply the edits, then report. The report is what makes an unsupervised destructive pass reviewable,
+The report is what makes an unsupervised destructive pass reviewable,
 so lead with anything needing a human. Three buckets, used consistently in both the header and the
 per-file lines: **removed** (deleted outright), **tightened** (kept but compressed, including
 signature echoes trimmed out of a doc comment), **corrected** (drift and obsolescence fixed).
@@ -250,8 +277,9 @@ signature echoes trimmed out of a doc comment), **corrected** (drift and obsoles
 - path/to/other.py — 4 removed, 1 corrected after a rename
 ```
 
-Line numbers are **post-edit** — deleting comments shifts everything below, so re-read the file
-before writing the report rather than citing remembered positions. Omit an empty heading entirely
+Line numbers for anything that still exists are **post-edit**: re-run `scan` after the last edit and
+cite from that, never from remembered positions. For removed comments, cite the file and quote the
+comment — a post-edit line number for a deleted line points at whatever moved up into it. Omit an empty heading entirely
 rather than writing "none"; a heading that is usually empty stops being read. Never report a comment
 as removed that you did not remove, and never round the counts — the user reads this instead of the
 diff.
@@ -285,6 +313,10 @@ outside the file.
 
 ## Reference files
 
+- `scripts/unslop.sh` — `scan` (comment-only view of the branch, plus the snapshot), `prune`
+  (validated batch deletion), `check` (proves only comments changed), `restore` (undo). Lives at
+  `~/.claude/skills/unslop-comments/scripts/unslop.sh`; run it from the repository root. Needs only
+  git and awk.
 - `languages.md` — the directive-recognition rule, per-language doc conventions, generated-file
   markers, and the exact-form hazards that make a directive silently stop working. Read it before
   editing Go, TypeScript or Python; the traps it lists are not the kind you notice by being fluent.
