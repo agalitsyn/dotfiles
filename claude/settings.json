@@ -1,7 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "respectGitignore": true,
-  "attribution": { "commit": "", "pr": "" },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(env)",
@@ -178,11 +181,9 @@
     "code-simplifier@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "explanatory-output-style@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
-    "learning-output-style@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
@@ -193,9 +194,16 @@
     "typescript-lsp@claude-plugins-official": true,
     "grothex@grothex": true,
     "mattpocock-skills@claude-plugins-official": true,
+    "review@umputun-cc-thingz": true,
     "sentry-cli@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
+    "umputun-cc-thingz": {
+      "source": {
+        "source": "github",
+        "repo": "umputun/cc-thingz"
+      }
+    },
     "revdiff": {
       "source": {
         "source": "github",
@@ -211,6 +219,7 @@
       "autoUpdate": true
     }
   },
+  "outputStyle": "Concise",
   "spinnerTipsEnabled": false,
   "effortLevel": "high",
   "tui": "fullscreen",
