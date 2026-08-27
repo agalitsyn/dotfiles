@@ -146,6 +146,9 @@ brew tap atlassian/homebrew-acli
 brew trust atlassian/acli
 brew install acli
 
+# sentry
+brew install --cask sentry-cli
+
 # Go
 brew install go
 
@@ -179,7 +182,6 @@ brew install vim \
 
 # Noob's editors
 brew install --cask \
-    coteditor \
     sublime-text \
     sublime-merge \
     visual-studio-code \

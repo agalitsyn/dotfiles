@@ -33,7 +33,7 @@
       "manifest": {
         "id": "comment",
         "name": "Comments Highlighter",
-        "version": "0.6.6",
+        "version": "0.6.8",
         "schema_version": 1,
         "description": "Comment language extension for highlighting special comments",
         "repository": "https://github.com/thedadams/zed-comment",
@@ -52,7 +52,7 @@
         "grammars": {
           "comment": {
             "repository": "https://github.com/thedadams/tree-sitter-comment",
-            "rev": "3c25c172802fbb23c27580d77b1328c268beec43",
+            "rev": "d6c715fa37c6086030875ae20adaec399441a45c",
             "path": null
           }
         },
@@ -68,9 +68,9 @@
       "manifest": {
         "id": "dockerfile",
         "name": "Dockerfile",
-        "version": "0.2.1",
+        "version": "0.3.0",
         "schema_version": 1,
-        "description": "Dockerfile support.",
+        "description": "Dockerfile and Docker Compose support.",
         "repository": "https://github.com/zed-extensions/dockerfile",
         "authors": [
           "d1y <chenhonzho@gmail.com>",
@@ -83,12 +83,18 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
+          "languages/docker-compose",
           "languages/dockerfile"
         ],
         "grammars": {
           "dockerfile": {
             "repository": "https://github.com/camdencheek/tree-sitter-dockerfile",
             "rev": "868e44ce378deb68aac902a9db68ff82d2299dd0",
+            "path": null
+          },
+          "yaml": {
+            "repository": "https://github.com/zed-industries/tree-sitter-yaml",
+            "rev": "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a",
             "path": null
           }
         },
@@ -101,7 +107,7 @@
             ],
             "language_ids": {
               "Dockerfile": "dockerfile",
-              "Docker Compose": "docker-compose"
+              "Docker Compose": "dockercompose"
             },
             "code_action_kinds": null
           },
@@ -414,7 +420,7 @@
       "manifest": {
         "id": "proto",
         "name": "Proto",
-        "version": "0.3.2",
+        "version": "0.3.3",
         "schema_version": 1,
         "description": "Protocol Buffers support.",
         "repository": "https://github.com/zed-industries/zed",
@@ -512,7 +518,7 @@
       "manifest": {
         "id": "terraform",
         "name": "Terraform",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Terraform support.",
         "repository": "https://github.com/zed-extensions/terraform",
@@ -527,9 +533,9 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/terraform-vars",
+          "languages/hcl",
           "languages/terraform",
-          "languages/hcl"
+          "languages/terraform-vars"
         ],
         "grammars": {
           "hcl": {
@@ -720,6 +726,22 @@
   },
   "icon_themes": {},
   "languages": {
+    "Docker Compose": {
+      "extension": "dockerfile",
+      "path": "languages/docker-compose",
+      "matcher": {
+        "path_suffixes": [
+          "docker-compose.yml",
+          "docker-compose.yaml",
+          "compose.yaml",
+          "compose.yml"
+        ],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "yaml"
+    },
     "Dockerfile": {
       "extension": "dockerfile",
       "path": "languages/dockerfile",

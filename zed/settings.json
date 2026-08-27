@@ -1,4 +1,5 @@
 {
+  "markdown_preview_font_size": 18.5,
   "use_system_window_tabs": true,
   "cli_default_open_behavior": "new_window",
   "git_panel": {
@@ -45,7 +46,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "0x96f Theme",
   },
   // TODO/NOTE/FIXME chips, mirroring vscode's todohighlight.
   // Requires the "comment" extension (Comments Highlighter), which injects a tag
@@ -206,13 +207,13 @@
   ],
   "base_keymap": "VSCode",
   "autosave": "on_focus_change",
-  "buffer_font_size": 17.5,
+  "buffer_font_size": 17.0,
   "buffer_font_family": "Iosevka Fixed",
-  "buffer_font_weight": 500,
+  "buffer_font_weight": 400.0,
   "buffer_line_height": "comfortable",
-  "ui_font_family": ".ZedSans",
-  "ui_font_size": 17,
-  "agent_ui_font_size": 18,
+  "ui_font_family": ".SystemUIFont",
+  "ui_font_size": 16.0,
+  "agent_ui_font_size": 17.0,
   "confirm_quit": true,
   "git": {
     "git_gutter": "tracked_files",

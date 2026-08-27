@@ -192,7 +192,8 @@
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "grothex@grothex": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "mattpocock-skills@claude-plugins-official": true,
+    "sentry-cli@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {

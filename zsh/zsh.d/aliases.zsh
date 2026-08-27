@@ -1,7 +1,7 @@
-# nvim
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+# vim
+alias v="vim"
+alias vi="vim"
+alias nv="nvim"
 
 # gnu utils modern alternatives
 alias l='eza --all --long --group-directories-first'
