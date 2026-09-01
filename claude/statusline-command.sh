@@ -8,6 +8,7 @@ cwd=$(echo "$input" | jq -r '.workspace.current_dir')
 project_dir=$(echo "$input" | jq -r '.workspace.project_dir')
 model=$(echo "$input" | jq -r '.model.display_name')
 effort=$(echo "$input" | jq -r '.effort.level // empty')
+session_id=$(echo "$input" | jq -r '.session_id // empty')
 
 # Vesper theme colors (using ANSI escape codes)
 RED='\033[38;2;245;161;145m'      # #f5a191 - salmon (model name)
@@ -15,6 +16,7 @@ GREEN='\033[38;2;144;185;159m'    # #90b99f - sage (progress bar & git branch)
 YELLOW='\033[38;2;255;199;153m'   # #ffc799 - bright peach (percentage)
 TAN='\033[38;2;230;185;157m'      # #e6b99d - warm tan (project name)
 LAVENDER='\033[38;2;172;161;207m' # #aca1cf - lavender (login name)
+MAGENTA='\033[38;2;226;158;202m'  # #e29eca - orchid (session id)
 DIMGRAY='\033[38;2;126;126;126m'  # #7e7e7e - dim gray (separators)
 RESET='\033[0m'
 
@@ -129,6 +131,11 @@ output+=$(printf " ${DIMGRAY}|${RESET} ${TAN}%s${RESET}" "$project_name")
 # Add git branch if available
 if [[ -n "$git_branch" ]]; then
   output+=$(printf " ${DIMGRAY}|${RESET} ${GREEN}%s${RESET}" "$git_branch")
+fi
+
+# Add session id, in full so it can be copied into `claude --resume <id>`
+if [[ -n "$session_id" ]]; then
+  output+=$(printf " ${DIMGRAY}|${RESET} ${MAGENTA}%s${RESET}" "$session_id")
 fi
 
 # Add Claude account login
