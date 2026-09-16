@@ -1,3 +1,13 @@
+## Merge requests are written in English
+
+Title, description, and any comment or review note you post on an MR — always
+English, whatever language we are speaking in this session. Reviewers and the
+MR history outlive the conversation that produced them.
+
+- This covers GitLab MRs and GitHub PRs alike, and every note you leave on one.
+- Keep talking to me in the session language. Only the MR text is fixed.
+- Existing MRs written in another language stay as they are unless I ask.
+
 ## Offering me a choice
 
 When you would otherwise print a list of decisions for me to make — options,

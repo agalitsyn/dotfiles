@@ -1,4 +1,5 @@
-theme = light:Apple System Colors Light,dark:vesper
+background-opacity = 0.95
+background-blur-radius = 20
 
 font-family = "IosevkaTerm NFM"
 font-size = 17
@@ -33,3 +34,4 @@ notify-on-command-finish-after = 30s
 window-inherit-working-directory = false
 tab-inherit-working-directory = true
 split-inherit-working-directory = true
+
