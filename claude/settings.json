@@ -25,8 +25,17 @@
       "Bash(find:*)",
       "Bash(mkdir:*)",
       "Bash(ls:*)",
+      "Bash(cd:*)",
       "Bash(source:*)",
       "Bash(awk:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(echo:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(cut:*)",
+      "Bash(which:*)",
+      "Bash(diff:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(glab auth status:*)",
@@ -93,7 +102,8 @@
       "Bash(gh pr merge:*)"
     ],
     "ask": [],
-    "defaultMode": "auto"
+    "defaultMode": "auto",
+    "blockReadsOutsideWorkingDirectories": false
   },
   "model": "opus[1m]",
   "hooks": {
