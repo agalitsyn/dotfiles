@@ -38,14 +38,10 @@
       "Bash(diff:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
-      "Bash(glab auth status:*)",
-      "Bash(glab api:*)",
-      "Bash(glab mr create:*)",
-      "Bash(glab mr update:*)",
-      "Bash(glab mr view:*)",
-      "Bash(glab mr list:*)",
-      "Bash(glab mr note:*)",
-      "Bash(glab mr diff:*)",
+      "Bash(glab:*)",
+      "Bash(acli:*)",
+      "Bash(sentry-cli:*)",
+      "Bash(kubectl:*)",
       "Bash(make:*)",
       "Bash(go:*)",
       "Bash(gofmt:*)",
@@ -97,15 +93,11 @@
       "mcp__plugin_context7_context7__query-docs",
       "mcp__shadcn__get_add_command_for_items"
     ],
-    "deny": [
-      "Bash(glab mr merge:*)",
-      "Bash(gh pr merge:*)"
-    ],
+    "deny": [],
     "ask": [],
     "defaultMode": "auto",
     "blockReadsOutsideWorkingDirectories": false
   },
-  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -123,18 +115,6 @@
           {
             "type": "command",
             "command": "'/Users/agalitsyn/.config/agterm/agterm-notify.sh' blocked --blink"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/hooks/protect-branch.sh",
-            "timeout": 10
           }
         ]
       }

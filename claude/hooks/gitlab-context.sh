@@ -73,11 +73,14 @@ You are allowed to do this without checking first:
     PUT    projects/:id/merge_requests/:iid/notes/:note_id            (edit a comment)
     DELETE projects/:id/merge_requests/:iid/notes/:note_id            (remove a comment)
 
-Two things are off-limits and enforced by hooks, so attempting them just fails:
-- Landing a merge request. Not \`glab mr merge\`, not \`gh pr merge\`, not PUT on
-  .../merge_requests/:iid/merge. When an MR is ready, say so and let the user merge it.
-- Any commit, push, merge, rebase, cherry-pick or revert that lands on main, master, or
-  origin's default branch. Branch first, then open an MR.
+Landing a merge request is allowed, but ask the user first: \`glab mr merge\`, or PUT on
+.../merge_requests/:iid/merge. Say the MR is ready and wait for a yes. Once the user has
+said they authorise merges — "я разрешаю", "go ahead and merge from now on" — stop asking
+for the rest of the session. Take that from something they said, not from your own reading.
+
+Branch protection is the forge's job, not this session's: main and master are protected
+server-side, so a push that shouldn't land is rejected there. Still branch and open an MR
+as a matter of course.
 
 Anything else — closing or reopening MRs, editing labels or milestones outside \`mr update\`,
 \`glab ci retry\`, project or member changes — is not covered above: ask the user before running it.

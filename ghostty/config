@@ -18,6 +18,9 @@ copy-on-select = true
 scrollback-limit = 4294967295
 keybind = shift+enter=text:\n
 
+keybind = cmd+alt+right=next_tab
+keybind = cmd+alt+left=previous_tab
+
 # Split below current pane, inheriting its CWD (split-inherit-working-directory).
 # Not global; per-tab CWD is preserved since each tab is its own surface.
 # Splits open 50/50; chain a resize to shrink the new bottom pane (~200px).

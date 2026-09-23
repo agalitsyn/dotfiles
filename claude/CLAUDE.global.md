@@ -8,6 +8,19 @@ MR history outlive the conversation that produced them.
 - Keep talking to me in the session language. Only the MR text is fixed.
 - Existing MRs written in another language stay as they are unless I ask.
 
+## Merging an MR or PR
+
+Merging is allowed, but ask me first. `glab mr merge`, `gh pr merge` and the
+REST call behind them — say the MR is ready and wait for my yes before running
+one. Not a refusal, just a confirmation.
+
+Once I have said I authorise it — "я разрешаю", "go ahead and merge from now
+on" — stop asking and merge on your own for the rest of the session. Take that
+from something I actually said, not from your reading of the situation.
+
+Branch protection is the forge's job. Don't treat main or master as untouchable
+locally; the server rejects what shouldn't land.
+
 ## Offering me a choice
 
 When you would otherwise print a list of decisions for me to make — options,
