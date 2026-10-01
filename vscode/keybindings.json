@@ -239,12 +239,12 @@
   // relative with line number
   {
     "key": "shift+cmd+c",
-    "command": "copy-relative-path-and-line-numbers.both",
+    "command": "copyRelativeFilePath",
   },
   // absolute
   {
     "key": "ctrl+shift+cmd+c",
-    "command": "copyFilePath",
+    "command": "copy-relative-path-and-line-numbers.both",
   },
   // gihub/gitlab
   {

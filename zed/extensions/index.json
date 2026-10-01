@@ -4,12 +4,12 @@
       "manifest": {
         "id": "0x96f",
         "name": "0x96f Theme",
-        "version": "1.3.6",
+        "version": "1.4.0",
         "schema_version": 1,
         "description": "A simple and pleasant dark theme for Zed",
         "repository": "https://github.com/0x96f-org/0x96f-zed-theme",
         "authors": [
-          "Filip Janevski <filip@janevski.dev>"
+          "Filip <filip@0x96f.dev>"
         ],
         "lib": {
           "kind": null,
@@ -223,7 +223,7 @@
       "manifest": {
         "id": "html",
         "name": "HTML",
-        "version": "0.3.1",
+        "version": "0.3.2",
         "schema_version": 1,
         "description": "HTML support.",
         "repository": "https://github.com/zed-industries/zed",
@@ -420,7 +420,7 @@
       "manifest": {
         "id": "proto",
         "name": "Proto",
-        "version": "0.3.3",
+        "version": "0.3.4",
         "schema_version": 1,
         "description": "Protocol Buffers support.",
         "repository": "https://github.com/zed-industries/zed",
@@ -719,6 +719,14 @@
       "extension": "0x96f",
       "path": "themes/0x96f-theme.json"
     },
+    "0x96f Theme Darker": {
+      "extension": "0x96f",
+      "path": "themes/0x96f-theme.json"
+    },
+    "0x96f Theme Lighter": {
+      "extension": "0x96f",
+      "path": "themes/0x96f-theme.json"
+    },
     "Vesper": {
       "extension": "vesper",
       "path": "themes/vesper-dark.json"
@@ -740,7 +748,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "yaml"
+      "grammar": "yaml",
+      "query_files": 231
     },
     "Dockerfile": {
       "extension": "dockerfile",
@@ -755,7 +764,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "dockerfile"
+      "grammar": "dockerfile",
+      "query_files": 17
     },
     "Editorconfig": {
       "extension": "editorconfig",
@@ -768,7 +778,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "editorconfig"
+      "grammar": "editorconfig",
+      "query_files": 1
     },
     "Git Attributes": {
       "extension": "git-firefly",
@@ -784,7 +795,8 @@
         ]
       },
       "hidden": false,
-      "grammar": "gitattributes"
+      "grammar": "gitattributes",
+      "query_files": 17
     },
     "Git Config": {
       "extension": "git-firefly",
@@ -802,7 +814,8 @@
         ]
       },
       "hidden": false,
-      "grammar": "git_config"
+      "grammar": "git_config",
+      "query_files": 17
     },
     "Git Ignore": {
       "extension": "git-firefly",
@@ -829,7 +842,8 @@
         ]
       },
       "hidden": false,
-      "grammar": "gitignore"
+      "grammar": "gitignore",
+      "query_files": 17
     },
     "Git Rebase": {
       "extension": "git-firefly",
@@ -844,7 +858,8 @@
         ]
       },
       "hidden": false,
-      "grammar": "git_rebase"
+      "grammar": "git_rebase",
+      "query_files": 17
     },
     "HCL": {
       "extension": "terraform",
@@ -857,7 +872,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "hcl"
+      "grammar": "hcl",
+      "query_files": 31
     },
     "HTML": {
       "extension": "html",
@@ -872,7 +888,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "html"
+      "grammar": "html",
+      "query_files": 63
     },
     "HTML-Jinja": {
       "extension": "html-jinja",
@@ -887,7 +904,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "html"
+      "grammar": "html",
+      "query_files": 59
     },
     "Jinja-Inline": {
       "extension": "html-jinja",
@@ -898,7 +916,8 @@
         "modeline_aliases": []
       },
       "hidden": true,
-      "grammar": "jinja"
+      "grammar": "jinja",
+      "query_files": 1
     },
     "Make": {
       "extension": "make",
@@ -916,7 +935,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "make"
+      "grammar": "make",
+      "query_files": 159
     },
     "Mermaid": {
       "extension": "mermaid",
@@ -930,7 +950,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "mermaid"
+      "grammar": "mermaid",
+      "query_files": 1
     },
     "Proto": {
       "extension": "proto",
@@ -943,7 +964,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "proto"
+      "grammar": "proto",
+      "query_files": 541
     },
     "SQL": {
       "extension": "sql",
@@ -956,7 +978,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "sql"
+      "grammar": "sql",
+      "query_files": 539
     },
     "TOML": {
       "extension": "toml",
@@ -972,7 +995,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "toml"
+      "grammar": "toml",
+      "query_files": 639
     },
     "Terraform": {
       "extension": "terraform",
@@ -986,7 +1010,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "hcl"
+      "grammar": "hcl",
+      "query_files": 31
     },
     "Terraform Vars": {
       "extension": "terraform",
@@ -999,7 +1024,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "hcl"
+      "grammar": "hcl",
+      "query_files": 27
     },
     "Vue.js": {
       "extension": "vue",
@@ -1012,7 +1038,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "vue"
+      "grammar": "vue",
+      "query_files": 63
     },
     "XML": {
       "extension": "xml",
@@ -1025,7 +1052,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "xml"
+      "grammar": "xml",
+      "query_files": 13
     },
     "comment": {
       "extension": "comment",
@@ -1036,7 +1064,8 @@
         "modeline_aliases": []
       },
       "hidden": true,
-      "grammar": "comment"
+      "grammar": "comment",
+      "query_files": 5
     },
     "http": {
       "extension": "http",
@@ -1049,7 +1078,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "http"
+      "grammar": "http",
+      "query_files": 1
     }
   }
 }

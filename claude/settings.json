@@ -98,6 +98,7 @@
     "defaultMode": "auto",
     "blockReadsOutsideWorkingDirectories": false
   },
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -125,17 +126,6 @@
           {
             "type": "command",
             "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' active --blink"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/hooks/gitlab-context.sh",
-            "timeout": 10
           }
         ]
       }
@@ -229,5 +219,10 @@
     "**/.venv/**",
     "**/venv/**",
     "**/node_modules/**"
-  ]
+  ],
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  }
 }
