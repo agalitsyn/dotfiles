@@ -163,7 +163,7 @@ brew install \
 
 # JS
 brew install \
-    node@20 \
+    node \
     yarn \
     pnpm
 
@@ -175,6 +175,24 @@ brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask brave-browser
 brew install --cask yandex
+
+# AI
+brew install --cask \
+    codex \
+    chatgpt \
+    claude-code \
+    claude \
+    opencode
+
+# Umputun apps
+brew tap umputun/apps
+brew install --cask \
+    agterm \
+    revmux
+brew install revdiff
+
+# Terminals
+brew install --cask ghostty
 
 # True editors
 brew install vim \
@@ -192,12 +210,6 @@ brew install --cask jetbrains-toolbox
 
 # Local LLM manager
 #brew install ollama
-
-# Chat apps
-brew install --cask claude
-
-# Terminals
-brew install --cask ghostty
 
 # Firewall
 #brew install --cask lulu
