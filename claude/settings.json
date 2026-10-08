@@ -59,6 +59,7 @@
       "Bash(curl:*)",
       "Bash(hurl:*)",
       "Bash(psql:*)",
+      "Bash(peer-chat.py:*)",
       "WebFetch(domain:*)",
       "WebSearch",
       "mcp__ide__getDiagnostics",

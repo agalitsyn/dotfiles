@@ -192,14 +192,43 @@ Then clone dotfiles and install everything with homebrew and link configs.
 
 - Siri and Spotlight ->  Remove all items from Spotlight index, especially PDF to avoid `CGPDFService` high CPU usage
 
-Disable spotlight completly:
+Pick one of the options below. Search inside Notes and Mail runs on the Spotlight index (CoreSpotlight is served by `mds`), so option 1 breaks it.
+
+### Option 1: disable spotlight completely
+
+Breaks search in Notes and Mail.
+
 - Restart in Recovery mode (hold power button)
 - Open terminal and run `csrutil disable`
 - Restart
 
 - Disable spotlight on all disks `sudo mdutil -a -i off`
-- Unload service `sudo launchctl bootout gui/$UID /System/Library/LaunchDaemons/com.apple.metadata.mds.plist`
+- Disable and unload service
+  ```sh
+  sudo launchctl disable system/com.apple.metadata.mds
+  sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+  ```
 - Restart
+
+### Option 2: keep spotlight for app search, exclude heavy directories
+
+There is no Notes-only mode: the same `mds` indexes files and app data, so run it and exclude almost every file instead.
+
+- Enable and start service (if `bootstrap` fails, restart instead)
+  ```sh
+  sudo launchctl enable system/com.apple.metadata.mds
+  sudo launchctl bootstrap system /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+  ```
+- Before turning indexing on, Spotlight -> Search Privacy -> add heavy directories:
+  `~/Downloads`, `~/Torrents`, `~/Movies`, `~/Music`, `~/Pictures`, `~/src`, `~/pkg`, `~/sdk`, `~/opt`, `~/tmp`, `~/bin`,
+  `~/DataGripProjects`, `~/Soft`, `~/Soft Windows`, `~/Calibre Library`, `~/Yandex.Disk.localized`, external disks.
+  Don't exclude `~` or `~/Library`: the app index lives in `~/Library/Metadata/CoreSpotlight`
+- Enable indexing on the data volume only, external disks stay off
+  ```sh
+  sudo mdutil -i on /System/Volumes/Data
+  mdutil -s /System/Volumes/Data
+  ```
+- Quit Notes (Cmd+Q) and reopen it, it reindexes notes
 
 ## Dock
 

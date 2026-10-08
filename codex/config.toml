@@ -1,0 +1,141 @@
+# >>> agterm agent-status >>>
+notify = ["/Users/agalitsyn/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[[hooks.SessionStart]]
+[[hooks.SessionStart.hooks]]
+type = "command"
+command = "'/Users/agalitsyn/.config/agterm/agent-status/agterm-codex-status.sh' session-start"
+
+[[hooks.UserPromptSubmit]]
+[[hooks.UserPromptSubmit.hooks]]
+type = "command"
+command = "'/Users/agalitsyn/.config/agterm/agent-status/agterm-codex-status.sh' user-prompt-submit"
+
+[[hooks.PreToolUse]]
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "'/Users/agalitsyn/.config/agterm/agent-status/agterm-codex-status.sh' pre-tool-use"
+
+[[hooks.PostToolUse]]
+[[hooks.PostToolUse.hooks]]
+type = "command"
+command = "'/Users/agalitsyn/.config/agterm/agent-status/agterm-codex-status.sh' post-tool-use"
+
+[[hooks.PermissionRequest]]
+[[hooks.PermissionRequest.hooks]]
+type = "command"
+command = "'/Users/agalitsyn/.config/agterm/agent-status/agterm-codex-status.sh' permission-request"
+
+[[hooks.Stop]]
+[[hooks.Stop.hooks]]
+type = "command"
+command = "'/Users/agalitsyn/.config/agterm/agent-status/agterm-codex-status.sh' stop"
+
+[hooks.state]
+
+[hooks.state."/Users/agalitsyn/.codex/config.toml:pre_tool_use:0:0"]
+trusted_hash = "sha256:c5b67fea14a5e3b093140a7861f17d7d8b36af06fff60999f0693e9220933848"
+
+[hooks.state."/Users/agalitsyn/.codex/config.toml:permission_request:0:0"]
+trusted_hash = "sha256:72f5062856087c2cf2e67ed37fc8e42479d3c13b3e13b9a39b2b8e30c0e62337"
+
+[hooks.state."/Users/agalitsyn/.codex/config.toml:post_tool_use:0:0"]
+trusted_hash = "sha256:c15a131075e6b7f5b2eb227ca4b4bd61fb472c5c4c6e22c8f6a9836263ffe035"
+
+[hooks.state."/Users/agalitsyn/.codex/config.toml:session_start:0:0"]
+trusted_hash = "sha256:8e456424fe9edaa617e83d193f291d8ae3e0c30f8c938ff82f869ae5b57bc27c"
+
+[hooks.state."/Users/agalitsyn/.codex/config.toml:user_prompt_submit:0:0"]
+trusted_hash = "sha256:8c872cc3c7f645bf7077fe0e7e43690ab0ac26cec1f03d45de6af3accbca36cf"
+
+[hooks.state."/Users/agalitsyn/.codex/config.toml:stop:0:0"]
+trusted_hash = "sha256:bee5bc21475459634e5a2d69611f17f62209403d1f18da11156bf7718b8254fe"
+
+[desktop]
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+conversationDetailMode = "STEPS_PROSE"
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "/Users/agalitsyn/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "/Users/agalitsyn/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
+enabled = true
+
+[features]
+js_repl = false
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/agalitsyn/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/agalitsyn/.codex"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1002.52244"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/agalitsyn/.codex/plugins/cache/openai-bundled/browser/26.1002.52244/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/agalitsyn/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[tui]
+status_line = ["model-with-reasoning", "context-used", "five-hour-limit", "project-name", "git-branch", "thread-id"]
+status_line_use_colors = true
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+"gpt-6.1-sol" = 2
+
+[projects."/Users/agalitsyn/.dotfiles"]
+trust_level = "trusted"
+# <<< agterm agent-status <<<
