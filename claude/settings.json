@@ -178,7 +178,8 @@
     "sentry-cli@claude-plugins-official": true,
     "agterm@agterm": true,
     "revmux@revmux": true,
-    "html-plan@claude-community": true
+    "html-plan@claude-community": true,
+    "delos@delos": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {
@@ -213,6 +214,13 @@
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-community"
+      },
+      "autoUpdate": true
+    },
+    "delos": {
+      "source": {
+        "source": "git",
+        "url": "https://gitlab.tst-delsmaindomn.com/delos/claude-plugins.git"
       },
       "autoUpdate": true
     }
