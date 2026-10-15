@@ -2,6 +2,10 @@ source ~/.zsh.d/themes/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# completion system must be up before hooks, they may call compdef
+FPATH=${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-completions:$FPATH
+autoload -Uz compinit && compinit -u
+
 # load hooks
 ZSH_CUSTOM=~/.zsh.d
 
@@ -43,8 +47,6 @@ setopt AUTO_PUSHD
 setopt no_nomatch
 
 # case-insensitive matching
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-autoload -Uz compinit && compinit -u
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # highlight on tab
