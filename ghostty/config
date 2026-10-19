@@ -20,6 +20,9 @@ keybind = shift+enter=text:\n
 
 keybind = cmd+alt+right=next_tab
 keybind = cmd+alt+left=previous_tab
+# Physical keys so tab switching works with non-Latin layouts (default binds match `[`/`]` codepoints).
+keybind = cmd+shift+bracket_right=next_tab
+keybind = cmd+shift+bracket_left=previous_tab
 
 # Split below current pane, inheriting its CWD (split-inherit-working-directory).
 # Not global; per-tab CWD is preserved since each tab is its own surface.

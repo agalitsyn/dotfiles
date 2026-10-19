@@ -250,5 +250,6 @@
     "**/.venv/**",
     "**/venv/**",
     "**/node_modules/**"
-  ]
+  ],
+  "switchModelsOnFlag": false
 }
