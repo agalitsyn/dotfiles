@@ -157,12 +157,9 @@
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "claude-md-management@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
@@ -236,6 +233,7 @@
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "auto",
+  "switchModelsOnFlag": false,
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754295236582
@@ -250,6 +248,5 @@
     "**/.venv/**",
     "**/venv/**",
     "**/node_modules/**"
-  ],
-  "switchModelsOnFlag": false
+  ]
 }

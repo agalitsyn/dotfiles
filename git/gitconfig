@@ -14,6 +14,7 @@
     s = switch
     p = pull --rebase
     co = checkout
+    cm = !git checkout main && git pull
     st = status
     br = !git --no-pager branch
     ci = commit
