@@ -5,7 +5,6 @@
 
 input=$(cat)
 cwd=$(echo "$input" | jq -r '.workspace.current_dir')
-project_dir=$(echo "$input" | jq -r '.workspace.project_dir')
 model=$(echo "$input" | jq -r '.model.display_name')
 effort=$(echo "$input" | jq -r '.effort.level // empty')
 session_id=$(echo "$input" | jq -r '.session_id // empty')
@@ -14,7 +13,7 @@ session_id=$(echo "$input" | jq -r '.session_id // empty')
 RED='\033[38;2;245;161;145m'      # #f5a191 - salmon (model name)
 GREEN='\033[38;2;144;185;159m'    # #90b99f - sage (progress bar & git branch)
 YELLOW='\033[38;2;255;199;153m'   # #ffc799 - bright peach (percentage)
-TAN='\033[38;2;230;185;157m'      # #e6b99d - warm tan (project name)
+TAN='\033[38;2;230;185;157m'      # #e6b99d - warm tan (current directory)
 LAVENDER='\033[38;2;172;161;207m' # #aca1cf - lavender (login name)
 MAGENTA='\033[38;2;226;158;202m'  # #e29eca - orchid (session id)
 DIMGRAY='\033[38;2;126;126;126m'  # #7e7e7e - dim gray (separators)
@@ -60,9 +59,6 @@ fmt_countdown() {
   fi
 }
 
-# Get project name (basename of project directory)
-project_name=$(basename "$project_dir")
-
 # Get Claude account login (OAuth email) from ~/.claude.json
 account_login=""
 if [[ -r "$HOME/.claude.json" ]]; then
@@ -76,6 +72,26 @@ if git -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
   if [[ -n "$branch" ]]; then
     git_branch="$branch"
   fi
+  # A linked worktree has its own git-dir, separate from the shared common dir
+  git_dir=$(git -C "$cwd" rev-parse --absolute-git-dir 2>/dev/null)
+  common_dir=$(cd "$cwd" && cd "$(git rev-parse --git-common-dir 2>/dev/null)" 2>/dev/null && pwd -P)
+  if [[ -n "$git_dir" && -n "$common_dir" && "$git_dir" != "$common_dir" ]]; then
+    git_worktree=$(basename "$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)")
+    # Show the main checkout plus the subdir, not the long worktree path
+    prefix=$(git -C "$cwd" rev-parse --show-prefix 2>/dev/null)
+    main_cwd="$(dirname "$common_dir")${prefix:+/${prefix%/}}"
+  fi
+fi
+git_worktree=$(echo "$input" | jq -r '.worktree.name // empty' | grep . || echo "$git_worktree")
+# Claude Code names worktree branches "worktree-<name>", which repeats wt:<name>
+[[ -n "$git_worktree" && "$git_branch" == "worktree-$git_worktree" ]] && git_branch=""
+
+# Current directory as its last two components ("team/claude-plugins"),
+# with $HOME shortened to ~ so a shallow path still reads "~/src"
+cwd_display="${main_cwd:-$cwd}"
+cwd_display="${cwd_display/#"$HOME"/\~}"
+if [[ "$cwd_display" == */*/* ]]; then
+  cwd_display="$(basename "$(dirname "$cwd_display")")/$(basename "$cwd_display")"
 fi
 
 # Get context window information
@@ -125,14 +141,6 @@ if [[ -n "$five_pct" ]]; then
   fi
 fi
 
-# Add project name
-output+=$(printf " ${DIMGRAY}|${RESET} ${TAN}%s${RESET}" "$project_name")
-
-# Add git branch if available
-if [[ -n "$git_branch" ]]; then
-  output+=$(printf " ${DIMGRAY}|${RESET} ${GREEN}%s${RESET}" "$git_branch")
-fi
-
 # Add session id, in full so it can be copied into `claude --resume <id>`
 if [[ -n "$session_id" ]]; then
   output+=$(printf " ${DIMGRAY}|${RESET} ${MAGENTA}%s${RESET}" "$session_id")
@@ -143,4 +151,13 @@ if [[ -n "$account_login" ]]; then
   output+=$(printf " ${DIMGRAY}|${RESET} ${LAVENDER}%s${RESET}" "$account_login")
 fi
 
-printf "%s" "$output"
+# Second line: where we are — directory, branch, worktree
+line2=$(printf "${TAN}%s${RESET}" "$cwd_display")
+if [[ -n "$git_branch" ]]; then
+  line2+=$(printf " ${DIMGRAY}|${RESET} ${GREEN}%s${RESET}" "$git_branch")
+fi
+if [[ -n "$git_worktree" ]]; then
+  line2+=$(printf " ${DIMGRAY}|${RESET} ${DIMGRAY}wt:${RESET}${LAVENDER}%s${RESET}" "$git_worktree")
+fi
+
+printf "%s\n%s" "$output" "$line2"

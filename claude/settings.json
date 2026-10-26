@@ -176,7 +176,8 @@
     "agterm@agterm": true,
     "revmux@revmux": true,
     "html-plan@claude-community": true,
-    "delos@delos": true
+    "delos@delos": true,
+    "lua-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {

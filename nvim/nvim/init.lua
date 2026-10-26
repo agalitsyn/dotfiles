@@ -45,6 +45,17 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus up" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down with centering" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up with centering" })
 
+-- forgive caps on :wq
+for _, name in ipairs({ "Wq", "WQ" }) do
+  vim.api.nvim_create_user_command(name, function(opts)
+    vim.cmd.wq({ bang = opts.bang })
+  end, { bang = true })
+end
+-- user commands must start uppercase, so wQ needs an abbreviation
+vim.keymap.set("ca", "wQ", function()
+  return (vim.fn.getcmdtype() == ":" and vim.fn.getcmdline() == "wQ") and "wq" or "wQ"
+end, { expr = true })
+
 -- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
