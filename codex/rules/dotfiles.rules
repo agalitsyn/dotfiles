@@ -1,2 +1,4 @@
 prefix_rule(pattern=["peer-chat.py", "--prepare-message"], decision="allow")
 prefix_rule(pattern=["peer-chat.py", "--to", "claude", "--message-file"], decision="allow")
+prefix_rule(pattern=["make"], decision="allow")
+prefix_rule(pattern=["sentry"], decision="allow")
