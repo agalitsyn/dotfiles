@@ -208,6 +208,10 @@ brew install --cask \
 # Absolute noob's editors
 brew install --cask jetbrains-toolbox
 
+# diff tool
+brew trust hackmajoris/apps
+brew install hackmajoris/apps/rebased
+
 # Local LLM manager
 #brew install ollama
 

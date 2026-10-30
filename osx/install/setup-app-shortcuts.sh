@@ -55,11 +55,17 @@ set -euo pipefail
 # than overriding anything. shift+cmd+l is free in Safari 26.6: cmd+l is Open
 # Location, opt+cmd+l is Show Downloads, ctrl+cmd+l is Unlock All Private
 # Windows.
+#
+# Chrome's Tab > Duplicate Tab ships unbound. It puts the copy right after the
+# current tab and keeps its back history, unlike cmd+l cmd+enter, which opens
+# a fresh tab at the end of the strip. shift+opt+cmd+d because opt+cmd+d is the
+# system-wide Dock hiding toggle, and cmd+d / shift+cmd+d are Chrome bookmarks.
 # Single-quoted on purpose: `$` means Shift here, and in double quotes bash
 # would expand it — silently, or as an unbound-variable abort under `set -u`.
 SHORTCUTS=(
     'com.apple.Safari|Show Sidebar|@$l'
     'com.apple.Safari|Hide Sidebar|@$l'
+    'com.google.Chrome|Duplicate Tab|@~$d'
 )
 
 # Bundle ids touched above, deduplicated — the set of apps to restart or clear.
@@ -116,6 +122,10 @@ process_name() {
     case "$1" in
     com.googlecode.iterm2)
         echo "iTerm2"
+        return
+        ;;
+    com.google.Chrome)
+        echo "Google Chrome"
         return
         ;;
     esac

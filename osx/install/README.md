@@ -137,6 +137,8 @@ edits. `setup-app-shortcuts.sh` holds the list and writes it:
 Currently bound: shift+cmd+l toggles Safari's sidebar. Safari 26 dropped the
 binding it had through Safari 14 — `View > Show Sidebar` has no key equivalent
 at all now, so this restores the old one rather than overriding anything.
+shift+opt+cmd+d is Chrome's `Tab > Duplicate Tab`, which places the copy next
+to the current tab instead of at the end of the strip.
 
 Three things bite when adding more:
 
