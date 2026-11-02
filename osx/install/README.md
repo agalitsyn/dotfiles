@@ -22,6 +22,13 @@
     - Mission control ctrl+opt+left right = move to space;
     - Services - disable all
 
+Disable the accent popup on key hold (`ł ļ ľ`), so holding a key repeats it.
+Relaunch apps to pick it up; undo with `defaults delete -g ApplePressAndHoldEnabled`
+
+```sh
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ### Per-device modifier keys (Option<->Command swap, Caps Lock -> Escape)
 
 Modifier Keys is a *per-keyboard* setting, so every external board needs it set
