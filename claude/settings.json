@@ -177,7 +177,8 @@
     "revmux@revmux": true,
     "html-plan@claude-community": true,
     "delos@delos": true,
-    "lua-lsp@claude-plugins-official": true
+    "lua-lsp@claude-plugins-official": true,
+    "slack@anthropic-plugin-directory": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {
