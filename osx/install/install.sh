@@ -44,6 +44,8 @@ brew install coreutils \
     netcat \
     pv \
     htop \
+    btop \
+    mole \
     p7zip
 
 # Newer blazingly fast cli tools, mostly in Rust BTW
