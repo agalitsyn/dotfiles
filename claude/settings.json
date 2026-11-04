@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "respectGitignore": true,
+  "cleanupPeriodDays": 365,
   "attribution": {
     "commit": "",
     "pr": ""
@@ -60,6 +61,7 @@
       "Bash(hurl:*)",
       "Bash(psql:*)",
       "Bash(peer-chat.py:*)",
+      "Bash(agtermctl:*)",
       "WebFetch(domain:*)",
       "WebSearch",
       "mcp__ide__getDiagnostics",
@@ -131,6 +133,16 @@
         ]
       }
     ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$CLAUDE_LAST_SESSION_FILE\" ] && [ \"$(ps -o ppid= -p $PPID | tr -d ' ')\" = \"$CLAUDE_LAST_SESSION_SHELL\" ] && jq -r .session_id > \"$CLAUDE_LAST_SESSION_FILE\"; true"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
@@ -147,6 +159,10 @@
           {
             "type": "command",
             "command": "'/Users/agalitsyn/.config/agterm/agent-status/agterm-agent-status.sh' active --blink"
+          },
+          {
+            "type": "command",
+            "command": "~/bin/context-nudge.sh"
           }
         ]
       }
@@ -171,7 +187,6 @@
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "grothex@grothex": true,
-    "mattpocock-skills@claude-plugins-official": true,
     "sentry-cli@claude-plugins-official": true,
     "agterm@agterm": true,
     "revmux@revmux": true,

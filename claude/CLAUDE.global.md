@@ -20,7 +20,12 @@ and mid-implementation alike. It does not apply to open questions that have no
 candidate answers yet, or to confirmation before a destructive action — ask
 those in plain text.
 
-- Recommended option goes first, labelled `(Recommended)`.
+- Write the whole dialog in the session language: question, header, option
+  labels, descriptions, previews. If we speak Russian, it is in Russian, even
+  though these instructions are in English. Code identifiers, paths, commands
+  and flags stay as they are.
+- Recommended option goes first, labelled `(Recommended)` — translated to the
+  session language, e.g. `(Рекомендую)`.
 - One question per decision. Don't merge unrelated decisions to save a slot.
 - Each option's `description` says what happens if I pick it, downside included.
 - More than four decisions: send the first four, then another AskUserQuestion
