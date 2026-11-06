@@ -62,7 +62,7 @@ export EDITOR='nvim'
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
 
-# Sentry CLI: use a separate profile (sentry.io) for Briar projects; default profile is Delos self-hosted
+# Sentry CLI: use a separate profile (sentry.io) for Briar projects; default profile is self-hosted
 sentry() {
   if [[ "$PWD/" == "$HOME/src/briar/"* ]]; then
     SENTRY_CONFIG_DIR="$HOME/.config/sentry-briar" command sentry "$@"

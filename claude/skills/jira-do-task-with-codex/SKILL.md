@@ -33,7 +33,7 @@ one the skill was called from) is closed, because its only job was to start the 
 The worktree is made from the repository `--repo DIR` names, or the current working directory's
 when it is left out. Decide it from the ticket before running, never by default from the cwd: a
 summary like `admin-gateway: …` or the code paths in the description name the service. Look for it
-under `~/src/work/delos/` and `~/src/work/delos/archive/`. When the cwd's repository is that one,
+under `~/src/work/` and its subdirectories. When the cwd's repository is that one,
 `--repo` can be left out. When it is not, pass `--repo` with the right one. When the ticket names no
 repository, or names several, ask the user which one.
 
