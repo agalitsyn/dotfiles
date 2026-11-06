@@ -4,19 +4,44 @@
 # the planning prompt. Prints the new session id and the worktree path.
 set -euo pipefail
 
-url=${1:?usage: open-task.sh <jira-url>}
+usage='usage: open-task.sh <jira-url> [--repo DIR] [--plan FILE]'
+url='' repo=$PWD plan=''
+while (($#)); do
+  case $1 in
+    --repo) repo=${2:?$usage}; shift 2 ;;
+    --repo=*) repo=${1#*=}; shift ;;
+    --plan) plan=${2:?$usage}; shift 2 ;;
+    --plan=*) plan=${1#*=}; shift ;;
+    -*) echo "$usage" >&2; exit 2 ;;
+    *) [[ -z $url ]] || { echo "$usage" >&2; exit 2; }; url=$1; shift ;;
+  esac
+done
+[[ -n $url ]] || { echo "$usage" >&2; exit 2; }
 # The URL ends up inside a single-quoted shell line typed into the pane.
 [[ $url =~ ^https?://[A-Za-z0-9./:_?=\&%#-]+$ ]] || { echo "not a plain Jira URL: $url" >&2; exit 2; }
 key=$(grep -oE '[A-Z][A-Z0-9]+-[0-9]+' <<<"$url" | head -1 || true)
 [[ -n $key ]] || { echo "no ticket key in: $url" >&2; exit 2; }
 [[ ${AGTERM_ENABLED:-} == 1 && -n ${AGTERM_SESSION_ID:-} ]] || { echo "not inside an agterm session" >&2; exit 2; }
+[[ -z $plan || -s $plan ]] || { echo "plan file missing or empty: $plan" >&2; exit 2; }
+[[ -d $repo ]] || { echo "not a directory: $repo" >&2; exit 2; }
 
-common=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null) || {
-  echo "not a git repository: $PWD" >&2
+common=$(git -C "$repo" rev-parse --path-format=absolute --git-common-dir 2>/dev/null) || {
+  echo "not a git repository: $repo" >&2
   exit 2
 }
 # The main checkout, even when called from inside another worktree.
 root=$(dirname "$common")
+
+# A plan made in the calling session goes to a stable place: that session's scratchpad dies with it.
+if [[ -n $plan ]]; then
+  plan_dst=$HOME/.claude/plans/$key.md
+  # The path ends up inside the single-quoted prompt typed into the pane.
+  [[ $plan_dst != *"'"* ]] || { echo "plan path has a quote: $plan_dst" >&2; exit 2; }
+  mkdir -p "$(dirname "$plan_dst")"
+  [[ ! -e $plan_dst ]] || echo "overwriting earlier plan $plan_dst" >&2
+  cp -- "$plan" "$plan_dst"
+fi
+
 cd "$root"
 
 default=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null || true)
@@ -29,7 +54,11 @@ fi
 [[ -n $default ]] || { echo "cannot find origin's main or master branch" >&2; exit 2; }
 
 summary=$(acli jira workitem view "$key" --fields summary --json | jq -er '.fields.summary')
-prompt="Прочти тикет $url. Составь план выполнения задачи. Работай вместе с codex."
+if [[ -n $plan ]]; then
+  prompt="План по тикету $url уже составлен и согласован с пользователем и Codex: $plan_dst. Прочти его и выполняй вместе с codex. Заново тикет не планируй; открывай его, только если план с ним расходится, и тогда спроси пользователя."
+else
+  prompt="Прочти тикет $url. Составь план выполнения задачи. Работай вместе с codex."
+fi
 
 # `claude --worktree <key>` opens an existing worktree at this path instead of creating its own,
 # so creating it here lets Codex start in it first, on the branch name and base we choose.
@@ -71,8 +100,15 @@ wait_for() {
   exit 1
 }
 
-# --no-select keeps the user's keystrokes out of the new panes while we type the launch lines.
-sid=$(ctl session new --after "$AGTERM_SESSION_ID" --cwd "$wt" --name "$key: $summary" --no-select)
+# With a plan, the new session is a companion of the planning session, so the two sit together in
+# the tree; closing the parent closes it too. --no-select keeps the user's keystrokes out of the new
+# panes while we type the launch lines.
+if [[ -n $plan ]]; then
+  place=(--parent "$AGTERM_SESSION_ID")
+else
+  place=(--after "$AGTERM_SESSION_ID")
+fi
+sid=$(ctl session new "${place[@]}" --cwd "$wt" --name "$key: $summary" --no-select)
 wait_for '.realized' "the shell"
 
 ctl session split on --axis vertical --target "$sid" >/dev/null

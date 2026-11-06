@@ -1,6 +1,6 @@
 ---
 name: jira-do-task-with-codex
-description: 'Start work on a Jira ticket as a Claude + Codex pair in its own git worktree and a new agterm session: a tab named "<KEY>: <summary>" in the current workspace, Codex in the right pane of a vertical split, and Claude in the left pane told to read the ticket, plan the work and do it together with Codex. Use when the user runs /jira-do-task-with-codex <jira-url>, or asks to take a ticket, open a task or start a ticket "with codex" in a new tab, session or worktree ("возьми DL-7288 с codex", "открой задачу в новом табе с codex", "заведи сессию под тикет"). Not for planning the ticket in this session, and not for creating or estimating tickets.'
+description: 'Start work on a Jira ticket as a Claude + Codex pair in its own git worktree and a new agterm session: a tab named "<KEY>: <summary>" in the current workspace, Codex in the right pane of a vertical split, and Claude in the left pane told to read the ticket, plan the work and do it together with Codex. When the plan was already made in this session, hands it over instead: the new session opens as a companion of this one and its Claude executes that plan rather than planning again. Use when the user runs /jira-do-task-with-codex <jira-url>, or asks to take a ticket, open a task or start a ticket "with codex" in a new tab, session or worktree ("возьми DL-7288 с codex", "открой задачу в новом табе с codex", "заведи сессию под тикет"), and when a ticket planned here has to be implemented in another repository. Not for planning the ticket in this session, and not for creating or estimating tickets.'
 argument-hint: <jira-url> [--close-session=false]
 allowed-tools: Bash
 ---
@@ -28,13 +28,38 @@ one the skill was called from) is closed, because its only job was to start the 
 `--close-session=false` keeps it open, and so does the user saying in words not to close it ("не
 закрывай эту сессию").
 
-Run the bundled script from the user's current working directory. The worktree is made from the
-repository that directory belongs to, so it must be the repository the ticket is about. If it is
-clearly not (for example the dotfiles repo for a ticket whose summary starts with a service name
-like `ms-hooks:`), ask before running.
+### Which repository
+
+The worktree is made from the repository `--repo DIR` names, or the current working directory's
+when it is left out. Decide it from the ticket before running, never by default from the cwd: a
+summary like `admin-gateway: …` or the code paths in the description name the service. Look for it
+under `~/src/work/delos/` and `~/src/work/delos/archive/`. When the cwd's repository is that one,
+`--repo` can be left out. When it is not, pass `--repo` with the right one. When the ticket names no
+repository, or names several, ask the user which one.
+
+Pass `--repo` rather than `cd` into the repository: a session isolated in a worktree refuses commands
+that run git elsewhere, and the script's own `git -C` is the path that works from there.
+
+### A plan made in this session
+
+When this session already read the ticket and agreed a plan with the user (and Codex), do not let
+the new session plan again. Write the plan to a file (the scratchpad is fine) and pass `--plan FILE`.
+Make the file self-contained: the decisions the user took, the facts checked, file:line references,
+what is still blocked. The new Claude gets only this file and the ticket, not this conversation.
+
+With `--plan`, the script:
+
+- copies the plan to `~/.claude/plans/<KEY>.md`, because this session's scratchpad goes away with it;
+- opens the new session as a companion of this one (`session new --parent`), so planning and
+  execution sit together in the sidebar tree, instead of as a sibling after it;
+- starts Claude with a prompt to read that plan and carry it out with Codex, not to plan the ticket
+  again.
+
+A companion closes when its parent closes. So with `--plan` this session is never closed by the
+skill, whatever `--close-session` says: closing it would kill the session just started.
 
 ```bash
-<skill-base-dir>/scripts/open-task.sh '<jira-url>'
+<skill-base-dir>/scripts/open-task.sh '<jira-url>' [--repo DIR] [--plan FILE]
 ```
 
 The script:
@@ -50,11 +75,13 @@ The script:
    `claude --worktree` exits at once in a repository whose trust dialog was never accepted; the
    user trusts all their work repositories and asked for this; `~/.codex/trust-repos.sh` does the
    same for Codex in `~/.codex/config.toml`, whose trust prompt would otherwise stop it;
-4. creates a session right after this one, named `<KEY>: <summary>`, rooted in the worktree;
+4. creates a session named `<KEY>: <summary>`, rooted in the worktree: right after this one, or as
+   its companion with `--plan`;
 5. splits it vertically and starts `codex` in the worktree in the right pane;
 6. once Codex is running, starts `claude --worktree <KEY>` in the left pane with the prompt
-   `Прочти тикет <url>. Составь план выполнения задачи. Работай вместе с codex.`; Claude opens the
-   worktree the script made instead of creating its own;
+   `Прочти тикет <url>. Составь план выполнения задачи. Работай вместе с codex.`, or with `--plan`
+   a prompt to execute the plan at `~/.claude/plans/<KEY>.md`; Claude opens the worktree the script
+   made instead of creating its own;
 7. selects the new session and prints its id and the worktree path.
 
 Codex goes first because "Работай вместе с codex" makes the new Claude reach for `peer-chat`
@@ -70,7 +97,8 @@ Report in one line: the session name, the worktree path, and that Claude and Cod
 it. Do not start working on the ticket here, and do not type anything else into the new session's
 panes.
 
-Then, unless `--close-session=false`, close this session as the very last step:
+With `--plan`, add the plan's path to the report and stop there: this session stays open as the
+parent. Otherwise, unless `--close-session=false`, close this session as the very last step:
 
 ```bash
 agtermctl session close --target "$AGTERM_SESSION_ID" --socket "$AGTERM_SOCKET"
@@ -84,6 +112,8 @@ here.
 ## When it fails
 
 - `not inside an agterm session`: this needs agterm. Say so and stop.
+- `plan file missing or empty` or `not a directory`: nothing was created. Fix the argument and run
+  again.
 - `not a git repository`, `cannot find origin's main or master branch`, or a failed `git fetch` /
   `git worktree add`: no session was created. Show the error and stop. A worktree add that fails
   because the branch is checked out in another worktree is for the user to sort out; do not remove
