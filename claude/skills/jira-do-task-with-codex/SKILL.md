@@ -1,6 +1,6 @@
 ---
 name: jira-do-task-with-codex
-description: 'Start work on a Jira ticket as a Claude + Codex pair in its own git worktree and a new agterm session: a tab named "<KEY>: <summary>" in the current workspace, Codex in the right pane of a vertical split, and Claude in the left pane told to read the ticket, plan the work and do it together with Codex. When the plan was already made in this session, hands it over instead: the new session opens as a companion of this one and its Claude executes that plan rather than planning again. Use when the user runs /jira-do-task-with-codex <jira-url>, or asks to take a ticket, open a task or start a ticket "with codex" in a new tab, session or worktree ("возьми DL-7288 с codex", "открой задачу в новом табе с codex", "заведи сессию под тикет"), and when a ticket planned here has to be implemented in another repository. Not for planning the ticket in this session, and not for creating or estimating tickets.'
+description: 'Start work on a Jira ticket as a Claude + Codex pair in its own git worktree and a new agterm session: a tab named "<KEY> [<repo>]: <summary>" in the current workspace (one per repository when the ticket spans several, and one per part when a ticket split into layers or steps here is to be done in parallel, each in its own worktree and each told to do only its own part), Codex in the right pane of a vertical split, and Claude in the left pane told to read the ticket, plan the work and do it together with Codex. When the plan was already made in this session, hands it over instead: the new session opens as a companion of this one and its Claude executes that plan rather than planning again. Use when the user runs /jira-do-task-with-codex <jira-url>, or asks to take a ticket, open a task or start a ticket "with codex" in a new tab, session or worktree ("возьми DL-7288 с codex", "открой задачу в новом табе с codex", "заведи сессию под тикет"), when a ticket planned here has to be implemented in another repository, and when the remaining parts of a ticket planned here are to be handed to parallel sessions ("запусти сессии на оставшиеся слои", "одна сессия — один слой", "раздай слои компаньонам"). Not for planning the ticket in this session, and not for creating or estimating tickets.'
 argument-hint: <jira-url> [--close-session=false]
 allowed-tools: Bash
 ---
@@ -35,10 +35,26 @@ when it is left out. Decide it from the ticket before running, never by default 
 summary like `admin-gateway: …` or the code paths in the description name the service. Look for it
 under `~/src/work/` and its subdirectories. When the cwd's repository is that one,
 `--repo` can be left out. When it is not, pass `--repo` with the right one. When the ticket names no
-repository, or names several, ask the user which one.
+repository, ask the user which one. When it names several, ask which of them to open (`multiSelect`):
+one or several.
 
 Pass `--repo` rather than `cd` into the repository: a session isolated in a worktree refuses commands
 that run git elsewhere, and the script's own `git -C` is the path that works from there.
+
+### A ticket over several repositories
+
+Run the script once per chosen repository: each run makes its own worktree, branch `<KEY>` and
+session. Every new Claude is told to work only on the part of the ticket that changes its own
+repository, and to read the others' code only where it meets its part (contract, rollout order).
+That alone keeps two sessions from researching the same thing, but the line between the parts is
+often finer than "this repository", so pass `--scope TEXT` to each run: one or two sentences in
+Russian on what this session does and what the other sessions do, taken from the ticket (its
+`Changes:` line, the implementation and acceptance items that belong to the repository). For
+DL-7289, for example, ms-fuse gets "бронирование входящего депозита из транзакции Fuse, а не из тела
+вебхука; проверка источника Fuse — часть gateway-v2, её делает другая сессия". Do not pass `--scope`
+when only one repository is opened and the ticket has no other part.
+
+Close this session only after every run succeeded.
 
 ### A plan made in this session
 
@@ -49,7 +65,9 @@ what is still blocked. The new Claude gets only this file and the ticket, not th
 
 With `--plan`, the script:
 
-- copies the plan to `~/.claude/plans/<KEY>.md`, because this session's scratchpad goes away with it;
+- copies the plan to `~/.claude/plans/<KEY>-<repo>.md`, because this session's scratchpad goes away
+  with it; the repository is in the name so the runs of one ticket over several repositories do not
+  overwrite each other's plan;
 - opens the new session as a companion of this one (`session new --parent`), so planning and
   execution sit together in the sidebar tree, instead of as a sibling after it;
 - starts Claude with a prompt to read that plan and carry it out with Codex, not to plan the ticket
@@ -59,14 +77,50 @@ A companion closes when its parent closes. So with `--plan` this session is neve
 skill, whatever `--close-session` says: closing it would kill the session just started.
 
 ```bash
-<skill-base-dir>/scripts/open-task.sh '<jira-url>' [--repo DIR] [--plan FILE]
+<skill-base-dir>/scripts/open-task.sh '<jira-url>' [--repo DIR] [--plan FILE] [--scope TEXT] [--name SUFFIX]
 ```
+
+### A ticket split into parts in one repository
+
+When this session split one ticket into independent parts (layers, steps, separate MRs) and the user
+wants them done in parallel, one session per part, run the script once per part with
+`--name SUFFIX`. Without it every run of the same ticket in the same repository lands in one
+worktree `<KEY>`, on one branch, with one plan file, and the second session overwrites the first
+one's plan and writes into its tree.
+
+- `SUFFIX` is a short kebab-case slug of the part, `[a-z0-9-]`: `account-id`, `inbox`. The worktree,
+  the branch and `claude --worktree` become `<KEY>-<SUFFIX>`, the plan file
+  `~/.claude/plans/<KEY>-<SUFFIX>-<repo>.md`, and the session is named `<KEY> <SUFFIX> [<repo>]: …`.
+- Give each part its own plan file with `--plan`, so every session opens as a companion of this one
+  and executes rather than plans. Each plan holds only its own part: what to change with file:line,
+  the decisions taken, the facts checked, and what the other parts do, so the session does not
+  drift into them. Pass the same boundary as one line in `--scope`.
+- End each plan with how the part is finished, since the new session gets nothing else from here.
+  When the user asked for it, that is: commit, push, open the MR with `grothex:gitlab-mr-create`
+  (the MR text in English), run `grothex:gitlab-mr-revmux` on it and fix what it finds before
+  reporting back. Say whether to merge or to leave the MR for the user.
+- A part in another repository needs no suffix: its worktree is `<KEY>` there. Use one anyway when
+  the same ticket may get another part in that repository later.
+- Parts that touch the same files will conflict when the second one merges. Say so in both plans,
+  and tell the later one to rebase on `main` before its MR.
+
+Each run is independent: when one fails, the others already started keep running. Report every
+session in the result.
+
+### From the quick terminal
+
+agterm's quick terminal belongs to no session and no window: `AGTERM_SESSION_ID` and
+`AGTERM_WINDOW_ID` are empty there. The script then takes the active window and places the new
+session after the session selected in it. With `--plan` it cannot make a companion, so the new
+session opens after that one as a sibling, and the script says so on stderr. There is no calling
+session to close afterwards.
 
 The script:
 
 1. reads the ticket summary with `acli jira workitem view <KEY> --fields summary`;
 2. fetches origin's default branch (`main` or `master`) and creates the worktree
-   `<repo>/.claude/worktrees/<KEY>` on a new branch `<KEY>` from `origin/<default>`, because a task
+   `<repo>/.claude/worktrees/<KEY>` on a new branch `<KEY>` from `origin/<default>` (both
+   `<KEY>-<SUFFIX>` with `--name`), because a task
    branch starts only from a fresh default branch; gitignored files listed in the repository's
    `.worktreeinclude` (such as `.env`) are copied in; the main checkout's branch and files are left
    alone;
@@ -75,13 +129,18 @@ The script:
    `claude --worktree` exits at once in a repository whose trust dialog was never accepted; the
    user trusts all their work repositories and asked for this; `~/.codex/trust-repos.sh` does the
    same for Codex in `~/.codex/config.toml`, whose trust prompt would otherwise stop it;
-4. creates a session named `<KEY>: <summary>`, rooted in the worktree: right after this one, or as
-   its companion with `--plan`;
+4. creates a session named `<KEY> [<repo>]: <summary>`, rooted in the worktree: right after this
+   one, or as its companion with `--plan`;
 5. splits it vertically and starts `codex` in the worktree in the right pane;
-6. once Codex is running, starts `claude --worktree <KEY>` in the left pane with the prompt
-   `Прочти тикет <url>. Составь план выполнения задачи. Работай вместе с codex.`, or with `--plan`
-   a prompt to execute the plan at `~/.claude/plans/<KEY>.md`; Claude opens the worktree the script
-   made instead of creating its own;
+6. once Codex is running, starts `claude --worktree <KEY>` in the left pane with a prompt to read
+   the ticket, plan the work and do it with Codex, or with `--plan` a prompt to execute the plan at
+   `~/.claude/plans/<KEY>-<repo>.md`; Claude opens the worktree the script made instead of creating
+   its own. Either prompt limits the session to the ticket's part in its own repository, plus the
+   `--scope` text when given. Either prompt first asks for a short recap in the session's language once the ticket (or
+   the plan) is read: the key as a clickable link to the ticket with its summary, the repository
+   name, and in two or three sentences what the task asks us to do. The script puts the summary
+   and the repository name into the prompt, because the worktree directory is named after the key
+   and would pass for the repository;
 7. selects the new session and prints its id and the worktree path.
 
 Codex goes first because "Работай вместе с codex" makes the new Claude reach for `peer-chat`
@@ -98,7 +157,8 @@ it. Do not start working on the ticket here, and do not type anything else into 
 panes.
 
 With `--plan`, add the plan's path to the report and stop there: this session stays open as the
-parent. Otherwise, unless `--close-session=false`, close this session as the very last step:
+parent. From the quick terminal there is nothing to close. Otherwise, unless
+`--close-session=false`, close this session as the very last step:
 
 ```bash
 agtermctl session close --target "$AGTERM_SESSION_ID" --socket "$AGTERM_SOCKET"
@@ -111,7 +171,10 @@ here.
 
 ## When it fails
 
-- `not inside an agterm session`: this needs agterm. Say so and stop.
+- `not inside agterm`: this needs agterm. Say so and stop.
+- `cannot find agterm's active window` or `no selected session in agterm's active window`: run from
+  the quick terminal while no window or session is active. Nothing was created; ask the user to
+  select a session in the window the task should open in, then run again.
 - `plan file missing or empty` or `not a directory`: nothing was created. Fix the argument and run
   again.
 - `not a git repository`, `cannot find origin's main or master branch`, or a failed `git fetch` /
