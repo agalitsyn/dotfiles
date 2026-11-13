@@ -17,6 +17,7 @@ configure: peer-chat companion
 	ln -sf $(CURDIR)/agterm-notify.sh ~/.config/agterm/agterm-notify.sh
 	ln -sf $(CURDIR)/finish-session.sh ~/.config/agterm/finish-session.sh
 	ln -sf $(CURDIR)/jira-ticket.sh ~/.config/agterm/jira-ticket.sh
+	ln -sf $(CURDIR)/claude-artifact.sh ~/.config/agterm/claude-artifact.sh
 
 .PHONY: peer-chat
 peer-chat:

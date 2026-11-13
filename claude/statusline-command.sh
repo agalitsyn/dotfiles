@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Claude Code Status Line Command
-# Ghostty Vesper Theme Colors
 
 input=$(cat)
 cwd=$(echo "$input" | jq -r '.workspace.current_dir')
@@ -9,14 +8,15 @@ model=$(echo "$input" | jq -r '.model.display_name')
 effort=$(echo "$input" | jq -r '.effort.level // empty')
 session_id=$(echo "$input" | jq -r '.session_id // empty')
 
-# Vesper theme colors (using ANSI escape codes)
-RED='\033[38;2;245;161;145m'      # #f5a191 - salmon (model name)
-GREEN='\033[38;2;144;185;159m'    # #90b99f - sage (progress bar & git branch)
-YELLOW='\033[38;2;255;199;153m'   # #ffc799 - bright peach (percentage)
-TAN='\033[38;2;230;185;157m'      # #e6b99d - warm tan (current directory)
-LAVENDER='\033[38;2;172;161;207m' # #aca1cf - lavender (login name)
-MAGENTA='\033[38;2;226;158;202m'  # #e29eca - orchid (session id)
-DIMGRAY='\033[38;2;126;126;126m'  # #7e7e7e - dim gray (separators)
+# Colours are terminal palette slots, not RGB, so each theme supplies values
+# readable on its own background. Under Vesper they resolve to the hex shown.
+RED='\033[31m'       # slot 1  #f5a191 - salmon (model name)
+GREEN='\033[32m'     # slot 2  #90b99f - sage (progress bar & git branch)
+YELLOW='\033[93m'    # slot 11 #ffc799 - bright peach (percentage)
+TAN='\033[33m'       # slot 3  #e6b99d - warm tan (current directory)
+LAVENDER='\033[34m'  # slot 4  #aca1cf - lavender (login name)
+MAGENTA='\033[35m'   # slot 5  #e29eca - orchid (session id)
+DIMGRAY='\033[90m'   # slot 8  #7e7e7e - dim gray (separators)
 RESET='\033[0m'
 
 # Context bar shape. BAR_FILLED/BAR_EMPTY are the glyphs, BAR_WIDTH the length.
