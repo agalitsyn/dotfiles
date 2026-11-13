@@ -1,14 +1,16 @@
 ---
 name: jira-do-task-with-codex
-description: 'Start work on a Jira ticket as a Claude + Codex pair in its own git worktree and a new agterm session: a tab named "<KEY> [<repo>]: <summary>" in the current workspace (one per repository when the ticket spans several, and one per part when a ticket split into layers or steps here is to be done in parallel, each in its own worktree and each told to do only its own part), Codex in the right pane of a vertical split, and Claude in the left pane told to read the ticket, plan the work and do it together with Codex. When the plan was already made in this session, hands it over instead: the new session opens as a companion of this one and its Claude executes that plan rather than planning again. Use when the user runs /jira-do-task-with-codex <jira-url>, or asks to take a ticket, open a task or start a ticket "with codex" in a new tab, session or worktree ("возьми DL-7288 с codex", "открой задачу в новом табе с codex", "заведи сессию под тикет"), when a ticket planned here has to be implemented in another repository, and when the remaining parts of a ticket planned here are to be handed to parallel sessions ("запусти сессии на оставшиеся слои", "одна сессия — один слой", "раздай слои компаньонам"). Not for planning the ticket in this session, and not for creating or estimating tickets.'
-argument-hint: <jira-url> [--close-session=false]
+description: 'Start work on a Jira ticket as a Claude + Codex pair in its own git worktree and a new agterm session: a tab named "<KEY> [<repo>]: <summary>" in the current workspace (one per repository when the ticket spans several, and one per part when a ticket split into layers or steps here is to be done in parallel, each in its own worktree and each told to do only its own part), Codex in the right pane of a vertical split, and Claude in the left pane told to read the ticket, plan the work and do it together with Codex. Every new session opens as a companion of the calling one, which stays open as the main session. When the plan was already made in this session, hands it over instead: the new Claude executes that plan rather than planning again. Use when the user runs /jira-do-task-with-codex <jira-url>, or asks to take a ticket, open a task or start a ticket "with codex" in a new tab, session or worktree ("возьми DL-7288 с codex", "открой задачу в новом табе с codex", "заведи сессию под тикет"), when a ticket planned here has to be implemented in another repository, and when the remaining parts of a ticket planned here are to be handed to parallel sessions ("запусти сессии на оставшиеся слои", "одна сессия — один слой", "раздай слои компаньонам"). Not for planning the ticket in this session, and not for creating or estimating tickets.'
+argument-hint: <jira-url>
 allowed-tools: Bash
 ---
 
 # Do a Jira task with Codex
 
-This session only sets the stage. The work happens in a new agterm session: Claude on the left
-gets the prompt and runs the task, Codex on the right is its peer through the `peer-chat` skill.
+This session only sets the stage and stays open as the main one. The work happens in a new agterm
+session opened as its companion: Claude on the left gets the prompt and runs the task, Codex on the
+right is its peer through the `peer-chat` skill. Several tickets started from here all sit under
+this session in the sidebar.
 Each ticket gets its own git worktree, so several tickets of one repository run side by side
 without touching the main checkout or each other.
 
@@ -22,11 +24,6 @@ explanation around them follows the user's language.
 The argument is the ticket URL, for example `https://gfoundation.atlassian.net/browse/DL-7288`. If
 the user gave only a key like `DL-7288`, build the URL as
 `https://gfoundation.atlassian.net/browse/<KEY>`. No argument at all: ask for the ticket and stop.
-
-`--close-session` is optional and `true` by default: once the new session is up, this session (the
-one the skill was called from) is closed, because its only job was to start the other one.
-`--close-session=false` keeps it open, and so does the user saying in words not to close it ("не
-закрывай эту сессию").
 
 ### Which repository
 
@@ -54,8 +51,6 @@ DL-7289, for example, ms-fuse gets "бронирование входящего 
 вебхука; проверка источника Fuse — часть gateway-v2, её делает другая сессия". Do not pass `--scope`
 when only one repository is opened and the ticket has no other part.
 
-Close this session only after every run succeeded.
-
 ### A plan made in this session
 
 When this session already read the ticket and agreed a plan with the user (and Codex), do not let
@@ -68,13 +63,8 @@ With `--plan`, the script:
 - copies the plan to `~/.claude/plans/<KEY>-<repo>.md`, because this session's scratchpad goes away
   with it; the repository is in the name so the runs of one ticket over several repositories do not
   overwrite each other's plan;
-- opens the new session as a companion of this one (`session new --parent`), so planning and
-  execution sit together in the sidebar tree, instead of as a sibling after it;
 - starts Claude with a prompt to read that plan and carry it out with Codex, not to plan the ticket
   again.
-
-A companion closes when its parent closes. So with `--plan` this session is never closed by the
-skill, whatever `--close-session` says: closing it would kill the session just started.
 
 ```bash
 <skill-base-dir>/scripts/open-task.sh '<jira-url>' [--repo DIR] [--plan FILE] [--scope TEXT] [--name SUFFIX]
@@ -91,8 +81,7 @@ one's plan and writes into its tree.
 - `SUFFIX` is a short kebab-case slug of the part, `[a-z0-9-]`: `account-id`, `inbox`. The worktree,
   the branch and `claude --worktree` become `<KEY>-<SUFFIX>`, the plan file
   `~/.claude/plans/<KEY>-<SUFFIX>-<repo>.md`, and the session is named `<KEY> <SUFFIX> [<repo>]: …`.
-- Give each part its own plan file with `--plan`, so every session opens as a companion of this one
-  and executes rather than plans. Each plan holds only its own part: what to change with file:line,
+- Give each part its own plan file with `--plan`, so every session executes rather than plans. Each plan holds only its own part: what to change with file:line,
   the decisions taken, the facts checked, and what the other parts do, so the session does not
   drift into them. Pass the same boundary as one line in `--scope`.
 - End each plan with how the part is finished, since the new session gets nothing else from here.
@@ -111,9 +100,8 @@ session in the result.
 
 agterm's quick terminal belongs to no session and no window: `AGTERM_SESSION_ID` and
 `AGTERM_WINDOW_ID` are empty there. The script then takes the active window and places the new
-session after the session selected in it. With `--plan` it cannot make a companion, so the new
-session opens after that one as a sibling, and the script says so on stderr. There is no calling
-session to close afterwards.
+session after the session selected in it. It cannot make a companion there, so the new session
+opens after that one as a sibling, and the script says so on stderr.
 
 The script:
 
@@ -129,9 +117,15 @@ The script:
    `claude --worktree` exits at once in a repository whose trust dialog was never accepted; the
    user trusts all their work repositories and asked for this; `~/.codex/trust-repos.sh` does the
    same for Codex in `~/.codex/config.toml`, whose trust prompt would otherwise stop it;
-4. creates a session named `<KEY> [<repo>]: <summary>`, rooted in the worktree: right after this
-   one, or as its companion with `--plan`;
-5. splits it vertically and starts `codex` in the worktree in the right pane;
+4. creates a session named `<KEY> [<repo>]: <summary>`, rooted in the worktree, as a companion of
+   this one (`session new --parent`); when this session is itself a companion, agterm puts the new
+   one under the same parent;
+5. splits it vertically and starts Codex in the worktree in the right pane with
+   `-a never -s workspace-write -c sandbox_workspace_write.network_access=true`: no approval
+   prompts, writes confined to the worktree; network is on because peer-chat reaches agterm
+   through its socket, which the sandbox blocks without it. `.git` stays read-only to Codex, so
+   commits are Claude's. `-c check_for_update_on_startup=false` skips the update check, whose
+   "update available" prompt would otherwise stop Codex before peer-chat reaches it;
 6. once Codex is running, starts `claude --worktree <KEY>` in the left pane with a prompt to read
    the ticket, plan the work and do it with Codex, or with `--plan` a prompt to execute the plan at
    `~/.claude/plans/<KEY>-<repo>.md`; Claude opens the worktree the script made instead of creating
@@ -153,21 +147,10 @@ the user.
 ## After it runs
 
 Report in one line: the session name, the worktree path, and that Claude and Codex are running in
-it. Do not start working on the ticket here, and do not type anything else into the new session's
-panes.
+it; with `--plan`, the plan's path too. Do not start working on the ticket here, and do not type
+anything else into the new session's panes.
 
-With `--plan`, add the plan's path to the report and stop there: this session stays open as the
-parent. From the quick terminal there is nothing to close. Otherwise, unless
-`--close-session=false`, close this session as the very last step:
-
-```bash
-agtermctl session close --target "$AGTERM_SESSION_ID" --socket "$AGTERM_SOCKET"
-```
-
-Close it only after the script succeeded and the report line is written: the close ends this
-Claude process and everything else in this session's panes, so nothing after it runs. If the
-script failed in any way, keep the session open, because the error and what to do about it are
-here.
+Never close this session: it is the parent, and closing it closes every companion it started.
 
 ## When it fails
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Open a Jira ticket as a new agterm session next to the caller's: a git worktree on a fresh
+# Open a Jira ticket as a new agterm session, a companion of the caller's: a git worktree on a fresh
 # default branch, Codex in the right pane of a vertical split, then Claude in the left pane with
 # the planning prompt. Prints the new session id and the worktree path.
 set -euo pipefail
@@ -136,13 +136,14 @@ wait_for() {
   exit 1
 }
 
-# With a plan, the new session is a companion of the planning session, so the two sit together in
-# the tree; closing the parent closes it too. --no-select keeps the user's keystrokes out of the new
-# panes while we type the launch lines.
-if [[ -n $plan && -n $caller ]]; then
+# The new session is a companion of the calling one: the caller stays the main session and every
+# ticket it starts sits under it in the tree; closing the parent closes them too. A companion caller
+# means its parent, so they stay siblings under one main session. --no-select keeps the user's
+# keystrokes out of the new panes while we type the launch lines.
+if [[ -n $caller ]]; then
   place=(--parent "$caller")
 else
-  [[ -z $plan ]] || echo "no calling session (quick terminal): opening after $anchor, not as a companion" >&2
+  echo "no calling session (quick terminal): opening after $anchor, not as a companion" >&2
   place=(--after "$anchor")
 fi
 sid=$(ctl session new "${place[@]}" --cwd "$wt" --name "$key${suffix:+ $suffix} [$repo_name]: $summary" --no-select)
@@ -157,7 +158,7 @@ for i in $(seq 10); do
 done
 # Typed into an interactive shell rather than passed as --command: `codex` is a zsh function that
 # hands AGTERM_SESSION_ID to Codex for peer-chat, and only an interactive shell defines it.
-ctl session type --target "$sid" --pane right --stdin <<<"cd '$wt' && codex" >/dev/null
+ctl session type --target "$sid" --pane right --stdin <<<"cd '$wt' && codex -a never -s workspace-write -c sandbox_workspace_write.network_access=true -c check_for_update_on_startup=false" >/dev/null
 wait_for '(.splitForeground // [])[0] == "codex"' "codex in the right pane"
 
 # Claude starts only after Codex is up, because the prompt sends it straight to peer-chat. It runs

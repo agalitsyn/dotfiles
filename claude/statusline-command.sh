@@ -59,10 +59,11 @@ fmt_countdown() {
   fi
 }
 
-# Get Claude account login (OAuth email) from ~/.claude.json
+# Claude account, as its organization name (shorter than the OAuth email),
+# falling back to the email for personal accounts without an organization
 account_login=""
 if [[ -r "$HOME/.claude.json" ]]; then
-  account_login=$(jq -r '.oauthAccount.emailAddress // empty' "$HOME/.claude.json" 2>/dev/null)
+  account_login=$(jq -r '.oauthAccount | .organizationName // .emailAddress // empty' "$HOME/.claude.json" 2>/dev/null)
 fi
 
 # Get git branch if in a git repository
@@ -141,23 +142,23 @@ if [[ -n "$five_pct" ]]; then
   fi
 fi
 
-# Add session id, in full so it can be copied into `claude --resume <id>`
-if [[ -n "$session_id" ]]; then
-  output+=$(printf " ${DIMGRAY}|${RESET} ${MAGENTA}%s${RESET}" "$session_id")
-fi
-
 # Add Claude account login
 if [[ -n "$account_login" ]]; then
   output+=$(printf " ${DIMGRAY}|${RESET} ${LAVENDER}%s${RESET}" "$account_login")
 fi
 
-# Second line: where we are — directory, branch, worktree
-line2=$(printf "${TAN}%s${RESET}" "$cwd_display")
+# Where we are: directory, branch, worktree
+output+=$(printf " ${DIMGRAY}|${RESET} ${TAN}%s${RESET}" "$cwd_display")
 if [[ -n "$git_branch" ]]; then
-  line2+=$(printf " ${DIMGRAY}|${RESET} ${GREEN}%s${RESET}" "$git_branch")
+  output+=$(printf " ${DIMGRAY}|${RESET} ${GREEN}%s${RESET}" "$git_branch")
 fi
 if [[ -n "$git_worktree" ]]; then
-  line2+=$(printf " ${DIMGRAY}|${RESET} ${DIMGRAY}wt:${RESET}${LAVENDER}%s${RESET}" "$git_worktree")
+  output+=$(printf " ${DIMGRAY}|${RESET} ${DIMGRAY}wt:${RESET}${LAVENDER}%s${RESET}" "$git_worktree")
 fi
 
-printf "%s\n%s" "$output" "$line2"
+# Session id, short form: the first UUID group is enough to tell sessions apart
+if [[ -n "$session_id" ]]; then
+  output+=$(printf " ${DIMGRAY}|${RESET} ${MAGENTA}%s${RESET}" "${session_id%%-*}")
+fi
+
+printf "%s" "$output"
